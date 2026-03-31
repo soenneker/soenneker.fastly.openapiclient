@@ -30750,6 +30750,86 @@
         ]
       }
     },
+    "/ngwaf/v1/workspaces/{workspace_id}/agent-keys": {
+      "get": {
+        "summary": "List agent keys for a workspace",
+        "description": "\"**[🔗 latest documentation](https://developer.fastly.com/reference/api/ngwaf/agent-keys/#ngwafListAgentKeys)**\n\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListAgentKeysForAWorkspace",
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of agent keys.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "meta",
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "required": [
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "access_key",
+                          "secret_key",
+                          "is_primary",
+                          "created_at",
+                          "updated_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "access_key": {
+                            "type": "string"
+                          },
+                          "secret_key": {
+                            "type": "string"
+                          },
+                          "is_primary": {
+                            "type": "boolean"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/ngwaf/v1/default-dashboards": {
       "get": {
         "summary": "List default dashboards",
@@ -46355,6 +46435,1869 @@
                       "properties": {
                         "self": {
                           "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/websites": {
+      "get": {
+        "summary": "List websites",
+        "description": "\"List all websites configured for Client-Side Protection.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListWebsites",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the collection to request.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of websites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "domain",
+                          "page_ids",
+                          "created_at",
+                          "updated_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "domain": {
+                            "type": "string"
+                          },
+                          "page_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "limit",
+                        "total",
+                        "page"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        },
+                        "page": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create website",
+        "description": "\"Create a new website for Client-Side Protection monitoring.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "CreateWebsite",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "domain"
+                ],
+                "type": "object",
+                "properties": {
+                  "domain": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 Website created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "domain",
+                    "page_ids",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "domain": {
+                      "type": "string"
+                    },
+                    "page_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/websites/{website_id}": {
+      "get": {
+        "summary": "Get website",
+        "description": "\"Get details for a specific website.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetWebsite",
+        "parameters": [
+          {
+            "name": "website_id",
+            "in": "path",
+            "description": "Website identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Website details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "domain",
+                    "page_ids",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "domain": {
+                      "type": "string"
+                    },
+                    "page_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete website",
+        "description": "\"Delete a website and all associated pages, scripts, and policies.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeleteWebsite",
+        "parameters": [
+          {
+            "name": "website_id",
+            "in": "path",
+            "description": "Website identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 Website deleted successfully"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update website",
+        "description": "\"Update a website's configuration.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdateWebsite",
+        "parameters": [
+          {
+            "name": "website_id",
+            "in": "path",
+            "description": "Website identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Website details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "domain",
+                    "page_ids",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "domain": {
+                      "type": "string"
+                    },
+                    "page_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages": {
+      "get": {
+        "summary": "List pages",
+        "description": "\"List all pages. Optionally filter by website.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListPages",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the collection to request.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "website_id",
+            "in": "query",
+            "description": "Filter pages by website ID.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of pages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "website_id",
+                          "name",
+                          "description",
+                          "notifications",
+                          "paths",
+                          "created_at",
+                          "updated_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "website_id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "notifications": {
+                            "type": "array",
+                            "items": {
+                              "required": [
+                                "type",
+                                "config"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "type": "string"
+                                },
+                                "config": {
+                                  "required": [
+                                    "address"
+                                  ],
+                                  "type": "object",
+                                  "properties": {
+                                    "address": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "paths": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "limit",
+                        "total",
+                        "page"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        },
+                        "page": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create page",
+        "description": "\"Create a new page for monitoring.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "CreatePage",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "website_id",
+                  "name",
+                  "description",
+                  "notifications",
+                  "paths"
+                ],
+                "type": "object",
+                "properties": {
+                  "website_id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "notifications": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "type",
+                        "config"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "config": {
+                          "required": [
+                            "address"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "paths": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 Page created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "website_id",
+                    "name",
+                    "description",
+                    "notifications",
+                    "paths",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "website_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "type",
+                          "config"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "config": {
+                            "required": [
+                              "address"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "address": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "paths": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}": {
+      "get": {
+        "summary": "Get page",
+        "description": "\"Get details for a specific page.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetPage",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Page details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "website_id",
+                    "name",
+                    "description",
+                    "notifications",
+                    "paths",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "website_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "type",
+                          "config"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "config": {
+                            "required": [
+                              "address"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "address": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "paths": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete page",
+        "description": "\"Delete a page and all associated scripts and policies.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeletePage",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 Page deleted successfully"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update page",
+        "description": "\"Update a page's configuration.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdatePage",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Page details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "website_id",
+                    "name",
+                    "description",
+                    "notifications",
+                    "paths",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "website_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "notifications": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "type",
+                          "config"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "config": {
+                            "required": [
+                              "address"
+                            ],
+                            "type": "object",
+                            "properties": {
+                              "address": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "paths": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/scripts": {
+      "get": {
+        "summary": "List scripts",
+        "description": "\"List all scripts detected on a page.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListScripts",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the collection to request.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of scripts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "page_id",
+                          "source",
+                          "urls",
+                          "first_seen_at",
+                          "last_seen_at",
+                          "justification",
+                          "current_hash",
+                          "authorized_hash",
+                          "authorization_status",
+                          "authorized_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "page_id": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "type": "string"
+                          },
+                          "urls": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "first_seen_at": {
+                            "type": "string"
+                          },
+                          "last_seen_at": {
+                            "type": "string"
+                          },
+                          "justification": {
+                            "type": "string"
+                          },
+                          "current_hash": {
+                            "type": "string"
+                          },
+                          "authorized_hash": {
+                            "type": "string"
+                          },
+                          "authorization_status": {
+                            "type": "string"
+                          },
+                          "authorized_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "limit",
+                        "total",
+                        "page"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        },
+                        "page": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/scripts/{script_id}": {
+      "get": {
+        "summary": "Get script",
+        "description": "\"Get details for a specific script.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetScript",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "script_id",
+            "in": "path",
+            "description": "Script identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Script details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "page_id",
+                    "source",
+                    "urls",
+                    "first_seen_at",
+                    "last_seen_at",
+                    "justification",
+                    "current_hash",
+                    "authorized_hash",
+                    "authorization_status",
+                    "authorized_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "page_id": {
+                      "type": "string"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "urls": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "first_seen_at": {
+                      "type": "string"
+                    },
+                    "last_seen_at": {
+                      "type": "string"
+                    },
+                    "justification": {
+                      "type": "string"
+                    },
+                    "current_hash": {
+                      "type": "string"
+                    },
+                    "authorized_hash": {
+                      "type": "string"
+                    },
+                    "authorization_status": {
+                      "type": "string"
+                    },
+                    "authorized_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update script",
+        "description": "\"Update a script's authorization status or justification.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdateScript",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "script_id",
+            "in": "path",
+            "description": "Script identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "authorization_status",
+                  "justification"
+                ],
+                "type": "object",
+                "properties": {
+                  "authorization_status": {
+                    "type": "string"
+                  },
+                  "justification": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 Script details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "page_id",
+                    "source",
+                    "urls",
+                    "first_seen_at",
+                    "last_seen_at",
+                    "justification",
+                    "current_hash",
+                    "authorized_hash",
+                    "authorization_status",
+                    "authorized_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "page_id": {
+                      "type": "string"
+                    },
+                    "source": {
+                      "type": "string"
+                    },
+                    "urls": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "first_seen_at": {
+                      "type": "string"
+                    },
+                    "last_seen_at": {
+                      "type": "string"
+                    },
+                    "justification": {
+                      "type": "string"
+                    },
+                    "current_hash": {
+                      "type": "string"
+                    },
+                    "authorized_hash": {
+                      "type": "string"
+                    },
+                    "authorization_status": {
+                      "type": "string"
+                    },
+                    "authorized_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/policies": {
+      "get": {
+        "summary": "List policies",
+        "description": "\"List all Content Security Policies for a page.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListPolicies",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the collection to request.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of policies",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "page_id",
+                          "name",
+                          "description",
+                          "mode",
+                          "directives",
+                          "created_at",
+                          "updated_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "page_id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "mode": {
+                            "type": "string"
+                          },
+                          "directives": {
+                            "type": "array",
+                            "items": {
+                              "required": [
+                                "name",
+                                "values"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "values": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "limit",
+                        "total",
+                        "page"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        },
+                        "page": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create policy",
+        "description": "\"Create a new Content Security Policy for a page.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "CreatePolicy",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "201 Policy created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "page_id",
+                    "name",
+                    "description",
+                    "mode",
+                    "directives",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "page_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "mode": {
+                      "type": "string"
+                    },
+                    "directives": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "values"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "values": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/policies/{policy_id}": {
+      "get": {
+        "summary": "Get policy",
+        "description": "\"Get details for a specific policy.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetPolicy",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "policy_id",
+            "in": "path",
+            "description": "Policy identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Policy details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "page_id",
+                    "name",
+                    "description",
+                    "mode",
+                    "directives",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "page_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "mode": {
+                      "type": "string"
+                    },
+                    "directives": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "values"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "values": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update policy",
+        "description": "\"Update a policy's configuration.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdatePolicy",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "policy_id",
+            "in": "path",
+            "description": "Policy identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Policy details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "id",
+                    "page_id",
+                    "name",
+                    "description",
+                    "mode",
+                    "directives",
+                    "created_at",
+                    "updated_at"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "page_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "mode": {
+                      "type": "string"
+                    },
+                    "directives": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "values"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "values": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/policies/{policy_id}/reports": {
+      "get": {
+        "summary": "List policy reports",
+        "description": "\"List CSP violation reports for a policy.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListPolicyReports",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "policy_id",
+            "in": "path",
+            "description": "Policy identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the collection to request.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of CSP violation reports",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "policy_id",
+                          "blocked_uri",
+                          "document_uri",
+                          "violated_directive",
+                          "created_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "policy_id": {
+                            "type": "string"
+                          },
+                          "blocked_uri": {
+                            "type": "string"
+                          },
+                          "document_uri": {
+                            "type": "string"
+                          },
+                          "violated_directive": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "limit",
+                        "total",
+                        "page"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        },
+                        "page": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/headers": {
+      "get": {
+        "summary": "List security headers",
+        "description": "\"List security headers detected on a page.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListSecurityHeaders",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the collection to request.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of security headers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "value",
+                          "observed_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          },
+                          "observed_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "limit",
+                        "total",
+                        "page"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        },
+                        "page": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/events": {
+      "get": {
+        "summary": "List header events",
+        "description": "\"List security header change events for a page.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListHeaderEvents",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the collection to request.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of header change events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "header_name",
+                          "old_value",
+                          "new_value",
+                          "changed_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "header_name": {
+                            "type": "string"
+                          },
+                          "old_value": {
+                            "type": "string"
+                          },
+                          "new_value": {
+                            "type": "string"
+                          },
+                          "changed_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "limit",
+                        "total",
+                        "page"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "total": {
+                          "type": "integer"
+                        },
+                        "page": {
+                          "type": "integer"
                         }
                       }
                     }

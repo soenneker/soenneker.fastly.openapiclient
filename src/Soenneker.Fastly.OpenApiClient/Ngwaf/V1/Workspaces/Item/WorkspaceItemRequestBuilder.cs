@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.AgentKeys;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Alerts;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Dashboards;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.DefaultDashboard;
@@ -31,6 +32,11 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkspaceItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agentKeys property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.AgentKeys.AgentKeysRequestBuilder AgentKeys
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.AgentKeys.AgentKeysRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The alerts property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Alerts.AlertsRequestBuilder Alerts
         {
