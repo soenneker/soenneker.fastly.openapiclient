@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Bot_management.Services.Item.Configuration;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,6 +17,11 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Bot_management.Servi
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithService_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The configuration property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Bot_management.Services.Item.Configuration.ConfigurationRequestBuilder Configuration
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Bot_management.Services.Item.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Bot_management.Services.Item.WithService_ItemRequestBuilder"/> and sets the default values.
         /// </summary>

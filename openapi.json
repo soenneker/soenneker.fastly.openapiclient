@@ -43181,6 +43181,216 @@
         ]
       }
     },
+    "/enabled-products/v1/bot_management/services/{service_id}/configuration": {
+      "get": {
+        "summary": "Get configuration",
+        "description": "Get the configuration of the Bot Management product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetConfiguration",
+        "parameters": [
+          {
+            "name": "service_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "product",
+                    "service",
+                    "configuration",
+                    "_links"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "product": {
+                      "required": [
+                        "id",
+                        "object"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "object": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "service": {
+                      "required": [
+                        "id",
+                        "object"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "object": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "configuration": {
+                      "required": [
+                        "contentguard"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "contentguard": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "_links": {
+                      "required": [
+                        "self",
+                        "service"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "self": {
+                          "type": "string"
+                        },
+                        "service": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update configuration",
+        "description": "Update the configuration of the Bot Management product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "UpdateConfiguration",
+        "parameters": [
+          {
+            "name": "service_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "contentguard"
+                ],
+                "type": "object",
+                "properties": {
+                  "contentguard": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "product",
+                    "service",
+                    "configuration",
+                    "_links"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "product": {
+                      "required": [
+                        "id",
+                        "object"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "object": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "service": {
+                      "required": [
+                        "id",
+                        "object"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "object": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "configuration": {
+                      "required": [
+                        "contentguard"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "contentguard": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "_links": {
+                      "required": [
+                        "self",
+                        "service"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "self": {
+                          "type": "string"
+                        },
+                        "service": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/enabled-products/v1/bot_management/services": {
       "get": {
         "summary": "Get services with product enabled",
@@ -43741,7 +43951,7 @@
       "get": {
         "summary": "Get configuration",
         "description": "Get configuration of the DDoS Protection product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "GetConfiguration",
+        "operationId": "GetConfiguration2",
         "parameters": [
           {
             "name": "service_id",
@@ -43836,7 +44046,7 @@
       "patch": {
         "summary": "Update configuration",
         "description": "Update configuration of the DDoS Protection product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "UpdateConfiguration",
+        "operationId": "UpdateConfiguration2",
         "parameters": [
           {
             "name": "service_id",
@@ -45465,7 +45675,7 @@
       "get": {
         "summary": "Get configuration",
         "description": "Get configuration of the Next-Gen WAF product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "GetConfiguration2",
+        "operationId": "GetConfiguration3",
         "parameters": [
           {
             "name": "service_id",
@@ -45564,7 +45774,7 @@
       "patch": {
         "summary": "Update configuration",
         "description": "Update configuration of the Next-Gen WAF product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "UpdateConfiguration2",
+        "operationId": "UpdateConfiguration3",
         "parameters": [
           {
             "name": "service_id",
