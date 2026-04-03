@@ -40,34 +40,15 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse?> GetAsSuggestGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse> GetAsSuggestGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsSuggestGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -153,14 +134,6 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest
             [QueryParameter("vendor")]
             public string Vendor { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SuggestRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

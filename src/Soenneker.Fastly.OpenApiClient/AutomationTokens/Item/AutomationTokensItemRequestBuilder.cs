@@ -46,34 +46,15 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensDeleteResponse?> DeleteAsAutomationTokensDeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensDeleteResponse> DeleteAsAutomationTokensDeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensDeleteResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Revoke an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsAutomationTokensDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Retrieves an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -83,34 +64,15 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensGetResponse?> GetAsAutomationTokensGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensGetResponse> GetAsAutomationTokensGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Retrieves an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsAutomationTokensGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Revoke an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -158,22 +120,6 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item
         public global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AutomationTokensItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AutomationTokensItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

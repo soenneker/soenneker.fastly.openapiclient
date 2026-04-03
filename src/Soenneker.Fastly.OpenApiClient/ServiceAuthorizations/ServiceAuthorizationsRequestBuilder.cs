@@ -54,37 +54,16 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteResponse?> DeleteAsServiceAuthorizationsDeleteResponseAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteResponse?> DeleteAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteResponse> DeleteAsServiceAuthorizationsDeleteResponseAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteResponse> DeleteAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsServiceAuthorizationsDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse?> DeleteAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse> DeleteAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -94,34 +73,15 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsGetResponse?> GetAsServiceAuthorizationsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder.ServiceAuthorizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder.ServiceAuthorizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsGetResponse> GetAsServiceAuthorizationsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder.ServiceAuthorizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder.ServiceAuthorizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsServiceAuthorizationsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder.ServiceAuthorizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder.ServiceAuthorizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -132,37 +92,16 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchResponse?> PatchAsServiceAuthorizationsPatchResponseAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchResponse> PatchAsServiceAuthorizationsPatchResponseAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsServiceAuthorizationsPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#create-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -173,37 +112,16 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostResponse?> PostAsServiceAuthorizationsPostResponseAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostResponse> PostAsServiceAuthorizationsPostResponseAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#create-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsServiceAuthorizationsPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -300,14 +218,6 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return new global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ServiceAuthorizationsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -333,30 +243,6 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             [QueryParameter("page%5Bsize%5D")]
             public string Pagesize { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ServiceAuthorizationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder.ServiceAuthorizationsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ServiceAuthorizationsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ServiceAuthorizationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

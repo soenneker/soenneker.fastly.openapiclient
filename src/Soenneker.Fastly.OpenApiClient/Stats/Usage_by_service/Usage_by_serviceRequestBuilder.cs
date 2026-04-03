@@ -40,34 +40,15 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceGetResponse?> GetAsUsage_by_serviceGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceRequestBuilder.Usage_by_serviceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceRequestBuilder.Usage_by_serviceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceGetResponse> GetAsUsage_by_serviceGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceRequestBuilder.Usage_by_serviceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceRequestBuilder.Usage_by_serviceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Returns usage information aggregated by service and grouped by service and region. For service stats by time period, see /stats and /stats/field/:field.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsUsage_by_serviceGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceRequestBuilder.Usage_by_serviceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceRequestBuilder.Usage_by_serviceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Returns usage information aggregated by service and grouped by service and region. For service stats by time period, see /stats and /stats/field/:field.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -123,14 +104,6 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service
             [QueryParameter("to")]
             public string To { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Usage_by_serviceRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service.Usage_by_serviceRequestBuilder.Usage_by_serviceRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

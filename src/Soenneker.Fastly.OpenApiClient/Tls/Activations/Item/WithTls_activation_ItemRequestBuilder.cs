@@ -57,34 +57,15 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_GetResponse?> GetAsWithTls_activation_GetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_ItemRequestBuilder.WithTls_activation_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_GetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_ItemRequestBuilder.WithTls_activation_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_GetResponse> GetAsWithTls_activation_GetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_ItemRequestBuilder.WithTls_activation_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_GetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_ItemRequestBuilder.WithTls_activation_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_GetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_GetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Show a TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithTls_activation_GetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_ItemRequestBuilder.WithTls_activation_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_ItemRequestBuilder.WithTls_activation_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Update the mutual authentication for the domain associated with this TLS activation. You may either 1) pass a valid mutual authentication ID to activate Mutual TLS, or 2) pass null as the ID to deactivate from Mutual TLS.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -95,37 +76,16 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchResponse?> PatchAsWithTls_activation_PatchResponseAsync(global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchResponse> PatchAsWithTls_activation_PatchResponseAsync(global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Update the mutual authentication for the domain associated with this TLS activation. You may either 1) pass a valid mutual authentication ID to activate Mutual TLS, or 2) pass null as the ID to deactivate from Mutual TLS.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithTls_activation_PatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Disable TLS on the domain associated with this TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -196,14 +156,6 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations.Item
             return new global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithTls_activation_ItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// &quot;Show a TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -219,22 +171,6 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations.Item
             [QueryParameter("include")]
             public string Include { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithTls_activation_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Activations.Item.WithTls_activation_ItemRequestBuilder.WithTls_activation_ItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithTls_activation_ItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

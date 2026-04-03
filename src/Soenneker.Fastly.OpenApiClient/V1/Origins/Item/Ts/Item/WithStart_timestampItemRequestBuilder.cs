@@ -40,34 +40,15 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampGetResponse?> GetAsWithStart_timestampGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampGetResponse> GetAsWithStart_timestampGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Get real-time origin data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.Due to processing latency, the earliest entry in the response dataset may be earlier than start_timestamp by the value of AggregateDelay.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithStart_timestampGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Get real-time origin data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.Due to processing latency, the earliest entry in the response dataset may be earlier than start_timestamp by the value of AggregateDelay.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -96,14 +77,6 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item
         public global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.Item.WithStart_timestampItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithStart_timestampItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

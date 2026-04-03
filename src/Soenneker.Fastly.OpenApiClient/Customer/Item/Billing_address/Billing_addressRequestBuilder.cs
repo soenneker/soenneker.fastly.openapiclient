@@ -57,34 +57,15 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressGetResponse?> GetAsBilling_addressGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressGetResponse> GetAsBilling_addressGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Get a customer&apos;s billing address.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsBilling_addressGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Update a customer&apos;s billing address. You may update only part of the customer&apos;s billing address.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -95,37 +76,16 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchResponse?> PatchAsBilling_addressPatchResponseAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchResponse> PatchAsBilling_addressPatchResponseAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Update a customer&apos;s billing address. You may update only part of the customer&apos;s billing address.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsBilling_addressPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/billing-address/#add-billing-addr)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -136,37 +96,16 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostResponse?> PostAsBilling_addressPostResponseAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostResponse> PostAsBilling_addressPostResponseAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/billing-address/#add-billing-addr)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsBilling_addressPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Delete a customer&apos;s billing address.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -257,38 +196,6 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address
         public global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address.Billing_addressRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Billing_addressRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Billing_addressRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Billing_addressRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Billing_addressRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

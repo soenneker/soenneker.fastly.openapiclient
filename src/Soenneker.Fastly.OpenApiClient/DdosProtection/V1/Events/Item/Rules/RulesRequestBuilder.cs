@@ -53,34 +53,15 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse?> GetAsRulesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse> GetAsRulesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-rule-list)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsRulesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-rule-list)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -146,14 +127,6 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules
             [QueryParameter("limit")]
             public string Limit { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RulesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

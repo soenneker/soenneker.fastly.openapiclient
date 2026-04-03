@@ -40,34 +40,15 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsGetResponse?> GetAsServiceUsageMetricsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsRequestBuilder.ServiceUsageMetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsRequestBuilder.ServiceUsageMetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsGetResponse> GetAsServiceUsageMetricsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsRequestBuilder.ServiceUsageMetricsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsRequestBuilder.ServiceUsageMetricsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Returns product usage, broken down by service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsServiceUsageMetricsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsRequestBuilder.ServiceUsageMetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsRequestBuilder.ServiceUsageMetricsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Returns product usage, broken down by service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -173,14 +154,6 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics
             [QueryParameter("usage_type_name")]
             public string UsageTypeName { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ServiceUsageMetricsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsRequestBuilder.ServiceUsageMetricsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

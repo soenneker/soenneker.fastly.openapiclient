@@ -40,34 +40,15 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyDeleteResponse?> DeleteAsWithConfig_store_item_keyDeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyDeleteResponse> DeleteAsWithConfig_store_item_keyDeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyDeleteResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyDeleteResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Delete an entry in a config store given a config store ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use DeleteAsWithConfig_store_item_keyDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Retrieve a config store entry given a config store ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -77,34 +58,15 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyGetResponse?> GetAsWithConfig_store_item_keyGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyGetResponse> GetAsWithConfig_store_item_keyGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Retrieve a config store entry given a config store ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithConfig_store_item_keyGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -115,37 +77,16 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchResponse?> PatchAsWithConfig_store_item_keyPatchResponseAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchResponse> PatchAsWithConfig_store_item_keyPatchResponseAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PatchAsWithConfig_store_item_keyPatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Insert or update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -156,37 +97,16 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutResponse?> PutAsWithConfig_store_item_keyPutResponseAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutResponse?> PutAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutResponse> PutAsWithConfig_store_item_keyPutResponseAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutResponse> PutAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Insert or update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PutAsWithConfig_store_item_keyPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse?> PutAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse> PutAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Delete an entry in a config store given a config store ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -278,38 +198,6 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
         public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item.WithConfig_store_item_keyItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithConfig_store_item_keyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithConfig_store_item_keyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithConfig_store_item_keyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithConfig_store_item_keyItemRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

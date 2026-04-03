@@ -40,34 +40,15 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_GetResponse?> GetAsWithService_GetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_ItemRequestBuilder.WithService_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_GetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_ItemRequestBuilder.WithService_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_GetResponse> GetAsWithService_GetResponseAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_ItemRequestBuilder.WithService_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_GetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_ItemRequestBuilder.WithService_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_GetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_GetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// &quot;Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithService_GetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_ItemRequestBuilder.WithService_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_ItemRequestBuilder.WithService_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -203,14 +184,6 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item
             [QueryParameter("start")]
             public string Start { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithService_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithService_ItemRequestBuilder.WithService_ItemRequestBuilderGetQueryParameters>
-        {
         }
     }
 }
