@@ -30830,6 +30830,488 @@
         ]
       }
     },
+    "/ngwaf/v1/workspaces/{workspace_id}/agents": {
+      "get": {
+        "summary": "List agents",
+        "description": "\"List all agents deployed in a workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListAgents",
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of agents in the workspace.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "meta",
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "required": [
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "agent_id",
+                          "agent_name",
+                          "agent_active",
+                          "agent_args",
+                          "agent_build_id",
+                          "agent_cgroup",
+                          "agent_connections_dropped_count",
+                          "agent_connections_open_count",
+                          "agent_connections_total_count",
+                          "agent_current_requests",
+                          "agent_decision_time_50th",
+                          "agent_decision_time_95th",
+                          "agent_decision_time_99th",
+                          "agent_enabled",
+                          "agent_last_rule_updated_at",
+                          "agent_last_seen_at",
+                          "agent_max_procs",
+                          "agent_read_bytes",
+                          "agent_rule_update_count",
+                          "agent_pid",
+                          "agent_status",
+                          "agent_timestamp",
+                          "agent_timezone",
+                          "agent_timezone_offset",
+                          "agent_upload_metadata_failure_count",
+                          "agent_upload_size",
+                          "agent_uptime",
+                          "agent_version",
+                          "agent_versions_behind",
+                          "agent_write_bytes",
+                          "agent_latency_time_50th",
+                          "agent_latency_time_95th",
+                          "agent_latency_time_99th",
+                          "host_agent_cpu",
+                          "host_clock_skew",
+                          "host_cpu",
+                          "host_os",
+                          "host_remote_ip",
+                          "module_detected",
+                          "module_server",
+                          "module_type",
+                          "module_version",
+                          "module_versions_behind",
+                          "runtime_gc_pause_millis",
+                          "runtime_memory_bytes_used",
+                          "runtime_num_gc",
+                          "runtime_num_goroutines"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "agent_id": {
+                            "type": "string"
+                          },
+                          "agent_name": {
+                            "type": "string"
+                          },
+                          "agent_active": {
+                            "type": "boolean"
+                          },
+                          "agent_args": {
+                            "type": "string"
+                          },
+                          "agent_build_id": {
+                            "type": "string"
+                          },
+                          "agent_cgroup": {
+                            "type": "string"
+                          },
+                          "agent_connections_dropped_count": {
+                            "type": "integer"
+                          },
+                          "agent_connections_open_count": {
+                            "type": "integer"
+                          },
+                          "agent_connections_total_count": {
+                            "type": "integer"
+                          },
+                          "agent_current_requests": {
+                            "type": "integer"
+                          },
+                          "agent_decision_time_50th": {
+                            "type": "number"
+                          },
+                          "agent_decision_time_95th": {
+                            "type": "number"
+                          },
+                          "agent_decision_time_99th": {
+                            "type": "number"
+                          },
+                          "agent_enabled": {
+                            "type": "boolean"
+                          },
+                          "agent_last_rule_updated_at": {
+                            "type": "string"
+                          },
+                          "agent_last_seen_at": {
+                            "type": "string"
+                          },
+                          "agent_max_procs": {
+                            "type": "integer"
+                          },
+                          "agent_read_bytes": {
+                            "type": "integer"
+                          },
+                          "agent_rule_update_count": {
+                            "type": "integer"
+                          },
+                          "agent_pid": {
+                            "type": "integer"
+                          },
+                          "agent_status": {
+                            "type": "string"
+                          },
+                          "agent_timestamp": {
+                            "type": "string"
+                          },
+                          "agent_timezone": {
+                            "type": "string"
+                          },
+                          "agent_timezone_offset": {
+                            "type": "integer"
+                          },
+                          "agent_upload_metadata_failure_count": {
+                            "type": "integer"
+                          },
+                          "agent_upload_size": {
+                            "type": "integer"
+                          },
+                          "agent_uptime": {
+                            "type": "integer"
+                          },
+                          "agent_version": {
+                            "type": "string"
+                          },
+                          "agent_versions_behind": {
+                            "type": "integer"
+                          },
+                          "agent_write_bytes": {
+                            "type": "integer"
+                          },
+                          "agent_latency_time_50th": {
+                            "type": "number"
+                          },
+                          "agent_latency_time_95th": {
+                            "type": "number"
+                          },
+                          "agent_latency_time_99th": {
+                            "type": "number"
+                          },
+                          "host_agent_cpu": {
+                            "type": "number"
+                          },
+                          "host_clock_skew": {
+                            "type": "integer"
+                          },
+                          "host_cpu": {
+                            "type": "number"
+                          },
+                          "host_os": {
+                            "type": "string"
+                          },
+                          "host_remote_ip": {
+                            "type": "string"
+                          },
+                          "module_detected": {
+                            "type": "boolean"
+                          },
+                          "module_server": {
+                            "type": "string"
+                          },
+                          "module_type": {
+                            "type": "string"
+                          },
+                          "module_version": {
+                            "type": "string"
+                          },
+                          "module_versions_behind": {
+                            "type": "integer"
+                          },
+                          "runtime_gc_pause_millis": {
+                            "type": "number"
+                          },
+                          "runtime_memory_bytes_used": {
+                            "type": "integer"
+                          },
+                          "runtime_num_gc": {
+                            "type": "integer"
+                          },
+                          "runtime_num_goroutines": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/ngwaf/v1/workspaces/{workspace_id}/agents/{agent_id}": {
+      "get": {
+        "summary": "Get an agent",
+        "description": "\"Retrieve a specific agent deployed in a workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetAnAgent",
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "The ID of the agent.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Requested agent.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "agent_id",
+                    "agent_name",
+                    "agent_active",
+                    "agent_args",
+                    "agent_build_id",
+                    "agent_cgroup",
+                    "agent_connections_dropped_count",
+                    "agent_connections_open_count",
+                    "agent_connections_total_count",
+                    "agent_current_requests",
+                    "agent_decision_time_50th",
+                    "agent_decision_time_95th",
+                    "agent_decision_time_99th",
+                    "agent_enabled",
+                    "agent_last_rule_updated_at",
+                    "agent_last_seen_at",
+                    "agent_max_procs",
+                    "agent_read_bytes",
+                    "agent_rule_update_count",
+                    "agent_pid",
+                    "agent_status",
+                    "agent_timestamp",
+                    "agent_timezone",
+                    "agent_timezone_offset",
+                    "agent_upload_metadata_failure_count",
+                    "agent_upload_size",
+                    "agent_uptime",
+                    "agent_version",
+                    "agent_versions_behind",
+                    "agent_write_bytes",
+                    "agent_latency_time_50th",
+                    "agent_latency_time_95th",
+                    "agent_latency_time_99th",
+                    "host_agent_cpu",
+                    "host_clock_skew",
+                    "host_cpu",
+                    "host_os",
+                    "host_remote_ip",
+                    "module_detected",
+                    "module_server",
+                    "module_type",
+                    "module_version",
+                    "module_versions_behind",
+                    "runtime_gc_pause_millis",
+                    "runtime_memory_bytes_used",
+                    "runtime_num_gc",
+                    "runtime_num_goroutines"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "agent_id": {
+                      "type": "string"
+                    },
+                    "agent_name": {
+                      "type": "string"
+                    },
+                    "agent_active": {
+                      "type": "boolean"
+                    },
+                    "agent_args": {
+                      "type": "string"
+                    },
+                    "agent_build_id": {
+                      "type": "string"
+                    },
+                    "agent_cgroup": {
+                      "type": "string"
+                    },
+                    "agent_connections_dropped_count": {
+                      "type": "integer"
+                    },
+                    "agent_connections_open_count": {
+                      "type": "integer"
+                    },
+                    "agent_connections_total_count": {
+                      "type": "integer"
+                    },
+                    "agent_current_requests": {
+                      "type": "integer"
+                    },
+                    "agent_decision_time_50th": {
+                      "type": "number"
+                    },
+                    "agent_decision_time_95th": {
+                      "type": "number"
+                    },
+                    "agent_decision_time_99th": {
+                      "type": "number"
+                    },
+                    "agent_enabled": {
+                      "type": "boolean"
+                    },
+                    "agent_last_rule_updated_at": {
+                      "type": "string"
+                    },
+                    "agent_last_seen_at": {
+                      "type": "string"
+                    },
+                    "agent_max_procs": {
+                      "type": "integer"
+                    },
+                    "agent_read_bytes": {
+                      "type": "integer"
+                    },
+                    "agent_rule_update_count": {
+                      "type": "integer"
+                    },
+                    "agent_pid": {
+                      "type": "integer"
+                    },
+                    "agent_status": {
+                      "type": "string"
+                    },
+                    "agent_timestamp": {
+                      "type": "string"
+                    },
+                    "agent_timezone": {
+                      "type": "string"
+                    },
+                    "agent_timezone_offset": {
+                      "type": "integer"
+                    },
+                    "agent_upload_metadata_failure_count": {
+                      "type": "integer"
+                    },
+                    "agent_upload_size": {
+                      "type": "integer"
+                    },
+                    "agent_uptime": {
+                      "type": "integer"
+                    },
+                    "agent_version": {
+                      "type": "string"
+                    },
+                    "agent_versions_behind": {
+                      "type": "integer"
+                    },
+                    "agent_write_bytes": {
+                      "type": "integer"
+                    },
+                    "agent_latency_time_50th": {
+                      "type": "number"
+                    },
+                    "agent_latency_time_95th": {
+                      "type": "number"
+                    },
+                    "agent_latency_time_99th": {
+                      "type": "number"
+                    },
+                    "host_agent_cpu": {
+                      "type": "number"
+                    },
+                    "host_clock_skew": {
+                      "type": "integer"
+                    },
+                    "host_cpu": {
+                      "type": "number"
+                    },
+                    "host_os": {
+                      "type": "string"
+                    },
+                    "host_remote_ip": {
+                      "type": "string"
+                    },
+                    "module_detected": {
+                      "type": "boolean"
+                    },
+                    "module_server": {
+                      "type": "string"
+                    },
+                    "module_type": {
+                      "type": "string"
+                    },
+                    "module_version": {
+                      "type": "string"
+                    },
+                    "module_versions_behind": {
+                      "type": "integer"
+                    },
+                    "runtime_gc_pause_millis": {
+                      "type": "number"
+                    },
+                    "runtime_memory_bytes_used": {
+                      "type": "integer"
+                    },
+                    "runtime_num_gc": {
+                      "type": "integer"
+                    },
+                    "runtime_num_goroutines": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/ngwaf/v1/default-dashboards": {
       "get": {
         "summary": "List default dashboards",
@@ -38473,7 +38955,7 @@
           {
             "name": "agent_id",
             "in": "path",
-            "description": "Alphanumeric string identifying the agent.",
+            "description": "The ID of the agent.",
             "required": true,
             "schema": {
               "type": "string"
@@ -45192,11 +45674,162 @@
         ]
       }
     },
+    "/enabled-products/v1/kv_store": {
+      "get": {
+        "summary": "Get product enablement status",
+        "description": "\"Get the enablement status of the KV Store product.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetProductEnablementStatus10",
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "product",
+                    "customer",
+                    "_links"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "product": {
+                      "required": [
+                        "id",
+                        "object"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "object": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "customer": {
+                      "required": [
+                        "id",
+                        "object"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "object": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "_links": {
+                      "required": [
+                        "self"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "self": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "put": {
+        "summary": "Enable product",
+        "description": "\"Enable the KV Store product.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "EnableProduct10",
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "product",
+                    "customer",
+                    "_links"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "product": {
+                      "required": [
+                        "id",
+                        "object"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "object": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "customer": {
+                      "required": [
+                        "id",
+                        "object"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "object": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "_links": {
+                      "required": [
+                        "self"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "self": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Disable product",
+        "description": "\"Disable the KV Store product.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DisableProduct10",
+        "responses": {
+          "204": {
+            "description": "204 No Content"
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/enabled-products/v1/log_explorer_insights/services/{service_id}": {
       "get": {
         "summary": "Get product enablement status",
         "description": "\"Get the enablement status of the Log Explorer & Insights product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetProductEnablementStatus10",
+        "operationId": "GetProductEnablementStatus11",
         "parameters": [
           {
             "name": "service_id",
@@ -45279,7 +45912,7 @@
       "put": {
         "summary": "Enable product",
         "description": "\"Enable the Log Explorer & Insights product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "EnableProduct10",
+        "operationId": "EnableProduct11",
         "parameters": [
           {
             "name": "service_id",
@@ -45362,7 +45995,7 @@
       "delete": {
         "summary": "Disable product",
         "description": "\"Disable the Log Explorer & Insights product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "DisableProduct10",
+        "operationId": "DisableProduct11",
         "parameters": [
           {
             "name": "service_id",
@@ -45465,7 +46098,7 @@
       "get": {
         "summary": "Get product enablement status",
         "description": "\"Get the enablement status of the Next-Gen WAF product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetProductEnablementStatus11",
+        "operationId": "GetProductEnablementStatus12",
         "parameters": [
           {
             "name": "service_id",
@@ -45548,7 +46181,7 @@
       "put": {
         "summary": "Enable product",
         "description": "\"Enable the Next-Gen WAF product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "EnableProduct11",
+        "operationId": "EnableProduct12",
         "parameters": [
           {
             "name": "service_id",
@@ -45649,7 +46282,7 @@
       "delete": {
         "summary": "Disable product",
         "description": "\"Disable the Next-Gen WAF product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "DisableProduct11",
+        "operationId": "DisableProduct12",
         "parameters": [
           {
             "name": "service_id",
@@ -45974,7 +46607,7 @@
       "get": {
         "summary": "Get product enablement status",
         "description": "\"Get the enablement status of the Object Storage product.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetProductEnablementStatus12",
+        "operationId": "GetProductEnablementStatus13",
         "responses": {
           "200": {
             "description": "200 OK",
@@ -46042,7 +46675,7 @@
       "put": {
         "summary": "Enable product",
         "description": "\"Enable the Object Storage product.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "EnableProduct12",
+        "operationId": "EnableProduct13",
         "responses": {
           "200": {
             "description": "200 OK",
@@ -46110,7 +46743,7 @@
       "delete": {
         "summary": "Disable product",
         "description": "\"Disable the Object Storage product.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "DisableProduct12",
+        "operationId": "DisableProduct13",
         "responses": {
           "204": {
             "description": "204 No Content"
@@ -46125,7 +46758,7 @@
       "get": {
         "summary": "Get product enablement status",
         "description": "\"Get the enablement status of the Origin Inspector product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetProductEnablementStatus13",
+        "operationId": "GetProductEnablementStatus14",
         "parameters": [
           {
             "name": "service_id",
@@ -46208,7 +46841,7 @@
       "put": {
         "summary": "Enable product",
         "description": "\"Enable the Origin Inspector product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "EnableProduct13",
+        "operationId": "EnableProduct14",
         "parameters": [
           {
             "name": "service_id",
@@ -46291,7 +46924,7 @@
       "delete": {
         "summary": "Disable product",
         "description": "\"Disable the Origin Inspector product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "DisableProduct13",
+        "operationId": "DisableProduct14",
         "parameters": [
           {
             "name": "service_id",
@@ -46394,7 +47027,7 @@
       "get": {
         "summary": "Get product enablement status",
         "description": "\"Get the enablement status of the WebSockets product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetProductEnablementStatus14",
+        "operationId": "GetProductEnablementStatus15",
         "parameters": [
           {
             "name": "service_id",
@@ -46477,7 +47110,7 @@
       "put": {
         "summary": "Enable product",
         "description": "\"Enable the WebSockets product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "EnableProduct14",
+        "operationId": "EnableProduct15",
         "parameters": [
           {
             "name": "service_id",
@@ -46560,7 +47193,7 @@
       "delete": {
         "summary": "Disable product",
         "description": "\"Disable the Websockets product on a service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "DisableProduct14",
+        "operationId": "DisableProduct15",
         "parameters": [
           {
             "name": "service_id",

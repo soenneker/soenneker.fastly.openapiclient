@@ -16,7 +16,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries.Age
     public partial class AgentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.ngwaf.v1.workspaces.item.timeseries.agents.item collection</summary>
-        /// <param name="position">Alphanumeric string identifying the agent.</param>
+        /// <param name="position">The ID of the agent.</param>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries.Agents.Item.WithAgent_ItemRequestBuilder"/></returns>
         public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries.Agents.Item.WithAgent_ItemRequestBuilder this[string position]
         {

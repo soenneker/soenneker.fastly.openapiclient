@@ -11,6 +11,7 @@ using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Domain_inspector;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Domain_research;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Fanout;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Image_optimizer;
+using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Kv_store;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Log_explorer_insights;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ngwaf;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Object_storage;
@@ -72,6 +73,11 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1
         public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Image_optimizer.Image_optimizerRequestBuilder Image_optimizer
         {
             get => new global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Image_optimizer.Image_optimizerRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The kv_store property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Kv_store.Kv_storeRequestBuilder Kv_store
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Kv_store.Kv_storeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The log_explorer_insights property</summary>
         public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Log_explorer_insights.Log_explorer_insightsRequestBuilder Log_explorer_insights
