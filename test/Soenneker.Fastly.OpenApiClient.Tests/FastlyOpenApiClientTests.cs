@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Fastly.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class FastlyOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class FastlyOpenApiClientTests : HostedUnitTest
 {
-    public FastlyOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public FastlyOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
