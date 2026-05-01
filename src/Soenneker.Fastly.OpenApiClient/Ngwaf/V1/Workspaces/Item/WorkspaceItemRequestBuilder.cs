@@ -16,6 +16,7 @@ using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Redactions;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Requests;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Rules;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Signals;
+using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Simulate;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Thresholds;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.TopAttacks;
@@ -97,6 +98,11 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item
         public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Signals.SignalsRequestBuilder Signals
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Signals.SignalsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The simulate property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Simulate.SimulateRequestBuilder Simulate
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Simulate.SimulateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The thresholds property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Thresholds.ThresholdsRequestBuilder Thresholds

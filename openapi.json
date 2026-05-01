@@ -38253,6 +38253,82 @@
         ]
       }
     },
+    "/ngwaf/v1/workspaces/{workspace_id}/simulate": {
+      "post": {
+        "summary": "Simulate a WAF request",
+        "description": "Simulates a request through the workspace's WAF configuration and returns\nthe WAF response code and any signals that would be detected. The operation\nis stateless — no simulation data is persisted.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "SimulateAWAFRequest",
+        "parameters": [
+          {
+            "name": "workspace_id",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Simulation result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "waf_response",
+                    "signals"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "waf_response": {
+                      "type": "integer"
+                    },
+                    "signals": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "type",
+                          "location",
+                          "name",
+                          "value",
+                          "detector",
+                          "redaction"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "location": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          },
+                          "detector": {
+                            "type": "string"
+                          },
+                          "redaction": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/ngwaf/v1/workspaces/{workspace_id}/thresholds": {
       "get": {
         "summary": "List thresholds",
