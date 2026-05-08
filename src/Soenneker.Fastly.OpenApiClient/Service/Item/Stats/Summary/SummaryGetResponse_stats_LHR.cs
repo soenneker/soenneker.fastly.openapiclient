@@ -312,12 +312,6 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Stats.Summary
         public int? Uncacheable { get; set; }
         /// <summary>The video property</summary>
         public int? Video { get; set; }
-        /// <summary>The waf_blocked property</summary>
-        public int? WafBlocked { get; set; }
-        /// <summary>The waf_logged property</summary>
-        public int? WafLogged { get; set; }
-        /// <summary>The waf_passed property</summary>
-        public int? WafPassed { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.Stats.Summary.SummaryGetResponse_stats_LHR"/> and sets the default values.
         /// </summary>
@@ -492,9 +486,6 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Stats.Summary
                 { "tls_v13", n => { TlsV13 = n.GetIntValue(); } },
                 { "uncacheable", n => { Uncacheable = n.GetIntValue(); } },
                 { "video", n => { Video = n.GetIntValue(); } },
-                { "waf_blocked", n => { WafBlocked = n.GetIntValue(); } },
-                { "waf_logged", n => { WafLogged = n.GetIntValue(); } },
-                { "waf_passed", n => { WafPassed = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -653,9 +644,6 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Stats.Summary
             writer.WriteIntValue("tls_v13", TlsV13);
             writer.WriteIntValue("uncacheable", Uncacheable);
             writer.WriteIntValue("video", Video);
-            writer.WriteIntValue("waf_blocked", WafBlocked);
-            writer.WriteIntValue("waf_logged", WafLogged);
-            writer.WriteIntValue("waf_passed", WafPassed);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

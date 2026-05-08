@@ -26670,9 +26670,6 @@
                               "pci",
                               "logging",
                               "http2",
-                              "waf_logged",
-                              "waf_blocked",
-                              "waf_passed",
                               "attack_req_body_bytes",
                               "attack_req_header_bytes",
                               "attack_resp_synth_bytes",
@@ -26798,15 +26795,6 @@
                                 "type": "integer"
                               },
                               "http2": {
-                                "type": "integer"
-                              },
-                              "waf_logged": {
-                                "type": "integer"
-                              },
-                              "waf_blocked": {
-                                "type": "integer"
-                              },
-                              "waf_passed": {
                                 "type": "integer"
                               },
                               "attack_req_body_bytes": {
@@ -26868,9 +26856,6 @@
                               "pci",
                               "logging",
                               "http2",
-                              "waf_logged",
-                              "waf_blocked",
-                              "waf_passed",
                               "attack_req_body_bytes",
                               "attack_req_header_bytes",
                               "attack_resp_synth_bytes",
@@ -26996,15 +26981,6 @@
                                 "type": "integer"
                               },
                               "http2": {
-                                "type": "integer"
-                              },
-                              "waf_logged": {
-                                "type": "integer"
-                              },
-                              "waf_blocked": {
-                                "type": "integer"
-                              },
-                              "waf_passed": {
                                 "type": "integer"
                               },
                               "attack_req_body_bytes": {
@@ -27321,9 +27297,6 @@
                           "pci",
                           "logging",
                           "http2",
-                          "waf_logged",
-                          "waf_blocked",
-                          "waf_passed",
                           "attack_req_body_bytes",
                           "attack_req_header_bytes",
                           "attack_resp_synth_bytes",
@@ -27446,15 +27419,6 @@
                             "type": "integer"
                           },
                           "http2": {
-                            "type": "integer"
-                          },
-                          "waf_logged": {
-                            "type": "integer"
-                          },
-                          "waf_blocked": {
-                            "type": "integer"
-                          },
-                          "waf_passed": {
                             "type": "integer"
                           },
                           "attack_req_body_bytes": {
@@ -27624,9 +27588,6 @@
                           "pci",
                           "logging",
                           "http2",
-                          "waf_logged",
-                          "waf_blocked",
-                          "waf_passed",
                           "attack_req_body_bytes",
                           "attack_req_header_bytes",
                           "attack_resp_synth_bytes",
@@ -27752,15 +27713,6 @@
                             "type": "integer"
                           },
                           "http2": {
-                            "type": "integer"
-                          },
-                          "waf_logged": {
-                            "type": "integer"
-                          },
-                          "waf_blocked": {
-                            "type": "integer"
-                          },
-                          "waf_passed": {
                             "type": "integer"
                           },
                           "attack_req_body_bytes": {
@@ -29512,9 +29464,6 @@
                             "attack_passed_req_header_bytes",
                             "attack_passed_req_body_bytes",
                             "attack_resp_synth_bytes",
-                            "waf_blocked",
-                            "waf_logged",
-                            "waf_passed",
                             "bereq_header_bytes",
                             "bereq_body_bytes",
                             "req_header_bytes",
@@ -29755,15 +29704,6 @@
                               "type": "integer"
                             },
                             "attack_resp_synth_bytes": {
-                              "type": "integer"
-                            },
-                            "waf_blocked": {
-                              "type": "integer"
-                            },
-                            "waf_logged": {
-                              "type": "integer"
-                            },
-                            "waf_passed": {
                               "type": "integer"
                             },
                             "bereq_header_bytes": {
