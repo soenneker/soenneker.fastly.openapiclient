@@ -33,7 +33,6 @@ using Soenneker.Fastly.OpenApiClient.PublicIpList;
 using Soenneker.Fastly.OpenApiClient.Purge;
 using Soenneker.Fastly.OpenApiClient.RateLimiters;
 using Soenneker.Fastly.OpenApiClient.Resources;
-using Soenneker.Fastly.OpenApiClient.Security;
 using Soenneker.Fastly.OpenApiClient.Service;
 using Soenneker.Fastly.OpenApiClient.ServiceAuthorizations;
 using Soenneker.Fastly.OpenApiClient.Stars;
@@ -190,11 +189,6 @@ namespace Soenneker.Fastly.OpenApiClient
         public global::Soenneker.Fastly.OpenApiClient.Resources.ResourcesRequestBuilder Resources
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The security property</summary>
-        public global::Soenneker.Fastly.OpenApiClient.Security.SecurityRequestBuilder Security
-        {
-            get => new global::Soenneker.Fastly.OpenApiClient.Security.SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The service property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Service.ServiceRequestBuilder Service
