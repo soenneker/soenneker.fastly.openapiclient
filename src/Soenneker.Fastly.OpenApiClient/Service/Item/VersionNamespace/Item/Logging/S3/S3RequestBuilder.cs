@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3
 {
     /// <summary>
-    /// Builds and executes requests for operations under \service\{service_id}\version\{version_id}\logging\s3
+    /// Builds and executes requests for operations under \service\{serviceId}\version\{versionId}\logging\s3
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class S3RequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item.version.item.logging.s3.item collection</summary>
         /// <param name="position">The name for the real-time logging configuration.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.Item.WithLogging_s3_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.Item.WithLogging_s3_nameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.Item.WithLoggingS3NameItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.Item.WithLoggingS3NameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("logging_s3_name", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.Item.WithLogging_s3_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("loggingS3Name", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.Item.WithLoggingS3NameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logg
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public S3RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/version/{version_id}/logging/s3", pathParameters)
+        public S3RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/logging/s3", pathParameters)
         {
         }
         /// <summary>
@@ -42,47 +43,47 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logg
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public S3RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/version/{version_id}/logging/s3", rawUrl)
+        public S3RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/logging/s3", rawUrl)
         {
         }
         /// <summary>
         /// &quot;List all of the S3s for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListAwss3LogEndpoints200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListAwss3LogEndpoints200ResponseItem>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListAwss3LogEndpoints200ResponseItem>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAwss3LogEndpoints200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAwss3LogEndpoints200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// &quot;Create a S3 for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpoint200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpoint200Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpointXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpoint200Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpointXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpoint200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpoint200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all of the S3s for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -111,11 +112,11 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logg
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpointXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.S3.S3PostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAwss3LogEndpointXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

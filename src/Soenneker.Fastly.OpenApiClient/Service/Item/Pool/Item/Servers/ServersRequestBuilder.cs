@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Servers
 {
     /// <summary>
-    /// Builds and executes requests for operations under \service\{service_id}\pool\{pool_id}\servers
+    /// Builds and executes requests for operations under \service\{serviceId}\pool\{poolId}\servers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServersRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Servers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/pool/{pool_id}/servers", pathParameters)
+        public ServersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/pool/{poolId}/servers", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Servers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/pool/{pool_id}/servers", rawUrl)
+        public ServersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/pool/{poolId}/servers", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Lists all servers for a particular service and pool.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Servers.Servers&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListServersInAPool200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Servers.Servers>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListServersInAPool200ResponseItem>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Servers.Servers>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListServersInAPool200ResponseItem>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Servers.Servers>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Servers.Servers.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListServersInAPool200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListServersInAPool200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

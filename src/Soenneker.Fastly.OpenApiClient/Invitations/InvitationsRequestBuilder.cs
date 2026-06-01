@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.Invitations.Item;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,14 +20,14 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.invitations.item collection</summary>
         /// <param name="position">Alphanumeric string identifying an invitation.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Invitations.Item.WithInvitation_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Invitations.Item.WithInvitation_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Invitations.Item.WithInvitationItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Invitations.Item.WithInvitationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("invitation_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Invitations.Item.WithInvitation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("invitationId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Invitations.Item.WithInvitationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -48,40 +49,40 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
         /// <summary>
         /// &quot;List all invitations.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsRequestBuilder.InvitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsRequestBuilder.InvitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsRequestBuilder.InvitationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsRequestBuilder.InvitationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitationApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitationApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all invitations.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
@@ -110,11 +111,11 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitationApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitationApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

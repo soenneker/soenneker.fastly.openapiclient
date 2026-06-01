@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.TrafficStats
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ddos-protection\v1\events\{event_id}\rules\{rule_id}\traffic-stats
+    /// Builds and executes requests for operations under \ddos-protection\v1\events\{eventId}\rules\{ruleId}\traffic-stats
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TrafficStatsRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrafficStatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ddos-protection/v1/events/{event_id}/rules/{rule_id}/traffic-stats", pathParameters)
+        public TrafficStatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ddos-protection/v1/events/{eventId}/rules/{ruleId}/traffic-stats", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrafficStatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ddos-protection/v1/events/{event_id}/rules/{rule_id}/traffic-stats", rawUrl)
+        public TrafficStatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ddos-protection/v1/events/{eventId}/rules/{ruleId}/traffic-stats", rawUrl)
         {
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-traffic-stats-rule-get)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.TrafficStats.TrafficStatsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetTrafficStatsForARule200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.TrafficStats.TrafficStatsGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetTrafficStatsForARule200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.TrafficStats.TrafficStatsGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetTrafficStatsForARule200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.TrafficStats.TrafficStatsGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.TrafficStats.TrafficStatsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetTrafficStatsForARule200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetTrafficStatsForARule200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-traffic-stats-rule-get)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

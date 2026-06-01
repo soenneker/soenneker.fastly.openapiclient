@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries
 {
     /// <summary>
-    /// Builds and executes requests for operations under \service\{service_id}\acl\{acl_id}\entries
+    /// Builds and executes requests for operations under \service\{serviceId}\acl\{aclId}\entries
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntriesRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/acl/{acl_id}/entries{?direction*,page*,per_page*,sort*}", pathParameters)
+        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/acl/{aclId}/entries{?direction*,page*,per_page*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,47 +30,47 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/acl/{acl_id}/entries{?direction*,page*,per_page*,sort*}", rawUrl)
+        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/acl/{aclId}/entries{?direction*,page*,per_page*,sort*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;List ACL entries for a specified ACL.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.Entries&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListAclEntries200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.Entries>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesRequestBuilder.EntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListAclEntries200ResponseItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesRequestBuilder.EntriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.Entries>> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesRequestBuilder.EntriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListAclEntries200ResponseItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesRequestBuilder.EntriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.Entries>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.Entries.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAclEntries200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAclEntries200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// &quot;Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. Contact support to discuss raising this limit.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntries200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntries200Response?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntriesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntries200Response> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntriesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntries200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List ACL entries for a specified ACL.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -98,11 +99,11 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntriesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Fastly.OpenApiClient.Service.Item.Acl.Item.Entries.EntriesPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleAclEntriesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ngwaf\v1\workspaces\{workspace-id}\events
+    /// Builds and executes requests for operations under \ngwaf\v1\workspaces\{workspaceId}\events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.ngwaf.v1.workspaces.item.events.item collection</summary>
         /// <param name="position">Alphanumeric string identifying an event.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.Item.WithEvent_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.Item.WithEvent_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.Item.WithEventItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.Item.WithEventItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("event_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("eventId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.Item.WithEventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspace%2Did}/events{?from*,ip*,limit*,page*,signal*,status*,to*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspaceId}/events{?from*,ip*,limit*,page*,signal*,status*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,26 +43,26 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspace%2Did}/events{?from*,ip*,limit*,page*,signal*,status*,to*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspaceId}/events{?from*,ip*,limit*,page*,signal*,status*,to*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;List events in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListEvents2200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents2200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents2200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Events.EventsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents2200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEvents2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List events in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

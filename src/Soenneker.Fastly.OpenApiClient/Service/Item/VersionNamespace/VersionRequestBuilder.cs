@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace
 {
     /// <summary>
-    /// Builds and executes requests for operations under \service\{service_id}\version
+    /// Builds and executes requests for operations under \service\{serviceId}\version
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VersionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item.version.item collection</summary>
         /// <param name="position">Integer identifying a service version.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.WithVersion_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.WithVersion_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.WithVersionItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.WithVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("version_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.WithVersion_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("versionId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/version", pathParameters)
+        public VersionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version", pathParameters)
         {
         }
         /// <summary>
@@ -42,45 +43,45 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/version", rawUrl)
+        public VersionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version", rawUrl)
         {
         }
         /// <summary>
         /// &quot;List the versions for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionObject&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListVersionsOfAService200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionObject>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListVersionsOfAService200ResponseItem>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionObject>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListVersionsOfAService200ResponseItem>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionObject>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListVersionsOfAService200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListVersionsOfAService200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// &quot;Create a version for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceVersion200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionPostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceVersion200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionPostResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceVersion200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.VersionPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceVersion200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceVersion200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List the versions for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

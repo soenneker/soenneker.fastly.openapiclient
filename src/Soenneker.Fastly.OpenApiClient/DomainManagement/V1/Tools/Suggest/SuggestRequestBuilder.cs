@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest
         /// <summary>
         /// &quot;The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder.SuggestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

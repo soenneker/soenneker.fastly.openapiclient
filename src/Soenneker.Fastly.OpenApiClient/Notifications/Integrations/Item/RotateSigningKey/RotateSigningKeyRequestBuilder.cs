@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateSigningKey
 {
     /// <summary>
-    /// Builds and executes requests for operations under \notifications\integrations\{integration_id}\rotateSigningKey
+    /// Builds and executes requests for operations under \notifications\integrations\{integrationId}\rotateSigningKey
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RotateSigningKeyRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateS
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RotateSigningKeyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/integrations/{integration_id}/rotateSigningKey", pathParameters)
+        public RotateSigningKeyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/integrations/{integrationId}/rotateSigningKey", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateS
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RotateSigningKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/integrations/{integration_id}/rotateSigningKey", rawUrl)
+        public RotateSigningKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/integrations/{integrationId}/rotateSigningKey", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Rotate the webhook signing key. This immediately updates the signing key for any new notification.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateSigningKey.RotateSigningKeyPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateSigningKey.RotateSigningKeyPostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateSigningKey.RotateSigningKeyPostResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateSigningKey.RotateSigningKeyPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateSigningKey.RotateSigningKeyPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Rotate the webhook signing key. This immediately updates the signing key for any new notification.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

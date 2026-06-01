@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ngwaf\v1\workspaces\{workspace-id}\rate-limited-sources
+    /// Builds and executes requests for operations under \ngwaf\v1\workspaces\{workspaceId}\rate-limited-sources
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RateLimitedSourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.ngwaf.v1.workspaces.item.rateLimitedSources.item collection</summary>
         /// <param name="position">The ID of the rate limited source.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.Item.WithSource_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.Item.WithSource_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.Item.WithSourceItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.Item.WithSourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("source_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.Item.WithSource_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("sourceId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.Item.WithSourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RateLimitedSourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspace%2Did}/rate-limited-sources{?limit*,page*,signal*,source*}", pathParameters)
+        public RateLimitedSourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspaceId}/rate-limited-sources{?limit*,page*,signal*,source*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +43,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RateLimitedSourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspace%2Did}/rate-limited-sources{?limit*,page*,signal*,source*}", rawUrl)
+        public RateLimitedSourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspaceId}/rate-limited-sources{?limit*,page*,signal*,source*}", rawUrl)
         {
         }
         /// <summary>
@@ -65,20 +66,20 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ngwaf/rate-limited-sources/#ngwafListRateLimitedSources)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRateLimitedSources200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesRequestBuilder.RateLimitedSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetRateLimitedSources200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesRequestBuilder.RateLimitedSourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesRequestBuilder.RateLimitedSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetRateLimitedSources200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesRequestBuilder.RateLimitedSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetRateLimitedSources200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetRateLimitedSources200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ngwaf/rate-limited-sources/#ngwafBulkDeleteRateLimitedSources)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

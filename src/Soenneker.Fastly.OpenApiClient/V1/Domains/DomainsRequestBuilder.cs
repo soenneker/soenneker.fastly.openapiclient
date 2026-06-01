@@ -17,14 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Domains
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.v1.domains.item collection</summary>
         /// <param name="position">Alphanumeric string identifying the service.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.V1.Domains.Item.WithService_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.V1.Domains.Item.WithService_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.V1.Domains.Item.WithServiceItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.V1.Domains.Item.WithServiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("service_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.V1.Domains.Item.WithService_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("serviceId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.V1.Domains.Item.WithServiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Service.Item;
 using Soenneker.Fastly.OpenApiClient.Service.Search;
 using System.Collections.Generic;
@@ -25,14 +26,14 @@ namespace Soenneker.Fastly.OpenApiClient.Service
         }
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item collection</summary>
         /// <param name="position">Alphanumeric string identifying the service.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.WithService_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.WithService_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.WithServiceItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.WithServiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("service_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.WithService_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("serviceId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.WithServiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -54,41 +55,41 @@ namespace Soenneker.Fastly.OpenApiClient.Service
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#list-services)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Service.Service&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListServices200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Service>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.ServiceRequestBuilder.ServiceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListServices200ResponseItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.ServiceRequestBuilder.ServiceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Service>> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.ServiceRequestBuilder.ServiceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListServices200ResponseItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.ServiceRequestBuilder.ServiceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Service.Service>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Service.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListServices200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListServices200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#create-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.ServicePostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.ServicePostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Service.ServicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.ServicePostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Service.ServicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Service.ServicePostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.ServicePostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#list-services)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -117,11 +118,11 @@ namespace Soenneker.Fastly.OpenApiClient.Service
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Service.ServicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Service.ServicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

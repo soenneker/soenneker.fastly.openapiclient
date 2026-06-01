@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api-security\v1\services\{service_id}\tags
+    /// Builds and executes requests for operations under \api-security\v1\services\{serviceId}\tags
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.apiSecurity.v1.services.item.tags.item collection</summary>
         /// <param name="position">The unique identifier of the operation tag.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item.WithTag_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item.WithTag_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item.WithTagItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item.WithTagItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("tag_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item.WithTag_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tagId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item.WithTagItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api-security/v1/services/{service_id}/tags{?limit*,page*}", pathParameters)
+        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api-security/v1/services/{serviceId}/tags{?limit*,page*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,46 +43,46 @@ namespace Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api-security/v1/services/{service_id}/tags{?limit*,page*}", rawUrl)
+        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api-security/v1/services/{serviceId}/tags{?limit*,page*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;List all operation tags associated with a specific service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListOperationTags200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsRequestBuilder.TagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListOperationTags200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsRequestBuilder.TagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsRequestBuilder.TagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListOperationTags200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsRequestBuilder.TagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListOperationTags200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListOperationTags200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Create a new operation tag associated with a specific service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTag201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTag201Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTagRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTag201Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTagRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTag201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTag201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all operation tags associated with a specific service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -110,11 +111,11 @@ namespace Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTagRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.TagsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateOperationTagRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

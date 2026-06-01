@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tls\subscriptions\{tls_subscription_id}\authorizations
+    /// Builds and executes requests for operations under \tls\subscriptions\{tlsSubscriptionId}\authorizations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthorizationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.tls.subscriptions.item.authorizations.item collection</summary>
         /// <param name="position">Alphanumeric string identifying a TLS subscription.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.WithTls_authorization_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.WithTls_authorization_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.WithTlsAuthorizationItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.WithTlsAuthorizationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("tls_authorization_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.WithTls_authorization_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tlsAuthorizationId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.WithTlsAuthorizationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthorizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tls_subscription_id}/authorizations", pathParameters)
+        public AuthorizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}/authorizations", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthorizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tls_subscription_id}/authorizations", rawUrl)
+        public AuthorizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}/authorizations", rawUrl)
         {
         }
     }

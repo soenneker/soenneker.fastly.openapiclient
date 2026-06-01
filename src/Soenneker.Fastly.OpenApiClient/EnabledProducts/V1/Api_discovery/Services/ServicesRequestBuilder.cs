@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.Item;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,14 +20,14 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Servic
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.enabledProducts.v1.api_discovery.services.item collection</summary>
         /// <param name="position">Alphanumeric string identifying the service.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.Item.WithService_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.Item.WithService_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.Item.WithServiceItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.Item.WithServiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("service_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.Item.WithService_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("serviceId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.Item.WithServiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -48,20 +49,20 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Servic
         /// <summary>
         /// &quot;Get all the services for a customer that has the API Discovery product enabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.ServicesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetServicesWithProductEnabled200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.ServicesGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetServicesWithProductEnabled200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.ServicesGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetServicesWithProductEnabled200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.ServicesGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Services.ServicesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetServicesWithProductEnabled200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetServicesWithProductEnabled200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Get all the services for a customer that has the API Discovery product enabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

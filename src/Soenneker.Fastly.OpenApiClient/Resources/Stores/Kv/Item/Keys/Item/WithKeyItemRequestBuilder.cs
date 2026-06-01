@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \resources\stores\kv\{store_id}\keys\{key}
+    /// Builds and executes requests for operations under \resources\stores\kv\{storeId}\keys\{key}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithKeyItemRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/kv/{store_id}/keys/{key}{?add*,append*,background_fetch*,force*,prepend*}", pathParameters)
+        public WithKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/kv/{storeId}/keys/{key}{?add*,append*,background_fetch*,force*,prepend*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/kv/{store_id}/keys/{key}{?add*,append*,background_fetch*,force*,prepend*}", rawUrl)
+        public WithKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/kv/{storeId}/keys/{key}{?add*,append*,background_fetch*,force*,prepend*}", rawUrl)
         {
         }
         /// <summary>

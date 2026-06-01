@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From
 {
     /// <summary>
-    /// Builds and executes requests for operations under \service\{service_id}\diff\from
+    /// Builds and executes requests for operations under \service\{serviceId}\diff\from
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FromRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item.diff.from.item collection</summary>
         /// <param name="position">The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From.Item.WithFrom_version_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From.Item.WithFrom_version_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From.Item.WithFromVersionItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From.Item.WithFromVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("from_version_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From.Item.WithFrom_version_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("fromVersionId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From.Item.WithFromVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FromRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/diff/from", pathParameters)
+        public FromRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/diff/from", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Diff.From
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FromRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/diff/from", rawUrl)
+        public FromRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/diff/from", rawUrl)
         {
         }
     }

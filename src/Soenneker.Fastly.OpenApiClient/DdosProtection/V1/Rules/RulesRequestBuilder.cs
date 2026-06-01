@@ -17,14 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.ddosProtection.v1.rules.item collection</summary>
         /// <param name="position">The ID of the rule.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules.Item.WithRule_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules.Item.WithRule_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules.Item.WithRuleItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules.Item.WithRuleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("rule_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules.Item.WithRule_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("ruleId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules.Item.WithRuleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

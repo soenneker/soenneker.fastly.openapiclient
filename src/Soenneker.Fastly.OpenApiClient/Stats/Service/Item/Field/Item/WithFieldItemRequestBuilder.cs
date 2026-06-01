@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \stats\service\{service_id}\field\{field}
+    /// Builds and executes requests for operations under \stats\service\{serviceId}\field\{field}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFieldItemRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFieldItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/stats/service/{service_id}/field/{field}{?by*,datacenter*,from*,region*,to*}", pathParameters)
+        public WithFieldItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/stats/service/{serviceId}/field/{field}{?by*,datacenter*,from*,region*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFieldItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/stats/service/{service_id}/field/{field}{?by*,datacenter*,from*,region*,to*}", rawUrl)
+        public WithFieldItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/stats/service/{serviceId}/field/{field}{?by*,datacenter*,from*,region*,to*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Fetches the specified field from the historical stats for a given service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldItemRequestBuilder.WithFieldItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldItemRequestBuilder.WithFieldItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldItemRequestBuilder.WithFieldItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldItemRequestBuilder.WithFieldItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.Field.Item.WithFieldGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Fetches the specified field from the historical stats for a given service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

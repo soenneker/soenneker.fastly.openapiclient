@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic
 {
     /// <summary>
-    /// Builds and executes requests for operations under \service\{service_id}\version\{version_id}\logging\newrelic
+    /// Builds and executes requests for operations under \service\{serviceId}\version\{versionId}\logging\newrelic
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NewrelicRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item.version.item.logging.newrelic.item collection</summary>
         /// <param name="position">The name for the real-time logging configuration.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Item.WithLogging_newrelic_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Item.WithLogging_newrelic_nameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Item.WithLoggingNewrelicNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Item.WithLoggingNewrelicNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("logging_newrelic_name", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Item.WithLogging_newrelic_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("loggingNewrelicName", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Item.WithLoggingNewrelicNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logg
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NewrelicRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/version/{version_id}/logging/newrelic", pathParameters)
+        public NewrelicRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/logging/newrelic", pathParameters)
         {
         }
         /// <summary>
@@ -42,47 +43,47 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logg
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NewrelicRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{service_id}/version/{version_id}/logging/newrelic", rawUrl)
+        public NewrelicRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/logging/newrelic", rawUrl)
         {
         }
         /// <summary>
         /// &quot;List all of the New Relic Logs logging objects for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Newrelic&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListNewRelicLogEndpoints200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Newrelic>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListNewRelicLogEndpoints200ResponseItem>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Newrelic>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Fastly.OpenApiClient.Models.ListNewRelicLogEndpoints200ResponseItem>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Newrelic>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.Newrelic.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListNewRelicLogEndpoints200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListNewRelicLogEndpoints200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// &quot;Create a New Relic Logs logging object for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpoint200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpoint200Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpointXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpoint200Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpointXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpoint200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpoint200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all of the New Relic Logs logging objects for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -111,11 +112,11 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logg
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpointXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Newrelic.NewrelicPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateANewRelicLogEndpointXWwwFormUrlencodedRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

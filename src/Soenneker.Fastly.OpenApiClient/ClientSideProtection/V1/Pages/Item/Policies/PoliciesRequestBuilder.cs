@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.Item;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies
 {
     /// <summary>
-    /// Builds and executes requests for operations under \client-side-protection\v1\pages\{page_id}\policies
+    /// Builds and executes requests for operations under \client-side-protection\v1\pages\{pageId}\policies
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.clientSideProtection.v1.pages.item.policies.item collection</summary>
         /// <param name="position">Policy identifier.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.Item.WithPolicy_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.Item.WithPolicy_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.Item.WithPolicyItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.Item.WithPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("policy_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.Item.WithPolicy_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("policyId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.Item.WithPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Poli
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PoliciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/client-side-protection/v1/pages/{page_id}/policies{?limit*,page*}", pathParameters)
+        public PoliciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/client-side-protection/v1/pages/{pageId}/policies{?limit*,page*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,44 +43,44 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Poli
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/client-side-protection/v1/pages/{page_id}/policies{?limit*,page*}", rawUrl)
+        public PoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/client-side-protection/v1/pages/{pageId}/policies{?limit*,page*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;List all Content Security Policies for a page.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListPolicies200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListPolicies200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListPolicies200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListPolicies200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListPolicies200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Create a new Content Security Policy for a page.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreatePolicy201Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesPostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreatePolicy201Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesPostResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreatePolicy201Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies.PoliciesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreatePolicy201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreatePolicy201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all Content Security Policies for a page.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

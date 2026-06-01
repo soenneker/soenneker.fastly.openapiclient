@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tls\subscriptions\{tls_subscription_id}\authorizations\{tls_authorization_id}\globalsign_email_challenges
+    /// Builds and executes requests for operations under \tls\subscriptions\{tlsSubscriptionId}\authorizations\{tlsAuthorizationId}\globalsign_email_challenges
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Globalsign_email_challengesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.tls.subscriptions.item.authorizations.item.globalsign_email_challenges.item collection</summary>
         /// <param name="position">Alphanumeric string identifying a GlobalSign email challenge.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Item.WithGlobalsign_email_challenge_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Item.WithGlobalsign_email_challenge_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Item.WithGlobalsignEmailChallengeItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Item.WithGlobalsignEmailChallengeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("globalsign_email_challenge_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Item.WithGlobalsign_email_challenge_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("globalsignEmailChallengeId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Item.WithGlobalsignEmailChallengeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Globalsign_email_challengesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges", pathParameters)
+        public Globalsign_email_challengesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}/authorizations/{tlsAuthorizationId}/globalsign_email_challenges", pathParameters)
         {
         }
         /// <summary>
@@ -42,28 +43,28 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Globalsign_email_challengesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges", rawUrl)
+        public Globalsign_email_challengesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}/authorizations/{tlsAuthorizationId}/globalsign_email_challenges", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Creates an email challenge for a domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallengeApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallengeApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Creates an email challenge for a domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -73,11 +74,11 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallengeApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.Item.Globalsign_email_challenges.Globalsign_email_challengesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallengeApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

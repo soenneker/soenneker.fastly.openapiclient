@@ -17,14 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.RateLimiters
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.rateLimiters.item collection</summary>
         /// <param name="position">Alphanumeric string identifying the rate limiter.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.RateLimiters.Item.WithRate_limiter_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.RateLimiters.Item.WithRate_limiter_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.RateLimiters.Item.WithRateLimiterItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.RateLimiters.Item.WithRateLimiterItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("rate_limiter_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.RateLimiters.Item.WithRate_limiter_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("rateLimiterId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.RateLimiters.Item.WithRateLimiterItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

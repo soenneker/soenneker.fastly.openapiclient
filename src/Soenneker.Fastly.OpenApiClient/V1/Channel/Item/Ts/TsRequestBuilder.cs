@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\channel\{service_id}\ts
+    /// Builds and executes requests for operations under \v1\channel\{serviceId}\ts
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TsRequestBuilder : BaseRequestBuilder
@@ -23,14 +23,14 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts
         }
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.v1.channel.item.ts.item collection</summary>
         /// <param name="position">Timestamp in seconds (Unix epoch time).</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item.WithTimestamp_in_secondsItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item.WithTimestamp_in_secondsItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item.WithTimestampInSecondsItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item.WithTimestampInSecondsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("timestamp_in_seconds", position);
-                return new global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item.WithTimestamp_in_secondsItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("timestampInSeconds", position);
+                return new global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item.WithTimestampInSecondsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/channel/{service_id}/ts", pathParameters)
+        public TsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/channel/{serviceId}/ts", pathParameters)
         {
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/channel/{service_id}/ts", rawUrl)
+        public TsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/channel/{serviceId}/ts", rawUrl)
         {
         }
     }

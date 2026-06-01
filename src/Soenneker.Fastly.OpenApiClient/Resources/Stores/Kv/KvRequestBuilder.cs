@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -19,14 +20,14 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.resources.stores.kv.item collection</summary>
         /// <param name="position">ID of the store.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.WithStore_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.WithStore_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.WithStoreItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.WithStoreItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("store_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.WithStore_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("storeId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.WithStoreItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -48,40 +49,40 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/resources/kv-store/#kv-store-list)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListAllKvStores200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListAllKvStores200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListAllKvStores200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAllKvStores200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAllKvStores200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/resources/kv-store/#kv-store-create)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStore201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStore201Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStoreRequest body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStore201Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStoreRequest body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStore201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStore201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/resources/kv-store/#kv-store-list)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -110,11 +111,11 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStoreRequest body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateAkvStoreRequest body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.KvRequestBuilder.KvRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

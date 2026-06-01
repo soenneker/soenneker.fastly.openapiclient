@@ -17,14 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.ApexRedirects
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.apexRedirects.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ApexRedirects.Item.WithApex_redirect_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.ApexRedirects.Item.WithApex_redirect_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ApexRedirects.Item.WithApexRedirectItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.ApexRedirects.Item.WithApexRedirectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("apex_redirect_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.ApexRedirects.Item.WithApex_redirect_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("apexRedirectId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.ApexRedirects.Item.WithApexRedirectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

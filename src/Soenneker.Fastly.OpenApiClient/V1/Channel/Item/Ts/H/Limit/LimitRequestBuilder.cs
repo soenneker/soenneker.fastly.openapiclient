@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\channel\{service_id}\ts\h\limit
+    /// Builds and executes requests for operations under \v1\channel\{serviceId}\ts\h\limit
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LimitRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.v1.channel.item.ts.h.limit.item collection</summary>
         /// <param name="position">Maximum number of results to show.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit.Item.WithMax_entriesItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit.Item.WithMax_entriesItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit.Item.WithMaxEntriesItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit.Item.WithMaxEntriesItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("max_entries", position);
-                return new global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit.Item.WithMax_entriesItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("maxEntries", position);
+                return new global::Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit.Item.WithMaxEntriesItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LimitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/channel/{service_id}/ts/h/limit", pathParameters)
+        public LimitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/channel/{serviceId}/ts/h/limit", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.H.Limit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LimitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/channel/{service_id}/ts/h/limit", rawUrl)
+        public LimitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/channel/{serviceId}/ts/h/limit", rawUrl)
         {
         }
     }

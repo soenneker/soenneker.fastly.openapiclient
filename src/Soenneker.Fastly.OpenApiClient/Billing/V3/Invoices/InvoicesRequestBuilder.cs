@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.Item;
 using Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.MonthToDate;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,14 +26,14 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices
         }
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.billing.v3.invoices.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.Item.WithInvoice_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.Item.WithInvoice_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.Item.WithInvoiceItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.Item.WithInvoiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("invoice_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.Item.WithInvoice_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("invoiceId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.Item.WithInvoiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -54,20 +55,20 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices
         /// <summary>
         /// &quot;Returns the list of invoices, sorted by billing start date (newest to oldest).&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListOfInvoices200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListOfInvoices200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListOfInvoices200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesRequestBuilder.InvoicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.InvoicesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListOfInvoices200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListOfInvoices200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Returns the list of invoices, sorted by billing start date (newest to oldest).&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

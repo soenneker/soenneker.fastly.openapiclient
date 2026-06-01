@@ -17,14 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Origins.Services
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.metrics.origins.services.item collection</summary>
         /// <param name="position">Alphanumeric string identifying the service.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Metrics.Origins.Services.Item.WithService_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Metrics.Origins.Services.Item.WithService_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Metrics.Origins.Services.Item.WithServiceItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Metrics.Origins.Services.Item.WithServiceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("service_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Metrics.Origins.Services.Item.WithService_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("serviceId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Metrics.Origins.Services.Item.WithServiceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

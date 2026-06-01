@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.User.Item.Password
 {
     /// <summary>
-    /// Builds and executes requests for operations under \user\{user_-id}\password
+    /// Builds and executes requests for operations under \user\{user-id}\password
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PasswordRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item.Password
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PasswordRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/{user_%2Did}/password", pathParameters)
+        public PasswordRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/{user%2Did}/password", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item.Password
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PasswordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/{user_%2Did}/password", rawUrl)
+        public PasswordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/{user%2Did}/password", rawUrl)
         {
         }
     }

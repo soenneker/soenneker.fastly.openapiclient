@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ddos-protection\v1\events\{event_id}\rules
+    /// Builds and executes requests for operations under \ddos-protection\v1\events\{eventId}\rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.ddosProtection.v1.events.item.rules.item collection</summary>
         /// <param name="position">The ID of the rule.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.WithRule_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.WithRule_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.WithRuleItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.WithRuleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("rule_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.WithRule_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("ruleId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.WithRuleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ddos-protection/v1/events/{event_id}/rules{?cursor*,include*,limit*}", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ddos-protection/v1/events/{eventId}/rules{?cursor*,include*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,26 +43,26 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ddos-protection/v1/events/{event_id}/rules{?cursor*,include*,limit*}", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ddos-protection/v1/events/{eventId}/rules{?cursor*,include*,limit*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-rule-list)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.RulesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-rule-list)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

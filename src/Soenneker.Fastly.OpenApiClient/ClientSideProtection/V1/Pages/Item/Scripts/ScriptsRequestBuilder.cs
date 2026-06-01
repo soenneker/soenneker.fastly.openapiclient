@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.Item;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts
 {
     /// <summary>
-    /// Builds and executes requests for operations under \client-side-protection\v1\pages\{page_id}\scripts
+    /// Builds and executes requests for operations under \client-side-protection\v1\pages\{pageId}\scripts
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScriptsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.clientSideProtection.v1.pages.item.scripts.item collection</summary>
         /// <param name="position">Script identifier.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.Item.WithScript_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.Item.WithScript_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.Item.WithScriptItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.Item.WithScriptItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("script_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.Item.WithScript_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("scriptId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.Item.WithScriptItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scri
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScriptsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/client-side-protection/v1/pages/{page_id}/scripts{?limit*,page*}", pathParameters)
+        public ScriptsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/client-side-protection/v1/pages/{pageId}/scripts{?limit*,page*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,26 +43,26 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scri
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScriptsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/client-side-protection/v1/pages/{page_id}/scripts{?limit*,page*}", rawUrl)
+        public ScriptsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/client-side-protection/v1/pages/{pageId}/scripts{?limit*,page*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;List all scripts detected on a page.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListScripts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListScripts200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListScripts200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListScripts200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListScripts200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all scripts detected on a page.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

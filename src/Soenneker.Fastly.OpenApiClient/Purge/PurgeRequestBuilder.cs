@@ -17,14 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Purge
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.purge.item collection</summary>
         /// <param name="position">URL of object in cache to be purged.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Purge.Item.WithCached_urlItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Purge.Item.WithCached_urlItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Purge.Item.WithCachedUrlItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Purge.Item.WithCachedUrlItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("cached_url", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Purge.Item.WithCached_urlItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("cachedUrl", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Purge.Item.WithCachedUrlItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

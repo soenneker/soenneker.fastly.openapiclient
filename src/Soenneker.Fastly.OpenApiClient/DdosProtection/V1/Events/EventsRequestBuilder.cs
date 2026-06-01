@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,14 +20,14 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.ddosProtection.v1.events.item collection</summary>
         /// <param name="position">Alphanumeric string identifying an event.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.WithEvent_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.WithEvent_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.WithEventItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.WithEventItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("event_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("eventId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.WithEventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -48,20 +49,20 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-list)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetEvents200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetEvents200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetEvents200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.EventsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetEvents200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetEvents200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-list)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

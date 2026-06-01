@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry
 {
     /// <summary>
-    /// Builds and executes requests for operations under \resources\acls\{acl_id}\entry
+    /// Builds and executes requests for operations under \resources\acls\{aclId}\entry
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.resources.acls.item.entry.item collection</summary>
         /// <param name="position">valid IPv4 or IPv6 address.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry.Item.WithAcl_ipItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry.Item.WithAcl_ipItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry.Item.WithAclIpItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry.Item.WithAclIpItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("acl_ip", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry.Item.WithAcl_ipItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("aclIp", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry.Item.WithAclIpItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/acls/{acl_id}/entry", pathParameters)
+        public EntryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/acls/{aclId}/entry", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entry
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/acls/{acl_id}/entry", rawUrl)
+        public EntryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/acls/{aclId}/entry", rawUrl)
         {
         }
     }

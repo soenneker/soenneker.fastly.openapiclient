@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.Item;
+using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,14 +20,14 @@ namespace Soenneker.Fastly.OpenApiClient.Iam.V1.Roles
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.iam.v1.roles.item collection</summary>
         /// <param name="position">Alphanumeric string identifying the role.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.Item.WithRole_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.Item.WithRole_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.Item.WithRoleItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.Item.WithRoleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("role_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.Item.WithRole_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("roleId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.Item.WithRoleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -48,20 +49,20 @@ namespace Soenneker.Fastly.OpenApiClient.Iam.V1.Roles
         /// <summary>
         /// &quot;Retrieve a paginated list of IAM roles available in the account.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Retrieve a paginated list of IAM roles available in the account.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

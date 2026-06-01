@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.ClientKey;
 using Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item;
 using Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SigningKey;
@@ -31,14 +32,14 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret
         }
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.resources.stores.secret.item collection</summary>
         /// <param name="position">ID of the store.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.WithStore_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.WithStore_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.WithStoreItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.WithStoreItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("store_id", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.WithStore_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("storeId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.WithStoreItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -60,40 +61,40 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/resources/secret-store/#get-secret-stores)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAllSecretStores200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretRequestBuilder.SecretRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAllSecretStores200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretRequestBuilder.SecretRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretRequestBuilder.SecretRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAllSecretStores200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretRequestBuilder.SecretRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretGetResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAllSecretStores200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAllSecretStores200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Create a new secret store.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStore201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStore201Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStoreRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStore201Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStoreRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStore201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStore201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/resources/secret-store/#get-secret-stores)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
@@ -122,11 +123,11 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStoreRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.SecretPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Fastly.OpenApiClient.Models.CreateNewSecretStoreRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
