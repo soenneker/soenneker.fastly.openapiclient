@@ -35,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions{?filter%5Bcertificate_authority%5D*,filter%5Bhas_active_order%5D*,filter%5Bstate%5D*,filter%5Btls_domains%2Eid%5D*,include*,page%5Bnumber%5D*,page%5Bsize%5D*,sort*}", pathParameters)
+        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions{?filter%5Bcertificate_authority%5D*,filter%5Bhas_active_order%5D*,filter%5Bstate%5D*,filter%5Btls_domains%2Eid%5D*,include*,page%5Bnumber%5D*,page%5Bsize%5D*,sort*}", rawUrl)
+        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

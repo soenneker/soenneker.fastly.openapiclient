@@ -35,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Certificates
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CertificatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/certificates{?filter%5Bin_use%5D*,filter%5Bnot_after%5D*,filter%5Btls_domains%2Eid%5D*,include*,page%5Bnumber%5D*,page%5Bsize%5D*,sort*}", pathParameters)
+        public CertificatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Certificates
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/certificates{?filter%5Bin_use%5D*,filter%5Bnot_after%5D*,filter%5Btls_domains%2Eid%5D*,include*,page%5Bnumber%5D*,page%5Bsize%5D*,sort*}", rawUrl)
+        public CertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
