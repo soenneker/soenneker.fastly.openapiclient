@@ -120,7 +120,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item.WithTlsConfigurationItemRequestBuilder.WithTlsConfigurationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tls/configurations/{tlsConfigurationId}{?include*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/vnd.api+json");
             return requestInfo;

@@ -160,7 +160,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder.ServiceAuthorizationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/service-authorizations{?page%5Bnumber%5D*,page%5Bsize%5D*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/vnd.api+json");
             return requestInfo;

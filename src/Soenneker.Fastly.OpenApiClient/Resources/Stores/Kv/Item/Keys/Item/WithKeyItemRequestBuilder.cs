@@ -99,7 +99,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/resources/stores/kv/{storeId}/keys/{key}{?force*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -117,7 +117,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/resources/stores/kv/{storeId}/keys/{key}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -135,7 +135,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/resources/stores/kv/{storeId}/keys/{key}{?add*,append*,background_fetch*,prepend*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

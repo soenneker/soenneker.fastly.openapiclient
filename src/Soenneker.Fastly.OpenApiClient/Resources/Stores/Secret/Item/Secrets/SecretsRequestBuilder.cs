@@ -138,7 +138,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets.SecretsRequestBuilder.SecretsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/resources/stores/secret/{storeId}/secrets{?cursor*,limit*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

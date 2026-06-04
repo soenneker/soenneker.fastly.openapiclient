@@ -98,7 +98,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.CertificatesRequestBuilder.CertificatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tls/bulk/certificates{?filter%5Bnot_after%5D*,filter%5Bnot_before%5D*,filter%5Btls_domain%2Eid%5D*,page%5Bnumber%5D*,page%5Bsize%5D*,sort*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/vnd.api+json");
             return requestInfo;
@@ -119,7 +119,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/tls/bulk/certificates", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/vnd.api+json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/vnd.api+json", body);
