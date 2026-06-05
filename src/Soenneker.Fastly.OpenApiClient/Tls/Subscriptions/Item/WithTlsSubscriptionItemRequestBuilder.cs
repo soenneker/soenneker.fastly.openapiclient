@@ -28,7 +28,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTlsSubscriptionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public WithTlsSubscriptionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}{?force*,include*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTlsSubscriptionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public WithTlsSubscriptionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}{?force*,include*}", rawUrl)
         {
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -126,7 +126,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}{?include*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/vnd.api+json");
             return requestInfo;
@@ -147,7 +147,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/tls/subscriptions/{tlsSubscriptionId}{?force*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/vnd.api+json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/vnd.api+json", body);

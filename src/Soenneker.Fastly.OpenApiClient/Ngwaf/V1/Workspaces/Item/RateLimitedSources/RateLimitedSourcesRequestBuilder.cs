@@ -35,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RateLimitedSourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public RateLimitedSourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspaceId}/rate-limited-sources{?limit*,page*,signal*,source*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RateLimitedSourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public RateLimitedSourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ngwaf/v1/workspaces/{workspaceId}/rate-limited-sources{?limit*,page*,signal*,source*}", rawUrl)
         {
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesRequestBuilder.RateLimitedSourcesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/ngwaf/v1/workspaces/{workspaceId}/rate-limited-sources{?signal*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -113,7 +113,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesRequestBuilder.RateLimitedSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/ngwaf/v1/workspaces/{workspaceId}/rate-limited-sources{?limit*,page*,signal*,source*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

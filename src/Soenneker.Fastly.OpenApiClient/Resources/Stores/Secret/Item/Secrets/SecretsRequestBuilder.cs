@@ -35,7 +35,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/secret/{storeId}/secrets", pathParameters)
+        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/secret/{storeId}/secrets{?cursor*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/secret/{storeId}/secrets", rawUrl)
+        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/secret/{storeId}/secrets{?cursor*,limit*}", rawUrl)
         {
         }
         /// <summary>
@@ -138,7 +138,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets.SecretsRequestBuilder.SecretsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/resources/stores/secret/{storeId}/secrets{?cursor*,limit*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
