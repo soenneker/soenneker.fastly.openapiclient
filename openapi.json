@@ -39987,6 +39987,7 @@
                       "items": {
                         "required": [
                           "id",
+                          "workspace_uid",
                           "name",
                           "description",
                           "mode",
@@ -40001,6 +40002,9 @@
                         "type": "object",
                         "properties": {
                           "id": {
+                            "type": "string"
+                          },
+                          "workspace_uid": {
                             "type": "string"
                           },
                           "name": {
@@ -40150,6 +40154,7 @@
                 "schema": {
                   "required": [
                     "id",
+                    "workspace_uid",
                     "name",
                     "description",
                     "mode",
@@ -40164,6 +40169,9 @@
                   "type": "object",
                   "properties": {
                     "id": {
+                      "type": "string"
+                    },
+                    "workspace_uid": {
                       "type": "string"
                     },
                     "name": {
@@ -40254,6 +40262,7 @@
                 "schema": {
                   "required": [
                     "id",
+                    "workspace_uid",
                     "name",
                     "description",
                     "mode",
@@ -40268,6 +40277,9 @@
                   "type": "object",
                   "properties": {
                     "id": {
+                      "type": "string"
+                    },
+                    "workspace_uid": {
                       "type": "string"
                     },
                     "name": {
@@ -40449,6 +40461,7 @@
                 "schema": {
                   "required": [
                     "id",
+                    "workspace_uid",
                     "name",
                     "description",
                     "mode",
@@ -40463,6 +40476,9 @@
                   "type": "object",
                   "properties": {
                     "id": {
+                      "type": "string"
+                    },
+                    "workspace_uid": {
                       "type": "string"
                     },
                     "name": {

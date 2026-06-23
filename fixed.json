@@ -43002,6 +43002,7 @@
       "CreateAWorkspace201Response": {
         "required": [
           "id",
+          "workspace_uid",
           "name",
           "description",
           "mode",
@@ -43016,6 +43017,9 @@
         "type": "object",
         "properties": {
           "id": {
+            "type": "string"
+          },
+          "workspace_uid": {
             "type": "string"
           },
           "name": {
@@ -43056,6 +43060,7 @@
       "GetAWorkspace200Response": {
         "required": [
           "id",
+          "workspace_uid",
           "name",
           "description",
           "mode",
@@ -43070,6 +43075,9 @@
         "type": "object",
         "properties": {
           "id": {
+            "type": "string"
+          },
+          "workspace_uid": {
             "type": "string"
           },
           "name": {
@@ -43152,6 +43160,7 @@
       "EditAWorkspace200Response": {
         "required": [
           "id",
+          "workspace_uid",
           "name",
           "description",
           "mode",
@@ -43166,6 +43175,9 @@
         "type": "object",
         "properties": {
           "id": {
+            "type": "string"
+          },
+          "workspace_uid": {
             "type": "string"
           },
           "name": {
@@ -59885,6 +59897,7 @@
       "ListWorkspaces200ResponseDataItem": {
         "required": [
           "id",
+          "workspace_uid",
           "name",
           "description",
           "mode",
@@ -59899,6 +59912,9 @@
         "type": "object",
         "properties": {
           "id": {
+            "type": "string"
+          },
+          "workspace_uid": {
             "type": "string"
           },
           "name": {

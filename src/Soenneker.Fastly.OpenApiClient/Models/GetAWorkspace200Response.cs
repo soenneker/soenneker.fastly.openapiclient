@@ -96,6 +96,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string UpdatedAt { get; set; }
 #endif
+        /// <summary>The workspace_uid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkspaceUid { get; set; }
+#nullable restore
+#else
+        public string WorkspaceUid { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAWorkspace200Response"/> and sets the default values.
         /// </summary>
@@ -132,6 +140,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "mode", n => { Mode = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "workspace_uid", n => { WorkspaceUid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -152,6 +161,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            writer.WriteStringValue("workspace_uid", WorkspaceUid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
