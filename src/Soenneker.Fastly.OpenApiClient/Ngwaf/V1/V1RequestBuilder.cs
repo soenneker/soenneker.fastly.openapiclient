@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.DefaultDashboards;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Lists;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Reports;
+using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Requests;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Rules;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Signals;
 using Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Timeseries;
@@ -35,6 +36,11 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1
         public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Reports.ReportsRequestBuilder Reports
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The requests property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Requests.RequestsRequestBuilder Requests
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Requests.RequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Rules.RulesRequestBuilder Rules

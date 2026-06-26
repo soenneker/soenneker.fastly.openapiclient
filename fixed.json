@@ -14375,11 +14375,75 @@
         ]
       }
     },
+    "/ngwaf/v1/requests": {
+      "get": {
+        "summary": "Search account level requests",
+        "description": "\"Find requests in an account.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "SearchAccountLevelRequests",
+        "parameters": [
+          {
+            "name": "export",
+            "in": "query",
+            "description": "Request to download the content as a file. Uses the Accept header to determine which format to download.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number of the collection to request.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "\"Search query. See Search Syntax: https://www.fastly.com/documentation/guides/next-gen-waf/reference/searching-for-requests/.\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "workspace_ids",
+            "in": "query",
+            "description": "Filter requests by workspace IDs.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of requests.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchAccountLevelRequests200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/ngwaf/v1/workspaces/{workspaceId}/requests": {
       "get": {
-        "summary": "Search requests",
+        "summary": "Search workspace level requests",
         "description": "\"Find requests in a workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "SearchRequests",
+        "operationId": "SearchWorkspaceLevelRequests",
         "parameters": [
           {
             "name": "workspaceId",
@@ -14425,11 +14489,11 @@
         ],
         "responses": {
           "200": {
-            "description": "200 List of requests.",
+            "description": "200 List of workspace requests.",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchRequests200Response"
+                  "$ref": "#/components/schemas/SearchWorkspaceLevelRequests200Response"
                 }
               }
             }
@@ -41538,7 +41602,7 @@
           }
         }
       },
-      "SearchRequests200Response": {
+      "SearchAccountLevelRequests200Response": {
         "required": [
           "meta",
           "data"
@@ -41546,12 +41610,30 @@
         "type": "object",
         "properties": {
           "meta": {
-            "$ref": "#/components/schemas/SearchRequests200ResponseMeta"
+            "$ref": "#/components/schemas/SearchAccountLevelRequests200ResponseMeta"
           },
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SearchRequests200ResponseDataItem"
+              "$ref": "#/components/schemas/SearchAccountLevelRequests200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "SearchWorkspaceLevelRequests200Response": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/SearchWorkspaceLevelRequests200ResponseMeta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchWorkspaceLevelRequests200ResponseDataItem"
             }
           }
         }
@@ -58699,7 +58781,7 @@
           }
         }
       },
-      "SearchRequests200ResponseMeta": {
+      "SearchAccountLevelRequests200ResponseMeta": {
         "required": [
           "limit",
           "total"
@@ -58714,7 +58796,130 @@
           }
         }
       },
-      "SearchRequests200ResponseDataItem": {
+      "SearchAccountLevelRequests200ResponseDataItem": {
+        "required": [
+          "id",
+          "workspace_id",
+          "timestamp",
+          "server_hostname",
+          "server_name",
+          "uri",
+          "scheme",
+          "path",
+          "user_agent",
+          "remote_ip",
+          "remote_hostname",
+          "country",
+          "method",
+          "protocol",
+          "tls_protocol",
+          "tls_cipher",
+          "response_code",
+          "response_size",
+          "response_time",
+          "agent_response_code",
+          "request_headers",
+          "response_headers",
+          "signals"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "workspace_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "server_hostname": {
+            "type": "string"
+          },
+          "server_name": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          },
+          "scheme": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "user_agent": {
+            "type": "string"
+          },
+          "remote_ip": {
+            "type": "string"
+          },
+          "remote_hostname": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "protocol": {
+            "type": "string"
+          },
+          "tls_protocol": {
+            "type": "string"
+          },
+          "tls_cipher": {
+            "type": "string"
+          },
+          "response_code": {
+            "type": "integer"
+          },
+          "response_size": {
+            "type": "integer"
+          },
+          "response_time": {
+            "type": "integer"
+          },
+          "agent_response_code": {
+            "type": "integer"
+          },
+          "request_headers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchAccountLevelRequests200ResponseDataItemRequestHeadersItem"
+            }
+          },
+          "response_headers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchAccountLevelRequests200ResponseDataItemResponseHeadersItem"
+            }
+          },
+          "signals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchAccountLevelRequests200ResponseDataItemSignalsItem"
+            }
+          }
+        }
+      },
+      "SearchWorkspaceLevelRequests200ResponseMeta": {
+        "required": [
+          "limit",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          }
+        }
+      },
+      "SearchWorkspaceLevelRequests200ResponseDataItem": {
         "required": [
           "id",
           "timestamp",
@@ -58801,19 +59006,19 @@
           "request_headers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SearchRequests200ResponseDataItemRequestHeadersItem"
+              "$ref": "#/components/schemas/SearchWorkspaceLevelRequests200ResponseDataItemRequestHeadersItem"
             }
           },
           "response_headers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SearchRequests200ResponseDataItemResponseHeadersItem"
+              "$ref": "#/components/schemas/SearchWorkspaceLevelRequests200ResponseDataItemResponseHeadersItem"
             }
           },
           "signals": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SearchRequests200ResponseDataItemSignalsItem"
+              "$ref": "#/components/schemas/SearchWorkspaceLevelRequests200ResponseDataItemSignalsItem"
             }
           }
         }
@@ -70958,7 +71163,7 @@
           }
         }
       },
-      "SearchRequests200ResponseDataItemRequestHeadersItem": {
+      "SearchAccountLevelRequests200ResponseDataItemRequestHeadersItem": {
         "required": [
           "name",
           "value"
@@ -70973,7 +71178,7 @@
           }
         }
       },
-      "SearchRequests200ResponseDataItemResponseHeadersItem": {
+      "SearchAccountLevelRequests200ResponseDataItemResponseHeadersItem": {
         "required": [
           "name",
           "value"
@@ -70988,7 +71193,64 @@
           }
         }
       },
-      "SearchRequests200ResponseDataItemSignalsItem": {
+      "SearchAccountLevelRequests200ResponseDataItemSignalsItem": {
+        "required": [
+          "id",
+          "location",
+          "value",
+          "detector",
+          "detector_scope"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "detector": {
+            "type": "string"
+          },
+          "detector_scope": {
+            "type": "string"
+          }
+        }
+      },
+      "SearchWorkspaceLevelRequests200ResponseDataItemRequestHeadersItem": {
+        "required": [
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "SearchWorkspaceLevelRequests200ResponseDataItemResponseHeadersItem": {
+        "required": [
+          "name",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "SearchWorkspaceLevelRequests200ResponseDataItemSignalsItem": {
         "required": [
           "id",
           "location",

@@ -9,7 +9,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchRequests200ResponseDataItem : IAdditionalDataHolder, IParsable
+    public partial class SearchWorkspaceLevelRequests200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -75,20 +75,20 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The request_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemRequestHeadersItem>? RequestHeaders { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemRequestHeadersItem>? RequestHeaders { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemRequestHeadersItem> RequestHeaders { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemRequestHeadersItem> RequestHeaders { get; set; }
 #endif
         /// <summary>The response_code property</summary>
         public int? ResponseCode { get; set; }
         /// <summary>The response_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemResponseHeadersItem>? ResponseHeaders { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemResponseHeadersItem>? ResponseHeaders { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemResponseHeadersItem> ResponseHeaders { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemResponseHeadersItem> ResponseHeaders { get; set; }
 #endif
         /// <summary>The response_size property</summary>
         public int? ResponseSize { get; set; }
@@ -121,10 +121,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The signals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemSignalsItem>? Signals { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemSignalsItem>? Signals { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemSignalsItem> Signals { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemSignalsItem> Signals { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,21 +167,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UserAgent { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItem"/> and sets the default values.
         /// </summary>
-        public SearchRequests200ResponseDataItem()
+        public SearchWorkspaceLevelRequests200ResponseDataItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItem();
+            return new global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,15 +199,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "protocol", n => { Protocol = n.GetStringValue(); } },
                 { "remote_hostname", n => { RemoteHostname = n.GetStringValue(); } },
                 { "remote_ip", n => { RemoteIp = n.GetStringValue(); } },
-                { "request_headers", n => { RequestHeaders = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemRequestHeadersItem>(global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemRequestHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "request_headers", n => { RequestHeaders = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemRequestHeadersItem>(global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemRequestHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "response_code", n => { ResponseCode = n.GetIntValue(); } },
-                { "response_headers", n => { ResponseHeaders = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemResponseHeadersItem>(global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemResponseHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "response_headers", n => { ResponseHeaders = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemResponseHeadersItem>(global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemResponseHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "response_size", n => { ResponseSize = n.GetIntValue(); } },
                 { "response_time", n => { ResponseTime = n.GetIntValue(); } },
                 { "scheme", n => { Scheme = n.GetStringValue(); } },
                 { "server_hostname", n => { ServerHostname = n.GetStringValue(); } },
                 { "server_name", n => { ServerName = n.GetStringValue(); } },
-                { "signals", n => { Signals = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemSignalsItem>(global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemSignalsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "signals", n => { Signals = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemSignalsItem>(global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemSignalsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timestamp", n => { Timestamp = n.GetStringValue(); } },
                 { "tls_cipher", n => { TlsCipher = n.GetStringValue(); } },
                 { "tls_protocol", n => { TlsProtocol = n.GetStringValue(); } },
@@ -230,15 +230,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("protocol", Protocol);
             writer.WriteStringValue("remote_hostname", RemoteHostname);
             writer.WriteStringValue("remote_ip", RemoteIp);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemRequestHeadersItem>("request_headers", RequestHeaders);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemRequestHeadersItem>("request_headers", RequestHeaders);
             writer.WriteIntValue("response_code", ResponseCode);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemResponseHeadersItem>("response_headers", ResponseHeaders);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemResponseHeadersItem>("response_headers", ResponseHeaders);
             writer.WriteIntValue("response_size", ResponseSize);
             writer.WriteIntValue("response_time", ResponseTime);
             writer.WriteStringValue("scheme", Scheme);
             writer.WriteStringValue("server_hostname", ServerHostname);
             writer.WriteStringValue("server_name", ServerName);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchRequests200ResponseDataItemSignalsItem>("signals", Signals);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200ResponseDataItemSignalsItem>("signals", Signals);
             writer.WriteStringValue("timestamp", Timestamp);
             writer.WriteStringValue("tls_cipher", TlsCipher);
             writer.WriteStringValue("tls_protocol", TlsProtocol);
