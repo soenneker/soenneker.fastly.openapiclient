@@ -48,6 +48,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The routing_configuration_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RoutingConfigurationId { get; set; }
+#nullable restore
+#else
+        public string RoutingConfigurationId { get; set; }
+#endif
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "fqdn", n => { Fqdn = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "routing_configuration_id", n => { RoutingConfigurationId = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "verified", n => { Verified = n.GetBoolValue(); } },
@@ -113,6 +122,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("fqdn", Fqdn);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("routing_configuration_id", RoutingConfigurationId);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteBoolValue("verified", Verified);

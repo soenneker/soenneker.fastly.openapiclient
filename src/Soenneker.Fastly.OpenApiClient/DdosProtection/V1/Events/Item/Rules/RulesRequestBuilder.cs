@@ -19,7 +19,7 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules
     public partial class RulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.ddosProtection.v1.events.item.rules.item collection</summary>
-        /// <param name="position">The ID of the rule.</param>
+        /// <param name="position">Alphanumeric string identifying the rule. Stable across versions.</param>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.WithRuleItemRequestBuilder"/></returns>
         public global::Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item.Rules.Item.WithRuleItemRequestBuilder this[string position]
         {

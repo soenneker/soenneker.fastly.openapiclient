@@ -16,8 +16,30 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The limit property</summary>
         public int? Limit { get; set; }
-        /// <summary>The total property</summary>
-        public int? Total { get; set; }
+        /// <summary>The next_cursor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NextCursor { get; set; }
+#nullable restore
+#else
+        public string NextCursor { get; set; }
+#endif
+        /// <summary>The previous_cursor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousCursor { get; set; }
+#nullable restore
+#else
+        public string PreviousCursor { get; set; }
+#endif
+        /// <summary>The sort property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Sort { get; set; }
+#nullable restore
+#else
+        public string Sort { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseMeta"/> and sets the default values.
         /// </summary>
@@ -44,7 +66,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "limit", n => { Limit = n.GetIntValue(); } },
-                { "total", n => { Total = n.GetIntValue(); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
+                { "previous_cursor", n => { PreviousCursor = n.GetStringValue(); } },
+                { "sort", n => { Sort = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +79,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("limit", Limit);
-            writer.WriteIntValue("total", Total);
+            writer.WriteStringValue("next_cursor", NextCursor);
+            writer.WriteStringValue("previous_cursor", PreviousCursor);
+            writer.WriteStringValue("sort", Sort);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

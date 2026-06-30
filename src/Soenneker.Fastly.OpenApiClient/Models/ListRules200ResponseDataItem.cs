@@ -12,13 +12,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     public partial class ListRules200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actions property</summary>
+        /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemActionsItem>? Actions { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemAction? Action { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemActionsItem> Actions { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemAction Action { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -38,24 +38,6 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The description property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
-        /// <summary>The group_operator property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GroupOperator { get; set; }
-#nullable restore
-#else
-        public string GroupOperator { get; set; }
-#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,30 +46,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The request_logging property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RequestLogging { get; set; }
-#nullable restore
-#else
-        public string RequestLogging { get; set; }
-#endif
-        /// <summary>The scope property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemScope? Scope { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemScope Scope { get; set; }
-#endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The is_default property</summary>
+        public bool? IsDefault { get; set; }
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,16 +81,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemActionsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemAction>(global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemAction.CreateFromDiscriminatorValue); } },
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemConditionsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemConditionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "group_operator", n => { GroupOperator = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "request_logging", n => { RequestLogging = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemScope>(global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemScope.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -141,16 +96,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemActionsItem>("actions", Actions);
+            writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemAction>("action", Action);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemConditionsItem>("conditions", Conditions);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteStringValue("group_operator", GroupOperator);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("request_logging", RequestLogging);
-            writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListRules200ResponseDataItemScope>("scope", Scope);
-            writer.WriteStringValue("type", Type);
+            writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

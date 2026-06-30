@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.Notifications.IntegrationTypes;
 using Soenneker.Fastly.OpenApiClient.Notifications.Integrations;
 using Soenneker.Fastly.OpenApiClient.Notifications.MailinglistConfirmations;
+using Soenneker.Fastly.OpenApiClient.Notifications.V1;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -31,6 +32,11 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications
         public global::Soenneker.Fastly.OpenApiClient.Notifications.MailinglistConfirmations.MailinglistConfirmationsRequestBuilder MailinglistConfirmations
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Notifications.MailinglistConfirmations.MailinglistConfirmationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The v1 property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Notifications.V1.V1RequestBuilder V1
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Notifications.V1.V1RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Notifications.NotificationsRequestBuilder"/> and sets the default values.

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Domains;
+using Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs;
 using Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1
         public global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Domains.DomainsRequestBuilder Domains
         {
             get => new global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The routingConfigs property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs.RoutingConfigsRequestBuilder RoutingConfigs
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs.RoutingConfigsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tools property</summary>
         public global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.ToolsRequestBuilder Tools

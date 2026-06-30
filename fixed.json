@@ -4442,6 +4442,955 @@
         ]
       }
     },
+    "/domain-management/v1/routing-configs": {
+      "get": {
+        "summary": "List routing configs",
+        "description": "\"List all routing configs for the authenticated customer.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListRoutingConfigs",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The order in which to list the results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "Filter configs by lifecycle state. Accepts a comma-separated list of state values (e.g. ?state=active,active-with-draft). Returns only configs whose current state matches one of the provided values. Returns 400 if any value is not a recognised state.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A list of routing configs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListRoutingConfigs200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create a routing config",
+        "description": "\"Create a new routing config. An optional initial_version may be provided to seed the config with paths and rules in a single request, and may also be activated immediately.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "CreateARoutingConfig",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateARoutingConfigRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 A routing config.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateARoutingConfig201Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}": {
+      "get": {
+        "summary": "Get a routing config",
+        "description": "\"Retrieve a single routing config by its identifier.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetARoutingConfig",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A routing config.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetARoutingConfig200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a routing config",
+        "description": "\"Delete a routing config. By default, configs that have an active version cannot be deleted. Pass force=true to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The force parameter does not bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of force.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeleteARoutingConfig",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "When true, allows deleting a routing config that has an active version. This is destructive — traffic routing for any paths served by the config will stop immediately.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 No content."
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/paths": {
+      "get": {
+        "summary": "List paths",
+        "description": "\"List paths for the config. Returns paths from the active version if one exists, otherwise from the draft.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListPaths",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "match",
+            "in": "query",
+            "description": "How to match the value of the path filter against existing path patterns. Has no effect unless path is also provided.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "description": "Filter results by path pattern. The match strategy is controlled by the match parameter.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The order in which to list the results.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A list of paths.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListPaths200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create a path",
+        "description": "\"Add a new path to the config's draft version. If no draft exists, one is created automatically by cloning the active version.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "CreateAPath",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAPathRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 A path.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAPath201Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/paths/{pathId}": {
+      "get": {
+        "summary": "Get a path",
+        "description": "\"Retrieve a single path by its stable identifier.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetAPath",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pathId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the path. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A path.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAPath200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a path",
+        "description": "\"Delete a path from the config's draft version. If no draft exists, one is created automatically by cloning the active version.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeleteAPath",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pathId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the path. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 No content."
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update a path",
+        "description": "\"Update a path on the config's draft version. If no draft exists, one is created automatically by cloning the active version.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdateAPath",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pathId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the path. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAPathRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 A path.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAPath200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/paths/{pathId}/rules": {
+      "get": {
+        "summary": "List rules",
+        "description": "\"List all rules for a path in evaluation order.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListRules",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pathId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the path. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The order in which to list the results.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A list of rules.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListRules200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create a rule",
+        "description": "\"Add a new rule to a path on the config's draft version. If no draft exists, one is created automatically by cloning the active version. A rule with an empty conditions array is a default (catch-all) rule and there can be at most one default rule per path.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "CreateARule",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pathId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the path. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateARuleRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 A rule.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateARule201Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/paths/{pathId}/rules/{ruleId}": {
+      "get": {
+        "summary": "Get a rule",
+        "description": "\"Retrieve a single rule by its stable identifier.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetARule",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pathId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the path. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A rule.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetARule200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete a rule",
+        "description": "\"Delete a rule from the config's draft version. If no draft exists, one is created automatically by cloning the active version.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeleteARule",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pathId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the path. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 No content."
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update a rule",
+        "description": "\"Update a rule on the config's draft version. If no draft exists, one is created automatically by cloning the active version.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdateARule",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pathId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the path. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ruleId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateARuleRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 A rule.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateARule200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/draft/diff": {
+      "get": {
+        "summary": "Get the draft diff",
+        "description": "\"Compare the current draft version against the active version and return the paths and rules that have been added, modified, or deleted.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetTheDraftDiff",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A diff between the draft and active versions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTheDraftDiff200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/draft": {
+      "delete": {
+        "summary": "Discard the draft",
+        "description": "\"Delete the current draft version, reverting any unactivated changes.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DiscardTheDraft",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 No content."
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update the draft",
+        "description": "\"Update metadata on the draft version, such as its comment. If no draft exists, one is created automatically by cloning the active version.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdateTheDraft",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTheDraftRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 A version.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateTheDraft200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/activate": {
+      "post": {
+        "summary": "Activate the draft",
+        "description": "\"Activate the current draft version. The previously active version, if any, becomes inactive but is retained in version history.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ActivateTheDraft",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A version.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActivateTheDraft200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/deactivate": {
+      "post": {
+        "summary": "Deactivate a routing config",
+        "description": "\"Clear the active version designation. This is a bookkeeping operation only — it does not stop edge traffic. Minerva continues serving the last-activated version until the domain association is removed in Spotless. Only removing the routing config from the domain (via Spotless) triggers Neptune to drop the reference, which causes Minerva to stop fetching and eventually clean up the cached config. Idempotent: returns 200 even if already deactivated.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeactivateARoutingConfig",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A routing config.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeactivateARoutingConfig200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/versions": {
+      "get": {
+        "summary": "List versions",
+        "description": "\"List all versions for a routing config.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ListVersions",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The order in which to list the results.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A list of versions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListVersions200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/versions/{versionId}/activate": {
+      "post": {
+        "summary": "Reactivate a version",
+        "description": "\"Reactivate a previously-active version. The currently active version, if any, becomes inactive but is retained in version history.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "ReactivateAVersion",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionId",
+            "in": "path",
+            "description": "Integer identifying a service version.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A version.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReactivateAVersion200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/domain-management/v1/routing-configs/{configId}/versions/inactive": {
+      "delete": {
+        "summary": "Delete inactive versions",
+        "description": "\"Delete all inactive versions for a routing config. The currently active version, if any, is retained.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeleteInactiveVersions",
+        "parameters": [
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the routing config.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 No content."
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/dns/configurations": {
       "get": {
         "summary": "List DNS configurations",
@@ -14699,7 +15648,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -14730,7 +15679,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -14754,7 +15703,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -14782,7 +15731,7 @@
       "get": {
         "summary": "List rules",
         "description": "\"List rules in a workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "ListRules",
+        "operationId": "ListRules2",
         "parameters": [
           {
             "name": "workspaceId",
@@ -14840,7 +15789,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListRules200Response"
+                  "$ref": "#/components/schemas/ListRules2200Response"
                 }
               }
             }
@@ -14900,7 +15849,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -14940,7 +15889,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -14973,7 +15922,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -15588,15 +16537,8 @@
           "required": true
         },
         "responses": {
-          "200": {
-            "description": "200 Successful threshold update.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EditThreshold200Response"
-                }
-              }
-            }
+          "default": {
+            "description": "null "
           }
         },
         "security": [
@@ -17350,7 +18292,7 @@
       },
       "delete": {
         "summary": "Delete an integration",
-        "description": "\"Delete an integration. The effect is immediate and does not require confirmation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
+        "description": "\"Delete an integration. The effect is immediate and does not require confirmation.\nAs a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
         "operationId": "DeleteAnIntegration",
         "parameters": [
           {
@@ -17587,6 +18529,284 @@
                 }
               }
             }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/notifications/v1/event-mappings/event-types": {
+      "get": {
+        "summary": "List supported event types",
+        "description": "\"Returns all audit event types that can be used when creating an event mapping. Use the optional scope_type parameter to filter the list to event types that are compatible with a specific scope. Results are sorted alphabetically by event_type by default. Use sort=-event_type to reverse the order.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
+        "operationId": "ListSupportedEventTypes",
+        "parameters": [
+          {
+            "name": "scope_type",
+            "in": "query",
+            "description": "Filter results to the given scope type. Must be one of the values returned by the scope-types endpoint.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort event types alphabetically. Use event_type for ascending order or -event_type for descending order.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of supported event types",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListSupportedEventTypes200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/notifications/v1/event-mappings/scope-types": {
+      "get": {
+        "summary": "List supported scope types",
+        "description": "\"Returns all scope types supported by the Event Mappings API. A scope type defines the category of Fastly resource that a mapping applies to. Results are sorted alphabetically by scope_type by default. Use sort=-scope_type to reverse the order.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
+        "operationId": "ListSupportedScopeTypes",
+        "parameters": [
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort scope types alphabetically. Use scope_type for ascending order or -scope_type for descending order.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of supported scope types",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListSupportedScopeTypes200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/notifications/v1/event-mappings": {
+      "get": {
+        "summary": "List event mappings",
+        "description": "\"Returns event mappings matching the given filters. If no filters are specified, returns all event mappings for the account linked to the supplied token, sorted by creation date ascending. Results are paginated using cursor-based pagination.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
+        "operationId": "ListEventMappings",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "integration_id",
+            "in": "query",
+            "description": "Filter results to mappings that reference the given integration ID.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mapping_status",
+            "in": "query",
+            "description": "Filter results by mapping status.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter results to mappings whose name contains the given string (case-insensitive).",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "scope_id",
+            "in": "query",
+            "description": "Filter results to mappings that apply to the given service or workspace ID. Cannot be combined with scope_type=account.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "scope_type",
+            "in": "query",
+            "description": "Filter results to the given scope type. Must be one of the values returned by the scope-types endpoint.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort the results by creation date. Use created_at for ascending order (oldest first) or -created_at for descending order (newest first).",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Event mappings matching the filter criteria",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListEventMappings200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create an event mapping",
+        "description": "\"Creates an event mapping. The mapping becomes active immediately.\nintegration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.\nFor scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
+        "operationId": "CreateAnEventMapping",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAnEventMappingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 The requested or created event mapping",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAnEventMapping201Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/notifications/v1/event-mappings/{mappingId}": {
+      "get": {
+        "summary": "Get an event mapping",
+        "description": "\"Retrieves an event mapping by ID.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
+        "operationId": "GetAnEventMapping",
+        "parameters": [
+          {
+            "name": "mappingId",
+            "in": "path",
+            "description": "The ID of the event mapping.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 The requested or created event mapping",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAnEventMapping200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "put": {
+        "summary": "Update an event mapping",
+        "description": "\"Replaces an event mapping. All fields must be provided. Omitted fields are not preserved from the previous version.\nintegration_ids must be non-empty. A mapping is always set to active on update.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
+        "operationId": "UpdateAnEventMapping",
+        "parameters": [
+          {
+            "name": "mappingId",
+            "in": "path",
+            "description": "The ID of the event mapping.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 The requested or created event mapping",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAnEventMapping200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete an event mapping",
+        "description": "\"Deletes an event mapping.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\"",
+        "operationId": "DeleteAnEventMapping",
+        "parameters": [
+          {
+            "name": "mappingId",
+            "in": "path",
+            "description": "The ID of the event mapping.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 Deletion was successful"
           }
         },
         "security": [
@@ -25281,7 +26501,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -25312,7 +26532,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -25516,7 +26736,7 @@
           {
             "name": "ruleId",
             "in": "path",
-            "description": "The ID of the rule.",
+            "description": "Alphanumeric string identifying the rule. Stable across versions.",
             "required": true,
             "schema": {
               "type": "string"
@@ -33151,6 +34371,7 @@
         "required": [
           "fqdn",
           "service_id",
+          "routing_configuration_id",
           "description"
         ],
         "type": "object",
@@ -33159,6 +34380,9 @@
             "type": "string"
           },
           "service_id": {
+            "type": "string"
+          },
+          "routing_configuration_id": {
             "type": "string"
           },
           "description": {
@@ -33171,6 +34395,7 @@
           "id",
           "fqdn",
           "service_id",
+          "routing_configuration_id",
           "description",
           "activated",
           "verified",
@@ -33186,6 +34411,9 @@
             "type": "string"
           },
           "service_id": {
+            "type": "string"
+          },
+          "routing_configuration_id": {
             "type": "string"
           },
           "description": {
@@ -33210,6 +34438,7 @@
           "id",
           "fqdn",
           "service_id",
+          "routing_configuration_id",
           "description",
           "activated",
           "verified",
@@ -33225,6 +34454,9 @@
             "type": "string"
           },
           "service_id": {
+            "type": "string"
+          },
+          "routing_configuration_id": {
             "type": "string"
           },
           "description": {
@@ -33247,11 +34479,15 @@
       "UpdateADomainRequest": {
         "required": [
           "service_id",
+          "routing_configuration_id",
           "description"
         ],
         "type": "object",
         "properties": {
           "service_id": {
+            "type": "string"
+          },
+          "routing_configuration_id": {
             "type": "string"
           },
           "description": {
@@ -33264,6 +34500,7 @@
           "id",
           "fqdn",
           "service_id",
+          "routing_configuration_id",
           "description",
           "activated",
           "verified",
@@ -33281,6 +34518,9 @@
           "service_id": {
             "type": "string"
           },
+          "routing_configuration_id": {
+            "type": "string"
+          },
           "description": {
             "type": "string"
           },
@@ -33294,6 +34534,537 @@
             "type": "string"
           },
           "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "ListRoutingConfigs200Response": {
+        "required": [
+          "data",
+          "meta"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListRoutingConfigs200ResponseDataItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ListRoutingConfigs200ResponseMeta"
+          }
+        }
+      },
+      "CreateARoutingConfigRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateARoutingConfig201Response": {
+        "required": [
+          "id",
+          "name",
+          "state",
+          "created_at",
+          "updated_at",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "activated_at": {
+            "type": "string"
+          },
+          "links": {
+            "$ref": "#/components/schemas/CreateARoutingConfig201ResponseLinks"
+          }
+        }
+      },
+      "GetARoutingConfig200Response": {
+        "required": [
+          "id",
+          "name",
+          "state",
+          "created_at",
+          "updated_at",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "activated_at": {
+            "type": "string"
+          },
+          "links": {
+            "$ref": "#/components/schemas/GetARoutingConfig200ResponseLinks"
+          }
+        }
+      },
+      "ListPaths200Response": {
+        "required": [
+          "data",
+          "meta"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListPaths200ResponseDataItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ListPaths200ResponseMeta"
+          }
+        }
+      },
+      "CreateAPathRequest": {
+        "required": [
+          "path"
+        ],
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateAPath201Response": {
+        "required": [
+          "id",
+          "path",
+          "created_at",
+          "updated_at",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "links": {
+            "$ref": "#/components/schemas/CreateAPath201ResponseLinks"
+          }
+        }
+      },
+      "GetAPath200Response": {
+        "required": [
+          "id",
+          "path",
+          "created_at",
+          "updated_at",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "links": {
+            "$ref": "#/components/schemas/GetAPath200ResponseLinks"
+          }
+        }
+      },
+      "UpdateAPathRequest": {
+        "required": [
+          "path"
+        ],
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateAPath200Response": {
+        "required": [
+          "id",
+          "path",
+          "created_at",
+          "updated_at",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "links": {
+            "$ref": "#/components/schemas/UpdateAPath200ResponseLinks"
+          }
+        }
+      },
+      "ListRules200Response": {
+        "required": [
+          "data",
+          "meta"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListRules200ResponseDataItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ListRules200ResponseMeta"
+          }
+        }
+      },
+      "CreateARuleRequest": {
+        "required": [
+          "action",
+          "conditions",
+          "position"
+        ],
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/CreateARuleRequestAction"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateARuleRequestConditionsItem"
+            }
+          },
+          "position": {
+            "$ref": "#/components/schemas/CreateARuleRequestPosition"
+          }
+        }
+      },
+      "CreateARule201Response": {
+        "required": [
+          "id",
+          "is_default",
+          "action",
+          "conditions",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "action": {
+            "$ref": "#/components/schemas/CreateARule201ResponseAction"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateARule201ResponseConditionsItem"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetARule200Response": {
+        "required": [
+          "id",
+          "is_default",
+          "action",
+          "conditions",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "action": {
+            "$ref": "#/components/schemas/GetARule200ResponseAction"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetARule200ResponseConditionsItem"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateARuleRequest": {
+        "required": [
+          "action"
+        ],
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/UpdateARuleRequestAction"
+          }
+        }
+      },
+      "UpdateARule200Response": {
+        "required": [
+          "id",
+          "is_default",
+          "action",
+          "conditions",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "action": {
+            "$ref": "#/components/schemas/UpdateARule200ResponseAction"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateARule200ResponseConditionsItem"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTheDraftDiff200Response": {
+        "required": [
+          "added",
+          "deleted",
+          "modified"
+        ],
+        "type": "object",
+        "properties": {
+          "added": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTheDraftDiff200ResponseAddedItem"
+            }
+          },
+          "deleted": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "modified": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTheDraftDiff200ResponseModifiedItem"
+            }
+          }
+        }
+      },
+      "UpdateTheDraftRequest": {
+        "required": [
+          "comment"
+        ],
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateTheDraft200Response": {
+        "required": [
+          "id",
+          "comment",
+          "created_at",
+          "activated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "activated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "ActivateTheDraft200Response": {
+        "required": [
+          "id",
+          "comment",
+          "created_at",
+          "activated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "activated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "DeactivateARoutingConfig200Response": {
+        "required": [
+          "id",
+          "name",
+          "state",
+          "created_at",
+          "updated_at",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "activated_at": {
+            "type": "string"
+          },
+          "links": {
+            "$ref": "#/components/schemas/DeactivateARoutingConfig200ResponseLinks"
+          }
+        }
+      },
+      "ListVersions200Response": {
+        "required": [
+          "data",
+          "meta"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListVersions200ResponseDataItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ListVersions200ResponseMeta"
+          }
+        }
+      },
+      "ReactivateAVersion200Response": {
+        "required": [
+          "id",
+          "comment",
+          "created_at",
+          "activated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "activated_at": {
             "type": "string"
           }
         }
@@ -41967,7 +43738,7 @@
           }
         }
       },
-      "ListRules200Response": {
+      "ListRules2200Response": {
         "required": [
           "meta",
           "data"
@@ -41975,12 +43746,12 @@
         "type": "object",
         "properties": {
           "meta": {
-            "$ref": "#/components/schemas/ListRules200ResponseMeta"
+            "$ref": "#/components/schemas/ListRules2200ResponseMeta"
           },
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ListRules200ResponseDataItem"
+              "$ref": "#/components/schemas/ListRules2200ResponseDataItem"
             }
           }
         }
@@ -42630,53 +44401,6 @@
             "type": "string"
           },
           "action": {
-            "type": "string"
-          }
-        }
-      },
-      "EditThreshold200Response": {
-        "required": [
-          "id",
-          "name",
-          "enabled",
-          "signal",
-          "action",
-          "interval",
-          "limit",
-          "duration",
-          "dont_notify",
-          "created_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "enabled": {
-            "type": "boolean"
-          },
-          "signal": {
-            "type": "string"
-          },
-          "action": {
-            "type": "string"
-          },
-          "interval": {
-            "type": "integer"
-          },
-          "limit": {
-            "type": "integer"
-          },
-          "duration": {
-            "type": "integer"
-          },
-          "dont_notify": {
-            "type": "boolean"
-          },
-          "created_at": {
             "type": "string"
           }
         }
@@ -43903,6 +45627,265 @@
           },
           "meta": {
             "$ref": "#/components/schemas/RetrieveSustainabilityDataAsATimeSeries200ResponseMeta"
+          }
+        }
+      },
+      "ListSupportedEventTypes200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListSupportedEventTypes200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "ListSupportedScopeTypes200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListSupportedScopeTypes200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "ListEventMappings200Response": {
+        "required": [
+          "meta",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/ListEventMappings200ResponseMeta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListEventMappings200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "CreateAnEventMappingRequest": {
+        "required": [
+          "name",
+          "description",
+          "scope_type",
+          "event_types",
+          "integration_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "scope_type": {
+            "type": "string"
+          },
+          "event_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "integration_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CreateAnEventMapping201Response": {
+        "required": [
+          "id",
+          "customer_id",
+          "name",
+          "description",
+          "scope_type",
+          "scope_ids",
+          "event_types",
+          "integration_ids",
+          "mapping_status",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "customer_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "scope_type": {
+            "type": "string"
+          },
+          "scope_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "event_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "integration_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mapping_status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetAnEventMapping200Response": {
+        "required": [
+          "id",
+          "customer_id",
+          "name",
+          "description",
+          "scope_type",
+          "scope_ids",
+          "event_types",
+          "integration_ids",
+          "mapping_status",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "customer_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "scope_type": {
+            "type": "string"
+          },
+          "scope_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "event_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "integration_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mapping_status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateAnEventMapping200Response": {
+        "required": [
+          "id",
+          "customer_id",
+          "name",
+          "description",
+          "scope_type",
+          "scope_ids",
+          "event_types",
+          "integration_ids",
+          "mapping_status",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "customer_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "scope_type": {
+            "type": "string"
+          },
+          "scope_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "event_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "integration_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mapping_status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
           }
         }
       },
@@ -54198,6 +56181,7 @@
           "id",
           "fqdn",
           "service_id",
+          "routing_configuration_id",
           "description",
           "activated",
           "verified",
@@ -54213,6 +56197,9 @@
             "type": "string"
           },
           "service_id": {
+            "type": "string"
+          },
+          "routing_configuration_id": {
             "type": "string"
           },
           "description": {
@@ -54252,6 +56239,555 @@
           },
           "total": {
             "type": "integer"
+          }
+        }
+      },
+      "ListRoutingConfigs200ResponseDataItem": {
+        "required": [
+          "id",
+          "name",
+          "state",
+          "created_at",
+          "updated_at",
+          "activated_at",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "activated_at": {
+            "type": "string"
+          },
+          "links": {
+            "$ref": "#/components/schemas/ListRoutingConfigs200ResponseDataItemLinks"
+          }
+        }
+      },
+      "ListRoutingConfigs200ResponseMeta": {
+        "required": [
+          "limit",
+          "next_cursor",
+          "previous_cursor",
+          "sort"
+        ],
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "next_cursor": {
+            "type": "string"
+          },
+          "previous_cursor": {
+            "type": "string"
+          },
+          "sort": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateARoutingConfig201ResponseLinks": {
+        "required": [
+          "self",
+          "paths",
+          "versions"
+        ],
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "paths": {
+            "type": "string"
+          },
+          "versions": {
+            "type": "string"
+          }
+        }
+      },
+      "GetARoutingConfig200ResponseLinks": {
+        "required": [
+          "self",
+          "paths",
+          "versions"
+        ],
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "paths": {
+            "type": "string"
+          },
+          "versions": {
+            "type": "string"
+          }
+        }
+      },
+      "ListPaths200ResponseDataItem": {
+        "required": [
+          "id",
+          "path",
+          "created_at",
+          "updated_at",
+          "links"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "links": {
+            "$ref": "#/components/schemas/ListPaths200ResponseDataItemLinks"
+          }
+        }
+      },
+      "ListPaths200ResponseMeta": {
+        "required": [
+          "limit",
+          "next_cursor",
+          "previous_cursor",
+          "sort"
+        ],
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "next_cursor": {
+            "type": "string"
+          },
+          "previous_cursor": {
+            "type": "string"
+          },
+          "sort": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateAPath201ResponseLinks": {
+        "required": [
+          "self",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "rules": {
+            "type": "string"
+          }
+        }
+      },
+      "GetAPath200ResponseLinks": {
+        "required": [
+          "self",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "rules": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateAPath200ResponseLinks": {
+        "required": [
+          "self",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "rules": {
+            "type": "string"
+          }
+        }
+      },
+      "ListRules200ResponseDataItem": {
+        "required": [
+          "id",
+          "is_default",
+          "action",
+          "conditions",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "action": {
+            "$ref": "#/components/schemas/ListRules200ResponseDataItemAction"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListRules200ResponseDataItemConditionsItem"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "ListRules200ResponseMeta": {
+        "required": [
+          "limit",
+          "next_cursor",
+          "previous_cursor",
+          "sort"
+        ],
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "next_cursor": {
+            "type": "string"
+          },
+          "previous_cursor": {
+            "type": "string"
+          },
+          "sort": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateARuleRequestAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateARuleRequestConditionsItem": {
+        "required": [
+          "type",
+          "key",
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateARuleRequestPosition": {
+        "required": [
+          "before"
+        ],
+        "type": "object",
+        "properties": {
+          "before": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateARule201ResponseAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateARule201ResponseConditionsItem": {
+        "required": [
+          "type",
+          "key",
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "GetARule200ResponseAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "GetARule200ResponseConditionsItem": {
+        "required": [
+          "type",
+          "key",
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateARuleRequestAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateARule200ResponseAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateARule200ResponseConditionsItem": {
+        "required": [
+          "type",
+          "key",
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTheDraftDiff200ResponseAddedItem": {
+        "required": [
+          "path",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "path": {
+            "$ref": "#/components/schemas/GetTheDraftDiff200ResponseAddedItemPath"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTheDraftDiff200ResponseAddedItemRulesItem"
+            }
+          }
+        }
+      },
+      "GetTheDraftDiff200ResponseModifiedItem": {
+        "required": [
+          "path_id",
+          "path",
+          "old_path",
+          "rules_added",
+          "rules_changed",
+          "rules_deleted"
+        ],
+        "type": "object",
+        "properties": {
+          "path_id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "old_path": {
+            "type": "string"
+          },
+          "rules_added": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rules_changed": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTheDraftDiff200ResponseModifiedItemRulesChangedItem"
+            }
+          },
+          "rules_deleted": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "DeactivateARoutingConfig200ResponseLinks": {
+        "required": [
+          "self",
+          "paths",
+          "versions"
+        ],
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "paths": {
+            "type": "string"
+          },
+          "versions": {
+            "type": "string"
+          }
+        }
+      },
+      "ListVersions200ResponseDataItem": {
+        "required": [
+          "id",
+          "comment",
+          "created_at",
+          "activated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "activated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "ListVersions200ResponseMeta": {
+        "required": [
+          "limit",
+          "next_cursor",
+          "previous_cursor",
+          "sort"
+        ],
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "next_cursor": {
+            "type": "string"
+          },
+          "previous_cursor": {
+            "type": "string"
+          },
+          "sort": {
+            "type": "string"
           }
         }
       },
@@ -59308,7 +61844,7 @@
           }
         }
       },
-      "ListRules200ResponseMeta": {
+      "ListRules2200ResponseMeta": {
         "required": [
           "limit",
           "total"
@@ -59323,7 +61859,7 @@
           }
         }
       },
-      "ListRules200ResponseDataItem": {
+      "ListRules2200ResponseDataItem": {
         "required": [
           "id",
           "type",
@@ -59346,7 +61882,7 @@
             "type": "string"
           },
           "scope": {
-            "$ref": "#/components/schemas/ListRules200ResponseDataItemScope"
+            "$ref": "#/components/schemas/ListRules2200ResponseDataItemScope"
           },
           "enabled": {
             "type": "boolean"
@@ -59363,13 +61899,13 @@
           "conditions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ListRules200ResponseDataItemConditionsItem"
+              "$ref": "#/components/schemas/ListRules2200ResponseDataItemConditionsItem"
             }
           },
           "actions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ListRules200ResponseDataItemActionsItem"
+              "$ref": "#/components/schemas/ListRules2200ResponseDataItemActionsItem"
             }
           },
           "created_at": {
@@ -60901,6 +63437,118 @@
           },
           "limit": {
             "type": "integer"
+          }
+        }
+      },
+      "ListSupportedEventTypes200ResponseDataItem": {
+        "required": [
+          "event_type",
+          "display_name",
+          "scope_types"
+        ],
+        "type": "object",
+        "properties": {
+          "event_type": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "scope_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ListSupportedScopeTypes200ResponseDataItem": {
+        "required": [
+          "scope_type"
+        ],
+        "type": "object",
+        "properties": {
+          "scope_type": {
+            "type": "string"
+          }
+        }
+      },
+      "ListEventMappings200ResponseMeta": {
+        "required": [
+          "total",
+          "limit",
+          "sort"
+        ],
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        }
+      },
+      "ListEventMappings200ResponseDataItem": {
+        "required": [
+          "id",
+          "customer_id",
+          "name",
+          "description",
+          "scope_type",
+          "scope_ids",
+          "event_types",
+          "integration_ids",
+          "mapping_status",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "customer_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "scope_type": {
+            "type": "string"
+          },
+          "scope_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "event_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "integration_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mapping_status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
           }
         }
       },
@@ -68503,6 +71151,154 @@
           }
         }
       },
+      "ListRoutingConfigs200ResponseDataItemLinks": {
+        "required": [
+          "self",
+          "paths",
+          "versions"
+        ],
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "paths": {
+            "type": "string"
+          },
+          "versions": {
+            "type": "string"
+          }
+        }
+      },
+      "ListPaths200ResponseDataItemLinks": {
+        "required": [
+          "self",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "string"
+          },
+          "rules": {
+            "type": "string"
+          }
+        }
+      },
+      "ListRules200ResponseDataItemAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ListRules200ResponseDataItemConditionsItem": {
+        "required": [
+          "type",
+          "key",
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTheDraftDiff200ResponseAddedItemPath": {
+        "required": [
+          "id",
+          "path",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTheDraftDiff200ResponseAddedItemRulesItem": {
+        "required": [
+          "id",
+          "is_default",
+          "action",
+          "conditions",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "is_default": {
+            "type": "boolean"
+          },
+          "action": {
+            "$ref": "#/components/schemas/GetTheDraftDiff200ResponseAddedItemRulesItemAction"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTheDraftDiff200ResponseModifiedItemRulesChangedItem": {
+        "required": [
+          "rule_id",
+          "old_action",
+          "new_action"
+        ],
+        "type": "object",
+        "properties": {
+          "rule_id": {
+            "type": "string"
+          },
+          "old_action": {
+            "$ref": "#/components/schemas/GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction"
+          },
+          "new_action": {
+            "$ref": "#/components/schemas/GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction"
+          }
+        }
+      },
       "ListDnsConfigurations200ResponseDataItemAttributes": {
         "required": [
           "dualstack",
@@ -71329,7 +74125,7 @@
           }
         }
       },
-      "ListRules200ResponseDataItemScope": {
+      "ListRules2200ResponseDataItemScope": {
         "required": [
           "type",
           "applies_to"
@@ -71347,7 +74143,7 @@
           }
         }
       },
-      "ListRules200ResponseDataItemConditionsItem": {
+      "ListRules2200ResponseDataItemConditionsItem": {
         "required": [
           "type",
           "field",
@@ -71370,7 +74166,7 @@
           }
         }
       },
-      "ListRules200ResponseDataItemActionsItem": {
+      "ListRules2200ResponseDataItemActionsItem": {
         "required": [
           "type"
         ],
@@ -74015,6 +76811,51 @@
         "properties": {
           "data": {
             "$ref": "#/components/schemas/CreateAStar200ResponseDataRelationshipsUserData"
+          }
+        }
+      },
+      "GetTheDraftDiff200ResponseAddedItemRulesItemAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
           }
         }
       },

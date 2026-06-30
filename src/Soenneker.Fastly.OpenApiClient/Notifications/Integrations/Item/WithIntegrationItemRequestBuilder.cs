@@ -46,7 +46,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
         {
         }
         /// <summary>
-        /// &quot;Delete an integration. The effect is immediate and does not require confirmation.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// &quot;Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,7 +100,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete an integration. The effect is immediate and does not require confirmation.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// &quot;Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
