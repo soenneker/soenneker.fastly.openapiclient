@@ -40542,15 +40542,25 @@
                       "items": {
                         "required": [
                           "type",
+                          "detector",
+                          "detector_scope",
+                          "redaction",
                           "location",
                           "name",
-                          "value",
-                          "detector",
-                          "redaction"
+                          "value"
                         ],
                         "type": "object",
                         "properties": {
                           "type": {
+                            "type": "string"
+                          },
+                          "detector": {
+                            "type": "string"
+                          },
+                          "detector_scope": {
+                            "type": "string"
+                          },
+                          "redaction": {
                             "type": "string"
                           },
                           "location": {
@@ -40560,12 +40570,6 @@
                             "type": "string"
                           },
                           "value": {
-                            "type": "string"
-                          },
-                          "detector": {
-                            "type": "string"
-                          },
-                          "redaction": {
                             "type": "string"
                           }
                         }

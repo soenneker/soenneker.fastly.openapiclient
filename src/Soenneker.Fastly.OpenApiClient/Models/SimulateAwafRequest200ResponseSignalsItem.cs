@@ -22,6 +22,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string Detector { get; set; }
 #endif
+        /// <summary>The detector_scope property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetectorScope { get; set; }
+#nullable restore
+#else
+        public string DetectorScope { get; set; }
+#endif
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +96,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "detector", n => { Detector = n.GetStringValue(); } },
+                { "detector_scope", n => { DetectorScope = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "redaction", n => { Redaction = n.GetStringValue(); } },
@@ -103,6 +112,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detector", Detector);
+            writer.WriteStringValue("detector_scope", DetectorScope);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("redaction", Redaction);
