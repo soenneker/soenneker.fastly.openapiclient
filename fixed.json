@@ -7239,6 +7239,63 @@
         ]
       }
     },
+    "/observability/service/{serviceId}/logging/errors": {
+      "get": {
+        "summary": "Stream Log Endpoint Errors",
+        "description": "\"Provides a near real-time stream of log errors through a hybrid short-polling model.\nA client should make an initial request using the from parameter to specify a start time.\nThe to parameter should be used alongside the from parameter since the default bucket is 10 seconds.\nFor pagination, use the URLs provided in the Link header of the response. These contain\nupdated from timestamps for retrieving the next or previous page of logs.\nDefaults to application/x-ndjson format. Use Accept: application/json header\nto request standard JSON array format instead.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "StreamLogEndpointErrors",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[endpoint]",
+            "in": "query",
+            "description": "A comma-separated list of logging endpoint names to filter the error stream.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "A Unix-formatted timestamp to start the log stream from. Required for the initial request only.\nIf not used in conjunction with the to parameter, the range of the query will be a 10-second bucket.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "A Unix-formatted timestamp to end the log stream. The maximum range between from and to is 1 hour;\nrequests exceeding this limit will return an error.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Stream of log endpoint errors",
+            "content": {
+              "application/x-ndjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/StreamLogEndpointErrors200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/service/{serviceId}/version/{versionId}/logging/ftp": {
       "get": {
         "summary": "List FTP log endpoints",
@@ -36734,6 +36791,9 @@
             "type": "string"
           }
         }
+      },
+      "StreamLogEndpointErrors200Response": {
+        "type": "string"
       },
       "ListFtpLogEndpoints200Response": {
         "type": "array",

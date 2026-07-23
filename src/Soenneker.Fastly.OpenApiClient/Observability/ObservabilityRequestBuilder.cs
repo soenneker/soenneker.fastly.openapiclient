@@ -6,6 +6,7 @@ using Soenneker.Fastly.OpenApiClient.Observability.Aggregations;
 using Soenneker.Fastly.OpenApiClient.Observability.Dashboards;
 using Soenneker.Fastly.OpenApiClient.Observability.LogExplorer;
 using Soenneker.Fastly.OpenApiClient.Observability.LogInsights;
+using Soenneker.Fastly.OpenApiClient.Observability.Service;
 using Soenneker.Fastly.OpenApiClient.Observability.Timeseries;
 using System.Collections.Generic;
 using System.IO;
@@ -38,6 +39,11 @@ namespace Soenneker.Fastly.OpenApiClient.Observability
         public global::Soenneker.Fastly.OpenApiClient.Observability.LogInsights.LogInsightsRequestBuilder LogInsights
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Observability.LogInsights.LogInsightsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The service property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Observability.Service.ServiceRequestBuilder Service
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Observability.Service.ServiceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Observability.Timeseries.TimeseriesRequestBuilder Timeseries
