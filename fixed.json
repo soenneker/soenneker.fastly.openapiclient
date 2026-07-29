@@ -4122,6 +4122,374 @@
         ]
       }
     },
+    "/dns/v1/tsig-keys": {
+      "get": {
+        "summary": "Get TSIG keys",
+        "description": "\"Retrieve a paginated list of all TSIG keys.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetTsigKeys",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filters the list to return only TSIG keys that contain the provided name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The order in which to list the results.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A list of TSIG keys.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTsigKeys200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create TSIG key",
+        "description": "\"Create a new TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "CreateTsigKey",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTsigKeyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 A TSIG key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTsigKey201Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dns/v1/tsig-keys/{tsigKeyId}": {
+      "get": {
+        "summary": "Get TSIG key",
+        "description": "\"Retrieve a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetTsigKey",
+        "parameters": [
+          {
+            "name": "tsigKeyId",
+            "in": "path",
+            "description": "The TSIG Key Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A TSIG key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTsigKey200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete TSIG key",
+        "description": "\"Delete a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeleteTsigKey",
+        "parameters": [
+          {
+            "name": "tsigKeyId",
+            "in": "path",
+            "description": "The TSIG Key Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 Success - No content"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update TSIG key",
+        "description": "\"Update a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdateTsigKey",
+        "parameters": [
+          {
+            "name": "tsigKeyId",
+            "in": "path",
+            "description": "The TSIG Key Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTsigKeyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 A TSIG key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateTsigKey200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dns/v1/zones": {
+      "get": {
+        "summary": "Get zones",
+        "description": "\"Retrieve a paginated list of all zones.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetZones",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filters the list to return only zones that contain the provided name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The order in which to list the results.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A list of zones with basic details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetZones200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create zone",
+        "description": "\"Create a new zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "CreateZone",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateZoneRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 A zone with full details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateZone201Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dns/v1/zones/{zoneId}": {
+      "get": {
+        "summary": "Get zone",
+        "description": "\"Retrieve a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "GetZone",
+        "parameters": [
+          {
+            "name": "zoneId",
+            "in": "path",
+            "description": "The Zone Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A zone with full details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetZone200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete zone",
+        "description": "\"Delete a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "DeleteZone",
+        "parameters": [
+          {
+            "name": "zoneId",
+            "in": "path",
+            "description": "The Zone Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 Success - No content"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update zone",
+        "description": "\"Update a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
+        "operationId": "UpdateZone",
+        "parameters": [
+          {
+            "name": "zoneId",
+            "in": "path",
+            "description": "The Zone Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateZoneRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 A zone with full details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateZone200Response"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/domain-management/v1/tools/suggest": {
       "get": {
         "summary": "Suggest domains",
@@ -26817,374 +27185,6 @@
         ]
       }
     },
-    "/dns/v1/tsig-keys": {
-      "get": {
-        "summary": "Get TSIG keys",
-        "description": "\"Retrieve a paginated list of all TSIG keys.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetTsigKeys",
-        "parameters": [
-          {
-            "name": "cursor",
-            "in": "query",
-            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Limit how many results are returned.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "description": "Filters the list to return only TSIG keys that contain the provided name.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "description": "The order in which to list the results.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 A list of TSIG keys.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GetTsigKeys200Response"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "post": {
-        "summary": "Create TSIG key",
-        "description": "\"Create a new TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "CreateTsigKey",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateTsigKeyRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "201 A TSIG key.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateTsigKey201Response"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      }
-    },
-    "/dns/v1/tsig-keys/{tsigKeyId}": {
-      "get": {
-        "summary": "Get TSIG key",
-        "description": "\"Retrieve a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetTsigKey",
-        "parameters": [
-          {
-            "name": "tsigKeyId",
-            "in": "path",
-            "description": "The TSIG Key Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 A TSIG key.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GetTsigKey200Response"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "delete": {
-        "summary": "Delete TSIG key",
-        "description": "\"Delete a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "DeleteTsigKey",
-        "parameters": [
-          {
-            "name": "tsigKeyId",
-            "in": "path",
-            "description": "The TSIG Key Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "204 Success - No content"
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "patch": {
-        "summary": "Update TSIG key",
-        "description": "\"Update a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "UpdateTsigKey",
-        "parameters": [
-          {
-            "name": "tsigKeyId",
-            "in": "path",
-            "description": "The TSIG Key Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateTsigKeyRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "200 A TSIG key.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UpdateTsigKey200Response"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      }
-    },
-    "/dns/v1/zones": {
-      "get": {
-        "summary": "Get zones",
-        "description": "\"Retrieve a paginated list of all zones.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetZones",
-        "parameters": [
-          {
-            "name": "cursor",
-            "in": "query",
-            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Limit how many results are returned.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "description": "Filters the list to return only zones that contain the provided name.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "description": "The order in which to list the results.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 A list of zones with basic details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GetZones200Response"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "post": {
-        "summary": "Create zone",
-        "description": "\"Create a new zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "CreateZone",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateZoneRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "201 A zone with full details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateZone201Response"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      }
-    },
-    "/dns/v1/zones/{zoneId}": {
-      "get": {
-        "summary": "Get zone",
-        "description": "\"Retrieve a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "GetZone",
-        "parameters": [
-          {
-            "name": "zoneId",
-            "in": "path",
-            "description": "The Zone Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 A zone with full details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GetZone200Response"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "delete": {
-        "summary": "Delete zone",
-        "description": "\"Delete a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "DeleteZone",
-        "parameters": [
-          {
-            "name": "zoneId",
-            "in": "path",
-            "description": "The Zone Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "204 Success - No content"
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "patch": {
-        "summary": "Update zone",
-        "description": "\"Update a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\\\") permissions.\n\"",
-        "operationId": "UpdateZone",
-        "parameters": [
-          {
-            "name": "zoneId",
-            "in": "path",
-            "description": "The Zone Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateZoneRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "200 A zone with full details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UpdateZone200Response"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      }
-    },
     "/service/{serviceId}/publish": {
       "post": {
         "summary": "Send messages to Fanout subscribers",
@@ -34366,6 +34366,192 @@
         "properties": {
           "status": {
             "type": "string"
+          }
+        }
+      },
+      "GetTsigKeys200Response": {
+        "required": [
+          "data",
+          "meta"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetTsigKeys200ResponseDataItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetTsigKeys200ResponseMeta"
+          }
+        }
+      },
+      "CreateTsigKeyRequest": {
+        "required": [
+          "name",
+          "description",
+          "algorithm",
+          "secret"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "secret": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateTsigKey201Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreateTsigKey201ResponseData"
+          }
+        }
+      },
+      "GetTsigKey200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetTsigKey200ResponseData"
+          }
+        }
+      },
+      "UpdateTsigKeyRequest": {
+        "required": [
+          "name",
+          "description",
+          "algorithm",
+          "secret"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "secret": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateTsigKey200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UpdateTsigKey200ResponseData"
+          }
+        }
+      },
+      "GetZones200Response": {
+        "required": [
+          "data",
+          "meta"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetZones200ResponseDataItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetZones200ResponseMeta"
+          }
+        }
+      },
+      "CreateZoneRequest": {
+        "required": [
+          "name",
+          "description",
+          "type",
+          "xfr_config_inbound"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "xfr_config_inbound": {
+            "$ref": "#/components/schemas/CreateZoneRequestXfrConfigInbound"
+          }
+        }
+      },
+      "CreateZone201Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreateZone201ResponseData"
+          }
+        }
+      },
+      "GetZone200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetZone200ResponseData"
+          }
+        }
+      },
+      "UpdateZoneRequest": {
+        "required": [
+          "description",
+          "xfr_config_inbound"
+        ],
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "xfr_config_inbound": {
+            "$ref": "#/components/schemas/UpdateZoneRequestXfrConfigInbound"
+          }
+        }
+      },
+      "UpdateZone200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UpdateZone200ResponseData"
           }
         }
       },
@@ -51318,192 +51504,6 @@
           }
         }
       },
-      "GetTsigKeys200Response": {
-        "required": [
-          "data",
-          "meta"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetTsigKeys200ResponseDataItem"
-            }
-          },
-          "meta": {
-            "$ref": "#/components/schemas/GetTsigKeys200ResponseMeta"
-          }
-        }
-      },
-      "CreateTsigKeyRequest": {
-        "required": [
-          "name",
-          "description",
-          "algorithm",
-          "secret"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "algorithm": {
-            "type": "string"
-          },
-          "secret": {
-            "type": "string"
-          }
-        }
-      },
-      "CreateTsigKey201Response": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/CreateTsigKey201ResponseData"
-          }
-        }
-      },
-      "GetTsigKey200Response": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/GetTsigKey200ResponseData"
-          }
-        }
-      },
-      "UpdateTsigKeyRequest": {
-        "required": [
-          "name",
-          "description",
-          "algorithm",
-          "secret"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "algorithm": {
-            "type": "string"
-          },
-          "secret": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateTsigKey200Response": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/UpdateTsigKey200ResponseData"
-          }
-        }
-      },
-      "GetZones200Response": {
-        "required": [
-          "data",
-          "meta"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetZones200ResponseDataItem"
-            }
-          },
-          "meta": {
-            "$ref": "#/components/schemas/GetZones200ResponseMeta"
-          }
-        }
-      },
-      "CreateZoneRequest": {
-        "required": [
-          "name",
-          "description",
-          "type",
-          "xfr_config_inbound"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "xfr_config_inbound": {
-            "$ref": "#/components/schemas/CreateZoneRequestXfrConfigInbound"
-          }
-        }
-      },
-      "CreateZone201Response": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/CreateZone201ResponseData"
-          }
-        }
-      },
-      "GetZone200Response": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/GetZone200ResponseData"
-          }
-        }
-      },
-      "UpdateZoneRequest": {
-        "required": [
-          "description",
-          "xfr_config_inbound"
-        ],
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string"
-          },
-          "xfr_config_inbound": {
-            "$ref": "#/components/schemas/UpdateZoneRequestXfrConfigInbound"
-          }
-        }
-      },
-      "UpdateZone200Response": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/UpdateZone200ResponseData"
-          }
-        }
-      },
       "SendMessagesToFanoutSubscribersRequest": {
         "required": [
           "items"
@@ -56214,6 +56214,381 @@
           },
           "write_only": {
             "type": "boolean"
+          }
+        }
+      },
+      "GetTsigKeys200ResponseDataItem": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "algorithm",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTsigKeys200ResponseMeta": {
+        "required": [
+          "next_cursor",
+          "limit",
+          "sort",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "next_cursor": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          },
+          "total": {
+            "type": "integer"
+          }
+        }
+      },
+      "CreateTsigKey201ResponseData": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "algorithm",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetTsigKey200ResponseData": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "algorithm",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateTsigKey200ResponseData": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "algorithm",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetZones200ResponseDataItem": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type",
+          "created_at",
+          "updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "GetZones200ResponseMeta": {
+        "required": [
+          "next_cursor",
+          "limit",
+          "sort",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "next_cursor": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          },
+          "total": {
+            "type": "integer"
+          }
+        }
+      },
+      "CreateZoneRequestXfrConfigInbound": {
+        "required": [
+          "primaries",
+          "inbound_tsig_key_id"
+        ],
+        "type": "object",
+        "properties": {
+          "primaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateZoneRequestXfrConfigInboundPrimariesItem"
+            }
+          },
+          "inbound_tsig_key_id": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateZone201ResponseData": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type",
+          "created_at",
+          "updated_at",
+          "nameservers",
+          "xfr_config_inbound",
+          "serial"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "nameservers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "xfr_config_inbound": {
+            "$ref": "#/components/schemas/CreateZone201ResponseDataXfrConfigInbound"
+          },
+          "serial": {
+            "type": "integer"
+          }
+        }
+      },
+      "GetZone200ResponseData": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type",
+          "created_at",
+          "updated_at",
+          "nameservers",
+          "xfr_config_inbound",
+          "serial"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "nameservers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "xfr_config_inbound": {
+            "$ref": "#/components/schemas/GetZone200ResponseDataXfrConfigInbound"
+          },
+          "serial": {
+            "type": "integer"
+          }
+        }
+      },
+      "UpdateZoneRequestXfrConfigInbound": {
+        "required": [
+          "primaries",
+          "inbound_tsig_key_id"
+        ],
+        "type": "object",
+        "properties": {
+          "primaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateZoneRequestXfrConfigInboundPrimariesItem"
+            }
+          },
+          "inbound_tsig_key_id": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateZone200ResponseData": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type",
+          "created_at",
+          "updated_at",
+          "nameservers",
+          "xfr_config_inbound",
+          "serial"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "nameservers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "xfr_config_inbound": {
+            "$ref": "#/components/schemas/UpdateZone200ResponseDataXfrConfigInbound"
+          },
+          "serial": {
+            "type": "integer"
           }
         }
       },
@@ -69162,381 +69537,6 @@
           }
         }
       },
-      "GetTsigKeys200ResponseDataItem": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "algorithm",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "algorithm": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          }
-        }
-      },
-      "GetTsigKeys200ResponseMeta": {
-        "required": [
-          "next_cursor",
-          "limit",
-          "sort",
-          "total"
-        ],
-        "type": "object",
-        "properties": {
-          "next_cursor": {
-            "type": "string"
-          },
-          "limit": {
-            "type": "integer"
-          },
-          "sort": {
-            "type": "string"
-          },
-          "total": {
-            "type": "integer"
-          }
-        }
-      },
-      "CreateTsigKey201ResponseData": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "algorithm",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "algorithm": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          }
-        }
-      },
-      "GetTsigKey200ResponseData": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "algorithm",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "algorithm": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateTsigKey200ResponseData": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "algorithm",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "algorithm": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          }
-        }
-      },
-      "GetZones200ResponseDataItem": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "type",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          }
-        }
-      },
-      "GetZones200ResponseMeta": {
-        "required": [
-          "next_cursor",
-          "limit",
-          "sort",
-          "total"
-        ],
-        "type": "object",
-        "properties": {
-          "next_cursor": {
-            "type": "string"
-          },
-          "limit": {
-            "type": "integer"
-          },
-          "sort": {
-            "type": "string"
-          },
-          "total": {
-            "type": "integer"
-          }
-        }
-      },
-      "CreateZoneRequestXfrConfigInbound": {
-        "required": [
-          "primaries",
-          "inbound_tsig_key_id"
-        ],
-        "type": "object",
-        "properties": {
-          "primaries": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateZoneRequestXfrConfigInboundPrimariesItem"
-            }
-          },
-          "inbound_tsig_key_id": {
-            "type": "string"
-          }
-        }
-      },
-      "CreateZone201ResponseData": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "type",
-          "created_at",
-          "updated_at",
-          "nameservers",
-          "xfr_config_inbound",
-          "serial"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          },
-          "nameservers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "xfr_config_inbound": {
-            "$ref": "#/components/schemas/CreateZone201ResponseDataXfrConfigInbound"
-          },
-          "serial": {
-            "type": "integer"
-          }
-        }
-      },
-      "GetZone200ResponseData": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "type",
-          "created_at",
-          "updated_at",
-          "nameservers",
-          "xfr_config_inbound",
-          "serial"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          },
-          "nameservers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "xfr_config_inbound": {
-            "$ref": "#/components/schemas/GetZone200ResponseDataXfrConfigInbound"
-          },
-          "serial": {
-            "type": "integer"
-          }
-        }
-      },
-      "UpdateZoneRequestXfrConfigInbound": {
-        "required": [
-          "primaries",
-          "inbound_tsig_key_id"
-        ],
-        "type": "object",
-        "properties": {
-          "primaries": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateZoneRequestXfrConfigInboundPrimariesItem"
-            }
-          },
-          "inbound_tsig_key_id": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateZone200ResponseData": {
-        "required": [
-          "id",
-          "name",
-          "description",
-          "type",
-          "created_at",
-          "updated_at",
-          "nameservers",
-          "xfr_config_inbound",
-          "serial"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          },
-          "nameservers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "xfr_config_inbound": {
-            "$ref": "#/components/schemas/UpdateZone200ResponseDataXfrConfigInbound"
-          },
-          "serial": {
-            "type": "integer"
-          }
-        }
-      },
       "SendMessagesToFanoutSubscribersRequestItemsItem": {
         "required": [
           "channel",
@@ -71212,6 +71212,102 @@
           },
           "rps": {
             "type": "integer"
+          }
+        }
+      },
+      "CreateZoneRequestXfrConfigInboundPrimariesItem": {
+        "required": [
+          "address",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateZone201ResponseDataXfrConfigInbound": {
+        "required": [
+          "primaries",
+          "notify_ip_addresses",
+          "inbound_tsig_key_id"
+        ],
+        "type": "object",
+        "properties": {
+          "primaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateZone201ResponseDataXfrConfigInboundPrimariesItem"
+            }
+          },
+          "notify_ip_addresses": {
+            "$ref": "#/components/schemas/CreateZone201ResponseDataXfrConfigInboundNotifyIpAddresses"
+          },
+          "inbound_tsig_key_id": {
+            "type": "string"
+          }
+        }
+      },
+      "GetZone200ResponseDataXfrConfigInbound": {
+        "required": [
+          "primaries",
+          "notify_ip_addresses",
+          "inbound_tsig_key_id"
+        ],
+        "type": "object",
+        "properties": {
+          "primaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetZone200ResponseDataXfrConfigInboundPrimariesItem"
+            }
+          },
+          "notify_ip_addresses": {
+            "$ref": "#/components/schemas/GetZone200ResponseDataXfrConfigInboundNotifyIpAddresses"
+          },
+          "inbound_tsig_key_id": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateZoneRequestXfrConfigInboundPrimariesItem": {
+        "required": [
+          "address",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateZone200ResponseDataXfrConfigInbound": {
+        "required": [
+          "primaries",
+          "notify_ip_addresses",
+          "inbound_tsig_key_id"
+        ],
+        "type": "object",
+        "properties": {
+          "primaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateZone200ResponseDataXfrConfigInboundPrimariesItem"
+            }
+          },
+          "notify_ip_addresses": {
+            "$ref": "#/components/schemas/UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses"
+          },
+          "inbound_tsig_key_id": {
+            "type": "string"
           }
         }
       },
@@ -76413,102 +76509,6 @@
           }
         }
       },
-      "CreateZoneRequestXfrConfigInboundPrimariesItem": {
-        "required": [
-          "address",
-          "description"
-        ],
-        "type": "object",
-        "properties": {
-          "address": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "CreateZone201ResponseDataXfrConfigInbound": {
-        "required": [
-          "primaries",
-          "notify_ip_addresses",
-          "inbound_tsig_key_id"
-        ],
-        "type": "object",
-        "properties": {
-          "primaries": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateZone201ResponseDataXfrConfigInboundPrimariesItem"
-            }
-          },
-          "notify_ip_addresses": {
-            "$ref": "#/components/schemas/CreateZone201ResponseDataXfrConfigInboundNotifyIpAddresses"
-          },
-          "inbound_tsig_key_id": {
-            "type": "string"
-          }
-        }
-      },
-      "GetZone200ResponseDataXfrConfigInbound": {
-        "required": [
-          "primaries",
-          "notify_ip_addresses",
-          "inbound_tsig_key_id"
-        ],
-        "type": "object",
-        "properties": {
-          "primaries": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetZone200ResponseDataXfrConfigInboundPrimariesItem"
-            }
-          },
-          "notify_ip_addresses": {
-            "$ref": "#/components/schemas/GetZone200ResponseDataXfrConfigInboundNotifyIpAddresses"
-          },
-          "inbound_tsig_key_id": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateZoneRequestXfrConfigInboundPrimariesItem": {
-        "required": [
-          "address",
-          "description"
-        ],
-        "type": "object",
-        "properties": {
-          "address": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateZone200ResponseDataXfrConfigInbound": {
-        "required": [
-          "primaries",
-          "notify_ip_addresses",
-          "inbound_tsig_key_id"
-        ],
-        "type": "object",
-        "properties": {
-          "primaries": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateZone200ResponseDataXfrConfigInboundPrimariesItem"
-            }
-          },
-          "notify_ip_addresses": {
-            "$ref": "#/components/schemas/UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses"
-          },
-          "inbound_tsig_key_id": {
-            "type": "string"
-          }
-        }
-      },
       "SendMessagesToFanoutSubscribersRequestItemsItemFormats": {
         "required": [
           "ws-message"
@@ -76875,6 +76875,93 @@
         "properties": {
           "data": {
             "$ref": "#/components/schemas/CreateAStar200ResponseDataRelationshipsUserData"
+          }
+        }
+      },
+      "CreateZone201ResponseDataXfrConfigInboundPrimariesItem": {
+        "required": [
+          "address",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateZone201ResponseDataXfrConfigInboundNotifyIpAddresses": {
+        "required": [
+          "ipv4"
+        ],
+        "type": "object",
+        "properties": {
+          "ipv4": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "GetZone200ResponseDataXfrConfigInboundPrimariesItem": {
+        "required": [
+          "address",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "GetZone200ResponseDataXfrConfigInboundNotifyIpAddresses": {
+        "required": [
+          "ipv4"
+        ],
+        "type": "object",
+        "properties": {
+          "ipv4": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UpdateZone200ResponseDataXfrConfigInboundPrimariesItem": {
+        "required": [
+          "address",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses": {
+        "required": [
+          "ipv4"
+        ],
+        "type": "object",
+        "properties": {
+          "ipv4": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -79242,93 +79329,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItemValuesItem"
-            }
-          }
-        }
-      },
-      "CreateZone201ResponseDataXfrConfigInboundPrimariesItem": {
-        "required": [
-          "address",
-          "description"
-        ],
-        "type": "object",
-        "properties": {
-          "address": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "CreateZone201ResponseDataXfrConfigInboundNotifyIpAddresses": {
-        "required": [
-          "ipv4"
-        ],
-        "type": "object",
-        "properties": {
-          "ipv4": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "GetZone200ResponseDataXfrConfigInboundPrimariesItem": {
-        "required": [
-          "address",
-          "description"
-        ],
-        "type": "object",
-        "properties": {
-          "address": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "GetZone200ResponseDataXfrConfigInboundNotifyIpAddresses": {
-        "required": [
-          "ipv4"
-        ],
-        "type": "object",
-        "properties": {
-          "ipv4": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "UpdateZone200ResponseDataXfrConfigInboundPrimariesItem": {
-        "required": [
-          "address",
-          "description"
-        ],
-        "type": "object",
-        "properties": {
-          "address": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses": {
-        "required": [
-          "ipv4"
-        ],
-        "type": "object",
-        "properties": {
-          "ipv4": {
-            "type": "array",
-            "items": {
-              "type": "string"
             }
           }
         }

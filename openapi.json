@@ -9603,6 +9603,1013 @@
         ]
       }
     },
+    "/dns/v1/tsig-keys": {
+      "get": {
+        "summary": "Get TSIG keys",
+        "description": "Retrieve a paginated list of all TSIG keys.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetTSIGKeys",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filters the list to return only TSIG keys that contain the provided name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The order in which to list the results.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A list of TSIG keys.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "description",
+                          "algorithm",
+                          "created_at",
+                          "updated_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "algorithm": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "next_cursor",
+                        "limit",
+                        "sort",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "next_cursor": {
+                          "type": "string"
+                        },
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "sort": {
+                          "type": "string"
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create TSIG key",
+        "description": "Create a new TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "CreateTSIGKey",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "name",
+                  "description",
+                  "algorithm",
+                  "secret"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "algorithm": {
+                    "type": "string"
+                  },
+                  "secret": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 A TSIG key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "required": [
+                        "id",
+                        "name",
+                        "description",
+                        "algorithm",
+                        "created_at",
+                        "updated_at"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "algorithm": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dns/v1/tsig-keys/{tsig_key_id}": {
+      "get": {
+        "summary": "Get TSIG key",
+        "description": "Retrieve a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetTSIGKey",
+        "parameters": [
+          {
+            "name": "tsig_key_id",
+            "in": "path",
+            "description": "The TSIG Key Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A TSIG key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "required": [
+                        "id",
+                        "name",
+                        "description",
+                        "algorithm",
+                        "created_at",
+                        "updated_at"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "algorithm": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete TSIG key",
+        "description": "Delete a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "DeleteTSIGKey",
+        "parameters": [
+          {
+            "name": "tsig_key_id",
+            "in": "path",
+            "description": "The TSIG Key Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 Success - No content"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update TSIG key",
+        "description": "Update a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "UpdateTSIGKey",
+        "parameters": [
+          {
+            "name": "tsig_key_id",
+            "in": "path",
+            "description": "The TSIG Key Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "name",
+                  "description",
+                  "algorithm",
+                  "secret"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "algorithm": {
+                    "type": "string"
+                  },
+                  "secret": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 A TSIG key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "required": [
+                        "id",
+                        "name",
+                        "description",
+                        "algorithm",
+                        "created_at",
+                        "updated_at"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "algorithm": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dns/v1/zones": {
+      "get": {
+        "summary": "Get zones",
+        "description": "Retrieve a paginated list of all zones.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetZones",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filters the list to return only zones that contain the provided name.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The order in which to list the results.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A list of zones with basic details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data",
+                    "meta"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "description",
+                          "type",
+                          "created_at",
+                          "updated_at"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "required": [
+                        "next_cursor",
+                        "limit",
+                        "sort",
+                        "total"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "next_cursor": {
+                          "type": "string"
+                        },
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "sort": {
+                          "type": "string"
+                        },
+                        "total": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "post": {
+        "summary": "Create zone",
+        "description": "Create a new zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "CreateZone",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "name",
+                  "description",
+                  "type",
+                  "xfr_config_inbound"
+                ],
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "xfr_config_inbound": {
+                    "required": [
+                      "primaries",
+                      "inbound_tsig_key_id"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "primaries": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "address",
+                            "description"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "inbound_tsig_key_id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 A zone with full details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "required": [
+                        "id",
+                        "name",
+                        "description",
+                        "type",
+                        "created_at",
+                        "updated_at",
+                        "nameservers",
+                        "xfr_config_inbound",
+                        "serial"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        },
+                        "nameservers": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "xfr_config_inbound": {
+                          "required": [
+                            "primaries",
+                            "notify_ip_addresses",
+                            "inbound_tsig_key_id"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "primaries": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "address",
+                                  "description"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "address": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "notify_ip_addresses": {
+                              "required": [
+                                "ipv4"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "ipv4": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "inbound_tsig_key_id": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "serial": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
+    "/dns/v1/zones/{zone_id}": {
+      "get": {
+        "summary": "Get zone",
+        "description": "Retrieve a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetZone",
+        "parameters": [
+          {
+            "name": "zone_id",
+            "in": "path",
+            "description": "The Zone Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 A zone with full details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "required": [
+                        "id",
+                        "name",
+                        "description",
+                        "type",
+                        "created_at",
+                        "updated_at",
+                        "nameservers",
+                        "xfr_config_inbound",
+                        "serial"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        },
+                        "nameservers": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "xfr_config_inbound": {
+                          "required": [
+                            "primaries",
+                            "notify_ip_addresses",
+                            "inbound_tsig_key_id"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "primaries": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "address",
+                                  "description"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "address": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "notify_ip_addresses": {
+                              "required": [
+                                "ipv4"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "ipv4": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "inbound_tsig_key_id": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "serial": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "delete": {
+        "summary": "Delete zone",
+        "description": "Delete a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "DeleteZone",
+        "parameters": [
+          {
+            "name": "zone_id",
+            "in": "path",
+            "description": "The Zone Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 Success - No content"
+          }
+        },
+        "security": [
+          { }
+        ]
+      },
+      "patch": {
+        "summary": "Update zone",
+        "description": "Update a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "UpdateZone",
+        "parameters": [
+          {
+            "name": "zone_id",
+            "in": "path",
+            "description": "The Zone Identifier (UUID).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "description",
+                  "xfr_config_inbound"
+                ],
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "xfr_config_inbound": {
+                    "required": [
+                      "primaries",
+                      "inbound_tsig_key_id"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "primaries": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "address",
+                            "description"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "inbound_tsig_key_id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 A zone with full details.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "required": [
+                        "id",
+                        "name",
+                        "description",
+                        "type",
+                        "created_at",
+                        "updated_at",
+                        "nameservers",
+                        "xfr_config_inbound",
+                        "serial"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        },
+                        "updated_at": {
+                          "type": "string"
+                        },
+                        "nameservers": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "xfr_config_inbound": {
+                          "required": [
+                            "primaries",
+                            "notify_ip_addresses",
+                            "inbound_tsig_key_id"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "primaries": {
+                              "type": "array",
+                              "items": {
+                                "required": [
+                                  "address",
+                                  "description"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                  "address": {
+                                    "type": "string"
+                                  },
+                                  "description": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "notify_ip_addresses": {
+                              "required": [
+                                "ipv4"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "ipv4": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "inbound_tsig_key_id": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "serial": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          { }
+        ]
+      }
+    },
     "/domain-management/v1/tools/suggest": {
       "get": {
         "summary": "Suggest domains",
@@ -66499,1013 +67506,6 @@
                               }
                             }
                           }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      }
-    },
-    "/dns/v1/tsig-keys": {
-      "get": {
-        "summary": "Get TSIG keys",
-        "description": "Retrieve a paginated list of all TSIG keys.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "GetTSIGKeys",
-        "parameters": [
-          {
-            "name": "cursor",
-            "in": "query",
-            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Limit how many results are returned.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "description": "Filters the list to return only TSIG keys that contain the provided name.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "description": "The order in which to list the results.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 A list of TSIG keys.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "required": [
-                    "data",
-                    "meta"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name",
-                          "description",
-                          "algorithm",
-                          "created_at",
-                          "updated_at"
-                        ],
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "description": {
-                            "type": "string"
-                          },
-                          "algorithm": {
-                            "type": "string"
-                          },
-                          "created_at": {
-                            "type": "string"
-                          },
-                          "updated_at": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "meta": {
-                      "required": [
-                        "next_cursor",
-                        "limit",
-                        "sort",
-                        "total"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "next_cursor": {
-                          "type": "string"
-                        },
-                        "limit": {
-                          "type": "integer"
-                        },
-                        "sort": {
-                          "type": "string"
-                        },
-                        "total": {
-                          "type": "integer"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "post": {
-        "summary": "Create TSIG key",
-        "description": "Create a new TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "CreateTSIGKey",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "description",
-                  "algorithm",
-                  "secret"
-                ],
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "algorithm": {
-                    "type": "string"
-                  },
-                  "secret": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "201 A TSIG key.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "required": [
-                    "data"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "algorithm",
-                        "created_at",
-                        "updated_at"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
-                        },
-                        "algorithm": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      }
-    },
-    "/dns/v1/tsig-keys/{tsig_key_id}": {
-      "get": {
-        "summary": "Get TSIG key",
-        "description": "Retrieve a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "GetTSIGKey",
-        "parameters": [
-          {
-            "name": "tsig_key_id",
-            "in": "path",
-            "description": "The TSIG Key Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 A TSIG key.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "required": [
-                    "data"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "algorithm",
-                        "created_at",
-                        "updated_at"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
-                        },
-                        "algorithm": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "delete": {
-        "summary": "Delete TSIG key",
-        "description": "Delete a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "DeleteTSIGKey",
-        "parameters": [
-          {
-            "name": "tsig_key_id",
-            "in": "path",
-            "description": "The TSIG Key Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "204 Success - No content"
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "patch": {
-        "summary": "Update TSIG key",
-        "description": "Update a specific TSIG key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "UpdateTSIGKey",
-        "parameters": [
-          {
-            "name": "tsig_key_id",
-            "in": "path",
-            "description": "The TSIG Key Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "description",
-                  "algorithm",
-                  "secret"
-                ],
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "algorithm": {
-                    "type": "string"
-                  },
-                  "secret": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "200 A TSIG key.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "required": [
-                    "data"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "algorithm",
-                        "created_at",
-                        "updated_at"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
-                        },
-                        "algorithm": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      }
-    },
-    "/dns/v1/zones": {
-      "get": {
-        "summary": "Get zones",
-        "description": "Retrieve a paginated list of all zones.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "GetZones",
-        "parameters": [
-          {
-            "name": "cursor",
-            "in": "query",
-            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "Limit how many results are returned.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "description": "Filters the list to return only zones that contain the provided name.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "description": "The order in which to list the results.",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 A list of zones with basic details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "required": [
-                    "data",
-                    "meta"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name",
-                          "description",
-                          "type",
-                          "created_at",
-                          "updated_at"
-                        ],
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "description": {
-                            "type": "string"
-                          },
-                          "type": {
-                            "type": "string"
-                          },
-                          "created_at": {
-                            "type": "string"
-                          },
-                          "updated_at": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "meta": {
-                      "required": [
-                        "next_cursor",
-                        "limit",
-                        "sort",
-                        "total"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "next_cursor": {
-                          "type": "string"
-                        },
-                        "limit": {
-                          "type": "integer"
-                        },
-                        "sort": {
-                          "type": "string"
-                        },
-                        "total": {
-                          "type": "integer"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "post": {
-        "summary": "Create zone",
-        "description": "Create a new zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "CreateZone",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "description",
-                  "type",
-                  "xfr_config_inbound"
-                ],
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "type": {
-                    "type": "string"
-                  },
-                  "xfr_config_inbound": {
-                    "required": [
-                      "primaries",
-                      "inbound_tsig_key_id"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "primaries": {
-                        "type": "array",
-                        "items": {
-                          "required": [
-                            "address",
-                            "description"
-                          ],
-                          "type": "object",
-                          "properties": {
-                            "address": {
-                              "type": "string"
-                            },
-                            "description": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      },
-                      "inbound_tsig_key_id": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "201": {
-            "description": "201 A zone with full details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "required": [
-                    "data"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "type",
-                        "created_at",
-                        "updated_at",
-                        "nameservers",
-                        "xfr_config_inbound",
-                        "serial"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
-                        },
-                        "type": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        },
-                        "nameservers": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "xfr_config_inbound": {
-                          "required": [
-                            "primaries",
-                            "notify_ip_addresses",
-                            "inbound_tsig_key_id"
-                          ],
-                          "type": "object",
-                          "properties": {
-                            "primaries": {
-                              "type": "array",
-                              "items": {
-                                "required": [
-                                  "address",
-                                  "description"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                  "address": {
-                                    "type": "string"
-                                  },
-                                  "description": {
-                                    "type": "string"
-                                  }
-                                }
-                              }
-                            },
-                            "notify_ip_addresses": {
-                              "required": [
-                                "ipv4"
-                              ],
-                              "type": "object",
-                              "properties": {
-                                "ipv4": {
-                                  "type": "array",
-                                  "items": {
-                                    "type": "string"
-                                  }
-                                }
-                              }
-                            },
-                            "inbound_tsig_key_id": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "serial": {
-                          "type": "integer"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      }
-    },
-    "/dns/v1/zones/{zone_id}": {
-      "get": {
-        "summary": "Get zone",
-        "description": "Retrieve a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "GetZone",
-        "parameters": [
-          {
-            "name": "zone_id",
-            "in": "path",
-            "description": "The Zone Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 A zone with full details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "required": [
-                    "data"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "type",
-                        "created_at",
-                        "updated_at",
-                        "nameservers",
-                        "xfr_config_inbound",
-                        "serial"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
-                        },
-                        "type": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        },
-                        "nameservers": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "xfr_config_inbound": {
-                          "required": [
-                            "primaries",
-                            "notify_ip_addresses",
-                            "inbound_tsig_key_id"
-                          ],
-                          "type": "object",
-                          "properties": {
-                            "primaries": {
-                              "type": "array",
-                              "items": {
-                                "required": [
-                                  "address",
-                                  "description"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                  "address": {
-                                    "type": "string"
-                                  },
-                                  "description": {
-                                    "type": "string"
-                                  }
-                                }
-                              }
-                            },
-                            "notify_ip_addresses": {
-                              "required": [
-                                "ipv4"
-                              ],
-                              "type": "object",
-                              "properties": {
-                                "ipv4": {
-                                  "type": "array",
-                                  "items": {
-                                    "type": "string"
-                                  }
-                                }
-                              }
-                            },
-                            "inbound_tsig_key_id": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "serial": {
-                          "type": "integer"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "delete": {
-        "summary": "Delete zone",
-        "description": "Delete a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "DeleteZone",
-        "parameters": [
-          {
-            "name": "zone_id",
-            "in": "path",
-            "description": "The Zone Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "204 Success - No content"
-          }
-        },
-        "security": [
-          { }
-        ]
-      },
-      "patch": {
-        "summary": "Update zone",
-        "description": "Update a specific zone.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
-        "operationId": "UpdateZone",
-        "parameters": [
-          {
-            "name": "zone_id",
-            "in": "path",
-            "description": "The Zone Identifier (UUID).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "description",
-                  "xfr_config_inbound"
-                ],
-                "type": "object",
-                "properties": {
-                  "description": {
-                    "type": "string"
-                  },
-                  "xfr_config_inbound": {
-                    "required": [
-                      "primaries",
-                      "inbound_tsig_key_id"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "primaries": {
-                        "type": "array",
-                        "items": {
-                          "required": [
-                            "address",
-                            "description"
-                          ],
-                          "type": "object",
-                          "properties": {
-                            "address": {
-                              "type": "string"
-                            },
-                            "description": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      },
-                      "inbound_tsig_key_id": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "200 A zone with full details.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "required": [
-                    "data"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "required": [
-                        "id",
-                        "name",
-                        "description",
-                        "type",
-                        "created_at",
-                        "updated_at",
-                        "nameservers",
-                        "xfr_config_inbound",
-                        "serial"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
-                        },
-                        "type": {
-                          "type": "string"
-                        },
-                        "created_at": {
-                          "type": "string"
-                        },
-                        "updated_at": {
-                          "type": "string"
-                        },
-                        "nameservers": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "xfr_config_inbound": {
-                          "required": [
-                            "primaries",
-                            "notify_ip_addresses",
-                            "inbound_tsig_key_id"
-                          ],
-                          "type": "object",
-                          "properties": {
-                            "primaries": {
-                              "type": "array",
-                              "items": {
-                                "required": [
-                                  "address",
-                                  "description"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                  "address": {
-                                    "type": "string"
-                                  },
-                                  "description": {
-                                    "type": "string"
-                                  }
-                                }
-                              }
-                            },
-                            "notify_ip_addresses": {
-                              "required": [
-                                "ipv4"
-                              ],
-                              "type": "object",
-                              "properties": {
-                                "ipv4": {
-                                  "type": "array",
-                                  "items": {
-                                    "type": "string"
-                                  }
-                                }
-                              }
-                            },
-                            "inbound_tsig_key_id": {
-                              "type": "string"
-                            }
-                          }
-                        },
-                        "serial": {
-                          "type": "integer"
                         }
                       }
                     }
