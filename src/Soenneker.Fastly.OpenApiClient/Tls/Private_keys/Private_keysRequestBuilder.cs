@@ -49,40 +49,40 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Private_keys
         /// <summary>
         /// &quot;List all TLS private keys.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Private_keys.Private_keysRequestBuilder.Private_keysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200ApiJsonResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Private_keys.Private_keysRequestBuilder.Private_keysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Private_keys.Private_keysRequestBuilder.Private_keysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200ApiJsonResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Private_keys.Private_keysRequestBuilder.Private_keysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTlsPrivateKeys200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/tls/custom-certs/private-keys/#create-tls-key)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKeyApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201ApiJsonResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKeyApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKeyApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201ApiJsonResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKeyApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsPrivateKey201ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all TLS private keys.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

@@ -59,40 +59,40 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Certificates.Item
         /// <summary>
         /// &quot;Show a TLS certificate.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200ApiJsonResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200ApiJsonResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificate200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS certificate&apos;s name. If replacing a TLS certificate, the new TLS certificate must contain all SAN entries as the current TLS certificate. It must either have an exact matching list or contain a superset.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200Response?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificateApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ApiJsonResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificateApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200Response> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificateApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ApiJsonResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificateApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Destroy a TLS certificate. TLS certificates already enabled for a domain cannot be destroyed.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

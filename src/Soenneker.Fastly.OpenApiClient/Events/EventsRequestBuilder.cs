@@ -49,20 +49,20 @@ namespace Soenneker.Fastly.OpenApiClient.Events
         /// <summary>
         /// &quot;List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200ApiJsonResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200ApiJsonResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

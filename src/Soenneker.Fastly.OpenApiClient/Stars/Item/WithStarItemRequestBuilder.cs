@@ -53,20 +53,20 @@ namespace Soenneker.Fastly.OpenApiClient.Stars.Item
         /// <summary>
         /// &quot;Show star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200ApiJsonResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200ApiJsonResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Delete star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;

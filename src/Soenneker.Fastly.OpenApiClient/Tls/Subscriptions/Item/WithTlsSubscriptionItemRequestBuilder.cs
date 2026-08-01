@@ -59,40 +59,40 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
         /// <summary>
         /// &quot;Show a TLS subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ApiJsonResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ApiJsonResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state failed by setting the state to retry.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200Response?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscriptionApiJsonRequest body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ApiJsonResponse?> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscriptionApiJsonRequest body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200Response> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscriptionApiJsonRequest body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ApiJsonResponse> PatchAsync(global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscriptionApiJsonRequest body, Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder.WithTlsSubscriptionItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;

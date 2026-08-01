@@ -49,40 +49,40 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates
         /// <summary>
         /// &quot;List all certificates.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.CertificatesRequestBuilder.CertificatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200ApiJsonResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.CertificatesRequestBuilder.CertificatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.CertificatesRequestBuilder.CertificatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200ApiJsonResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.CertificatesRequestBuilder.CertificatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListCertificates200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201ApiJsonResponse?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201ApiJsonResponse> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificate201ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;List all certificates.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
