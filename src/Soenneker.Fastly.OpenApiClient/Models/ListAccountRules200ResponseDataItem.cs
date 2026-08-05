@@ -38,6 +38,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>The created_by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +132,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemActionsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemConditionsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemConditionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "group_operator", n => { GroupOperator = n.GetStringValue(); } },
@@ -144,6 +153,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemActionsItem>("actions", Actions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemConditionsItem>("conditions", Conditions);
             writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("group_operator", GroupOperator);

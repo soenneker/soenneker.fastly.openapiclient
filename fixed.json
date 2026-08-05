@@ -43824,6 +43824,7 @@
           "request_logging",
           "conditions",
           "actions",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -43862,6 +43863,9 @@
               "$ref": "#/components/schemas/CreateAccountRule201ResponseActionsItem"
             }
           },
+          "created_by": {
+            "type": "string"
+          },
           "created_at": {
             "type": "string"
           },
@@ -43881,6 +43885,7 @@
           "request_logging",
           "conditions",
           "actions",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -43919,6 +43924,9 @@
               "$ref": "#/components/schemas/RetrieveAccountRule200ResponseActionsItem"
             }
           },
+          "created_by": {
+            "type": "string"
+          },
           "created_at": {
             "type": "string"
           },
@@ -43938,6 +43946,7 @@
           "request_logging",
           "conditions",
           "actions",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -43976,6 +43985,9 @@
               "$ref": "#/components/schemas/EditAccountRule200ResponseActionsItem"
             }
           },
+          "created_by": {
+            "type": "string"
+          },
           "created_at": {
             "type": "string"
           },
@@ -44013,6 +44025,7 @@
           "request_logging",
           "conditions",
           "actions",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44051,6 +44064,9 @@
               "$ref": "#/components/schemas/CreateRule201ResponseActionsItem"
             }
           },
+          "created_by": {
+            "type": "string"
+          },
           "created_at": {
             "type": "string"
           },
@@ -44070,6 +44086,7 @@
           "request_logging",
           "conditions",
           "actions",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44108,6 +44125,9 @@
               "$ref": "#/components/schemas/RetrieveRule200ResponseActionsItem"
             }
           },
+          "created_by": {
+            "type": "string"
+          },
           "created_at": {
             "type": "string"
           },
@@ -44127,6 +44147,7 @@
           "request_logging",
           "conditions",
           "actions",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44164,6 +44185,9 @@
             "items": {
               "$ref": "#/components/schemas/EditRule200ResponseActionsItem"
             }
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"
@@ -44213,6 +44237,7 @@
           "name",
           "description",
           "scope",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44233,6 +44258,9 @@
           "scope": {
             "$ref": "#/components/schemas/CreateANewAccountLevelCustomSignal201ResponseScope"
           },
+          "created_by": {
+            "type": "string"
+          },
           "created_at": {
             "type": "string"
           },
@@ -44248,6 +44276,7 @@
           "name",
           "description",
           "scope",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44267,6 +44296,9 @@
           },
           "scope": {
             "$ref": "#/components/schemas/GetAnAccountLevelCustomSignal200ResponseScope"
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"
@@ -44294,6 +44326,7 @@
           "name",
           "description",
           "scope",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44313,6 +44346,9 @@
           },
           "scope": {
             "$ref": "#/components/schemas/EditAnAccountLevelCustomSignal200ResponseScope"
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"
@@ -44362,6 +44398,7 @@
           "name",
           "description",
           "scope",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44382,6 +44419,9 @@
           "scope": {
             "$ref": "#/components/schemas/CreateAWorkspaceCustomSignal201ResponseScope"
           },
+          "created_by": {
+            "type": "string"
+          },
           "created_at": {
             "type": "string"
           },
@@ -44397,6 +44437,7 @@
           "name",
           "description",
           "scope",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44416,6 +44457,9 @@
           },
           "scope": {
             "$ref": "#/components/schemas/GetAWorkspaceCustomSignal200ResponseScope"
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"
@@ -44443,6 +44487,7 @@
           "name",
           "description",
           "scope",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -44462,6 +44507,9 @@
           },
           "scope": {
             "$ref": "#/components/schemas/EditAWorkspaceCustomSignal200ResponseScope"
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"
@@ -62077,6 +62125,7 @@
           "request_logging",
           "conditions",
           "actions",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -62114,6 +62163,9 @@
             "items": {
               "$ref": "#/components/schemas/ListAccountRules200ResponseDataItemActionsItem"
             }
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"
@@ -62305,6 +62357,7 @@
           "request_logging",
           "conditions",
           "actions",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -62342,6 +62395,9 @@
             "items": {
               "$ref": "#/components/schemas/ListRules2200ResponseDataItemActionsItem"
             }
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"
@@ -62529,6 +62585,7 @@
           "name",
           "description",
           "scope",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -62548,6 +62605,9 @@
           },
           "scope": {
             "$ref": "#/components/schemas/GetAccountLevelCustomSignals200ResponseDataItemScope"
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"
@@ -62633,6 +62693,7 @@
           "name",
           "description",
           "scope",
+          "created_by",
           "created_at",
           "updated_at"
         ],
@@ -62652,6 +62713,9 @@
           },
           "scope": {
             "$ref": "#/components/schemas/ListWorkspaceCustomSignals200ResponseDataItemScope"
+          },
+          "created_by": {
+            "type": "string"
           },
           "created_at": {
             "type": "string"

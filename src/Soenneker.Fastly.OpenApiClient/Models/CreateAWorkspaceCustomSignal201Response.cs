@@ -22,6 +22,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>The created_by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -112,6 +121,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
