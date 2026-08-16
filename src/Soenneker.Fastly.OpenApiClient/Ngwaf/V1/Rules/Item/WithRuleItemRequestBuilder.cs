@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Rules.Item
         {
         }
         /// <summary>
-        /// &quot;Delete a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Rules.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAccountRule200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Rules.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAccountRule200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAccountRule200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Change attributes of a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Change attributes of a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EditAccountRule200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Rules.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EditAccountRule200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EditAccountRule200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Rules.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Rules.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Change attributes of a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Change attributes of a rule at the account level.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

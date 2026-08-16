@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Brotli_compression.S
         {
         }
         /// <summary>
-        /// &quot;Disable the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Disable the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Brotli_compression.S
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get the enablement status of the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get the enablement status of the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus4200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Brotli_compression.S
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus4200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus4200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Enable the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Enable the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct4200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Brotli_compression.S
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct4200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct4200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Disable the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Disable the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Brotli_compression.S
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get the enablement status of the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get the enablement status of the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Brotli_compression.S
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Enable the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Enable the Brotli Compression product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ddos_protection.Serv
         {
         }
         /// <summary>
-        /// &quot;Disable the DDoS Protection product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Disable the DDoS Protection product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ddos_protection.Serv
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get the enablement status of the DDoS Protection product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get the enablement status of the DDoS Protection product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus5200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ddos_protection.Serv
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus5200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus5200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Enable the DDoS Protection product on a service in default &apos;log&apos; mode unless otherwise specified in the request body.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Enable the DDoS Protection product on a service in default &apos;log&apos; mode unless otherwise specified in the request body.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct5200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ddos_protection.Serv
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct5200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct5200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Disable the DDoS Protection product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Disable the DDoS Protection product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ddos_protection.Serv
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get the enablement status of the DDoS Protection product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get the enablement status of the DDoS Protection product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +132,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ddos_protection.Serv
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Enable the DDoS Protection product on a service in default &apos;log&apos; mode unless otherwise specified in the request body.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Enable the DDoS Protection product on a service in default &apos;log&apos; mode unless otherwise specified in the request body.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

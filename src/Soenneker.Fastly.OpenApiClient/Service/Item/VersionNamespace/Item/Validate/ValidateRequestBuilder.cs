@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Vali
         {
         }
         /// <summary>
-        /// &quot;Validate the version for a particular service and version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Validate the version for a particular service and version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ValidateAServiceVersion200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Vali
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ValidateAServiceVersion200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ValidateAServiceVersion200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Validate the version for a particular service and version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Validate the version for a particular service and version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item
         {
         }
         /// <summary>
-        /// &quot;Get real-time data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get real-time data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get real-time data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get real-time data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

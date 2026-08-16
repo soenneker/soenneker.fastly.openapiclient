@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.MailinglistConfirmations
         {
         }
         /// <summary>
-        /// &quot;Send a confirmation email to collect required opt-in for mailing list notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Send a confirmation email to collect required opt-in for mailing list notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.MailinglistConfirmations
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Send a confirmation email to collect required opt-in for mailing list notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Send a confirmation email to collect required opt-in for mailing list notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

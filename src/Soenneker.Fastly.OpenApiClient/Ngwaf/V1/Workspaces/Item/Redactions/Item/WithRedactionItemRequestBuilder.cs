@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Redactions.Ite
         {
         }
         /// <summary>
-        /// &quot;Remove a redaction from a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Remove a redaction from a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Redactions.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a redaction in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get a redaction in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveRedaction200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Redactions.Ite
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveRedaction200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveRedaction200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Change attributes of a redaction in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Change attributes of a redaction in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EditRedaction200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Redactions.Ite
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EditRedaction200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EditRedaction200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Remove a redaction from a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Remove a redaction from a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Redactions.Ite
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a redaction in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get a redaction in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Redactions.Ite
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Change attributes of a redaction in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Change attributes of a redaction in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

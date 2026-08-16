@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Fanout.Services
         {
         }
         /// <summary>
-        /// &quot;Get all the services which have the Fanout product enabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get all the services which have the Fanout product enabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetServicesWithProductEnabled6200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Fanout.Services
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetServicesWithProductEnabled6200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetServicesWithProductEnabled6200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get all the services which have the Fanout product enabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get all the services which have the Fanout product enabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

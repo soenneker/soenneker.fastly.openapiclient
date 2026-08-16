@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stars.Item
         {
         }
         /// <summary>
-        /// &quot;Delete star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Delete star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stars.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Show star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Show star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stars.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAStar200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Delete star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stars.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Show star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Show star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

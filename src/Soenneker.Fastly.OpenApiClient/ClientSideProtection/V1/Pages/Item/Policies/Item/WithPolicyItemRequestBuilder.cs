@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Poli
         {
         }
         /// <summary>
-        /// &quot;Get details for a specific policy.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get details for a specific policy.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetPolicy200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Poli
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetPolicy200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetPolicy200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update a policy&apos;s configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update a policy&apos;s configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdatePolicy200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Poli
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdatePolicy200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdatePolicy200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get details for a specific policy.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get details for a specific policy.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Poli
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update a policy&apos;s configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update a policy&apos;s configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

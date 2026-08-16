@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
         {
         }
         /// <summary>
-        /// &quot;Deletes an event mapping.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Deletes an event mapping.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves an event mapping by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieves an event mapping by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAnEventMapping200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAnEventMapping200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAnEventMapping200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Replaces an event mapping. All fields must be provided. Omitted fields are not preserved from the previous version.integration_ids must be non-empty. A mapping is always set to active on update.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Replaces an event mapping. All fields must be provided. Omitted fields are not preserved from the previous version.integration_ids must be non-empty. A mapping is always set to active on update.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEventMapping200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEventMapping200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEventMapping200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deletes an event mapping.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Deletes an event mapping.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieves an event mapping by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieves an event mapping by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Replaces an event mapping. All fields must be provided. Omitted fields are not preserved from the previous version.integration_ids must be non-empty. A mapping is always set to active on update.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Replaces an event mapping. All fields must be provided. Omitted fields are not preserved from the previous version.integration_ids must be non-empty. A mapping is always set to active on update.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

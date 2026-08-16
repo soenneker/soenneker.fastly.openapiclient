@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Simulate
         {
         }
         /// <summary>
-        /// &quot;Simulates a request through the workspace&apos;s WAF configuration and returnsthe WAF response code and any signals that would be detected. The operationis stateless — no simulation data is persisted.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Simulates a request through the workspace&apos;s WAF configuration and returnsthe WAF response code and any signals that would be detected. The operationis stateless — no simulation data is persisted.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Simulate
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Simulates a request through the workspace&apos;s WAF configuration and returnsthe WAF response code and any signals that would be detected. The operationis stateless — no simulation data is persisted.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Simulates a request through the workspace&apos;s WAF configuration and returnsthe WAF response code and any signals that would be detected. The operationis stateless — no simulation data is persisted.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

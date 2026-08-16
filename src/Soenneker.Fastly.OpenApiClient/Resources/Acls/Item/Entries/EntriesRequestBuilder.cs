@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entries
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-list-acl-entries)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-list-acl-entries)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListAnAcl200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entries
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAnAcl200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAnAcl200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entries
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-list-acl-entries)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-list-acl-entries)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entries
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entries
             return new global::Soenneker.Fastly.OpenApiClient.Resources.Acls.Item.Entries.EntriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-list-acl-entries)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-list-acl-entries)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EntriesRequestBuilderGetQueryParameters 

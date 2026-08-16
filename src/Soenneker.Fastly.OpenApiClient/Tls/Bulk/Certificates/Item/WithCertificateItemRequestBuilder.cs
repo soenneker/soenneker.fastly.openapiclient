@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.Item
         {
         }
         /// <summary>
-        /// &quot;Destroy a certificate. This disables TLS for all domains listed as SAN entries.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Destroy a certificate. This disables TLS for all domains listed as SAN entries.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve a single certificate.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve a single certificate.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetACertificate200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetACertificate200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetACertificate200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateACertificate200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateACertificate200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateACertificate200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Destroy a certificate. This disables TLS for all domains listed as SAN entries.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Destroy a certificate. This disables TLS for all domains listed as SAN entries.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieve a single certificate.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve a single certificate.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Bulk.Certificates.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

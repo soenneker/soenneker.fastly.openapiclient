@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Services
         {
         }
         /// <summary>
-        /// &quot;List of services associated with the automation token.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List of services associated with the automation token.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenServices200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Services
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenServices200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenServices200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List of services associated with the automation token.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List of services associated with the automation token.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Services
             return new global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Services.ServicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List of services associated with the automation token.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List of services associated with the automation token.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServicesRequestBuilderGetQueryParameters 

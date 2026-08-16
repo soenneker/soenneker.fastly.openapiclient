@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
         {
         }
         /// <summary>
-        /// &quot;Delete an entry in a config store given a config store ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete an entry in a config store given a config store ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DeleteAnItemFromAConfigStore200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeleteAnItemFromAConfigStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeleteAnItemFromAConfigStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve a config store entry given a config store ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve a config store entry given a config store ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAnItemFromAConfigStore200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAnItemFromAConfigStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAnItemFromAConfigStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEntryInAConfigStore200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEntryInAConfigStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEntryInAConfigStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Insert or update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Insert or update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateAnEntryInAConfigStore200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateAnEntryInAConfigStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateAnEntryInAConfigStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete an entry in a config store given a config store ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete an entry in a config store given a config store ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieve a config store entry given a config store ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve a config store entry given a config store ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +170,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Insert or update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Insert or update an entry in a config store given a config store ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

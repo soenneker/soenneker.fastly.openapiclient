@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items
         {
         }
         /// <summary>
-        /// &quot;List of DictionaryItems given service and dictionary ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List of DictionaryItems given service and dictionary ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListItemsInADictionary200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. Contact support to discuss raising this limit.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. Contact support to discuss raising this limit.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInADictionary200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInADictionary200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInADictionary200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List of DictionaryItems given service and dictionary ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List of DictionaryItems given service and dictionary ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. Contact support to discuss raising this limit.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. Contact support to discuss raising this limit.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items
             return new global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List of DictionaryItems given service and dictionary ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List of DictionaryItems given service and dictionary ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 

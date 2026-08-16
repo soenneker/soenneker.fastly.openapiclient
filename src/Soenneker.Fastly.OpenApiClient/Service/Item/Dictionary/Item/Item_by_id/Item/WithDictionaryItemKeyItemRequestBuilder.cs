@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
         {
         }
         /// <summary>
-        /// &quot;Delete DictionaryItem given service, dictionary ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete DictionaryItem given service, dictionary ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DeleteAnItemFromADictionary200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeleteAnItemFromADictionary200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeleteAnItemFromADictionary200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve a single DictionaryItem given service, dictionary ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve a single DictionaryItem given service, dictionary ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAnItemFromADictionary200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAnItemFromADictionary200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAnItemFromADictionary200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update DictionaryItem given service, dictionary ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update DictionaryItem given service, dictionary ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEntryInADictionary200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEntryInADictionary200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEntryInADictionary200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Upsert DictionaryItem given service, dictionary ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Upsert DictionaryItem given service, dictionary ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateAnEntryInADictionary200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateAnEntryInADictionary200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateAnEntryInADictionary200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete DictionaryItem given service, dictionary ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete DictionaryItem given service, dictionary ID, and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieve a single DictionaryItem given service, dictionary ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve a single DictionaryItem given service, dictionary ID and item key.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update DictionaryItem given service, dictionary ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Update DictionaryItem given service, dictionary ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +170,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Upsert DictionaryItem given service, dictionary ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Upsert DictionaryItem given service, dictionary ID, item key, and item value.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

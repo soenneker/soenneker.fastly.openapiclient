@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens.Self
         {
         }
         /// <summary>
-        /// &quot;Revoke a token that is used to authenticate the request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Revoke a token that is used to authenticate the request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens.Self
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a single token based on the access_token used in the request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a single token based on the access_token used in the request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetTheCurrentToken200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens.Self
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetTheCurrentToken200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetTheCurrentToken200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Revoke a token that is used to authenticate the request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Revoke a token that is used to authenticate the request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens.Self
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a single token based on the access_token used in the request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a single token based on the access_token used in the request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls
         {
         }
         /// <summary>
-        /// &quot;List all ACLs.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all ACLs.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListAcLs2200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAcLs2200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAcLs2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-create-acls)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-create-acls)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateANewAcl2200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateANewAcl2200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateANewAcl2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all ACLs.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all ACLs.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Acls
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-create-acls)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/acls/acls/#compute-acl-create-acls)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

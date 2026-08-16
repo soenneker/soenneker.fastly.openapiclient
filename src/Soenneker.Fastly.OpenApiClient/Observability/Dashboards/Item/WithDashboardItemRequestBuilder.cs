@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Dashboards.Item
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#delete-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#delete-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Dashboards.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#get-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#get-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Dashboards.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#update-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#update-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnExistingDashboard200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Dashboards.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnExistingDashboard200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnExistingDashboard200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#delete-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#delete-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Dashboards.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#get-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#get-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Dashboards.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#update-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/observability/custom-dashboards/#update-dashboard)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

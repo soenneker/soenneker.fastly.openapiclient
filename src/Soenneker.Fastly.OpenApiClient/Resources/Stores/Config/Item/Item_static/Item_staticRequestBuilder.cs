@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_stati
         {
         }
         /// <summary>
-        /// &quot;Add a single key-value pair to an individual config store, specified by ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Add a single key-value pair to an individual config store, specified by ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEntryInAConfigStore200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_stati
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEntryInAConfigStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEntryInAConfigStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Add a single key-value pair to an individual config store, specified by ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Add a single key-value pair to an individual config store, specified by ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -118,7 +118,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#delete-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#delete-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DeleteAService200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeleteAService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeleteAService200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a specific service by id.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get a specific service by id.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAService200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -154,7 +154,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAService200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#update-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#update-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAService200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -174,7 +174,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAService200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#delete-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#delete-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -193,7 +193,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a specific service by id.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get a specific service by id.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -212,7 +212,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#update-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/services/service/#update-service)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

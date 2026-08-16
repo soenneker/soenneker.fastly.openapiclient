@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.ScopeTyp
         {
         }
         /// <summary>
-        /// &quot;Returns all scope types supported by the Event Mappings API. A scope type defines the category of Fastly resource that a mapping applies to. Results are sorted alphabetically by scope_type by default. Use sort=-scope_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns all scope types supported by the Event Mappings API. A scope type defines the category of Fastly resource that a mapping applies to. Results are sorted alphabetically by scope_type by default. Use sort=-scope_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedScopeTypes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.ScopeTyp
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedScopeTypes200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedScopeTypes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns all scope types supported by the Event Mappings API. A scope type defines the category of Fastly resource that a mapping applies to. Results are sorted alphabetically by scope_type by default. Use sort=-scope_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns all scope types supported by the Event Mappings API. A scope type defines the category of Fastly resource that a mapping applies to. Results are sorted alphabetically by scope_type by default. Use sort=-scope_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.ScopeTyp
             return new global::Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.ScopeTypes.ScopeTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns all scope types supported by the Event Mappings API. A scope type defines the category of Fastly resource that a mapping applies to. Results are sorted alphabetically by scope_type by default. Use sort=-scope_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns all scope types supported by the Event Mappings API. A scope type defines the category of Fastly resource that a mapping applies to. Results are sorted alphabetically by scope_type by default. Use sort=-scope_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScopeTypesRequestBuilderGetQueryParameters 

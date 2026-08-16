@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item
         {
         }
         /// <summary>
-        /// &quot;Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item
             return new global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithServiceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithServiceItemRequestBuilderGetQueryParameters 

@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#delete-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#delete-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DeleteACustomer200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeleteACustomer200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeleteACustomer200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a specific customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a specific customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetACustomer200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetACustomer200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetACustomer200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#update-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#update-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateACustomer200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateACustomer200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateACustomer200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#delete-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#delete-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a specific customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a specific customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#update-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#update-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

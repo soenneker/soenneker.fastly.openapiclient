@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Regions
         {
         }
         /// <summary>
-        /// &quot;Fetches the list of codes for regions that are covered by the Fastly CDN service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Fetches the list of codes for regions that are covered by the Fastly CDN service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRegionCodes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Regions
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetRegionCodes200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetRegionCodes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Fetches the list of codes for regions that are covered by the Fastly CDN service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Fetches the list of codes for regions that are covered by the Fastly CDN service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

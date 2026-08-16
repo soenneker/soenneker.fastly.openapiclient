@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.IntegrationTypes
         {
         }
         /// <summary>
-        /// &quot;Describe all handled integration types with additional metadata on how to create an integration of each type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Describe all handled integration types with additional metadata on how to create an integration of each type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.GetAllIntegrationTypes200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.IntegrationTypes
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Describe all handled integration types with additional metadata on how to create an integration of each type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Describe all handled integration types with additional metadata on how to create an integration of each type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item
         {
         }
         /// <summary>
-        /// &quot;Remove a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Remove a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Show a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Show a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsConfiguration2200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsConfiguration2200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsConfiguration2200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/tls/configuration/#update-tls-config)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/tls/configuration/#update-tls-config)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration2200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration2200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration2200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Remove a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Remove a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Show a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Show a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/tls/configuration/#update-tls-config)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/tls/configuration/#update-tls-config)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,12 +157,12 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item
             return new global::Soenneker.Fastly.OpenApiClient.Tls.Configurations.Item.WithTlsConfigurationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Show a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Show a TLS configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithTlsConfigurationItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Include related objects. Optional, comma-separated values. Permitted values: dns_records.&quot;</summary>
+            /// <summary>Include related objects. Optional, comma-separated values. Permitted values: dns_records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

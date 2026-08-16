@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Mutual_authentications
         {
         }
         /// <summary>
-        /// &quot;List all mutual authentications.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all mutual authentications.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListMutualAuthentications200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Mutual_authentications
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListMutualAuthentications200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListMutualAuthentications200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a mutual authentication using a bundle of certificates to enable client-to-server mutual TLS.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Create a mutual authentication using a bundle of certificates to enable client-to-server mutual TLS.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAMutualAuthentication201ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Mutual_authentications
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAMutualAuthentication201ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAMutualAuthentication201ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all mutual authentications.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all mutual authentications.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Mutual_authentications
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a mutual authentication using a bundle of certificates to enable client-to-server mutual TLS.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Create a mutual authentication using a bundle of certificates to enable client-to-server mutual TLS.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,12 +135,12 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Mutual_authentications
             return new global::Soenneker.Fastly.OpenApiClient.Tls.Mutual_authentications.Mutual_authenticationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all mutual authentications.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all mutual authentications.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Mutual_authenticationsRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Comma-separated list of related objects to include (optional). Permitted values: tls_activations. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.&quot;</summary>
+            /// <summary>Comma-separated list of related objects to include (optional). Permitted values: tls_activations. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Current_customer
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#get-logged-in-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#get-logged-in-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetTheLoggedInCustomer200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Current_customer
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetTheLoggedInCustomer200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetTheLoggedInCustomer200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#get-logged-in-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#get-logged-in-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

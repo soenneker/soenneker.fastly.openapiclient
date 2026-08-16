@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Dns.Configurations
         {
         }
         /// <summary>
-        /// &quot;List all DNS configurations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all DNS configurations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListDnsConfigurations200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Dns.Configurations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListDnsConfigurations200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListDnsConfigurations200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ip-configuration/spp/dns-configuration/#create-spp-dns-config)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/ip-configuration/spp/dns-configuration/#create-spp-dns-config)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAdnsConfiguration201ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Dns.Configurations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAdnsConfiguration201ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAdnsConfiguration201ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all DNS configurations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all DNS configurations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Dns.Configurations
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ip-configuration/spp/dns-configuration/#create-spp-dns-config)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/ip-configuration/spp/dns-configuration/#create-spp-dns-config)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

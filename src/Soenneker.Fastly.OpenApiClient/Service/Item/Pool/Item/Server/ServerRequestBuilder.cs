@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Server
         {
         }
         /// <summary>
-        /// &quot;Creates a single server for a particular service and pool.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Creates a single server for a particular service and pool.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.AddAServerToAPool200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Pool.Item.Server
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.AddAServerToAPool200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.AddAServerToAPool200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a single server for a particular service and pool.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Creates a single server for a particular service and pool.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

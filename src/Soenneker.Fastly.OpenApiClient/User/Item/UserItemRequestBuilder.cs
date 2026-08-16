@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#delete-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#delete-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DeleteAUser200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeleteAUser200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeleteAUser200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a specific user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a specific user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAUser200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAUser200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAUser200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update a user. Only users with the role of superuser can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Update a user. Only users with the role of superuser can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAUser200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAUser200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAUser200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#delete-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#delete-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +115,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a specific user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a specific user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +134,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update a user. Only users with the role of superuser can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Update a user. Only users with the role of superuser can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

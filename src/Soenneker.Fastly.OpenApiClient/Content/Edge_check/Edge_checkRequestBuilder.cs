@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Content.Edge_check
         {
         }
         /// <summary>
-        /// &quot;Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to error-timeout-$pop. If the response is too large, it will be set to warning-too-large-$pop.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions (this endpoint does not accept a token with the `global:read` scope).&quot;
+        /// Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to error-timeout-$pop. If the response is too large, it will be set to warning-too-large-$pop.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions (this endpoint does not accept a token with the `global:read` scope).
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Fastly.OpenApiClient.Content.Edge_check
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to error-timeout-$pop. If the response is too large, it will be set to warning-too-large-$pop.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions (this endpoint does not accept a token with the `global:read` scope).&quot;
+        /// Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to error-timeout-$pop. If the response is too large, it will be set to warning-too-large-$pop.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions (this endpoint does not accept a token with the `global:read` scope).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Content.Edge_check
             return new global::Soenneker.Fastly.OpenApiClient.Content.Edge_check.Edge_checkRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to error-timeout-$pop. If the response is too large, it will be set to warning-too-large-$pop.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions (this endpoint does not accept a token with the `global:read` scope).&quot;
+        /// Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to error-timeout-$pop. If the response is too large, it will be set to warning-too-large-$pop.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions (this endpoint does not accept a token with the `global:read` scope).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Edge_checkRequestBuilderGetQueryParameters 

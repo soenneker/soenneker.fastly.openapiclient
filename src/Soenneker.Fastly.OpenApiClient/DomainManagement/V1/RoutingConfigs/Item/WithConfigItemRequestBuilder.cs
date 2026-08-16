@@ -64,7 +64,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs.Item
         {
         }
         /// <summary>
-        /// &quot;Delete a routing config. By default, configs that have an active version cannot be deleted. Pass force=true to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The force parameter does not bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of force.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete a routing config. By default, configs that have an active version cannot be deleted. Pass force=true to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The force parameter does not bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of force.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve a single routing config by its identifier.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve a single routing config by its identifier.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetARoutingConfig200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetARoutingConfig200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetARoutingConfig200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete a routing config. By default, configs that have an active version cannot be deleted. Pass force=true to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The force parameter does not bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of force.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete a routing config. By default, configs that have an active version cannot be deleted. Pass force=true to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The force parameter does not bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of force.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieve a single routing config by its identifier.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve a single routing config by its identifier.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs.Item
             return new global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.RoutingConfigs.Item.WithConfigItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Delete a routing config. By default, configs that have an active version cannot be deleted. Pass force=true to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The force parameter does not bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of force.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Delete a routing config. By default, configs that have an active version cannot be deleted. Pass force=true to bypass the active-version check — this is destructive and will immediately stop traffic routing for any paths the config serves. The force parameter does not bypass the domain-association check; if domains are still associated, deletion is rejected with 409 regardless of force.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithConfigItemRequestBuilderDeleteQueryParameters 

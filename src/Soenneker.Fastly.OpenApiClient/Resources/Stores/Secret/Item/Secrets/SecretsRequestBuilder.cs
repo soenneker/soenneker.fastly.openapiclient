@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
         {
         }
         /// <summary>
-        /// &quot;List all secrets within a store.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all secrets within a store.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListSecretsWithinAStore200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListSecretsWithinAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListSecretsWithinAStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Recreate a secret based on the secret&apos;s name.Returns an error if there is no existing secret with the same name.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is \&quot;Hello, world!\&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Recreate a secret based on the secret&apos;s name.Returns an error if there is no existing secret with the same name.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RecreateASecretInAStore200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RecreateASecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RecreateASecretInAStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a new secret in a store.Returns an error if a secret already exists with the same name.See PUT and PATCH methods for ways to recreate an existing secret.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is \&quot;Hello, world!\&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Create a new secret in a store.Returns an error if a secret already exists with the same name.See PUT and PATCH methods for ways to recreate an existing secret.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateANewSecretInAStore200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateANewSecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateANewSecretInAStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create or recreate a secret based on the secret&apos;s name.The response object&apos;s recreated field will be true if the secret was recreated.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is \&quot;Hello, world!\&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Create or recreate a secret based on the secret&apos;s name.The response object&apos;s recreated field will be true if the secret was recreated.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateOrRecreateASecretInAStore200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +125,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateOrRecreateASecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateOrRecreateASecretInAStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all secrets within a store.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all secrets within a store.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Recreate a secret based on the secret&apos;s name.Returns an error if there is no existing secret with the same name.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is \&quot;Hello, world!\&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Recreate a secret based on the secret&apos;s name.Returns an error if there is no existing secret with the same name.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -166,7 +166,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a new secret in a store.Returns an error if a secret already exists with the same name.See PUT and PATCH methods for ways to recreate an existing secret.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is \&quot;Hello, world!\&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Create a new secret in a store.Returns an error if a secret already exists with the same name.See PUT and PATCH methods for ways to recreate an existing secret.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +188,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create or recreate a secret based on the secret&apos;s name.The response object&apos;s recreated field will be true if the secret was recreated.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is \&quot;Hello, world!\&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Create or recreate a secret based on the secret&apos;s name.The response object&apos;s recreated field will be true if the secret was recreated.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -219,7 +219,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
             return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets.SecretsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all secrets within a store.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all secrets within a store.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SecretsRequestBuilderGetQueryParameters 

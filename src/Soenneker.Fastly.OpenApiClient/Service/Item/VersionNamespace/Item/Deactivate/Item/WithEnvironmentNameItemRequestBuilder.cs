@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Deac
         {
         }
         /// <summary>
-        /// &quot;Deactivate the current version on a given environment, i.e. \&quot;staging\&quot;.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Deactivate the current version on a given environment, i.e. &quot;staging&quot;.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DeactivateAServiceVersionOnAnEnvironment200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Deac
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeactivateAServiceVersionOnAnEnvironment200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeactivateAServiceVersionOnAnEnvironment200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Deactivate the current version on a given environment, i.e. \&quot;staging\&quot;.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Deactivate the current version on a given environment, i.e. &quot;staging&quot;.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

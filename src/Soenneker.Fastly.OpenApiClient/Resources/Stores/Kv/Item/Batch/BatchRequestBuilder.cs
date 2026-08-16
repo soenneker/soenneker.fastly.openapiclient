@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Batch
         {
         }
         /// <summary>
-        /// &quot;Inserts or updates multiple items in a single operation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Inserts or updates multiple items in a single operation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateMultipleItems200Response"/></returns>
         /// <param name="body">Binary request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Batch
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateMultipleItems200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.InsertOrUpdateMultipleItems200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Inserts or updates multiple items in a single operation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Inserts or updates multiple items in a single operation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

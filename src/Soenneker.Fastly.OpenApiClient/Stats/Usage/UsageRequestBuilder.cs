@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage
         {
         }
         /// <summary>
-        /// &quot;Returns usage information aggregated across all Fastly services and grouped by region. To aggregate across all Fastly services by time period, see /stats/aggregate.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns usage information aggregated across all Fastly services and grouped by region. To aggregate across all Fastly services by time period, see /stats/aggregate.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns usage information aggregated across all Fastly services and grouped by region. To aggregate across all Fastly services by time period, see /stats/aggregate.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns usage information aggregated across all Fastly services and grouped by region. To aggregate across all Fastly services by time period, see /stats/aggregate.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage
             return new global::Soenneker.Fastly.OpenApiClient.Stats.Usage.UsageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns usage information aggregated across all Fastly services and grouped by region. To aggregate across all Fastly services by time period, see /stats/aggregate.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns usage information aggregated across all Fastly services and grouped by region. To aggregate across all Fastly services by time period, see /stats/aggregate.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsageRequestBuilderGetQueryParameters 

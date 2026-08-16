@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.H.Limit.Item
         {
         }
         /// <summary>
-        /// &quot;Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.H.Limit.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Sudo
         {
         }
         /// <summary>
-        /// &quot;Re-authenticate to allow the provided user to obtain sudo access.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Re-authenticate to allow the provided user to obtain sudo access.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RequestSudoAccess200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Fastly.OpenApiClient.Sudo
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RequestSudoAccess200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RequestSudoAccess200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Re-authenticate to allow the provided user to obtain sudo access.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Re-authenticate to allow the provided user to obtain sudo access.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

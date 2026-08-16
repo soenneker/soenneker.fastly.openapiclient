@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.TopAttacks
         {
         }
         /// <summary>
-        /// &quot;Retrieve data on top attacks for a workspace within a specified time range. This endpoint returns an aggregation of URLs that have been attacked, sorted by request count. This data can be used in custom dashboards with the top-attacks widget.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve data on top attacks for a workspace within a specified time range. This endpoint returns an aggregation of URLs that have been attacked, sorted by request count. This data can be used in custom dashboards with the top-attacks widget.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetTopAttacksForAWorkspace200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.TopAttacks
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetTopAttacksForAWorkspace200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetTopAttacksForAWorkspace200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve data on top attacks for a workspace within a specified time range. This endpoint returns an aggregation of URLs that have been attacked, sorted by request count. This data can be used in custom dashboards with the top-attacks widget.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve data on top attacks for a workspace within a specified time range. This endpoint returns an aggregation of URLs that have been attacked, sorted by request count. This data can be used in custom dashboards with the top-attacks widget.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.TopAttacks
             return new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.TopAttacks.TopAttacksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieve data on top attacks for a workspace within a specified time range. This endpoint returns an aggregation of URLs that have been attacked, sorted by request count. This data can be used in custom dashboards with the top-attacks widget.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Retrieve data on top attacks for a workspace within a specified time range. This endpoint returns an aggregation of URLs that have been attacked, sorted by request count. This data can be used in custom dashboards with the top-attacks widget.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TopAttacksRequestBuilderGetQueryParameters 

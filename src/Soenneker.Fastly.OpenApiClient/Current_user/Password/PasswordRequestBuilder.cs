@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Current_user.Password
         {
         }
         /// <summary>
-        /// &quot;Update the user&apos;s password to a new one.&gt; **Authorization**: Username and password.&quot;
+        /// Update the user&apos;s password to a new one.&gt; **Authorization**: Username and password.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateTheUserSPassword200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Fastly.OpenApiClient.Current_user.Password
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateTheUserSPassword200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateTheUserSPassword200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update the user&apos;s password to a new one.&gt; **Authorization**: Username and password.&quot;
+        /// Update the user&apos;s password to a new one.&gt; **Authorization**: Username and password.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

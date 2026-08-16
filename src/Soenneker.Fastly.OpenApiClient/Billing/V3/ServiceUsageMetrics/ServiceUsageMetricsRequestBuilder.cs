@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics
         {
         }
         /// <summary>
-        /// &quot;Returns product usage, broken down by service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Returns product usage, broken down by service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns product usage, broken down by service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Returns product usage, broken down by service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics
             return new global::Soenneker.Fastly.OpenApiClient.Billing.V3.ServiceUsageMetrics.ServiceUsageMetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns product usage, broken down by service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Returns product usage, broken down by service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceUsageMetricsRequestBuilderGetQueryParameters 

@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Datacenters
         {
         }
         /// <summary>
-        /// &quot;Get a list of all Fastly POPs.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a list of all Fastly POPs.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Fastly.OpenApiClient.Datacenters
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Get a list of all Fastly POPs.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a list of all Fastly POPs.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

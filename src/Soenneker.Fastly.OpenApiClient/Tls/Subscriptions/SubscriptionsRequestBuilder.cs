@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
         {
         }
         /// <summary>
-        /// &quot;List all TLS subscriptions.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS subscriptions.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTlsSubscriptions200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsSubscriptions200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTlsSubscriptions200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all TLS subscriptions.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS subscriptions.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
             return new global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.SubscriptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all TLS subscriptions.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS subscriptions.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubscriptionsRequestBuilderGetQueryParameters 
@@ -150,7 +150,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
             [QueryParameter("filter%5Bcertificate_authority%5D")]
             public string FiltercertificateAuthority { get; set; }
 #endif
-            /// <summary>&quot;Limit the returned subscriptions to those that have currently active orders. Permitted values: true.&quot;</summary>
+            /// <summary>Limit the returned subscriptions to those that have currently active orders. Permitted values: true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bhas_active_order%5D")]
@@ -160,7 +160,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
             [QueryParameter("filter%5Bhas_active_order%5D")]
             public string FilterhasActiveOrder { get; set; }
 #endif
-            /// <summary>&quot;Limit the returned subscriptions by state. Valid values are pending, processing, issued, renewing, and failed. Accepts parameters: not (e.g., filter[state][not]=renewing).&quot;</summary>
+            /// <summary>Limit the returned subscriptions by state. Valid values are pending, processing, issued, renewing, and failed. Accepts parameters: not (e.g., filter[state][not]=renewing).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bstate%5D")]
@@ -180,7 +180,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions
             [QueryParameter("filter%5Btls_domains%2Eid%5D")]
             public string FiltertlsDomainsId { get; set; }
 #endif
-            /// <summary>&quot;Include related objects. Optional, comma-separated values. Permitted values: tls_authorizations, tls_authorizations.globalsign_email_challenge, tls_authorizations.self_managed_http_challenge, and tls_certificates.&quot;</summary>
+            /// <summary>Include related objects. Optional, comma-separated values. Permitted values: tls_authorizations, tls_authorizations.globalsign_email_challenge, tls_authorizations.self_managed_http_challenge, and tls_certificates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

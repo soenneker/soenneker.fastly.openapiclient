@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Field.Item
         {
         }
         /// <summary>
-        /// &quot;Fetches the specified field from the historical stats for each of your services and groups the results by service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Fetches the specified field from the historical stats for each of your services and groups the results by service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Field.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Fetches the specified field from the historical stats for each of your services and groups the results by service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Fetches the specified field from the historical stats for each of your services and groups the results by service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Field.Item
             return new global::Soenneker.Fastly.OpenApiClient.Stats.Field.Item.WithFieldItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Fetches the specified field from the historical stats for each of your services and groups the results by service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Fetches the specified field from the historical stats for each of your services and groups the results by service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithFieldItemRequestBuilderGetQueryParameters 

@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace
         {
         }
         /// <summary>
-        /// &quot;List the versions for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List the versions for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListVersionsOfAService200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Create a version for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Create a version for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceVersion200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceVersion200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAServiceVersion200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List the versions for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List the versions for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +103,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a version for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Create a version for a particular service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

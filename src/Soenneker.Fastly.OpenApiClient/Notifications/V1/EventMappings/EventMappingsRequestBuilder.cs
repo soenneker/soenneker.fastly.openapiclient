@@ -59,7 +59,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings
         {
         }
         /// <summary>
-        /// &quot;Returns event mappings matching the given filters. If no filters are specified, returns all event mappings for the account linked to the supplied token, sorted by creation date ascending. Results are paginated using cursor-based pagination.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns event mappings matching the given filters. If no filters are specified, returns all event mappings for the account linked to the supplied token, sorted by creation date ascending. Results are paginated using cursor-based pagination.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListEventMappings200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEventMappings200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEventMappings200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates an event mapping. The mapping becomes active immediately.integration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.For scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Creates an event mapping. The mapping becomes active immediately.integration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.For scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEventMapping201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -97,7 +97,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEventMapping201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEventMapping201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns event mappings matching the given filters. If no filters are specified, returns all event mappings for the account linked to the supplied token, sorted by creation date ascending. Results are paginated using cursor-based pagination.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns event mappings matching the given filters. If no filters are specified, returns all event mappings for the account linked to the supplied token, sorted by creation date ascending. Results are paginated using cursor-based pagination.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Creates an event mapping. The mapping becomes active immediately.integration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.For scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Creates an event mapping. The mapping becomes active immediately.integration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.For scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings
             return new global::Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.EventMappingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns event mappings matching the given filters. If no filters are specified, returns all event mappings for the account linked to the supplied token, sorted by creation date ascending. Results are paginated using cursor-based pagination.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns event mappings matching the given filters. If no filters are specified, returns all event mappings for the account linked to the supplied token, sorted by creation date ascending. Results are paginated using cursor-based pagination.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventMappingsRequestBuilderGetQueryParameters 

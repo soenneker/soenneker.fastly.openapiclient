@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Publish
         {
         }
         /// <summary>
-        /// &quot;Send one or more messages to Fanout subscribers. Each message specifies a channel, and Fanout will deliver the message to all subscribers of its channel.IMPORTANT: For compatibility with GRIP, this endpoint requires a trailing slash, and the API token may be provided in the Authorization header (instead of the Fastly-Key header) using the Bearer scheme.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Send one or more messages to Fanout subscribers. Each message specifies a channel, and Fanout will deliver the message to all subscribers of its channel.IMPORTANT: For compatibility with GRIP, this endpoint requires a trailing slash, and the API token may be provided in the Authorization header (instead of the Fastly-Key header) using the Bearer scheme.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Publish
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Send one or more messages to Fanout subscribers. Each message specifies a channel, and Fanout will deliver the message to all subscribers of its channel.IMPORTANT: For compatibility with GRIP, this endpoint requires a trailing slash, and the API token may be provided in the Authorization header (instead of the Fastly-Key header) using the Bearer scheme.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Send one or more messages to Fanout subscribers. Each message specifies a channel, and Fanout will deliver the message to all subscribers of its channel.IMPORTANT: For compatibility with GRIP, this endpoint requires a trailing slash, and the API token may be provided in the Authorization header (instead of the Fastly-Key header) using the Bearer scheme.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

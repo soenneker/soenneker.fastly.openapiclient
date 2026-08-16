@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.EventTyp
         {
         }
         /// <summary>
-        /// &quot;Returns all audit event types that can be used when creating an event mapping. Use the optional scope_type parameter to filter the list to event types that are compatible with a specific scope. Results are sorted alphabetically by event_type by default. Use sort=-event_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns all audit event types that can be used when creating an event mapping. Use the optional scope_type parameter to filter the list to event types that are compatible with a specific scope. Results are sorted alphabetically by event_type by default. Use sort=-event_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedEventTypes200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.EventTyp
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedEventTypes200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedEventTypes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns all audit event types that can be used when creating an event mapping. Use the optional scope_type parameter to filter the list to event types that are compatible with a specific scope. Results are sorted alphabetically by event_type by default. Use sort=-event_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns all audit event types that can be used when creating an event mapping. Use the optional scope_type parameter to filter the list to event types that are compatible with a specific scope. Results are sorted alphabetically by event_type by default. Use sort=-event_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.EventTyp
             return new global::Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.EventTypes.EventTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns all audit event types that can be used when creating an event mapping. Use the optional scope_type parameter to filter the list to event types that are compatible with a specific scope. Results are sorted alphabetically by event_type by default. Use sort=-event_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns all audit event types that can be used when creating an event mapping. Use the optional scope_type parameter to filter the list to event types that are compatible with a specific scope. Results are sorted alphabetically by event_type by default. Use sort=-event_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventTypesRequestBuilderGetQueryParameters 

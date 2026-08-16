@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Clon
         {
         }
         /// <summary>
-        /// &quot;Clone the current configuration into a new version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Clone the current configuration into a new version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CloneAServiceVersion200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Clon
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CloneAServiceVersion200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CloneAServiceVersion200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Clone the current configuration into a new version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Clone the current configuration into a new version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

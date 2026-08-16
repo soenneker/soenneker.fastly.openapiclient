@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Purge
         {
         }
         /// <summary>
-        /// &quot;Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a Surrogate-Key request header, e.g. Surrogate-Key: key_1 key_2 key_3.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a Surrogate-Key request header, e.g. Surrogate-Key: key_1 key_2 key_3.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Purge
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a Surrogate-Key request header, e.g. Surrogate-Key: key_1 key_2 key_3.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a Surrogate-Key request header, e.g. Surrogate-Key: key_1 key_2 key_3.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

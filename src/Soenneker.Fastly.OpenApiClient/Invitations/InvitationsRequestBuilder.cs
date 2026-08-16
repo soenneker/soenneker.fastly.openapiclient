@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
         {
         }
         /// <summary>
-        /// &quot;List all invitations.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all invitations.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all invitations.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all invitations.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
             return new global::Soenneker.Fastly.OpenApiClient.Invitations.InvitationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all invitations.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all invitations.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InvitationsRequestBuilderGetQueryParameters 

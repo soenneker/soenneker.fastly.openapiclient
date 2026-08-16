@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stars
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/star/#list-service-stars)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/star/#list-service-stars)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListStars200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stars
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListStars200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListStars200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Create star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAStar200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stars
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAStar200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAStar200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/star/#list-service-stars)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/star/#list-service-stars)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stars
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Create star.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

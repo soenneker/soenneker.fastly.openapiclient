@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Events.Item
         {
         }
         /// <summary>
-        /// &quot;Get a specific event.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a specific event.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAnEvent200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Events.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAnEvent200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAnEvent200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a specific event.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a specific event.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -53,7 +53,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
         {
         }
         /// <summary>
-        /// &quot;Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all tokens belonging to the authenticated user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all tokens belonging to the authenticated user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListTokensForTheAuthenticatedUser200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Create an API token. If two-factor authentication is enabled for your account, review the instructions for including a one-time password in the request.&gt; **Authorization**: Username and password, Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Create an API token. If two-factor authentication is enabled for your account, review the instructions for including a one-time password in the request.&gt; **Authorization**: Username and password, Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAToken200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAToken200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAToken200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +132,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
             return requestInfo;
         }
         /// <summary>
-        /// &quot;List all tokens belonging to the authenticated user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all tokens belonging to the authenticated user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create an API token. If two-factor authentication is enabled for your account, review the instructions for including a one-time password in the request.&gt; **Authorization**: Username and password, Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Create an API token. If two-factor authentication is enabled for your account, review the instructions for including a one-time password in the request.&gt; **Authorization**: Username and password, Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

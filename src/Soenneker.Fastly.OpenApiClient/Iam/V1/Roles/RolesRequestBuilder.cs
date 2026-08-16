@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Iam.V1.Roles
         {
         }
         /// <summary>
-        /// &quot;Retrieve a paginated list of IAM roles available in the account.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieve a paginated list of IAM roles available in the account.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Iam.V1.Roles
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve a paginated list of IAM roles available in the account.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieve a paginated list of IAM roles available in the account.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Fastly.OpenApiClient.Iam.V1.Roles
             return new global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieve a paginated list of IAM roles available in the account.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieve a paginated list of IAM roles available in the account.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RolesRequestBuilderGetQueryParameters 

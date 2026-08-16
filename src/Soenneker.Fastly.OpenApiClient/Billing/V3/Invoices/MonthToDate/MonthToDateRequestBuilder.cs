@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.MonthToDate
         {
         }
         /// <summary>
-        /// &quot;Returns month-to-date invoice for the current month.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Returns month-to-date invoice for the current month.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.MonthToDate
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns month-to-date invoice for the current month.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Returns month-to-date invoice for the current month.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries.Age
         {
         }
         /// <summary>
-        /// &quot;Get timeseries metrics for an agent in a workspace. Agent metrics include request counts, decision latency percentiles, and host resource usage.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get timeseries metrics for an agent in a workspace. Agent metrics include request counts, decision latency percentiles, and host resource usage.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries.Age
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get timeseries metrics for an agent in a workspace. Agent metrics include request counts, decision latency percentiles, and host resource usage.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get timeseries metrics for an agent in a workspace. Agent metrics include request counts, decision latency percentiles, and host resource usage.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries.Age
             return new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries.Agents.Item.WithAgentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Get timeseries metrics for an agent in a workspace. Agent metrics include request counts, decision latency percentiles, and host resource usage.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Get timeseries metrics for an agent in a workspace. Agent metrics include request counts, decision latency percentiles, and host resource usage.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithAgentItemRequestBuilderGetQueryParameters 

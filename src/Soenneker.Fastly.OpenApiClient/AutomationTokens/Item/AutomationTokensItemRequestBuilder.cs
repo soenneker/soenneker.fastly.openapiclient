@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item
         {
         }
         /// <summary>
-        /// &quot;Revoke an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Revoke an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RevokeAnAutomationTokenById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RevokeAnAutomationTokenById200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RevokeAnAutomationTokenById200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieves an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAnAutomationTokenById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAnAutomationTokenById200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAnAutomationTokenById200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Revoke an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Revoke an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieves an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieves an automation token by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

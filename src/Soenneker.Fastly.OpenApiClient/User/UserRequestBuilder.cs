@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.User
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#create-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#create-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAUser200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.User
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAUser200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAUser200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#create-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#create-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

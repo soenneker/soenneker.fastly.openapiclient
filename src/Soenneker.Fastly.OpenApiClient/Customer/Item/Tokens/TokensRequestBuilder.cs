@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Tokens
         {
         }
         /// <summary>
-        /// &quot;List all tokens belonging to a specific customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all tokens belonging to a specific customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Fastly.OpenApiClient.Models.ListTokensForACustomer200ResponseItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Tokens
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;List all tokens belonging to a specific customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all tokens belonging to a specific customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

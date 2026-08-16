@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage_by_month
         {
         }
         /// <summary>
-        /// &quot;Returns month-to-date usage details for a given month and year. Usage details are aggregated by service and across all Fastly services, and then grouped by region. This endpoint does not use the from or to fields for selecting the date for which data is requested. Instead, it uses month and year integer fields. Both fields are optional and default to the current month and year respectively. When set, an optional billable_units field will convert bandwidth to GB and divide requests by 10,000.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens), Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns month-to-date usage details for a given month and year. Usage details are aggregated by service and across all Fastly services, and then grouped by region. This endpoint does not use the from or to fields for selecting the date for which data is requested. Instead, it uses month and year integer fields. Both fields are optional and default to the current month and year respectively. When set, an optional billable_units field will convert bandwidth to GB and divide requests by 10,000.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens), Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage_by_month
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns month-to-date usage details for a given month and year. Usage details are aggregated by service and across all Fastly services, and then grouped by region. This endpoint does not use the from or to fields for selecting the date for which data is requested. Instead, it uses month and year integer fields. Both fields are optional and default to the current month and year respectively. When set, an optional billable_units field will convert bandwidth to GB and divide requests by 10,000.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens), Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns month-to-date usage details for a given month and year. Usage details are aggregated by service and across all Fastly services, and then grouped by region. This endpoint does not use the from or to fields for selecting the date for which data is requested. Instead, it uses month and year integer fields. Both fields are optional and default to the current month and year respectively. When set, an optional billable_units field will convert bandwidth to GB and divide requests by 10,000.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens), Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage_by_month
             return new global::Soenneker.Fastly.OpenApiClient.Stats.Usage_by_month.Usage_by_monthRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns month-to-date usage details for a given month and year. Usage details are aggregated by service and across all Fastly services, and then grouped by region. This endpoint does not use the from or to fields for selecting the date for which data is requested. Instead, it uses month and year integer fields. Both fields are optional and default to the current month and year respectively. When set, an optional billable_units field will convert bandwidth to GB and divide requests by 10,000.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens), Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Returns month-to-date usage details for a given month and year. Usage details are aggregated by service and across all Fastly services, and then grouped by region. This endpoint does not use the from or to fields for selecting the date for which data is requested. Instead, it uses month and year integer fields. Both fields are optional and default to the current month and year respectively. When set, an optional billable_units field will convert bandwidth to GB and divide requests by 10,000.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens), Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Usage_by_monthRequestBuilderGetQueryParameters 

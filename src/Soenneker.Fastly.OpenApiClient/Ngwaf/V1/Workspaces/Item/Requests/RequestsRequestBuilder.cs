@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Requests
         {
         }
         /// <summary>
-        /// &quot;Find requests in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Find requests in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Requests
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SearchWorkspaceLevelRequests200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Find requests in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Find requests in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Requests
             return new global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Requests.RequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Find requests in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Find requests in a workspace.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RequestsRequestBuilderGetQueryParameters 
@@ -128,7 +128,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Requests
             [QueryParameter("page")]
             public string Page { get; set; }
 #endif
-            /// <summary>&quot;Search query. See Search Syntax: https://www.fastly.com/documentation/guides/next-gen-waf/reference/searching-for-requests/.&quot;</summary>
+            /// <summary>Search query. See Search Syntax: https://www.fastly.com/documentation/guides/next-gen-waf/reference/searching-for-requests/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("q")]

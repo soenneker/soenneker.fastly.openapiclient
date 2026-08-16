@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions
         {
         }
         /// <summary>
-        /// &quot;List all definitions for a particular customer. Definitions can be filtered by name, service_id, and integration_id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all definitions for a particular customer. Definitions can be filtered by name, service_id, and integration_id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListDefinitions200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListDefinitions200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListDefinitions200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Create a definition for a particular customer based on metrics.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Create a definition for a particular customer based on metrics.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateDefinition201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateDefinition201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateDefinition201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all definitions for a particular customer. Definitions can be filtered by name, service_id, and integration_id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all definitions for a particular customer. Definitions can be filtered by name, service_id, and integration_id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a definition for a particular customer based on metrics.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Create a definition for a particular customer based on metrics.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions
             return new global::Soenneker.Fastly.OpenApiClient.Alerts.Definitions.DefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all definitions for a particular customer. Definitions can be filtered by name, service_id, and integration_id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all definitions for a particular customer. Definitions can be filtered by name, service_id, and integration_id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DefinitionsRequestBuilderGetQueryParameters 

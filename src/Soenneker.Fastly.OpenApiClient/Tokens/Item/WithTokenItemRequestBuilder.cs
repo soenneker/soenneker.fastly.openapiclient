@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens.Item
         {
         }
         /// <summary>
-        /// &quot;Revoke a specific token by its id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Revoke a specific token by its id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a single token by its id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a single token by its id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAToken200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAToken200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAToken200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Revoke a specific token by its id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Revoke a specific token by its id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Get a single token by its id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get a single token by its id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

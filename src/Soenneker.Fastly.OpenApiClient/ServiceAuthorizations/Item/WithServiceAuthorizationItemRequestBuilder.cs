@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#show-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#show-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ShowServiceAuthorization200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ShowServiceAuthorization200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ShowServiceAuthorization200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorization200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorization200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorization200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#show-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#show-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

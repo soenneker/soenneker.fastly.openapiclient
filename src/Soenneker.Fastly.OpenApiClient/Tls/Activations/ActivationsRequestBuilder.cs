@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations
         {
         }
         /// <summary>
-        /// &quot;List all TLS activations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS activations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations2200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations2200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations2200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EnableTlsForADomainUsingACustomCertificate201ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableTlsForADomainUsingACustomCertificate201ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableTlsForADomainUsingACustomCertificate201ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all TLS activations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS activations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations
             return new global::Soenneker.Fastly.OpenApiClient.Tls.Activations.ActivationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all TLS activations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS activations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActivationsRequestBuilderGetQueryParameters 
@@ -180,7 +180,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations
             [QueryParameter("filter%5Btls_domain%2Eid%5D")]
             public string FiltertlsDomainId { get; set; }
 #endif
-            /// <summary>&quot;Include related objects. Optional, comma-separated values. Permitted values: tls_certificate, tls_configuration, and tls_domain.&quot;</summary>
+            /// <summary>Include related objects. Optional, comma-separated values. Permitted values: tls_certificate, tls_configuration, and tls_domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

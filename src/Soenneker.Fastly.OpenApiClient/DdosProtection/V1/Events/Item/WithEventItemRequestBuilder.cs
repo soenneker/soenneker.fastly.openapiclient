@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-get)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-get)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetEventById200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Events.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetEventById200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetEventById200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-get)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-get)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

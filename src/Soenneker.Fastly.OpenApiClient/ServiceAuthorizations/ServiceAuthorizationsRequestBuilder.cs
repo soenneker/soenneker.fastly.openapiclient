@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
         {
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DeleteServiceAuthorizations200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeleteServiceAuthorizations200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeleteServiceAuthorizations200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListServiceAuthorizations200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListServiceAuthorizations200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListServiceAuthorizations200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorizations200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorizations200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorizations200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#create-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#create-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorization200ApiJsonResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +125,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorization200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorization200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +166,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization2)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +188,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return requestInfo;
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#create-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#create-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -219,7 +219,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations
             return new global::Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.ServiceAuthorizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;**[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#list-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceAuthorizationsRequestBuilderGetQueryParameters 

@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Events
         {
         }
         /// <summary>
-        /// &quot;List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Events
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,12 +93,12 @@ namespace Soenneker.Fastly.OpenApiClient.Events
             return new global::Soenneker.Fastly.OpenApiClient.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]=2022-01-12).&quot;</summary>
+            /// <summary>Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]=2022-01-12).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bcreated_at%5D")]

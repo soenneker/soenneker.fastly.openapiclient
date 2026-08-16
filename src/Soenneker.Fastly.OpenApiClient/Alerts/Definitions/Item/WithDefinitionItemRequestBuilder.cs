@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions.Item
         {
         }
         /// <summary>
-        /// &quot;Delete a definition using its ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Delete a definition using its ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve an existing definition by using its ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieve an existing definition by using its ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ReadDefinition200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ReadDefinition200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ReadDefinition200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update a definition with a new configuration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Update a definition with a new configuration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete a definition using its ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Delete a definition using its ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieve an existing definition by using its ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieve an existing definition by using its ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +125,7 @@ namespace Soenneker.Fastly.OpenApiClient.Alerts.Definitions.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update a definition with a new configuration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Update a definition with a new configuration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

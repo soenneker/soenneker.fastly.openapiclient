@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Domains
         {
         }
         /// <summary>
-        /// &quot;List all TLS domains.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS domains.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTlsDomains200ApiJsonResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Domains
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsDomains200ApiJsonResponse>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTlsDomains200ApiJsonResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;List all TLS domains.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS domains.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,12 +80,12 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Domains
             return new global::Soenneker.Fastly.OpenApiClient.Tls.Domains.DomainsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;List all TLS domains.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// List all TLS domains.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DomainsRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered \&quot;in use\&quot;) Permitted values: true, false.&quot;</summary>
+            /// <summary>Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered &quot;in use&quot;) Permitted values: true, false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter%5Bin_use%5D")]
@@ -115,7 +115,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Domains
             [QueryParameter("filter%5Btls_subscriptions%2Eid%5D")]
             public string FiltertlsSubscriptionsId { get; set; }
 #endif
-            /// <summary>&quot;Include related objects. Optional, comma-separated values. Permitted values: tls_activations, tls_certificates, tls_subscriptions, tls_subscriptions.tls_authorizations, tls_authorizations.globalsign_email_challenge, and tls_authorizations.self_managed_http_challenge.&quot;</summary>
+            /// <summary>Include related objects. Optional, comma-separated values. Permitted values: tls_activations, tls_certificates, tls_subscriptions, tls_subscriptions.tls_authorizations, tls_authorizations.globalsign_email_challenge, and tls_authorizations.self_managed_http_challenge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

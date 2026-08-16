@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Lock
         {
         }
         /// <summary>
-        /// &quot;Locks the specified version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Locks the specified version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.LockAServiceVersion200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Lock
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.LockAServiceVersion200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.LockAServiceVersion200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Locks the specified version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Locks the specified version.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

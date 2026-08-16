@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest
         {
         }
         /// <summary>
-        /// &quot;The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest
             return new global::Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest.SuggestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SuggestRequestBuilderGetQueryParameters 

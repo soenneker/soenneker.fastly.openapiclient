@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.H
         {
         }
         /// <summary>
-        /// &quot;Get data for the 120 seconds preceding the latest timestamp available for a service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get data for the 120 seconds preceding the latest timestamp available for a service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Origins.Item.Ts.H
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get data for the 120 seconds preceding the latest timestamp available for a service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Get data for the 120 seconds preceding the latest timestamp available for a service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

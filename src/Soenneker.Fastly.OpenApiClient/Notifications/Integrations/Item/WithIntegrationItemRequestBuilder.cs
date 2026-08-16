@@ -46,7 +46,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
         {
         }
         /// <summary>
-        /// &quot;Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve an existing integration by using its id, if it exists.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieve an existing integration by using its id, if it exists.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +118,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Retrieve an existing integration by using its id, if it exists.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Retrieve an existing integration by using its id, if it exists.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

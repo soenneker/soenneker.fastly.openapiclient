@@ -33,7 +33,7 @@ namespace Soenneker.Fastly.OpenApiClient.Vcl_lint
         {
         }
         /// <summary>
-        /// &quot;This endpoint validates the submitted VCL against a default set of enabled flags. Consider using the /service/{service_id}/lint operation to validate VCL in the context of a specific service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// This endpoint validates the submitted VCL against a default set of enabled flags. Consider using the /service/{service_id}/lint operation to validate VCL in the context of a specific service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Vcl_lint
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;This endpoint validates the submitted VCL against a default set of enabled flags. Consider using the /service/{service_id}/lint operation to validate VCL in the context of a specific service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\&quot;) permissions.&quot;
+        /// This endpoint validates the submitted VCL against a default set of enabled flags. Consider using the /service/{service_id}/lint operation to validate VCL in the context of a specific service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

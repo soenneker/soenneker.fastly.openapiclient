@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateS
         {
         }
         /// <summary>
-        /// &quot;Rotate the webhook signing key. This immediately updates the signing key for any new notification.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Rotate the webhook signing key. This immediately updates the signing key for any new notification.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateS
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Rotate the webhook signing key. This immediately updates the signing key for any new notification.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).&quot;
+        /// Rotate the webhook signing key. This immediately updates the signing key for any new notification.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
