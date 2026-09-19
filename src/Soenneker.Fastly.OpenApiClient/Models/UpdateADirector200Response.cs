@@ -17,13 +17,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The backends property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Backends { get; set; }
+        public UntypedNode? Backends { get; set; }
 #nullable restore
 #else
-        public List<string> Backends { get; set; }
+        public UntypedNode Backends { get; set; }
 #endif
         /// <summary>The capacity property</summary>
-        public int? Capacity { get; set; }
+        public long? Capacity { get; set; }
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,10 +43,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,9 +57,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The quorum property</summary>
-        public int? Quorum { get; set; }
+        public long? Quorum { get; set; }
         /// <summary>The retries property</summary>
-        public int? Retries { get; set; }
+        public long? Retries { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,13 +71,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The shield property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Shield { get; set; }
+        public UntypedNode? Shield { get; set; }
 #nullable restore
 #else
-        public string Shield { get; set; }
+        public UntypedNode Shield { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public int? Type { get; set; }
+        public long? Type { get; set; }
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateADirector200Response"/> and sets the default values.
         /// </summary>
@@ -113,19 +113,19 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "backends", n => { Backends = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "capacity", n => { Capacity = n.GetIntValue(); } },
+                { "backends", n => { Backends = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "capacity", n => { Capacity = n.GetLongValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "quorum", n => { Quorum = n.GetIntValue(); } },
-                { "retries", n => { Retries = n.GetIntValue(); } },
+                { "quorum", n => { Quorum = n.GetLongValue(); } },
+                { "retries", n => { Retries = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "shield", n => { Shield = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetIntValue(); } },
+                { "shield", n => { Shield = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetLongValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -135,19 +135,19 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("backends", Backends);
-            writer.WriteIntValue("capacity", Capacity);
+            writer.WriteObjectValue<UntypedNode>("backends", Backends);
+            writer.WriteLongValue("capacity", Capacity);
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("quorum", Quorum);
-            writer.WriteIntValue("retries", Retries);
+            writer.WriteLongValue("quorum", Quorum);
+            writer.WriteLongValue("retries", Retries);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteStringValue("shield", Shield);
-            writer.WriteIntValue("type", Type);
+            writer.WriteObjectValue<UntypedNode>("shield", Shield);
+            writer.WriteLongValue("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("version", Version);
+            writer.WriteLongValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

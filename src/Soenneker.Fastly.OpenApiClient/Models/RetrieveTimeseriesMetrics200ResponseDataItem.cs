@@ -15,9 +15,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The HTTP404 property</summary>
-        public int? HTTP404 { get; set; }
+        public long? HTTP404 { get; set; }
         /// <summary>The SQLI property</summary>
-        public int? SQLI { get; set; }
+        public long? SQLI { get; set; }
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,7 +27,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Timestamp { get; set; }
 #endif
         /// <summary>The XSS property</summary>
-        public int? XSS { get; set; }
+        public long? XSS { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveTimeseriesMetrics200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -53,10 +53,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "HTTP404", n => { HTTP404 = n.GetIntValue(); } },
-                { "SQLI", n => { SQLI = n.GetIntValue(); } },
+                { "HTTP404", n => { HTTP404 = n.GetLongValue(); } },
+                { "SQLI", n => { SQLI = n.GetLongValue(); } },
                 { "timestamp", n => { Timestamp = n.GetStringValue(); } },
-                { "XSS", n => { XSS = n.GetIntValue(); } },
+                { "XSS", n => { XSS = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -66,10 +66,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("HTTP404", HTTP404);
-            writer.WriteIntValue("SQLI", SQLI);
+            writer.WriteLongValue("HTTP404", HTTP404);
+            writer.WriteLongValue("SQLI", SQLI);
             writer.WriteStringValue("timestamp", Timestamp);
-            writer.WriteIntValue("XSS", XSS);
+            writer.WriteLongValue("XSS", XSS);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

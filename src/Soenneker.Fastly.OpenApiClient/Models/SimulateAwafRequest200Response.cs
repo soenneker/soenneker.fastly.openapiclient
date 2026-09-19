@@ -23,7 +23,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem> Signals { get; set; }
 #endif
         /// <summary>The waf_response property</summary>
-        public int? WafResponse { get; set; }
+        public long? WafResponse { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "signals", n => { Signals = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem>(global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "waf_response", n => { WafResponse = n.GetIntValue(); } },
+                { "waf_response", n => { WafResponse = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem>("signals", Signals);
-            writer.WriteIntValue("waf_response", WafResponse);
+            writer.WriteLongValue("waf_response", WafResponse);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

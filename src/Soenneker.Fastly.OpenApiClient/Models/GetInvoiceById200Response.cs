@@ -47,7 +47,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string CustomerId { get; set; }
 #endif
         /// <summary>The invoice_id property</summary>
-        public int? InvoiceId { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InvoiceId { get; set; }
+#nullable restore
+#else
+        public string InvoiceId { get; set; }
+#endif
         /// <summary>The invoice_posted_on property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +63,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string InvoicePostedOn { get; set; }
 #endif
         /// <summary>The monthly_transaction_amount property</summary>
-        public int? MonthlyTransactionAmount { get; set; }
+        public long? MonthlyTransactionAmount { get; set; }
         /// <summary>The payment_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +73,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string PaymentStatus { get; set; }
 #endif
         /// <summary>The statement_number property</summary>
-        public int? StatementNumber { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StatementNumber { get; set; }
+#nullable restore
+#else
+        public string StatementNumber { get; set; }
+#endif
         /// <summary>The transaction_line_items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,11 +117,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "billing_start_date", n => { BillingStartDate = n.GetStringValue(); } },
                 { "currency_code", n => { CurrencyCode = n.GetStringValue(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-                { "invoice_id", n => { InvoiceId = n.GetIntValue(); } },
+                { "invoice_id", n => { InvoiceId = n.GetStringValue(); } },
                 { "invoice_posted_on", n => { InvoicePostedOn = n.GetStringValue(); } },
-                { "monthly_transaction_amount", n => { MonthlyTransactionAmount = n.GetIntValue(); } },
+                { "monthly_transaction_amount", n => { MonthlyTransactionAmount = n.GetLongValue(); } },
                 { "payment_status", n => { PaymentStatus = n.GetStringValue(); } },
-                { "statement_number", n => { StatementNumber = n.GetIntValue(); } },
+                { "statement_number", n => { StatementNumber = n.GetStringValue(); } },
                 { "transaction_line_items", n => { TransactionLineItems = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetInvoiceById200ResponseTransactionLineItemsItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetInvoiceById200ResponseTransactionLineItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -124,11 +136,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("billing_start_date", BillingStartDate);
             writer.WriteStringValue("currency_code", CurrencyCode);
             writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteIntValue("invoice_id", InvoiceId);
+            writer.WriteStringValue("invoice_id", InvoiceId);
             writer.WriteStringValue("invoice_posted_on", InvoicePostedOn);
-            writer.WriteIntValue("monthly_transaction_amount", MonthlyTransactionAmount);
+            writer.WriteLongValue("monthly_transaction_amount", MonthlyTransactionAmount);
             writer.WriteStringValue("payment_status", PaymentStatus);
-            writer.WriteIntValue("statement_number", StatementNumber);
+            writer.WriteStringValue("statement_number", StatementNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetInvoiceById200ResponseTransactionLineItemsItem>("transaction_line_items", TransactionLineItems);
             writer.WriteAdditionalData(AdditionalData);
         }

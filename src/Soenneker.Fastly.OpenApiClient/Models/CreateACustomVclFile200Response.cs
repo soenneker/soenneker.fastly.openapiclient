@@ -41,7 +41,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateACustomVclFile200Response"/> and sets the default values.
         /// </summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "main", n => { Main = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteBoolValue("main", Main);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("version", Version);
+            writer.WriteLongValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

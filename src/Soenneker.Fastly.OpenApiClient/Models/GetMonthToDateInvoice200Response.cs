@@ -47,7 +47,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string InvoiceId { get; set; }
 #endif
         /// <summary>The monthly_transaction_amount property</summary>
-        public double? MonthlyTransactionAmount { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MonthlyTransactionAmount { get; set; }
+#nullable restore
+#else
+        public string MonthlyTransactionAmount { get; set; }
+#endif
         /// <summary>The transaction_line_items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +91,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "billing_start_date", n => { BillingStartDate = n.GetStringValue(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "invoice_id", n => { InvoiceId = n.GetStringValue(); } },
-                { "monthly_transaction_amount", n => { MonthlyTransactionAmount = n.GetDoubleValue(); } },
+                { "monthly_transaction_amount", n => { MonthlyTransactionAmount = n.GetStringValue(); } },
                 { "transaction_line_items", n => { TransactionLineItems = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200ResponseTransactionLineItemsItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200ResponseTransactionLineItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -100,7 +106,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("billing_start_date", BillingStartDate);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("invoice_id", InvoiceId);
-            writer.WriteDoubleValue("monthly_transaction_amount", MonthlyTransactionAmount);
+            writer.WriteStringValue("monthly_transaction_amount", MonthlyTransactionAmount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200ResponseTransactionLineItemsItem>("transaction_line_items", TransactionLineItems);
             writer.WriteAdditionalData(AdditionalData);
         }

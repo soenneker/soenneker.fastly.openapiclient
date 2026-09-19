@@ -31,7 +31,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<string> Domains { get; set; }
 #endif
         /// <summary>The feature_revision property</summary>
-        public int? FeatureRevision { get; set; }
+        public long? FeatureRevision { get; set; }
         /// <summary>The feature_update_available property</summary>
         public bool? FeatureUpdateAvailable { get; set; }
         /// <summary>The id property</summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The status_code property</summary>
-        public int? StatusCode { get; set; }
+        public long? StatusCode { get; set; }
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnApexRedirect200Response"/> and sets the default values.
         /// </summary>
@@ -89,13 +89,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "feature_revision", n => { FeatureRevision = n.GetIntValue(); } },
+                { "feature_revision", n => { FeatureRevision = n.GetLongValue(); } },
                 { "feature_update_available", n => { FeatureUpdateAvailable = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "status_code", n => { StatusCode = n.GetIntValue(); } },
+                { "status_code", n => { StatusCode = n.GetLongValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -107,13 +107,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
-            writer.WriteIntValue("feature_revision", FeatureRevision);
+            writer.WriteLongValue("feature_revision", FeatureRevision);
             writer.WriteBoolValue("feature_update_available", FeatureUpdateAvailable);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("status_code", StatusCode);
+            writer.WriteLongValue("status_code", StatusCode);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("version", Version);
+            writer.WriteLongValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

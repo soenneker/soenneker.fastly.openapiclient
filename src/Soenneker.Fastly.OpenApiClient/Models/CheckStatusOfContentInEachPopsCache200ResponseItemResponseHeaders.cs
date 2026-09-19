@@ -23,7 +23,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Age property</summary>
-        public int? Age { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Age { get; set; }
+#nullable restore
+#else
+        public string Age { get; set; }
+#endif
         /// <summary>The XServedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +47,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Connection { get; set; }
 #endif
         /// <summary>The ContentLength property</summary>
-        public int? ContentLength { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentLength { get; set; }
+#nullable restore
+#else
+        public string ContentLength { get; set; }
+#endif
         /// <summary>The ContentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +119,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string XCache { get; set; }
 #endif
         /// <summary>The XCacheHits property</summary>
-        public int? XCacheHits { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? XCacheHits { get; set; }
+#nullable restore
+#else
+        public string XCacheHits { get; set; }
+#endif
         /// <summary>The XContextId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +135,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string XContextId { get; set; }
 #endif
         /// <summary>The XPCAppVer property</summary>
-        public int? XPCAppVer { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? XPCAppVer { get; set; }
+#nullable restore
+#else
+        public string XPCAppVer { get; set; }
+#endif
         /// <summary>The XPCDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,7 +151,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string XPCDate { get; set; }
 #endif
         /// <summary>The XPCHit property</summary>
-        public bool? XPCHit { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? XPCHit { get; set; }
+#nullable restore
+#else
+        public string XPCHit { get; set; }
+#endif
         /// <summary>The XPCHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,10 +224,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Accept-Ranges", n => { AcceptRanges = n.GetStringValue(); } },
-                { "Age", n => { Age = n.GetIntValue(); } },
+                { "Age", n => { Age = n.GetStringValue(); } },
                 { "X-ServedBy", n => { CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy = n.GetStringValue(); } },
                 { "Connection", n => { Connection = n.GetStringValue(); } },
-                { "Content-Length", n => { ContentLength = n.GetIntValue(); } },
+                { "Content-Length", n => { ContentLength = n.GetStringValue(); } },
                 { "Content-Type", n => { ContentType = n.GetStringValue(); } },
                 { "Date", n => { Date = n.GetStringValue(); } },
                 { "ETag", n => { ETag = n.GetStringValue(); } },
@@ -206,11 +236,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "Vary", n => { Vary = n.GetStringValue(); } },
                 { "Via", n => { Via = n.GetStringValue(); } },
                 { "X-Cache", n => { XCache = n.GetStringValue(); } },
-                { "X-Cache-Hits", n => { XCacheHits = n.GetIntValue(); } },
+                { "X-Cache-Hits", n => { XCacheHits = n.GetStringValue(); } },
                 { "X-ContextId", n => { XContextId = n.GetStringValue(); } },
-                { "X-PC-AppVer", n => { XPCAppVer = n.GetIntValue(); } },
+                { "X-PC-AppVer", n => { XPCAppVer = n.GetStringValue(); } },
                 { "X-PC-Date", n => { XPCDate = n.GetStringValue(); } },
-                { "X-PC-Hit", n => { XPCHit = n.GetBoolValue(); } },
+                { "X-PC-Hit", n => { XPCHit = n.GetStringValue(); } },
                 { "X-PC-Host", n => { XPCHost = n.GetStringValue(); } },
                 { "X-PC-Key", n => { XPCKey = n.GetStringValue(); } },
                 { "X-Served-By", n => { XServedBy = n.GetStringValue(); } },
@@ -226,10 +256,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("Accept-Ranges", AcceptRanges);
-            writer.WriteIntValue("Age", Age);
+            writer.WriteStringValue("Age", Age);
             writer.WriteStringValue("X-ServedBy", CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy);
             writer.WriteStringValue("Connection", Connection);
-            writer.WriteIntValue("Content-Length", ContentLength);
+            writer.WriteStringValue("Content-Length", ContentLength);
             writer.WriteStringValue("Content-Type", ContentType);
             writer.WriteStringValue("Date", Date);
             writer.WriteStringValue("ETag", ETag);
@@ -238,11 +268,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("Vary", Vary);
             writer.WriteStringValue("Via", Via);
             writer.WriteStringValue("X-Cache", XCache);
-            writer.WriteIntValue("X-Cache-Hits", XCacheHits);
+            writer.WriteStringValue("X-Cache-Hits", XCacheHits);
             writer.WriteStringValue("X-ContextId", XContextId);
-            writer.WriteIntValue("X-PC-AppVer", XPCAppVer);
+            writer.WriteStringValue("X-PC-AppVer", XPCAppVer);
             writer.WriteStringValue("X-PC-Date", XPCDate);
-            writer.WriteBoolValue("X-PC-Hit", XPCHit);
+            writer.WriteStringValue("X-PC-Hit", XPCHit);
             writer.WriteStringValue("X-PC-Host", XPCHost);
             writer.WriteStringValue("X-PC-Key", XPCKey);
             writer.WriteStringValue("X-Served-By", XServedBy);

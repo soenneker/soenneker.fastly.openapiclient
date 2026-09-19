@@ -22,6 +22,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string Domain { get; set; }
 #endif
+        /// <summary>The path property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Path { get; set; }
+#nullable restore
+#else
+        public string Path { get; set; }
+#endif
         /// <summary>The subdomain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "domain", n => { Domain = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
                 { "subdomain", n => { Subdomain = n.GetStringValue(); } },
                 { "zone", n => { Zone = n.GetStringValue(); } },
             };
@@ -76,6 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("domain", Domain);
+            writer.WriteStringValue("path", Path);
             writer.WriteStringValue("subdomain", Subdomain);
             writer.WriteStringValue("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);

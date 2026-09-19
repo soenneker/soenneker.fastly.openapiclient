@@ -15,7 +15,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The HTTP404 property</summary>
-        public int? HTTP404 { get; set; }
+        public long? HTTP404 { get; set; }
+        /// <summary>The requests_total property</summary>
+        public long? RequestsTotal { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTimeseriesMetrics200ResponseDataItemValuesItem"/> and sets the default values.
         /// </summary>
@@ -41,7 +43,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "HTTP404", n => { HTTP404 = n.GetIntValue(); } },
+                { "HTTP404", n => { HTTP404 = n.GetLongValue(); } },
+                { "requests_total", n => { RequestsTotal = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +54,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("HTTP404", HTTP404);
+            writer.WriteLongValue("HTTP404", HTTP404);
+            writer.WriteLongValue("requests_total", RequestsTotal);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

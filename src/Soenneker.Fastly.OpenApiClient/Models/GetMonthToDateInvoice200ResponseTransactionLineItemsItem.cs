@@ -15,7 +15,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount property</summary>
-        public int? Amount { get; set; }
+        public long? Amount { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ProductName { get; set; }
 #endif
         /// <summary>The rate property</summary>
-        public int? Rate { get; set; }
+        public long? Rate { get; set; }
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Region { get; set; }
 #endif
         /// <summary>The units property</summary>
-        public int? Units { get; set; }
+        public long? Units { get; set; }
         /// <summary>The usage_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,14 +93,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetIntValue(); } },
+                { "amount", n => { Amount = n.GetLongValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "product_group", n => { ProductGroup = n.GetStringValue(); } },
                 { "product_line", n => { ProductLine = n.GetStringValue(); } },
                 { "product_name", n => { ProductName = n.GetStringValue(); } },
-                { "rate", n => { Rate = n.GetIntValue(); } },
+                { "rate", n => { Rate = n.GetLongValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
-                { "units", n => { Units = n.GetIntValue(); } },
+                { "units", n => { Units = n.GetLongValue(); } },
                 { "usage_type", n => { UsageType = n.GetStringValue(); } },
             };
         }
@@ -111,14 +111,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("amount", Amount);
+            writer.WriteLongValue("amount", Amount);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("product_group", ProductGroup);
             writer.WriteStringValue("product_line", ProductLine);
             writer.WriteStringValue("product_name", ProductName);
-            writer.WriteIntValue("rate", Rate);
+            writer.WriteLongValue("rate", Rate);
             writer.WriteStringValue("region", Region);
-            writer.WriteIntValue("units", Units);
+            writer.WriteLongValue("units", Units);
             writer.WriteStringValue("usage_type", UsageType);
             writer.WriteAdditionalData(AdditionalData);
         }

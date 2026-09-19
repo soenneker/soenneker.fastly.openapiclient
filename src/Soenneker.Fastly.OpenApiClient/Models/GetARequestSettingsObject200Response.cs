@@ -23,31 +23,61 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bypass_busy_wait property</summary>
-        public int? BypassBusyWait { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BypassBusyWait { get; set; }
+#nullable restore
+#else
+        public string BypassBusyWait { get; set; }
+#endif
         /// <summary>The default_host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultHost { get; set; }
+        public UntypedNode? DefaultHost { get; set; }
 #nullable restore
 #else
-        public string DefaultHost { get; set; }
+        public UntypedNode DefaultHost { get; set; }
 #endif
         /// <summary>The force_miss property</summary>
-        public int? ForceMiss { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ForceMiss { get; set; }
+#nullable restore
+#else
+        public string ForceMiss { get; set; }
+#endif
         /// <summary>The force_ssl property</summary>
-        public int? ForceSsl { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ForceSsl { get; set; }
+#nullable restore
+#else
+        public string ForceSsl { get; set; }
+#endif
         /// <summary>The geo_headers property</summary>
-        public int? GeoHeaders { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GeoHeaders { get; set; }
+#nullable restore
+#else
+        public string GeoHeaders { get; set; }
+#endif
         /// <summary>The hash_keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HashKeys { get; set; }
+        public UntypedNode? HashKeys { get; set; }
 #nullable restore
 #else
-        public string HashKeys { get; set; }
+        public UntypedNode HashKeys { get; set; }
 #endif
         /// <summary>The max_stale_age property</summary>
-        public int? MaxStaleAge { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MaxStaleAge { get; set; }
+#nullable restore
+#else
+        public string MaxStaleAge { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,9 +103,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The timer_support property</summary>
-        public int? TimerSupport { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimerSupport { get; set; }
+#nullable restore
+#else
+        public string TimerSupport { get; set; }
+#endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>The xff property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,18 +152,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetStringValue(); } },
-                { "bypass_busy_wait", n => { BypassBusyWait = n.GetIntValue(); } },
-                { "default_host", n => { DefaultHost = n.GetStringValue(); } },
-                { "force_miss", n => { ForceMiss = n.GetIntValue(); } },
-                { "force_ssl", n => { ForceSsl = n.GetIntValue(); } },
-                { "geo_headers", n => { GeoHeaders = n.GetIntValue(); } },
-                { "hash_keys", n => { HashKeys = n.GetStringValue(); } },
-                { "max_stale_age", n => { MaxStaleAge = n.GetIntValue(); } },
+                { "bypass_busy_wait", n => { BypassBusyWait = n.GetStringValue(); } },
+                { "default_host", n => { DefaultHost = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "force_miss", n => { ForceMiss = n.GetStringValue(); } },
+                { "force_ssl", n => { ForceSsl = n.GetStringValue(); } },
+                { "geo_headers", n => { GeoHeaders = n.GetStringValue(); } },
+                { "hash_keys", n => { HashKeys = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "max_stale_age", n => { MaxStaleAge = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "request_condition", n => { RequestCondition = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "timer_support", n => { TimerSupport = n.GetIntValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "timer_support", n => { TimerSupport = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
                 { "xff", n => { Xff = n.GetStringValue(); } },
             };
         }
@@ -133,18 +175,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
-            writer.WriteIntValue("bypass_busy_wait", BypassBusyWait);
-            writer.WriteStringValue("default_host", DefaultHost);
-            writer.WriteIntValue("force_miss", ForceMiss);
-            writer.WriteIntValue("force_ssl", ForceSsl);
-            writer.WriteIntValue("geo_headers", GeoHeaders);
-            writer.WriteStringValue("hash_keys", HashKeys);
-            writer.WriteIntValue("max_stale_age", MaxStaleAge);
+            writer.WriteStringValue("bypass_busy_wait", BypassBusyWait);
+            writer.WriteObjectValue<UntypedNode>("default_host", DefaultHost);
+            writer.WriteStringValue("force_miss", ForceMiss);
+            writer.WriteStringValue("force_ssl", ForceSsl);
+            writer.WriteStringValue("geo_headers", GeoHeaders);
+            writer.WriteObjectValue<UntypedNode>("hash_keys", HashKeys);
+            writer.WriteStringValue("max_stale_age", MaxStaleAge);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("request_condition", RequestCondition);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("timer_support", TimerSupport);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("timer_support", TimerSupport);
+            writer.WriteStringValue("version", Version);
             writer.WriteStringValue("xff", Xff);
             writer.WriteAdditionalData(AdditionalData);
         }

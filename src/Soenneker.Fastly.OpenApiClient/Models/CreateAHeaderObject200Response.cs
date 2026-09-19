@@ -25,10 +25,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The cache_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CacheCondition { get; set; }
+        public UntypedNode? CacheCondition { get; set; }
 #nullable restore
 #else
-        public string CacheCondition { get; set; }
+        public UntypedNode CacheCondition { get; set; }
 #endif
         /// <summary>The dst property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Dst { get; set; }
 #endif
         /// <summary>The ignore_if_set property</summary>
-        public int? IgnoreIfSet { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IgnoreIfSet { get; set; }
+#nullable restore
+#else
+        public string IgnoreIfSet { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +55,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The priority property</summary>
-        public int? Priority { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Priority { get; set; }
+#nullable restore
+#else
+        public string Priority { get; set; }
+#endif
         /// <summary>The regex property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,18 +73,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The request_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestCondition { get; set; }
+        public UntypedNode? RequestCondition { get; set; }
 #nullable restore
 #else
-        public string RequestCondition { get; set; }
+        public UntypedNode RequestCondition { get; set; }
 #endif
         /// <summary>The response_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResponseCondition { get; set; }
+        public UntypedNode? ResponseCondition { get; set; }
 #nullable restore
 #else
-        public string ResponseCondition { get; set; }
+        public UntypedNode ResponseCondition { get; set; }
 #endif
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +119,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAHeaderObject200Response"/> and sets the default values.
         /// </summary>
@@ -134,19 +152,19 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetStringValue(); } },
-                { "cache_condition", n => { CacheCondition = n.GetStringValue(); } },
+                { "cache_condition", n => { CacheCondition = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "dst", n => { Dst = n.GetStringValue(); } },
-                { "ignore_if_set", n => { IgnoreIfSet = n.GetIntValue(); } },
+                { "ignore_if_set", n => { IgnoreIfSet = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetStringValue(); } },
                 { "regex", n => { Regex = n.GetStringValue(); } },
-                { "request_condition", n => { RequestCondition = n.GetStringValue(); } },
-                { "response_condition", n => { ResponseCondition = n.GetStringValue(); } },
+                { "request_condition", n => { RequestCondition = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "response_condition", n => { ResponseCondition = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "src", n => { Src = n.GetStringValue(); } },
                 { "substitution", n => { Substitution = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -157,19 +175,19 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
-            writer.WriteStringValue("cache_condition", CacheCondition);
+            writer.WriteObjectValue<UntypedNode>("cache_condition", CacheCondition);
             writer.WriteStringValue("dst", Dst);
-            writer.WriteIntValue("ignore_if_set", IgnoreIfSet);
+            writer.WriteStringValue("ignore_if_set", IgnoreIfSet);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("priority", Priority);
+            writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("regex", Regex);
-            writer.WriteStringValue("request_condition", RequestCondition);
-            writer.WriteStringValue("response_condition", ResponseCondition);
+            writer.WriteObjectValue<UntypedNode>("request_condition", RequestCondition);
+            writer.WriteObjectValue<UntypedNode>("response_condition", ResponseCondition);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("src", Src);
             writer.WriteStringValue("substitution", Substitution);
             writer.WriteStringValue("type", Type);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

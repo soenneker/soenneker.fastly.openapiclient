@@ -96,7 +96,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "definition", n => { Definition = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListHistory200ResponseDataItemDefinition>(global::Soenneker.Fastly.OpenApiClient.Models.ListHistory200ResponseDataItemDefinition.CreateFromDiscriminatorValue); } },
-                { "definition_id", n => { DefinitionId = n.GetStringValue(); } },
+                { "definition_id\"", n => { DefinitionId = n.GetStringValue(); } },
                 { "end", n => { End = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetStringValue(); } },
@@ -112,7 +112,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListHistory200ResponseDataItemDefinition>("definition", Definition);
-            writer.WriteStringValue("definition_id", DefinitionId);
+            writer.WriteStringValue("definition_id\"", DefinitionId);
             writer.WriteStringValue("end", End);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("object", Object);

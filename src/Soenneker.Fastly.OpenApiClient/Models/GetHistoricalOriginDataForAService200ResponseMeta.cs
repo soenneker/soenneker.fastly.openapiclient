@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string GroupBy { get; set; }
 #endif
         /// <summary>The limit property</summary>
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
         /// <summary>The metric property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,7 +109,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "end", n => { End = n.GetStringValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters>(global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters.CreateFromDiscriminatorValue); } },
                 { "group_by", n => { GroupBy = n.GetStringValue(); } },
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetLongValue(); } },
                 { "metric", n => { Metric = n.GetStringValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
                 { "sort", n => { Sort = n.GetStringValue(); } },
@@ -127,7 +127,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("end", End);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters>("filters", Filters);
             writer.WriteStringValue("group_by", GroupBy);
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteLongValue("limit", Limit);
             writer.WriteStringValue("metric", Metric);
             writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteStringValue("sort", Sort);

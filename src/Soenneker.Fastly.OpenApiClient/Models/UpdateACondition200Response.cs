@@ -33,10 +33,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The priority property</summary>
-        public int? Priority { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Priority { get; set; }
+#nullable restore
+#else
+        public string Priority { get; set; }
+#endif
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +87,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateACondition200Response"/> and sets the default values.
         /// </summary>
@@ -109,14 +121,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "statement", n => { Statement = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -128,14 +140,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("priority", Priority);
+            writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("statement", Statement);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

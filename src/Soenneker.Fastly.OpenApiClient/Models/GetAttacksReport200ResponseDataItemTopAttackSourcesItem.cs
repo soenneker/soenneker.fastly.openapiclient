@@ -31,9 +31,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string CountryName { get; set; }
 #endif
         /// <summary>The request_count property</summary>
-        public int? RequestCount { get; set; }
+        public long? RequestCount { get; set; }
         /// <summary>The total_count property</summary>
-        public int? TotalCount { get; set; }
+        public long? TotalCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem"/> and sets the default values.
         /// </summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "country_code", n => { CountryCode = n.GetStringValue(); } },
                 { "country_name", n => { CountryName = n.GetStringValue(); } },
-                { "request_count", n => { RequestCount = n.GetIntValue(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "request_count", n => { RequestCount = n.GetLongValue(); } },
+                { "total_count", n => { TotalCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("country_code", CountryCode);
             writer.WriteStringValue("country_name", CountryName);
-            writer.WriteIntValue("request_count", RequestCount);
-            writer.WriteIntValue("total_count", TotalCount);
+            writer.WriteLongValue("request_count", RequestCount);
+            writer.WriteLongValue("total_count", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

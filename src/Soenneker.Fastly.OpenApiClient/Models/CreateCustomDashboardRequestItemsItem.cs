@@ -23,7 +23,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemDataSource DataSource { get; set; }
 #endif
         /// <summary>The span property</summary>
-        public int? Span { get; set; }
+        public long? Span { get; set; }
         /// <summary>The subtitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +74,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data_source", n => { DataSource = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemDataSource>(global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemDataSource.CreateFromDiscriminatorValue); } },
-                { "span", n => { Span = n.GetIntValue(); } },
+                { "span", n => { Span = n.GetLongValue(); } },
                 { "subtitle", n => { Subtitle = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "visualization", n => { Visualization = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemVisualization>(global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemVisualization.CreateFromDiscriminatorValue); } },
@@ -88,7 +88,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemDataSource>("data_source", DataSource);
-            writer.WriteIntValue("span", Span);
+            writer.WriteLongValue("span", Span);
             writer.WriteStringValue("subtitle", Subtitle);
             writer.WriteStringValue("title", Title);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemVisualization>("visualization", Visualization);

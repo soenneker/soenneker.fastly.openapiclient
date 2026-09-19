@@ -15,7 +15,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tag_count property</summary>
-        public int? TagCount { get; set; }
+        public long? TagCount { get; set; }
         /// <summary>The tag_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +25,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string TagName { get; set; }
 #endif
         /// <summary>The total_count property</summary>
-        public int? TotalCount { get; set; }
+        public long? TotalCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem"/> and sets the default values.
         /// </summary>
@@ -51,9 +51,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tag_count", n => { TagCount = n.GetIntValue(); } },
+                { "tag_count", n => { TagCount = n.GetLongValue(); } },
                 { "tag_name", n => { TagName = n.GetStringValue(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "total_count", n => { TotalCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +63,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("tag_count", TagCount);
+            writer.WriteLongValue("tag_count", TagCount);
             writer.WriteStringValue("tag_name", TagName);
-            writer.WriteIntValue("total_count", TotalCount);
+            writer.WriteLongValue("total_count", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

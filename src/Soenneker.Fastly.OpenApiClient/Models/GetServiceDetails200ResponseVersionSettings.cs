@@ -23,9 +23,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string GeneralDefaultHost { get; set; }
 #endif
         /// <summary>The generalDefault_pci property</summary>
-        public int? GeneralDefaultPci { get; set; }
+        public long? GeneralDefaultPci { get; set; }
         /// <summary>The generalDefault_ttl property</summary>
-        public int? GeneralDefaultTtl { get; set; }
+        public long? GeneralDefaultTtl { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersionSettings"/> and sets the default values.
         /// </summary>
@@ -52,8 +52,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "general.default_host", n => { GeneralDefaultHost = n.GetStringValue(); } },
-                { "general.default_pci", n => { GeneralDefaultPci = n.GetIntValue(); } },
-                { "general.default_ttl", n => { GeneralDefaultTtl = n.GetIntValue(); } },
+                { "general.default_pci", n => { GeneralDefaultPci = n.GetLongValue(); } },
+                { "general.default_ttl", n => { GeneralDefaultTtl = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("general.default_host", GeneralDefaultHost);
-            writer.WriteIntValue("general.default_pci", GeneralDefaultPci);
-            writer.WriteIntValue("general.default_ttl", GeneralDefaultTtl);
+            writer.WriteLongValue("general.default_pci", GeneralDefaultPci);
+            writer.WriteLongValue("general.default_ttl", GeneralDefaultTtl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,7 +15,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_response_code property</summary>
-        public int? AgentResponseCode { get; set; }
+        public long? AgentResponseCode { get; set; }
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveEvent200ResponseSampleRequestRequestHeadersItem> RequestHeaders { get; set; }
 #endif
         /// <summary>The response_code property</summary>
-        public int? ResponseCode { get; set; }
+        public long? ResponseCode { get; set; }
         /// <summary>The response_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,9 +91,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveEvent200ResponseSampleRequestResponseHeadersItem> ResponseHeaders { get; set; }
 #endif
         /// <summary>The response_size property</summary>
-        public int? ResponseSize { get; set; }
+        public long? ResponseSize { get; set; }
         /// <summary>The response_time property</summary>
-        public int? ResponseTime { get; set; }
+        public long? ResponseTime { get; set; }
         /// <summary>The scheme property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -191,7 +191,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_response_code", n => { AgentResponseCode = n.GetIntValue(); } },
+                { "agent_response_code", n => { AgentResponseCode = n.GetLongValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
@@ -200,10 +200,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "remote_hostname", n => { RemoteHostname = n.GetStringValue(); } },
                 { "remote_ip", n => { RemoteIp = n.GetStringValue(); } },
                 { "request_headers", n => { RequestHeaders = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveEvent200ResponseSampleRequestRequestHeadersItem>(global::Soenneker.Fastly.OpenApiClient.Models.RetrieveEvent200ResponseSampleRequestRequestHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "response_code", n => { ResponseCode = n.GetIntValue(); } },
+                { "response_code", n => { ResponseCode = n.GetLongValue(); } },
                 { "response_headers", n => { ResponseHeaders = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveEvent200ResponseSampleRequestResponseHeadersItem>(global::Soenneker.Fastly.OpenApiClient.Models.RetrieveEvent200ResponseSampleRequestResponseHeadersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "response_size", n => { ResponseSize = n.GetIntValue(); } },
-                { "response_time", n => { ResponseTime = n.GetIntValue(); } },
+                { "response_size", n => { ResponseSize = n.GetLongValue(); } },
+                { "response_time", n => { ResponseTime = n.GetLongValue(); } },
                 { "scheme", n => { Scheme = n.GetStringValue(); } },
                 { "server_hostname", n => { ServerHostname = n.GetStringValue(); } },
                 { "server_name", n => { ServerName = n.GetStringValue(); } },
@@ -222,7 +222,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("agent_response_code", AgentResponseCode);
+            writer.WriteLongValue("agent_response_code", AgentResponseCode);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("method", Method);
@@ -231,10 +231,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("remote_hostname", RemoteHostname);
             writer.WriteStringValue("remote_ip", RemoteIp);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveEvent200ResponseSampleRequestRequestHeadersItem>("request_headers", RequestHeaders);
-            writer.WriteIntValue("response_code", ResponseCode);
+            writer.WriteLongValue("response_code", ResponseCode);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveEvent200ResponseSampleRequestResponseHeadersItem>("response_headers", ResponseHeaders);
-            writer.WriteIntValue("response_size", ResponseSize);
-            writer.WriteIntValue("response_time", ResponseTime);
+            writer.WriteLongValue("response_size", ResponseSize);
+            writer.WriteLongValue("response_time", ResponseTime);
             writer.WriteStringValue("scheme", Scheme);
             writer.WriteStringValue("server_hostname", ServerHostname);
             writer.WriteStringValue("server_name", ServerName);

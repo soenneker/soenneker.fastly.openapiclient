@@ -15,13 +15,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The current_page property</summary>
-        public int? CurrentPage { get; set; }
+        public long? CurrentPage { get; set; }
         /// <summary>The per_page property</summary>
-        public int? PerPage { get; set; }
+        public long? PerPage { get; set; }
         /// <summary>The record_count property</summary>
-        public int? RecordCount { get; set; }
+        public long? RecordCount { get; set; }
         /// <summary>The total_pages property</summary>
-        public int? TotalPages { get; set; }
+        public long? TotalPages { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenServices200ResponseMeta"/> and sets the default values.
         /// </summary>
@@ -47,10 +47,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "current_page", n => { CurrentPage = n.GetIntValue(); } },
-                { "per_page", n => { PerPage = n.GetIntValue(); } },
-                { "record_count", n => { RecordCount = n.GetIntValue(); } },
-                { "total_pages", n => { TotalPages = n.GetIntValue(); } },
+                { "current_page", n => { CurrentPage = n.GetLongValue(); } },
+                { "per_page", n => { PerPage = n.GetLongValue(); } },
+                { "record_count", n => { RecordCount = n.GetLongValue(); } },
+                { "total_pages", n => { TotalPages = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -60,10 +60,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("current_page", CurrentPage);
-            writer.WriteIntValue("per_page", PerPage);
-            writer.WriteIntValue("record_count", RecordCount);
-            writer.WriteIntValue("total_pages", TotalPages);
+            writer.WriteLongValue("current_page", CurrentPage);
+            writer.WriteLongValue("per_page", PerPage);
+            writer.WriteLongValue("record_count", RecordCount);
+            writer.WriteLongValue("total_pages", TotalPages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,7 +23,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Ip { get; set; }
 #endif
         /// <summary>The subnet property</summary>
-        public int? Subnet { get; set; }
+        public long? Subnet { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAclEntryRequest"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ip", n => { Ip = n.GetStringValue(); } },
-                { "subnet", n => { Subnet = n.GetIntValue(); } },
+                { "subnet", n => { Subnet = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ip", Ip);
-            writer.WriteIntValue("subnet", Subnet);
+            writer.WriteLongValue("subnet", Subnet);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

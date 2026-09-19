@@ -41,10 +41,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The disabled property</summary>
         public bool? Disabled { get; set; }
@@ -57,14 +57,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The max_conn property</summary>
-        public int? MaxConn { get; set; }
+        public long? MaxConn { get; set; }
         /// <summary>The override_host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverrideHost { get; set; }
+        public UntypedNode? OverrideHost { get; set; }
 #nullable restore
 #else
-        public string OverrideHost { get; set; }
+        public UntypedNode OverrideHost { get; set; }
 #endif
         /// <summary>The pool_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string PoolId { get; set; }
 #endif
         /// <summary>The port property</summary>
-        public int? Port { get; set; }
+        public long? Port { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,7 +93,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>The weight property</summary>
-        public int? Weight { get; set; }
+        public long? Weight { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAServer200Response"/> and sets the default values.
         /// </summary>
@@ -122,16 +122,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "address", n => { Address = n.GetStringValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "max_conn", n => { MaxConn = n.GetIntValue(); } },
-                { "override_host", n => { OverrideHost = n.GetStringValue(); } },
+                { "max_conn", n => { MaxConn = n.GetLongValue(); } },
+                { "override_host", n => { OverrideHost = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "pool_id", n => { PoolId = n.GetStringValue(); } },
-                { "port", n => { Port = n.GetIntValue(); } },
+                { "port", n => { Port = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "weight", n => { Weight = n.GetIntValue(); } },
+                { "weight", n => { Weight = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -144,16 +144,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("address", Address);
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteStringValue("id", Id);
-            writer.WriteIntValue("max_conn", MaxConn);
-            writer.WriteStringValue("override_host", OverrideHost);
+            writer.WriteLongValue("max_conn", MaxConn);
+            writer.WriteObjectValue<UntypedNode>("override_host", OverrideHost);
             writer.WriteStringValue("pool_id", PoolId);
-            writer.WriteIntValue("port", Port);
+            writer.WriteLongValue("port", Port);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("weight", Weight);
+            writer.WriteLongValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,10 +15,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The activated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivatedAt { get; set; }
+        public UntypedNode? ActivatedAt { get; set; }
 #nullable restore
 #else
-        public string ActivatedAt { get; set; }
+        public UntypedNode ActivatedAt { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -95,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activated_at", n => { ActivatedAt = n.GetStringValue(); } },
+                { "activated_at", n => { ActivatedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "links", n => { Links = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.DeactivateARoutingConfig200ResponseLinks>(global::Soenneker.Fastly.OpenApiClient.Models.DeactivateARoutingConfig200ResponseLinks.CreateFromDiscriminatorValue); } },
@@ -111,7 +111,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("activated_at", ActivatedAt);
+            writer.WriteObjectValue<UntypedNode>("activated_at", ActivatedAt);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.DeactivateARoutingConfig200ResponseLinks>("links", Links);

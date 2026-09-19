@@ -31,7 +31,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenter Datacenter { get; set; }
 #endif
         /// <summary>The recorded property</summary>
-        public int? Recorded { get; set; }
+        public long? Recorded { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "aggregated", n => { Aggregated = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregated>(global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregated.CreateFromDiscriminatorValue); } },
                 { "datacenter", n => { Datacenter = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenter>(global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenter.CreateFromDiscriminatorValue); } },
-                { "recorded", n => { Recorded = n.GetIntValue(); } },
+                { "recorded", n => { Recorded = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregated>("aggregated", Aggregated);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenter>("datacenter", Datacenter);
-            writer.WriteIntValue("recorded", Recorded);
+            writer.WriteLongValue("recorded", Recorded);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

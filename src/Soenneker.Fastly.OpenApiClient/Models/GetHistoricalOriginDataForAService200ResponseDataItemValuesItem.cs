@@ -15,11 +15,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The resp_body_bytes property</summary>
-        public int? RespBodyBytes { get; set; }
+        public long? RespBodyBytes { get; set; }
         /// <summary>The status_2xx property</summary>
-        public int? Status2xx { get; set; }
+        public long? Status2xx { get; set; }
         /// <summary>The timestamp property</summary>
-        public int? Timestamp { get; set; }
+        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseDataItemValuesItem"/> and sets the default values.
         /// </summary>
@@ -45,9 +45,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "resp_body_bytes", n => { RespBodyBytes = n.GetIntValue(); } },
-                { "status_2xx", n => { Status2xx = n.GetIntValue(); } },
-                { "timestamp", n => { Timestamp = n.GetIntValue(); } },
+                { "resp_body_bytes", n => { RespBodyBytes = n.GetLongValue(); } },
+                { "status_2xx", n => { Status2xx = n.GetLongValue(); } },
+                { "timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("resp_body_bytes", RespBodyBytes);
-            writer.WriteIntValue("status_2xx", Status2xx);
-            writer.WriteIntValue("timestamp", Timestamp);
+            writer.WriteLongValue("resp_body_bytes", RespBodyBytes);
+            writer.WriteLongValue("status_2xx", Status2xx);
+            writer.WriteLongValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,7 +25,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string End { get; set; }
 #endif
         /// <summary>The limit property</summary>
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "domain_exact_match", n => { DomainExactMatch = n.GetBoolValue(); } },
                 { "end", n => { End = n.GetStringValue(); } },
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetStringValue(); } },
             };
@@ -83,7 +83,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("domain_exact_match", DomainExactMatch);
             writer.WriteStringValue("end", End);
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteLongValue("limit", Limit);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);

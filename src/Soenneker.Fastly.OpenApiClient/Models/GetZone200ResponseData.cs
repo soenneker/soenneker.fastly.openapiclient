@@ -55,7 +55,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<string> Nameservers { get; set; }
 #endif
         /// <summary>The serial property</summary>
-        public int? Serial { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Serial { get; set; }
+#nullable restore
+#else
+        public string Serial { get; set; }
+#endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,7 +116,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nameservers", n => { Nameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "serial", n => { Serial = n.GetIntValue(); } },
+                { "serial", n => { Serial = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "xfr_config_inbound", n => { XfrConfigInbound = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetZone200ResponseDataXfrConfigInbound>(global::Soenneker.Fastly.OpenApiClient.Models.GetZone200ResponseDataXfrConfigInbound.CreateFromDiscriminatorValue); } },
@@ -128,7 +134,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("nameservers", Nameservers);
-            writer.WriteIntValue("serial", Serial);
+            writer.WriteStringValue("serial", Serial);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetZone200ResponseDataXfrConfigInbound>("xfr_config_inbound", XfrConfigInbound);

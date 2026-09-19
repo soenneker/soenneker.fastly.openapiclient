@@ -41,13 +41,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string AgentCgroup { get; set; }
 #endif
         /// <summary>The agent_connections_dropped_count property</summary>
-        public int? AgentConnectionsDroppedCount { get; set; }
+        public long? AgentConnectionsDroppedCount { get; set; }
         /// <summary>The agent_connections_open_count property</summary>
-        public int? AgentConnectionsOpenCount { get; set; }
+        public long? AgentConnectionsOpenCount { get; set; }
         /// <summary>The agent_connections_total_count property</summary>
-        public int? AgentConnectionsTotalCount { get; set; }
+        public long? AgentConnectionsTotalCount { get; set; }
         /// <summary>The agent_current_requests property</summary>
-        public int? AgentCurrentRequests { get; set; }
+        public long? AgentCurrentRequests { get; set; }
         /// <summary>The agent_decision_time_50th property</summary>
         public double? AgentDecisionTime50th { get; set; }
         /// <summary>The agent_decision_time_95th property</summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The agent_latency_time_99th property</summary>
         public double? AgentLatencyTime99th { get; set; }
         /// <summary>The agent_max_procs property</summary>
-        public int? AgentMaxProcs { get; set; }
+        public long? AgentMaxProcs { get; set; }
         /// <summary>The agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,11 +97,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string AgentName { get; set; }
 #endif
         /// <summary>The agent_pid property</summary>
-        public int? AgentPid { get; set; }
+        public long? AgentPid { get; set; }
         /// <summary>The agent_read_bytes property</summary>
-        public int? AgentReadBytes { get; set; }
+        public long? AgentReadBytes { get; set; }
         /// <summary>The agent_rule_update_count property</summary>
-        public int? AgentRuleUpdateCount { get; set; }
+        public long? AgentRuleUpdateCount { get; set; }
         /// <summary>The agent_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,13 +127,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string AgentTimezone { get; set; }
 #endif
         /// <summary>The agent_timezone_offset property</summary>
-        public int? AgentTimezoneOffset { get; set; }
+        public long? AgentTimezoneOffset { get; set; }
         /// <summary>The agent_upload_metadata_failure_count property</summary>
-        public int? AgentUploadMetadataFailureCount { get; set; }
+        public long? AgentUploadMetadataFailureCount { get; set; }
         /// <summary>The agent_upload_size property</summary>
-        public int? AgentUploadSize { get; set; }
+        public long? AgentUploadSize { get; set; }
         /// <summary>The agent_uptime property</summary>
-        public int? AgentUptime { get; set; }
+        public long? AgentUptime { get; set; }
         /// <summary>The agent_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,13 +143,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string AgentVersion { get; set; }
 #endif
         /// <summary>The agent_versions_behind property</summary>
-        public int? AgentVersionsBehind { get; set; }
+        public long? AgentVersionsBehind { get; set; }
         /// <summary>The agent_write_bytes property</summary>
-        public int? AgentWriteBytes { get; set; }
+        public long? AgentWriteBytes { get; set; }
         /// <summary>The host_agent_cpu property</summary>
         public double? HostAgentCpu { get; set; }
         /// <summary>The host_clock_skew property</summary>
-        public int? HostClockSkew { get; set; }
+        public long? HostClockSkew { get; set; }
         /// <summary>The host_cpu property</summary>
         public double? HostCpu { get; set; }
         /// <summary>The host_os property</summary>
@@ -195,15 +195,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ModuleVersion { get; set; }
 #endif
         /// <summary>The module_versions_behind property</summary>
-        public int? ModuleVersionsBehind { get; set; }
+        public long? ModuleVersionsBehind { get; set; }
         /// <summary>The runtime_gc_pause_millis property</summary>
         public double? RuntimeGcPauseMillis { get; set; }
         /// <summary>The runtime_memory_bytes_used property</summary>
-        public int? RuntimeMemoryBytesUsed { get; set; }
+        public long? RuntimeMemoryBytesUsed { get; set; }
         /// <summary>The runtime_num_gc property</summary>
-        public int? RuntimeNumGc { get; set; }
+        public long? RuntimeNumGc { get; set; }
         /// <summary>The runtime_num_goroutines property</summary>
-        public int? RuntimeNumGoroutines { get; set; }
+        public long? RuntimeNumGoroutines { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAnAgent200Response"/> and sets the default values.
         /// </summary>
@@ -233,10 +233,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "agent_args", n => { AgentArgs = n.GetStringValue(); } },
                 { "agent_build_id", n => { AgentBuildId = n.GetStringValue(); } },
                 { "agent_cgroup", n => { AgentCgroup = n.GetStringValue(); } },
-                { "agent_connections_dropped_count", n => { AgentConnectionsDroppedCount = n.GetIntValue(); } },
-                { "agent_connections_open_count", n => { AgentConnectionsOpenCount = n.GetIntValue(); } },
-                { "agent_connections_total_count", n => { AgentConnectionsTotalCount = n.GetIntValue(); } },
-                { "agent_current_requests", n => { AgentCurrentRequests = n.GetIntValue(); } },
+                { "agent_connections_dropped_count", n => { AgentConnectionsDroppedCount = n.GetLongValue(); } },
+                { "agent_connections_open_count", n => { AgentConnectionsOpenCount = n.GetLongValue(); } },
+                { "agent_connections_total_count", n => { AgentConnectionsTotalCount = n.GetLongValue(); } },
+                { "agent_current_requests", n => { AgentCurrentRequests = n.GetLongValue(); } },
                 { "agent_decision_time_50th", n => { AgentDecisionTime50th = n.GetDoubleValue(); } },
                 { "agent_decision_time_95th", n => { AgentDecisionTime95th = n.GetDoubleValue(); } },
                 { "agent_decision_time_99th", n => { AgentDecisionTime99th = n.GetDoubleValue(); } },
@@ -247,23 +247,23 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "agent_latency_time_50th", n => { AgentLatencyTime50th = n.GetDoubleValue(); } },
                 { "agent_latency_time_95th", n => { AgentLatencyTime95th = n.GetDoubleValue(); } },
                 { "agent_latency_time_99th", n => { AgentLatencyTime99th = n.GetDoubleValue(); } },
-                { "agent_max_procs", n => { AgentMaxProcs = n.GetIntValue(); } },
+                { "agent_max_procs", n => { AgentMaxProcs = n.GetLongValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
-                { "agent_pid", n => { AgentPid = n.GetIntValue(); } },
-                { "agent_read_bytes", n => { AgentReadBytes = n.GetIntValue(); } },
-                { "agent_rule_update_count", n => { AgentRuleUpdateCount = n.GetIntValue(); } },
+                { "agent_pid", n => { AgentPid = n.GetLongValue(); } },
+                { "agent_read_bytes", n => { AgentReadBytes = n.GetLongValue(); } },
+                { "agent_rule_update_count", n => { AgentRuleUpdateCount = n.GetLongValue(); } },
                 { "agent_status", n => { AgentStatus = n.GetStringValue(); } },
                 { "agent_timestamp", n => { AgentTimestamp = n.GetStringValue(); } },
                 { "agent_timezone", n => { AgentTimezone = n.GetStringValue(); } },
-                { "agent_timezone_offset", n => { AgentTimezoneOffset = n.GetIntValue(); } },
-                { "agent_upload_metadata_failure_count", n => { AgentUploadMetadataFailureCount = n.GetIntValue(); } },
-                { "agent_upload_size", n => { AgentUploadSize = n.GetIntValue(); } },
-                { "agent_uptime", n => { AgentUptime = n.GetIntValue(); } },
+                { "agent_timezone_offset", n => { AgentTimezoneOffset = n.GetLongValue(); } },
+                { "agent_upload_metadata_failure_count", n => { AgentUploadMetadataFailureCount = n.GetLongValue(); } },
+                { "agent_upload_size", n => { AgentUploadSize = n.GetLongValue(); } },
+                { "agent_uptime", n => { AgentUptime = n.GetLongValue(); } },
                 { "agent_version", n => { AgentVersion = n.GetStringValue(); } },
-                { "agent_versions_behind", n => { AgentVersionsBehind = n.GetIntValue(); } },
-                { "agent_write_bytes", n => { AgentWriteBytes = n.GetIntValue(); } },
+                { "agent_versions_behind", n => { AgentVersionsBehind = n.GetLongValue(); } },
+                { "agent_write_bytes", n => { AgentWriteBytes = n.GetLongValue(); } },
                 { "host_agent_cpu", n => { HostAgentCpu = n.GetDoubleValue(); } },
-                { "host_clock_skew", n => { HostClockSkew = n.GetIntValue(); } },
+                { "host_clock_skew", n => { HostClockSkew = n.GetLongValue(); } },
                 { "host_cpu", n => { HostCpu = n.GetDoubleValue(); } },
                 { "host_os", n => { HostOs = n.GetStringValue(); } },
                 { "host_remote_ip", n => { HostRemoteIp = n.GetStringValue(); } },
@@ -271,11 +271,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "module_server", n => { ModuleServer = n.GetStringValue(); } },
                 { "module_type", n => { ModuleType = n.GetStringValue(); } },
                 { "module_version", n => { ModuleVersion = n.GetStringValue(); } },
-                { "module_versions_behind", n => { ModuleVersionsBehind = n.GetIntValue(); } },
+                { "module_versions_behind", n => { ModuleVersionsBehind = n.GetLongValue(); } },
                 { "runtime_gc_pause_millis", n => { RuntimeGcPauseMillis = n.GetDoubleValue(); } },
-                { "runtime_memory_bytes_used", n => { RuntimeMemoryBytesUsed = n.GetIntValue(); } },
-                { "runtime_num_gc", n => { RuntimeNumGc = n.GetIntValue(); } },
-                { "runtime_num_goroutines", n => { RuntimeNumGoroutines = n.GetIntValue(); } },
+                { "runtime_memory_bytes_used", n => { RuntimeMemoryBytesUsed = n.GetLongValue(); } },
+                { "runtime_num_gc", n => { RuntimeNumGc = n.GetLongValue(); } },
+                { "runtime_num_goroutines", n => { RuntimeNumGoroutines = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -289,10 +289,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("agent_args", AgentArgs);
             writer.WriteStringValue("agent_build_id", AgentBuildId);
             writer.WriteStringValue("agent_cgroup", AgentCgroup);
-            writer.WriteIntValue("agent_connections_dropped_count", AgentConnectionsDroppedCount);
-            writer.WriteIntValue("agent_connections_open_count", AgentConnectionsOpenCount);
-            writer.WriteIntValue("agent_connections_total_count", AgentConnectionsTotalCount);
-            writer.WriteIntValue("agent_current_requests", AgentCurrentRequests);
+            writer.WriteLongValue("agent_connections_dropped_count", AgentConnectionsDroppedCount);
+            writer.WriteLongValue("agent_connections_open_count", AgentConnectionsOpenCount);
+            writer.WriteLongValue("agent_connections_total_count", AgentConnectionsTotalCount);
+            writer.WriteLongValue("agent_current_requests", AgentCurrentRequests);
             writer.WriteDoubleValue("agent_decision_time_50th", AgentDecisionTime50th);
             writer.WriteDoubleValue("agent_decision_time_95th", AgentDecisionTime95th);
             writer.WriteDoubleValue("agent_decision_time_99th", AgentDecisionTime99th);
@@ -303,23 +303,23 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteDoubleValue("agent_latency_time_50th", AgentLatencyTime50th);
             writer.WriteDoubleValue("agent_latency_time_95th", AgentLatencyTime95th);
             writer.WriteDoubleValue("agent_latency_time_99th", AgentLatencyTime99th);
-            writer.WriteIntValue("agent_max_procs", AgentMaxProcs);
+            writer.WriteLongValue("agent_max_procs", AgentMaxProcs);
             writer.WriteStringValue("agent_name", AgentName);
-            writer.WriteIntValue("agent_pid", AgentPid);
-            writer.WriteIntValue("agent_read_bytes", AgentReadBytes);
-            writer.WriteIntValue("agent_rule_update_count", AgentRuleUpdateCount);
+            writer.WriteLongValue("agent_pid", AgentPid);
+            writer.WriteLongValue("agent_read_bytes", AgentReadBytes);
+            writer.WriteLongValue("agent_rule_update_count", AgentRuleUpdateCount);
             writer.WriteStringValue("agent_status", AgentStatus);
             writer.WriteStringValue("agent_timestamp", AgentTimestamp);
             writer.WriteStringValue("agent_timezone", AgentTimezone);
-            writer.WriteIntValue("agent_timezone_offset", AgentTimezoneOffset);
-            writer.WriteIntValue("agent_upload_metadata_failure_count", AgentUploadMetadataFailureCount);
-            writer.WriteIntValue("agent_upload_size", AgentUploadSize);
-            writer.WriteIntValue("agent_uptime", AgentUptime);
+            writer.WriteLongValue("agent_timezone_offset", AgentTimezoneOffset);
+            writer.WriteLongValue("agent_upload_metadata_failure_count", AgentUploadMetadataFailureCount);
+            writer.WriteLongValue("agent_upload_size", AgentUploadSize);
+            writer.WriteLongValue("agent_uptime", AgentUptime);
             writer.WriteStringValue("agent_version", AgentVersion);
-            writer.WriteIntValue("agent_versions_behind", AgentVersionsBehind);
-            writer.WriteIntValue("agent_write_bytes", AgentWriteBytes);
+            writer.WriteLongValue("agent_versions_behind", AgentVersionsBehind);
+            writer.WriteLongValue("agent_write_bytes", AgentWriteBytes);
             writer.WriteDoubleValue("host_agent_cpu", HostAgentCpu);
-            writer.WriteIntValue("host_clock_skew", HostClockSkew);
+            writer.WriteLongValue("host_clock_skew", HostClockSkew);
             writer.WriteDoubleValue("host_cpu", HostCpu);
             writer.WriteStringValue("host_os", HostOs);
             writer.WriteStringValue("host_remote_ip", HostRemoteIp);
@@ -327,11 +327,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("module_server", ModuleServer);
             writer.WriteStringValue("module_type", ModuleType);
             writer.WriteStringValue("module_version", ModuleVersion);
-            writer.WriteIntValue("module_versions_behind", ModuleVersionsBehind);
+            writer.WriteLongValue("module_versions_behind", ModuleVersionsBehind);
             writer.WriteDoubleValue("runtime_gc_pause_millis", RuntimeGcPauseMillis);
-            writer.WriteIntValue("runtime_memory_bytes_used", RuntimeMemoryBytesUsed);
-            writer.WriteIntValue("runtime_num_gc", RuntimeNumGc);
-            writer.WriteIntValue("runtime_num_goroutines", RuntimeNumGoroutines);
+            writer.WriteLongValue("runtime_memory_bytes_used", RuntimeMemoryBytesUsed);
+            writer.WriteLongValue("runtime_num_gc", RuntimeNumGc);
+            writer.WriteLongValue("runtime_num_goroutines", RuntimeNumGoroutines);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

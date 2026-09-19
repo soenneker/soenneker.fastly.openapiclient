@@ -49,10 +49,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,9 +71,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Format { get; set; }
 #endif
         /// <summary>The format_version property</summary>
-        public int? FormatVersion { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FormatVersion { get; set; }
+#nullable restore
+#else
+        public string FormatVersion { get; set; }
+#endif
         /// <summary>The gzip_level property</summary>
-        public int? GzipLevel { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GzipLevel { get; set; }
+#nullable restore
+#else
+        public string GzipLevel { get; set; }
+#endif
         /// <summary>The message_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,20 +105,26 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get; set; }
+        public UntypedNode? Path { get; set; }
 #nullable restore
 #else
-        public string Path { get; set; }
+        public UntypedNode Path { get; set; }
 #endif
         /// <summary>The period property</summary>
-        public int? Period { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Period { get; set; }
+#nullable restore
+#else
+        public string Period { get; set; }
+#endif
         /// <summary>The placement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Placement { get; set; }
+        public UntypedNode? Placement { get; set; }
 #nullable restore
 #else
-        public string Placement { get; set; }
+        public UntypedNode Placement { get; set; }
 #endif
         /// <summary>The response_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,7 +167,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateADigitalOceanSpacesLogEndpoint200Response"/> and sets the default values.
         /// </summary>
@@ -179,22 +203,22 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "bucket_name", n => { BucketName = n.GetStringValue(); } },
                 { "compression_codec", n => { CompressionCodec = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "format", n => { Format = n.GetStringValue(); } },
-                { "format_version", n => { FormatVersion = n.GetIntValue(); } },
-                { "gzip_level", n => { GzipLevel = n.GetIntValue(); } },
+                { "format_version", n => { FormatVersion = n.GetStringValue(); } },
+                { "gzip_level", n => { GzipLevel = n.GetStringValue(); } },
                 { "message_type", n => { MessageType = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "path", n => { Path = n.GetStringValue(); } },
-                { "period", n => { Period = n.GetIntValue(); } },
-                { "placement", n => { Placement = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "period", n => { Period = n.GetStringValue(); } },
+                { "placement", n => { Placement = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "response_condition", n => { ResponseCondition = n.GetStringValue(); } },
                 { "secret_key", n => { SecretKey = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "timestamp_format", n => { TimestampFormat = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -208,22 +232,22 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("bucket_name", BucketName);
             writer.WriteStringValue("compression_codec", CompressionCodec);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("format", Format);
-            writer.WriteIntValue("format_version", FormatVersion);
-            writer.WriteIntValue("gzip_level", GzipLevel);
+            writer.WriteStringValue("format_version", FormatVersion);
+            writer.WriteStringValue("gzip_level", GzipLevel);
             writer.WriteStringValue("message_type", MessageType);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("path", Path);
-            writer.WriteIntValue("period", Period);
-            writer.WriteStringValue("placement", Placement);
+            writer.WriteObjectValue<UntypedNode>("path", Path);
+            writer.WriteStringValue("period", Period);
+            writer.WriteObjectValue<UntypedNode>("placement", Placement);
             writer.WriteStringValue("response_condition", ResponseCondition);
             writer.WriteStringValue("secret_key", SecretKey);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("timestamp_format", TimestampFormat);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

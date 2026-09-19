@@ -33,10 +33,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The ended_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndedAt { get; set; }
+        public UntypedNode? EndedAt { get; set; }
 #nullable restore
 #else
-        public string EndedAt { get; set; }
+        public UntypedNode EndedAt { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,9 +55,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The requests_allowed property</summary>
-        public int? RequestsAllowed { get; set; }
+        public long? RequestsAllowed { get; set; }
         /// <summary>The requests_detected property</summary>
-        public int? RequestsDetected { get; set; }
+        public long? RequestsDetected { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,11 +109,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-                { "ended_at", n => { EndedAt = n.GetStringValue(); } },
+                { "ended_at", n => { EndedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "requests_allowed", n => { RequestsAllowed = n.GetIntValue(); } },
-                { "requests_detected", n => { RequestsDetected = n.GetIntValue(); } },
+                { "requests_allowed", n => { RequestsAllowed = n.GetLongValue(); } },
+                { "requests_detected", n => { RequestsDetected = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -128,11 +128,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteStringValue("ended_at", EndedAt);
+            writer.WriteObjectValue<UntypedNode>("ended_at", EndedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("requests_allowed", RequestsAllowed);
-            writer.WriteIntValue("requests_detected", RequestsDetected);
+            writer.WriteLongValue("requests_allowed", RequestsAllowed);
+            writer.WriteLongValue("requests_detected", RequestsDetected);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("started_at", StartedAt);
             writer.WriteStringValue("updated_at", UpdatedAt);

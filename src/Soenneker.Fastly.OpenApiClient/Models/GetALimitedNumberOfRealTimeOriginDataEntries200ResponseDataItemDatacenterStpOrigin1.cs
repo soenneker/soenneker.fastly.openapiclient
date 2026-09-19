@@ -15,15 +15,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The resp_body_bytes property</summary>
-        public int? RespBodyBytes { get; set; }
+        public long? RespBodyBytes { get; set; }
         /// <summary>The resp_header_bytes property</summary>
-        public int? RespHeaderBytes { get; set; }
+        public long? RespHeaderBytes { get; set; }
         /// <summary>The responses property</summary>
-        public int? Responses { get; set; }
+        public long? Responses { get; set; }
         /// <summary>The status_403 property</summary>
-        public int? Status403 { get; set; }
+        public long? Status403 { get; set; }
         /// <summary>The status_4xx property</summary>
-        public int? Status4xx { get; set; }
+        public long? Status4xx { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200ResponseDataItemDatacenterStpOrigin1"/> and sets the default values.
         /// </summary>
@@ -49,11 +49,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "resp_body_bytes", n => { RespBodyBytes = n.GetIntValue(); } },
-                { "resp_header_bytes", n => { RespHeaderBytes = n.GetIntValue(); } },
-                { "responses", n => { Responses = n.GetIntValue(); } },
-                { "status_403", n => { Status403 = n.GetIntValue(); } },
-                { "status_4xx", n => { Status4xx = n.GetIntValue(); } },
+                { "resp_body_bytes", n => { RespBodyBytes = n.GetLongValue(); } },
+                { "resp_header_bytes", n => { RespHeaderBytes = n.GetLongValue(); } },
+                { "responses", n => { Responses = n.GetLongValue(); } },
+                { "status_403", n => { Status403 = n.GetLongValue(); } },
+                { "status_4xx", n => { Status4xx = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,11 +63,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("resp_body_bytes", RespBodyBytes);
-            writer.WriteIntValue("resp_header_bytes", RespHeaderBytes);
-            writer.WriteIntValue("responses", Responses);
-            writer.WriteIntValue("status_403", Status403);
-            writer.WriteIntValue("status_4xx", Status4xx);
+            writer.WriteLongValue("resp_body_bytes", RespBodyBytes);
+            writer.WriteLongValue("resp_header_bytes", RespHeaderBytes);
+            writer.WriteLongValue("responses", Responses);
+            writer.WriteLongValue("status_403", Status403);
+            writer.WriteLongValue("status_4xx", Status4xx);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

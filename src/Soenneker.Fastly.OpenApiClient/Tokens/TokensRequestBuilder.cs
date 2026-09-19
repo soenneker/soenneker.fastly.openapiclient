@@ -128,7 +128,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/vnd.api+json;ext=bulk", body);
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/vnd.api+json", body);
             return requestInfo;
         }
         /// <summary>

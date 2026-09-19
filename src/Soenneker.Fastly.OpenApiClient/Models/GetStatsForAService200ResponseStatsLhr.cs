@@ -15,303 +15,303 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attack_blocked_req_body_bytes property</summary>
-        public int? AttackBlockedReqBodyBytes { get; set; }
+        public long? AttackBlockedReqBodyBytes { get; set; }
         /// <summary>The attack_blocked_req_header_bytes property</summary>
-        public int? AttackBlockedReqHeaderBytes { get; set; }
+        public long? AttackBlockedReqHeaderBytes { get; set; }
         /// <summary>The attack_logged_req_body_bytes property</summary>
-        public int? AttackLoggedReqBodyBytes { get; set; }
+        public long? AttackLoggedReqBodyBytes { get; set; }
         /// <summary>The attack_logged_req_header_bytes property</summary>
-        public int? AttackLoggedReqHeaderBytes { get; set; }
+        public long? AttackLoggedReqHeaderBytes { get; set; }
         /// <summary>The attack_passed_req_body_bytes property</summary>
-        public int? AttackPassedReqBodyBytes { get; set; }
+        public long? AttackPassedReqBodyBytes { get; set; }
         /// <summary>The attack_passed_req_header_bytes property</summary>
-        public int? AttackPassedReqHeaderBytes { get; set; }
+        public long? AttackPassedReqHeaderBytes { get; set; }
         /// <summary>The attack_req_body_bytes property</summary>
-        public int? AttackReqBodyBytes { get; set; }
+        public long? AttackReqBodyBytes { get; set; }
         /// <summary>The attack_req_header_bytes property</summary>
-        public int? AttackReqHeaderBytes { get; set; }
+        public long? AttackReqHeaderBytes { get; set; }
         /// <summary>The attack_resp_synth_bytes property</summary>
-        public int? AttackRespSynthBytes { get; set; }
+        public long? AttackRespSynthBytes { get; set; }
         /// <summary>The bereq_body_bytes property</summary>
-        public int? BereqBodyBytes { get; set; }
+        public long? BereqBodyBytes { get; set; }
         /// <summary>The bereq_header_bytes property</summary>
-        public int? BereqHeaderBytes { get; set; }
+        public long? BereqHeaderBytes { get; set; }
         /// <summary>The blacklist property</summary>
-        public int? Blacklist { get; set; }
+        public long? Blacklist { get; set; }
         /// <summary>The body_size property</summary>
-        public int? BodySize { get; set; }
+        public long? BodySize { get; set; }
         /// <summary>The compute_bereq_body_bytes property</summary>
-        public int? ComputeBereqBodyBytes { get; set; }
+        public long? ComputeBereqBodyBytes { get; set; }
         /// <summary>The compute_bereq_header_bytes property</summary>
-        public int? ComputeBereqHeaderBytes { get; set; }
+        public long? ComputeBereqHeaderBytes { get; set; }
         /// <summary>The compute_beresp_body_bytes property</summary>
-        public int? ComputeBerespBodyBytes { get; set; }
+        public long? ComputeBerespBodyBytes { get; set; }
         /// <summary>The compute_beresp_header_bytes property</summary>
-        public int? ComputeBerespHeaderBytes { get; set; }
+        public long? ComputeBerespHeaderBytes { get; set; }
         /// <summary>The compute_execution_time_ms property</summary>
         public double? ComputeExecutionTimeMs { get; set; }
         /// <summary>The compute_ram_used property</summary>
-        public int? ComputeRamUsed { get; set; }
+        public long? ComputeRamUsed { get; set; }
         /// <summary>The compute_req_header_bytes property</summary>
-        public int? ComputeReqHeaderBytes { get; set; }
+        public long? ComputeReqHeaderBytes { get; set; }
         /// <summary>The compute_requests property</summary>
-        public int? ComputeRequests { get; set; }
+        public long? ComputeRequests { get; set; }
         /// <summary>The compute_request_time_billed_ms property</summary>
-        public int? ComputeRequestTimeBilledMs { get; set; }
+        public long? ComputeRequestTimeBilledMs { get; set; }
         /// <summary>The compute_request_time_ms property</summary>
         public double? ComputeRequestTimeMs { get; set; }
         /// <summary>The compute_resp_body_bytes property</summary>
-        public int? ComputeRespBodyBytes { get; set; }
+        public long? ComputeRespBodyBytes { get; set; }
         /// <summary>The compute_resp_header_bytes property</summary>
-        public int? ComputeRespHeaderBytes { get; set; }
+        public long? ComputeRespHeaderBytes { get; set; }
         /// <summary>The compute_resp_status_2xx property</summary>
-        public int? ComputeRespStatus2xx { get; set; }
+        public long? ComputeRespStatus2xx { get; set; }
         /// <summary>The compute_resp_status_3xx property</summary>
-        public int? ComputeRespStatus3xx { get; set; }
+        public long? ComputeRespStatus3xx { get; set; }
         /// <summary>The deliver_sub_count property</summary>
-        public int? DeliverSubCount { get; set; }
+        public long? DeliverSubCount { get; set; }
         /// <summary>The deliver_sub_time property</summary>
-        public int? DeliverSubTime { get; set; }
+        public long? DeliverSubTime { get; set; }
         /// <summary>The edge_requests property</summary>
-        public int? EdgeRequests { get; set; }
+        public long? EdgeRequests { get; set; }
         /// <summary>The edge_resp_body_bytes property</summary>
-        public int? EdgeRespBodyBytes { get; set; }
+        public long? EdgeRespBodyBytes { get; set; }
         /// <summary>The edge_resp_header_bytes property</summary>
-        public int? EdgeRespHeaderBytes { get; set; }
+        public long? EdgeRespHeaderBytes { get; set; }
         /// <summary>The errors property</summary>
-        public int? Errors { get; set; }
+        public long? Errors { get; set; }
         /// <summary>The error_sub_count property</summary>
-        public int? ErrorSubCount { get; set; }
+        public long? ErrorSubCount { get; set; }
         /// <summary>The error_sub_time property</summary>
-        public int? ErrorSubTime { get; set; }
+        public long? ErrorSubTime { get; set; }
         /// <summary>The fetch_sub_count property</summary>
-        public int? FetchSubCount { get; set; }
+        public long? FetchSubCount { get; set; }
         /// <summary>The fetch_sub_time property</summary>
-        public int? FetchSubTime { get; set; }
+        public long? FetchSubTime { get; set; }
         /// <summary>The hash_sub_count property</summary>
-        public int? HashSubCount { get; set; }
+        public long? HashSubCount { get; set; }
         /// <summary>The hash_sub_time property</summary>
-        public int? HashSubTime { get; set; }
+        public long? HashSubTime { get; set; }
         /// <summary>The header_size property</summary>
-        public int? HeaderSize { get; set; }
+        public long? HeaderSize { get; set; }
         /// <summary>The hit_resp_body_bytes property</summary>
-        public int? HitRespBodyBytes { get; set; }
+        public long? HitRespBodyBytes { get; set; }
         /// <summary>The hits property</summary>
-        public int? Hits { get; set; }
+        public long? Hits { get; set; }
         /// <summary>The hits_time property</summary>
-        public int? HitsTime { get; set; }
+        public long? HitsTime { get; set; }
         /// <summary>The hit_sub_count property</summary>
-        public int? HitSubCount { get; set; }
+        public long? HitSubCount { get; set; }
         /// <summary>The hit_sub_time property</summary>
-        public int? HitSubTime { get; set; }
+        public long? HitSubTime { get; set; }
         /// <summary>The http2 property</summary>
-        public int? Http2 { get; set; }
+        public long? Http2 { get; set; }
         /// <summary>The imgopto property</summary>
-        public int? Imgopto { get; set; }
+        public long? Imgopto { get; set; }
         /// <summary>The imgopto_resp_body_bytes property</summary>
-        public int? ImgoptoRespBodyBytes { get; set; }
+        public long? ImgoptoRespBodyBytes { get; set; }
         /// <summary>The imgopto_resp_header_bytes property</summary>
-        public int? ImgoptoRespHeaderBytes { get; set; }
+        public long? ImgoptoRespHeaderBytes { get; set; }
         /// <summary>The imgopto_shield_resp_body_bytes property</summary>
-        public int? ImgoptoShieldRespBodyBytes { get; set; }
+        public long? ImgoptoShieldRespBodyBytes { get; set; }
         /// <summary>The imgopto_shield_resp_header_bytes property</summary>
-        public int? ImgoptoShieldRespHeaderBytes { get; set; }
+        public long? ImgoptoShieldRespHeaderBytes { get; set; }
         /// <summary>The ipv6 property</summary>
-        public int? Ipv6 { get; set; }
+        public long? Ipv6 { get; set; }
         /// <summary>The log property</summary>
-        public int? Log { get; set; }
+        public long? Log { get; set; }
         /// <summary>The log_bytes property</summary>
-        public int? LogBytes { get; set; }
+        public long? LogBytes { get; set; }
         /// <summary>The miss property</summary>
-        public int? Miss { get; set; }
+        public long? Miss { get; set; }
         /// <summary>The miss_resp_body_bytes property</summary>
-        public int? MissRespBodyBytes { get; set; }
+        public long? MissRespBodyBytes { get; set; }
         /// <summary>The miss_sub_count property</summary>
-        public int? MissSubCount { get; set; }
+        public long? MissSubCount { get; set; }
         /// <summary>The miss_sub_time property</summary>
-        public int? MissSubTime { get; set; }
+        public long? MissSubTime { get; set; }
         /// <summary>The miss_time property</summary>
-        public int? MissTime { get; set; }
+        public long? MissTime { get; set; }
         /// <summary>The object_size_100k property</summary>
-        public int? ObjectSize100k { get; set; }
+        public long? ObjectSize100k { get; set; }
         /// <summary>The object_size_100m property</summary>
-        public int? ObjectSize100m { get; set; }
+        public long? ObjectSize100m { get; set; }
         /// <summary>The object_size_10k property</summary>
-        public int? ObjectSize10k { get; set; }
+        public long? ObjectSize10k { get; set; }
         /// <summary>The object_size_10m property</summary>
-        public int? ObjectSize10m { get; set; }
+        public long? ObjectSize10m { get; set; }
         /// <summary>The object_size_1g property</summary>
-        public int? ObjectSize1g { get; set; }
+        public long? ObjectSize1g { get; set; }
         /// <summary>The object_size_1k property</summary>
-        public int? ObjectSize1k { get; set; }
+        public long? ObjectSize1k { get; set; }
         /// <summary>The object_size_1m property</summary>
-        public int? ObjectSize1m { get; set; }
+        public long? ObjectSize1m { get; set; }
         /// <summary>The origin_cache_fetches property</summary>
-        public int? OriginCacheFetches { get; set; }
+        public long? OriginCacheFetches { get; set; }
         /// <summary>The origin_fetch_body_bytes property</summary>
-        public int? OriginFetchBodyBytes { get; set; }
+        public long? OriginFetchBodyBytes { get; set; }
         /// <summary>The origin_fetches property</summary>
-        public int? OriginFetches { get; set; }
+        public long? OriginFetches { get; set; }
         /// <summary>The origin_fetch_header_bytes property</summary>
-        public int? OriginFetchHeaderBytes { get; set; }
+        public long? OriginFetchHeaderBytes { get; set; }
         /// <summary>The origin_fetch_resp_body_bytes property</summary>
-        public int? OriginFetchRespBodyBytes { get; set; }
+        public long? OriginFetchRespBodyBytes { get; set; }
         /// <summary>The origin_fetch_resp_header_bytes property</summary>
-        public int? OriginFetchRespHeaderBytes { get; set; }
+        public long? OriginFetchRespHeaderBytes { get; set; }
         /// <summary>The origin_revalidations property</summary>
-        public int? OriginRevalidations { get; set; }
+        public long? OriginRevalidations { get; set; }
         /// <summary>The orig_req_body_size property</summary>
-        public int? OrigReqBodySize { get; set; }
+        public long? OrigReqBodySize { get; set; }
         /// <summary>The orig_req_header_size property</summary>
-        public int? OrigReqHeaderSize { get; set; }
+        public long? OrigReqHeaderSize { get; set; }
         /// <summary>The orig_resp_body_size property</summary>
-        public int? OrigRespBodySize { get; set; }
+        public long? OrigRespBodySize { get; set; }
         /// <summary>The orig_resp_header_size property</summary>
-        public int? OrigRespHeaderSize { get; set; }
+        public long? OrigRespHeaderSize { get; set; }
         /// <summary>The otfp property</summary>
-        public int? Otfp { get; set; }
+        public long? Otfp { get; set; }
         /// <summary>The otfp_deliver_time property</summary>
-        public int? OtfpDeliverTime { get; set; }
+        public long? OtfpDeliverTime { get; set; }
         /// <summary>The otfp_manifests property</summary>
-        public int? OtfpManifests { get; set; }
+        public long? OtfpManifests { get; set; }
         /// <summary>The otfp_resp_body_bytes property</summary>
-        public int? OtfpRespBodyBytes { get; set; }
+        public long? OtfpRespBodyBytes { get; set; }
         /// <summary>The otfp_resp_header_bytes property</summary>
-        public int? OtfpRespHeaderBytes { get; set; }
+        public long? OtfpRespHeaderBytes { get; set; }
         /// <summary>The otfp_shield_resp_body_bytes property</summary>
-        public int? OtfpShieldRespBodyBytes { get; set; }
+        public long? OtfpShieldRespBodyBytes { get; set; }
         /// <summary>The otfp_shield_resp_header_bytes property</summary>
-        public int? OtfpShieldRespHeaderBytes { get; set; }
+        public long? OtfpShieldRespHeaderBytes { get; set; }
         /// <summary>The otfp_shield_time property</summary>
-        public int? OtfpShieldTime { get; set; }
+        public long? OtfpShieldTime { get; set; }
         /// <summary>The pass property</summary>
-        public int? Pass { get; set; }
+        public long? Pass { get; set; }
         /// <summary>The pass_resp_body_bytes property</summary>
-        public int? PassRespBodyBytes { get; set; }
+        public long? PassRespBodyBytes { get; set; }
         /// <summary>The pass_sub_count property</summary>
-        public int? PassSubCount { get; set; }
+        public long? PassSubCount { get; set; }
         /// <summary>The pass_sub_time property</summary>
-        public int? PassSubTime { get; set; }
+        public long? PassSubTime { get; set; }
         /// <summary>The pass_time property</summary>
-        public int? PassTime { get; set; }
+        public long? PassTime { get; set; }
         /// <summary>The pci property</summary>
-        public int? Pci { get; set; }
+        public long? Pci { get; set; }
         /// <summary>The pipe property</summary>
-        public int? Pipe { get; set; }
+        public long? Pipe { get; set; }
         /// <summary>The pipe_sub_count property</summary>
-        public int? PipeSubCount { get; set; }
+        public long? PipeSubCount { get; set; }
         /// <summary>The pipe_sub_time property</summary>
-        public int? PipeSubTime { get; set; }
+        public long? PipeSubTime { get; set; }
         /// <summary>The predeliver_sub_count property</summary>
-        public int? PredeliverSubCount { get; set; }
+        public long? PredeliverSubCount { get; set; }
         /// <summary>The predeliver_sub_time property</summary>
-        public int? PredeliverSubTime { get; set; }
+        public long? PredeliverSubTime { get; set; }
         /// <summary>The prehash_sub_count property</summary>
-        public int? PrehashSubCount { get; set; }
+        public long? PrehashSubCount { get; set; }
         /// <summary>The prehash_sub_time property</summary>
-        public int? PrehashSubTime { get; set; }
+        public long? PrehashSubTime { get; set; }
         /// <summary>The recv_sub_count property</summary>
-        public int? RecvSubCount { get; set; }
+        public long? RecvSubCount { get; set; }
         /// <summary>The recv_sub_time property</summary>
-        public int? RecvSubTime { get; set; }
+        public long? RecvSubTime { get; set; }
         /// <summary>The req_body_bytes property</summary>
-        public int? ReqBodyBytes { get; set; }
+        public long? ReqBodyBytes { get; set; }
         /// <summary>The req_header_bytes property</summary>
-        public int? ReqHeaderBytes { get; set; }
+        public long? ReqHeaderBytes { get; set; }
         /// <summary>The requests property</summary>
-        public int? Requests { get; set; }
+        public long? Requests { get; set; }
         /// <summary>The resp_body_bytes property</summary>
-        public int? RespBodyBytes { get; set; }
+        public long? RespBodyBytes { get; set; }
         /// <summary>The resp_header_bytes property</summary>
-        public int? RespHeaderBytes { get; set; }
+        public long? RespHeaderBytes { get; set; }
         /// <summary>The restarts property</summary>
-        public int? Restarts { get; set; }
+        public long? Restarts { get; set; }
         /// <summary>The segblock_origin_fetches property</summary>
-        public int? SegblockOriginFetches { get; set; }
+        public long? SegblockOriginFetches { get; set; }
         /// <summary>The segblock_shield_fetches property</summary>
-        public int? SegblockShieldFetches { get; set; }
+        public long? SegblockShieldFetches { get; set; }
         /// <summary>The shield property</summary>
-        public int? Shield { get; set; }
+        public long? Shield { get; set; }
         /// <summary>The shield_fetch_body_bytes property</summary>
-        public int? ShieldFetchBodyBytes { get; set; }
+        public long? ShieldFetchBodyBytes { get; set; }
         /// <summary>The shield_fetches property</summary>
-        public int? ShieldFetches { get; set; }
+        public long? ShieldFetches { get; set; }
         /// <summary>The shield_fetch_header_bytes property</summary>
-        public int? ShieldFetchHeaderBytes { get; set; }
+        public long? ShieldFetchHeaderBytes { get; set; }
         /// <summary>The shield_fetch_resp_body_bytes property</summary>
-        public int? ShieldFetchRespBodyBytes { get; set; }
+        public long? ShieldFetchRespBodyBytes { get; set; }
         /// <summary>The shield_fetch_resp_header_bytes property</summary>
-        public int? ShieldFetchRespHeaderBytes { get; set; }
+        public long? ShieldFetchRespHeaderBytes { get; set; }
         /// <summary>The shield_resp_body_bytes property</summary>
-        public int? ShieldRespBodyBytes { get; set; }
+        public long? ShieldRespBodyBytes { get; set; }
         /// <summary>The shield_resp_header_bytes property</summary>
-        public int? ShieldRespHeaderBytes { get; set; }
+        public long? ShieldRespHeaderBytes { get; set; }
         /// <summary>The shield_revalidations property</summary>
-        public int? ShieldRevalidations { get; set; }
+        public long? ShieldRevalidations { get; set; }
         /// <summary>The status_1xx property</summary>
-        public int? Status1xx { get; set; }
+        public long? Status1xx { get; set; }
         /// <summary>The status_200 property</summary>
-        public int? Status200 { get; set; }
+        public long? Status200 { get; set; }
         /// <summary>The status_204 property</summary>
-        public int? Status204 { get; set; }
+        public long? Status204 { get; set; }
         /// <summary>The status_206 property</summary>
-        public int? Status206 { get; set; }
+        public long? Status206 { get; set; }
         /// <summary>The status_2xx property</summary>
-        public int? Status2xx { get; set; }
+        public long? Status2xx { get; set; }
         /// <summary>The status_301 property</summary>
-        public int? Status301 { get; set; }
+        public long? Status301 { get; set; }
         /// <summary>The status_302 property</summary>
-        public int? Status302 { get; set; }
+        public long? Status302 { get; set; }
         /// <summary>The status_304 property</summary>
-        public int? Status304 { get; set; }
+        public long? Status304 { get; set; }
         /// <summary>The status_3xx property</summary>
-        public int? Status3xx { get; set; }
+        public long? Status3xx { get; set; }
         /// <summary>The status_400 property</summary>
-        public int? Status400 { get; set; }
+        public long? Status400 { get; set; }
         /// <summary>The status_401 property</summary>
-        public int? Status401 { get; set; }
+        public long? Status401 { get; set; }
         /// <summary>The status_403 property</summary>
-        public int? Status403 { get; set; }
+        public long? Status403 { get; set; }
         /// <summary>The status_404 property</summary>
-        public int? Status404 { get; set; }
+        public long? Status404 { get; set; }
         /// <summary>The status_416 property</summary>
-        public int? Status416 { get; set; }
+        public long? Status416 { get; set; }
         /// <summary>The status_429 property</summary>
-        public int? Status429 { get; set; }
+        public long? Status429 { get; set; }
         /// <summary>The status_4xx property</summary>
-        public int? Status4xx { get; set; }
+        public long? Status4xx { get; set; }
         /// <summary>The status_500 property</summary>
-        public int? Status500 { get; set; }
+        public long? Status500 { get; set; }
         /// <summary>The status_501 property</summary>
-        public int? Status501 { get; set; }
+        public long? Status501 { get; set; }
         /// <summary>The status_502 property</summary>
-        public int? Status502 { get; set; }
+        public long? Status502 { get; set; }
         /// <summary>The status_503 property</summary>
-        public int? Status503 { get; set; }
+        public long? Status503 { get; set; }
         /// <summary>The status_504 property</summary>
-        public int? Status504 { get; set; }
+        public long? Status504 { get; set; }
         /// <summary>The status_505 property</summary>
-        public int? Status505 { get; set; }
+        public long? Status505 { get; set; }
         /// <summary>The status_5xx property</summary>
-        public int? Status5xx { get; set; }
+        public long? Status5xx { get; set; }
         /// <summary>The synth property</summary>
-        public int? Synth { get; set; }
+        public long? Synth { get; set; }
         /// <summary>The tls property</summary>
-        public int? Tls { get; set; }
+        public long? Tls { get; set; }
         /// <summary>The tls_handshake_sent_bytes property</summary>
-        public int? TlsHandshakeSentBytes { get; set; }
+        public long? TlsHandshakeSentBytes { get; set; }
         /// <summary>The tls_v10 property</summary>
-        public int? TlsV10 { get; set; }
+        public long? TlsV10 { get; set; }
         /// <summary>The tls_v11 property</summary>
-        public int? TlsV11 { get; set; }
+        public long? TlsV11 { get; set; }
         /// <summary>The tls_v12 property</summary>
-        public int? TlsV12 { get; set; }
+        public long? TlsV12 { get; set; }
         /// <summary>The tls_v13 property</summary>
-        public int? TlsV13 { get; set; }
+        public long? TlsV13 { get; set; }
         /// <summary>The uncacheable property</summary>
-        public int? Uncacheable { get; set; }
+        public long? Uncacheable { get; set; }
         /// <summary>The video property</summary>
-        public int? Video { get; set; }
+        public long? Video { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetStatsForAService200ResponseStatsLhr"/> and sets the default values.
         /// </summary>
@@ -337,155 +337,155 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attack_blocked_req_body_bytes", n => { AttackBlockedReqBodyBytes = n.GetIntValue(); } },
-                { "attack_blocked_req_header_bytes", n => { AttackBlockedReqHeaderBytes = n.GetIntValue(); } },
-                { "attack_logged_req_body_bytes", n => { AttackLoggedReqBodyBytes = n.GetIntValue(); } },
-                { "attack_logged_req_header_bytes", n => { AttackLoggedReqHeaderBytes = n.GetIntValue(); } },
-                { "attack_passed_req_body_bytes", n => { AttackPassedReqBodyBytes = n.GetIntValue(); } },
-                { "attack_passed_req_header_bytes", n => { AttackPassedReqHeaderBytes = n.GetIntValue(); } },
-                { "attack_req_body_bytes", n => { AttackReqBodyBytes = n.GetIntValue(); } },
-                { "attack_req_header_bytes", n => { AttackReqHeaderBytes = n.GetIntValue(); } },
-                { "attack_resp_synth_bytes", n => { AttackRespSynthBytes = n.GetIntValue(); } },
-                { "bereq_body_bytes", n => { BereqBodyBytes = n.GetIntValue(); } },
-                { "bereq_header_bytes", n => { BereqHeaderBytes = n.GetIntValue(); } },
-                { "blacklist", n => { Blacklist = n.GetIntValue(); } },
-                { "body_size", n => { BodySize = n.GetIntValue(); } },
-                { "compute_bereq_body_bytes", n => { ComputeBereqBodyBytes = n.GetIntValue(); } },
-                { "compute_bereq_header_bytes", n => { ComputeBereqHeaderBytes = n.GetIntValue(); } },
-                { "compute_beresp_body_bytes", n => { ComputeBerespBodyBytes = n.GetIntValue(); } },
-                { "compute_beresp_header_bytes", n => { ComputeBerespHeaderBytes = n.GetIntValue(); } },
+                { "attack_blocked_req_body_bytes", n => { AttackBlockedReqBodyBytes = n.GetLongValue(); } },
+                { "attack_blocked_req_header_bytes", n => { AttackBlockedReqHeaderBytes = n.GetLongValue(); } },
+                { "attack_logged_req_body_bytes", n => { AttackLoggedReqBodyBytes = n.GetLongValue(); } },
+                { "attack_logged_req_header_bytes", n => { AttackLoggedReqHeaderBytes = n.GetLongValue(); } },
+                { "attack_passed_req_body_bytes", n => { AttackPassedReqBodyBytes = n.GetLongValue(); } },
+                { "attack_passed_req_header_bytes", n => { AttackPassedReqHeaderBytes = n.GetLongValue(); } },
+                { "attack_req_body_bytes", n => { AttackReqBodyBytes = n.GetLongValue(); } },
+                { "attack_req_header_bytes", n => { AttackReqHeaderBytes = n.GetLongValue(); } },
+                { "attack_resp_synth_bytes", n => { AttackRespSynthBytes = n.GetLongValue(); } },
+                { "bereq_body_bytes", n => { BereqBodyBytes = n.GetLongValue(); } },
+                { "bereq_header_bytes", n => { BereqHeaderBytes = n.GetLongValue(); } },
+                { "blacklist", n => { Blacklist = n.GetLongValue(); } },
+                { "body_size", n => { BodySize = n.GetLongValue(); } },
+                { "compute_bereq_body_bytes", n => { ComputeBereqBodyBytes = n.GetLongValue(); } },
+                { "compute_bereq_header_bytes", n => { ComputeBereqHeaderBytes = n.GetLongValue(); } },
+                { "compute_beresp_body_bytes", n => { ComputeBerespBodyBytes = n.GetLongValue(); } },
+                { "compute_beresp_header_bytes", n => { ComputeBerespHeaderBytes = n.GetLongValue(); } },
                 { "compute_execution_time_ms", n => { ComputeExecutionTimeMs = n.GetDoubleValue(); } },
-                { "compute_ram_used", n => { ComputeRamUsed = n.GetIntValue(); } },
-                { "compute_req_header_bytes", n => { ComputeReqHeaderBytes = n.GetIntValue(); } },
-                { "compute_request_time_billed_ms", n => { ComputeRequestTimeBilledMs = n.GetIntValue(); } },
+                { "compute_ram_used", n => { ComputeRamUsed = n.GetLongValue(); } },
+                { "compute_req_header_bytes", n => { ComputeReqHeaderBytes = n.GetLongValue(); } },
+                { "compute_request_time_billed_ms", n => { ComputeRequestTimeBilledMs = n.GetLongValue(); } },
                 { "compute_request_time_ms", n => { ComputeRequestTimeMs = n.GetDoubleValue(); } },
-                { "compute_requests", n => { ComputeRequests = n.GetIntValue(); } },
-                { "compute_resp_body_bytes", n => { ComputeRespBodyBytes = n.GetIntValue(); } },
-                { "compute_resp_header_bytes", n => { ComputeRespHeaderBytes = n.GetIntValue(); } },
-                { "compute_resp_status_2xx", n => { ComputeRespStatus2xx = n.GetIntValue(); } },
-                { "compute_resp_status_3xx", n => { ComputeRespStatus3xx = n.GetIntValue(); } },
-                { "deliver_sub_count", n => { DeliverSubCount = n.GetIntValue(); } },
-                { "deliver_sub_time", n => { DeliverSubTime = n.GetIntValue(); } },
-                { "edge_requests", n => { EdgeRequests = n.GetIntValue(); } },
-                { "edge_resp_body_bytes", n => { EdgeRespBodyBytes = n.GetIntValue(); } },
-                { "edge_resp_header_bytes", n => { EdgeRespHeaderBytes = n.GetIntValue(); } },
-                { "error_sub_count", n => { ErrorSubCount = n.GetIntValue(); } },
-                { "error_sub_time", n => { ErrorSubTime = n.GetIntValue(); } },
-                { "errors", n => { Errors = n.GetIntValue(); } },
-                { "fetch_sub_count", n => { FetchSubCount = n.GetIntValue(); } },
-                { "fetch_sub_time", n => { FetchSubTime = n.GetIntValue(); } },
-                { "hash_sub_count", n => { HashSubCount = n.GetIntValue(); } },
-                { "hash_sub_time", n => { HashSubTime = n.GetIntValue(); } },
-                { "header_size", n => { HeaderSize = n.GetIntValue(); } },
-                { "hit_resp_body_bytes", n => { HitRespBodyBytes = n.GetIntValue(); } },
-                { "hit_sub_count", n => { HitSubCount = n.GetIntValue(); } },
-                { "hit_sub_time", n => { HitSubTime = n.GetIntValue(); } },
-                { "hits", n => { Hits = n.GetIntValue(); } },
-                { "hits_time", n => { HitsTime = n.GetIntValue(); } },
-                { "http2", n => { Http2 = n.GetIntValue(); } },
-                { "imgopto", n => { Imgopto = n.GetIntValue(); } },
-                { "imgopto_resp_body_bytes", n => { ImgoptoRespBodyBytes = n.GetIntValue(); } },
-                { "imgopto_resp_header_bytes", n => { ImgoptoRespHeaderBytes = n.GetIntValue(); } },
-                { "imgopto_shield_resp_body_bytes", n => { ImgoptoShieldRespBodyBytes = n.GetIntValue(); } },
-                { "imgopto_shield_resp_header_bytes", n => { ImgoptoShieldRespHeaderBytes = n.GetIntValue(); } },
-                { "ipv6", n => { Ipv6 = n.GetIntValue(); } },
-                { "log", n => { Log = n.GetIntValue(); } },
-                { "log_bytes", n => { LogBytes = n.GetIntValue(); } },
-                { "miss", n => { Miss = n.GetIntValue(); } },
-                { "miss_resp_body_bytes", n => { MissRespBodyBytes = n.GetIntValue(); } },
-                { "miss_sub_count", n => { MissSubCount = n.GetIntValue(); } },
-                { "miss_sub_time", n => { MissSubTime = n.GetIntValue(); } },
-                { "miss_time", n => { MissTime = n.GetIntValue(); } },
-                { "object_size_100k", n => { ObjectSize100k = n.GetIntValue(); } },
-                { "object_size_100m", n => { ObjectSize100m = n.GetIntValue(); } },
-                { "object_size_10k", n => { ObjectSize10k = n.GetIntValue(); } },
-                { "object_size_10m", n => { ObjectSize10m = n.GetIntValue(); } },
-                { "object_size_1g", n => { ObjectSize1g = n.GetIntValue(); } },
-                { "object_size_1k", n => { ObjectSize1k = n.GetIntValue(); } },
-                { "object_size_1m", n => { ObjectSize1m = n.GetIntValue(); } },
-                { "orig_req_body_size", n => { OrigReqBodySize = n.GetIntValue(); } },
-                { "orig_req_header_size", n => { OrigReqHeaderSize = n.GetIntValue(); } },
-                { "orig_resp_body_size", n => { OrigRespBodySize = n.GetIntValue(); } },
-                { "orig_resp_header_size", n => { OrigRespHeaderSize = n.GetIntValue(); } },
-                { "origin_cache_fetches", n => { OriginCacheFetches = n.GetIntValue(); } },
-                { "origin_fetch_body_bytes", n => { OriginFetchBodyBytes = n.GetIntValue(); } },
-                { "origin_fetch_header_bytes", n => { OriginFetchHeaderBytes = n.GetIntValue(); } },
-                { "origin_fetch_resp_body_bytes", n => { OriginFetchRespBodyBytes = n.GetIntValue(); } },
-                { "origin_fetch_resp_header_bytes", n => { OriginFetchRespHeaderBytes = n.GetIntValue(); } },
-                { "origin_fetches", n => { OriginFetches = n.GetIntValue(); } },
-                { "origin_revalidations", n => { OriginRevalidations = n.GetIntValue(); } },
-                { "otfp", n => { Otfp = n.GetIntValue(); } },
-                { "otfp_deliver_time", n => { OtfpDeliverTime = n.GetIntValue(); } },
-                { "otfp_manifests", n => { OtfpManifests = n.GetIntValue(); } },
-                { "otfp_resp_body_bytes", n => { OtfpRespBodyBytes = n.GetIntValue(); } },
-                { "otfp_resp_header_bytes", n => { OtfpRespHeaderBytes = n.GetIntValue(); } },
-                { "otfp_shield_resp_body_bytes", n => { OtfpShieldRespBodyBytes = n.GetIntValue(); } },
-                { "otfp_shield_resp_header_bytes", n => { OtfpShieldRespHeaderBytes = n.GetIntValue(); } },
-                { "otfp_shield_time", n => { OtfpShieldTime = n.GetIntValue(); } },
-                { "pass", n => { Pass = n.GetIntValue(); } },
-                { "pass_resp_body_bytes", n => { PassRespBodyBytes = n.GetIntValue(); } },
-                { "pass_sub_count", n => { PassSubCount = n.GetIntValue(); } },
-                { "pass_sub_time", n => { PassSubTime = n.GetIntValue(); } },
-                { "pass_time", n => { PassTime = n.GetIntValue(); } },
-                { "pci", n => { Pci = n.GetIntValue(); } },
-                { "pipe", n => { Pipe = n.GetIntValue(); } },
-                { "pipe_sub_count", n => { PipeSubCount = n.GetIntValue(); } },
-                { "pipe_sub_time", n => { PipeSubTime = n.GetIntValue(); } },
-                { "predeliver_sub_count", n => { PredeliverSubCount = n.GetIntValue(); } },
-                { "predeliver_sub_time", n => { PredeliverSubTime = n.GetIntValue(); } },
-                { "prehash_sub_count", n => { PrehashSubCount = n.GetIntValue(); } },
-                { "prehash_sub_time", n => { PrehashSubTime = n.GetIntValue(); } },
-                { "recv_sub_count", n => { RecvSubCount = n.GetIntValue(); } },
-                { "recv_sub_time", n => { RecvSubTime = n.GetIntValue(); } },
-                { "req_body_bytes", n => { ReqBodyBytes = n.GetIntValue(); } },
-                { "req_header_bytes", n => { ReqHeaderBytes = n.GetIntValue(); } },
-                { "requests", n => { Requests = n.GetIntValue(); } },
-                { "resp_body_bytes", n => { RespBodyBytes = n.GetIntValue(); } },
-                { "resp_header_bytes", n => { RespHeaderBytes = n.GetIntValue(); } },
-                { "restarts", n => { Restarts = n.GetIntValue(); } },
-                { "segblock_origin_fetches", n => { SegblockOriginFetches = n.GetIntValue(); } },
-                { "segblock_shield_fetches", n => { SegblockShieldFetches = n.GetIntValue(); } },
-                { "shield", n => { Shield = n.GetIntValue(); } },
-                { "shield_fetch_body_bytes", n => { ShieldFetchBodyBytes = n.GetIntValue(); } },
-                { "shield_fetch_header_bytes", n => { ShieldFetchHeaderBytes = n.GetIntValue(); } },
-                { "shield_fetch_resp_body_bytes", n => { ShieldFetchRespBodyBytes = n.GetIntValue(); } },
-                { "shield_fetch_resp_header_bytes", n => { ShieldFetchRespHeaderBytes = n.GetIntValue(); } },
-                { "shield_fetches", n => { ShieldFetches = n.GetIntValue(); } },
-                { "shield_resp_body_bytes", n => { ShieldRespBodyBytes = n.GetIntValue(); } },
-                { "shield_resp_header_bytes", n => { ShieldRespHeaderBytes = n.GetIntValue(); } },
-                { "shield_revalidations", n => { ShieldRevalidations = n.GetIntValue(); } },
-                { "status_1xx", n => { Status1xx = n.GetIntValue(); } },
-                { "status_200", n => { Status200 = n.GetIntValue(); } },
-                { "status_204", n => { Status204 = n.GetIntValue(); } },
-                { "status_206", n => { Status206 = n.GetIntValue(); } },
-                { "status_2xx", n => { Status2xx = n.GetIntValue(); } },
-                { "status_301", n => { Status301 = n.GetIntValue(); } },
-                { "status_302", n => { Status302 = n.GetIntValue(); } },
-                { "status_304", n => { Status304 = n.GetIntValue(); } },
-                { "status_3xx", n => { Status3xx = n.GetIntValue(); } },
-                { "status_400", n => { Status400 = n.GetIntValue(); } },
-                { "status_401", n => { Status401 = n.GetIntValue(); } },
-                { "status_403", n => { Status403 = n.GetIntValue(); } },
-                { "status_404", n => { Status404 = n.GetIntValue(); } },
-                { "status_416", n => { Status416 = n.GetIntValue(); } },
-                { "status_429", n => { Status429 = n.GetIntValue(); } },
-                { "status_4xx", n => { Status4xx = n.GetIntValue(); } },
-                { "status_500", n => { Status500 = n.GetIntValue(); } },
-                { "status_501", n => { Status501 = n.GetIntValue(); } },
-                { "status_502", n => { Status502 = n.GetIntValue(); } },
-                { "status_503", n => { Status503 = n.GetIntValue(); } },
-                { "status_504", n => { Status504 = n.GetIntValue(); } },
-                { "status_505", n => { Status505 = n.GetIntValue(); } },
-                { "status_5xx", n => { Status5xx = n.GetIntValue(); } },
-                { "synth", n => { Synth = n.GetIntValue(); } },
-                { "tls", n => { Tls = n.GetIntValue(); } },
-                { "tls_handshake_sent_bytes", n => { TlsHandshakeSentBytes = n.GetIntValue(); } },
-                { "tls_v10", n => { TlsV10 = n.GetIntValue(); } },
-                { "tls_v11", n => { TlsV11 = n.GetIntValue(); } },
-                { "tls_v12", n => { TlsV12 = n.GetIntValue(); } },
-                { "tls_v13", n => { TlsV13 = n.GetIntValue(); } },
-                { "uncacheable", n => { Uncacheable = n.GetIntValue(); } },
-                { "video", n => { Video = n.GetIntValue(); } },
+                { "compute_requests", n => { ComputeRequests = n.GetLongValue(); } },
+                { "compute_resp_body_bytes", n => { ComputeRespBodyBytes = n.GetLongValue(); } },
+                { "compute_resp_header_bytes", n => { ComputeRespHeaderBytes = n.GetLongValue(); } },
+                { "compute_resp_status_2xx", n => { ComputeRespStatus2xx = n.GetLongValue(); } },
+                { "compute_resp_status_3xx", n => { ComputeRespStatus3xx = n.GetLongValue(); } },
+                { "deliver_sub_count", n => { DeliverSubCount = n.GetLongValue(); } },
+                { "deliver_sub_time", n => { DeliverSubTime = n.GetLongValue(); } },
+                { "edge_requests", n => { EdgeRequests = n.GetLongValue(); } },
+                { "edge_resp_body_bytes", n => { EdgeRespBodyBytes = n.GetLongValue(); } },
+                { "edge_resp_header_bytes", n => { EdgeRespHeaderBytes = n.GetLongValue(); } },
+                { "error_sub_count", n => { ErrorSubCount = n.GetLongValue(); } },
+                { "error_sub_time", n => { ErrorSubTime = n.GetLongValue(); } },
+                { "errors", n => { Errors = n.GetLongValue(); } },
+                { "fetch_sub_count", n => { FetchSubCount = n.GetLongValue(); } },
+                { "fetch_sub_time", n => { FetchSubTime = n.GetLongValue(); } },
+                { "hash_sub_count", n => { HashSubCount = n.GetLongValue(); } },
+                { "hash_sub_time", n => { HashSubTime = n.GetLongValue(); } },
+                { "header_size", n => { HeaderSize = n.GetLongValue(); } },
+                { "hit_resp_body_bytes", n => { HitRespBodyBytes = n.GetLongValue(); } },
+                { "hit_sub_count", n => { HitSubCount = n.GetLongValue(); } },
+                { "hit_sub_time", n => { HitSubTime = n.GetLongValue(); } },
+                { "hits", n => { Hits = n.GetLongValue(); } },
+                { "hits_time", n => { HitsTime = n.GetLongValue(); } },
+                { "http2", n => { Http2 = n.GetLongValue(); } },
+                { "imgopto", n => { Imgopto = n.GetLongValue(); } },
+                { "imgopto_resp_body_bytes", n => { ImgoptoRespBodyBytes = n.GetLongValue(); } },
+                { "imgopto_resp_header_bytes", n => { ImgoptoRespHeaderBytes = n.GetLongValue(); } },
+                { "imgopto_shield_resp_body_bytes", n => { ImgoptoShieldRespBodyBytes = n.GetLongValue(); } },
+                { "imgopto_shield_resp_header_bytes", n => { ImgoptoShieldRespHeaderBytes = n.GetLongValue(); } },
+                { "ipv6", n => { Ipv6 = n.GetLongValue(); } },
+                { "log", n => { Log = n.GetLongValue(); } },
+                { "log_bytes", n => { LogBytes = n.GetLongValue(); } },
+                { "miss", n => { Miss = n.GetLongValue(); } },
+                { "miss_resp_body_bytes", n => { MissRespBodyBytes = n.GetLongValue(); } },
+                { "miss_sub_count", n => { MissSubCount = n.GetLongValue(); } },
+                { "miss_sub_time", n => { MissSubTime = n.GetLongValue(); } },
+                { "miss_time", n => { MissTime = n.GetLongValue(); } },
+                { "object_size_100k", n => { ObjectSize100k = n.GetLongValue(); } },
+                { "object_size_100m", n => { ObjectSize100m = n.GetLongValue(); } },
+                { "object_size_10k", n => { ObjectSize10k = n.GetLongValue(); } },
+                { "object_size_10m", n => { ObjectSize10m = n.GetLongValue(); } },
+                { "object_size_1g", n => { ObjectSize1g = n.GetLongValue(); } },
+                { "object_size_1k", n => { ObjectSize1k = n.GetLongValue(); } },
+                { "object_size_1m", n => { ObjectSize1m = n.GetLongValue(); } },
+                { "orig_req_body_size", n => { OrigReqBodySize = n.GetLongValue(); } },
+                { "orig_req_header_size", n => { OrigReqHeaderSize = n.GetLongValue(); } },
+                { "orig_resp_body_size", n => { OrigRespBodySize = n.GetLongValue(); } },
+                { "orig_resp_header_size", n => { OrigRespHeaderSize = n.GetLongValue(); } },
+                { "origin_cache_fetches", n => { OriginCacheFetches = n.GetLongValue(); } },
+                { "origin_fetch_body_bytes", n => { OriginFetchBodyBytes = n.GetLongValue(); } },
+                { "origin_fetch_header_bytes", n => { OriginFetchHeaderBytes = n.GetLongValue(); } },
+                { "origin_fetch_resp_body_bytes", n => { OriginFetchRespBodyBytes = n.GetLongValue(); } },
+                { "origin_fetch_resp_header_bytes", n => { OriginFetchRespHeaderBytes = n.GetLongValue(); } },
+                { "origin_fetches", n => { OriginFetches = n.GetLongValue(); } },
+                { "origin_revalidations", n => { OriginRevalidations = n.GetLongValue(); } },
+                { "otfp", n => { Otfp = n.GetLongValue(); } },
+                { "otfp_deliver_time", n => { OtfpDeliverTime = n.GetLongValue(); } },
+                { "otfp_manifests", n => { OtfpManifests = n.GetLongValue(); } },
+                { "otfp_resp_body_bytes", n => { OtfpRespBodyBytes = n.GetLongValue(); } },
+                { "otfp_resp_header_bytes", n => { OtfpRespHeaderBytes = n.GetLongValue(); } },
+                { "otfp_shield_resp_body_bytes", n => { OtfpShieldRespBodyBytes = n.GetLongValue(); } },
+                { "otfp_shield_resp_header_bytes", n => { OtfpShieldRespHeaderBytes = n.GetLongValue(); } },
+                { "otfp_shield_time", n => { OtfpShieldTime = n.GetLongValue(); } },
+                { "pass", n => { Pass = n.GetLongValue(); } },
+                { "pass_resp_body_bytes", n => { PassRespBodyBytes = n.GetLongValue(); } },
+                { "pass_sub_count", n => { PassSubCount = n.GetLongValue(); } },
+                { "pass_sub_time", n => { PassSubTime = n.GetLongValue(); } },
+                { "pass_time", n => { PassTime = n.GetLongValue(); } },
+                { "pci", n => { Pci = n.GetLongValue(); } },
+                { "pipe", n => { Pipe = n.GetLongValue(); } },
+                { "pipe_sub_count", n => { PipeSubCount = n.GetLongValue(); } },
+                { "pipe_sub_time", n => { PipeSubTime = n.GetLongValue(); } },
+                { "predeliver_sub_count", n => { PredeliverSubCount = n.GetLongValue(); } },
+                { "predeliver_sub_time", n => { PredeliverSubTime = n.GetLongValue(); } },
+                { "prehash_sub_count", n => { PrehashSubCount = n.GetLongValue(); } },
+                { "prehash_sub_time", n => { PrehashSubTime = n.GetLongValue(); } },
+                { "recv_sub_count", n => { RecvSubCount = n.GetLongValue(); } },
+                { "recv_sub_time", n => { RecvSubTime = n.GetLongValue(); } },
+                { "req_body_bytes", n => { ReqBodyBytes = n.GetLongValue(); } },
+                { "req_header_bytes", n => { ReqHeaderBytes = n.GetLongValue(); } },
+                { "requests", n => { Requests = n.GetLongValue(); } },
+                { "resp_body_bytes", n => { RespBodyBytes = n.GetLongValue(); } },
+                { "resp_header_bytes", n => { RespHeaderBytes = n.GetLongValue(); } },
+                { "restarts", n => { Restarts = n.GetLongValue(); } },
+                { "segblock_origin_fetches", n => { SegblockOriginFetches = n.GetLongValue(); } },
+                { "segblock_shield_fetches", n => { SegblockShieldFetches = n.GetLongValue(); } },
+                { "shield", n => { Shield = n.GetLongValue(); } },
+                { "shield_fetch_body_bytes", n => { ShieldFetchBodyBytes = n.GetLongValue(); } },
+                { "shield_fetch_header_bytes", n => { ShieldFetchHeaderBytes = n.GetLongValue(); } },
+                { "shield_fetch_resp_body_bytes", n => { ShieldFetchRespBodyBytes = n.GetLongValue(); } },
+                { "shield_fetch_resp_header_bytes", n => { ShieldFetchRespHeaderBytes = n.GetLongValue(); } },
+                { "shield_fetches", n => { ShieldFetches = n.GetLongValue(); } },
+                { "shield_resp_body_bytes", n => { ShieldRespBodyBytes = n.GetLongValue(); } },
+                { "shield_resp_header_bytes", n => { ShieldRespHeaderBytes = n.GetLongValue(); } },
+                { "shield_revalidations", n => { ShieldRevalidations = n.GetLongValue(); } },
+                { "status_1xx", n => { Status1xx = n.GetLongValue(); } },
+                { "status_200", n => { Status200 = n.GetLongValue(); } },
+                { "status_204", n => { Status204 = n.GetLongValue(); } },
+                { "status_206", n => { Status206 = n.GetLongValue(); } },
+                { "status_2xx", n => { Status2xx = n.GetLongValue(); } },
+                { "status_301", n => { Status301 = n.GetLongValue(); } },
+                { "status_302", n => { Status302 = n.GetLongValue(); } },
+                { "status_304", n => { Status304 = n.GetLongValue(); } },
+                { "status_3xx", n => { Status3xx = n.GetLongValue(); } },
+                { "status_400", n => { Status400 = n.GetLongValue(); } },
+                { "status_401", n => { Status401 = n.GetLongValue(); } },
+                { "status_403", n => { Status403 = n.GetLongValue(); } },
+                { "status_404", n => { Status404 = n.GetLongValue(); } },
+                { "status_416", n => { Status416 = n.GetLongValue(); } },
+                { "status_429", n => { Status429 = n.GetLongValue(); } },
+                { "status_4xx", n => { Status4xx = n.GetLongValue(); } },
+                { "status_500", n => { Status500 = n.GetLongValue(); } },
+                { "status_501", n => { Status501 = n.GetLongValue(); } },
+                { "status_502", n => { Status502 = n.GetLongValue(); } },
+                { "status_503", n => { Status503 = n.GetLongValue(); } },
+                { "status_504", n => { Status504 = n.GetLongValue(); } },
+                { "status_505", n => { Status505 = n.GetLongValue(); } },
+                { "status_5xx", n => { Status5xx = n.GetLongValue(); } },
+                { "synth", n => { Synth = n.GetLongValue(); } },
+                { "tls", n => { Tls = n.GetLongValue(); } },
+                { "tls_handshake_sent_bytes", n => { TlsHandshakeSentBytes = n.GetLongValue(); } },
+                { "tls_v10", n => { TlsV10 = n.GetLongValue(); } },
+                { "tls_v11", n => { TlsV11 = n.GetLongValue(); } },
+                { "tls_v12", n => { TlsV12 = n.GetLongValue(); } },
+                { "tls_v13", n => { TlsV13 = n.GetLongValue(); } },
+                { "uncacheable", n => { Uncacheable = n.GetLongValue(); } },
+                { "video", n => { Video = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -495,155 +495,155 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("attack_blocked_req_body_bytes", AttackBlockedReqBodyBytes);
-            writer.WriteIntValue("attack_blocked_req_header_bytes", AttackBlockedReqHeaderBytes);
-            writer.WriteIntValue("attack_logged_req_body_bytes", AttackLoggedReqBodyBytes);
-            writer.WriteIntValue("attack_logged_req_header_bytes", AttackLoggedReqHeaderBytes);
-            writer.WriteIntValue("attack_passed_req_body_bytes", AttackPassedReqBodyBytes);
-            writer.WriteIntValue("attack_passed_req_header_bytes", AttackPassedReqHeaderBytes);
-            writer.WriteIntValue("attack_req_body_bytes", AttackReqBodyBytes);
-            writer.WriteIntValue("attack_req_header_bytes", AttackReqHeaderBytes);
-            writer.WriteIntValue("attack_resp_synth_bytes", AttackRespSynthBytes);
-            writer.WriteIntValue("bereq_body_bytes", BereqBodyBytes);
-            writer.WriteIntValue("bereq_header_bytes", BereqHeaderBytes);
-            writer.WriteIntValue("blacklist", Blacklist);
-            writer.WriteIntValue("body_size", BodySize);
-            writer.WriteIntValue("compute_bereq_body_bytes", ComputeBereqBodyBytes);
-            writer.WriteIntValue("compute_bereq_header_bytes", ComputeBereqHeaderBytes);
-            writer.WriteIntValue("compute_beresp_body_bytes", ComputeBerespBodyBytes);
-            writer.WriteIntValue("compute_beresp_header_bytes", ComputeBerespHeaderBytes);
+            writer.WriteLongValue("attack_blocked_req_body_bytes", AttackBlockedReqBodyBytes);
+            writer.WriteLongValue("attack_blocked_req_header_bytes", AttackBlockedReqHeaderBytes);
+            writer.WriteLongValue("attack_logged_req_body_bytes", AttackLoggedReqBodyBytes);
+            writer.WriteLongValue("attack_logged_req_header_bytes", AttackLoggedReqHeaderBytes);
+            writer.WriteLongValue("attack_passed_req_body_bytes", AttackPassedReqBodyBytes);
+            writer.WriteLongValue("attack_passed_req_header_bytes", AttackPassedReqHeaderBytes);
+            writer.WriteLongValue("attack_req_body_bytes", AttackReqBodyBytes);
+            writer.WriteLongValue("attack_req_header_bytes", AttackReqHeaderBytes);
+            writer.WriteLongValue("attack_resp_synth_bytes", AttackRespSynthBytes);
+            writer.WriteLongValue("bereq_body_bytes", BereqBodyBytes);
+            writer.WriteLongValue("bereq_header_bytes", BereqHeaderBytes);
+            writer.WriteLongValue("blacklist", Blacklist);
+            writer.WriteLongValue("body_size", BodySize);
+            writer.WriteLongValue("compute_bereq_body_bytes", ComputeBereqBodyBytes);
+            writer.WriteLongValue("compute_bereq_header_bytes", ComputeBereqHeaderBytes);
+            writer.WriteLongValue("compute_beresp_body_bytes", ComputeBerespBodyBytes);
+            writer.WriteLongValue("compute_beresp_header_bytes", ComputeBerespHeaderBytes);
             writer.WriteDoubleValue("compute_execution_time_ms", ComputeExecutionTimeMs);
-            writer.WriteIntValue("compute_ram_used", ComputeRamUsed);
-            writer.WriteIntValue("compute_req_header_bytes", ComputeReqHeaderBytes);
-            writer.WriteIntValue("compute_requests", ComputeRequests);
-            writer.WriteIntValue("compute_request_time_billed_ms", ComputeRequestTimeBilledMs);
+            writer.WriteLongValue("compute_ram_used", ComputeRamUsed);
+            writer.WriteLongValue("compute_req_header_bytes", ComputeReqHeaderBytes);
+            writer.WriteLongValue("compute_requests", ComputeRequests);
+            writer.WriteLongValue("compute_request_time_billed_ms", ComputeRequestTimeBilledMs);
             writer.WriteDoubleValue("compute_request_time_ms", ComputeRequestTimeMs);
-            writer.WriteIntValue("compute_resp_body_bytes", ComputeRespBodyBytes);
-            writer.WriteIntValue("compute_resp_header_bytes", ComputeRespHeaderBytes);
-            writer.WriteIntValue("compute_resp_status_2xx", ComputeRespStatus2xx);
-            writer.WriteIntValue("compute_resp_status_3xx", ComputeRespStatus3xx);
-            writer.WriteIntValue("deliver_sub_count", DeliverSubCount);
-            writer.WriteIntValue("deliver_sub_time", DeliverSubTime);
-            writer.WriteIntValue("edge_requests", EdgeRequests);
-            writer.WriteIntValue("edge_resp_body_bytes", EdgeRespBodyBytes);
-            writer.WriteIntValue("edge_resp_header_bytes", EdgeRespHeaderBytes);
-            writer.WriteIntValue("errors", Errors);
-            writer.WriteIntValue("error_sub_count", ErrorSubCount);
-            writer.WriteIntValue("error_sub_time", ErrorSubTime);
-            writer.WriteIntValue("fetch_sub_count", FetchSubCount);
-            writer.WriteIntValue("fetch_sub_time", FetchSubTime);
-            writer.WriteIntValue("hash_sub_count", HashSubCount);
-            writer.WriteIntValue("hash_sub_time", HashSubTime);
-            writer.WriteIntValue("header_size", HeaderSize);
-            writer.WriteIntValue("hit_resp_body_bytes", HitRespBodyBytes);
-            writer.WriteIntValue("hits", Hits);
-            writer.WriteIntValue("hits_time", HitsTime);
-            writer.WriteIntValue("hit_sub_count", HitSubCount);
-            writer.WriteIntValue("hit_sub_time", HitSubTime);
-            writer.WriteIntValue("http2", Http2);
-            writer.WriteIntValue("imgopto", Imgopto);
-            writer.WriteIntValue("imgopto_resp_body_bytes", ImgoptoRespBodyBytes);
-            writer.WriteIntValue("imgopto_resp_header_bytes", ImgoptoRespHeaderBytes);
-            writer.WriteIntValue("imgopto_shield_resp_body_bytes", ImgoptoShieldRespBodyBytes);
-            writer.WriteIntValue("imgopto_shield_resp_header_bytes", ImgoptoShieldRespHeaderBytes);
-            writer.WriteIntValue("ipv6", Ipv6);
-            writer.WriteIntValue("log", Log);
-            writer.WriteIntValue("log_bytes", LogBytes);
-            writer.WriteIntValue("miss", Miss);
-            writer.WriteIntValue("miss_resp_body_bytes", MissRespBodyBytes);
-            writer.WriteIntValue("miss_sub_count", MissSubCount);
-            writer.WriteIntValue("miss_sub_time", MissSubTime);
-            writer.WriteIntValue("miss_time", MissTime);
-            writer.WriteIntValue("object_size_100k", ObjectSize100k);
-            writer.WriteIntValue("object_size_100m", ObjectSize100m);
-            writer.WriteIntValue("object_size_10k", ObjectSize10k);
-            writer.WriteIntValue("object_size_10m", ObjectSize10m);
-            writer.WriteIntValue("object_size_1g", ObjectSize1g);
-            writer.WriteIntValue("object_size_1k", ObjectSize1k);
-            writer.WriteIntValue("object_size_1m", ObjectSize1m);
-            writer.WriteIntValue("origin_cache_fetches", OriginCacheFetches);
-            writer.WriteIntValue("origin_fetch_body_bytes", OriginFetchBodyBytes);
-            writer.WriteIntValue("origin_fetches", OriginFetches);
-            writer.WriteIntValue("origin_fetch_header_bytes", OriginFetchHeaderBytes);
-            writer.WriteIntValue("origin_fetch_resp_body_bytes", OriginFetchRespBodyBytes);
-            writer.WriteIntValue("origin_fetch_resp_header_bytes", OriginFetchRespHeaderBytes);
-            writer.WriteIntValue("origin_revalidations", OriginRevalidations);
-            writer.WriteIntValue("orig_req_body_size", OrigReqBodySize);
-            writer.WriteIntValue("orig_req_header_size", OrigReqHeaderSize);
-            writer.WriteIntValue("orig_resp_body_size", OrigRespBodySize);
-            writer.WriteIntValue("orig_resp_header_size", OrigRespHeaderSize);
-            writer.WriteIntValue("otfp", Otfp);
-            writer.WriteIntValue("otfp_deliver_time", OtfpDeliverTime);
-            writer.WriteIntValue("otfp_manifests", OtfpManifests);
-            writer.WriteIntValue("otfp_resp_body_bytes", OtfpRespBodyBytes);
-            writer.WriteIntValue("otfp_resp_header_bytes", OtfpRespHeaderBytes);
-            writer.WriteIntValue("otfp_shield_resp_body_bytes", OtfpShieldRespBodyBytes);
-            writer.WriteIntValue("otfp_shield_resp_header_bytes", OtfpShieldRespHeaderBytes);
-            writer.WriteIntValue("otfp_shield_time", OtfpShieldTime);
-            writer.WriteIntValue("pass", Pass);
-            writer.WriteIntValue("pass_resp_body_bytes", PassRespBodyBytes);
-            writer.WriteIntValue("pass_sub_count", PassSubCount);
-            writer.WriteIntValue("pass_sub_time", PassSubTime);
-            writer.WriteIntValue("pass_time", PassTime);
-            writer.WriteIntValue("pci", Pci);
-            writer.WriteIntValue("pipe", Pipe);
-            writer.WriteIntValue("pipe_sub_count", PipeSubCount);
-            writer.WriteIntValue("pipe_sub_time", PipeSubTime);
-            writer.WriteIntValue("predeliver_sub_count", PredeliverSubCount);
-            writer.WriteIntValue("predeliver_sub_time", PredeliverSubTime);
-            writer.WriteIntValue("prehash_sub_count", PrehashSubCount);
-            writer.WriteIntValue("prehash_sub_time", PrehashSubTime);
-            writer.WriteIntValue("recv_sub_count", RecvSubCount);
-            writer.WriteIntValue("recv_sub_time", RecvSubTime);
-            writer.WriteIntValue("req_body_bytes", ReqBodyBytes);
-            writer.WriteIntValue("req_header_bytes", ReqHeaderBytes);
-            writer.WriteIntValue("requests", Requests);
-            writer.WriteIntValue("resp_body_bytes", RespBodyBytes);
-            writer.WriteIntValue("resp_header_bytes", RespHeaderBytes);
-            writer.WriteIntValue("restarts", Restarts);
-            writer.WriteIntValue("segblock_origin_fetches", SegblockOriginFetches);
-            writer.WriteIntValue("segblock_shield_fetches", SegblockShieldFetches);
-            writer.WriteIntValue("shield", Shield);
-            writer.WriteIntValue("shield_fetch_body_bytes", ShieldFetchBodyBytes);
-            writer.WriteIntValue("shield_fetches", ShieldFetches);
-            writer.WriteIntValue("shield_fetch_header_bytes", ShieldFetchHeaderBytes);
-            writer.WriteIntValue("shield_fetch_resp_body_bytes", ShieldFetchRespBodyBytes);
-            writer.WriteIntValue("shield_fetch_resp_header_bytes", ShieldFetchRespHeaderBytes);
-            writer.WriteIntValue("shield_resp_body_bytes", ShieldRespBodyBytes);
-            writer.WriteIntValue("shield_resp_header_bytes", ShieldRespHeaderBytes);
-            writer.WriteIntValue("shield_revalidations", ShieldRevalidations);
-            writer.WriteIntValue("status_1xx", Status1xx);
-            writer.WriteIntValue("status_200", Status200);
-            writer.WriteIntValue("status_204", Status204);
-            writer.WriteIntValue("status_206", Status206);
-            writer.WriteIntValue("status_2xx", Status2xx);
-            writer.WriteIntValue("status_301", Status301);
-            writer.WriteIntValue("status_302", Status302);
-            writer.WriteIntValue("status_304", Status304);
-            writer.WriteIntValue("status_3xx", Status3xx);
-            writer.WriteIntValue("status_400", Status400);
-            writer.WriteIntValue("status_401", Status401);
-            writer.WriteIntValue("status_403", Status403);
-            writer.WriteIntValue("status_404", Status404);
-            writer.WriteIntValue("status_416", Status416);
-            writer.WriteIntValue("status_429", Status429);
-            writer.WriteIntValue("status_4xx", Status4xx);
-            writer.WriteIntValue("status_500", Status500);
-            writer.WriteIntValue("status_501", Status501);
-            writer.WriteIntValue("status_502", Status502);
-            writer.WriteIntValue("status_503", Status503);
-            writer.WriteIntValue("status_504", Status504);
-            writer.WriteIntValue("status_505", Status505);
-            writer.WriteIntValue("status_5xx", Status5xx);
-            writer.WriteIntValue("synth", Synth);
-            writer.WriteIntValue("tls", Tls);
-            writer.WriteIntValue("tls_handshake_sent_bytes", TlsHandshakeSentBytes);
-            writer.WriteIntValue("tls_v10", TlsV10);
-            writer.WriteIntValue("tls_v11", TlsV11);
-            writer.WriteIntValue("tls_v12", TlsV12);
-            writer.WriteIntValue("tls_v13", TlsV13);
-            writer.WriteIntValue("uncacheable", Uncacheable);
-            writer.WriteIntValue("video", Video);
+            writer.WriteLongValue("compute_resp_body_bytes", ComputeRespBodyBytes);
+            writer.WriteLongValue("compute_resp_header_bytes", ComputeRespHeaderBytes);
+            writer.WriteLongValue("compute_resp_status_2xx", ComputeRespStatus2xx);
+            writer.WriteLongValue("compute_resp_status_3xx", ComputeRespStatus3xx);
+            writer.WriteLongValue("deliver_sub_count", DeliverSubCount);
+            writer.WriteLongValue("deliver_sub_time", DeliverSubTime);
+            writer.WriteLongValue("edge_requests", EdgeRequests);
+            writer.WriteLongValue("edge_resp_body_bytes", EdgeRespBodyBytes);
+            writer.WriteLongValue("edge_resp_header_bytes", EdgeRespHeaderBytes);
+            writer.WriteLongValue("errors", Errors);
+            writer.WriteLongValue("error_sub_count", ErrorSubCount);
+            writer.WriteLongValue("error_sub_time", ErrorSubTime);
+            writer.WriteLongValue("fetch_sub_count", FetchSubCount);
+            writer.WriteLongValue("fetch_sub_time", FetchSubTime);
+            writer.WriteLongValue("hash_sub_count", HashSubCount);
+            writer.WriteLongValue("hash_sub_time", HashSubTime);
+            writer.WriteLongValue("header_size", HeaderSize);
+            writer.WriteLongValue("hit_resp_body_bytes", HitRespBodyBytes);
+            writer.WriteLongValue("hits", Hits);
+            writer.WriteLongValue("hits_time", HitsTime);
+            writer.WriteLongValue("hit_sub_count", HitSubCount);
+            writer.WriteLongValue("hit_sub_time", HitSubTime);
+            writer.WriteLongValue("http2", Http2);
+            writer.WriteLongValue("imgopto", Imgopto);
+            writer.WriteLongValue("imgopto_resp_body_bytes", ImgoptoRespBodyBytes);
+            writer.WriteLongValue("imgopto_resp_header_bytes", ImgoptoRespHeaderBytes);
+            writer.WriteLongValue("imgopto_shield_resp_body_bytes", ImgoptoShieldRespBodyBytes);
+            writer.WriteLongValue("imgopto_shield_resp_header_bytes", ImgoptoShieldRespHeaderBytes);
+            writer.WriteLongValue("ipv6", Ipv6);
+            writer.WriteLongValue("log", Log);
+            writer.WriteLongValue("log_bytes", LogBytes);
+            writer.WriteLongValue("miss", Miss);
+            writer.WriteLongValue("miss_resp_body_bytes", MissRespBodyBytes);
+            writer.WriteLongValue("miss_sub_count", MissSubCount);
+            writer.WriteLongValue("miss_sub_time", MissSubTime);
+            writer.WriteLongValue("miss_time", MissTime);
+            writer.WriteLongValue("object_size_100k", ObjectSize100k);
+            writer.WriteLongValue("object_size_100m", ObjectSize100m);
+            writer.WriteLongValue("object_size_10k", ObjectSize10k);
+            writer.WriteLongValue("object_size_10m", ObjectSize10m);
+            writer.WriteLongValue("object_size_1g", ObjectSize1g);
+            writer.WriteLongValue("object_size_1k", ObjectSize1k);
+            writer.WriteLongValue("object_size_1m", ObjectSize1m);
+            writer.WriteLongValue("origin_cache_fetches", OriginCacheFetches);
+            writer.WriteLongValue("origin_fetch_body_bytes", OriginFetchBodyBytes);
+            writer.WriteLongValue("origin_fetches", OriginFetches);
+            writer.WriteLongValue("origin_fetch_header_bytes", OriginFetchHeaderBytes);
+            writer.WriteLongValue("origin_fetch_resp_body_bytes", OriginFetchRespBodyBytes);
+            writer.WriteLongValue("origin_fetch_resp_header_bytes", OriginFetchRespHeaderBytes);
+            writer.WriteLongValue("origin_revalidations", OriginRevalidations);
+            writer.WriteLongValue("orig_req_body_size", OrigReqBodySize);
+            writer.WriteLongValue("orig_req_header_size", OrigReqHeaderSize);
+            writer.WriteLongValue("orig_resp_body_size", OrigRespBodySize);
+            writer.WriteLongValue("orig_resp_header_size", OrigRespHeaderSize);
+            writer.WriteLongValue("otfp", Otfp);
+            writer.WriteLongValue("otfp_deliver_time", OtfpDeliverTime);
+            writer.WriteLongValue("otfp_manifests", OtfpManifests);
+            writer.WriteLongValue("otfp_resp_body_bytes", OtfpRespBodyBytes);
+            writer.WriteLongValue("otfp_resp_header_bytes", OtfpRespHeaderBytes);
+            writer.WriteLongValue("otfp_shield_resp_body_bytes", OtfpShieldRespBodyBytes);
+            writer.WriteLongValue("otfp_shield_resp_header_bytes", OtfpShieldRespHeaderBytes);
+            writer.WriteLongValue("otfp_shield_time", OtfpShieldTime);
+            writer.WriteLongValue("pass", Pass);
+            writer.WriteLongValue("pass_resp_body_bytes", PassRespBodyBytes);
+            writer.WriteLongValue("pass_sub_count", PassSubCount);
+            writer.WriteLongValue("pass_sub_time", PassSubTime);
+            writer.WriteLongValue("pass_time", PassTime);
+            writer.WriteLongValue("pci", Pci);
+            writer.WriteLongValue("pipe", Pipe);
+            writer.WriteLongValue("pipe_sub_count", PipeSubCount);
+            writer.WriteLongValue("pipe_sub_time", PipeSubTime);
+            writer.WriteLongValue("predeliver_sub_count", PredeliverSubCount);
+            writer.WriteLongValue("predeliver_sub_time", PredeliverSubTime);
+            writer.WriteLongValue("prehash_sub_count", PrehashSubCount);
+            writer.WriteLongValue("prehash_sub_time", PrehashSubTime);
+            writer.WriteLongValue("recv_sub_count", RecvSubCount);
+            writer.WriteLongValue("recv_sub_time", RecvSubTime);
+            writer.WriteLongValue("req_body_bytes", ReqBodyBytes);
+            writer.WriteLongValue("req_header_bytes", ReqHeaderBytes);
+            writer.WriteLongValue("requests", Requests);
+            writer.WriteLongValue("resp_body_bytes", RespBodyBytes);
+            writer.WriteLongValue("resp_header_bytes", RespHeaderBytes);
+            writer.WriteLongValue("restarts", Restarts);
+            writer.WriteLongValue("segblock_origin_fetches", SegblockOriginFetches);
+            writer.WriteLongValue("segblock_shield_fetches", SegblockShieldFetches);
+            writer.WriteLongValue("shield", Shield);
+            writer.WriteLongValue("shield_fetch_body_bytes", ShieldFetchBodyBytes);
+            writer.WriteLongValue("shield_fetches", ShieldFetches);
+            writer.WriteLongValue("shield_fetch_header_bytes", ShieldFetchHeaderBytes);
+            writer.WriteLongValue("shield_fetch_resp_body_bytes", ShieldFetchRespBodyBytes);
+            writer.WriteLongValue("shield_fetch_resp_header_bytes", ShieldFetchRespHeaderBytes);
+            writer.WriteLongValue("shield_resp_body_bytes", ShieldRespBodyBytes);
+            writer.WriteLongValue("shield_resp_header_bytes", ShieldRespHeaderBytes);
+            writer.WriteLongValue("shield_revalidations", ShieldRevalidations);
+            writer.WriteLongValue("status_1xx", Status1xx);
+            writer.WriteLongValue("status_200", Status200);
+            writer.WriteLongValue("status_204", Status204);
+            writer.WriteLongValue("status_206", Status206);
+            writer.WriteLongValue("status_2xx", Status2xx);
+            writer.WriteLongValue("status_301", Status301);
+            writer.WriteLongValue("status_302", Status302);
+            writer.WriteLongValue("status_304", Status304);
+            writer.WriteLongValue("status_3xx", Status3xx);
+            writer.WriteLongValue("status_400", Status400);
+            writer.WriteLongValue("status_401", Status401);
+            writer.WriteLongValue("status_403", Status403);
+            writer.WriteLongValue("status_404", Status404);
+            writer.WriteLongValue("status_416", Status416);
+            writer.WriteLongValue("status_429", Status429);
+            writer.WriteLongValue("status_4xx", Status4xx);
+            writer.WriteLongValue("status_500", Status500);
+            writer.WriteLongValue("status_501", Status501);
+            writer.WriteLongValue("status_502", Status502);
+            writer.WriteLongValue("status_503", Status503);
+            writer.WriteLongValue("status_504", Status504);
+            writer.WriteLongValue("status_505", Status505);
+            writer.WriteLongValue("status_5xx", Status5xx);
+            writer.WriteLongValue("synth", Synth);
+            writer.WriteLongValue("tls", Tls);
+            writer.WriteLongValue("tls_handshake_sent_bytes", TlsHandshakeSentBytes);
+            writer.WriteLongValue("tls_v10", TlsV10);
+            writer.WriteLongValue("tls_v11", TlsV11);
+            writer.WriteLongValue("tls_v12", TlsV12);
+            writer.WriteLongValue("tls_v13", TlsV13);
+            writer.WriteLongValue("uncacheable", Uncacheable);
+            writer.WriteLongValue("video", Video);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

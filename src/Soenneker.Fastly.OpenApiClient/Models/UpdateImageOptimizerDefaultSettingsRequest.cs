@@ -17,7 +17,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The allow_video property</summary>
         public bool? AllowVideo { get; set; }
         /// <summary>The jpeg_quality property</summary>
-        public int? JpegQuality { get; set; }
+        public long? JpegQuality { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettingsRequest"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allow_video", n => { AllowVideo = n.GetBoolValue(); } },
-                { "jpeg_quality", n => { JpegQuality = n.GetIntValue(); } },
+                { "jpeg_quality", n => { JpegQuality = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_video", AllowVideo);
-            writer.WriteIntValue("jpeg_quality", JpegQuality);
+            writer.WriteLongValue("jpeg_quality", JpegQuality);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

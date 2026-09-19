@@ -25,10 +25,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Deleted { get; set; }
+        public UntypedNode? Deleted { get; set; }
 #nullable restore
 #else
-        public List<string> Deleted { get; set; }
+        public UntypedNode Deleted { get; set; }
 #endif
         /// <summary>The modified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added", n => { Added = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "deleted", n => { Deleted = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "modified", n => { Modified = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem>("added", Added);
-            writer.WriteCollectionOfPrimitiveValues<string>("deleted", Deleted);
+            writer.WriteObjectValue<UntypedNode>("deleted", Deleted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem>("modified", Modified);
             writer.WriteAdditionalData(AdditionalData);
         }

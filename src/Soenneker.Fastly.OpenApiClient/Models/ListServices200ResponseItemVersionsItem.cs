@@ -35,17 +35,17 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The deployed property</summary>
         public bool? Deployed { get; set; }
         /// <summary>The locked property</summary>
         public bool? Locked { get; set; }
         /// <summary>The number property</summary>
-        public int? Number { get; set; }
+        public long? Number { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,10 +94,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "deployed", n => { Deployed = n.GetBoolValue(); } },
                 { "locked", n => { Locked = n.GetBoolValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
+                { "number", n => { Number = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "staging", n => { Staging = n.GetBoolValue(); } },
                 { "testing", n => { Testing = n.GetBoolValue(); } },
@@ -114,10 +114,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteBoolValue("active", Active);
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteBoolValue("deployed", Deployed);
             writer.WriteBoolValue("locked", Locked);
-            writer.WriteIntValue("number", Number);
+            writer.WriteLongValue("number", Number);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteBoolValue("staging", Staging);
             writer.WriteBoolValue("testing", Testing);

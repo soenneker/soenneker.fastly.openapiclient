@@ -15,65 +15,65 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attack_req_body_bytes property</summary>
-        public int? AttackReqBodyBytes { get; set; }
+        public long? AttackReqBodyBytes { get; set; }
         /// <summary>The attack_req_header_bytes property</summary>
-        public int? AttackReqHeaderBytes { get; set; }
+        public long? AttackReqHeaderBytes { get; set; }
         /// <summary>The attack_resp_synth_bytes property</summary>
-        public int? AttackRespSynthBytes { get; set; }
+        public long? AttackRespSynthBytes { get; set; }
         /// <summary>The bandwidth property</summary>
-        public int? Bandwidth { get; set; }
+        public long? Bandwidth { get; set; }
         /// <summary>The bereq_body_bytes property</summary>
-        public int? BereqBodyBytes { get; set; }
+        public long? BereqBodyBytes { get; set; }
         /// <summary>The bereq_header_bytes property</summary>
-        public int? BereqHeaderBytes { get; set; }
+        public long? BereqHeaderBytes { get; set; }
         /// <summary>The body_size property</summary>
-        public int? BodySize { get; set; }
+        public long? BodySize { get; set; }
         /// <summary>The errors property</summary>
-        public int? Errors { get; set; }
+        public long? Errors { get; set; }
         /// <summary>The header_size property</summary>
-        public int? HeaderSize { get; set; }
+        public long? HeaderSize { get; set; }
         /// <summary>The hit_ratio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HitRatio { get; set; }
+        public UntypedNode? HitRatio { get; set; }
 #nullable restore
 #else
-        public string HitRatio { get; set; }
+        public UntypedNode HitRatio { get; set; }
 #endif
         /// <summary>The hits property</summary>
-        public int? Hits { get; set; }
+        public long? Hits { get; set; }
         /// <summary>The hits_time property</summary>
-        public int? HitsTime { get; set; }
+        public long? HitsTime { get; set; }
         /// <summary>The http2 property</summary>
-        public int? Http2 { get; set; }
+        public long? Http2 { get; set; }
         /// <summary>The imgopto property</summary>
-        public int? Imgopto { get; set; }
+        public long? Imgopto { get; set; }
         /// <summary>The ipv6 property</summary>
-        public int? Ipv6 { get; set; }
+        public long? Ipv6 { get; set; }
         /// <summary>The logging property</summary>
-        public int? Logging { get; set; }
+        public long? Logging { get; set; }
         /// <summary>The miss property</summary>
-        public int? Miss { get; set; }
+        public long? Miss { get; set; }
         /// <summary>The miss_time property</summary>
-        public int? MissTime { get; set; }
+        public long? MissTime { get; set; }
         /// <summary>The otfp property</summary>
-        public int? Otfp { get; set; }
+        public long? Otfp { get; set; }
         /// <summary>The pass property</summary>
-        public int? Pass { get; set; }
+        public long? Pass { get; set; }
         /// <summary>The pci property</summary>
-        public int? Pci { get; set; }
+        public long? Pci { get; set; }
         /// <summary>The pipe property</summary>
-        public int? Pipe { get; set; }
+        public long? Pipe { get; set; }
         /// <summary>The req_body_bytes property</summary>
-        public int? ReqBodyBytes { get; set; }
+        public long? ReqBodyBytes { get; set; }
         /// <summary>The req_header_bytes property</summary>
-        public int? ReqHeaderBytes { get; set; }
+        public long? ReqHeaderBytes { get; set; }
         /// <summary>The requests property</summary>
-        public int? Requests { get; set; }
+        public long? Requests { get; set; }
         /// <summary>The resp_body_bytes property</summary>
-        public int? RespBodyBytes { get; set; }
+        public long? RespBodyBytes { get; set; }
         /// <summary>The resp_header_bytes property</summary>
-        public int? RespHeaderBytes { get; set; }
+        public long? RespHeaderBytes { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,37 +83,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The shield property</summary>
-        public int? Shield { get; set; }
+        public long? Shield { get; set; }
         /// <summary>The start_time property</summary>
-        public int? StartTime { get; set; }
+        public long? StartTime { get; set; }
         /// <summary>The status_1xx property</summary>
-        public int? Status1xx { get; set; }
+        public long? Status1xx { get; set; }
         /// <summary>The status_200 property</summary>
-        public int? Status200 { get; set; }
+        public long? Status200 { get; set; }
         /// <summary>The status_204 property</summary>
-        public int? Status204 { get; set; }
+        public long? Status204 { get; set; }
         /// <summary>The status_2xx property</summary>
-        public int? Status2xx { get; set; }
+        public long? Status2xx { get; set; }
         /// <summary>The status_301 property</summary>
-        public int? Status301 { get; set; }
+        public long? Status301 { get; set; }
         /// <summary>The status_302 property</summary>
-        public int? Status302 { get; set; }
+        public long? Status302 { get; set; }
         /// <summary>The status_304 property</summary>
-        public int? Status304 { get; set; }
+        public long? Status304 { get; set; }
         /// <summary>The status_3xx property</summary>
-        public int? Status3xx { get; set; }
+        public long? Status3xx { get; set; }
         /// <summary>The status_4xx property</summary>
-        public int? Status4xx { get; set; }
+        public long? Status4xx { get; set; }
         /// <summary>The status_503 property</summary>
-        public int? Status503 { get; set; }
+        public long? Status503 { get; set; }
         /// <summary>The status_5xx property</summary>
-        public int? Status5xx { get; set; }
+        public long? Status5xx { get; set; }
         /// <summary>The tls property</summary>
-        public int? Tls { get; set; }
+        public long? Tls { get; set; }
         /// <summary>The uncacheable property</summary>
-        public int? Uncacheable { get; set; }
+        public long? Uncacheable { get; set; }
         /// <summary>The video property</summary>
-        public int? Video { get; set; }
+        public long? Video { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleService200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -139,50 +139,50 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attack_req_body_bytes", n => { AttackReqBodyBytes = n.GetIntValue(); } },
-                { "attack_req_header_bytes", n => { AttackReqHeaderBytes = n.GetIntValue(); } },
-                { "attack_resp_synth_bytes", n => { AttackRespSynthBytes = n.GetIntValue(); } },
-                { "bandwidth", n => { Bandwidth = n.GetIntValue(); } },
-                { "bereq_body_bytes", n => { BereqBodyBytes = n.GetIntValue(); } },
-                { "bereq_header_bytes", n => { BereqHeaderBytes = n.GetIntValue(); } },
-                { "body_size", n => { BodySize = n.GetIntValue(); } },
-                { "errors", n => { Errors = n.GetIntValue(); } },
-                { "header_size", n => { HeaderSize = n.GetIntValue(); } },
-                { "hit_ratio", n => { HitRatio = n.GetStringValue(); } },
-                { "hits", n => { Hits = n.GetIntValue(); } },
-                { "hits_time", n => { HitsTime = n.GetIntValue(); } },
-                { "http2", n => { Http2 = n.GetIntValue(); } },
-                { "imgopto", n => { Imgopto = n.GetIntValue(); } },
-                { "ipv6", n => { Ipv6 = n.GetIntValue(); } },
-                { "logging", n => { Logging = n.GetIntValue(); } },
-                { "miss", n => { Miss = n.GetIntValue(); } },
-                { "miss_time", n => { MissTime = n.GetIntValue(); } },
-                { "otfp", n => { Otfp = n.GetIntValue(); } },
-                { "pass", n => { Pass = n.GetIntValue(); } },
-                { "pci", n => { Pci = n.GetIntValue(); } },
-                { "pipe", n => { Pipe = n.GetIntValue(); } },
-                { "req_body_bytes", n => { ReqBodyBytes = n.GetIntValue(); } },
-                { "req_header_bytes", n => { ReqHeaderBytes = n.GetIntValue(); } },
-                { "requests", n => { Requests = n.GetIntValue(); } },
-                { "resp_body_bytes", n => { RespBodyBytes = n.GetIntValue(); } },
-                { "resp_header_bytes", n => { RespHeaderBytes = n.GetIntValue(); } },
+                { "attack_req_body_bytes", n => { AttackReqBodyBytes = n.GetLongValue(); } },
+                { "attack_req_header_bytes", n => { AttackReqHeaderBytes = n.GetLongValue(); } },
+                { "attack_resp_synth_bytes", n => { AttackRespSynthBytes = n.GetLongValue(); } },
+                { "bandwidth", n => { Bandwidth = n.GetLongValue(); } },
+                { "bereq_body_bytes", n => { BereqBodyBytes = n.GetLongValue(); } },
+                { "bereq_header_bytes", n => { BereqHeaderBytes = n.GetLongValue(); } },
+                { "body_size", n => { BodySize = n.GetLongValue(); } },
+                { "errors", n => { Errors = n.GetLongValue(); } },
+                { "header_size", n => { HeaderSize = n.GetLongValue(); } },
+                { "hit_ratio", n => { HitRatio = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "hits", n => { Hits = n.GetLongValue(); } },
+                { "hits_time", n => { HitsTime = n.GetLongValue(); } },
+                { "http2", n => { Http2 = n.GetLongValue(); } },
+                { "imgopto", n => { Imgopto = n.GetLongValue(); } },
+                { "ipv6", n => { Ipv6 = n.GetLongValue(); } },
+                { "logging", n => { Logging = n.GetLongValue(); } },
+                { "miss", n => { Miss = n.GetLongValue(); } },
+                { "miss_time", n => { MissTime = n.GetLongValue(); } },
+                { "otfp", n => { Otfp = n.GetLongValue(); } },
+                { "pass", n => { Pass = n.GetLongValue(); } },
+                { "pci", n => { Pci = n.GetLongValue(); } },
+                { "pipe", n => { Pipe = n.GetLongValue(); } },
+                { "req_body_bytes", n => { ReqBodyBytes = n.GetLongValue(); } },
+                { "req_header_bytes", n => { ReqHeaderBytes = n.GetLongValue(); } },
+                { "requests", n => { Requests = n.GetLongValue(); } },
+                { "resp_body_bytes", n => { RespBodyBytes = n.GetLongValue(); } },
+                { "resp_header_bytes", n => { RespHeaderBytes = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "shield", n => { Shield = n.GetIntValue(); } },
-                { "start_time", n => { StartTime = n.GetIntValue(); } },
-                { "status_1xx", n => { Status1xx = n.GetIntValue(); } },
-                { "status_200", n => { Status200 = n.GetIntValue(); } },
-                { "status_204", n => { Status204 = n.GetIntValue(); } },
-                { "status_2xx", n => { Status2xx = n.GetIntValue(); } },
-                { "status_301", n => { Status301 = n.GetIntValue(); } },
-                { "status_302", n => { Status302 = n.GetIntValue(); } },
-                { "status_304", n => { Status304 = n.GetIntValue(); } },
-                { "status_3xx", n => { Status3xx = n.GetIntValue(); } },
-                { "status_4xx", n => { Status4xx = n.GetIntValue(); } },
-                { "status_503", n => { Status503 = n.GetIntValue(); } },
-                { "status_5xx", n => { Status5xx = n.GetIntValue(); } },
-                { "tls", n => { Tls = n.GetIntValue(); } },
-                { "uncacheable", n => { Uncacheable = n.GetIntValue(); } },
-                { "video", n => { Video = n.GetIntValue(); } },
+                { "shield", n => { Shield = n.GetLongValue(); } },
+                { "start_time", n => { StartTime = n.GetLongValue(); } },
+                { "status_1xx", n => { Status1xx = n.GetLongValue(); } },
+                { "status_200", n => { Status200 = n.GetLongValue(); } },
+                { "status_204", n => { Status204 = n.GetLongValue(); } },
+                { "status_2xx", n => { Status2xx = n.GetLongValue(); } },
+                { "status_301", n => { Status301 = n.GetLongValue(); } },
+                { "status_302", n => { Status302 = n.GetLongValue(); } },
+                { "status_304", n => { Status304 = n.GetLongValue(); } },
+                { "status_3xx", n => { Status3xx = n.GetLongValue(); } },
+                { "status_4xx", n => { Status4xx = n.GetLongValue(); } },
+                { "status_503", n => { Status503 = n.GetLongValue(); } },
+                { "status_5xx", n => { Status5xx = n.GetLongValue(); } },
+                { "tls", n => { Tls = n.GetLongValue(); } },
+                { "uncacheable", n => { Uncacheable = n.GetLongValue(); } },
+                { "video", n => { Video = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -192,50 +192,50 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("attack_req_body_bytes", AttackReqBodyBytes);
-            writer.WriteIntValue("attack_req_header_bytes", AttackReqHeaderBytes);
-            writer.WriteIntValue("attack_resp_synth_bytes", AttackRespSynthBytes);
-            writer.WriteIntValue("bandwidth", Bandwidth);
-            writer.WriteIntValue("bereq_body_bytes", BereqBodyBytes);
-            writer.WriteIntValue("bereq_header_bytes", BereqHeaderBytes);
-            writer.WriteIntValue("body_size", BodySize);
-            writer.WriteIntValue("errors", Errors);
-            writer.WriteIntValue("header_size", HeaderSize);
-            writer.WriteStringValue("hit_ratio", HitRatio);
-            writer.WriteIntValue("hits", Hits);
-            writer.WriteIntValue("hits_time", HitsTime);
-            writer.WriteIntValue("http2", Http2);
-            writer.WriteIntValue("imgopto", Imgopto);
-            writer.WriteIntValue("ipv6", Ipv6);
-            writer.WriteIntValue("logging", Logging);
-            writer.WriteIntValue("miss", Miss);
-            writer.WriteIntValue("miss_time", MissTime);
-            writer.WriteIntValue("otfp", Otfp);
-            writer.WriteIntValue("pass", Pass);
-            writer.WriteIntValue("pci", Pci);
-            writer.WriteIntValue("pipe", Pipe);
-            writer.WriteIntValue("req_body_bytes", ReqBodyBytes);
-            writer.WriteIntValue("req_header_bytes", ReqHeaderBytes);
-            writer.WriteIntValue("requests", Requests);
-            writer.WriteIntValue("resp_body_bytes", RespBodyBytes);
-            writer.WriteIntValue("resp_header_bytes", RespHeaderBytes);
+            writer.WriteLongValue("attack_req_body_bytes", AttackReqBodyBytes);
+            writer.WriteLongValue("attack_req_header_bytes", AttackReqHeaderBytes);
+            writer.WriteLongValue("attack_resp_synth_bytes", AttackRespSynthBytes);
+            writer.WriteLongValue("bandwidth", Bandwidth);
+            writer.WriteLongValue("bereq_body_bytes", BereqBodyBytes);
+            writer.WriteLongValue("bereq_header_bytes", BereqHeaderBytes);
+            writer.WriteLongValue("body_size", BodySize);
+            writer.WriteLongValue("errors", Errors);
+            writer.WriteLongValue("header_size", HeaderSize);
+            writer.WriteObjectValue<UntypedNode>("hit_ratio", HitRatio);
+            writer.WriteLongValue("hits", Hits);
+            writer.WriteLongValue("hits_time", HitsTime);
+            writer.WriteLongValue("http2", Http2);
+            writer.WriteLongValue("imgopto", Imgopto);
+            writer.WriteLongValue("ipv6", Ipv6);
+            writer.WriteLongValue("logging", Logging);
+            writer.WriteLongValue("miss", Miss);
+            writer.WriteLongValue("miss_time", MissTime);
+            writer.WriteLongValue("otfp", Otfp);
+            writer.WriteLongValue("pass", Pass);
+            writer.WriteLongValue("pci", Pci);
+            writer.WriteLongValue("pipe", Pipe);
+            writer.WriteLongValue("req_body_bytes", ReqBodyBytes);
+            writer.WriteLongValue("req_header_bytes", ReqHeaderBytes);
+            writer.WriteLongValue("requests", Requests);
+            writer.WriteLongValue("resp_body_bytes", RespBodyBytes);
+            writer.WriteLongValue("resp_header_bytes", RespHeaderBytes);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("shield", Shield);
-            writer.WriteIntValue("start_time", StartTime);
-            writer.WriteIntValue("status_1xx", Status1xx);
-            writer.WriteIntValue("status_200", Status200);
-            writer.WriteIntValue("status_204", Status204);
-            writer.WriteIntValue("status_2xx", Status2xx);
-            writer.WriteIntValue("status_301", Status301);
-            writer.WriteIntValue("status_302", Status302);
-            writer.WriteIntValue("status_304", Status304);
-            writer.WriteIntValue("status_3xx", Status3xx);
-            writer.WriteIntValue("status_4xx", Status4xx);
-            writer.WriteIntValue("status_503", Status503);
-            writer.WriteIntValue("status_5xx", Status5xx);
-            writer.WriteIntValue("tls", Tls);
-            writer.WriteIntValue("uncacheable", Uncacheable);
-            writer.WriteIntValue("video", Video);
+            writer.WriteLongValue("shield", Shield);
+            writer.WriteLongValue("start_time", StartTime);
+            writer.WriteLongValue("status_1xx", Status1xx);
+            writer.WriteLongValue("status_200", Status200);
+            writer.WriteLongValue("status_204", Status204);
+            writer.WriteLongValue("status_2xx", Status2xx);
+            writer.WriteLongValue("status_301", Status301);
+            writer.WriteLongValue("status_302", Status302);
+            writer.WriteLongValue("status_304", Status304);
+            writer.WriteLongValue("status_3xx", Status3xx);
+            writer.WriteLongValue("status_4xx", Status4xx);
+            writer.WriteLongValue("status_503", Status503);
+            writer.WriteLongValue("status_5xx", Status5xx);
+            writer.WriteLongValue("tls", Tls);
+            writer.WriteLongValue("uncacheable", Uncacheable);
+            writer.WriteLongValue("video", Video);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

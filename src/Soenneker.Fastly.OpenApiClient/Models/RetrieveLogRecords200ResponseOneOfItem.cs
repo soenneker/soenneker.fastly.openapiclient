@@ -17,10 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Data { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogRecords200ResponseOneOfItemDataItem>? Data { get; set; }
 #nullable restore
 #else
-        public List<string> Data { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogRecords200ResponseOneOfItemDataItem> Data { get; set; }
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogRecords200ResponseOneOfItemDataItem>(global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogRecords200ResponseOneOfItemDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogRecords200ResponseOneOfItemMeta>(global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogRecords200ResponseOneOfItemMeta.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogRecords200ResponseOneOfItemDataItem>("data", Data);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogRecords200ResponseOneOfItemMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }

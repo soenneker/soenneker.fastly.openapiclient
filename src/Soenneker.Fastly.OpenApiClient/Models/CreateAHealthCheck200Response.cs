@@ -15,7 +15,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The check_interval property</summary>
-        public int? CheckInterval { get; set; }
+        public long? CheckInterval { get; set; }
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +25,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>The expected_response property</summary>
-        public int? ExpectedResponse { get; set; }
+        public long? ExpectedResponse { get; set; }
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,9 +43,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Host { get; set; }
 #endif
         /// <summary>The http_version property</summary>
-        public double? HttpVersion { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HttpVersion { get; set; }
+#nullable restore
+#else
+        public string HttpVersion { get; set; }
+#endif
         /// <summary>The initial property</summary>
-        public int? Initial { get; set; }
+        public long? Initial { get; set; }
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,13 +85,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The threshold property</summary>
-        public int? Threshold { get; set; }
+        public long? Threshold { get; set; }
         /// <summary>The timeout property</summary>
-        public int? Timeout { get; set; }
+        public long? Timeout { get; set; }
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>The window property</summary>
-        public int? Window { get; set; }
+        public long? Window { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAHealthCheck200Response"/> and sets the default values.
         /// </summary>
@@ -111,21 +117,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "check_interval", n => { CheckInterval = n.GetIntValue(); } },
+                { "check_interval", n => { CheckInterval = n.GetLongValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "expected_response", n => { ExpectedResponse = n.GetIntValue(); } },
+                { "expected_response", n => { ExpectedResponse = n.GetLongValue(); } },
                 { "headers", n => { Headers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "http_version", n => { HttpVersion = n.GetDoubleValue(); } },
-                { "initial", n => { Initial = n.GetIntValue(); } },
+                { "http_version", n => { HttpVersion = n.GetStringValue(); } },
+                { "initial", n => { Initial = n.GetLongValue(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "threshold", n => { Threshold = n.GetIntValue(); } },
-                { "timeout", n => { Timeout = n.GetIntValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
-                { "window", n => { Window = n.GetIntValue(); } },
+                { "threshold", n => { Threshold = n.GetLongValue(); } },
+                { "timeout", n => { Timeout = n.GetLongValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
+                { "window", n => { Window = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -135,21 +141,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("check_interval", CheckInterval);
+            writer.WriteLongValue("check_interval", CheckInterval);
             writer.WriteStringValue("comment", Comment);
-            writer.WriteIntValue("expected_response", ExpectedResponse);
+            writer.WriteLongValue("expected_response", ExpectedResponse);
             writer.WriteCollectionOfPrimitiveValues<string>("headers", Headers);
             writer.WriteStringValue("host", Host);
-            writer.WriteDoubleValue("http_version", HttpVersion);
-            writer.WriteIntValue("initial", Initial);
+            writer.WriteStringValue("http_version", HttpVersion);
+            writer.WriteLongValue("initial", Initial);
             writer.WriteStringValue("method", Method);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("threshold", Threshold);
-            writer.WriteIntValue("timeout", Timeout);
-            writer.WriteIntValue("version", Version);
-            writer.WriteIntValue("window", Window);
+            writer.WriteLongValue("threshold", Threshold);
+            writer.WriteLongValue("timeout", Timeout);
+            writer.WriteLongValue("version", Version);
+            writer.WriteLongValue("window", Window);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

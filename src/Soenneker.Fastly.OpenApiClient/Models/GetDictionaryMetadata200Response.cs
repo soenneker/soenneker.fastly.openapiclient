@@ -23,7 +23,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Digest { get; set; }
 #endif
         /// <summary>The item_count property</summary>
-        public int? ItemCount { get; set; }
+        public long? ItemCount { get; set; }
         /// <summary>The last_updated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "digest", n => { Digest = n.GetStringValue(); } },
-                { "item_count", n => { ItemCount = n.GetIntValue(); } },
+                { "item_count", n => { ItemCount = n.GetLongValue(); } },
                 { "last_updated", n => { LastUpdated = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("digest", Digest);
-            writer.WriteIntValue("item_count", ItemCount);
+            writer.WriteLongValue("item_count", ItemCount);
             writer.WriteStringValue("last_updated", LastUpdated);
             writer.WriteAdditionalData(AdditionalData);
         }

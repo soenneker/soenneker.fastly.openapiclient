@@ -23,7 +23,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200ResponseDataItem> Data { get; set; }
 #endif
         /// <summary>The limit property</summary>
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200Response"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200ResponseDataItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200ResponseDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListIamRoles200ResponseDataItem>("data", Data);
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteLongValue("limit", Limit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

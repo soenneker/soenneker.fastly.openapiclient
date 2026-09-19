@@ -31,7 +31,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ContentType { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public int? Status { get; set; }
+        public long? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateARateLimiter200ResponseResponse"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("content_type", ContentType);
-            writer.WriteIntValue("status", Status);
+            writer.WriteLongValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,7 +19,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The host_cpu property</summary>
         public double? HostCpu { get; set; }
         /// <summary>The requests_total property</summary>
-        public int? RequestsTotal { get; set; }
+        public long? RequestsTotal { get; set; }
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +55,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "host_agent_cpu", n => { HostAgentCpu = n.GetDoubleValue(); } },
                 { "host_cpu", n => { HostCpu = n.GetDoubleValue(); } },
-                { "requests_total", n => { RequestsTotal = n.GetIntValue(); } },
+                { "requests_total", n => { RequestsTotal = n.GetLongValue(); } },
                 { "timestamp", n => { Timestamp = n.GetStringValue(); } },
             };
         }
@@ -68,7 +68,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("host_agent_cpu", HostAgentCpu);
             writer.WriteDoubleValue("host_cpu", HostCpu);
-            writer.WriteIntValue("requests_total", RequestsTotal);
+            writer.WriteLongValue("requests_total", RequestsTotal);
             writer.WriteStringValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

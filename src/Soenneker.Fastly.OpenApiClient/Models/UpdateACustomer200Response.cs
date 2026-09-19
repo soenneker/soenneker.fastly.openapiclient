@@ -17,10 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The billing_contact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingContactId { get; set; }
+        public UntypedNode? BillingContactId { get; set; }
 #nullable restore
 #else
-        public string BillingContactId { get; set; }
+        public UntypedNode BillingContactId { get; set; }
 #endif
         /// <summary>The billing_network_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The billing_ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingRef { get; set; }
+        public UntypedNode? BillingRef { get; set; }
 #nullable restore
 #else
-        public string BillingRef { get; set; }
+        public UntypedNode BillingRef { get; set; }
 #endif
         /// <summary>The can_configure_wordpress property</summary>
         public bool? CanConfigureWordpress { get; set; }
@@ -55,10 +55,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The force_2fa property</summary>
         public bool? Force2fa { get; set; }
@@ -117,14 +117,20 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string OwnerId { get; set; }
 #endif
         /// <summary>The phone_number property</summary>
-        public int? PhoneNumber { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PhoneNumber { get; set; }
+#nullable restore
+#else
+        public string PhoneNumber { get; set; }
+#endif
         /// <summary>The postal_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostalAddress { get; set; }
+        public UntypedNode? PostalAddress { get; set; }
 #nullable restore
 #else
-        public string PostalAddress { get; set; }
+        public UntypedNode PostalAddress { get; set; }
 #endif
         /// <summary>The pricing_plan property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,14 +201,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billing_contact_id", n => { BillingContactId = n.GetStringValue(); } },
+                { "billing_contact_id", n => { BillingContactId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "billing_network_type", n => { BillingNetworkType = n.GetStringValue(); } },
-                { "billing_ref", n => { BillingRef = n.GetStringValue(); } },
+                { "billing_ref", n => { BillingRef = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "can_configure_wordpress", n => { CanConfigureWordpress = n.GetBoolValue(); } },
                 { "can_reset_passwords", n => { CanResetPasswords = n.GetBoolValue(); } },
                 { "can_upload_vcl", n => { CanUploadVcl = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "force_2fa", n => { Force2fa = n.GetBoolValue(); } },
                 { "force_sso", n => { ForceSso = n.GetBoolValue(); } },
                 { "has_account_panel", n => { HasAccountPanel = n.GetBoolValue(); } },
@@ -216,8 +222,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "legal_contact_id", n => { LegalContactId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner_id", n => { OwnerId = n.GetStringValue(); } },
-                { "phone_number", n => { PhoneNumber = n.GetIntValue(); } },
-                { "postal_address", n => { PostalAddress = n.GetStringValue(); } },
+                { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
+                { "postal_address", n => { PostalAddress = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "pricing_plan", n => { PricingPlan = n.GetStringValue(); } },
                 { "pricing_plan_id", n => { PricingPlanId = n.GetStringValue(); } },
                 { "readonly", n => { Readonly = n.GetBoolValue(); } },
@@ -234,14 +240,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("billing_contact_id", BillingContactId);
+            writer.WriteObjectValue<UntypedNode>("billing_contact_id", BillingContactId);
             writer.WriteStringValue("billing_network_type", BillingNetworkType);
-            writer.WriteStringValue("billing_ref", BillingRef);
+            writer.WriteObjectValue<UntypedNode>("billing_ref", BillingRef);
             writer.WriteBoolValue("can_configure_wordpress", CanConfigureWordpress);
             writer.WriteBoolValue("can_reset_passwords", CanResetPasswords);
             writer.WriteBoolValue("can_upload_vcl", CanUploadVcl);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteBoolValue("force_2fa", Force2fa);
             writer.WriteBoolValue("force_sso", ForceSso);
             writer.WriteBoolValue("has_account_panel", HasAccountPanel);
@@ -255,8 +261,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("legal_contact_id", LegalContactId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner_id", OwnerId);
-            writer.WriteIntValue("phone_number", PhoneNumber);
-            writer.WriteStringValue("postal_address", PostalAddress);
+            writer.WriteStringValue("phone_number", PhoneNumber);
+            writer.WriteObjectValue<UntypedNode>("postal_address", PostalAddress);
             writer.WriteStringValue("pricing_plan", PricingPlan);
             writer.WriteStringValue("pricing_plan_id", PricingPlanId);
             writer.WriteBoolValue("readonly", Readonly);

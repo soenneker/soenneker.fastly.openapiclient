@@ -15,7 +15,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AggregateDelay property</summary>
-        public int? AggregateDelay { get; set; }
+        public long? AggregateDelay { get; set; }
         /// <summary>The Data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +25,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItem> Data { get; set; }
 #endif
         /// <summary>The Timestamp property</summary>
-        public int? Timestamp { get; set; }
+        public long? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200Response"/> and sets the default values.
         /// </summary>
@@ -51,9 +51,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AggregateDelay", n => { AggregateDelay = n.GetIntValue(); } },
+                { "AggregateDelay", n => { AggregateDelay = n.GetLongValue(); } },
                 { "Data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "Timestamp", n => { Timestamp = n.GetIntValue(); } },
+                { "Timestamp", n => { Timestamp = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +63,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AggregateDelay", AggregateDelay);
+            writer.WriteLongValue("AggregateDelay", AggregateDelay);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItem>("Data", Data);
-            writer.WriteIntValue("Timestamp", Timestamp);
+            writer.WriteLongValue("Timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

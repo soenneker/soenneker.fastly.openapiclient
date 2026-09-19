@@ -39,7 +39,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string CreatedAt { get; set; }
 #endif
         /// <summary>The feature_revision property</summary>
-        public int? FeatureRevision { get; set; }
+        public long? FeatureRevision { get; set; }
         /// <summary>The feature_update_available property</summary>
         public bool? FeatureUpdateAvailable { get; set; }
         /// <summary>The http_methods property</summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The penalty_box_duration property</summary>
-        public int? PenaltyBoxDuration { get; set; }
+        public long? PenaltyBoxDuration { get; set; }
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,13 +79,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The response_object_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResponseObjectName { get; set; }
+        public UntypedNode? ResponseObjectName { get; set; }
 #nullable restore
 #else
-        public string ResponseObjectName { get; set; }
+        public UntypedNode ResponseObjectName { get; set; }
 #endif
         /// <summary>The rps_limit property</summary>
-        public int? RpsLimit { get; set; }
+        public long? RpsLimit { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,15 +105,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The uri_dictionary_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UriDictionaryName { get; set; }
+        public UntypedNode? UriDictionaryName { get; set; }
 #nullable restore
 #else
-        public string UriDictionaryName { get; set; }
+        public UntypedNode UriDictionaryName { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>The window_size property</summary>
-        public int? WindowSize { get; set; }
+        public long? WindowSize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateARateLimiter200Response"/> and sets the default values.
         /// </summary>
@@ -142,20 +142,20 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "action", n => { Action = n.GetStringValue(); } },
                 { "client_key", n => { ClientKey = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "feature_revision", n => { FeatureRevision = n.GetIntValue(); } },
+                { "feature_revision", n => { FeatureRevision = n.GetLongValue(); } },
                 { "feature_update_available", n => { FeatureUpdateAvailable = n.GetBoolValue(); } },
                 { "http_methods", n => { HttpMethods = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "penalty_box_duration", n => { PenaltyBoxDuration = n.GetIntValue(); } },
+                { "penalty_box_duration", n => { PenaltyBoxDuration = n.GetLongValue(); } },
                 { "response", n => { Response = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateARateLimiter200ResponseResponse>(global::Soenneker.Fastly.OpenApiClient.Models.CreateARateLimiter200ResponseResponse.CreateFromDiscriminatorValue); } },
-                { "response_object_name", n => { ResponseObjectName = n.GetStringValue(); } },
-                { "rps_limit", n => { RpsLimit = n.GetIntValue(); } },
+                { "response_object_name", n => { ResponseObjectName = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "rps_limit", n => { RpsLimit = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "uri_dictionary_name", n => { UriDictionaryName = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
-                { "window_size", n => { WindowSize = n.GetIntValue(); } },
+                { "uri_dictionary_name", n => { UriDictionaryName = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetLongValue(); } },
+                { "window_size", n => { WindowSize = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -168,20 +168,20 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("action", Action);
             writer.WriteCollectionOfPrimitiveValues<string>("client_key", ClientKey);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteIntValue("feature_revision", FeatureRevision);
+            writer.WriteLongValue("feature_revision", FeatureRevision);
             writer.WriteBoolValue("feature_update_available", FeatureUpdateAvailable);
             writer.WriteCollectionOfPrimitiveValues<string>("http_methods", HttpMethods);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("penalty_box_duration", PenaltyBoxDuration);
+            writer.WriteLongValue("penalty_box_duration", PenaltyBoxDuration);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateARateLimiter200ResponseResponse>("response", Response);
-            writer.WriteStringValue("response_object_name", ResponseObjectName);
-            writer.WriteIntValue("rps_limit", RpsLimit);
+            writer.WriteObjectValue<UntypedNode>("response_object_name", ResponseObjectName);
+            writer.WriteLongValue("rps_limit", RpsLimit);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteStringValue("uri_dictionary_name", UriDictionaryName);
-            writer.WriteIntValue("version", Version);
-            writer.WriteIntValue("window_size", WindowSize);
+            writer.WriteObjectValue<UntypedNode>("uri_dictionary_name", UriDictionaryName);
+            writer.WriteLongValue("version", Version);
+            writer.WriteLongValue("window_size", WindowSize);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

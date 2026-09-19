@@ -47,9 +47,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ProductId { get; set; }
 #endif
         /// <summary>The quantity property</summary>
-        public int? Quantity { get; set; }
+        public long? Quantity { get; set; }
         /// <summary>The raw_quantity property</summary>
-        public int? RawQuantity { get; set; }
+        public long? RawQuantity { get; set; }
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,8 +103,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "month", n => { Month = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "product_id", n => { ProductId = n.GetStringValue(); } },
-                { "quantity", n => { Quantity = n.GetIntValue(); } },
-                { "raw_quantity", n => { RawQuantity = n.GetIntValue(); } },
+                { "quantity", n => { Quantity = n.GetLongValue(); } },
+                { "raw_quantity", n => { RawQuantity = n.GetLongValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
                 { "usage_type", n => { UsageType = n.GetStringValue(); } },
@@ -121,8 +121,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("month", Month);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("product_id", ProductId);
-            writer.WriteIntValue("quantity", Quantity);
-            writer.WriteIntValue("raw_quantity", RawQuantity);
+            writer.WriteLongValue("quantity", Quantity);
+            writer.WriteLongValue("raw_quantity", RawQuantity);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("unit", Unit);
             writer.WriteStringValue("usage_type", UsageType);

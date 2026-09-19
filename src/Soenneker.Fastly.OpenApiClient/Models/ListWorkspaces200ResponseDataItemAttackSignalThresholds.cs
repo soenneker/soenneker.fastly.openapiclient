@@ -17,11 +17,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The immediate property</summary>
         public bool? Immediate { get; set; }
         /// <summary>The one_hour property</summary>
-        public int? OneHour { get; set; }
+        public long? OneHour { get; set; }
         /// <summary>The one_minute property</summary>
-        public int? OneMinute { get; set; }
+        public long? OneMinute { get; set; }
         /// <summary>The ten_minutes property</summary>
-        public int? TenMinutes { get; set; }
+        public long? TenMinutes { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListWorkspaces200ResponseDataItemAttackSignalThresholds"/> and sets the default values.
         /// </summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "immediate", n => { Immediate = n.GetBoolValue(); } },
-                { "one_hour", n => { OneHour = n.GetIntValue(); } },
-                { "one_minute", n => { OneMinute = n.GetIntValue(); } },
-                { "ten_minutes", n => { TenMinutes = n.GetIntValue(); } },
+                { "one_hour", n => { OneHour = n.GetLongValue(); } },
+                { "one_minute", n => { OneMinute = n.GetLongValue(); } },
+                { "ten_minutes", n => { TenMinutes = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,9 +61,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("immediate", Immediate);
-            writer.WriteIntValue("one_hour", OneHour);
-            writer.WriteIntValue("one_minute", OneMinute);
-            writer.WriteIntValue("ten_minutes", TenMinutes);
+            writer.WriteLongValue("one_hour", OneHour);
+            writer.WriteLongValue("one_minute", OneMinute);
+            writer.WriteLongValue("ten_minutes", TenMinutes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

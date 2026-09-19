@@ -71,7 +71,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Path { get; set; }
 #endif
         /// <summary>The rps property</summary>
-        public int? Rps { get; set; }
+        public long? Rps { get; set; }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,7 +128,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "last_seen_at", n => { LastSeenAt = n.GetStringValue(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
-                { "rps", n => { Rps = n.GetIntValue(); } },
+                { "rps", n => { Rps = n.GetLongValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "tag_ids", n => { TagIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -148,7 +148,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("last_seen_at", LastSeenAt);
             writer.WriteStringValue("method", Method);
             writer.WriteStringValue("path", Path);
-            writer.WriteIntValue("rps", Rps);
+            writer.WriteLongValue("rps", Rps);
             writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("tag_ids", TagIds);
             writer.WriteStringValue("updated_at", UpdatedAt);

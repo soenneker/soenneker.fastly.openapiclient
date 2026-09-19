@@ -33,10 +33,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The msg property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Msg { get; set; }
+        public UntypedNode? Msg { get; set; }
 #nullable restore
 #else
-        public string Msg { get; set; }
+        public UntypedNode Msg { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseData>(global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseData.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseMeta>(global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseMeta.CreateFromDiscriminatorValue); } },
-                { "msg", n => { Msg = n.GetStringValue(); } },
+                { "msg", n => { Msg = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseData>("data", Data);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseMeta>("meta", Meta);
-            writer.WriteStringValue("msg", Msg);
+            writer.WriteObjectValue<UntypedNode>("msg", Msg);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

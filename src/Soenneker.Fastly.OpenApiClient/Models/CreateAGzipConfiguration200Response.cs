@@ -55,7 +55,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAGzipConfiguration200Response"/> and sets the default values.
         /// </summary>
@@ -86,7 +92,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "extensions", n => { Extensions = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -101,7 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("extensions", Extensions);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

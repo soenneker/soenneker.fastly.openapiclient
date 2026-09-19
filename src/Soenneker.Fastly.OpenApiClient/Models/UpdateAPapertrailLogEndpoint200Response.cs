@@ -33,10 +33,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Format { get; set; }
 #endif
         /// <summary>The format_version property</summary>
-        public int? FormatVersion { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FormatVersion { get; set; }
+#nullable restore
+#else
+        public string FormatVersion { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,13 +65,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The placement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Placement { get; set; }
+        public UntypedNode? Placement { get; set; }
 #nullable restore
 #else
-        public string Placement { get; set; }
+        public UntypedNode Placement { get; set; }
 #endif
         /// <summary>The port property</summary>
-        public int? Port { get; set; }
+        public long? Port { get; set; }
         /// <summary>The response_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +97,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAPapertrailLogEndpoint200Response"/> and sets the default values.
         /// </summary>
@@ -119,16 +131,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "address", n => { Address = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetStringValue(); } },
-                { "format_version", n => { FormatVersion = n.GetIntValue(); } },
+                { "format_version", n => { FormatVersion = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "placement", n => { Placement = n.GetStringValue(); } },
-                { "port", n => { Port = n.GetIntValue(); } },
+                { "placement", n => { Placement = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "port", n => { Port = n.GetLongValue(); } },
                 { "response_condition", n => { ResponseCondition = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -140,16 +152,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteStringValue("format", Format);
-            writer.WriteIntValue("format_version", FormatVersion);
+            writer.WriteStringValue("format_version", FormatVersion);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("placement", Placement);
-            writer.WriteIntValue("port", Port);
+            writer.WriteObjectValue<UntypedNode>("placement", Placement);
+            writer.WriteLongValue("port", Port);
             writer.WriteStringValue("response_condition", ResponseCondition);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

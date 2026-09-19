@@ -25,14 +25,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The auto_loadbalance property</summary>
         public bool? AutoLoadbalance { get; set; }
         /// <summary>The between_bytes_timeout property</summary>
-        public int? BetweenBytesTimeout { get; set; }
+        public long? BetweenBytesTimeout { get; set; }
         /// <summary>The client_cert property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientCert { get; set; }
+        public UntypedNode? ClientCert { get; set; }
 #nullable restore
 #else
-        public string ClientCert { get; set; }
+        public UntypedNode ClientCert { get; set; }
 #endif
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,26 +43,26 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>The connect_timeout property</summary>
-        public int? ConnectTimeout { get; set; }
+        public long? ConnectTimeout { get; set; }
         /// <summary>The fetch_timeout property</summary>
-        public int? FetchTimeout { get; set; }
+        public long? FetchTimeout { get; set; }
         /// <summary>The first_byte_timeout property</summary>
-        public int? FirstByteTimeout { get; set; }
+        public long? FirstByteTimeout { get; set; }
         /// <summary>The healthcheck property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Healthcheck { get; set; }
+        public UntypedNode? Healthcheck { get; set; }
 #nullable restore
 #else
-        public string Healthcheck { get; set; }
+        public UntypedNode Healthcheck { get; set; }
 #endif
         /// <summary>The hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get; set; }
+        public UntypedNode? Hostname { get; set; }
 #nullable restore
 #else
-        public string Hostname { get; set; }
+        public UntypedNode Hostname { get; set; }
 #endif
         /// <summary>The ipv4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,38 +75,38 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The ipv6 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ipv6 { get; set; }
+        public UntypedNode? Ipv6 { get; set; }
 #nullable restore
 #else
-        public string Ipv6 { get; set; }
+        public UntypedNode Ipv6 { get; set; }
 #endif
         /// <summary>The keepalive_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeepaliveTime { get; set; }
+        public UntypedNode? KeepaliveTime { get; set; }
 #nullable restore
 #else
-        public string KeepaliveTime { get; set; }
+        public UntypedNode KeepaliveTime { get; set; }
 #endif
         /// <summary>The locked property</summary>
         public bool? Locked { get; set; }
         /// <summary>The max_conn property</summary>
-        public int? MaxConn { get; set; }
+        public long? MaxConn { get; set; }
         /// <summary>The max_tls_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaxTlsVersion { get; set; }
+        public UntypedNode? MaxTlsVersion { get; set; }
 #nullable restore
 #else
-        public string MaxTlsVersion { get; set; }
+        public UntypedNode MaxTlsVersion { get; set; }
 #endif
         /// <summary>The min_tls_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinTlsVersion { get; set; }
+        public UntypedNode? MinTlsVersion { get; set; }
 #nullable restore
 #else
-        public string MinTlsVersion { get; set; }
+        public UntypedNode MinTlsVersion { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,13 +119,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The override_host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OverrideHost { get; set; }
+        public UntypedNode? OverrideHost { get; set; }
 #nullable restore
 #else
-        public string OverrideHost { get; set; }
+        public UntypedNode OverrideHost { get; set; }
 #endif
         /// <summary>The port property</summary>
-        public int? Port { get; set; }
+        public long? Port { get; set; }
         /// <summary>The request_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,109 +145,109 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The share_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareKey { get; set; }
+        public UntypedNode? ShareKey { get; set; }
 #nullable restore
 #else
-        public string ShareKey { get; set; }
+        public UntypedNode ShareKey { get; set; }
 #endif
         /// <summary>The shield property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Shield { get; set; }
+        public UntypedNode? Shield { get; set; }
 #nullable restore
 #else
-        public string Shield { get; set; }
+        public UntypedNode Shield { get; set; }
 #endif
         /// <summary>The ssl_ca_cert property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SslCaCert { get; set; }
+        public UntypedNode? SslCaCert { get; set; }
 #nullable restore
 #else
-        public string SslCaCert { get; set; }
+        public UntypedNode SslCaCert { get; set; }
 #endif
         /// <summary>The ssl_cert_hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SslCertHostname { get; set; }
+        public UntypedNode? SslCertHostname { get; set; }
 #nullable restore
 #else
-        public string SslCertHostname { get; set; }
+        public UntypedNode SslCertHostname { get; set; }
 #endif
         /// <summary>The ssl_check_cert property</summary>
         public bool? SslCheckCert { get; set; }
         /// <summary>The ssl_ciphers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SslCiphers { get; set; }
+        public UntypedNode? SslCiphers { get; set; }
 #nullable restore
 #else
-        public string SslCiphers { get; set; }
+        public UntypedNode SslCiphers { get; set; }
 #endif
         /// <summary>The ssl_client_cert property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SslClientCert { get; set; }
+        public UntypedNode? SslClientCert { get; set; }
 #nullable restore
 #else
-        public string SslClientCert { get; set; }
+        public UntypedNode SslClientCert { get; set; }
 #endif
         /// <summary>The ssl_client_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SslClientKey { get; set; }
+        public UntypedNode? SslClientKey { get; set; }
 #nullable restore
 #else
-        public string SslClientKey { get; set; }
+        public UntypedNode SslClientKey { get; set; }
 #endif
         /// <summary>The ssl_hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SslHostname { get; set; }
+        public UntypedNode? SslHostname { get; set; }
 #nullable restore
 #else
-        public string SslHostname { get; set; }
+        public UntypedNode SslHostname { get; set; }
 #endif
         /// <summary>The ssl_sni_hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SslSniHostname { get; set; }
+        public UntypedNode? SslSniHostname { get; set; }
 #nullable restore
 #else
-        public string SslSniHostname { get; set; }
+        public UntypedNode SslSniHostname { get; set; }
 #endif
         /// <summary>The tcp_keepalive_enable property</summary>
         public bool? TcpKeepaliveEnable { get; set; }
         /// <summary>The tcp_keepalive_interval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TcpKeepaliveInterval { get; set; }
+        public UntypedNode? TcpKeepaliveInterval { get; set; }
 #nullable restore
 #else
-        public string TcpKeepaliveInterval { get; set; }
+        public UntypedNode TcpKeepaliveInterval { get; set; }
 #endif
         /// <summary>The tcp_keepalive_probes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TcpKeepaliveProbes { get; set; }
+        public UntypedNode? TcpKeepaliveProbes { get; set; }
 #nullable restore
 #else
-        public string TcpKeepaliveProbes { get; set; }
+        public UntypedNode TcpKeepaliveProbes { get; set; }
 #endif
         /// <summary>The tcp_keepalive_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TcpKeepaliveTime { get; set; }
+        public UntypedNode? TcpKeepaliveTime { get; set; }
 #nullable restore
 #else
-        public string TcpKeepaliveTime { get; set; }
+        public UntypedNode TcpKeepaliveTime { get; set; }
 #endif
         /// <summary>The use_ssl property</summary>
         public bool? UseSsl { get; set; }
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>The weight property</summary>
-        public int? Weight { get; set; }
+        public long? Weight { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DescribeABackend200Response"/> and sets the default values.
         /// </summary>
@@ -275,43 +275,43 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "address", n => { Address = n.GetStringValue(); } },
                 { "auto_loadbalance", n => { AutoLoadbalance = n.GetBoolValue(); } },
-                { "between_bytes_timeout", n => { BetweenBytesTimeout = n.GetIntValue(); } },
-                { "client_cert", n => { ClientCert = n.GetStringValue(); } },
+                { "between_bytes_timeout", n => { BetweenBytesTimeout = n.GetLongValue(); } },
+                { "client_cert", n => { ClientCert = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "connect_timeout", n => { ConnectTimeout = n.GetIntValue(); } },
-                { "fetch_timeout", n => { FetchTimeout = n.GetIntValue(); } },
-                { "first_byte_timeout", n => { FirstByteTimeout = n.GetIntValue(); } },
-                { "healthcheck", n => { Healthcheck = n.GetStringValue(); } },
-                { "hostname", n => { Hostname = n.GetStringValue(); } },
+                { "connect_timeout", n => { ConnectTimeout = n.GetLongValue(); } },
+                { "fetch_timeout", n => { FetchTimeout = n.GetLongValue(); } },
+                { "first_byte_timeout", n => { FirstByteTimeout = n.GetLongValue(); } },
+                { "healthcheck", n => { Healthcheck = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "hostname", n => { Hostname = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "ipv4", n => { Ipv4 = n.GetStringValue(); } },
-                { "ipv6", n => { Ipv6 = n.GetStringValue(); } },
-                { "keepalive_time", n => { KeepaliveTime = n.GetStringValue(); } },
+                { "ipv6", n => { Ipv6 = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "keepalive_time", n => { KeepaliveTime = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "locked", n => { Locked = n.GetBoolValue(); } },
-                { "max_conn", n => { MaxConn = n.GetIntValue(); } },
-                { "max_tls_version", n => { MaxTlsVersion = n.GetStringValue(); } },
-                { "min_tls_version", n => { MinTlsVersion = n.GetStringValue(); } },
+                { "max_conn", n => { MaxConn = n.GetLongValue(); } },
+                { "max_tls_version", n => { MaxTlsVersion = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "min_tls_version", n => { MinTlsVersion = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "override_host", n => { OverrideHost = n.GetStringValue(); } },
-                { "port", n => { Port = n.GetIntValue(); } },
+                { "override_host", n => { OverrideHost = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "port", n => { Port = n.GetLongValue(); } },
                 { "request_condition", n => { RequestCondition = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "share_key", n => { ShareKey = n.GetStringValue(); } },
-                { "shield", n => { Shield = n.GetStringValue(); } },
-                { "ssl_ca_cert", n => { SslCaCert = n.GetStringValue(); } },
-                { "ssl_cert_hostname", n => { SslCertHostname = n.GetStringValue(); } },
+                { "share_key", n => { ShareKey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "shield", n => { Shield = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ssl_ca_cert", n => { SslCaCert = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ssl_cert_hostname", n => { SslCertHostname = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "ssl_check_cert", n => { SslCheckCert = n.GetBoolValue(); } },
-                { "ssl_ciphers", n => { SslCiphers = n.GetStringValue(); } },
-                { "ssl_client_cert", n => { SslClientCert = n.GetStringValue(); } },
-                { "ssl_client_key", n => { SslClientKey = n.GetStringValue(); } },
-                { "ssl_hostname", n => { SslHostname = n.GetStringValue(); } },
-                { "ssl_sni_hostname", n => { SslSniHostname = n.GetStringValue(); } },
+                { "ssl_ciphers", n => { SslCiphers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ssl_client_cert", n => { SslClientCert = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ssl_client_key", n => { SslClientKey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ssl_hostname", n => { SslHostname = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ssl_sni_hostname", n => { SslSniHostname = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "tcp_keepalive_enable", n => { TcpKeepaliveEnable = n.GetBoolValue(); } },
-                { "tcp_keepalive_interval", n => { TcpKeepaliveInterval = n.GetStringValue(); } },
-                { "tcp_keepalive_probes", n => { TcpKeepaliveProbes = n.GetStringValue(); } },
-                { "tcp_keepalive_time", n => { TcpKeepaliveTime = n.GetStringValue(); } },
+                { "tcp_keepalive_interval", n => { TcpKeepaliveInterval = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "tcp_keepalive_probes", n => { TcpKeepaliveProbes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "tcp_keepalive_time", n => { TcpKeepaliveTime = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "use_ssl", n => { UseSsl = n.GetBoolValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
-                { "weight", n => { Weight = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
+                { "weight", n => { Weight = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -323,43 +323,43 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
             writer.WriteBoolValue("auto_loadbalance", AutoLoadbalance);
-            writer.WriteIntValue("between_bytes_timeout", BetweenBytesTimeout);
-            writer.WriteStringValue("client_cert", ClientCert);
+            writer.WriteLongValue("between_bytes_timeout", BetweenBytesTimeout);
+            writer.WriteObjectValue<UntypedNode>("client_cert", ClientCert);
             writer.WriteStringValue("comment", Comment);
-            writer.WriteIntValue("connect_timeout", ConnectTimeout);
-            writer.WriteIntValue("fetch_timeout", FetchTimeout);
-            writer.WriteIntValue("first_byte_timeout", FirstByteTimeout);
-            writer.WriteStringValue("healthcheck", Healthcheck);
-            writer.WriteStringValue("hostname", Hostname);
+            writer.WriteLongValue("connect_timeout", ConnectTimeout);
+            writer.WriteLongValue("fetch_timeout", FetchTimeout);
+            writer.WriteLongValue("first_byte_timeout", FirstByteTimeout);
+            writer.WriteObjectValue<UntypedNode>("healthcheck", Healthcheck);
+            writer.WriteObjectValue<UntypedNode>("hostname", Hostname);
             writer.WriteStringValue("ipv4", Ipv4);
-            writer.WriteStringValue("ipv6", Ipv6);
-            writer.WriteStringValue("keepalive_time", KeepaliveTime);
+            writer.WriteObjectValue<UntypedNode>("ipv6", Ipv6);
+            writer.WriteObjectValue<UntypedNode>("keepalive_time", KeepaliveTime);
             writer.WriteBoolValue("locked", Locked);
-            writer.WriteIntValue("max_conn", MaxConn);
-            writer.WriteStringValue("max_tls_version", MaxTlsVersion);
-            writer.WriteStringValue("min_tls_version", MinTlsVersion);
+            writer.WriteLongValue("max_conn", MaxConn);
+            writer.WriteObjectValue<UntypedNode>("max_tls_version", MaxTlsVersion);
+            writer.WriteObjectValue<UntypedNode>("min_tls_version", MinTlsVersion);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("override_host", OverrideHost);
-            writer.WriteIntValue("port", Port);
+            writer.WriteObjectValue<UntypedNode>("override_host", OverrideHost);
+            writer.WriteLongValue("port", Port);
             writer.WriteStringValue("request_condition", RequestCondition);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteStringValue("share_key", ShareKey);
-            writer.WriteStringValue("shield", Shield);
-            writer.WriteStringValue("ssl_ca_cert", SslCaCert);
-            writer.WriteStringValue("ssl_cert_hostname", SslCertHostname);
+            writer.WriteObjectValue<UntypedNode>("share_key", ShareKey);
+            writer.WriteObjectValue<UntypedNode>("shield", Shield);
+            writer.WriteObjectValue<UntypedNode>("ssl_ca_cert", SslCaCert);
+            writer.WriteObjectValue<UntypedNode>("ssl_cert_hostname", SslCertHostname);
             writer.WriteBoolValue("ssl_check_cert", SslCheckCert);
-            writer.WriteStringValue("ssl_ciphers", SslCiphers);
-            writer.WriteStringValue("ssl_client_cert", SslClientCert);
-            writer.WriteStringValue("ssl_client_key", SslClientKey);
-            writer.WriteStringValue("ssl_hostname", SslHostname);
-            writer.WriteStringValue("ssl_sni_hostname", SslSniHostname);
+            writer.WriteObjectValue<UntypedNode>("ssl_ciphers", SslCiphers);
+            writer.WriteObjectValue<UntypedNode>("ssl_client_cert", SslClientCert);
+            writer.WriteObjectValue<UntypedNode>("ssl_client_key", SslClientKey);
+            writer.WriteObjectValue<UntypedNode>("ssl_hostname", SslHostname);
+            writer.WriteObjectValue<UntypedNode>("ssl_sni_hostname", SslSniHostname);
             writer.WriteBoolValue("tcp_keepalive_enable", TcpKeepaliveEnable);
-            writer.WriteStringValue("tcp_keepalive_interval", TcpKeepaliveInterval);
-            writer.WriteStringValue("tcp_keepalive_probes", TcpKeepaliveProbes);
-            writer.WriteStringValue("tcp_keepalive_time", TcpKeepaliveTime);
+            writer.WriteObjectValue<UntypedNode>("tcp_keepalive_interval", TcpKeepaliveInterval);
+            writer.WriteObjectValue<UntypedNode>("tcp_keepalive_probes", TcpKeepaliveProbes);
+            writer.WriteObjectValue<UntypedNode>("tcp_keepalive_time", TcpKeepaliveTime);
             writer.WriteBoolValue("use_ssl", UseSsl);
-            writer.WriteIntValue("version", Version);
-            writer.WriteIntValue("weight", Weight);
+            writer.WriteLongValue("version", Version);
+            writer.WriteLongValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

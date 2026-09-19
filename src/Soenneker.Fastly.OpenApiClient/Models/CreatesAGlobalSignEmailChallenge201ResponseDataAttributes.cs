@@ -41,10 +41,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The sent_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SentAt { get; set; }
+        public UntypedNode? SentAt { get; set; }
 #nullable restore
 #else
-        public string SentAt { get; set; }
+        public UntypedNode SentAt { get; set; }
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The verified_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VerifiedAt { get; set; }
+        public UntypedNode? VerifiedAt { get; set; }
 #nullable restore
 #else
-        public string VerifiedAt { get; set; }
+        public UntypedNode VerifiedAt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201ResponseDataAttributes"/> and sets the default values.
@@ -90,9 +90,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "emails", n => { Emails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "preferred_email", n => { PreferredEmail = n.GetStringValue(); } },
-                { "sent_at", n => { SentAt = n.GetStringValue(); } },
+                { "sent_at", n => { SentAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "verified_at", n => { VerifiedAt = n.GetStringValue(); } },
+                { "verified_at", n => { VerifiedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("emails", Emails);
             writer.WriteStringValue("preferred_email", PreferredEmail);
-            writer.WriteStringValue("sent_at", SentAt);
+            writer.WriteObjectValue<UntypedNode>("sent_at", SentAt);
             writer.WriteStringValue("state", State);
-            writer.WriteStringValue("verified_at", VerifiedAt);
+            writer.WriteObjectValue<UntypedNode>("verified_at", VerifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

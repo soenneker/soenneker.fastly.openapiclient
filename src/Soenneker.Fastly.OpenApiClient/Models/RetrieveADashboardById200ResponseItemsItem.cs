@@ -31,7 +31,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The span property</summary>
-        public int? Span { get; set; }
+        public long? Span { get; set; }
         /// <summary>The subtitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +83,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "data_source", n => { DataSource = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200ResponseItemsItemDataSource>(global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200ResponseItemsItemDataSource.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "span", n => { Span = n.GetIntValue(); } },
+                { "span", n => { Span = n.GetLongValue(); } },
                 { "subtitle", n => { Subtitle = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "visualization", n => { Visualization = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200ResponseItemsItemVisualization>(global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200ResponseItemsItemVisualization.CreateFromDiscriminatorValue); } },
@@ -98,7 +98,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200ResponseItemsItemDataSource>("data_source", DataSource);
             writer.WriteStringValue("id", Id);
-            writer.WriteIntValue("span", Span);
+            writer.WriteLongValue("span", Span);
             writer.WriteStringValue("subtitle", Subtitle);
             writer.WriteStringValue("title", Title);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveADashboardById200ResponseItemsItemVisualization>("visualization", Visualization);

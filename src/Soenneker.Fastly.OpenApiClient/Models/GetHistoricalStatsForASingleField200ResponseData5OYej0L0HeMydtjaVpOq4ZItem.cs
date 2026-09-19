@@ -15,7 +15,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The hit_ratio property</summary>
-        public double? HitRatio { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItemHitRatio? HitRatio { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItemHitRatio HitRatio { get; set; }
+#endif
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,7 +31,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The start_time property</summary>
-        public int? StartTime { get; set; }
+        public long? StartTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItem"/> and sets the default values.
         /// </summary>
@@ -51,9 +57,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hit_ratio", n => { HitRatio = n.GetDoubleValue(); } },
+                { "hit_ratio", n => { HitRatio = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItemHitRatio>(global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItemHitRatio.CreateFromDiscriminatorValue); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "start_time", n => { StartTime = n.GetIntValue(); } },
+                { "start_time", n => { StartTime = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +69,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("hit_ratio", HitRatio);
+            writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItemHitRatio>("hit_ratio", HitRatio);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("start_time", StartTime);
+            writer.WriteLongValue("start_time", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

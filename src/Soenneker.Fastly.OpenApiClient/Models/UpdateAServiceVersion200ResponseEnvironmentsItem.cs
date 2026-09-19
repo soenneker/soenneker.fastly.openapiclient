@@ -13,7 +13,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The active_version property</summary>
-        public int? ActiveVersion { get; set; }
+        public long? ActiveVersion { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name property</summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active_version", n => { ActiveVersion = n.GetIntValue(); } },
+                { "active_version", n => { ActiveVersion = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("active_version", ActiveVersion);
+            writer.WriteLongValue("active_version", ActiveVersion);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteAdditionalData(AdditionalData);

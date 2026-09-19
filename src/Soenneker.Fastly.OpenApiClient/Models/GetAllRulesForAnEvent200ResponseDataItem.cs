@@ -33,10 +33,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The asn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Asn { get; set; }
+        public UntypedNode? Asn { get; set; }
 #nullable restore
 #else
-        public string Asn { get; set; }
+        public UntypedNode Asn { get; set; }
 #endif
         /// <summary>The country_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetStringValue(); } },
                 { "additional_attributes", n => { AdditionalAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "asn", n => { Asn = n.GetStringValue(); } },
+                { "asn", n => { Asn = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "country_code", n => { CountryCode = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
@@ -176,7 +176,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
             writer.WriteCollectionOfPrimitiveValues<string>("additional_attributes", AdditionalAttributes);
-            writer.WriteStringValue("asn", Asn);
+            writer.WriteObjectValue<UntypedNode>("asn", Asn);
             writer.WriteStringValue("country_code", CountryCode);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("customer_id", CustomerId);

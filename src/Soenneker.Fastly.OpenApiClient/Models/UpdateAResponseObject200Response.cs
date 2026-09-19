@@ -71,9 +71,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public int? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAResponseObject200Response"/> and sets the default values.
         /// </summary>
@@ -106,8 +118,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "request_condition", n => { RequestCondition = n.GetStringValue(); } },
                 { "response", n => { Response = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetIntValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -124,8 +136,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("request_condition", RequestCondition);
             writer.WriteStringValue("response", Response);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("status", Status);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The expires_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public UntypedNode? ExpiresAt { get; set; }
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public UntypedNode ExpiresAt { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The services property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Services { get; set; }
+        public UntypedNode? Services { get; set; }
 #nullable restore
 #else
-        public List<string> Services { get; set; }
+        public UntypedNode Services { get; set; }
 #endif
         /// <summary>The tls_access property</summary>
         public bool? TlsAccess { get; set; }
@@ -73,10 +73,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
+                { "expires_at", n => { ExpiresAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
-                { "services", n => { Services = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "services", n => { Services = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "tls_access", n => { TlsAccess = n.GetBoolValue(); } },
             };
         }
@@ -87,10 +87,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("expires_at", ExpiresAt);
+            writer.WriteObjectValue<UntypedNode>("expires_at", ExpiresAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("role", Role);
-            writer.WriteCollectionOfPrimitiveValues<string>("services", Services);
+            writer.WriteObjectValue<UntypedNode>("services", Services);
             writer.WriteBoolValue("tls_access", TlsAccess);
             writer.WriteAdditionalData(AdditionalData);
         }

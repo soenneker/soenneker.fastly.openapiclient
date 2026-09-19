@@ -23,11 +23,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string GeneralDefaultHost { get; set; }
 #endif
         /// <summary>The generalDefault_ttl property</summary>
-        public int? GeneralDefaultTtl { get; set; }
+        public long? GeneralDefaultTtl { get; set; }
         /// <summary>The generalStale_if_error property</summary>
         public bool? GeneralStaleIfError { get; set; }
         /// <summary>The generalStale_if_error_ttl property</summary>
-        public int? GeneralStaleIfErrorTtl { get; set; }
+        public long? GeneralStaleIfErrorTtl { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +37,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetServiceSettings200Response"/> and sets the default values.
         /// </summary>
@@ -64,11 +64,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "general.default_host", n => { GeneralDefaultHost = n.GetStringValue(); } },
-                { "general.default_ttl", n => { GeneralDefaultTtl = n.GetIntValue(); } },
+                { "general.default_ttl", n => { GeneralDefaultTtl = n.GetLongValue(); } },
                 { "general.stale_if_error", n => { GeneralStaleIfError = n.GetBoolValue(); } },
-                { "general.stale_if_error_ttl", n => { GeneralStaleIfErrorTtl = n.GetIntValue(); } },
+                { "general.stale_if_error_ttl", n => { GeneralStaleIfErrorTtl = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -79,11 +79,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("general.default_host", GeneralDefaultHost);
-            writer.WriteIntValue("general.default_ttl", GeneralDefaultTtl);
+            writer.WriteLongValue("general.default_ttl", GeneralDefaultTtl);
             writer.WriteBoolValue("general.stale_if_error", GeneralStaleIfError);
-            writer.WriteIntValue("general.stale_if_error_ttl", GeneralStaleIfErrorTtl);
+            writer.WriteLongValue("general.stale_if_error_ttl", GeneralStaleIfErrorTtl);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("version", Version);
+            writer.WriteLongValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

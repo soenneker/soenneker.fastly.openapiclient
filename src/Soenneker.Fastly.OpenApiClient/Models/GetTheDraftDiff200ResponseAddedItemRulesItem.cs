@@ -25,10 +25,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Conditions { get; set; }
+        public UntypedNode? Conditions { get; set; }
 #nullable restore
 #else
-        public List<string> Conditions { get; set; }
+        public UntypedNode Conditions { get; set; }
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItemAction>(global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItemAction.CreateFromDiscriminatorValue); } },
-                { "conditions", n => { Conditions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
@@ -97,7 +97,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItemAction>("action", Action);
-            writer.WriteCollectionOfPrimitiveValues<string>("conditions", Conditions);
+            writer.WriteObjectValue<UntypedNode>("conditions", Conditions);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_default", IsDefault);

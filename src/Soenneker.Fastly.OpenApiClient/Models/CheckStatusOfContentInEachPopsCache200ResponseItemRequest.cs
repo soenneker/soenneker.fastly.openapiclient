@@ -25,18 +25,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method { get; set; }
+        public UntypedNode? Method { get; set; }
 #nullable restore
 #else
-        public string Method { get; set; }
+        public UntypedNode Method { get; set; }
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public UntypedNode? Url { get; set; }
 #nullable restore
 #else
-        public string Url { get; set; }
+        public UntypedNode Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest"/> and sets the default values.
@@ -64,8 +64,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders>(global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders.CreateFromDiscriminatorValue); } },
-                { "method", n => { Method = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                { "method", n => { Method = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,8 +76,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders>("headers", Headers);
-            writer.WriteStringValue("method", Method);
-            writer.WriteStringValue("url", Url);
+            writer.WriteObjectValue<UntypedNode>("method", Method);
+            writer.WriteObjectValue<UntypedNode>("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

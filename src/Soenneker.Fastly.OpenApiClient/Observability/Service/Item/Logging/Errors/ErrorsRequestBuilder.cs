@@ -35,20 +35,20 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Service.Item.Logging.Erro
         /// <summary>
         /// Provides a near real-time stream of log errors through a hybrid short-polling model.A client should make an initial request using the from parameter to specify a start time.The to parameter should be used alongside the from parameter since the default bucket is 10 seconds.For pagination, use the URLs provided in the Link header of the response. These containupdated from timestamps for retrieving the next or previous page of logs.Defaults to application/x-ndjson format. Use Accept: application/json headerto request standard JSON array format instead.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Observability.Service.Item.Logging.Errors.ErrorsRequestBuilder.ErrorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Observability.Service.Item.Logging.Errors.ErrorsRequestBuilder.ErrorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Observability.Service.Item.Logging.Errors.ErrorsRequestBuilder.ErrorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<string> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Observability.Service.Item.Logging.Errors.ErrorsRequestBuilder.ErrorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides a near real-time stream of log errors through a hybrid short-polling model.A client should make an initial request using the from parameter to specify a start time.The to parameter should be used alongside the from parameter since the default bucket is 10 seconds.For pagination, use the URLs provided in the Link header of the response. These containupdated from timestamps for retrieving the next or previous page of logs.Defaults to application/x-ndjson format. Use Accept: application/json headerto request standard JSON array format instead.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Service.Item.Logging.Erro
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/x-ndjson");
+            requestInfo.Headers.TryAdd("Accept", "text/plain;q=0.9");
             return requestInfo;
         }
         /// <summary>

@@ -81,10 +81,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The scope_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScopeIds { get; set; }
+        public UntypedNode? ScopeIds { get; set; }
 #nullable restore
 #else
-        public List<string> ScopeIds { get; set; }
+        public UntypedNode ScopeIds { get; set; }
 #endif
         /// <summary>The scope_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "integration_ids", n => { IntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "mapping_status", n => { MappingStatus = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scope_ids", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "scope_ids", n => { ScopeIds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "scope_type", n => { ScopeType = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
@@ -155,7 +155,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("integration_ids", IntegrationIds);
             writer.WriteStringValue("mapping_status", MappingStatus);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("scope_ids", ScopeIds);
+            writer.WriteObjectValue<UntypedNode>("scope_ids", ScopeIds);
             writer.WriteStringValue("scope_type", ScopeType);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

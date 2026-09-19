@@ -47,11 +47,29 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The stale_ttl property</summary>
-        public int? StaleTtl { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StaleTtl { get; set; }
+#nullable restore
+#else
+        public string StaleTtl { get; set; }
+#endif
         /// <summary>The ttl property</summary>
-        public int? Ttl { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Ttl { get; set; }
+#nullable restore
+#else
+        public string Ttl { get; set; }
+#endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListCacheSettingsObjects200ResponseItem"/> and sets the default values.
         /// </summary>
@@ -81,9 +99,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "cache_condition", n => { CacheCondition = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "stale_ttl", n => { StaleTtl = n.GetIntValue(); } },
-                { "ttl", n => { Ttl = n.GetIntValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "stale_ttl", n => { StaleTtl = n.GetStringValue(); } },
+                { "ttl", n => { Ttl = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -97,9 +115,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("cache_condition", CacheCondition);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("stale_ttl", StaleTtl);
-            writer.WriteIntValue("ttl", Ttl);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("stale_ttl", StaleTtl);
+            writer.WriteStringValue("ttl", Ttl);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

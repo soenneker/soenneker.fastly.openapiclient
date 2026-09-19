@@ -22,7 +22,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Timeseries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/observability/timeseries{?cursor*,dimensions*,filter*,from*,granularity*,limit*,series*,source*,to*}", pathParameters)
+        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/observability/timeseries{?cursor*,dimensions*,filter*,from*,granularity*,limit*,series*,service_id*,source*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,29 +30,29 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Timeseries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/observability/timeseries{?cursor*,dimensions*,filter*,from*,granularity*,limit*,series*,source*,to*}", rawUrl)
+        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/observability/timeseries{?cursor*,dimensions*,filter*,from*,granularity*,limit*,series*,service_id*,source*,to*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves sustainability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Retrieves observability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.Retrieves log data as time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.Retrieves sustainability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveSustainabilityDataAsATimeSeries200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveSustainabilityDataAsATimeSeries200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Observability.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Observability.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveSustainabilityDataAsATimeSeries200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Observability.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Observability.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveSustainabilityDataAsATimeSeries200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveSustainabilityDataAsATimeSeries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves sustainability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Retrieves observability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.Retrieves log data as time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.Retrieves sustainability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Timeseries
             return new global::Soenneker.Fastly.OpenApiClient.Observability.Timeseries.TimeseriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves sustainability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Retrieves observability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.Retrieves log data as time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.Retrieves sustainability data as a time series.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeseriesRequestBuilderGetQueryParameters 
@@ -95,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Timeseries
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>Comma separated list of grouping dimensions. No grouping dimensions implies aggregation by time only.</summary>
+            /// <summary>Comma-separated list of grouping dimensions. Supported values are source specific.No grouping dimensions implies aggregation by time only.Comma separated list of grouping dimensions. No grouping dimensions implies aggregation by time only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dimensions")]
@@ -105,7 +105,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Timeseries
             [QueryParameter("dimensions")]
             public string Dimensions { get; set; }
 #endif
-            /// <summary>Filter parameters are query string components that let you narrow down API responses byincluding only records that match specific criteria.  Filter parameters take the formfilter[ ][ ]= or filter[ ]= .For example, filter[country][in]=US,CA would filter for sustainability datafrom usage of Fastly PoPs located in the United States or Canada. Multiple filterexpressions can be combined. The filters will be combined with a logical ANDoperator so that the data returned match all supplied filters.Supported filter operator in applies to lists of string values.</summary>
+            /// <summary>Filter parameters are query string components that let you narrow down API responses byincluding only records that match specific criteria. Filter parameters take the formfilter[ ][ ]= or filter[ ]= .For example, filter[response_time][gte]=0.5 would filter forresponse time values greater than or equal to 0.5 seconds. Multiple filterexpressions can be combined. The filters will be combined with a logical ANDoperator so that the logs returned match all supplied filters.Supported filter fields are source specific.Supported filter operators include ends-with (applicable to string values),in and not_in (applicable to lists of string and numeric values); as well asgt, gte, lt, and lte (applicable to numeric values).Filter parameters take the form filter[ ][ ]= .For example, filter[response_time][gte]=0.5 would filter for logs where theresponse time was greater than or equal to 0.5 seconds. Multiple filterexpressions can be combined. The filters will be combined with a logical ANDoperator so that the logs returned match all supplied filters.Supported filter fields include domain, request_path, fastly_pop,response_time, response_status, fastly_is_shield, fastly_is_edge,client_os_name, client_device_type, client_browser_name, andfastly_is_cache_hit.Supported filter operators include = (applicable to string, numeric, andboolean values), ends-with (applicable to string values), in (applicableto lists of string and numeric values), not_in (applicable to lists ofstring and numeric values), and gt, gte, lt, lte (applicable tonumeric values).Filter parameters are query string components that let you narrow down API responses byincluding only records that match specific criteria.  Filter parameters take the formfilter[ ][ ]= or filter[ ]= .For example, filter[country][in]=US,CA would filter for sustainability datafrom usage of Fastly PoPs located in the United States or Canada. Multiple filterexpressions can be combined. The filters will be combined with a logical ANDoperator so that the data returned match all supplied filters.Supported filter operator in applies to lists of string values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]
@@ -125,7 +125,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Timeseries
             [QueryParameter("from")]
             public string From { get; set; }
 #endif
-            /// <summary>The duration of each interval in the time series.</summary>
+            /// <summary>The duration of each interval in the time series. Supported values are source specific.The duration of each interval in the time series.The duration of each interval in the time series.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("granularity")]
@@ -145,7 +145,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Timeseries
             [QueryParameter("limit")]
             public string Limit { get; set; }
 #endif
-            /// <summary>Comma-separated list of the data series to be computed for each time bucket and combinationof dimensions. Series definitions take the form [ ]. For sustainability,the only function supported is sum. For example, series=sum[bandwidth_gb] will returnthe sum of bandwidth for each dimensioned time bucket. At least one series is required.</summary>
+            /// <summary>Comma-separated list of the data series to be computed for each time bucket and combinationof dimensions. Series definitions take the form [ ]. Supported fieldsare source specific. For example, series=avg[response_time] will compute theaverage response time. At least one series is required.Comma-separated list of the data series to be computed for each time bucket. Seriesdefinitions take the form [ ]. For example, series=avg[response_time]will compute the average response time for each time bucket. At least oneseries is required.Comma-separated list of the data series to be computed for each time bucket and combinationof dimensions. Series definitions take the form [ ]. For sustainability,the only function supported is sum. For example, series=sum[bandwidth_gb] will returnthe sum of bandwidth for each dimensioned time bucket. At least one series is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("series")]
@@ -155,7 +155,17 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Timeseries
             [QueryParameter("series")]
             public string Series { get; set; }
 #endif
-            /// <summary>Specifies the source of the data for the time series. Must be sustainability to retrieve sustainability data.</summary>
+            /// <summary>Specifies the ID of the service for which data should be returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("service_id")]
+            public string? ServiceId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("service_id")]
+            public string ServiceId { get; set; }
+#endif
+            /// <summary>The source of the data for the time series.Specifies the source of the data for the time series. Must be logs to retrieve log data.Specifies the source of the data for the time series. Must be sustainability to retrieve sustainability data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("source")]

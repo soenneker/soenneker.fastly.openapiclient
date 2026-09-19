@@ -14,6 +14,22 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The created_at property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedAt { get; set; }
+#nullable restore
+#else
+        public string CreatedAt { get; set; }
+#endif
+        /// <summary>The created_by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,10 +49,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Items { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListAllCustomDashboards200ResponseDataItemItemsItem>? Items { get; set; }
 #nullable restore
 #else
-        public List<string> Items { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListAllCustomDashboards200ResponseDataItemItemsItem> Items { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +61,22 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The updated_at property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public string UpdatedAt { get; set; }
+#endif
+        /// <summary>The updated_by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedBy { get; set; }
+#nullable restore
+#else
+        public string UpdatedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListAllCustomDashboards200ResponseDataItem"/> and sets the default values.
@@ -71,10 +103,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "items", n => { Items = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListAllCustomDashboards200ResponseDataItemItemsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListAllCustomDashboards200ResponseDataItemItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "updated_by", n => { UpdatedBy = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +120,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfPrimitiveValues<string>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListAllCustomDashboards200ResponseDataItemItemsItem>("items", Items);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("updated_at", UpdatedAt);
+            writer.WriteStringValue("updated_by", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

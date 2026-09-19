@@ -17,7 +17,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The allow_video property</summary>
         public bool? AllowVideo { get; set; }
         /// <summary>The jpeg_quality property</summary>
-        public int? JpegQuality { get; set; }
+        public long? JpegQuality { get; set; }
         /// <summary>The jpeg_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +39,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The webp property</summary>
         public bool? Webp { get; set; }
         /// <summary>The webp_quality property</summary>
-        public int? WebpQuality { get; set; }
+        public long? WebpQuality { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettings200Response"/> and sets the default values.
         /// </summary>
@@ -66,12 +66,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allow_video", n => { AllowVideo = n.GetBoolValue(); } },
-                { "jpeg_quality", n => { JpegQuality = n.GetIntValue(); } },
+                { "jpeg_quality", n => { JpegQuality = n.GetLongValue(); } },
                 { "jpeg_type", n => { JpegType = n.GetStringValue(); } },
                 { "resize_filter", n => { ResizeFilter = n.GetStringValue(); } },
                 { "upscale", n => { Upscale = n.GetBoolValue(); } },
                 { "webp", n => { Webp = n.GetBoolValue(); } },
-                { "webp_quality", n => { WebpQuality = n.GetIntValue(); } },
+                { "webp_quality", n => { WebpQuality = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -82,12 +82,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_video", AllowVideo);
-            writer.WriteIntValue("jpeg_quality", JpegQuality);
+            writer.WriteLongValue("jpeg_quality", JpegQuality);
             writer.WriteStringValue("jpeg_type", JpegType);
             writer.WriteStringValue("resize_filter", ResizeFilter);
             writer.WriteBoolValue("upscale", Upscale);
             writer.WriteBoolValue("webp", Webp);
-            writer.WriteIntValue("webp_quality", WebpQuality);
+            writer.WriteLongValue("webp_quality", WebpQuality);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

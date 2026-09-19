@@ -23,7 +23,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The blocked_request_count property</summary>
-        public int? BlockedRequestCount { get; set; }
+        public long? BlockedRequestCount { get; set; }
         /// <summary>The block_signals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ExpiresAt { get; set; }
 #endif
         /// <summary>The flagged_request_count property</summary>
-        public int? FlaggedRequestCount { get; set; }
+        public long? FlaggedRequestCount { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,7 +93,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string RemoteHostname { get; set; }
 #endif
         /// <summary>The request_count property</summary>
-        public int? RequestCount { get; set; }
+        public long? RequestCount { get; set; }
         /// <summary>The sample_request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,7 +127,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<string> UserAgents { get; set; }
 #endif
         /// <summary>The window property</summary>
-        public int? Window { get; set; }
+        public long? Window { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ExpireEvent200Response"/> and sets the default values.
         /// </summary>
@@ -155,22 +155,22 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetStringValue(); } },
                 { "block_signals", n => { BlockSignals = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "blocked_request_count", n => { BlockedRequestCount = n.GetIntValue(); } },
+                { "blocked_request_count", n => { BlockedRequestCount = n.GetLongValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "detected_at", n => { DetectedAt = n.GetStringValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
-                { "flagged_request_count", n => { FlaggedRequestCount = n.GetIntValue(); } },
+                { "flagged_request_count", n => { FlaggedRequestCount = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_expired", n => { IsExpired = n.GetBoolValue(); } },
                 { "reasons", n => { Reasons = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ExpireEvent200ResponseReasonsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ExpireEvent200ResponseReasonsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "remote_hostname", n => { RemoteHostname = n.GetStringValue(); } },
-                { "request_count", n => { RequestCount = n.GetIntValue(); } },
+                { "request_count", n => { RequestCount = n.GetLongValue(); } },
                 { "sample_request", n => { SampleRequest = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ExpireEvent200ResponseSampleRequest>(global::Soenneker.Fastly.OpenApiClient.Models.ExpireEvent200ResponseSampleRequest.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "user_agents", n => { UserAgents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "window", n => { Window = n.GetIntValue(); } },
+                { "window", n => { Window = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -181,23 +181,23 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
-            writer.WriteIntValue("blocked_request_count", BlockedRequestCount);
+            writer.WriteLongValue("blocked_request_count", BlockedRequestCount);
             writer.WriteCollectionOfPrimitiveValues<string>("block_signals", BlockSignals);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("detected_at", DetectedAt);
             writer.WriteStringValue("expires_at", ExpiresAt);
-            writer.WriteIntValue("flagged_request_count", FlaggedRequestCount);
+            writer.WriteLongValue("flagged_request_count", FlaggedRequestCount);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_expired", IsExpired);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ExpireEvent200ResponseReasonsItem>("reasons", Reasons);
             writer.WriteStringValue("remote_hostname", RemoteHostname);
-            writer.WriteIntValue("request_count", RequestCount);
+            writer.WriteLongValue("request_count", RequestCount);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ExpireEvent200ResponseSampleRequest>("sample_request", SampleRequest);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("user_agents", UserAgents);
-            writer.WriteIntValue("window", Window);
+            writer.WriteLongValue("window", Window);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

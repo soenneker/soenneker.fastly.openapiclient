@@ -73,10 +73,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The services property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Services { get; set; }
+        public UntypedNode? Services { get; set; }
 #nullable restore
 #else
-        public List<string> Services { get; set; }
+        public UntypedNode Services { get; set; }
 #endif
         /// <summary>The user_agent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +126,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "last_used_at", n => { LastUsedAt = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
-                { "services", n => { Services = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "services", n => { Services = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "user_agent", n => { UserAgent = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -145,7 +145,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("last_used_at", LastUsedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("scope", Scope);
-            writer.WriteCollectionOfPrimitiveValues<string>("services", Services);
+            writer.WriteObjectValue<UntypedNode>("services", Services);
             writer.WriteStringValue("user_agent", UserAgent);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

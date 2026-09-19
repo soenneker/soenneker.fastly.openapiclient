@@ -31,7 +31,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<string> ClientIpHeaders { get; set; }
 #endif
         /// <summary>The default_blocking_response_code property</summary>
-        public int? DefaultBlockingResponseCode { get; set; }
+        public long? DefaultBlockingResponseCode { get; set; }
         /// <summary>The default_redirect_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +99,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "attack_signal_thresholds", n => { AttackSignalThresholds = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.EditAWorkspaceRequestAttackSignalThresholds>(global::Soenneker.Fastly.OpenApiClient.Models.EditAWorkspaceRequestAttackSignalThresholds.CreateFromDiscriminatorValue); } },
                 { "client_ip_headers", n => { ClientIpHeaders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "default_blocking_response_code", n => { DefaultBlockingResponseCode = n.GetIntValue(); } },
+                { "default_blocking_response_code", n => { DefaultBlockingResponseCode = n.GetLongValue(); } },
                 { "default_redirect_url", n => { DefaultRedirectUrl = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ip_anonymization", n => { IpAnonymization = n.GetStringValue(); } },
@@ -116,7 +116,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.EditAWorkspaceRequestAttackSignalThresholds>("attack_signal_thresholds", AttackSignalThresholds);
             writer.WriteCollectionOfPrimitiveValues<string>("client_ip_headers", ClientIpHeaders);
-            writer.WriteIntValue("default_blocking_response_code", DefaultBlockingResponseCode);
+            writer.WriteLongValue("default_blocking_response_code", DefaultBlockingResponseCode);
             writer.WriteStringValue("default_redirect_url", DefaultRedirectUrl);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("ip_anonymization", IpAnonymization);

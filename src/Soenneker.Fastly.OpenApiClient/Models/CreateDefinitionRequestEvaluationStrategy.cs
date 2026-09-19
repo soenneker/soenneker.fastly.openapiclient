@@ -23,7 +23,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Period { get; set; }
 #endif
         /// <summary>The threshold property</summary>
-        public int? Threshold { get; set; }
+        public long? Threshold { get; set; }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "period", n => { Period = n.GetStringValue(); } },
-                { "threshold", n => { Threshold = n.GetIntValue(); } },
+                { "threshold", n => { Threshold = n.GetLongValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("period", Period);
-            writer.WriteIntValue("threshold", Threshold);
+            writer.WriteLongValue("threshold", Threshold);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

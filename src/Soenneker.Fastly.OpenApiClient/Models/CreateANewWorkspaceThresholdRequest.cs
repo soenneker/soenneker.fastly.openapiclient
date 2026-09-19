@@ -25,9 +25,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The interval property</summary>
-        public int? Interval { get; set; }
+        public long? Interval { get; set; }
         /// <summary>The limit property</summary>
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,8 +71,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "interval", n => { Interval = n.GetIntValue(); } },
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "interval", n => { Interval = n.GetLongValue(); } },
+                { "limit", n => { Limit = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "signal", n => { Signal = n.GetStringValue(); } },
             };
@@ -86,8 +86,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteIntValue("interval", Interval);
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteLongValue("interval", Interval);
+            writer.WriteLongValue("limit", Limit);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("signal", Signal);
             writer.WriteAdditionalData(AdditionalData);

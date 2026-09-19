@@ -22,6 +22,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterLcy LCY { get; set; }
 #endif
+        /// <summary>The STP property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterStp? STP { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterStp STP { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenter"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "LCY", n => { LCY = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterLcy>(global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterLcy.CreateFromDiscriminatorValue); } },
+                { "STP", n => { STP = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterStp>(global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterStp.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterLcy>("LCY", LCY);
+            writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDataEntries200ResponseDataItemDatacenterStp>("STP", STP);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

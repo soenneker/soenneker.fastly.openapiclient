@@ -15,19 +15,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The body_size property</summary>
-        public int? BodySize { get; set; }
+        public long? BodySize { get; set; }
+        /// <summary>The compute_execution_time_ms property</summary>
+        public long? ComputeExecutionTimeMs { get; set; }
+        /// <summary>The compute_ram_used property</summary>
+        public long? ComputeRamUsed { get; set; }
         /// <summary>The compute_requests property</summary>
-        public int? ComputeRequests { get; set; }
+        public long? ComputeRequests { get; set; }
+        /// <summary>The compute_request_time_billed_ms property</summary>
+        public long? ComputeRequestTimeBilledMs { get; set; }
+        /// <summary>The compute_request_time_ms property</summary>
+        public long? ComputeRequestTimeMs { get; set; }
         /// <summary>The errors property</summary>
-        public int? Errors { get; set; }
+        public long? Errors { get; set; }
         /// <summary>The header_size property</summary>
-        public int? HeaderSize { get; set; }
+        public long? HeaderSize { get; set; }
         /// <summary>The hits property</summary>
-        public int? Hits { get; set; }
+        public long? Hits { get; set; }
         /// <summary>The hits_time property</summary>
-        public int? HitsTime { get; set; }
+        public long? HitsTime { get; set; }
+        /// <summary>The log property</summary>
+        public long? Log { get; set; }
+        /// <summary>The logging property</summary>
+        public long? Logging { get; set; }
         /// <summary>The miss property</summary>
-        public int? Miss { get; set; }
+        public long? Miss { get; set; }
         /// <summary>The miss_histogram property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,17 +49,17 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregatedMissHistogram MissHistogram { get; set; }
 #endif
         /// <summary>The miss_time property</summary>
-        public int? MissTime { get; set; }
+        public long? MissTime { get; set; }
         /// <summary>The pass property</summary>
-        public int? Pass { get; set; }
+        public long? Pass { get; set; }
         /// <summary>The requests property</summary>
-        public int? Requests { get; set; }
+        public long? Requests { get; set; }
         /// <summary>The resp_body_bytes property</summary>
-        public int? RespBodyBytes { get; set; }
+        public long? RespBodyBytes { get; set; }
         /// <summary>The resp_header_bytes property</summary>
-        public int? RespHeaderBytes { get; set; }
+        public long? RespHeaderBytes { get; set; }
         /// <summary>The synth property</summary>
-        public int? Synth { get; set; }
+        public long? Synth { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregated"/> and sets the default values.
         /// </summary>
@@ -73,20 +85,26 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "body_size", n => { BodySize = n.GetIntValue(); } },
-                { "compute_requests", n => { ComputeRequests = n.GetIntValue(); } },
-                { "errors", n => { Errors = n.GetIntValue(); } },
-                { "header_size", n => { HeaderSize = n.GetIntValue(); } },
-                { "hits", n => { Hits = n.GetIntValue(); } },
-                { "hits_time", n => { HitsTime = n.GetIntValue(); } },
-                { "miss", n => { Miss = n.GetIntValue(); } },
+                { "body_size", n => { BodySize = n.GetLongValue(); } },
+                { "compute_execution_time_ms", n => { ComputeExecutionTimeMs = n.GetLongValue(); } },
+                { "compute_ram_used", n => { ComputeRamUsed = n.GetLongValue(); } },
+                { "compute_request_time_billed_ms", n => { ComputeRequestTimeBilledMs = n.GetLongValue(); } },
+                { "compute_request_time_ms", n => { ComputeRequestTimeMs = n.GetLongValue(); } },
+                { "compute_requests", n => { ComputeRequests = n.GetLongValue(); } },
+                { "errors", n => { Errors = n.GetLongValue(); } },
+                { "header_size", n => { HeaderSize = n.GetLongValue(); } },
+                { "hits", n => { Hits = n.GetLongValue(); } },
+                { "hits_time", n => { HitsTime = n.GetLongValue(); } },
+                { "log", n => { Log = n.GetLongValue(); } },
+                { "logging", n => { Logging = n.GetLongValue(); } },
+                { "miss", n => { Miss = n.GetLongValue(); } },
                 { "miss_histogram", n => { MissHistogram = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregatedMissHistogram>(global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregatedMissHistogram.CreateFromDiscriminatorValue); } },
-                { "miss_time", n => { MissTime = n.GetIntValue(); } },
-                { "pass", n => { Pass = n.GetIntValue(); } },
-                { "requests", n => { Requests = n.GetIntValue(); } },
-                { "resp_body_bytes", n => { RespBodyBytes = n.GetIntValue(); } },
-                { "resp_header_bytes", n => { RespHeaderBytes = n.GetIntValue(); } },
-                { "synth", n => { Synth = n.GetIntValue(); } },
+                { "miss_time", n => { MissTime = n.GetLongValue(); } },
+                { "pass", n => { Pass = n.GetLongValue(); } },
+                { "requests", n => { Requests = n.GetLongValue(); } },
+                { "resp_body_bytes", n => { RespBodyBytes = n.GetLongValue(); } },
+                { "resp_header_bytes", n => { RespHeaderBytes = n.GetLongValue(); } },
+                { "synth", n => { Synth = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -96,20 +114,26 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("body_size", BodySize);
-            writer.WriteIntValue("compute_requests", ComputeRequests);
-            writer.WriteIntValue("errors", Errors);
-            writer.WriteIntValue("header_size", HeaderSize);
-            writer.WriteIntValue("hits", Hits);
-            writer.WriteIntValue("hits_time", HitsTime);
-            writer.WriteIntValue("miss", Miss);
+            writer.WriteLongValue("body_size", BodySize);
+            writer.WriteLongValue("compute_execution_time_ms", ComputeExecutionTimeMs);
+            writer.WriteLongValue("compute_ram_used", ComputeRamUsed);
+            writer.WriteLongValue("compute_requests", ComputeRequests);
+            writer.WriteLongValue("compute_request_time_billed_ms", ComputeRequestTimeBilledMs);
+            writer.WriteLongValue("compute_request_time_ms", ComputeRequestTimeMs);
+            writer.WriteLongValue("errors", Errors);
+            writer.WriteLongValue("header_size", HeaderSize);
+            writer.WriteLongValue("hits", Hits);
+            writer.WriteLongValue("hits_time", HitsTime);
+            writer.WriteLongValue("log", Log);
+            writer.WriteLongValue("logging", Logging);
+            writer.WriteLongValue("miss", Miss);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregatedMissHistogram>("miss_histogram", MissHistogram);
-            writer.WriteIntValue("miss_time", MissTime);
-            writer.WriteIntValue("pass", Pass);
-            writer.WriteIntValue("requests", Requests);
-            writer.WriteIntValue("resp_body_bytes", RespBodyBytes);
-            writer.WriteIntValue("resp_header_bytes", RespHeaderBytes);
-            writer.WriteIntValue("synth", Synth);
+            writer.WriteLongValue("miss_time", MissTime);
+            writer.WriteLongValue("pass", Pass);
+            writer.WriteLongValue("requests", Requests);
+            writer.WriteLongValue("resp_body_bytes", RespBodyBytes);
+            writer.WriteLongValue("resp_header_bytes", RespHeaderBytes);
+            writer.WriteLongValue("synth", Synth);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

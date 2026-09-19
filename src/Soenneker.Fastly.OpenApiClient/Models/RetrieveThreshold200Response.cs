@@ -33,7 +33,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The dont_notify property</summary>
         public bool? DontNotify { get; set; }
         /// <summary>The duration property</summary>
-        public int? Duration { get; set; }
+        public long? Duration { get; set; }
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The id property</summary>
@@ -45,9 +45,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The interval property</summary>
-        public int? Interval { get; set; }
+        public long? Interval { get; set; }
         /// <summary>The limit property</summary>
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,11 +92,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "action", n => { Action = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "dont_notify", n => { DontNotify = n.GetBoolValue(); } },
-                { "duration", n => { Duration = n.GetIntValue(); } },
+                { "duration", n => { Duration = n.GetLongValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "interval", n => { Interval = n.GetIntValue(); } },
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "interval", n => { Interval = n.GetLongValue(); } },
+                { "limit", n => { Limit = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "signal", n => { Signal = n.GetStringValue(); } },
             };
@@ -111,11 +111,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("action", Action);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteBoolValue("dont_notify", DontNotify);
-            writer.WriteIntValue("duration", Duration);
+            writer.WriteLongValue("duration", Duration);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
-            writer.WriteIntValue("interval", Interval);
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteLongValue("interval", Interval);
+            writer.WriteLongValue("limit", Limit);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("signal", Signal);
             writer.WriteAdditionalData(AdditionalData);

@@ -54,6 +54,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The requests_allowed property</summary>
+        public long? RequestsAllowed { get; set; }
+        /// <summary>The requests_detected property</summary>
+        public long? RequestsDetected { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +112,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "ended_at", n => { EndedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "requests_allowed", n => { RequestsAllowed = n.GetLongValue(); } },
+                { "requests_detected", n => { RequestsDetected = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -125,6 +131,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("ended_at", EndedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteLongValue("requests_allowed", RequestsAllowed);
+            writer.WriteLongValue("requests_detected", RequestsDetected);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("started_at", StartedAt);
             writer.WriteStringValue("updated_at", UpdatedAt);

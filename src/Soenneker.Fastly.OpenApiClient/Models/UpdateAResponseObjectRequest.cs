@@ -63,7 +63,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Response { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public int? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAResponseObjectRequest"/> and sets the default values.
         /// </summary>
@@ -95,7 +101,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "request_condition", n => { RequestCondition = n.GetStringValue(); } },
                 { "response", n => { Response = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,7 +117,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("request_condition", RequestCondition);
             writer.WriteStringValue("response", Response);
-            writer.WriteIntValue("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

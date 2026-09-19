@@ -41,10 +41,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The tls_protocols property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? TlsProtocols { get; set; }
+        public List<string>? TlsProtocols { get; set; }
 #nullable restore
 #else
-        public List<double?> TlsProtocols { get; set; }
+        public List<string> TlsProtocols { get; set; }
 #endif
         /// <summary>The vipspace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "http_protocols", n => { HttpProtocols = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tls_1_2_cipher_suite_profile", n => { Tls12CipherSuiteProfile = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "tls_protocols", n => { TlsProtocols = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
+                { "tls_protocols", n => { TlsProtocols = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "vipspace", n => { Vipspace = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("http_protocols", HttpProtocols);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("tls_1_2_cipher_suite_profile", Tls12CipherSuiteProfile);
-            writer.WriteCollectionOfPrimitiveValues<double?>("tls_protocols", TlsProtocols);
+            writer.WriteCollectionOfPrimitiveValues<string>("tls_protocols", TlsProtocols);
             writer.WriteStringValue("vipspace", Vipspace);
             writer.WriteAdditionalData(AdditionalData);
         }

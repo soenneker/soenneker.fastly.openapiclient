@@ -31,14 +31,20 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asn property</summary>
-        public int? Asn { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Asn { get; set; }
+#nullable restore
+#else
+        public string Asn { get; set; }
+#endif
         /// <summary>The country_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode { get; set; }
+        public UntypedNode? CountryCode { get; set; }
 #nullable restore
 #else
-        public string CountryCode { get; set; }
+        public UntypedNode CountryCode { get; set; }
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,10 +97,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The source_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceIp { get; set; }
+        public UntypedNode? SourceIp { get; set; }
 #nullable restore
 #else
-        public string SourceIp { get; set; }
+        public UntypedNode SourceIp { get; set; }
 #endif
         /// <summary>The source_ip_prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,15 +145,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetStringValue(); } },
                 { "additional_attributes", n => { AdditionalAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "asn", n => { Asn = n.GetIntValue(); } },
-                { "country_code", n => { CountryCode = n.GetStringValue(); } },
+                { "asn", n => { Asn = n.GetStringValue(); } },
+                { "country_code", n => { CountryCode = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "source_ip", n => { SourceIp = n.GetStringValue(); } },
+                { "source_ip", n => { SourceIp = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "source_ip_prefix", n => { SourceIpPrefix = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
@@ -161,15 +167,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
             writer.WriteCollectionOfPrimitiveValues<string>("additional_attributes", AdditionalAttributes);
-            writer.WriteIntValue("asn", Asn);
-            writer.WriteStringValue("country_code", CountryCode);
+            writer.WriteStringValue("asn", Asn);
+            writer.WriteObjectValue<UntypedNode>("country_code", CountryCode);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("host", Host);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteStringValue("source_ip", SourceIp);
+            writer.WriteObjectValue<UntypedNode>("source_ip", SourceIp);
             writer.WriteStringValue("source_ip_prefix", SourceIpPrefix);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

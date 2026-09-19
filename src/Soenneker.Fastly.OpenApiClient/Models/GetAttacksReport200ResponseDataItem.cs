@@ -15,15 +15,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The all_flagged_ip_count property</summary>
-        public int? AllFlaggedIpCount { get; set; }
+        public long? AllFlaggedIpCount { get; set; }
         /// <summary>The attack_count property</summary>
-        public int? AttackCount { get; set; }
+        public long? AttackCount { get; set; }
         /// <summary>The blocked_count property</summary>
-        public int? BlockedCount { get; set; }
+        public long? BlockedCount { get; set; }
         /// <summary>The flagged_count property</summary>
-        public int? FlaggedCount { get; set; }
+        public long? FlaggedCount { get; set; }
         /// <summary>The flagged_ip_count property</summary>
-        public int? FlaggedIpCount { get; set; }
+        public long? FlaggedIpCount { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem> TopAttackSources { get; set; }
 #endif
         /// <summary>The total_count property</summary>
-        public int? TotalCount { get; set; }
+        public long? TotalCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -83,16 +83,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "all_flagged_ip_count", n => { AllFlaggedIpCount = n.GetIntValue(); } },
-                { "attack_count", n => { AttackCount = n.GetIntValue(); } },
-                { "blocked_count", n => { BlockedCount = n.GetIntValue(); } },
-                { "flagged_count", n => { FlaggedCount = n.GetIntValue(); } },
-                { "flagged_ip_count", n => { FlaggedIpCount = n.GetIntValue(); } },
+                { "all_flagged_ip_count", n => { AllFlaggedIpCount = n.GetLongValue(); } },
+                { "attack_count", n => { AttackCount = n.GetLongValue(); } },
+                { "blocked_count", n => { BlockedCount = n.GetLongValue(); } },
+                { "flagged_count", n => { FlaggedCount = n.GetLongValue(); } },
+                { "flagged_ip_count", n => { FlaggedIpCount = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "top_attack_signals", n => { TopAttackSignals = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "top_attack_sources", n => { TopAttackSources = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "total_count", n => { TotalCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -102,16 +102,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("all_flagged_ip_count", AllFlaggedIpCount);
-            writer.WriteIntValue("attack_count", AttackCount);
-            writer.WriteIntValue("blocked_count", BlockedCount);
-            writer.WriteIntValue("flagged_count", FlaggedCount);
-            writer.WriteIntValue("flagged_ip_count", FlaggedIpCount);
+            writer.WriteLongValue("all_flagged_ip_count", AllFlaggedIpCount);
+            writer.WriteLongValue("attack_count", AttackCount);
+            writer.WriteLongValue("blocked_count", BlockedCount);
+            writer.WriteLongValue("flagged_count", FlaggedCount);
+            writer.WriteLongValue("flagged_ip_count", FlaggedIpCount);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem>("top_attack_signals", TopAttackSignals);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem>("top_attack_sources", TopAttackSources);
-            writer.WriteIntValue("total_count", TotalCount);
+            writer.WriteLongValue("total_count", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

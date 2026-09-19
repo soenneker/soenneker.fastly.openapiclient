@@ -63,7 +63,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The last_status_code property</summary>
-        public int? LastStatusCode { get; set; }
+        public long? LastStatusCode { get; set; }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +103,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "last_status_code", n => { LastStatusCode = n.GetIntValue(); } },
+                { "last_status_code", n => { LastStatusCode = n.GetLongValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -120,7 +120,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("id", Id);
-            writer.WriteIntValue("last_status_code", LastStatusCode);
+            writer.WriteLongValue("last_status_code", LastStatusCode);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

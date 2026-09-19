@@ -19,18 +19,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The backends property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Backends { get; set; }
+        public UntypedNode? Backends { get; set; }
 #nullable restore
 #else
-        public List<string> Backends { get; set; }
+        public UntypedNode Backends { get; set; }
 #endif
         /// <summary>The cache_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CacheSettings { get; set; }
+        public UntypedNode? CacheSettings { get; set; }
 #nullable restore
 #else
-        public List<string> CacheSettings { get; set; }
+        public UntypedNode CacheSettings { get; set; }
 #endif
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,80 +43,80 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Conditions { get; set; }
+        public UntypedNode? Conditions { get; set; }
 #nullable restore
 #else
-        public List<string> Conditions { get; set; }
+        public UntypedNode Conditions { get; set; }
 #endif
         /// <summary>The deployed property</summary>
         public bool? Deployed { get; set; }
         /// <summary>The dictionaries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Dictionaries { get; set; }
+        public UntypedNode? Dictionaries { get; set; }
 #nullable restore
 #else
-        public List<string> Dictionaries { get; set; }
+        public UntypedNode Dictionaries { get; set; }
 #endif
         /// <summary>The directors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Directors { get; set; }
+        public UntypedNode? Directors { get; set; }
 #nullable restore
 #else
-        public List<string> Directors { get; set; }
+        public UntypedNode Directors { get; set; }
 #endif
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains { get; set; }
+        public UntypedNode? Domains { get; set; }
 #nullable restore
 #else
-        public List<string> Domains { get; set; }
+        public UntypedNode Domains { get; set; }
 #endif
         /// <summary>The gzips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Gzips { get; set; }
+        public UntypedNode? Gzips { get; set; }
 #nullable restore
 #else
-        public List<string> Gzips { get; set; }
+        public UntypedNode Gzips { get; set; }
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Headers { get; set; }
+        public UntypedNode? Headers { get; set; }
 #nullable restore
 #else
-        public List<string> Headers { get; set; }
+        public UntypedNode Headers { get; set; }
 #endif
         /// <summary>The healthchecks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Healthchecks { get; set; }
+        public UntypedNode? Healthchecks { get; set; }
 #nullable restore
 #else
-        public List<string> Healthchecks { get; set; }
+        public UntypedNode Healthchecks { get; set; }
 #endif
         /// <summary>The locked property</summary>
         public bool? Locked { get; set; }
         /// <summary>The number property</summary>
-        public int? Number { get; set; }
+        public long? Number { get; set; }
         /// <summary>The request_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RequestSettings { get; set; }
+        public UntypedNode? RequestSettings { get; set; }
 #nullable restore
 #else
-        public List<string> RequestSettings { get; set; }
+        public UntypedNode RequestSettings { get; set; }
 #endif
         /// <summary>The response_objects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResponseObjects { get; set; }
+        public UntypedNode? ResponseObjects { get; set; }
 #nullable restore
 #else
-        public List<string> ResponseObjects { get; set; }
+        public UntypedNode ResponseObjects { get; set; }
 #endif
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,10 +137,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The snippets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Snippets { get; set; }
+        public UntypedNode? Snippets { get; set; }
 #nullable restore
 #else
-        public List<string> Snippets { get; set; }
+        public UntypedNode Snippets { get; set; }
 #endif
         /// <summary>The staging property</summary>
         public bool? Staging { get; set; }
@@ -149,18 +149,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The vcls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Vcls { get; set; }
+        public UntypedNode? Vcls { get; set; }
 #nullable restore
 #else
-        public List<string> Vcls { get; set; }
+        public UntypedNode Vcls { get; set; }
 #endif
         /// <summary>The wordpress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Wordpress { get; set; }
+        public UntypedNode? Wordpress { get; set; }
 #nullable restore
 #else
-        public List<string> Wordpress { get; set; }
+        public UntypedNode Wordpress { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersion"/> and sets the default values.
@@ -188,28 +188,28 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
-                { "backends", n => { Backends = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "cache_settings", n => { CacheSettings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "backends", n => { Backends = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "cache_settings", n => { CacheSettings = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "conditions", n => { Conditions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "deployed", n => { Deployed = n.GetBoolValue(); } },
-                { "dictionaries", n => { Dictionaries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "directors", n => { Directors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "gzips", n => { Gzips = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "headers", n => { Headers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "healthchecks", n => { Healthchecks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "dictionaries", n => { Dictionaries = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "directors", n => { Directors = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "domains", n => { Domains = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "gzips", n => { Gzips = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "healthchecks", n => { Healthchecks = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "locked", n => { Locked = n.GetBoolValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "request_settings", n => { RequestSettings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "response_objects", n => { ResponseObjects = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "number", n => { Number = n.GetLongValue(); } },
+                { "request_settings", n => { RequestSettings = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "response_objects", n => { ResponseObjects = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersionSettings>(global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersionSettings.CreateFromDiscriminatorValue); } },
-                { "snippets", n => { Snippets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "snippets", n => { Snippets = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "staging", n => { Staging = n.GetBoolValue(); } },
                 { "testing", n => { Testing = n.GetBoolValue(); } },
-                { "vcls", n => { Vcls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "wordpress", n => { Wordpress = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "vcls", n => { Vcls = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "wordpress", n => { Wordpress = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -220,28 +220,28 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
-            writer.WriteCollectionOfPrimitiveValues<string>("backends", Backends);
-            writer.WriteCollectionOfPrimitiveValues<string>("cache_settings", CacheSettings);
+            writer.WriteObjectValue<UntypedNode>("backends", Backends);
+            writer.WriteObjectValue<UntypedNode>("cache_settings", CacheSettings);
             writer.WriteStringValue("comment", Comment);
-            writer.WriteCollectionOfPrimitiveValues<string>("conditions", Conditions);
+            writer.WriteObjectValue<UntypedNode>("conditions", Conditions);
             writer.WriteBoolValue("deployed", Deployed);
-            writer.WriteCollectionOfPrimitiveValues<string>("dictionaries", Dictionaries);
-            writer.WriteCollectionOfPrimitiveValues<string>("directors", Directors);
-            writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
-            writer.WriteCollectionOfPrimitiveValues<string>("gzips", Gzips);
-            writer.WriteCollectionOfPrimitiveValues<string>("headers", Headers);
-            writer.WriteCollectionOfPrimitiveValues<string>("healthchecks", Healthchecks);
+            writer.WriteObjectValue<UntypedNode>("dictionaries", Dictionaries);
+            writer.WriteObjectValue<UntypedNode>("directors", Directors);
+            writer.WriteObjectValue<UntypedNode>("domains", Domains);
+            writer.WriteObjectValue<UntypedNode>("gzips", Gzips);
+            writer.WriteObjectValue<UntypedNode>("headers", Headers);
+            writer.WriteObjectValue<UntypedNode>("healthchecks", Healthchecks);
             writer.WriteBoolValue("locked", Locked);
-            writer.WriteIntValue("number", Number);
-            writer.WriteCollectionOfPrimitiveValues<string>("request_settings", RequestSettings);
-            writer.WriteCollectionOfPrimitiveValues<string>("response_objects", ResponseObjects);
+            writer.WriteLongValue("number", Number);
+            writer.WriteObjectValue<UntypedNode>("request_settings", RequestSettings);
+            writer.WriteObjectValue<UntypedNode>("response_objects", ResponseObjects);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersionSettings>("settings", Settings);
-            writer.WriteCollectionOfPrimitiveValues<string>("snippets", Snippets);
+            writer.WriteObjectValue<UntypedNode>("snippets", Snippets);
             writer.WriteBoolValue("staging", Staging);
             writer.WriteBoolValue("testing", Testing);
-            writer.WriteCollectionOfPrimitiveValues<string>("vcls", Vcls);
-            writer.WriteCollectionOfPrimitiveValues<string>("wordpress", Wordpress);
+            writer.WriteObjectValue<UntypedNode>("vcls", Vcls);
+            writer.WriteObjectValue<UntypedNode>("wordpress", Wordpress);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

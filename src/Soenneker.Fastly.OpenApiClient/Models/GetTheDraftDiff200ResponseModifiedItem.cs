@@ -41,10 +41,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The rules_added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RulesAdded { get; set; }
+        public UntypedNode? RulesAdded { get; set; }
 #nullable restore
 #else
-        public List<string> RulesAdded { get; set; }
+        public UntypedNode RulesAdded { get; set; }
 #endif
         /// <summary>The rules_changed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The rules_deleted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RulesDeleted { get; set; }
+        public UntypedNode? RulesDeleted { get; set; }
 #nullable restore
 #else
-        public List<string> RulesDeleted { get; set; }
+        public UntypedNode RulesDeleted { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem"/> and sets the default values.
@@ -90,9 +90,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "old_path", n => { OldPath = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "path_id", n => { PathId = n.GetStringValue(); } },
-                { "rules_added", n => { RulesAdded = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "rules_added", n => { RulesAdded = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "rules_changed", n => { RulesChanged = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rules_deleted", n => { RulesDeleted = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "rules_deleted", n => { RulesDeleted = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,9 +105,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("old_path", OldPath);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("path_id", PathId);
-            writer.WriteCollectionOfPrimitiveValues<string>("rules_added", RulesAdded);
+            writer.WriteObjectValue<UntypedNode>("rules_added", RulesAdded);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem>("rules_changed", RulesChanged);
-            writer.WriteCollectionOfPrimitiveValues<string>("rules_deleted", RulesDeleted);
+            writer.WriteObjectValue<UntypedNode>("rules_deleted", RulesDeleted);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

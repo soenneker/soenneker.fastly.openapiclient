@@ -15,11 +15,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bandwidth property</summary>
-        public int? Bandwidth { get; set; }
+        public long? Bandwidth { get; set; }
         /// <summary>The compute_requests property</summary>
-        public int? ComputeRequests { get; set; }
+        public long? ComputeRequests { get; set; }
         /// <summary>The requests property</summary>
-        public int? Requests { get; set; }
+        public long? Requests { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataEurope"/> and sets the default values.
         /// </summary>
@@ -45,9 +45,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bandwidth", n => { Bandwidth = n.GetIntValue(); } },
-                { "compute_requests", n => { ComputeRequests = n.GetIntValue(); } },
-                { "requests", n => { Requests = n.GetIntValue(); } },
+                { "bandwidth", n => { Bandwidth = n.GetLongValue(); } },
+                { "compute_requests", n => { ComputeRequests = n.GetLongValue(); } },
+                { "requests", n => { Requests = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("bandwidth", Bandwidth);
-            writer.WriteIntValue("compute_requests", ComputeRequests);
-            writer.WriteIntValue("requests", Requests);
+            writer.WriteLongValue("bandwidth", Bandwidth);
+            writer.WriteLongValue("compute_requests", ComputeRequests);
+            writer.WriteLongValue("requests", Requests);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

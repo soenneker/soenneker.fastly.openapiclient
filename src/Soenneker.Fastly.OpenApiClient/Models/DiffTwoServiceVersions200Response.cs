@@ -31,9 +31,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Format { get; set; }
 #endif
         /// <summary>The from property</summary>
-        public int? From { get; set; }
+        public long? From { get; set; }
         /// <summary>The to property</summary>
-        public int? To { get; set; }
+        public long? To { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DiffTwoServiceVersions200Response"/> and sets the default values.
         /// </summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "diff", n => { Diff = n.GetStringValue(); } },
                 { "format", n => { Format = n.GetStringValue(); } },
-                { "from", n => { From = n.GetIntValue(); } },
-                { "to", n => { To = n.GetIntValue(); } },
+                { "from", n => { From = n.GetLongValue(); } },
+                { "to", n => { To = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("diff", Diff);
             writer.WriteStringValue("format", Format);
-            writer.WriteIntValue("from", From);
-            writer.WriteIntValue("to", To);
+            writer.WriteLongValue("from", From);
+            writer.WriteLongValue("to", To);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

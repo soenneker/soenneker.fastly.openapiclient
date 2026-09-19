@@ -41,10 +41,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Ip { get; set; }
 #endif
         /// <summary>The negated property</summary>
-        public int? Negated { get; set; }
+        public long? Negated { get; set; }
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +73,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The subnet property</summary>
-        public int? Subnet { get; set; }
+        public long? Subnet { get; set; }
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,12 +110,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "acl_id", n => { AclId = n.GetStringValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
-                { "negated", n => { Negated = n.GetIntValue(); } },
+                { "negated", n => { Negated = n.GetLongValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "subnet", n => { Subnet = n.GetIntValue(); } },
+                { "subnet", n => { Subnet = n.GetLongValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -129,12 +129,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("acl_id", AclId);
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ip", Ip);
-            writer.WriteIntValue("negated", Negated);
+            writer.WriteLongValue("negated", Negated);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("subnet", Subnet);
+            writer.WriteLongValue("subnet", Subnet);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

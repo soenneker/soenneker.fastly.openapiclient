@@ -23,7 +23,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string CreatedAt { get; set; }
 #endif
         /// <summary>The feature_revision property</summary>
-        public int? FeatureRevision { get; set; }
+        public long? FeatureRevision { get; set; }
         /// <summary>The feature_update_available property</summary>
         public bool? FeatureUpdateAvailable { get; set; }
         /// <summary>The id property</summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EnableSupportForHttp3200Response"/> and sets the default values.
         /// </summary>
@@ -78,12 +78,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "feature_revision", n => { FeatureRevision = n.GetIntValue(); } },
+                { "feature_revision", n => { FeatureRevision = n.GetLongValue(); } },
                 { "feature_update_available", n => { FeatureUpdateAvailable = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -94,12 +94,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteIntValue("feature_revision", FeatureRevision);
+            writer.WriteLongValue("feature_revision", FeatureRevision);
             writer.WriteBoolValue("feature_update_available", FeatureUpdateAvailable);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("version", Version);
+            writer.WriteLongValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

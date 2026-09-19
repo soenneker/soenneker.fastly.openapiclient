@@ -7,70 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Fastly.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2"/>, <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3"/>, <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ValidateDnsConfigurationForASingleDomainOnAService200ResponseItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ValidateDnsConfigurationForASingleDomainOnAService200ResponseItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comment property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2? ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2 { get; set; }
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2 ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2 { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3? ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3 { get; set; }
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3 ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3 { get; set; }
 #endif
-        /// <summary>The deleted_at property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1? ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1 ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1 { get; set; }
 #endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The service_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ServiceId { get; set; }
-#nullable restore
-#else
-        public string ServiceId { get; set; }
-#endif
-        /// <summary>The updated_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public string UpdatedAt { get; set; }
-#endif
-        /// <summary>The version property</summary>
-        public int? Version { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItem"/> and sets the default values.
-        /// </summary>
-        public ValidateDnsConfigurationForASingleDomainOnAService200ResponseItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,7 +45,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItem();
+            var result = new global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItem();
+            result.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2 = new global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2();
+            result.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3 = new global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3();
+            result.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1 = new global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,16 +57,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2 != null || ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3 != null || ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1 != null)
             {
-                { "comment", n => { Comment = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2, ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3, ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -105,14 +70,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("version", Version);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2>(null, ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2, ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3, ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string ServiceId { get; set; }
 #endif
         /// <summary>The start_time property</summary>
-        public int? StartTime { get; set; }
+        public long? StartTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData6ElZZvtumbwtLbdJvFwepxItem"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "hit_ratio", n => { HitRatio = n.GetDoubleValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "start_time", n => { StartTime = n.GetIntValue(); } },
+                { "start_time", n => { StartTime = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("hit_ratio", HitRatio);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteIntValue("start_time", StartTime);
+            writer.WriteLongValue("start_time", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

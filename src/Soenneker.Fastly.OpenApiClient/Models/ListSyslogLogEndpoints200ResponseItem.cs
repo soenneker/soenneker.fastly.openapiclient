@@ -33,10 +33,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get; set; }
 #nullable restore
 #else
-        public string DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get; set; }
 #endif
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string Format { get; set; }
 #endif
         /// <summary>The format_version property</summary>
-        public int? FormatVersion { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FormatVersion { get; set; }
+#nullable restore
+#else
+        public string FormatVersion { get; set; }
+#endif
         /// <summary>The hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,10 +65,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The ipv4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ipv4 { get; set; }
+        public UntypedNode? Ipv4 { get; set; }
 #nullable restore
 #else
-        public string Ipv4 { get; set; }
+        public UntypedNode Ipv4 { get; set; }
 #endif
         /// <summary>The message_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,13 +89,13 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The placement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Placement { get; set; }
+        public UntypedNode? Placement { get; set; }
 #nullable restore
 #else
-        public string Placement { get; set; }
+        public UntypedNode Placement { get; set; }
 #endif
         /// <summary>The port property</summary>
-        public int? Port { get; set; }
+        public long? Port { get; set; }
         /// <summary>The response_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,42 +115,42 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The tls_ca_cert property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TlsCaCert { get; set; }
+        public UntypedNode? TlsCaCert { get; set; }
 #nullable restore
 #else
-        public string TlsCaCert { get; set; }
+        public UntypedNode TlsCaCert { get; set; }
 #endif
         /// <summary>The tls_client_cert property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TlsClientCert { get; set; }
+        public UntypedNode? TlsClientCert { get; set; }
 #nullable restore
 #else
-        public string TlsClientCert { get; set; }
+        public UntypedNode TlsClientCert { get; set; }
 #endif
         /// <summary>The tls_client_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TlsClientKey { get; set; }
+        public UntypedNode? TlsClientKey { get; set; }
 #nullable restore
 #else
-        public string TlsClientKey { get; set; }
+        public UntypedNode TlsClientKey { get; set; }
 #endif
         /// <summary>The tls_hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TlsHostname { get; set; }
+        public UntypedNode? TlsHostname { get; set; }
 #nullable restore
 #else
-        public string TlsHostname { get; set; }
+        public UntypedNode TlsHostname { get; set; }
 #endif
         /// <summary>The token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Token { get; set; }
+        public UntypedNode? Token { get; set; }
 #nullable restore
 #else
-        public string Token { get; set; }
+        public UntypedNode Token { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,9 +161,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get; set; }
 #endif
         /// <summary>The use_tls property</summary>
-        public int? UseTls { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UseTls { get; set; }
+#nullable restore
+#else
+        public string UseTls { get; set; }
+#endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version { get; set; }
+#nullable restore
+#else
+        public string Version { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListSyslogLogEndpoints200ResponseItem"/> and sets the default values.
         /// </summary>
@@ -185,25 +203,25 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "address", n => { Address = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetStringValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetStringValue(); } },
-                { "format_version", n => { FormatVersion = n.GetIntValue(); } },
+                { "format_version", n => { FormatVersion = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
-                { "ipv4", n => { Ipv4 = n.GetStringValue(); } },
+                { "ipv4", n => { Ipv4 = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "message_type", n => { MessageType = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "placement", n => { Placement = n.GetStringValue(); } },
-                { "port", n => { Port = n.GetIntValue(); } },
+                { "placement", n => { Placement = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "port", n => { Port = n.GetLongValue(); } },
                 { "response_condition", n => { ResponseCondition = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
-                { "tls_ca_cert", n => { TlsCaCert = n.GetStringValue(); } },
-                { "tls_client_cert", n => { TlsClientCert = n.GetStringValue(); } },
-                { "tls_client_key", n => { TlsClientKey = n.GetStringValue(); } },
-                { "tls_hostname", n => { TlsHostname = n.GetStringValue(); } },
-                { "token", n => { Token = n.GetStringValue(); } },
+                { "tls_ca_cert", n => { TlsCaCert = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "tls_client_cert", n => { TlsClientCert = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "tls_client_key", n => { TlsClientKey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "tls_hostname", n => { TlsHostname = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "token", n => { Token = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                { "use_tls", n => { UseTls = n.GetIntValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "use_tls", n => { UseTls = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -215,25 +233,25 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
             writer.WriteStringValue("created_at", CreatedAt);
-            writer.WriteStringValue("deleted_at", DeletedAt);
+            writer.WriteObjectValue<UntypedNode>("deleted_at", DeletedAt);
             writer.WriteStringValue("format", Format);
-            writer.WriteIntValue("format_version", FormatVersion);
+            writer.WriteStringValue("format_version", FormatVersion);
             writer.WriteStringValue("hostname", Hostname);
-            writer.WriteStringValue("ipv4", Ipv4);
+            writer.WriteObjectValue<UntypedNode>("ipv4", Ipv4);
             writer.WriteStringValue("message_type", MessageType);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("placement", Placement);
-            writer.WriteIntValue("port", Port);
+            writer.WriteObjectValue<UntypedNode>("placement", Placement);
+            writer.WriteLongValue("port", Port);
             writer.WriteStringValue("response_condition", ResponseCondition);
             writer.WriteStringValue("service_id", ServiceId);
-            writer.WriteStringValue("tls_ca_cert", TlsCaCert);
-            writer.WriteStringValue("tls_client_cert", TlsClientCert);
-            writer.WriteStringValue("tls_client_key", TlsClientKey);
-            writer.WriteStringValue("tls_hostname", TlsHostname);
-            writer.WriteStringValue("token", Token);
+            writer.WriteObjectValue<UntypedNode>("tls_ca_cert", TlsCaCert);
+            writer.WriteObjectValue<UntypedNode>("tls_client_cert", TlsClientCert);
+            writer.WriteObjectValue<UntypedNode>("tls_client_key", TlsClientKey);
+            writer.WriteObjectValue<UntypedNode>("tls_hostname", TlsHostname);
+            writer.WriteObjectValue<UntypedNode>("token", Token);
             writer.WriteStringValue("updated_at", UpdatedAt);
-            writer.WriteIntValue("use_tls", UseTls);
-            writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("use_tls", UseTls);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
