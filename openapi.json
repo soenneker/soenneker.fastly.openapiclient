@@ -22435,7 +22435,7 @@
           {
             "name": "dictionary_item_key",
             "in": "path",
-            "description": "Item key, maximum 256 characters.",
+            "description": "Item key, maximum 255 characters.",
             "required": true,
             "schema": {
               "type": "string"
@@ -22655,7 +22655,7 @@
           {
             "name": "dictionary_item_key",
             "in": "path",
-            "description": "Item key, maximum 256 characters.",
+            "description": "Item key, maximum 255 characters.",
             "required": true,
             "schema": {
               "type": "string"
@@ -22900,7 +22900,7 @@
           {
             "name": "dictionary_item_key",
             "in": "path",
-            "description": "Item key, maximum 256 characters.",
+            "description": "Item key, maximum 255 characters.",
             "required": true,
             "schema": {
               "type": "string"
@@ -23096,7 +23096,7 @@
           {
             "name": "dictionary_item_key",
             "in": "path",
-            "description": "Item key, maximum 256 characters.",
+            "description": "Item key, maximum 255 characters.",
             "required": true,
             "schema": {
               "type": "string"
@@ -189366,7 +189366,7 @@
     },
     {
       "name": "Dictionaries / Dictionary item",
-      "description": "A Dictionary Item is a single key-value pair that makes up an entry in a Dictionary. Dictionary Items can be added, removed and modified without activating a new version of the associated service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| item_key | string | Item key, maximum 256 characters. |\n| item_value | string | Item value, maximum 8000 characters. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| dictionary_id | string | Alphanumeric string identifying a Dictionary. |\n| service_id | string | Alphanumeric string identifying the service. |\n| updated_at | string | Date and time in ISO 8601 format. |"
+      "description": "A Dictionary Item is a single key-value pair that makes up an entry in a Dictionary. Dictionary Items can be added, removed and modified without activating a new version of the associated service.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| item_key | string | Item key, maximum 255 characters. |\n| item_value | string | Item value, maximum 8000 characters. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| dictionary_id | string | Alphanumeric string identifying a Dictionary. |\n| service_id | string | Alphanumeric string identifying the service. |\n| updated_at | string | Date and time in ISO 8601 format. |"
     },
     {
       "name": "Dictionaries / Dictionary",
@@ -190029,7 +190029,7 @@
     },
     {
       "key": "dictionary_item_key",
-      "description": "Item key, maximum 256 characters."
+      "description": "Item key, maximum 255 characters."
     },
     {
       "key": "dictionary_name",

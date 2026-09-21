@@ -16,7 +16,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id
     public partial class Item_by_idRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item.dictionary.item.item_by_id.item collection</summary>
-        /// <param name="position">Item key, maximum 256 characters.</param>
+        /// <param name="position">Item key, maximum 255 characters.</param>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id.Item.WithDictionaryItemKeyItemRequestBuilder"/></returns>
         public global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id.Item.WithDictionaryItemKeyItemRequestBuilder this[string position]
         {
