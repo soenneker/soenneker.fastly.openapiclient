@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Metrics.Bots;
 using Soenneker.Fastly.OpenApiClient.Metrics.Domains;
 using Soenneker.Fastly.OpenApiClient.Metrics.Origins;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MetricsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bots property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Metrics.Bots.BotsRequestBuilder Bots
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Metrics.Bots.BotsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The domains property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.DomainsRequestBuilder Domains
         {

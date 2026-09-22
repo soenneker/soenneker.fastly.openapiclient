@@ -73102,14 +73102,14 @@
         ]
       }
     },
-    "/metrics/domains/services/{service_id}": {
+    "/metrics/bots/entities/{service_id}/{granularity}": {
       "get": {
         "tags": [
-          "Domain metrics / Domain Inspector Historical API"
+          "Metrics and stats / Bot request metrics"
         ],
-        "summary": "Get historical domain data for a service",
-        "description": "Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-        "operationId": "GetHistoricalDomainDataForAService",
+        "summary": "Get per-service historical time series metrics for bot requests broken down by bot-type",
+        "description": "Return historical time series metrics for bot requests broken down by bot-type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetPerServiceHistoricalTimeSeriesMetricsForBotRequestsBrokenDownByBotType",
         "parameters": [
           {
             "name": "service_id",
@@ -73118,6 +73118,28 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "granularity",
+            "in": "path",
+            "description": "Duration of sample windows.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bot",
+            "in": "query",
+            "description": "Filter results based by Bot ID.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
             }
           },
           {
@@ -73147,35 +73169,9 @@
             }
           },
           {
-            "name": "domain",
+            "name": "from",
             "in": "query",
-            "description": "Limit query to one or more specific domains. Values should be comma-separated.",
-            "schema": {
-              "type": "string"
-            },
-            "examples": {
-              "example1": {
-                "value": ""
-              }
-            }
-          },
-          {
-            "name": "downsample",
-            "in": "query",
-            "description": "Duration of sample windows.",
-            "schema": {
-              "type": "string"
-            },
-            "examples": {
-              "example1": {
-                "value": ""
-              }
-            }
-          },
-          {
-            "name": "end",
-            "in": "query",
-            "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided downsample value.",
+            "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value.",
             "schema": {
               "type": "string"
             },
@@ -73188,7 +73184,7 @@
           {
             "name": "group_by",
             "in": "query",
-            "description": "Dimensions to return in the query. Multiple dimensions may be separated by commas.\nFor example, group_by=domain will return one timeseries for every domain, as a total across all datacenters (POPs).",
+            "description": "Field to group by in the query.\nFor example, group_by=bot_id will return entries grouped by timestamp and bot_id.",
             "schema": {
               "type": "string"
             },
@@ -73201,7 +73197,20 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "Number of results per page. The maximum is 200.",
+            "description": "Number of results per page. The maximum is 10000.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "metric_set",
+            "in": "query",
+            "description": "The metric set to retrieve.",
             "schema": {
               "type": "string"
             },
@@ -73214,7 +73223,7 @@
           {
             "name": "metric",
             "in": "query",
-            "description": "The metrics to retrieve. Multiple values should be comma-separated.",
+            "description": "The metric(s) to retrieve. Multiple values should be comma-separated.",
             "schema": {
               "type": "string"
             },
@@ -73238,9 +73247,9 @@
             }
           },
           {
-            "name": "start",
+            "name": "to",
             "in": "query",
-            "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided downsample value.",
+            "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value.",
             "schema": {
               "type": "string"
             },
@@ -73264,39 +73273,24 @@
                       "items": {
                         "type": "object",
                         "properties": {
-                          "dimensions": {
-                            "type": "object",
-                            "properties": {
-                              "domain": {
-                                "type": "string"
-                              },
-                              "region": {
-                                "type": "string"
-                              },
-                              "datacenter": {
-                                "type": "string"
-                              }
-                            }
+                          "timestamp": {
+                            "type": "string"
                           },
-                          "values": {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "timestamp": {
-                                  "type": "integer",
-                                  "format": "int64"
-                                },
-                                "resp_body_bytes": {
-                                  "type": "integer",
-                                  "format": "int64"
-                                },
-                                "status_2xx": {
-                                  "type": "integer",
-                                  "format": "int64"
-                                }
-                              }
-                            }
+                          "bot_edge_requests_allowed_count": {
+                            "type": "integer",
+                            "format": "int64"
+                          },
+                          "bot_edge_requests_challenged_count": {
+                            "type": "integer",
+                            "format": "int64"
+                          },
+                          "bot_edge_requests_blocked_count": {
+                            "type": "integer",
+                            "format": "int64"
+                          },
+                          "bot_edge_requests_challenge_token_valid_count": {
+                            "type": "integer",
+                            "format": "int64"
                           }
                         }
                       }
@@ -73304,38 +73298,23 @@
                     "meta": {
                       "type": "object",
                       "properties": {
-                        "start": {
-                          "type": "string"
-                        },
-                        "end": {
-                          "type": "string"
-                        },
-                        "downsample": {
-                          "type": "string"
-                        },
-                        "metric": {
+                        "next_cursor": {
                           "type": "string"
                         },
                         "limit": {
                           "type": "integer",
                           "format": "int64"
                         },
-                        "next_cursor": {
-                          "type": "string"
-                        },
-                        "sort": {
-                          "type": "string"
-                        },
                         "group_by": {
                           "type": "string"
                         },
-                        "filters": {
-                          "type": "object"
+                        "from": {
+                          "type": "string"
+                        },
+                        "to": {
+                          "type": "string"
                         }
                       }
-                    },
-                    "status": {
-                      "type": "string"
                     }
                   }
                 },
@@ -73345,56 +73324,34 @@
                     "value": {
                       "data": [
                         {
-                          "dimensions": {
-                            "domain": "domain1.com",
-                            "region": "usa",
-                            "datacenter": "SJC"
-                          },
-                          "values": [
-                            {
-                              "timestamp": 1627772400,
-                              "resp_body_bytes": 552256,
-                              "status_2xx": 1
-                            },
-                            {
-                              "timestamp": 1627776000,
-                              "resp_body_bytes": 12323,
-                              "status_2xx": 34
-                            }
-                          ]
+                          "timestamp": "2026-08-03T16:00:00.000Z",
+                          "bot_edge_requests_allowed_count": 10881,
+                          "bot_edge_requests_challenged_count": 10803,
+                          "bot_edge_requests_blocked_count": 10671,
+                          "bot_edge_requests_challenge_token_valid_count": 8
                         },
                         {
-                          "dimensions": {
-                            "domain": "sub.domain2.com",
-                            "region": "usa",
-                            "datacenter": "STP"
-                          },
-                          "values": [
-                            {
-                              "timestamp": 1627772400,
-                              "resp_body_bytes": 221,
-                              "status_2xx": 1
-                            },
-                            {
-                              "timestamp": 1627776000,
-                              "resp_body_bytes": 234,
-                              "status_2xx": 34
-                            }
-                          ]
+                          "timestamp": "2026-08-03T16:01:00.000Z",
+                          "bot_edge_requests_allowed_count": 10865,
+                          "bot_edge_requests_challenged_count": 10850,
+                          "bot_edge_requests_blocked_count": 10846,
+                          "bot_edge_requests_challenge_token_valid_count": 4
+                        },
+                        {
+                          "timestamp": "2026-08-03T16:02:00.000Z",
+                          "bot_edge_requests_allowed_count": 10009,
+                          "bot_edge_requests_challenged_count": 9994,
+                          "bot_edge_requests_blocked_count": 9994,
+                          "bot_edge_requests_challenge_token_valid_count": 10
                         }
                       ],
                       "meta": {
-                        "start": "2021-08-01T00:00:00Z",
-                        "end": "2020-08-02T00:00:00Z",
-                        "downsample": "hour",
-                        "metric": "resp_body_bytes,status_2xx",
-                        "limit": 100,
-                        "next_cursor": "VTBwRENqVTJXVmszUz",
-                        "sort": "domain,region,datacenter",
-                        "group_by": "none",
-                        "filters": { }
-                      },
-                      "status": "success"
+                        "next_cursor": "",
+                        "limit": 1000,
+                        "group_by": "timestamp",
+                        "from": "2026-08-03T16:00:00.000Z",
+                        "to": "2026-08-03T16:03:00.000Z"
+                      }
                     }
                   }
                 }
@@ -73414,24 +73371,29 @@
         ],
         "x-postman-variants": [
           {
-            "name": "Get historical domain data for a service",
+            "name": "Get per-service historical time series metrics for bot requests broken down by bot-type",
             "id": null,
             "request": {
-              "name": "Get historical domain data for a service",
-              "description": "Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "name": "Get per-service historical time series metrics for bot requests broken down by bot-type",
+              "description": "Return historical time series metrics for bot requests broken down by bot-type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "GET",
               "url": {
-                "raw": "{{fastly_url}}/metrics/domains/services/{{service_id}}",
+                "raw": "{{fastly_url}}/metrics/bots/entities/{{service_id}}/{{granularity}}",
                 "path": [
                   "metrics",
-                  "domains",
-                  "services",
-                  "{{service_id}}"
+                  "bots",
+                  "entities",
+                  "{{service_id}}",
+                  "{{granularity}}"
                 ],
                 "host": [
                   "{{fastly_url}}"
                 ],
                 "query": [
+                  {
+                    "key": "bot",
+                    "description": "Filter results based by Bot ID."
+                  },
                   {
                     "key": "cursor",
                     "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
@@ -73441,36 +73403,32 @@
                     "description": "Limit query to one or more specific POPs. Values should be comma-separated."
                   },
                   {
-                    "key": "domain",
-                    "description": "Limit query to one or more specific domains. Values should be comma-separated."
-                  },
-                  {
-                    "key": "downsample",
-                    "description": "Duration of sample windows."
-                  },
-                  {
-                    "key": "end",
-                    "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided downsample value."
+                    "key": "from",
+                    "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value."
                   },
                   {
                     "key": "group_by",
-                    "description": "Dimensions to return in the query. Multiple dimensions may be separated by commas.\nFor example, group_by=domain will return one timeseries for every domain, as a total across all datacenters (POPs)."
+                    "description": "Field to group by in the query.\nFor example, group_by=bot_id will return entries grouped by timestamp and bot_id."
                   },
                   {
                     "key": "limit",
-                    "description": "Number of results per page. The maximum is 200."
+                    "description": "Number of results per page. The maximum is 10000."
+                  },
+                  {
+                    "key": "metric_set",
+                    "description": "The metric set to retrieve."
                   },
                   {
                     "key": "metric",
-                    "description": "The metrics to retrieve. Multiple values should be comma-separated."
+                    "description": "The metric(s) to retrieve. Multiple values should be comma-separated."
                   },
                   {
                     "key": "region",
                     "description": "Limit query to one or more specific geographic regions. Values should be comma-separated."
                   },
                   {
-                    "key": "start",
-                    "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided downsample value."
+                    "key": "to",
+                    "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value."
                   }
                 ]
               },
@@ -73506,23 +73464,28 @@
                 "name": "200 OK",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"data\":[{\"dimensions\":{\"domain\":\"domain1.com\",\"region\":\"usa\",\"datacenter\":\"SJC\"},\"values\":[{\"timestamp\":1627772400,\"resp_body_bytes\":552256,\"status_2xx\":1},{\"timestamp\":1627776000,\"resp_body_bytes\":12323,\"status_2xx\":34}]},{\"dimensions\":{\"domain\":\"sub.domain2.com\",\"region\":\"usa\",\"datacenter\":\"STP\"},\"values\":[{\"timestamp\":1627772400,\"resp_body_bytes\":221,\"status_2xx\":1},{\"timestamp\":1627776000,\"resp_body_bytes\":234,\"status_2xx\":34}]}],\"meta\":{\"start\":\"2021-08-01T00:00:00Z\",\"end\":\"2020-08-02T00:00:00Z\",\"downsample\":\"hour\",\"metric\":\"resp_body_bytes,status_2xx\",\"limit\":100,\"next_cursor\":\"VTBwRENqVTJXVmszUz\",\"sort\":\"domain,region,datacenter\",\"group_by\":\"none\",\"filters\":{}},\"status\":\"success\"}",
+                "body": "{\"data\":[{\"timestamp\":\"2026-08-03T16:00:00.000Z\",\"bot_edge_requests_allowed_count\":10881,\"bot_edge_requests_challenged_count\":10803,\"bot_edge_requests_blocked_count\":10671,\"bot_edge_requests_challenge_token_valid_count\":8},{\"timestamp\":\"2026-08-03T16:01:00.000Z\",\"bot_edge_requests_allowed_count\":10865,\"bot_edge_requests_challenged_count\":10850,\"bot_edge_requests_blocked_count\":10846,\"bot_edge_requests_challenge_token_valid_count\":4},{\"timestamp\":\"2026-08-03T16:02:00.000Z\",\"bot_edge_requests_allowed_count\":10009,\"bot_edge_requests_challenged_count\":9994,\"bot_edge_requests_blocked_count\":9994,\"bot_edge_requests_challenge_token_valid_count\":10}],\"meta\":{\"next_cursor\":\"\",\"limit\":1000,\"group_by\":\"timestamp\",\"from\":\"2026-08-03T16:00:00.000Z\",\"to\":\"2026-08-03T16:03:00.000Z\"}}",
                 "originalRequest": {
-                  "name": "Get historical domain data for a service",
-                  "description": "Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "name": "Get per-service historical time series metrics for bot requests broken down by bot-type",
+                  "description": "Return historical time series metrics for bot requests broken down by bot-type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "GET",
                   "url": {
-                    "raw": "https://api.fastly.com/metrics/domains/services/SU1Z0isxPaozGVKXdv0eY?datacenter=SJC%2CSTP&domain=domain_1.com%2Cdomain_2.com&downsample=hour&end=2020-08-02T00%3A00%3A00.000Z&group_by=domain&metric=resp_body_bytes%2Cstatus_2xx&region=usa&start=2021-08-01T00%3A00%3A00.000Z",
+                    "raw": "https://api.fastly.com/metrics/bots/entities/SU1Z0isxPaozGVKXdv0eY/minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=bot_id&metric_set=content_guard&metric=ttfb_edge_p95_us%2Cttfb_edge_p99_us&region=usa&to=2025-08-02T00%3A00%3A00.000Z",
                     "path": [
                       "metrics",
-                      "domains",
-                      "services",
-                      "SU1Z0isxPaozGVKXdv0eY?datacenter=SJC%2CSTP&domain=domain_1.com%2Cdomain_2.com&downsample=hour&end=2020-08-02T00%3A00%3A00.000Z&group_by=domain&metric=resp_body_bytes%2Cstatus_2xx&region=usa&start=2021-08-01T00%3A00%3A00.000Z"
+                      "bots",
+                      "entities",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=bot_id&metric_set=content_guard&metric=ttfb_edge_p95_us%2Cttfb_edge_p99_us&region=usa&to=2025-08-02T00%3A00%3A00.000Z"
                     ],
                     "host": [
                       "https://api.fastly.com"
                     ],
                     "query": [
+                      {
+                        "key": "bot",
+                        "description": "Filter results based by Bot ID."
+                      },
                       {
                         "key": "cursor",
                         "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
@@ -73532,36 +73495,32 @@
                         "description": "Limit query to one or more specific POPs. Values should be comma-separated."
                       },
                       {
-                        "key": "domain",
-                        "description": "Limit query to one or more specific domains. Values should be comma-separated."
-                      },
-                      {
-                        "key": "downsample",
-                        "description": "Duration of sample windows."
-                      },
-                      {
-                        "key": "end",
-                        "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided downsample value."
+                        "key": "from",
+                        "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value."
                       },
                       {
                         "key": "group_by",
-                        "description": "Dimensions to return in the query. Multiple dimensions may be separated by commas.\nFor example, group_by=domain will return one timeseries for every domain, as a total across all datacenters (POPs)."
+                        "description": "Field to group by in the query.\nFor example, group_by=bot_id will return entries grouped by timestamp and bot_id."
                       },
                       {
                         "key": "limit",
-                        "description": "Number of results per page. The maximum is 200."
+                        "description": "Number of results per page. The maximum is 10000."
+                      },
+                      {
+                        "key": "metric_set",
+                        "description": "The metric set to retrieve."
                       },
                       {
                         "key": "metric",
-                        "description": "The metrics to retrieve. Multiple values should be comma-separated."
+                        "description": "The metric(s) to retrieve. Multiple values should be comma-separated."
                       },
                       {
                         "key": "region",
                         "description": "Limit query to one or more specific geographic regions. Values should be comma-separated."
                       },
                       {
-                        "key": "start",
-                        "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided downsample value."
+                        "key": "to",
+                        "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value."
                       }
                     ]
                   },
@@ -73594,888 +73553,8 @@
               }
             ],
             "folders": [
-              "Domain metrics",
-              "Domain Inspector Historical API"
-            ],
-            "effectiveAuth": {
-              "type": "apikey",
-              "apikey": [
-                {
-                  "key": "value",
-                  "value": "{{fastly_key}}",
-                  "type": "string"
-                },
-                {
-                  "key": "key",
-                  "value": "Fastly-Key",
-                  "type": "string"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    "/v1/domains/{service_id}/ts/{start_timestamp}": {
-      "get": {
-        "tags": [
-          "Domain metrics / Domain Inspector Real-time API"
-        ],
-        "summary": "Get real-time domain data from a specified time",
-        "description": "Get real-time domain data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.\nDue to processing latency, the earliest entry in the response dataset may be earlier than start_timestamp by the value of AggregateDelay.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-        "operationId": "GetRealTimeDomainDataFromASpecifiedTime",
-        "parameters": [
-          {
-            "name": "service_id",
-            "in": "path",
-            "description": "Alphanumeric string identifying the service.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "start_timestamp",
-            "in": "path",
-            "description": "Timestamp in seconds (Unix epoch time).",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "Data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "datacenter": {
-                            "type": "object",
-                            "properties": {
-                              "STP": {
-                                "type": "object",
-                                "properties": {
-                                  "www.example.com": {
-                                    "type": "object",
-                                    "properties": {
-                                      "edge": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "resp_header_bytes": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "resp_body_bytes": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "status_4xx": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "status_403": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "aggregated": {
-                            "type": "object",
-                            "properties": {
-                              "www.example.com": {
-                                "type": "object",
-                                "properties": {
-                                  "edge": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "resp_header_bytes": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "resp_body_bytes": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "status_4xx": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "status_403": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "recorded": {
-                            "type": "integer",
-                            "format": "int64"
-                          }
-                        }
-                      }
-                    },
-                    "Timestamp": {
-                      "type": "integer",
-                      "format": "int64"
-                    },
-                    "AggregateDelay": {
-                      "type": "integer",
-                      "format": "int64"
-                    }
-                  }
-                },
-                "examples": {
-                  "200_OK": {
-                    "summary": "200 OK",
-                    "value": {
-                      "Data": [
-                        {
-                          "datacenter": {
-                            "STP": {
-                              "www.example.com": {
-                                "edge": 5,
-                                "resp_header_bytes": 1200,
-                                "resp_body_bytes": 1850,
-                                "status_4xx": 5,
-                                "status_403": 5
-                              }
-                            }
-                          },
-                          "aggregated": {
-                            "www.example.com": {
-                              "edge": 5,
-                              "resp_header_bytes": 1200,
-                              "resp_body_bytes": 1850,
-                              "status_4xx": 5,
-                              "status_403": 5
-                            }
-                          },
-                          "recorded": 1589198016
-                        }
-                      ],
-                      "Timestamp": 1589198025,
-                      "AggregateDelay": 9
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "apikeyAuth": [ ]
-          }
-        ],
-        "servers": [
-          {
-            "url": "https://api.fastly.com"
-          }
-        ],
-        "x-postman-variants": [
-          {
-            "name": "Get real-time domain data from a specified time",
-            "id": null,
-            "request": {
-              "name": "Get real-time domain data from a specified time",
-              "description": "Get real-time domain data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.\nDue to processing latency, the earliest entry in the response dataset may be earlier than start_timestamp by the value of AggregateDelay.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-              "method": "GET",
-              "url": {
-                "raw": "{{fastly_url}}/v1/domains/{{service_id}}/ts/{{start_timestamp}}",
-                "path": [
-                  "v1",
-                  "domains",
-                  "{{service_id}}",
-                  "ts",
-                  "{{start_timestamp}}"
-                ],
-                "host": [
-                  "{{fastly_url}}"
-                ],
-                "query": [ ]
-              },
-              "header": [
-                {
-                  "key": "Host",
-                  "value": "rt.fastly.com"
-                },
-                {
-                  "key": "Accept",
-                  "value": "application/json"
-                }
-              ],
-              "auth": {
-                "type": "apikey",
-                "apikey": [
-                  {
-                    "key": "value",
-                    "value": "{{fastly_key}}",
-                    "type": "string"
-                  },
-                  {
-                    "key": "key",
-                    "value": "Fastly-Key",
-                    "type": "string"
-                  }
-                ]
-              }
-            },
-            "response": [
-              {
-                "status": "200 OK",
-                "name": "200 OK",
-                "code": 200,
-                "header": [ ],
-                "body": "{\"Data\":[{\"datacenter\":{\"STP\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}}},\"aggregated\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}},\"recorded\":1589198016}],\"Timestamp\":1589198025,\"AggregateDelay\":9}",
-                "originalRequest": {
-                  "name": "Get real-time domain data from a specified time",
-                  "description": "Get real-time domain data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.\nDue to processing latency, the earliest entry in the response dataset may be earlier than start_timestamp by the value of AggregateDelay.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-                  "method": "GET",
-                  "url": {
-                    "raw": "https://api.fastly.com/v1/domains/SU1Z0isxPaozGVKXdv0eY/ts/1608560817",
-                    "path": [
-                      "v1",
-                      "domains",
-                      "SU1Z0isxPaozGVKXdv0eY",
-                      "ts",
-                      "1608560817"
-                    ],
-                    "host": [
-                      "https://api.fastly.com"
-                    ],
-                    "query": [ ]
-                  },
-                  "header": [
-                    {
-                      "key": "Host",
-                      "value": "rt.fastly.com"
-                    },
-                    {
-                      "key": "Accept",
-                      "value": "application/json"
-                    }
-                  ],
-                  "auth": {
-                    "type": "apikey",
-                    "apikey": [
-                      {
-                        "key": "value",
-                        "value": "{{fastly_key}}",
-                        "type": "string"
-                      },
-                      {
-                        "key": "key",
-                        "value": "Fastly-Key",
-                        "type": "string"
-                      }
-                    ]
-                  }
-                }
-              }
-            ],
-            "folders": [
-              "Domain metrics",
-              "Domain Inspector Real-time API"
-            ],
-            "effectiveAuth": {
-              "type": "apikey",
-              "apikey": [
-                {
-                  "key": "value",
-                  "value": "{{fastly_key}}",
-                  "type": "string"
-                },
-                {
-                  "key": "key",
-                  "value": "Fastly-Key",
-                  "type": "string"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    "/v1/domains/{service_id}/ts/h": {
-      "get": {
-        "tags": [
-          "Domain metrics / Domain Inspector Real-time API"
-        ],
-        "summary": "Get real-time domain data for the last 120 seconds",
-        "description": "Get data for the 120 seconds preceding the latest timestamp available for a service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-        "operationId": "GetRealTimeDomainDataForTheLast120Seconds",
-        "parameters": [
-          {
-            "name": "service_id",
-            "in": "path",
-            "description": "Alphanumeric string identifying the service.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "Data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "datacenter": {
-                            "type": "object",
-                            "properties": {
-                              "STP": {
-                                "type": "object",
-                                "properties": {
-                                  "www.example.com": {
-                                    "type": "object",
-                                    "properties": {
-                                      "edge": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "resp_header_bytes": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "resp_body_bytes": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "status_4xx": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "status_403": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "aggregated": {
-                            "type": "object",
-                            "properties": {
-                              "www.example.com": {
-                                "type": "object",
-                                "properties": {
-                                  "edge": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "resp_header_bytes": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "resp_body_bytes": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "status_4xx": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "status_403": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "recorded": {
-                            "type": "integer",
-                            "format": "int64"
-                          }
-                        }
-                      }
-                    },
-                    "Timestamp": {
-                      "type": "integer",
-                      "format": "int64"
-                    },
-                    "AggregateDelay": {
-                      "type": "integer",
-                      "format": "int64"
-                    }
-                  }
-                },
-                "examples": {
-                  "200_OK": {
-                    "summary": "200 OK",
-                    "value": {
-                      "Data": [
-                        {
-                          "datacenter": {
-                            "STP": {
-                              "www.example.com": {
-                                "edge": 5,
-                                "resp_header_bytes": 1200,
-                                "resp_body_bytes": 1850,
-                                "status_4xx": 5,
-                                "status_403": 5
-                              }
-                            }
-                          },
-                          "aggregated": {
-                            "www.example.com": {
-                              "edge": 5,
-                              "resp_header_bytes": 1200,
-                              "resp_body_bytes": 1850,
-                              "status_4xx": 5,
-                              "status_403": 5
-                            }
-                          },
-                          "recorded": 1589198016
-                        }
-                      ],
-                      "Timestamp": 1589198025,
-                      "AggregateDelay": 9
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "apikeyAuth": [ ]
-          }
-        ],
-        "servers": [
-          {
-            "url": "https://api.fastly.com"
-          }
-        ],
-        "x-postman-variants": [
-          {
-            "name": "Get real-time domain data for the last 120 seconds",
-            "id": null,
-            "request": {
-              "name": "Get real-time domain data for the last 120 seconds",
-              "description": "Get data for the 120 seconds preceding the latest timestamp available for a service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-              "method": "GET",
-              "url": {
-                "raw": "{{fastly_url}}/v1/domains/{{service_id}}/ts/h",
-                "path": [
-                  "v1",
-                  "domains",
-                  "{{service_id}}",
-                  "ts",
-                  "h"
-                ],
-                "host": [
-                  "{{fastly_url}}"
-                ],
-                "query": [ ]
-              },
-              "header": [
-                {
-                  "key": "Host",
-                  "value": "rt.fastly.com"
-                },
-                {
-                  "key": "Accept",
-                  "value": "application/json"
-                }
-              ],
-              "auth": {
-                "type": "apikey",
-                "apikey": [
-                  {
-                    "key": "value",
-                    "value": "{{fastly_key}}",
-                    "type": "string"
-                  },
-                  {
-                    "key": "key",
-                    "value": "Fastly-Key",
-                    "type": "string"
-                  }
-                ]
-              }
-            },
-            "response": [
-              {
-                "status": "200 OK",
-                "name": "200 OK",
-                "code": 200,
-                "header": [ ],
-                "body": "{\"Data\":[{\"datacenter\":{\"STP\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}}},\"aggregated\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}},\"recorded\":1589198016}],\"Timestamp\":1589198025,\"AggregateDelay\":9}",
-                "originalRequest": {
-                  "name": "Get real-time domain data for the last 120 seconds",
-                  "description": "Get data for the 120 seconds preceding the latest timestamp available for a service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-                  "method": "GET",
-                  "url": {
-                    "raw": "https://api.fastly.com/v1/domains/SU1Z0isxPaozGVKXdv0eY/ts/h",
-                    "path": [
-                      "v1",
-                      "domains",
-                      "SU1Z0isxPaozGVKXdv0eY",
-                      "ts",
-                      "h"
-                    ],
-                    "host": [
-                      "https://api.fastly.com"
-                    ],
-                    "query": [ ]
-                  },
-                  "header": [
-                    {
-                      "key": "Host",
-                      "value": "rt.fastly.com"
-                    },
-                    {
-                      "key": "Accept",
-                      "value": "application/json"
-                    }
-                  ],
-                  "auth": {
-                    "type": "apikey",
-                    "apikey": [
-                      {
-                        "key": "value",
-                        "value": "{{fastly_key}}",
-                        "type": "string"
-                      },
-                      {
-                        "key": "key",
-                        "value": "Fastly-Key",
-                        "type": "string"
-                      }
-                    ]
-                  }
-                }
-              }
-            ],
-            "folders": [
-              "Domain metrics",
-              "Domain Inspector Real-time API"
-            ],
-            "effectiveAuth": {
-              "type": "apikey",
-              "apikey": [
-                {
-                  "key": "value",
-                  "value": "{{fastly_key}}",
-                  "type": "string"
-                },
-                {
-                  "key": "key",
-                  "value": "Fastly-Key",
-                  "type": "string"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    "/v1/domains/{service_id}/ts/h/limit/{max_entries}": {
-      "get": {
-        "tags": [
-          "Domain metrics / Domain Inspector Real-time API"
-        ],
-        "summary": "Get a limited number of real-time domain data entries",
-        "description": "Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-        "operationId": "GetALimitedNumberOfRealTimeDomainDataEntries",
-        "parameters": [
-          {
-            "name": "service_id",
-            "in": "path",
-            "description": "Alphanumeric string identifying the service.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "max_entries",
-            "in": "path",
-            "description": "Maximum number of results to show.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "Data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "datacenter": {
-                            "type": "object",
-                            "properties": {
-                              "STP": {
-                                "type": "object",
-                                "properties": {
-                                  "www.example.com": {
-                                    "type": "object",
-                                    "properties": {
-                                      "edge": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "resp_header_bytes": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "resp_body_bytes": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "status_4xx": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      },
-                                      "status_403": {
-                                        "type": "integer",
-                                        "format": "int64"
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "aggregated": {
-                            "type": "object",
-                            "properties": {
-                              "www.example.com": {
-                                "type": "object",
-                                "properties": {
-                                  "edge": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "resp_header_bytes": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "resp_body_bytes": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "status_4xx": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  },
-                                  "status_403": {
-                                    "type": "integer",
-                                    "format": "int64"
-                                  }
-                                }
-                              }
-                            }
-                          },
-                          "recorded": {
-                            "type": "integer",
-                            "format": "int64"
-                          }
-                        }
-                      }
-                    },
-                    "Timestamp": {
-                      "type": "integer",
-                      "format": "int64"
-                    },
-                    "AggregateDelay": {
-                      "type": "integer",
-                      "format": "int64"
-                    }
-                  }
-                },
-                "examples": {
-                  "200_OK": {
-                    "summary": "200 OK",
-                    "value": {
-                      "Data": [
-                        {
-                          "datacenter": {
-                            "STP": {
-                              "www.example.com": {
-                                "edge": 5,
-                                "resp_header_bytes": 1200,
-                                "resp_body_bytes": 1850,
-                                "status_4xx": 5,
-                                "status_403": 5
-                              }
-                            }
-                          },
-                          "aggregated": {
-                            "www.example.com": {
-                              "edge": 5,
-                              "resp_header_bytes": 1200,
-                              "resp_body_bytes": 1850,
-                              "status_4xx": 5,
-                              "status_403": 5
-                            }
-                          },
-                          "recorded": 1589198016
-                        }
-                      ],
-                      "Timestamp": 1589198025,
-                      "AggregateDelay": 9
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "apikeyAuth": [ ]
-          }
-        ],
-        "servers": [
-          {
-            "url": "https://api.fastly.com"
-          }
-        ],
-        "x-postman-variants": [
-          {
-            "name": "Get a limited number of real-time domain data entries",
-            "id": null,
-            "request": {
-              "name": "Get a limited number of real-time domain data entries",
-              "description": "Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-              "method": "GET",
-              "url": {
-                "raw": "{{fastly_url}}/v1/domains/{{service_id}}/ts/h/limit/{{max_entries}}",
-                "path": [
-                  "v1",
-                  "domains",
-                  "{{service_id}}",
-                  "ts",
-                  "h",
-                  "limit",
-                  "{{max_entries}}"
-                ],
-                "host": [
-                  "{{fastly_url}}"
-                ],
-                "query": [ ]
-              },
-              "header": [
-                {
-                  "key": "Host",
-                  "value": "rt.fastly.com"
-                },
-                {
-                  "key": "Accept",
-                  "value": "application/json"
-                }
-              ],
-              "auth": {
-                "type": "apikey",
-                "apikey": [
-                  {
-                    "key": "value",
-                    "value": "{{fastly_key}}",
-                    "type": "string"
-                  },
-                  {
-                    "key": "key",
-                    "value": "Fastly-Key",
-                    "type": "string"
-                  }
-                ]
-              }
-            },
-            "response": [
-              {
-                "status": "200 OK",
-                "name": "200 OK",
-                "code": 200,
-                "header": [ ],
-                "body": "{\"Data\":[{\"datacenter\":{\"STP\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}}},\"aggregated\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}},\"recorded\":1589198016}],\"Timestamp\":1589198025,\"AggregateDelay\":9}",
-                "originalRequest": {
-                  "name": "Get a limited number of real-time domain data entries",
-                  "description": "Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
-                  "method": "GET",
-                  "url": {
-                    "raw": "https://api.fastly.com/v1/domains/SU1Z0isxPaozGVKXdv0eY/ts/h/limit/1",
-                    "path": [
-                      "v1",
-                      "domains",
-                      "SU1Z0isxPaozGVKXdv0eY",
-                      "ts",
-                      "h",
-                      "limit",
-                      "1"
-                    ],
-                    "host": [
-                      "https://api.fastly.com"
-                    ],
-                    "query": [ ]
-                  },
-                  "header": [
-                    {
-                      "key": "Host",
-                      "value": "rt.fastly.com"
-                    },
-                    {
-                      "key": "Accept",
-                      "value": "application/json"
-                    }
-                  ],
-                  "auth": {
-                    "type": "apikey",
-                    "apikey": [
-                      {
-                        "key": "value",
-                        "value": "{{fastly_key}}",
-                        "type": "string"
-                      },
-                      {
-                        "key": "key",
-                        "value": "Fastly-Key",
-                        "type": "string"
-                      }
-                    ]
-                  }
-                }
-              }
-            ],
-            "folders": [
-              "Domain metrics",
-              "Domain Inspector Real-time API"
+              "Metrics and stats",
+              "Bot request metrics"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -81207,6 +80286,1400 @@
             "folders": [
               "Metrics and stats",
               "Stats"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/metrics/domains/services/{service_id}": {
+      "get": {
+        "tags": [
+          "Domain metrics / Domain Inspector Historical API"
+        ],
+        "summary": "Get historical domain data for a service",
+        "description": "Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetHistoricalDomainDataForAService",
+        "parameters": [
+          {
+            "name": "service_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "datacenter",
+            "in": "query",
+            "description": "Limit query to one or more specific POPs. Values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "description": "Limit query to one or more specific domains. Values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "downsample",
+            "in": "query",
+            "description": "Duration of sample windows.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided downsample value.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "group_by",
+            "in": "query",
+            "description": "Dimensions to return in the query. Multiple dimensions may be separated by commas.\nFor example, group_by=domain will return one timeseries for every domain, as a total across all datacenters (POPs).",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page. The maximum is 200.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "metric",
+            "in": "query",
+            "description": "The metrics to retrieve. Multiple values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "description": "Limit query to one or more specific geographic regions. Values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided downsample value.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "dimensions": {
+                            "type": "object",
+                            "properties": {
+                              "domain": {
+                                "type": "string"
+                              },
+                              "region": {
+                                "type": "string"
+                              },
+                              "datacenter": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "values": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "timestamp": {
+                                  "type": "integer",
+                                  "format": "int64"
+                                },
+                                "resp_body_bytes": {
+                                  "type": "integer",
+                                  "format": "int64"
+                                },
+                                "status_2xx": {
+                                  "type": "integer",
+                                  "format": "int64"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "string"
+                        },
+                        "end": {
+                          "type": "string"
+                        },
+                        "downsample": {
+                          "type": "string"
+                        },
+                        "metric": {
+                          "type": "string"
+                        },
+                        "limit": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "next_cursor": {
+                          "type": "string"
+                        },
+                        "sort": {
+                          "type": "string"
+                        },
+                        "group_by": {
+                          "type": "string"
+                        },
+                        "filters": {
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "data": [
+                        {
+                          "dimensions": {
+                            "domain": "domain1.com",
+                            "region": "usa",
+                            "datacenter": "SJC"
+                          },
+                          "values": [
+                            {
+                              "timestamp": 1627772400,
+                              "resp_body_bytes": 552256,
+                              "status_2xx": 1
+                            },
+                            {
+                              "timestamp": 1627776000,
+                              "resp_body_bytes": 12323,
+                              "status_2xx": 34
+                            }
+                          ]
+                        },
+                        {
+                          "dimensions": {
+                            "domain": "sub.domain2.com",
+                            "region": "usa",
+                            "datacenter": "STP"
+                          },
+                          "values": [
+                            {
+                              "timestamp": 1627772400,
+                              "resp_body_bytes": 221,
+                              "status_2xx": 1
+                            },
+                            {
+                              "timestamp": 1627776000,
+                              "resp_body_bytes": 234,
+                              "status_2xx": 34
+                            }
+                          ]
+                        }
+                      ],
+                      "meta": {
+                        "start": "2021-08-01T00:00:00Z",
+                        "end": "2020-08-02T00:00:00Z",
+                        "downsample": "hour",
+                        "metric": "resp_body_bytes,status_2xx",
+                        "limit": 100,
+                        "next_cursor": "VTBwRENqVTJXVmszUz",
+                        "sort": "domain,region,datacenter",
+                        "group_by": "none",
+                        "filters": { }
+                      },
+                      "status": "success"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get historical domain data for a service",
+            "id": null,
+            "request": {
+              "name": "Get historical domain data for a service",
+              "description": "Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/metrics/domains/services/{{service_id}}",
+                "path": [
+                  "metrics",
+                  "domains",
+                  "services",
+                  "{{service_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                  },
+                  {
+                    "key": "datacenter",
+                    "description": "Limit query to one or more specific POPs. Values should be comma-separated."
+                  },
+                  {
+                    "key": "domain",
+                    "description": "Limit query to one or more specific domains. Values should be comma-separated."
+                  },
+                  {
+                    "key": "downsample",
+                    "description": "Duration of sample windows."
+                  },
+                  {
+                    "key": "end",
+                    "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided downsample value."
+                  },
+                  {
+                    "key": "group_by",
+                    "description": "Dimensions to return in the query. Multiple dimensions may be separated by commas.\nFor example, group_by=domain will return one timeseries for every domain, as a total across all datacenters (POPs)."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Number of results per page. The maximum is 200."
+                  },
+                  {
+                    "key": "metric",
+                    "description": "The metrics to retrieve. Multiple values should be comma-separated."
+                  },
+                  {
+                    "key": "region",
+                    "description": "Limit query to one or more specific geographic regions. Values should be comma-separated."
+                  },
+                  {
+                    "key": "start",
+                    "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided downsample value."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"data\":[{\"dimensions\":{\"domain\":\"domain1.com\",\"region\":\"usa\",\"datacenter\":\"SJC\"},\"values\":[{\"timestamp\":1627772400,\"resp_body_bytes\":552256,\"status_2xx\":1},{\"timestamp\":1627776000,\"resp_body_bytes\":12323,\"status_2xx\":34}]},{\"dimensions\":{\"domain\":\"sub.domain2.com\",\"region\":\"usa\",\"datacenter\":\"STP\"},\"values\":[{\"timestamp\":1627772400,\"resp_body_bytes\":221,\"status_2xx\":1},{\"timestamp\":1627776000,\"resp_body_bytes\":234,\"status_2xx\":34}]}],\"meta\":{\"start\":\"2021-08-01T00:00:00Z\",\"end\":\"2020-08-02T00:00:00Z\",\"downsample\":\"hour\",\"metric\":\"resp_body_bytes,status_2xx\",\"limit\":100,\"next_cursor\":\"VTBwRENqVTJXVmszUz\",\"sort\":\"domain,region,datacenter\",\"group_by\":\"none\",\"filters\":{}},\"status\":\"success\"}",
+                "originalRequest": {
+                  "name": "Get historical domain data for a service",
+                  "description": "Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/metrics/domains/services/SU1Z0isxPaozGVKXdv0eY?datacenter=SJC%2CSTP&domain=domain_1.com%2Cdomain_2.com&downsample=hour&end=2020-08-02T00%3A00%3A00.000Z&group_by=domain&metric=resp_body_bytes%2Cstatus_2xx&region=usa&start=2021-08-01T00%3A00%3A00.000Z",
+                    "path": [
+                      "metrics",
+                      "domains",
+                      "services",
+                      "SU1Z0isxPaozGVKXdv0eY?datacenter=SJC%2CSTP&domain=domain_1.com%2Cdomain_2.com&downsample=hour&end=2020-08-02T00%3A00%3A00.000Z&group_by=domain&metric=resp_body_bytes%2Cstatus_2xx&region=usa&start=2021-08-01T00%3A00%3A00.000Z"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                      },
+                      {
+                        "key": "datacenter",
+                        "description": "Limit query to one or more specific POPs. Values should be comma-separated."
+                      },
+                      {
+                        "key": "domain",
+                        "description": "Limit query to one or more specific domains. Values should be comma-separated."
+                      },
+                      {
+                        "key": "downsample",
+                        "description": "Duration of sample windows."
+                      },
+                      {
+                        "key": "end",
+                        "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided downsample value."
+                      },
+                      {
+                        "key": "group_by",
+                        "description": "Dimensions to return in the query. Multiple dimensions may be separated by commas.\nFor example, group_by=domain will return one timeseries for every domain, as a total across all datacenters (POPs)."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Number of results per page. The maximum is 200."
+                      },
+                      {
+                        "key": "metric",
+                        "description": "The metrics to retrieve. Multiple values should be comma-separated."
+                      },
+                      {
+                        "key": "region",
+                        "description": "Limit query to one or more specific geographic regions. Values should be comma-separated."
+                      },
+                      {
+                        "key": "start",
+                        "description": "A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided downsample value."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Domain metrics",
+              "Domain Inspector Historical API"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/v1/domains/{service_id}/ts/{start_timestamp}": {
+      "get": {
+        "tags": [
+          "Domain metrics / Domain Inspector Real-time API"
+        ],
+        "summary": "Get real-time domain data from a specified time",
+        "description": "Get real-time domain data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.\nDue to processing latency, the earliest entry in the response dataset may be earlier than start_timestamp by the value of AggregateDelay.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetRealTimeDomainDataFromASpecifiedTime",
+        "parameters": [
+          {
+            "name": "service_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_timestamp",
+            "in": "path",
+            "description": "Timestamp in seconds (Unix epoch time).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "datacenter": {
+                            "type": "object",
+                            "properties": {
+                              "STP": {
+                                "type": "object",
+                                "properties": {
+                                  "www.example.com": {
+                                    "type": "object",
+                                    "properties": {
+                                      "edge": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "resp_header_bytes": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "resp_body_bytes": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "status_4xx": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "status_403": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "aggregated": {
+                            "type": "object",
+                            "properties": {
+                              "www.example.com": {
+                                "type": "object",
+                                "properties": {
+                                  "edge": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "resp_header_bytes": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "resp_body_bytes": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "status_4xx": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "status_403": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "recorded": {
+                            "type": "integer",
+                            "format": "int64"
+                          }
+                        }
+                      }
+                    },
+                    "Timestamp": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "AggregateDelay": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "Data": [
+                        {
+                          "datacenter": {
+                            "STP": {
+                              "www.example.com": {
+                                "edge": 5,
+                                "resp_header_bytes": 1200,
+                                "resp_body_bytes": 1850,
+                                "status_4xx": 5,
+                                "status_403": 5
+                              }
+                            }
+                          },
+                          "aggregated": {
+                            "www.example.com": {
+                              "edge": 5,
+                              "resp_header_bytes": 1200,
+                              "resp_body_bytes": 1850,
+                              "status_4xx": 5,
+                              "status_403": 5
+                            }
+                          },
+                          "recorded": 1589198016
+                        }
+                      ],
+                      "Timestamp": 1589198025,
+                      "AggregateDelay": 9
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get real-time domain data from a specified time",
+            "id": null,
+            "request": {
+              "name": "Get real-time domain data from a specified time",
+              "description": "Get real-time domain data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.\nDue to processing latency, the earliest entry in the response dataset may be earlier than start_timestamp by the value of AggregateDelay.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/v1/domains/{{service_id}}/ts/{{start_timestamp}}",
+                "path": [
+                  "v1",
+                  "domains",
+                  "{{service_id}}",
+                  "ts",
+                  "{{start_timestamp}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "rt.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"Data\":[{\"datacenter\":{\"STP\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}}},\"aggregated\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}},\"recorded\":1589198016}],\"Timestamp\":1589198025,\"AggregateDelay\":9}",
+                "originalRequest": {
+                  "name": "Get real-time domain data from a specified time",
+                  "description": "Get real-time domain data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.\nDue to processing latency, the earliest entry in the response dataset may be earlier than start_timestamp by the value of AggregateDelay.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/v1/domains/SU1Z0isxPaozGVKXdv0eY/ts/1608560817",
+                    "path": [
+                      "v1",
+                      "domains",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "ts",
+                      "1608560817"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "rt.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Domain metrics",
+              "Domain Inspector Real-time API"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/v1/domains/{service_id}/ts/h": {
+      "get": {
+        "tags": [
+          "Domain metrics / Domain Inspector Real-time API"
+        ],
+        "summary": "Get real-time domain data for the last 120 seconds",
+        "description": "Get data for the 120 seconds preceding the latest timestamp available for a service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetRealTimeDomainDataForTheLast120Seconds",
+        "parameters": [
+          {
+            "name": "service_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "datacenter": {
+                            "type": "object",
+                            "properties": {
+                              "STP": {
+                                "type": "object",
+                                "properties": {
+                                  "www.example.com": {
+                                    "type": "object",
+                                    "properties": {
+                                      "edge": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "resp_header_bytes": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "resp_body_bytes": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "status_4xx": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "status_403": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "aggregated": {
+                            "type": "object",
+                            "properties": {
+                              "www.example.com": {
+                                "type": "object",
+                                "properties": {
+                                  "edge": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "resp_header_bytes": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "resp_body_bytes": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "status_4xx": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "status_403": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "recorded": {
+                            "type": "integer",
+                            "format": "int64"
+                          }
+                        }
+                      }
+                    },
+                    "Timestamp": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "AggregateDelay": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "Data": [
+                        {
+                          "datacenter": {
+                            "STP": {
+                              "www.example.com": {
+                                "edge": 5,
+                                "resp_header_bytes": 1200,
+                                "resp_body_bytes": 1850,
+                                "status_4xx": 5,
+                                "status_403": 5
+                              }
+                            }
+                          },
+                          "aggregated": {
+                            "www.example.com": {
+                              "edge": 5,
+                              "resp_header_bytes": 1200,
+                              "resp_body_bytes": 1850,
+                              "status_4xx": 5,
+                              "status_403": 5
+                            }
+                          },
+                          "recorded": 1589198016
+                        }
+                      ],
+                      "Timestamp": 1589198025,
+                      "AggregateDelay": 9
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get real-time domain data for the last 120 seconds",
+            "id": null,
+            "request": {
+              "name": "Get real-time domain data for the last 120 seconds",
+              "description": "Get data for the 120 seconds preceding the latest timestamp available for a service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/v1/domains/{{service_id}}/ts/h",
+                "path": [
+                  "v1",
+                  "domains",
+                  "{{service_id}}",
+                  "ts",
+                  "h"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "rt.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"Data\":[{\"datacenter\":{\"STP\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}}},\"aggregated\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}},\"recorded\":1589198016}],\"Timestamp\":1589198025,\"AggregateDelay\":9}",
+                "originalRequest": {
+                  "name": "Get real-time domain data for the last 120 seconds",
+                  "description": "Get data for the 120 seconds preceding the latest timestamp available for a service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/v1/domains/SU1Z0isxPaozGVKXdv0eY/ts/h",
+                    "path": [
+                      "v1",
+                      "domains",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "ts",
+                      "h"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "rt.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Domain metrics",
+              "Domain Inspector Real-time API"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/v1/domains/{service_id}/ts/h/limit/{max_entries}": {
+      "get": {
+        "tags": [
+          "Domain metrics / Domain Inspector Real-time API"
+        ],
+        "summary": "Get a limited number of real-time domain data entries",
+        "description": "Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetALimitedNumberOfRealTimeDomainDataEntries",
+        "parameters": [
+          {
+            "name": "service_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "max_entries",
+            "in": "path",
+            "description": "Maximum number of results to show.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "datacenter": {
+                            "type": "object",
+                            "properties": {
+                              "STP": {
+                                "type": "object",
+                                "properties": {
+                                  "www.example.com": {
+                                    "type": "object",
+                                    "properties": {
+                                      "edge": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "resp_header_bytes": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "resp_body_bytes": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "status_4xx": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      },
+                                      "status_403": {
+                                        "type": "integer",
+                                        "format": "int64"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "aggregated": {
+                            "type": "object",
+                            "properties": {
+                              "www.example.com": {
+                                "type": "object",
+                                "properties": {
+                                  "edge": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "resp_header_bytes": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "resp_body_bytes": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "status_4xx": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  },
+                                  "status_403": {
+                                    "type": "integer",
+                                    "format": "int64"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "recorded": {
+                            "type": "integer",
+                            "format": "int64"
+                          }
+                        }
+                      }
+                    },
+                    "Timestamp": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "AggregateDelay": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "Data": [
+                        {
+                          "datacenter": {
+                            "STP": {
+                              "www.example.com": {
+                                "edge": 5,
+                                "resp_header_bytes": 1200,
+                                "resp_body_bytes": 1850,
+                                "status_4xx": 5,
+                                "status_403": 5
+                              }
+                            }
+                          },
+                          "aggregated": {
+                            "www.example.com": {
+                              "edge": 5,
+                              "resp_header_bytes": 1200,
+                              "resp_body_bytes": 1850,
+                              "status_4xx": 5,
+                              "status_403": 5
+                            }
+                          },
+                          "recorded": 1589198016
+                        }
+                      ],
+                      "Timestamp": 1589198025,
+                      "AggregateDelay": 9
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get a limited number of real-time domain data entries",
+            "id": null,
+            "request": {
+              "name": "Get a limited number of real-time domain data entries",
+              "description": "Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/v1/domains/{{service_id}}/ts/h/limit/{{max_entries}}",
+                "path": [
+                  "v1",
+                  "domains",
+                  "{{service_id}}",
+                  "ts",
+                  "h",
+                  "limit",
+                  "{{max_entries}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "rt.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"Data\":[{\"datacenter\":{\"STP\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}}},\"aggregated\":{\"www.example.com\":{\"edge\":5,\"resp_header_bytes\":1200,\"resp_body_bytes\":1850,\"status_4xx\":5,\"status_403\":5}},\"recorded\":1589198016}],\"Timestamp\":1589198025,\"AggregateDelay\":9}",
+                "originalRequest": {
+                  "name": "Get a limited number of real-time domain data entries",
+                  "description": "Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/v1/domains/SU1Z0isxPaozGVKXdv0eY/ts/h/limit/1",
+                    "path": [
+                      "v1",
+                      "domains",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "ts",
+                      "h",
+                      "limit",
+                      "1"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "rt.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Domain metrics",
+              "Domain Inspector Real-time API"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -189513,12 +189986,8 @@
       "description": "Fastly will stream log messages to the location in the format specified in the Syslog object.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| hostname | string | The hostname used for the syslog endpoint. |\n| ipv4 | string | The IPv4 address used for the syslog endpoint. |\n| message_type | string | How the message should be formatted. |\n|  | blank | No prefix. Useful for writing JSON and CSV. |\n|  | classic | RFC 3164 syslog prefix. |\n|  | loggly | RFC 5424 structured syslog. |\n|  | logplex | Heroku-style length prefixed syslog. |\n| token | string | Whether to prepend each message with a specific token. |\n| use_tls | string | Whether to use TLS. |\n|  | 0 | Do not use TLS. |\n|  | 1 | Use TLS. |\n| address | string | A hostname or IPv4 address. |\n| format | string | A Fastly log format string. |\n| format_version | integer | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in vcl_log if format_version is set to 2 and in vcl_deliver if format_version is set to 1. |\n|  | 1 | Version 1 log format. |\n|  | 2 | Version 2 log format. |\n| log_processing_region | string | The geographic region where the logs will be processed before streaming. Valid values are us, eu, and none for global. |\n| name | string | The name for the real-time logging configuration. |\n| placement | string | Where in the generated VCL the logging call should be placed. If not set, endpoints with format_version of 2 are placed in vcl_log and those with format_version of 1 are placed in vcl_deliver. |\n|  | none | Do not render a log statement into VCL. Use this option if you intend to write a log statement manually. |\n| port | integer | The port number. |\n| response_condition | string | The name of an existing condition in the configured endpoint, or leave blank to always execute. |\n| tls_ca_cert | string | A secure certificate to authenticate a server with. Must be in PEM format. |\n| tls_client_cert | string | The client certificate used to make authenticated requests. Must be in PEM format. |\n| tls_client_key | string | The client private key used to make authenticated requests. Must be in PEM format. |\n| tls_hostname | string | The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| service_id | string | Alphanumeric string identifying the service. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| version | string | String identifying a service version. |"
     },
     {
-      "name": "Domain metrics / Domain Inspector Historical API",
-      "description": "Domain Inspector provides a JSON-formatted historical API for visibility into responses delivered from your domains by Fastly. The API offers a standardized set of data to report in minutely, hourly, or daily granularity on every domain response, byte, and status code received by a specified service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| datacenter | string | The POP from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across POPs. |\n| domain | string | The domain from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across domains. |\n| region | string | The geographic region from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across regions. |\n| dimensions | object | The unique combination of dimensions associated with this timeseries. |\n| meta | object | Meta information about the scope of the query in a human readable format. |\n| msg | string | If the query was not successful, this will provide a string that explains why. |\n| status | string | Whether or not we were able to successfully execute the query. |\n| values | array | An array of values representing the metric values at each point in time.\nNote that this dataset is sparse: only the keys with non-zero values will be included in the record. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| dimensions | object | The unique combination of dimensions associated with this timeseries. |\n| values | array | An array of values representing the metric values at each point in time.\nNote that this dataset is sparse: only the keys with non-zero values will be included in the record. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| bandwidth | integer | Total bytes delivered (resp_header_bytes + resp_body_bytes + bereq_header_bytes + bereq_body_bytes). |\n| bereq_body_bytes | integer | Total body bytes sent to origin. |\n| bereq_header_bytes | integer | Total header bytes sent to origin. |\n| compute_bereq_body_bytes | integer | Total body bytes sent to backends (origins) by the Compute platform. |\n| compute_bereq_errors | integer | Number of backend request errors, including timeouts, by the Compute platform. |\n| compute_bereq_header_bytes | integer | Total header bytes sent to backends (origins) by the Compute platform. |\n| compute_bereqs | integer | Number of backend requests started by the Compute platform. |\n| compute_beresp_body_bytes | integer | Total body bytes received from backends (origins) by the Compute platform. |\n| compute_beresp_header_bytes | integer | Total header bytes received from backends (origins) by the Compute platform. |\n| compute_execution_time_ms | integer | The amount of active CPU time used to process your requests (in milliseconds). |\n| compute_origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin by the Compute platform. |\n| compute_origin_status_200 | integer | Number of responses received from origin with status code 200 (Success) by the Compute platform. |\n| compute_origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content) by the Compute platform. |\n| compute_origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content) by the Compute platform. |\n| compute_origin_status_2xx | integer | Number of \"Success\" status codes received from origin by the Compute platform. |\n| compute_origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_origin_status_302 | integer | Number of responses received from origin with status code 302 (Found) by the Compute platform. |\n| compute_origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified) by the Compute platform. |\n| compute_origin_status_3xx | integer | Number of \"Redirection\" codes received from origin by the Compute platform. |\n| compute_origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request) by the Compute platform. |\n| compute_origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized) by the Compute platform. |\n| compute_origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden) by the Compute platform. |\n| compute_origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found) by the Compute platform. |\n| compute_origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_origin_status_4xx | integer | Number of \"Client Error\" codes received from origin by the Compute platform. |\n| compute_origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented) by the Compute platform. |\n| compute_origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_origin_status_530 | integer | Number of responses received from origin with status code 530 by the Compute platform. |\n| compute_origin_status_5xx | integer | Number of \"Server Error\" codes received from origin by the Compute platform. |\n| compute_req_body_bytes | integer | Total body bytes received by the Compute platform. |\n| compute_req_header_bytes | integer | Total header bytes received by the Compute platform. |\n| compute_request | integer | The total number of requests that were received by the Compute platform. |\n| compute_request_time_billed_ms | integer | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. |\n| compute_request_time_ms | integer | The total amount of time used to process your requests, including active CPU time (in milliseconds). |\n| compute_resp_body_bytes | integer | Total body bytes sent from Compute to the end user. |\n| compute_resp_header_bytes | integer | Total header bytes sent from Compute to the end user. |\n| compute_resp_status_103 | integer | Number of responses delivered with status code 103 (Early Hints) by the Compute platform. |\n| compute_resp_status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered by the Compute platform. |\n| compute_resp_status_200 | integer | Number of responses delivered with status code 200 (Success) by the Compute platform. |\n| compute_resp_status_204 | integer | Number of responses delivered with status code 204 (No Content) by the Compute platform. |\n| compute_resp_status_206 | integer | Number of responses delivered with status code 206 (Partial Content) by the Compute platform. |\n| compute_resp_status_2xx | integer | Number of 2xx \"Success\" status codes delivered by the Compute platform. |\n| compute_resp_status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_resp_status_302 | integer | Number of responses delivered with status code 302 (Found) by the Compute platform. |\n| compute_resp_status_304 | integer | Number of responses delivered with status code 304 (Not Modified) by the Compute platform. |\n| compute_resp_status_3xx | integer | Number of 3xx \"Redirection\" codes delivered by the Compute platform. |\n| compute_resp_status_400 | integer | Number of responses delivered with status code 400 (Bad Request) by the Compute platform. |\n| compute_resp_status_401 | integer | Number of responses delivered with status code 401 (Unauthorized) by the Compute platform. |\n| compute_resp_status_403 | integer | Number of responses delivered with status code 403 (Forbidden) by the Compute platform. |\n| compute_resp_status_404 | integer | Number of responses delivered with status code 404 (Not Found) by the Compute platform. |\n| compute_resp_status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_resp_status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_resp_status_4xx | integer | Number of 4xx \"Client Error\" codes delivered by the Compute platform. |\n| compute_resp_status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_resp_status_501 | integer | Number of responses delivered with status code 501 (Not Implemented) by the Compute platform. |\n| compute_resp_status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_resp_status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_resp_status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_resp_status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_resp_status_530 | integer | Number of responses delivered with status code 530 by the Compute platform. |\n| compute_resp_status_5xx | integer | Number of \"Server Error\" category status codes delivered by the Compute platform. |\n| edge_hit_ratio | number | Ratio of cache hits to cache misses at the edge, between 0 and 1 (edge_hit_requests / (edge_hit_requests + edge_miss_requests)). |\n| edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge. |\n| edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge. |\n| edge_requests | integer | Number of requests sent by end users to Fastly. |\n| edge_resp_body_bytes | integer | Total body bytes delivered from Fastly to the end user. |\n| edge_resp_header_bytes | integer | Total header bytes delivered from Fastly to the end user. |\n| http2 | integer | Number of requests received over HTTP/2. |\n| http3 | integer | Number of requests received over HTTP/3. |\n| origin_fetch_resp_body_bytes | integer | Total body bytes received from origin. |\n| origin_fetch_resp_header_bytes | integer | Total header bytes received from origin. |\n| origin_fetches | integer | Number of requests sent to origin. |\n| origin_offload | number | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((edge_resp_body_bytes + edge_resp_header_bytes) - (origin_fetch_resp_body_bytes + origin_fetch_resp_header_bytes)) / (edge_resp_body_bytes + edge_resp_header_bytes). Previously, Origin Offload used a different formula. Learn more. |\n| origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin. |\n| origin_status_200 | integer | Number of responses received from origin with status code 200 (Success). |\n| origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content). |\n| origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content). |\n| origin_status_2xx | integer | Number of \"Success\" status codes received from origin. |\n| origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently). |\n| origin_status_302 | integer | Number of responses received from origin with status code 302 (Found). |\n| origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified). |\n| origin_status_3xx | integer | Number of \"Redirection\" codes received from origin. |\n| origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request). |\n| origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized). |\n| origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden). |\n| origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found). |\n| origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable). |\n| origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests). |\n| origin_status_4xx | integer | Number of \"Client Error\" codes received from origin. |\n| origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error). |\n| origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented). |\n| origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway). |\n| origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable). |\n| origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout). |\n| origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported). |\n| origin_status_530 | integer | Number of responses received from origin with status code 530. |\n| origin_status_5xx | integer | Number of \"Server Error\" codes received from origin. |\n| requests | integer | Number of requests processed. |\n| resp_body_bytes | integer | Total body bytes delivered. |\n| resp_header_bytes | integer | Total header bytes delivered. |\n| status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered. |\n| status_200 | integer | Number of responses delivered with status code 200 (Success). |\n| status_204 | integer | Number of responses delivered with status code 204 (No Content). |\n| status_206 | integer | Number of responses delivered with status code 206 (Partial Content). |\n| status_2xx | integer | Number of 2xx \"Success\" status codes delivered. |\n| status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently). |\n| status_302 | integer | Number of responses delivered with status code 302 (Found). |\n| status_304 | integer | Number of responses delivered with status code 304 (Not Modified). |\n| status_3xx | integer | Number of 3xx \"Redirection\" codes delivered. |\n| status_400 | integer | Number of responses delivered with status code 400 (Bad Request). |\n| status_401 | integer | Number of responses delivered with status code 401 (Unauthorized). |\n| status_403 | integer | Number of responses delivered with status code 403 (Forbidden). |\n| status_404 | integer | Number of responses delivered with status code 404 (Not Found). |\n| status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable). |\n| status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests). |\n| status_499 | integer | Number of responses sent with status code 499 (Client Disconnected). |\n| status_4xx | integer | Number of 4xx \"Client Error\" codes delivered. |\n| status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error). |\n| status_501 | integer | Number of responses delivered with status code 501 (Not Implemented). |\n| status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway). |\n| status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable). |\n| status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout). |\n| status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported). |\n| status_530 | integer | Number of responses delivered with status code 530. |\n| status_5xx | integer | Number of 5xx \"Server Error\" codes delivered. |\n| tls_v10 | integer | Number of requests received over TLS 1.0. |\n| tls_v11 | integer | Number of requests received over TLS 1.1. |\n| tls_v12 | integer | Number of requests received over TLS 1.2. |\n| tls_v13 | integer | Number of requests received over TLS 1.3. |"
-    },
-    {
-      "name": "Domain metrics / Domain Inspector Real-time API",
-      "description": "The real-time domain metrics API allows you to programmatically retrieve per-domain delivery metrics derived from your Fastly services in one-second periods up to the last complete second.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| AggregateDelay | integer | Offset of entry timestamps from the current time due to processing time. |\n| Data | array | A list of report entries, each representing one second of time. |\n| Timestamp | integer | Value to use for subsequent requests. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| bandwidth | integer | Total bytes delivered (resp_header_bytes + resp_body_bytes + bereq_header_bytes + bereq_body_bytes). |\n| bereq_body_bytes | integer | Total body bytes sent to origin. |\n| bereq_header_bytes | integer | Total header bytes sent to origin. |\n| compute_bereq_body_bytes | integer | Total body bytes sent to backends (origins) by the Compute platform. |\n| compute_bereq_errors | integer | Number of backend request errors, including timeouts, by the Compute platform. |\n| compute_bereq_header_bytes | integer | Total header bytes sent to backends (origins) by the Compute platform. |\n| compute_bereqs | integer | Number of backend requests started by the Compute platform. |\n| compute_beresp_body_bytes | integer | Total body bytes received from backends (origins) by the Compute platform. |\n| compute_beresp_header_bytes | integer | Total header bytes received from backends (origins) by the Compute platform. |\n| compute_execution_time_ms | integer | The amount of active CPU time used to process your requests (in milliseconds). |\n| compute_origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin by the Compute platform. |\n| compute_origin_status_200 | integer | Number of responses received from origin with status code 200 (Success) by the Compute platform. |\n| compute_origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content) by the Compute platform. |\n| compute_origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content) by the Compute platform. |\n| compute_origin_status_2xx | integer | Number of \"Success\" status codes received from origin by the Compute platform. |\n| compute_origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_origin_status_302 | integer | Number of responses received from origin with status code 302 (Found) by the Compute platform. |\n| compute_origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified) by the Compute platform. |\n| compute_origin_status_3xx | integer | Number of \"Redirection\" codes received from origin by the Compute platform. |\n| compute_origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request) by the Compute platform. |\n| compute_origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized) by the Compute platform. |\n| compute_origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden) by the Compute platform. |\n| compute_origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found) by the Compute platform. |\n| compute_origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_origin_status_4xx | integer | Number of \"Client Error\" codes received from origin by the Compute platform. |\n| compute_origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented) by the Compute platform. |\n| compute_origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_origin_status_530 | integer | Number of responses received from origin with status code 530 by the Compute platform. |\n| compute_origin_status_5xx | integer | Number of \"Server Error\" codes received from origin by the Compute platform. |\n| compute_req_body_bytes | integer | Total body bytes received by the Compute platform. |\n| compute_req_header_bytes | integer | Total header bytes received by the Compute platform. |\n| compute_request | integer | The total number of requests that were received by the Compute platform. |\n| compute_request_time_billed_ms | integer | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. |\n| compute_request_time_ms | integer | The total amount of time used to process your requests, including active CPU time (in milliseconds). |\n| compute_resp_body_bytes | integer | Total body bytes sent from Compute to the end user. |\n| compute_resp_header_bytes | integer | Total header bytes sent from Compute to the end user. |\n| compute_resp_status_103 | integer | Number of responses delivered with status code 103 (Early Hints) by the Compute platform. |\n| compute_resp_status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered by the Compute platform. |\n| compute_resp_status_200 | integer | Number of responses delivered with status code 200 (Success) by the Compute platform. |\n| compute_resp_status_204 | integer | Number of responses delivered with status code 204 (No Content) by the Compute platform. |\n| compute_resp_status_206 | integer | Number of responses delivered with status code 206 (Partial Content) by the Compute platform. |\n| compute_resp_status_2xx | integer | Number of 2xx \"Success\" status codes delivered by the Compute platform. |\n| compute_resp_status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_resp_status_302 | integer | Number of responses delivered with status code 302 (Found) by the Compute platform. |\n| compute_resp_status_304 | integer | Number of responses delivered with status code 304 (Not Modified) by the Compute platform. |\n| compute_resp_status_3xx | integer | Number of 3xx \"Redirection\" codes delivered by the Compute platform. |\n| compute_resp_status_400 | integer | Number of responses delivered with status code 400 (Bad Request) by the Compute platform. |\n| compute_resp_status_401 | integer | Number of responses delivered with status code 401 (Unauthorized) by the Compute platform. |\n| compute_resp_status_403 | integer | Number of responses delivered with status code 403 (Forbidden) by the Compute platform. |\n| compute_resp_status_404 | integer | Number of responses delivered with status code 404 (Not Found) by the Compute platform. |\n| compute_resp_status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_resp_status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_resp_status_4xx | integer | Number of 4xx \"Client Error\" codes delivered by the Compute platform. |\n| compute_resp_status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_resp_status_501 | integer | Number of responses delivered with status code 501 (Not Implemented) by the Compute platform. |\n| compute_resp_status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_resp_status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_resp_status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_resp_status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_resp_status_530 | integer | Number of responses delivered with status code 530 by the Compute platform. |\n| compute_resp_status_5xx | integer | Number of \"Server Error\" category status codes delivered by the Compute platform. |\n| edge_hit_ratio | number | Ratio of cache hits to cache misses at the edge, between 0 and 1 (edge_hit_requests / (edge_hit_requests + edge_miss_requests)). |\n| edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge. |\n| edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge. |\n| edge_requests | integer | Number of requests sent by end users to Fastly. |\n| edge_resp_body_bytes | integer | Total body bytes delivered from Fastly to the end user. |\n| edge_resp_header_bytes | integer | Total header bytes delivered from Fastly to the end user. |\n| http2 | integer | Number of requests received over HTTP/2. |\n| http3 | integer | Number of requests received over HTTP/3. |\n| origin_fetch_resp_body_bytes | integer | Total body bytes received from origin. |\n| origin_fetch_resp_header_bytes | integer | Total header bytes received from origin. |\n| origin_fetches | integer | Number of requests sent to origin. |\n| origin_offload | number | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((edge_resp_body_bytes + edge_resp_header_bytes) - (origin_fetch_resp_body_bytes + origin_fetch_resp_header_bytes)) / (edge_resp_body_bytes + edge_resp_header_bytes). Previously, Origin Offload used a different formula. Learn more. |\n| origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin. |\n| origin_status_200 | integer | Number of responses received from origin with status code 200 (Success). |\n| origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content). |\n| origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content). |\n| origin_status_2xx | integer | Number of \"Success\" status codes received from origin. |\n| origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently). |\n| origin_status_302 | integer | Number of responses received from origin with status code 302 (Found). |\n| origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified). |\n| origin_status_3xx | integer | Number of \"Redirection\" codes received from origin. |\n| origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request). |\n| origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized). |\n| origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden). |\n| origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found). |\n| origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable). |\n| origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests). |\n| origin_status_4xx | integer | Number of \"Client Error\" codes received from origin. |\n| origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error). |\n| origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented). |\n| origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway). |\n| origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable). |\n| origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout). |\n| origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported). |\n| origin_status_530 | integer | Number of responses received from origin with status code 530. |\n| origin_status_5xx | integer | Number of \"Server Error\" codes received from origin. |\n| requests | integer | Number of requests processed. |\n| resp_body_bytes | integer | Total body bytes delivered. |\n| resp_header_bytes | integer | Total header bytes delivered. |\n| status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered. |\n| status_200 | integer | Number of responses delivered with status code 200 (Success). |\n| status_204 | integer | Number of responses delivered with status code 204 (No Content). |\n| status_206 | integer | Number of responses delivered with status code 206 (Partial Content). |\n| status_2xx | integer | Number of 2xx \"Success\" status codes delivered. |\n| status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently). |\n| status_302 | integer | Number of responses delivered with status code 302 (Found). |\n| status_304 | integer | Number of responses delivered with status code 304 (Not Modified). |\n| status_3xx | integer | Number of 3xx \"Redirection\" codes delivered. |\n| status_400 | integer | Number of responses delivered with status code 400 (Bad Request). |\n| status_401 | integer | Number of responses delivered with status code 401 (Unauthorized). |\n| status_403 | integer | Number of responses delivered with status code 403 (Forbidden). |\n| status_404 | integer | Number of responses delivered with status code 404 (Not Found). |\n| status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable). |\n| status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests). |\n| status_499 | integer | Number of responses sent with status code 499 (Client Disconnected). |\n| status_4xx | integer | Number of 4xx \"Client Error\" codes delivered. |\n| status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error). |\n| status_501 | integer | Number of responses delivered with status code 501 (Not Implemented). |\n| status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway). |\n| status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable). |\n| status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout). |\n| status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported). |\n| status_530 | integer | Number of responses delivered with status code 530. |\n| status_5xx | integer | Number of 5xx \"Server Error\" codes delivered. |\n| tls_v10 | integer | Number of requests received over TLS 1.0. |\n| tls_v11 | integer | Number of requests received over TLS 1.1. |\n| tls_v12 | integer | Number of requests received over TLS 1.2. |\n| tls_v13 | integer | Number of requests received over TLS 1.3. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| aggregated | object | Groups measurements by backend name and then by IP address. |\n| datacenter | object | Groups measurements by POP, then backend name, and then IP address. See the POPs API for details about POP identifiers. |\n| recorded | integer | The Unix timestamp at which this record's data was generated. |"
+      "name": "Metrics and stats / Bot request metrics",
+      "description": "Historical Stats API returns a time series response of bot-request metrics broken down by bot-type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| bot | string | Bot identifier for which data was recorded. Present only when grouped by bot. |\n| bot_edge_requests_allowed_count | integer | Count of edge requests where a bot was detected and the request was allowed by the configured policy. |\n| bot_edge_requests_blocked_count | integer | Count of edge requests where a bot was detected and the request was blocked by the configured policy. |\n| bot_edge_requests_challenge_token_valid_count | integer | Count of edge requests where a bot was detected and the client making the request has already solved a challenge issued by the configured policy. |\n| bot_edge_requests_challenged_count | integer | Count of edge requests where a bot was detected and a client challenge was issued for the request by the configured policy. |\n| datacenter | string | Datacenter (POP) for which data was recorded. Present only when grouped by datacenter. |\n| timestamp | string | Timestamp for the time series being reported. |\n| meta | object | Meta information about the scope of the current response and optional additional information for subsequent requests. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| from | string | An RFC-8339-formatted date and time string indicating the inclusive start of the query time range. |\n| group_by | string | List of dimensions (comma-separated) being summed over in the results. |\n| limit | integer | The maximum number of results to return. Defaults to 1000. |\n| next_cursor | string | Optional string that can be used to request the next page of results, if any. |\n| to | string | An RFC-8339-formatted date and time indicating the exclusive end of the query time range. |"
     },
     {
       "name": "Metrics and stats / Historical Stats",
@@ -189531,6 +190000,14 @@
     {
       "name": "Metrics and stats / Stats",
       "description": "Stats give you information on the usage and performance of your Service. They can be requested by Service and over a particular time span. Stats are broken down per POP, giving you information on how your Services are being used across the world. There is now a more flexible, and fully featured Stats API available.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n"
+    },
+    {
+      "name": "Domain metrics / Domain Inspector Historical API",
+      "description": "Domain Inspector provides a JSON-formatted historical API for visibility into responses delivered from your domains by Fastly. The API offers a standardized set of data to report in minutely, hourly, or daily granularity on every domain response, byte, and status code received by a specified service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| datacenter | string | The POP from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across POPs. |\n| domain | string | The domain from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across domains. |\n| region | string | The geographic region from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across regions. |\n| dimensions | object | The unique combination of dimensions associated with this timeseries. |\n| meta | object | Meta information about the scope of the query in a human readable format. |\n| msg | string | If the query was not successful, this will provide a string that explains why. |\n| status | string | Whether or not we were able to successfully execute the query. |\n| values | array | An array of values representing the metric values at each point in time.\nNote that this dataset is sparse: only the keys with non-zero values will be included in the record. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| dimensions | object | The unique combination of dimensions associated with this timeseries. |\n| values | array | An array of values representing the metric values at each point in time.\nNote that this dataset is sparse: only the keys with non-zero values will be included in the record. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| bandwidth | integer | Total bytes delivered (resp_header_bytes + resp_body_bytes + bereq_header_bytes + bereq_body_bytes). |\n| bereq_body_bytes | integer | Total body bytes sent to origin. |\n| bereq_header_bytes | integer | Total header bytes sent to origin. |\n| compute_bereq_body_bytes | integer | Total body bytes sent to backends (origins) by the Compute platform. |\n| compute_bereq_errors | integer | Number of backend request errors, including timeouts, by the Compute platform. |\n| compute_bereq_header_bytes | integer | Total header bytes sent to backends (origins) by the Compute platform. |\n| compute_bereqs | integer | Number of backend requests started by the Compute platform. |\n| compute_beresp_body_bytes | integer | Total body bytes received from backends (origins) by the Compute platform. |\n| compute_beresp_header_bytes | integer | Total header bytes received from backends (origins) by the Compute platform. |\n| compute_execution_time_ms | integer | The amount of active CPU time used to process your requests (in milliseconds). |\n| compute_origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin by the Compute platform. |\n| compute_origin_status_200 | integer | Number of responses received from origin with status code 200 (Success) by the Compute platform. |\n| compute_origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content) by the Compute platform. |\n| compute_origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content) by the Compute platform. |\n| compute_origin_status_2xx | integer | Number of \"Success\" status codes received from origin by the Compute platform. |\n| compute_origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_origin_status_302 | integer | Number of responses received from origin with status code 302 (Found) by the Compute platform. |\n| compute_origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified) by the Compute platform. |\n| compute_origin_status_3xx | integer | Number of \"Redirection\" codes received from origin by the Compute platform. |\n| compute_origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request) by the Compute platform. |\n| compute_origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized) by the Compute platform. |\n| compute_origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden) by the Compute platform. |\n| compute_origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found) by the Compute platform. |\n| compute_origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_origin_status_4xx | integer | Number of \"Client Error\" codes received from origin by the Compute platform. |\n| compute_origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented) by the Compute platform. |\n| compute_origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_origin_status_530 | integer | Number of responses received from origin with status code 530 by the Compute platform. |\n| compute_origin_status_5xx | integer | Number of \"Server Error\" codes received from origin by the Compute platform. |\n| compute_req_body_bytes | integer | Total body bytes received by the Compute platform. |\n| compute_req_header_bytes | integer | Total header bytes received by the Compute platform. |\n| compute_request | integer | The total number of requests that were received by the Compute platform. |\n| compute_request_time_billed_ms | integer | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. |\n| compute_request_time_ms | integer | The total amount of time used to process your requests, including active CPU time (in milliseconds). |\n| compute_resp_body_bytes | integer | Total body bytes sent from Compute to the end user. |\n| compute_resp_header_bytes | integer | Total header bytes sent from Compute to the end user. |\n| compute_resp_status_103 | integer | Number of responses delivered with status code 103 (Early Hints) by the Compute platform. |\n| compute_resp_status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered by the Compute platform. |\n| compute_resp_status_200 | integer | Number of responses delivered with status code 200 (Success) by the Compute platform. |\n| compute_resp_status_204 | integer | Number of responses delivered with status code 204 (No Content) by the Compute platform. |\n| compute_resp_status_206 | integer | Number of responses delivered with status code 206 (Partial Content) by the Compute platform. |\n| compute_resp_status_2xx | integer | Number of 2xx \"Success\" status codes delivered by the Compute platform. |\n| compute_resp_status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_resp_status_302 | integer | Number of responses delivered with status code 302 (Found) by the Compute platform. |\n| compute_resp_status_304 | integer | Number of responses delivered with status code 304 (Not Modified) by the Compute platform. |\n| compute_resp_status_3xx | integer | Number of 3xx \"Redirection\" codes delivered by the Compute platform. |\n| compute_resp_status_400 | integer | Number of responses delivered with status code 400 (Bad Request) by the Compute platform. |\n| compute_resp_status_401 | integer | Number of responses delivered with status code 401 (Unauthorized) by the Compute platform. |\n| compute_resp_status_403 | integer | Number of responses delivered with status code 403 (Forbidden) by the Compute platform. |\n| compute_resp_status_404 | integer | Number of responses delivered with status code 404 (Not Found) by the Compute platform. |\n| compute_resp_status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_resp_status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_resp_status_4xx | integer | Number of 4xx \"Client Error\" codes delivered by the Compute platform. |\n| compute_resp_status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_resp_status_501 | integer | Number of responses delivered with status code 501 (Not Implemented) by the Compute platform. |\n| compute_resp_status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_resp_status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_resp_status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_resp_status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_resp_status_530 | integer | Number of responses delivered with status code 530 by the Compute platform. |\n| compute_resp_status_5xx | integer | Number of \"Server Error\" category status codes delivered by the Compute platform. |\n| edge_hit_ratio | number | Ratio of cache hits to cache misses at the edge, between 0 and 1 (edge_hit_requests / (edge_hit_requests + edge_miss_requests)). |\n| edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge. |\n| edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge. |\n| edge_requests | integer | Number of requests sent by end users to Fastly. |\n| edge_resp_body_bytes | integer | Total body bytes delivered from Fastly to the end user. |\n| edge_resp_header_bytes | integer | Total header bytes delivered from Fastly to the end user. |\n| http2 | integer | Number of requests received over HTTP/2. |\n| http3 | integer | Number of requests received over HTTP/3. |\n| origin_fetch_resp_body_bytes | integer | Total body bytes received from origin. |\n| origin_fetch_resp_header_bytes | integer | Total header bytes received from origin. |\n| origin_fetches | integer | Number of requests sent to origin. |\n| origin_offload | number | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((edge_resp_body_bytes + edge_resp_header_bytes) - (origin_fetch_resp_body_bytes + origin_fetch_resp_header_bytes)) / (edge_resp_body_bytes + edge_resp_header_bytes). Previously, Origin Offload used a different formula. Learn more. |\n| origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin. |\n| origin_status_200 | integer | Number of responses received from origin with status code 200 (Success). |\n| origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content). |\n| origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content). |\n| origin_status_2xx | integer | Number of \"Success\" status codes received from origin. |\n| origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently). |\n| origin_status_302 | integer | Number of responses received from origin with status code 302 (Found). |\n| origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified). |\n| origin_status_3xx | integer | Number of \"Redirection\" codes received from origin. |\n| origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request). |\n| origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized). |\n| origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden). |\n| origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found). |\n| origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable). |\n| origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests). |\n| origin_status_4xx | integer | Number of \"Client Error\" codes received from origin. |\n| origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error). |\n| origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented). |\n| origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway). |\n| origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable). |\n| origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout). |\n| origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported). |\n| origin_status_530 | integer | Number of responses received from origin with status code 530. |\n| origin_status_5xx | integer | Number of \"Server Error\" codes received from origin. |\n| requests | integer | Number of requests processed. |\n| resp_body_bytes | integer | Total body bytes delivered. |\n| resp_header_bytes | integer | Total header bytes delivered. |\n| status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered. |\n| status_200 | integer | Number of responses delivered with status code 200 (Success). |\n| status_204 | integer | Number of responses delivered with status code 204 (No Content). |\n| status_206 | integer | Number of responses delivered with status code 206 (Partial Content). |\n| status_2xx | integer | Number of 2xx \"Success\" status codes delivered. |\n| status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently). |\n| status_302 | integer | Number of responses delivered with status code 302 (Found). |\n| status_304 | integer | Number of responses delivered with status code 304 (Not Modified). |\n| status_3xx | integer | Number of 3xx \"Redirection\" codes delivered. |\n| status_400 | integer | Number of responses delivered with status code 400 (Bad Request). |\n| status_401 | integer | Number of responses delivered with status code 401 (Unauthorized). |\n| status_403 | integer | Number of responses delivered with status code 403 (Forbidden). |\n| status_404 | integer | Number of responses delivered with status code 404 (Not Found). |\n| status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable). |\n| status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests). |\n| status_499 | integer | Number of responses sent with status code 499 (Client Disconnected). |\n| status_4xx | integer | Number of 4xx \"Client Error\" codes delivered. |\n| status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error). |\n| status_501 | integer | Number of responses delivered with status code 501 (Not Implemented). |\n| status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway). |\n| status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable). |\n| status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout). |\n| status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported). |\n| status_530 | integer | Number of responses delivered with status code 530. |\n| status_5xx | integer | Number of 5xx \"Server Error\" codes delivered. |\n| tls_v10 | integer | Number of requests received over TLS 1.0. |\n| tls_v11 | integer | Number of requests received over TLS 1.1. |\n| tls_v12 | integer | Number of requests received over TLS 1.2. |\n| tls_v13 | integer | Number of requests received over TLS 1.3. |"
+    },
+    {
+      "name": "Domain metrics / Domain Inspector Real-time API",
+      "description": "The real-time domain metrics API allows you to programmatically retrieve per-domain delivery metrics derived from your Fastly services in one-second periods up to the last complete second.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| AggregateDelay | integer | Offset of entry timestamps from the current time due to processing time. |\n| Data | array | A list of report entries, each representing one second of time. |\n| Timestamp | integer | Value to use for subsequent requests. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| bandwidth | integer | Total bytes delivered (resp_header_bytes + resp_body_bytes + bereq_header_bytes + bereq_body_bytes). |\n| bereq_body_bytes | integer | Total body bytes sent to origin. |\n| bereq_header_bytes | integer | Total header bytes sent to origin. |\n| compute_bereq_body_bytes | integer | Total body bytes sent to backends (origins) by the Compute platform. |\n| compute_bereq_errors | integer | Number of backend request errors, including timeouts, by the Compute platform. |\n| compute_bereq_header_bytes | integer | Total header bytes sent to backends (origins) by the Compute platform. |\n| compute_bereqs | integer | Number of backend requests started by the Compute platform. |\n| compute_beresp_body_bytes | integer | Total body bytes received from backends (origins) by the Compute platform. |\n| compute_beresp_header_bytes | integer | Total header bytes received from backends (origins) by the Compute platform. |\n| compute_execution_time_ms | integer | The amount of active CPU time used to process your requests (in milliseconds). |\n| compute_origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin by the Compute platform. |\n| compute_origin_status_200 | integer | Number of responses received from origin with status code 200 (Success) by the Compute platform. |\n| compute_origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content) by the Compute platform. |\n| compute_origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content) by the Compute platform. |\n| compute_origin_status_2xx | integer | Number of \"Success\" status codes received from origin by the Compute platform. |\n| compute_origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_origin_status_302 | integer | Number of responses received from origin with status code 302 (Found) by the Compute platform. |\n| compute_origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified) by the Compute platform. |\n| compute_origin_status_3xx | integer | Number of \"Redirection\" codes received from origin by the Compute platform. |\n| compute_origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request) by the Compute platform. |\n| compute_origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized) by the Compute platform. |\n| compute_origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden) by the Compute platform. |\n| compute_origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found) by the Compute platform. |\n| compute_origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_origin_status_4xx | integer | Number of \"Client Error\" codes received from origin by the Compute platform. |\n| compute_origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented) by the Compute platform. |\n| compute_origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_origin_status_530 | integer | Number of responses received from origin with status code 530 by the Compute platform. |\n| compute_origin_status_5xx | integer | Number of \"Server Error\" codes received from origin by the Compute platform. |\n| compute_req_body_bytes | integer | Total body bytes received by the Compute platform. |\n| compute_req_header_bytes | integer | Total header bytes received by the Compute platform. |\n| compute_request | integer | The total number of requests that were received by the Compute platform. |\n| compute_request_time_billed_ms | integer | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. |\n| compute_request_time_ms | integer | The total amount of time used to process your requests, including active CPU time (in milliseconds). |\n| compute_resp_body_bytes | integer | Total body bytes sent from Compute to the end user. |\n| compute_resp_header_bytes | integer | Total header bytes sent from Compute to the end user. |\n| compute_resp_status_103 | integer | Number of responses delivered with status code 103 (Early Hints) by the Compute platform. |\n| compute_resp_status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered by the Compute platform. |\n| compute_resp_status_200 | integer | Number of responses delivered with status code 200 (Success) by the Compute platform. |\n| compute_resp_status_204 | integer | Number of responses delivered with status code 204 (No Content) by the Compute platform. |\n| compute_resp_status_206 | integer | Number of responses delivered with status code 206 (Partial Content) by the Compute platform. |\n| compute_resp_status_2xx | integer | Number of 2xx \"Success\" status codes delivered by the Compute platform. |\n| compute_resp_status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_resp_status_302 | integer | Number of responses delivered with status code 302 (Found) by the Compute platform. |\n| compute_resp_status_304 | integer | Number of responses delivered with status code 304 (Not Modified) by the Compute platform. |\n| compute_resp_status_3xx | integer | Number of 3xx \"Redirection\" codes delivered by the Compute platform. |\n| compute_resp_status_400 | integer | Number of responses delivered with status code 400 (Bad Request) by the Compute platform. |\n| compute_resp_status_401 | integer | Number of responses delivered with status code 401 (Unauthorized) by the Compute platform. |\n| compute_resp_status_403 | integer | Number of responses delivered with status code 403 (Forbidden) by the Compute platform. |\n| compute_resp_status_404 | integer | Number of responses delivered with status code 404 (Not Found) by the Compute platform. |\n| compute_resp_status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_resp_status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_resp_status_4xx | integer | Number of 4xx \"Client Error\" codes delivered by the Compute platform. |\n| compute_resp_status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_resp_status_501 | integer | Number of responses delivered with status code 501 (Not Implemented) by the Compute platform. |\n| compute_resp_status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_resp_status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_resp_status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_resp_status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_resp_status_530 | integer | Number of responses delivered with status code 530 by the Compute platform. |\n| compute_resp_status_5xx | integer | Number of \"Server Error\" category status codes delivered by the Compute platform. |\n| edge_hit_ratio | number | Ratio of cache hits to cache misses at the edge, between 0 and 1 (edge_hit_requests / (edge_hit_requests + edge_miss_requests)). |\n| edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge. |\n| edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge. |\n| edge_requests | integer | Number of requests sent by end users to Fastly. |\n| edge_resp_body_bytes | integer | Total body bytes delivered from Fastly to the end user. |\n| edge_resp_header_bytes | integer | Total header bytes delivered from Fastly to the end user. |\n| http2 | integer | Number of requests received over HTTP/2. |\n| http3 | integer | Number of requests received over HTTP/3. |\n| origin_fetch_resp_body_bytes | integer | Total body bytes received from origin. |\n| origin_fetch_resp_header_bytes | integer | Total header bytes received from origin. |\n| origin_fetches | integer | Number of requests sent to origin. |\n| origin_offload | number | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((edge_resp_body_bytes + edge_resp_header_bytes) - (origin_fetch_resp_body_bytes + origin_fetch_resp_header_bytes)) / (edge_resp_body_bytes + edge_resp_header_bytes). Previously, Origin Offload used a different formula. Learn more. |\n| origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin. |\n| origin_status_200 | integer | Number of responses received from origin with status code 200 (Success). |\n| origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content). |\n| origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content). |\n| origin_status_2xx | integer | Number of \"Success\" status codes received from origin. |\n| origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently). |\n| origin_status_302 | integer | Number of responses received from origin with status code 302 (Found). |\n| origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified). |\n| origin_status_3xx | integer | Number of \"Redirection\" codes received from origin. |\n| origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request). |\n| origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized). |\n| origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden). |\n| origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found). |\n| origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable). |\n| origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests). |\n| origin_status_4xx | integer | Number of \"Client Error\" codes received from origin. |\n| origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error). |\n| origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented). |\n| origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway). |\n| origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable). |\n| origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout). |\n| origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported). |\n| origin_status_530 | integer | Number of responses received from origin with status code 530. |\n| origin_status_5xx | integer | Number of \"Server Error\" codes received from origin. |\n| requests | integer | Number of requests processed. |\n| resp_body_bytes | integer | Total body bytes delivered. |\n| resp_header_bytes | integer | Total header bytes delivered. |\n| status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered. |\n| status_200 | integer | Number of responses delivered with status code 200 (Success). |\n| status_204 | integer | Number of responses delivered with status code 204 (No Content). |\n| status_206 | integer | Number of responses delivered with status code 206 (Partial Content). |\n| status_2xx | integer | Number of 2xx \"Success\" status codes delivered. |\n| status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently). |\n| status_302 | integer | Number of responses delivered with status code 302 (Found). |\n| status_304 | integer | Number of responses delivered with status code 304 (Not Modified). |\n| status_3xx | integer | Number of 3xx \"Redirection\" codes delivered. |\n| status_400 | integer | Number of responses delivered with status code 400 (Bad Request). |\n| status_401 | integer | Number of responses delivered with status code 401 (Unauthorized). |\n| status_403 | integer | Number of responses delivered with status code 403 (Forbidden). |\n| status_404 | integer | Number of responses delivered with status code 404 (Not Found). |\n| status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable). |\n| status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests). |\n| status_499 | integer | Number of responses sent with status code 499 (Client Disconnected). |\n| status_4xx | integer | Number of 4xx \"Client Error\" codes delivered. |\n| status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error). |\n| status_501 | integer | Number of responses delivered with status code 501 (Not Implemented). |\n| status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway). |\n| status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable). |\n| status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout). |\n| status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported). |\n| status_530 | integer | Number of responses delivered with status code 530. |\n| status_5xx | integer | Number of 5xx \"Server Error\" codes delivered. |\n| tls_v10 | integer | Number of requests received over TLS 1.0. |\n| tls_v11 | integer | Number of requests received over TLS 1.1. |\n| tls_v12 | integer | Number of requests received over TLS 1.2. |\n| tls_v13 | integer | Number of requests received over TLS 1.3. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| aggregated | object | Groups measurements by backend name and then by IP address. |\n| datacenter | object | Groups measurements by POP, then backend name, and then IP address. See the POPs API for details about POP identifiers. |\n| recorded | integer | The Unix timestamp at which this record's data was generated. |"
     },
     {
       "name": "Origin metrics / Origin Inspector Historical API",
@@ -190194,6 +190671,10 @@
     {
       "key": "logging_syslog_name",
       "description": "The name for the real-time logging configuration."
+    },
+    {
+      "key": "granularity",
+      "description": "Duration of sample windows."
     },
     {
       "key": "start_timestamp",
