@@ -11,6 +11,7 @@ using Soenneker.Fastly.OpenApiClient.ApexRedirects;
 using Soenneker.Fastly.OpenApiClient.ApiSecurity;
 using Soenneker.Fastly.OpenApiClient.AutomationTokens;
 using Soenneker.Fastly.OpenApiClient.Billing;
+using Soenneker.Fastly.OpenApiClient.BotManagement;
 using Soenneker.Fastly.OpenApiClient.ClientSideProtection;
 using Soenneker.Fastly.OpenApiClient.Content;
 using Soenneker.Fastly.OpenApiClient.Current_customer;
@@ -79,6 +80,11 @@ namespace Soenneker.Fastly.OpenApiClient
         public global::Soenneker.Fastly.OpenApiClient.Billing.BillingRequestBuilder Billing
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The botManagement property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.BotManagement.BotManagementRequestBuilder BotManagement
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.BotManagement.BotManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientSideProtection property</summary>
         public global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.ClientSideProtectionRequestBuilder ClientSideProtection

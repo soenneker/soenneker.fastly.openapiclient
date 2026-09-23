@@ -132395,6 +132395,2277 @@
         ]
       }
     },
+    "/bot-management/v1/workspaces": {
+      "get": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "List workspaces",
+        "description": "List bot management workspaces.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "ListWorkspaces2",
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "service_id",
+            "in": "query",
+            "description": "Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of bot management workspaces.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListWorkspaces2200Response"
+                },
+                "examples": {
+                  "200_List_of_bot_management_workspaces.": {
+                    "summary": "200 List of bot management workspaces.",
+                    "value": {
+                      "meta": {
+                        "limit": 100,
+                        "total": 1,
+                        "next_cursor": null
+                      },
+                      "data": [
+                        {
+                          "id": "SU1Z0isxPaozGVKXdv0eY",
+                          "name": "Production bot policy",
+                          "description": "Standard protection for all production services.",
+                          "protection_mode": "block",
+                          "services": [
+                            "6oMkSHsKCMBjQJPLHgMxu1"
+                          ],
+                          "created_at": "2026-06-01T19:40:49Z",
+                          "updated_at": "2026-06-01T19:40:49Z"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List workspaces",
+            "id": null,
+            "request": {
+              "name": "List workspaces",
+              "description": "List bot management workspaces.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Limit how many results are returned."
+                  },
+                  {
+                    "key": "service_id",
+                    "description": "Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 List of bot management workspaces.",
+                "name": "200 List of bot management workspaces.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"meta\":{\"limit\":100,\"total\":1,\"next_cursor\":null},\"data\":[{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Production bot policy\",\"description\":\"Standard protection for all production services.\",\"protection_mode\":\"block\",\"services\":[\"6oMkSHsKCMBjQJPLHgMxu1\"],\"created_at\":\"2026-06-01T19:40:49Z\",\"updated_at\":\"2026-06-01T19:40:49Z\"}]}",
+                "originalRequest": {
+                  "name": "List workspaces",
+                  "description": "List bot management workspaces.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces?cursor=MTAwOjA&limit=100&service_id=6oMkSHsKCMBjQJPLHgMxu1",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces?cursor=MTAwOjA&limit=100&service_id=6oMkSHsKCMBjQJPLHgMxu1"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Limit how many results are returned."
+                      },
+                      {
+                        "key": "service_id",
+                        "description": "Filter results to the workspace attached to this service. Returns an empty list if the service is not attached to a workspace."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/bot-management/v1/workspaces/{workspaceId}": {
+      "get": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "Get a workspace",
+        "description": "Retrieve a bot management workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetAWorkspace2",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 The requested bot management workspace.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAWorkspace2200Response"
+                },
+                "examples": {
+                  "200_The_requested_bot_management_workspace.": {
+                    "summary": "200 The requested bot management workspace.",
+                    "value": {
+                      "id": "SU1Z0isxPaozGVKXdv0eY",
+                      "name": "Production bot policy",
+                      "description": "Standard protection for all production services.",
+                      "protection_mode": "block",
+                      "services": [
+                        "6oMkSHsKCMBjQJPLHgMxu1"
+                      ],
+                      "created_at": "2026-06-01T19:40:49Z",
+                      "updated_at": "2026-06-01T19:40:49Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get a workspace",
+            "id": null,
+            "request": {
+              "name": "Get a workspace",
+              "description": "Retrieve a bot management workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 The requested bot management workspace.",
+                "name": "200 The requested bot management workspace.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Production bot policy\",\"description\":\"Standard protection for all production services.\",\"protection_mode\":\"block\",\"services\":[\"6oMkSHsKCMBjQJPLHgMxu1\"],\"created_at\":\"2026-06-01T19:40:49Z\",\"updated_at\":\"2026-06-01T19:40:49Z\"}",
+                "originalRequest": {
+                  "name": "Get a workspace",
+                  "description": "Retrieve a bot management workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "Update a workspace",
+        "description": "Update the attributes of a bot management workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "UpdateAWorkspace",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAWorkspaceRequest"
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "protection_mode": "block"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 The requested bot management workspace.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAWorkspace200Response"
+                },
+                "examples": {
+                  "200_The_requested_bot_management_workspace.": {
+                    "summary": "200 The requested bot management workspace.",
+                    "value": {
+                      "id": "SU1Z0isxPaozGVKXdv0eY",
+                      "name": "Production bot policy",
+                      "description": "Standard protection for all production services.",
+                      "protection_mode": "block",
+                      "services": [
+                        "6oMkSHsKCMBjQJPLHgMxu1"
+                      ],
+                      "created_at": "2026-06-01T19:40:49Z",
+                      "updated_at": "2026-06-01T19:40:49Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update a workspace",
+            "id": null,
+            "request": {
+              "name": "Update a workspace",
+              "description": "Update the attributes of a bot management workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "PATCH",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"protection_mode\":\"block\"}"
+              }
+            },
+            "response": [
+              {
+                "status": "200 The requested bot management workspace.",
+                "name": "200 The requested bot management workspace.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Production bot policy\",\"description\":\"Standard protection for all production services.\",\"protection_mode\":\"block\",\"services\":[\"6oMkSHsKCMBjQJPLHgMxu1\"],\"created_at\":\"2026-06-01T19:40:49Z\",\"updated_at\":\"2026-06-01T19:40:49Z\"}",
+                "originalRequest": {
+                  "name": "Update a workspace",
+                  "description": "Update the attributes of a bot management workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "PATCH",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"protection_mode\":\"block\"}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/bot-management/v1/workspaces/{workspaceId}/policy/categories": {
+      "get": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "List categories",
+        "description": "List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category. To list the bots themselves, use list all bots in a workspace or list bots in a category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "ListCategories",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of bot categories.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListCategories200Response"
+                },
+                "examples": {
+                  "200_List_of_bot_categories.": {
+                    "summary": "200 List of bot categories.",
+                    "value": {
+                      "meta": {
+                        "limit": 100,
+                        "total": 6,
+                        "next_cursor": null
+                      },
+                      "data": [
+                        {
+                          "category_id": "ai_crawlers",
+                          "name": "AI Crawlers",
+                          "description": "Bots that crawl content for AI training datasets.",
+                          "action": {
+                            "type": "block"
+                          }
+                        },
+                        {
+                          "category_id": "ai_fetchers",
+                          "name": "AI Fetchers",
+                          "description": "Bots that fetch content on behalf of AI assistants.",
+                          "action": {
+                            "type": "challenge"
+                          }
+                        },
+                        {
+                          "category_id": "search_engines",
+                          "name": "Search Engines",
+                          "description": "Search engine crawlers and indexers.",
+                          "action": {
+                            "type": "allow"
+                          }
+                        },
+                        {
+                          "category_id": "social_media",
+                          "name": "Social Media Bots",
+                          "description": "Bots from social media platforms that generate link previews and embeds.",
+                          "action": {
+                            "type": "allow"
+                          }
+                        },
+                        {
+                          "category_id": "headless_bot",
+                          "name": "Headless Bot",
+                          "description": "Automated headless browsers.",
+                          "action": {
+                            "type": "challenge"
+                          }
+                        },
+                        {
+                          "category_id": "suspected_bot",
+                          "name": "Suspected Bot",
+                          "description": "Traffic that behaves like a bot but is not positively identified.",
+                          "action": {
+                            "type": "allow"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List categories",
+            "id": null,
+            "request": {
+              "name": "List categories",
+              "description": "List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category. To list the bots themselves, use list all bots in a workspace or list bots in a category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}/policy/categories",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}",
+                  "policy",
+                  "categories"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Limit how many results are returned."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 List of bot categories.",
+                "name": "200 List of bot categories.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"meta\":{\"limit\":100,\"total\":6,\"next_cursor\":null},\"data\":[{\"category_id\":\"ai_crawlers\",\"name\":\"AI Crawlers\",\"description\":\"Bots that crawl content for AI training datasets.\",\"action\":{\"type\":\"block\"}},{\"category_id\":\"ai_fetchers\",\"name\":\"AI Fetchers\",\"description\":\"Bots that fetch content on behalf of AI assistants.\",\"action\":{\"type\":\"challenge\"}},{\"category_id\":\"search_engines\",\"name\":\"Search Engines\",\"description\":\"Search engine crawlers and indexers.\",\"action\":{\"type\":\"allow\"}},{\"category_id\":\"social_media\",\"name\":\"Social Media Bots\",\"description\":\"Bots from social media platforms that generate link previews and embeds.\",\"action\":{\"type\":\"allow\"}},{\"category_id\":\"headless_bot\",\"name\":\"Headless Bot\",\"description\":\"Automated headless browsers.\",\"action\":{\"type\":\"challenge\"}},{\"category_id\":\"suspected_bot\",\"name\":\"Suspected Bot\",\"description\":\"Traffic that behaves like a bot but is not positively identified.\",\"action\":{\"type\":\"allow\"}}]}",
+                "originalRequest": {
+                  "name": "List categories",
+                  "description": "List all bot categories in a workspace's policy. Each category has an action that applies to every bot in the category. To list the bots themselves, use list all bots in a workspace or list bots in a category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY/policy/categories?cursor=MTAwOjA&limit=100",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "policy",
+                      "categories?cursor=MTAwOjA&limit=100"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Limit how many results are returned."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/bot-management/v1/workspaces/{workspaceId}/policy/categories/{categoryId}": {
+      "get": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "Get a category",
+        "description": "Get the attributes of a bot category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetACategory",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "The ID of the bot category.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 The requested bot category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetACategory200Response"
+                },
+                "examples": {
+                  "200_The_requested_bot_category.": {
+                    "summary": "200 The requested bot category.",
+                    "value": {
+                      "category_id": "ai_crawlers",
+                      "name": "AI Crawlers",
+                      "description": "Bots that crawl content for AI training datasets.",
+                      "action": {
+                        "type": "block"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get a category",
+            "id": null,
+            "request": {
+              "name": "Get a category",
+              "description": "Get the attributes of a bot category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}/policy/categories/{{category_id}}",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}",
+                  "policy",
+                  "categories",
+                  "{{category_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 The requested bot category.",
+                "name": "200 The requested bot category.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"category_id\":\"ai_crawlers\",\"name\":\"AI Crawlers\",\"description\":\"Bots that crawl content for AI training datasets.\",\"action\":{\"type\":\"block\"}}",
+                "originalRequest": {
+                  "name": "Get a category",
+                  "description": "Get the attributes of a bot category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY/policy/categories/ai_crawlers",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "policy",
+                      "categories",
+                      "ai_crawlers"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "Set a category action",
+        "description": "Set the action for a bot category. Every bot in the category configured with the 'inherit' action uses the action set for the category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "SetACategoryAction",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "The ID of the bot category.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetACategoryActionRequest"
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "action": {
+                      "type": "block"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 The requested bot category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetACategoryAction200Response"
+                },
+                "examples": {
+                  "200_The_requested_bot_category.": {
+                    "summary": "200 The requested bot category.",
+                    "value": {
+                      "category_id": "ai_crawlers",
+                      "name": "AI Crawlers",
+                      "description": "Bots that crawl content for AI training datasets.",
+                      "action": {
+                        "type": "block"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Set a category action",
+            "id": null,
+            "request": {
+              "name": "Set a category action",
+              "description": "Set the action for a bot category. Every bot in the category configured with the 'inherit' action uses the action set for the category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "PATCH",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}/policy/categories/{{category_id}}",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}",
+                  "policy",
+                  "categories",
+                  "{{category_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"action\":{\"type\":\"block\"}}"
+              }
+            },
+            "response": [
+              {
+                "status": "200 The requested bot category.",
+                "name": "200 The requested bot category.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"category_id\":\"ai_crawlers\",\"name\":\"AI Crawlers\",\"description\":\"Bots that crawl content for AI training datasets.\",\"action\":{\"type\":\"block\"}}",
+                "originalRequest": {
+                  "name": "Set a category action",
+                  "description": "Set the action for a bot category. Every bot in the category configured with the 'inherit' action uses the action set for the category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "PATCH",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY/policy/categories/ai_crawlers",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "policy",
+                      "categories",
+                      "ai_crawlers"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"action\":{\"type\":\"block\"}}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/bot-management/v1/workspaces/{workspaceId}/policy/bots": {
+      "get": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "List all bots in a workspace",
+        "description": "List all bots in a workspace's policy across all categories.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "ListAllBotsInAWorkspace",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of bots in the workspace.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAllBotsInAWorkspace200Response"
+                },
+                "examples": {
+                  "200_List_of_bots_in_the_workspace.": {
+                    "summary": "200 List of bots in the workspace.",
+                    "value": {
+                      "meta": {
+                        "limit": 100,
+                        "total": 4,
+                        "next_cursor": null
+                      },
+                      "data": [
+                        {
+                          "bot_id": "claudebot",
+                          "name": "ClaudeBot",
+                          "category_id": "ai_crawlers",
+                          "action": {
+                            "type": "inherit"
+                          }
+                        },
+                        {
+                          "bot_id": "gptbot",
+                          "name": "GPTBot",
+                          "category_id": "ai_crawlers",
+                          "action": {
+                            "type": "allow"
+                          }
+                        },
+                        {
+                          "bot_id": "ccbot",
+                          "name": "CCBot",
+                          "category_id": "ai_crawlers",
+                          "action": {
+                            "type": "inherit"
+                          }
+                        },
+                        {
+                          "bot_id": "googlebot",
+                          "name": "GoogleBot",
+                          "category_id": "search_engines",
+                          "action": {
+                            "type": "inherit"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List all bots in a workspace",
+            "id": null,
+            "request": {
+              "name": "List all bots in a workspace",
+              "description": "List all bots in a workspace's policy across all categories.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}/policy/bots",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}",
+                  "policy",
+                  "bots"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Limit how many results are returned."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 List of bots in the workspace.",
+                "name": "200 List of bots in the workspace.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"meta\":{\"limit\":100,\"total\":4,\"next_cursor\":null},\"data\":[{\"bot_id\":\"claudebot\",\"name\":\"ClaudeBot\",\"category_id\":\"ai_crawlers\",\"action\":{\"type\":\"inherit\"}},{\"bot_id\":\"gptbot\",\"name\":\"GPTBot\",\"category_id\":\"ai_crawlers\",\"action\":{\"type\":\"allow\"}},{\"bot_id\":\"ccbot\",\"name\":\"CCBot\",\"category_id\":\"ai_crawlers\",\"action\":{\"type\":\"inherit\"}},{\"bot_id\":\"googlebot\",\"name\":\"GoogleBot\",\"category_id\":\"search_engines\",\"action\":{\"type\":\"inherit\"}}]}",
+                "originalRequest": {
+                  "name": "List all bots in a workspace",
+                  "description": "List all bots in a workspace's policy across all categories.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY/policy/bots?cursor=MTAwOjA&limit=100",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "policy",
+                      "bots?cursor=MTAwOjA&limit=100"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Limit how many results are returned."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/bot-management/v1/workspaces/{workspaceId}/policy/categories/{categoryId}/bots": {
+      "get": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "List bots in a category",
+        "description": "List all bots in a bot category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "ListBotsInACategory",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "The ID of the bot category.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 List of bots in the category.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListBotsInACategory200Response"
+                },
+                "examples": {
+                  "200_List_of_bots_in_the_category.": {
+                    "summary": "200 List of bots in the category.",
+                    "value": {
+                      "meta": {
+                        "limit": 100,
+                        "total": 3,
+                        "next_cursor": null
+                      },
+                      "data": [
+                        {
+                          "bot_id": "gptbot",
+                          "name": "GPTBot",
+                          "action": {
+                            "type": "block"
+                          }
+                        },
+                        {
+                          "bot_id": "claudebot",
+                          "name": "ClaudeBot",
+                          "action": {
+                            "type": "inherit"
+                          }
+                        },
+                        {
+                          "bot_id": "ccbot",
+                          "name": "CCBot",
+                          "action": {
+                            "type": "inherit"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List bots in a category",
+            "id": null,
+            "request": {
+              "name": "List bots in a category",
+              "description": "List all bots in a bot category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}/policy/categories/{{category_id}}/bots",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}",
+                  "policy",
+                  "categories",
+                  "{{category_id}}",
+                  "bots"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Limit how many results are returned."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 List of bots in the category.",
+                "name": "200 List of bots in the category.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"meta\":{\"limit\":100,\"total\":3,\"next_cursor\":null},\"data\":[{\"bot_id\":\"gptbot\",\"name\":\"GPTBot\",\"action\":{\"type\":\"block\"}},{\"bot_id\":\"claudebot\",\"name\":\"ClaudeBot\",\"action\":{\"type\":\"inherit\"}},{\"bot_id\":\"ccbot\",\"name\":\"CCBot\",\"action\":{\"type\":\"inherit\"}}]}",
+                "originalRequest": {
+                  "name": "List bots in a category",
+                  "description": "List all bots in a bot category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY/policy/categories/ai_crawlers/bots?cursor=MTAwOjA&limit=100",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "policy",
+                      "categories",
+                      "ai_crawlers",
+                      "bots?cursor=MTAwOjA&limit=100"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor for pagination. Use the next_cursor value from a previous response to request the next page of results."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Limit how many results are returned."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/bot-management/v1/workspaces/{workspaceId}/policy/categories/{categoryId}/bots/{botId}": {
+      "get": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "Get a bot",
+        "description": "Get the attributes of a bot in a category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetABot",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "The ID of the bot category.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "botId",
+            "in": "path",
+            "description": "The ID of the bot.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 The requested bot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetABot200Response"
+                },
+                "examples": {
+                  "200_The_requested_bot.": {
+                    "summary": "200 The requested bot.",
+                    "value": {
+                      "bot_id": "gptbot",
+                      "name": "GPTBot",
+                      "action": {
+                        "type": "block"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get a bot",
+            "id": null,
+            "request": {
+              "name": "Get a bot",
+              "description": "Get the attributes of a bot in a category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}/policy/categories/{{category_id}}/bots/{{bot_id}}",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}",
+                  "policy",
+                  "categories",
+                  "{{category_id}}",
+                  "bots",
+                  "{{bot_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 The requested bot.",
+                "name": "200 The requested bot.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"bot_id\":\"gptbot\",\"name\":\"GPTBot\",\"action\":{\"type\":\"block\"}}",
+                "originalRequest": {
+                  "name": "Get a bot",
+                  "description": "Get the attributes of a bot in a category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY/policy/categories/ai_crawlers/bots/gptbot",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "policy",
+                      "categories",
+                      "ai_crawlers",
+                      "bots",
+                      "gptbot"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Bot Management / Bot Management"
+        ],
+        "summary": "Set a bot action",
+        "description": "Set the action for a bot. Set the action to 'inherit' to apply the category's action or to a specific value to override the category's action.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+        "operationId": "SetABotAction",
+        "parameters": [
+          {
+            "name": "workspaceId",
+            "in": "path",
+            "description": "The ID of the workspace.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "The ID of the bot category.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "botId",
+            "in": "path",
+            "description": "The ID of the bot.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetABotActionRequest"
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "action": {
+                      "type": "block"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 The requested bot.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SetABotAction200Response"
+                },
+                "examples": {
+                  "200_The_requested_bot.": {
+                    "summary": "200 The requested bot.",
+                    "value": {
+                      "bot_id": "gptbot",
+                      "name": "GPTBot",
+                      "action": {
+                        "type": "block"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Set a bot action",
+            "id": null,
+            "request": {
+              "name": "Set a bot action",
+              "description": "Set the action for a bot. Set the action to 'inherit' to apply the category's action or to a specific value to override the category's action.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+              "method": "PATCH",
+              "url": {
+                "raw": "{{fastly_url}}/bot-management/v1/workspaces/{{workspace_id}}/policy/categories/{{category_id}}/bots/{{bot_id}}",
+                "path": [
+                  "bot-management",
+                  "v1",
+                  "workspaces",
+                  "{{workspace_id}}",
+                  "policy",
+                  "categories",
+                  "{{category_id}}",
+                  "bots",
+                  "{{bot_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"action\":{\"type\":\"block\"}}"
+              }
+            },
+            "response": [
+              {
+                "status": "200 The requested bot.",
+                "name": "200 The requested bot.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"bot_id\":\"gptbot\",\"name\":\"GPTBot\",\"action\":{\"type\":\"block\"}}",
+                "originalRequest": {
+                  "name": "Set a bot action",
+                  "description": "Set the action for a bot. Set the action to 'inherit' to apply the category's action or to a specific value to override the category's action.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n",
+                  "method": "PATCH",
+                  "url": {
+                    "raw": "https://api.fastly.com/bot-management/v1/workspaces/SU1Z0isxPaozGVKXdv0eY/policy/categories/ai_crawlers/bots/gptbot",
+                    "path": [
+                      "bot-management",
+                      "v1",
+                      "workspaces",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "policy",
+                      "categories",
+                      "ai_crawlers",
+                      "bots",
+                      "gptbot"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"action\":{\"type\":\"block\"}}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Bot Management",
+              "Bot Management"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
     "/client-side-protection/v1/websites": {
       "get": {
         "tags": [
@@ -171037,6 +173308,206 @@
           }
         }
       },
+      "ListWorkspaces2200Response": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/ListWorkspaces2200ResponseMeta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListWorkspaces2200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "GetAWorkspace2200Response": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "protection_mode": {
+            "type": "string"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateAWorkspaceRequest": {
+        "type": "object",
+        "properties": {
+          "protection_mode": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateAWorkspace200Response": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "protection_mode": {
+            "type": "string"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "ListCategories200Response": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/ListCategories200ResponseMeta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListCategories200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "GetACategory200Response": {
+        "type": "object",
+        "properties": {
+          "category_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/components/schemas/GetACategory200ResponseAction"
+          }
+        }
+      },
+      "SetACategoryActionRequest": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/SetACategoryActionRequestAction"
+          }
+        }
+      },
+      "SetACategoryAction200Response": {
+        "type": "object",
+        "properties": {
+          "category_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/components/schemas/SetACategoryAction200ResponseAction"
+          }
+        }
+      },
+      "ListAllBotsInAWorkspace200Response": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/ListAllBotsInAWorkspace200ResponseMeta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListAllBotsInAWorkspace200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "ListBotsInACategory200Response": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/ListBotsInACategory200ResponseMeta"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListBotsInACategory200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "GetABot200Response": {
+        "type": "object",
+        "properties": {
+          "bot_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/components/schemas/GetABot200ResponseAction"
+          }
+        }
+      },
+      "SetABotActionRequest": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/SetABotActionRequestAction"
+          }
+        }
+      },
+      "SetABotAction200Response": {
+        "type": "object",
+        "properties": {
+          "bot_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/components/schemas/SetABotAction200ResponseAction"
+          }
+        }
+      },
       "ListWebsites200Response": {
         "type": "object",
         "properties": {
@@ -185537,6 +188008,195 @@
           }
         }
       },
+      "ListWorkspaces2200ResponseMeta": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "next_cursor": {
+            "x-postman-observed-null": true
+          }
+        }
+      },
+      "ListWorkspaces2200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "protection_mode": {
+            "type": "string"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      },
+      "ListCategories200ResponseMeta": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "next_cursor": {
+            "x-postman-observed-null": true
+          }
+        }
+      },
+      "ListCategories200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "category_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/components/schemas/ListCategories200ResponseDataItemAction"
+          }
+        }
+      },
+      "GetACategory200ResponseAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "SetACategoryActionRequestAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "SetACategoryAction200ResponseAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "ListAllBotsInAWorkspace200ResponseMeta": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "next_cursor": {
+            "x-postman-observed-null": true
+          }
+        }
+      },
+      "ListAllBotsInAWorkspace200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "bot_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category_id": {
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/components/schemas/ListAllBotsInAWorkspace200ResponseDataItemAction"
+          }
+        }
+      },
+      "ListBotsInACategory200ResponseMeta": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "next_cursor": {
+            "x-postman-observed-null": true
+          }
+        }
+      },
+      "ListBotsInACategory200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "bot_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/components/schemas/ListBotsInACategory200ResponseDataItemAction"
+          }
+        }
+      },
+      "GetABot200ResponseAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "SetABotActionRequestAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "SetABotAction200ResponseAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
       "ListWebsites200ResponseDataItem": {
         "type": "object",
         "properties": {
@@ -191851,6 +194511,30 @@
           }
         }
       },
+      "ListCategories200ResponseDataItemAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "ListAllBotsInAWorkspace200ResponseDataItemAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "ListBotsInACategory200ResponseDataItemAction": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        }
+      },
       "ListPages200ResponseDataItemNotificationsItem": {
         "type": "object",
         "properties": {
@@ -196759,6 +199443,10 @@
       "description": "Sudo mode allows users to perform privileged actions after going through a re-authentication flow.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| expiry_time | string | A UTC time-stamp of when sudo access will expire. If blank, sudo access expires five minutes after the request. |"
     },
     {
+      "name": "Bot Management / Bot Management",
+      "description": "The Bot Management API allows you to configure ContentGuard, which controls how Fastly responds to bot traffic. Bots are grouped into categories, each of which has a default action. You can override the action for an individual bot within a category.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| type | string | The type of action to apply. |\n|  | allow | Allow the request. |\n|  | block | Block the request. |\n|  | challenge | Present a challenge to the client. |\n| action | object | The action applied to requests from a single bot. Set the action to 'inherit' to apply the category's action or to a specific value to override the category's action. |\n| bot_id | string | The unique identifier of the bot. |\n| name | string | The display name of the bot. |\n| meta | object | Metadata about the request. |\n| category_id | string | The unique identifier of the category. |\n| description | string | A description of the bots the category contains. |\n| detail | string | An explanation of the problem, specific to this occurrence. |\n| status | integer | The HTTP status code of the response. |\n| title | string | A short summary of the problem. |\n| limit | integer | The limit value used when making the request. |\n| next_cursor | string | The cursor to use to request the next page of results. Set to null when there are no more results. |\n| total | integer | The count of results matching the request. |\n| protection_mode | string | The protection mode of the workspace. off disables all enforcement. log detects and logs bots without blocking or challenging requests. block enforces the actions set on categories and bots. |\n|  | off | No enforcement. |\n|  | log | Bots are detected and logged, but requests are not blocked or challenged. |\n|  | block | Actions set on categories and bots are enforced. |\n| created_at | string | The date and time the workspace was created, in RFC 3339 format. |\n| id | string | A UUID used to uniquely identify the workspace. |\n| services | array | The IDs of the services attached to this workspace. |\n| updated_at | string | The date and time the workspace was last updated, in RFC 3339 format. |"
+    },
+    {
       "name": "Client-Side Protection / Client-Side Protection",
       "description": "Client-Side Protection (CSP) provides visibility and control over third-party scripts running on your web pages. Monitor script behavior, manage authorization status, and configure security policies to protect against client-side attacks like Magecart and formjacking.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| name | string | CSP directive name (e.g., script-src, style-src). |\n| values | array | Directive values. |\n| config | object | Type-specific configuration. |\n| type | string | Notification type. |\n| description | string | Page description. |\n| id | string | Unique page identifier. |\n| notifications | array | Notification configurations for this page. |\n| paths | array | URL paths to monitor. |\n| website_id | string | Parent website ID. |\n| authorization_status | string | Script authorization status. |\n| authorized_hash | string | Hash of authorized script content. |\n| current_hash | string | Current script content hash. |\n| justification | string | Reason for authorization decision. |\n| page_id | string | Parent page ID. |\n| source | string | Script source (inline or external URL). |\n| urls | array | URLs where this script was observed. |\n| domain | string | Website domain. |\n| page_ids | array | IDs of pages associated with this website. |"
     },
@@ -197280,6 +199968,14 @@
     {
       "key": "section",
       "description": "The section to search for. Supports regular expressions."
+    },
+    {
+      "key": "category_id",
+      "description": "The ID of the bot category."
+    },
+    {
+      "key": "bot_id",
+      "description": "The ID of the bot."
     },
     {
       "key": "website_id",
