@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListInvitations200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Invitations
             return requestInfo;
         }
         /// <summary>
-        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/invitations/#create-invitation)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

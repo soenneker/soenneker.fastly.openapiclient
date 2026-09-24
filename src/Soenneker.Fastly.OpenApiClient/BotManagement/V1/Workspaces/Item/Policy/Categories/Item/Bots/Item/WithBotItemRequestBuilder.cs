@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
         {
         }
         /// <summary>
-        /// Get the attributes of a bot in a category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Get the attributes of a bot in a category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetABot200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetABot200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetABot200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the action for a bot. Set the action to &apos;inherit&apos; to apply the category&apos;s action or to a specific value to override the category&apos;s action.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Set the action for a bot. Set the action to &apos;inherit&apos; to apply the category&apos;s action or to a specific value to override the category&apos;s action.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SetABotAction200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SetABotAction200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SetABotAction200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the attributes of a bot in a category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Get the attributes of a bot in a category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
             return requestInfo;
         }
         /// <summary>
-        /// Set the action for a bot. Set the action to &apos;inherit&apos; to apply the category&apos;s action or to a specific value to override the category&apos;s action.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Set the action for a bot. Set the action to &apos;inherit&apos; to apply the category&apos;s action or to a specific value to override the category&apos;s action.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

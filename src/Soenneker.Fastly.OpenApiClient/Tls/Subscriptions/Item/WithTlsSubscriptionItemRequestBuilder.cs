@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
         {
         }
         /// <summary>
-        /// Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Show a TLS subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Show a TLS subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state failed by setting the state to retry.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state failed by setting the state to retry.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Show a TLS subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Show a TLS subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +132,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state failed by setting the state to retry.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state failed by setting the state to retry.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +163,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
             return new global::Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.WithTlsSubscriptionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Show a TLS subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Show a TLS subscription.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithTlsSubscriptionItemRequestBuilderGetQueryParameters 
@@ -180,7 +180,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item
 #endif
         }
         /// <summary>
-        /// Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state failed by setting the state to retry.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state failed by setting the state to retry.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithTlsSubscriptionItemRequestBuilderPatchQueryParameters 

@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
         {
         }
         /// <summary>
-        /// List all bots in a workspace&apos;s policy across all categories.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// List all bots in a workspace&apos;s policy across all categories.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all bots in a workspace&apos;s policy across all categories.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// List all bots in a workspace&apos;s policy across all categories.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
             return new global::Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy.Bots.BotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all bots in a workspace&apos;s policy across all categories.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// List all bots in a workspace&apos;s policy across all categories.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BotsRequestBuilderGetQueryParameters 

@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item
         {
         }
         /// <summary>
-        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#delete-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#delete-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DeleteAUser200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAUser200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAUser200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#delete-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/user/#delete-user)**&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Superuser](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

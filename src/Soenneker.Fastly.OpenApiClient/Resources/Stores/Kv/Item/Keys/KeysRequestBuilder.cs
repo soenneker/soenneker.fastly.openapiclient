@@ -47,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys
         {
         }
         /// <summary>
-        /// Lists the matching item keys (or all item keys, if no prefix is supplied).&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Lists the matching item keys (or all item keys, if no prefix is supplied).&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListItemKeys200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListItemKeys200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListItemKeys200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the matching item keys (or all item keys, if no prefix is supplied).&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Lists the matching item keys (or all item keys, if no prefix is supplied).&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys
             return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.KeysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the matching item keys (or all item keys, if no prefix is supplied).&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/account-info/user-access-and-control/configuring-user-roles-and-permissions&quot;) permissions.
+        /// Lists the matching item keys (or all item keys, if no prefix is supplied).&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class KeysRequestBuilderGetQueryParameters 
