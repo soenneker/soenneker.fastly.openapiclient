@@ -102102,8 +102102,67 @@
           }
         },
         "responses": {
-          "default": {
-            "description": "null "
+          "200": {
+            "description": "200 Successful threshold update.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "enabled": {
+                      "type": "boolean"
+                    },
+                    "signal": {
+                      "type": "string"
+                    },
+                    "action": {
+                      "type": "string"
+                    },
+                    "interval": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "format": "int64"
+                    },
+                    "dont_notify": {
+                      "type": "boolean"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_Successful_threshold_update.": {
+                    "summary": "200 Successful threshold update.",
+                    "value": {
+                      "id": "cB72dvEcGGP85ZTiQkICvg",
+                      "name": "log CMDEXE",
+                      "enabled": true,
+                      "signal": "CMDEXE",
+                      "action": "log",
+                      "interval": 60,
+                      "limit": 5,
+                      "duration": 60,
+                      "dont_notify": false,
+                      "created_at": "2025-08-07T16:26:14-04:00"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "security": [
@@ -102147,6 +102206,10 @@
                 {
                   "key": "Content-Type",
                   "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
                 }
               ],
               "auth": {
@@ -102171,10 +102234,11 @@
             },
             "response": [
               {
-                "status": "null ",
-                "name": "null ",
-                "code": null,
+                "status": "200 Successful threshold update.",
+                "name": "200 Successful threshold update.",
+                "code": 200,
                 "header": [ ],
+                "body": "{\"id\":\"cB72dvEcGGP85ZTiQkICvg\",\"name\":\"log CMDEXE\",\"enabled\":true,\"signal\":\"CMDEXE\",\"action\":\"log\",\"interval\":60,\"limit\":5,\"duration\":60,\"dont_notify\":false,\"created_at\":\"2025-08-07T16:26:14-04:00\"}",
                 "originalRequest": {
                   "name": "Edit threshold",
                   "description": "Change attributes of a threshold in a workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -102201,6 +102265,10 @@
                     },
                     {
                       "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
                       "value": "application/json"
                     }
                   ],
