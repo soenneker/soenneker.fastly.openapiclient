@@ -27,6 +27,7 @@ using Soenneker.Fastly.OpenApiClient.Events;
 using Soenneker.Fastly.OpenApiClient.Iam;
 using Soenneker.Fastly.OpenApiClient.Invitations;
 using Soenneker.Fastly.OpenApiClient.Metrics;
+using Soenneker.Fastly.OpenApiClient.NetworkProtect;
 using Soenneker.Fastly.OpenApiClient.Ngwaf;
 using Soenneker.Fastly.OpenApiClient.Notifications;
 using Soenneker.Fastly.OpenApiClient.Observability;
@@ -160,6 +161,11 @@ namespace Soenneker.Fastly.OpenApiClient
         public global::Soenneker.Fastly.OpenApiClient.Metrics.MetricsRequestBuilder Metrics
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Metrics.MetricsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The networkProtect property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.NetworkProtect.NetworkProtectRequestBuilder NetworkProtect
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.NetworkProtect.NetworkProtectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ngwaf property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Ngwaf.NgwafRequestBuilder Ngwaf
