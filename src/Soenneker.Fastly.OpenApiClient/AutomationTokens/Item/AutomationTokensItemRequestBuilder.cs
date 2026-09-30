@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Services;
+using Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Workspaces;
 using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,11 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item
         public global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Services.ServicesRequestBuilder Services
         {
             get => new global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Services.ServicesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The workspaces property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Workspaces.WorkspacesRequestBuilder Workspaces
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Workspaces.WorkspacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensItemRequestBuilder"/> and sets the default values.

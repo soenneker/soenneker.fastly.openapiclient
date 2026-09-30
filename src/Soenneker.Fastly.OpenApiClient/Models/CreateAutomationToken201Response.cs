@@ -78,6 +78,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string LastUsedAt { get; set; }
 #endif
+        /// <summary>The limit_services property</summary>
+        public bool? LimitServices { get; set; }
+        /// <summary>The limit_workspaces property</summary>
+        public bool? LimitWorkspaces { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +97,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #nullable restore
 #else
         public string Role { get; set; }
+#endif
+        /// <summary>The roles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201ResponseRolesItem>? Roles { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201ResponseRolesItem> Roles { get; set; }
 #endif
         /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,8 +165,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "last_used_at", n => { LastUsedAt = n.GetStringValue(); } },
+                { "limit_services", n => { LimitServices = n.GetBoolValue(); } },
+                { "limit_workspaces", n => { LimitWorkspaces = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201ResponseRolesItem>(global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201ResponseRolesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "services", n => { Services = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "tls_access", n => { TlsAccess = n.GetBoolValue(); } },
@@ -176,8 +191,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ip", Ip);
             writer.WriteStringValue("last_used_at", LastUsedAt);
+            writer.WriteBoolValue("limit_services", LimitServices);
+            writer.WriteBoolValue("limit_workspaces", LimitWorkspaces);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("role", Role);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201ResponseRolesItem>("roles", Roles);
             writer.WriteStringValue("scope", Scope);
             writer.WriteObjectValue<UntypedNode>("services", Services);
             writer.WriteBoolValue("tls_access", TlsAccess);

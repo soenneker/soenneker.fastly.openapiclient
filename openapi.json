@@ -19032,6 +19032,20 @@
                       "role": {
                         "type": "string"
                       },
+                      "roles": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
                       "ip": {
                         "type": "string"
                       },
@@ -19042,6 +19056,16 @@
                         "type": "string"
                       },
                       "services": {
+                        "type": "array",
+                        "items": { }
+                      },
+                      "limit_services": {
+                        "type": "boolean"
+                      },
+                      "limit_workspaces": {
+                        "type": "boolean"
+                      },
+                      "workspaces": {
                         "type": "array",
                         "items": { }
                       },
@@ -19070,10 +19094,19 @@
                         "creator_id": "FASTLY_USER_ID",
                         "name": "automation-token",
                         "role": "engineer",
+                        "roles": [
+                          {
+                            "id": "t4Gg2uUGZzb2W9Euo4mo0R",
+                            "name": "engineer"
+                          }
+                        ],
                         "ip": "127.17.202.173",
                         "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36",
                         "scope": "global",
                         "services": [ ],
+                        "limit_services": false,
+                        "limit_workspaces": true,
+                        "workspaces": [ ],
                         "tls_access": false,
                         "last_used_at": "2022-06-07T20:43:14Z",
                         "created_at": "2022-06-07T20:43:14Z",
@@ -19155,7 +19188,7 @@
                 "name": "200 OK",
                 "code": 200,
                 "header": [ ],
-                "body": "[{\"id\":\"FASTLY_AUTOMATION_TOKEN_ID\",\"customer_id\":\"FASTLY_CUSTOMER_ID\",\"creator_id\":\"FASTLY_USER_ID\",\"name\":\"automation-token\",\"role\":\"engineer\",\"ip\":\"127.17.202.173\",\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\",\"scope\":\"global\",\"services\":[],\"tls_access\":false,\"last_used_at\":\"2022-06-07T20:43:14Z\",\"created_at\":\"2022-06-07T20:43:14Z\",\"expires_at\":\"2022-07-07T23:00:00Z\"}]",
+                "body": "[{\"id\":\"FASTLY_AUTOMATION_TOKEN_ID\",\"customer_id\":\"FASTLY_CUSTOMER_ID\",\"creator_id\":\"FASTLY_USER_ID\",\"name\":\"automation-token\",\"role\":\"engineer\",\"roles\":[{\"id\":\"t4Gg2uUGZzb2W9Euo4mo0R\",\"name\":\"engineer\"}],\"ip\":\"127.17.202.173\",\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\",\"scope\":\"global\",\"services\":[],\"limit_services\":false,\"limit_workspaces\":true,\"workspaces\":[],\"tls_access\":false,\"last_used_at\":\"2022-06-07T20:43:14Z\",\"created_at\":\"2022-06-07T20:43:14Z\",\"expires_at\":\"2022-07-07T23:00:00Z\"}]",
                 "originalRequest": {
                   "name": "List Customer Automation Tokens",
                   "description": "Lists all automation tokens for a customer.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
@@ -19236,44 +19269,6 @@
         "summary": "Create Automation Token",
         "description": "Creates a new automation token.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "CreateAutomationToken",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "expires_at": {
-                    "x-postman-observed-null": true
-                  },
-                  "role": {
-                    "type": "string"
-                  },
-                  "services": {
-                    "type": "array",
-                    "items": { }
-                  },
-                  "tls_access": {
-                    "type": "boolean"
-                  }
-                }
-              },
-              "examples": {
-                "example1": {
-                  "value": {
-                    "name": "my_automation_token",
-                    "expires_at": null,
-                    "role": "engineer",
-                    "services": [ ],
-                    "tls_access": false
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "201": {
             "description": "201 Created",
@@ -19300,6 +19295,20 @@
                     "role": {
                       "type": "string"
                     },
+                    "roles": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
                     "ip": {
                       "type": "string"
                     },
@@ -19312,6 +19321,12 @@
                     "services": {
                       "type": "array",
                       "items": { }
+                    },
+                    "limit_services": {
+                      "type": "boolean"
+                    },
+                    "limit_workspaces": {
+                      "type": "boolean"
                     },
                     "tls_access": {
                       "type": "boolean"
@@ -19337,10 +19352,18 @@
                       "name": "automation-token01",
                       "access_token": "0FMUwOLYpTSaCX2BWhdSJhAtm9ubU3MC",
                       "role": "engineer",
+                      "roles": [
+                        {
+                          "id": "t4Gg2uUGZzb2W9Euo4mo0R",
+                          "name": "engineer"
+                        }
+                      ],
                       "ip": "127.17.202.173",
                       "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36",
                       "scope": "global",
                       "services": [ ],
+                      "limit_services": false,
+                      "limit_workspaces": true,
                       "tls_access": false,
                       "last_used_at": "2022-06-07T20:43:14Z",
                       "created_at": "2022-06-07T20:43:14Z",
@@ -19386,10 +19409,6 @@
                   "value": "api.fastly.com"
                 },
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
                   "key": "Accept",
                   "value": "application/json"
                 }
@@ -19408,10 +19427,6 @@
                     "type": "string"
                   }
                 ]
-              },
-              "body": {
-                "mode": "raw",
-                "raw": "{\"name\":\"my_automation_token\",\"expires_at\":null,\"role\":\"engineer\",\"services\":[],\"tls_access\":false}"
               }
             },
             "response": [
@@ -19420,7 +19435,7 @@
                 "name": "201 Created",
                 "code": 201,
                 "header": [ ],
-                "body": "{\"id\":\"FASTLY_AUTOMATION_TOKEN_ID\",\"customer_id\":\"FASTLY_CUSTOMER_ID\",\"creator_id\":\"FASTLY_USER_ID\",\"name\":\"automation-token01\",\"access_token\":\"0FMUwOLYpTSaCX2BWhdSJhAtm9ubU3MC\",\"role\":\"engineer\",\"ip\":\"127.17.202.173\",\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\",\"scope\":\"global\",\"services\":[],\"tls_access\":false,\"last_used_at\":\"2022-06-07T20:43:14Z\",\"created_at\":\"2022-06-07T20:43:14Z\",\"expires_at\":\"2022-06-07T23:00:00Z\"}",
+                "body": "{\"id\":\"FASTLY_AUTOMATION_TOKEN_ID\",\"customer_id\":\"FASTLY_CUSTOMER_ID\",\"creator_id\":\"FASTLY_USER_ID\",\"name\":\"automation-token01\",\"access_token\":\"0FMUwOLYpTSaCX2BWhdSJhAtm9ubU3MC\",\"role\":\"engineer\",\"roles\":[{\"id\":\"t4Gg2uUGZzb2W9Euo4mo0R\",\"name\":\"engineer\"}],\"ip\":\"127.17.202.173\",\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\",\"scope\":\"global\",\"services\":[],\"limit_services\":false,\"limit_workspaces\":true,\"tls_access\":false,\"last_used_at\":\"2022-06-07T20:43:14Z\",\"created_at\":\"2022-06-07T20:43:14Z\",\"expires_at\":\"2022-06-07T23:00:00Z\"}",
                 "originalRequest": {
                   "name": "Create Automation Token",
                   "description": "Creates a new automation token.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
@@ -19441,10 +19456,6 @@
                       "value": "api.fastly.com"
                     },
                     {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
                       "key": "Accept",
                       "value": "application/json"
                     }
@@ -19463,10 +19474,6 @@
                         "type": "string"
                       }
                     ]
-                  },
-                  "body": {
-                    "mode": "raw",
-                    "raw": "{\"name\":\"my_automation_token\",\"expires_at\":null,\"role\":\"engineer\",\"services\":[],\"tls_access\":false}"
                   }
                 }
               }
@@ -19536,6 +19543,20 @@
                     "role": {
                       "type": "string"
                     },
+                    "roles": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
                     "ip": {
                       "type": "string"
                     },
@@ -19546,6 +19567,16 @@
                       "type": "string"
                     },
                     "services": {
+                      "type": "array",
+                      "items": { }
+                    },
+                    "limit_services": {
+                      "type": "boolean"
+                    },
+                    "limit_workspaces": {
+                      "type": "boolean"
+                    },
+                    "workspaces": {
                       "type": "array",
                       "items": { }
                     },
@@ -19572,10 +19603,19 @@
                       "creator_id": "FASTLY_USER_ID",
                       "name": "automation-token",
                       "role": "engineer",
+                      "roles": [
+                        {
+                          "id": "t4Gg2uUGZzb2W9Euo4mo0R",
+                          "name": "engineer"
+                        }
+                      ],
                       "ip": "127.17.202.173",
                       "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36",
                       "scope": "global",
                       "services": [ ],
+                      "limit_services": false,
+                      "limit_workspaces": true,
+                      "workspaces": [ ],
                       "tls_access": false,
                       "last_used_at": "2022-06-07T20:43:14Z",
                       "created_at": "2022-06-07T20:43:14Z",
@@ -19648,7 +19688,7 @@
                 "name": "200 OK",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"id\":\"FASTLY_AUTOMATION_TOKEN_ID\",\"customer_id\":\"FASTLY_CUSTOMER_ID\",\"creator_id\":\"FASTLY_USER_ID\",\"name\":\"automation-token\",\"role\":\"engineer\",\"ip\":\"127.17.202.173\",\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\",\"scope\":\"global\",\"services\":[],\"tls_access\":false,\"last_used_at\":\"2022-06-07T20:43:14Z\",\"created_at\":\"2022-06-07T20:43:14Z\",\"expires_at\":\"2022-07-07T23:00:00Z\"}",
+                "body": "{\"id\":\"FASTLY_AUTOMATION_TOKEN_ID\",\"customer_id\":\"FASTLY_CUSTOMER_ID\",\"creator_id\":\"FASTLY_USER_ID\",\"name\":\"automation-token\",\"role\":\"engineer\",\"roles\":[{\"id\":\"t4Gg2uUGZzb2W9Euo4mo0R\",\"name\":\"engineer\"}],\"ip\":\"127.17.202.173\",\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36\",\"scope\":\"global\",\"services\":[],\"limit_services\":false,\"limit_workspaces\":true,\"workspaces\":[],\"tls_access\":false,\"last_used_at\":\"2022-06-07T20:43:14Z\",\"created_at\":\"2022-06-07T20:43:14Z\",\"expires_at\":\"2022-07-07T23:00:00Z\"}",
                 "originalRequest": {
                   "name": "Retrieve an Automation Token by ID",
                   "description": "Retrieves an automation token by ID.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
@@ -20076,6 +20116,268 @@
                       {
                         "key": "per_page",
                         "description": ""
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Authentication tokens",
+              "Automation Tokens"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/automation-tokens/{id}/workspaces": {
+      "get": {
+        "tags": [
+          "Authentication tokens / Automation Tokens"
+        ],
+        "summary": "List Automation Token Workspaces",
+        "description": "Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "ListAutomationTokenWorkspaces",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Pagination cursor from a previous response. Pass the next_cursor value to retrieve the next page, or previous_cursor to go back.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of workspaces to return per page.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 Successful response containing workspace details and pagination metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "next_cursor": {
+                          "type": "string"
+                        },
+                        "previous_cursor": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "limit_workspaces": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_Successful_response_containing_workspace_details_and_pagination_metadata.": {
+                    "summary": "200 Successful response containing workspace details and pagination metadata.",
+                    "value": {
+                      "data": [
+                        {
+                          "id": "7rWPJST2KqFD37tnQANBo2",
+                          "name": "Production WAF"
+                        },
+                        {
+                          "id": "3kWQDSoLm9V2xFEk6oPAW5",
+                          "name": "Staging WAF"
+                        }
+                      ],
+                      "meta": {
+                        "limit": 2,
+                        "next_cursor": "YTNrV1FEU29MbTlWMnhGRWs2b1BBVzU",
+                        "previous_cursor": ""
+                      },
+                      "limit_workspaces": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List Automation Token Workspaces",
+            "id": null,
+            "request": {
+              "name": "List Automation Token Workspaces",
+              "description": "Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/automation-tokens/{{id}}/workspaces",
+                "path": [
+                  "automation-tokens",
+                  "{{id}}",
+                  "workspaces"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Pagination cursor from a previous response. Pass the next_cursor value to retrieve the next page, or previous_cursor to go back."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Maximum number of workspaces to return per page."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 Successful response containing workspace details and pagination metadata.",
+                "name": "200 Successful response containing workspace details and pagination metadata.",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"data\":[{\"id\":\"7rWPJST2KqFD37tnQANBo2\",\"name\":\"Production WAF\"},{\"id\":\"3kWQDSoLm9V2xFEk6oPAW5\",\"name\":\"Staging WAF\"}],\"meta\":{\"limit\":2,\"next_cursor\":\"YTNrV1FEU29MbTlWMnhGRWs2b1BBVzU\",\"previous_cursor\":\"\"},\"limit_workspaces\":true}",
+                "originalRequest": {
+                  "name": "List Automation Token Workspaces",
+                  "description": "Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/automation-tokens/{{id}}/workspaces",
+                    "path": [
+                      "automation-tokens",
+                      "{{id}}",
+                      "workspaces"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Pagination cursor from a previous response. Pass the next_cursor value to retrieve the next page, or previous_cursor to go back."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Maximum number of workspaces to return per page."
                       }
                     ]
                   },
@@ -197374,7 +197676,7 @@
     },
     {
       "name": "Authentication tokens / Automation Tokens",
-      "description": "Automation tokens differ from other token types because they are not tied to a specific person and therefore are not subject to the lifecycle of such accounts. Automation tokens are sometimes also called \"service accounts\". They are designed for API automation use-cases such as continuous integration, deployment pipelines, or automation scripts. For more information about authentication tokens, review the Authentication token documentation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| expires_at | string | A UTC timestamp of when the token expires. |\n| name | string | The name of the token. |\n| role | string | The role on the token. |\n| scope | string | A space-delimited list of authorization scope. |\n|  | global | This is the default scope covering all supported capabilities. |\n|  | purge_select | Allows purging with surrogate key and URL. Disallows purging with purge-all. |\n|  | purge_all | Allows purging an entire service via purge_all. |\n|  | global:read | Allows read-only access to account information, configuration, and stats. |\n| services | array | (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account. |\n| tls_access | boolean | Indicates whether TLS access is enabled for the token. |\n| created_at | string | A UTC timestamp of when the token was created. |\n| customer_id | string | Alphanumeric string identifying the customer. |\n| id | string | Alphanumeric string identifying a token. |\n| last_used_at | string | A UTC timestamp of when the token was last used. |\n| user_agent | string | The User-Agent header of the client that last used the token. |\n| user_id | string | Alphanumeric string identifying the user. |\n| ip | string | The IP address of the client that last used the token. |"
+      "description": "Automation tokens differ from other token types because they are not tied to a specific person and therefore are not subject to the lifecycle of such accounts. Automation tokens are sometimes also called \"service accounts\". They are designed for API automation use-cases such as continuous integration, deployment pipelines, or automation scripts. For more information about authentication tokens, review the Authentication token documentation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| expires_at | string | A UTC timestamp of when the token expires. |\n| limit_services | boolean | When true, the token is restricted to only the services in the services array. When false, the token has access to all services. |\n| limit_workspaces | boolean | When true, the token is restricted to only the workspaces in the workspaces array. When false, the token has access to all workspaces. Only applies to roles that support workspace access. |\n| name | string | The name of the token. |\n| role | string | The primary role on the token. For tokens with multiple roles, this returns the highest-priority role for backwards compatibility. |\n| roles | array | All roles assigned to the token. Each role includes an id and name. |\n| scope | string | A space-delimited list of authorization scope. |\n|  | global | This is the default scope covering all supported capabilities. |\n|  | purge_select | Allows purging with surrogate key and URL. Disallows purging with purge-all. |\n|  | purge_all | Allows purging an entire service via purge_all. |\n|  | global:read | Allows read-only access to account information, configuration, and stats. |\n| services | array | The service IDs of the services the token has access to. Empty when limit_services is false (full access) or when the token has no service access. |\n| workspaces | array | The workspace IDs of the workspaces the token has access to. Returns an empty array for tokens without workspace access. |\n| tls_access | boolean | Indicates whether TLS access is enabled for the token. Only applicable when using the single-role role field. For tokens with multiple roles, assign TLS roles (tls_admin or tls_viewer) via the roles field instead. |\n| created_at | string | A UTC timestamp of when the token was created. |\n| customer_id | string | Alphanumeric string identifying the customer. |\n| id | string | Alphanumeric string identifying a token. |\n| last_used_at | string | A UTC timestamp of when the token was last used. |\n| user_agent | string | The User-Agent header of the client that last used the token. |\n| user_id | string | Alphanumeric string identifying the user. |\n| ip | string | The IP address of the client that last used the token. |"
     },
     {
       "name": "Authentication tokens / User tokens",
