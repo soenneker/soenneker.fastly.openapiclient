@@ -117,10 +117,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The services property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Services { get; set; }
+        public List<string>? Services { get; set; }
 #nullable restore
 #else
-        public UntypedNode Services { get; set; }
+        public List<string> Services { get; set; }
 #endif
         /// <summary>The tls_access property</summary>
         public bool? TlsAccess { get; set; }
@@ -131,6 +131,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #nullable restore
 #else
         public string UserAgent { get; set; }
+#endif
+        /// <summary>The workspaces property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Workspaces { get; set; }
+#nullable restore
+#else
+        public List<string> Workspaces { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201Response"/> and sets the default values.
@@ -171,9 +179,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201ResponseRolesItem>(global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201ResponseRolesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
-                { "services", n => { Services = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "services", n => { Services = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tls_access", n => { TlsAccess = n.GetBoolValue(); } },
                 { "user_agent", n => { UserAgent = n.GetStringValue(); } },
+                { "workspaces", n => { Workspaces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -197,9 +206,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("role", Role);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201ResponseRolesItem>("roles", Roles);
             writer.WriteStringValue("scope", Scope);
-            writer.WriteObjectValue<UntypedNode>("services", Services);
+            writer.WriteCollectionOfPrimitiveValues<string>("services", Services);
             writer.WriteBoolValue("tls_access", TlsAccess);
             writer.WriteStringValue("user_agent", UserAgent);
+            writer.WriteCollectionOfPrimitiveValues<string>("workspaces", Workspaces);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
