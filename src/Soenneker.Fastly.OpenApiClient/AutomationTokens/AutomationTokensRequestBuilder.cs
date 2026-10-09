@@ -19,7 +19,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens
     public partial class AutomationTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.automationTokens.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the provider connection.</param>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensItemRequestBuilder"/></returns>
         public global::Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.AutomationTokensItemRequestBuilder this[string position]
         {

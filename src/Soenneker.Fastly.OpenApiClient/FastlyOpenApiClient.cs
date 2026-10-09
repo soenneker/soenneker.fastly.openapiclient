@@ -6,6 +6,7 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
+using Soenneker.Fastly.OpenApiClient.AiRuntimeControl;
 using Soenneker.Fastly.OpenApiClient.Alerts;
 using Soenneker.Fastly.OpenApiClient.ApexRedirects;
 using Soenneker.Fastly.OpenApiClient.ApiSecurity;
@@ -27,6 +28,7 @@ using Soenneker.Fastly.OpenApiClient.Events;
 using Soenneker.Fastly.OpenApiClient.Iam;
 using Soenneker.Fastly.OpenApiClient.Invitations;
 using Soenneker.Fastly.OpenApiClient.Metrics;
+using Soenneker.Fastly.OpenApiClient.Model;
 using Soenneker.Fastly.OpenApiClient.NetworkProtect;
 using Soenneker.Fastly.OpenApiClient.Ngwaf;
 using Soenneker.Fastly.OpenApiClient.Notifications;
@@ -57,6 +59,11 @@ namespace Soenneker.Fastly.OpenApiClient
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FastlyOpenApiClient : BaseRequestBuilder
     {
+        /// <summary>The aiRuntimeControl property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.AiRuntimeControl.AiRuntimeControlRequestBuilder AiRuntimeControl
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.AiRuntimeControl.AiRuntimeControlRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The alerts property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Alerts.AlertsRequestBuilder Alerts
         {
@@ -161,6 +168,11 @@ namespace Soenneker.Fastly.OpenApiClient
         public global::Soenneker.Fastly.OpenApiClient.Metrics.MetricsRequestBuilder Metrics
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Metrics.MetricsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The model property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Model.ModelRequestBuilder Model
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Model.ModelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The networkProtect property</summary>
         public global::Soenneker.Fastly.OpenApiClient.NetworkProtect.NetworkProtectRequestBuilder NetworkProtect

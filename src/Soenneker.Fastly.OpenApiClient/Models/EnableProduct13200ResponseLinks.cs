@@ -22,6 +22,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string Self { get; set; }
 #endif
+        /// <summary>The service property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Service { get; set; }
+#nullable restore
+#else
+        public string Service { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct13200ResponseLinks"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "self", n => { Self = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("self", Self);
+            writer.WriteStringValue("service", Service);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

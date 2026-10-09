@@ -14,6 +14,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The customer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseCustomer? Customer { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseCustomer Customer { get; set; }
+#endif
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,14 +37,6 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseProduct Product { get; set; }
-#endif
-        /// <summary>The service property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseService? Service { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseService Service { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200Response"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "customer", n => { Customer = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseCustomer>(global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseCustomer.CreateFromDiscriminatorValue); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseLinks>(global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseLinks.CreateFromDiscriminatorValue); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseProduct>(global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseProduct.CreateFromDiscriminatorValue); } },
-                { "service", n => { Service = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseService>(global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseService.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseCustomer>("customer", Customer);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseLinks>("_links", Links);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseProduct>("product", Product);
-            writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200ResponseService>("service", Service);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

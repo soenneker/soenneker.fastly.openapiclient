@@ -2,9 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.V1.Audio;
 using Soenneker.Fastly.OpenApiClient.V1.Channel;
+using Soenneker.Fastly.OpenApiClient.V1.Chat;
 using Soenneker.Fastly.OpenApiClient.V1.Domains;
+using Soenneker.Fastly.OpenApiClient.V1.Messages;
+using Soenneker.Fastly.OpenApiClient.V1.ModelsRequests;
 using Soenneker.Fastly.OpenApiClient.V1.Origins;
+using Soenneker.Fastly.OpenApiClient.V1.Responses;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,20 +22,45 @@ namespace Soenneker.Fastly.OpenApiClient.V1
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The audio property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.V1.Audio.AudioRequestBuilder Audio
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.V1.Audio.AudioRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The channel property</summary>
         public global::Soenneker.Fastly.OpenApiClient.V1.Channel.ChannelRequestBuilder Channel
         {
             get => new global::Soenneker.Fastly.OpenApiClient.V1.Channel.ChannelRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The chat property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.V1.Chat.ChatRequestBuilder Chat
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.V1.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domains property</summary>
         public global::Soenneker.Fastly.OpenApiClient.V1.Domains.DomainsRequestBuilder Domains
         {
             get => new global::Soenneker.Fastly.OpenApiClient.V1.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The messages property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.V1.Messages.MessagesRequestBuilder Messages
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.V1.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The models property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.V1.ModelsRequests.ModelsRequestBuilder Models
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.V1.ModelsRequests.ModelsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The origins property</summary>
         public global::Soenneker.Fastly.OpenApiClient.V1.Origins.OriginsRequestBuilder Origins
         {
             get => new global::Soenneker.Fastly.OpenApiClient.V1.Origins.OriginsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The responses property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.V1.Responses.ResponsesRequestBuilder Responses
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.V1.Responses.ResponsesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.V1.V1RequestBuilder"/> and sets the default values.

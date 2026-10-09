@@ -53,38 +53,38 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Origin_inspector.Ser
         /// <summary>
         /// Get the enablement status of the Origin Inspector product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus15200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus15200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus15200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus14200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus15200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetProductEnablementStatus15200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enable the Origin Inspector product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct14200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct15200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct14200Response?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct15200Response?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct14200Response> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct15200Response> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct14200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct14200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct15200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableProduct15200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disable the Origin Inspector product on a service.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ai_accelerator;
+using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ai_runtime_control;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Bot_management;
 using Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Brotli_compression;
@@ -33,6 +34,11 @@ namespace Soenneker.Fastly.OpenApiClient.EnabledProducts.V1
         public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ai_accelerator.Ai_acceleratorRequestBuilder Ai_accelerator
         {
             get => new global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ai_accelerator.Ai_acceleratorRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ai_runtime_control property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ai_runtime_control.Ai_runtime_controlRequestBuilder Ai_runtime_control
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Ai_runtime_control.Ai_runtime_controlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The api_discovery property</summary>
         public global::Soenneker.Fastly.OpenApiClient.EnabledProducts.V1.Api_discovery.Api_discoveryRequestBuilder Api_discovery

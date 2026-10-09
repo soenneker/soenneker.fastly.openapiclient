@@ -16,7 +16,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Snippet
     public partial class SnippetRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item.snippet.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the provider connection.</param>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.Snippet.Item.SnippetItemRequestBuilder"/></returns>
         public global::Soenneker.Fastly.OpenApiClient.Service.Item.Snippet.Item.SnippetItemRequestBuilder this[string position]
         {

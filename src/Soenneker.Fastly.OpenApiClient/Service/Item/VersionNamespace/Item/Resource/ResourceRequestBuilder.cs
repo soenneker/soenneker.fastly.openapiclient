@@ -19,7 +19,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Reso
     public partial class ResourceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item.version.item.resource.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the provider connection.</param>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Resource.Item.ResourceItemRequestBuilder"/></returns>
         public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Resource.Item.ResourceItemRequestBuilder this[string position]
         {
