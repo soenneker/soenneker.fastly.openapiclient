@@ -2,7 +2,7 @@
   "descriptionHash": "F9851CB1AA43A89E96C10CAE70CD3BB187A5623DEDCDFE950BA3605BA42D9D92965B95EA834AF756761563E7AFA58B33CFD1881A429142C3F8D0AB17BBDCE1E4",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.35.0",
+  "kiotaVersion": "1.36.0",
   "clientClassName": "FastlyOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Fastly.OpenApiClient",
