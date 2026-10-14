@@ -151093,6 +151093,18 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "fastly-purge-environment",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "staging"
+              }
+            }
           }
         ],
         "responses": {
@@ -151155,6 +151167,10 @@
                 {
                   "key": "Accept",
                   "value": "application/json"
+                },
+                {
+                  "key": "fastly-purge-environment",
+                  "value": "staging"
                 }
               ],
               "auth": {
@@ -151205,6 +151221,10 @@
                     {
                       "key": "Accept",
                       "value": "application/json"
+                    },
+                    {
+                      "key": "fastly-purge-environment",
+                      "value": "staging"
                     }
                   ],
                   "auth": {
@@ -151264,6 +151284,18 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "fastly-purge-environment",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": "staging"
+              }
             }
           },
           {
@@ -151377,6 +151409,10 @@
                   "value": "application/json"
                 },
                 {
+                  "key": "fastly-purge-environment",
+                  "value": "staging"
+                },
+                {
                   "key": "fastly-soft-purge",
                   "value": "1"
                 },
@@ -151440,6 +151476,10 @@
                     {
                       "key": "Accept",
                       "value": "application/json"
+                    },
+                    {
+                      "key": "fastly-purge-environment",
+                      "value": "staging"
                     },
                     {
                       "key": "fastly-soft-purge",
