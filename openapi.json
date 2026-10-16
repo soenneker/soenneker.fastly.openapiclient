@@ -15295,7 +15295,7 @@
     "/v1/chat/completions": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "Create chat completion",
         "description": "Creates a chat completion using the OpenAI Chat Completions wire format. Supports both\nstreaming (server-sent events) and non-streaming responses. See the\nOpenAI Chat Completions API reference\nfor the full request and response shape.\n> **Authorization**: .\n",
@@ -15535,7 +15535,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -15559,7 +15559,7 @@
     "/v1/responses": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "Create response",
         "description": "Creates a response using the OpenAI Responses API wire format. Supports both streaming\n(server-sent events) and non-streaming responses. See the\nOpenAI Responses API reference\nfor the full request and response shape.\n> **Authorization**: .\n",
@@ -15708,7 +15708,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -15732,7 +15732,7 @@
     "/v1/messages": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "Create message (Anthropic format)",
         "description": "Creates a message using the Anthropic Messages API wire format. Accepts either an\nAuthorization: Bearer header or an x-api-key header for authentication. Supports\nboth streaming (server-sent events) and non-streaming responses. See the\nAnthropic Messages API reference for the\nfull request and response shape.\n> **Authorization**: .\n",
@@ -15902,7 +15902,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -15926,7 +15926,7 @@
     "/v1/messages/count_tokens": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "Count tokens",
         "description": "Counts the input tokens a Messages API request would consume, without sending the\nrequest to the provider.\n> **Authorization**: .\n",
@@ -16070,7 +16070,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -16094,7 +16094,7 @@
     "/v1/audio/speech": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "Create speech",
         "description": "Generates audio from text input, using the OpenAI text-to-speech wire format. Returns\nraw audio bytes in the requested format.\n> **Authorization**: .\n",
@@ -16249,7 +16249,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -16273,7 +16273,7 @@
     "/v1/audio/transcriptions": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "Create transcription",
         "description": "Transcribes an audio file to text, using the OpenAI transcription wire format. Accepts\nmultipart form data with an audio file (up to 25 MB).\n> **Authorization**: .\n",
@@ -16412,7 +16412,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -16436,7 +16436,7 @@
     "/v1/models": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "List models",
         "description": "Lists the AI models available through your configured providers and provider connections.\n> **Authorization**: .\n",
@@ -16622,7 +16622,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -16646,7 +16646,7 @@
     "/model/{modelId}/invoke": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "Bedrock InvokeModel",
         "description": "A non-streaming, Amazon Bedrock Runtime InvokeModel-compatible endpoint. Request and\nresponse bodies use the Anthropic Messages API format. See the\nBedrock Runtime InvokeModel reference\nfor the wrapping request/response envelope.\n> **Authorization**: .\n",
@@ -16720,7 +16720,7 @@
             "response": null,
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -16744,7 +16744,7 @@
     "/model/{modelId}/invoke-with-response-stream": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Gateway"
+          "AI Runtime Control / Gateway"
         ],
         "summary": "Bedrock InvokeModelWithResponseStream",
         "description": "A streaming, Amazon Bedrock Runtime InvokeModelWithResponseStream-compatible endpoint.\nThe request body uses the Anthropic Messages API format. The response is an AWS\nEventStream binary stream carrying base64-wrapped Anthropic streaming events. See the\nBedrock Runtime InvokeModelWithResponseStream reference\nfor the streaming envelope.\n> **Authorization**: .\n",
@@ -16818,7 +16818,7 @@
             "response": null,
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Gateway"
+              "Gateway"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -16842,7 +16842,7 @@
     "/ai-runtime-control/v1/provider-connections": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Provider Connections"
+          "AI Runtime Control / Provider Connections"
         ],
         "summary": "List provider connections",
         "description": "List the provider connections belonging to your account.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -17088,7 +17088,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Provider Connections"
+              "Provider Connections"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -17110,7 +17110,7 @@
       },
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Provider Connections"
+          "AI Runtime Control / Provider Connections"
         ],
         "summary": "Create a provider connection",
         "description": "Create a provider connection. Set auth_type to api-key (the default) to connect\nwith a provider's own API key, or to aws-iam to connect to Amazon Bedrock using an\nAWS IAM role.\nAccounts are limited to 25 provider connections. Creating a 26th connection returns a\n409 response.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -17340,7 +17340,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Provider Connections"
+              "Provider Connections"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -17364,7 +17364,7 @@
     "/ai-runtime-control/v1/provider-connections/{id}": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Provider Connections"
+          "AI Runtime Control / Provider Connections"
         ],
         "summary": "Get a provider connection",
         "description": "Retrieve a single provider connection.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -17558,7 +17558,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Provider Connections"
+              "Provider Connections"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -17580,7 +17580,7 @@
       },
       "delete": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Provider Connections"
+          "AI Runtime Control / Provider Connections"
         ],
         "summary": "Delete a provider connection",
         "description": "Delete a provider connection. Returns a 409 response if the connection is still\nreferenced by a virtual key's failover policy.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -17703,7 +17703,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Provider Connections"
+              "Provider Connections"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -17725,7 +17725,7 @@
       },
       "patch": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Provider Connections"
+          "AI Runtime Control / Provider Connections"
         ],
         "summary": "Update a provider connection",
         "description": "Update the attributes of a provider connection. Only the fields you include are\nchanged. Which fields you can set depends on the connection's existing auth_type:\nbase_url and api_key apply only to api-key connections, and customer_role_arn\nand region apply only to aws-iam connections. auth_type itself cannot be changed.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -17953,7 +17953,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Provider Connections"
+              "Provider Connections"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -17977,7 +17977,7 @@
     "/ai-runtime-control/v1/providers": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Providers"
+          "AI Runtime Control / Providers"
         ],
         "summary": "Get supported providers",
         "description": "Returns the AI providers supported by AI Runtime Control, with each provider's available models nested within.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -18172,7 +18172,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Providers"
+              "Providers"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -18196,7 +18196,7 @@
     "/ai-runtime-control/v1/providers/{provider_id}/models": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Providers"
+          "AI Runtime Control / Providers"
         ],
         "summary": "Get models for a provider",
         "description": "Returns the models available for a specific provider.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -18382,7 +18382,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Providers"
+              "Providers"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -18406,7 +18406,7 @@
     "/ai-runtime-control/v1/providers/bedrock/setup": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Providers"
+          "AI Runtime Control / Providers"
         ],
         "summary": "Get Bedrock setup information",
         "description": "Returns the AI Runtime Control IAM role Amazon Resource Name (ARN) and external ID to reference in your AWS\naccount's IAM trust policy before creating an aws-iam provider connection\nto Amazon Bedrock.\nRequires AWS IAM authentication to be enabled on your account. If it isn't, this\nendpoint returns a 404 response.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -18553,7 +18553,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Providers"
+              "Providers"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -18577,7 +18577,7 @@
     "/ai-runtime-control/v1/sessions": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Sessions"
+          "AI Runtime Control / Sessions"
         ],
         "summary": "Get session logs",
         "description": "Returns session logs, including request and response data and metadata, for debugging and audit purposes.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -19009,7 +19009,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Sessions"
+              "Sessions"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -19033,7 +19033,7 @@
     "/ai-runtime-control/v1/usage-metrics": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Usage Metrics"
+          "AI Runtime Control / Usage Metrics"
         ],
         "summary": "Get usage metrics",
         "description": "Returns usage metrics for AI Runtime Control requests, including request counts, session counts, input token counts, and output token counts.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -19384,7 +19384,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Usage Metrics"
+              "Usage Metrics"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -19408,7 +19408,7 @@
     "/ai-runtime-control/v1/usage-metrics/export": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Usage Metrics"
+          "AI Runtime Control / Usage Metrics"
         ],
         "summary": "Export usage metrics",
         "description": "Returns usage metrics for AI Runtime Control requests. Accepts the same filter\nparameters as get usage metrics, except sort and\ngranularity, which aren't supported here.\nSet the Accept header to text/csv to receive a CSV file download instead of a\nJSON response. In the CSV output, the column named time corresponds to the date\nfield in the JSON response.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -19719,7 +19719,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Usage Metrics"
+              "Usage Metrics"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -19743,7 +19743,7 @@
     "/ai-runtime-control/v1/keys": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Virtual Keys"
+          "AI Runtime Control / Virtual Keys"
         ],
         "summary": "List virtual keys",
         "description": "List the virtual keys belonging to your account.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -20094,7 +20094,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Virtual Keys"
+              "Virtual Keys"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -20116,7 +20116,7 @@
       },
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Virtual Keys"
+          "AI Runtime Control / Virtual Keys"
         ],
         "summary": "Create a virtual key",
         "description": "Create a new virtual key for authenticating requests through the AI Runtime Control gateway.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -20340,7 +20340,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Virtual Keys"
+              "Virtual Keys"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -20364,7 +20364,7 @@
     "/ai-runtime-control/v1/keys/{key_id}": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Virtual Keys"
+          "AI Runtime Control / Virtual Keys"
         ],
         "summary": "Get a virtual key",
         "description": "Retrieve a single virtual key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -20574,7 +20574,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Virtual Keys"
+              "Virtual Keys"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -20596,7 +20596,7 @@
       },
       "delete": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Virtual Keys"
+          "AI Runtime Control / Virtual Keys"
         ],
         "summary": "Delete a virtual key",
         "description": "Delete a virtual key. This also deletes any security configuration associated with the key.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -20719,7 +20719,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Virtual Keys"
+              "Virtual Keys"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -20741,7 +20741,7 @@
       },
       "patch": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Virtual Keys"
+          "AI Runtime Control / Virtual Keys"
         ],
         "summary": "Update a virtual key",
         "description": "Update the attributes of a virtual key. Only the fields you include are changed.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -20973,7 +20973,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Virtual Keys"
+              "Virtual Keys"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -20997,7 +20997,7 @@
     "/ai-runtime-control/v1/keys/{key_id}/rotate": {
       "post": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Virtual Keys"
+          "AI Runtime Control / Virtual Keys"
         ],
         "summary": "Rotate a virtual key",
         "description": "Issue a new access token for a virtual key, invalidating the previous one.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -21216,7 +21216,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Virtual Keys"
+              "Virtual Keys"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -21240,7 +21240,7 @@
     "/ai-runtime-control/v1/keys/{key_id}/failover": {
       "get": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Virtual Keys"
+          "AI Runtime Control / Virtual Keys"
         ],
         "summary": "Get a virtual key's failover policy",
         "description": "Retrieve the failover policy for a virtual key. A failover policy lists alternate\nprovider connections to retry a request against, and which error conditions trigger\na retry.\nFailover is a per-account feature. If it isn't enabled on your account, this endpoint\nreturns a 404 response.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -21418,7 +21418,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Virtual Keys"
+              "Virtual Keys"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -21440,7 +21440,7 @@
       },
       "put": {
         "tags": [
-          "AI Runtime Control / AI Runtime Control Virtual Keys"
+          "AI Runtime Control / Virtual Keys"
         ],
         "summary": "Update a virtual key's failover policy",
         "description": "Replace the failover policy for a virtual key.\nFailover is a per-account feature. If it isn't enabled on your account, this endpoint\nreturns a 404 response.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -21679,7 +21679,7 @@
             ],
             "folders": [
               "AI Runtime Control",
-              "AI Runtime Control Virtual Keys"
+              "Virtual Keys"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -204743,27 +204743,27 @@
       "description": "An access control list (ACL) specifies individual IP addresses or subnet ranges and can be accessed and used from the Fastly Compute platform.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| name | string | Human readable name of store. |\n| id | string | An example identifier (UUID). |\n| action | string | One of \"ALLOW\" or \"BLOCK\". |\n| prefix | string | An IP prefix defined in Classless Inter-Domain Routing (CIDR) format, i.e. a valid IP address (v4 or v6) followed by a forward slash (/) and a prefix length (0-32 or 0-128, depending on address family). |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| id | string | An example identifier (UUID). |\n| meta | object | Meta for the total of ACLs. |\n| name | string | Human readable name of store. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| action | string | One of \"ALLOW\" or \"BLOCK\". |\n| prefix | string | A valid IPv4 or IPv6 address and prefix in CIDR notation. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| action | string | The action taken on the IP address, one of \"BLOCK\" or \"ALLOW\". If using the \"delete\" operation, no action should be specified. |\n| op | string | One of \"create\", \"update\", or \"delete\" indicating the operation to perform on the update. |\n| prefix | string | An IP prefix defined in Classless Inter-Domain Routing (CIDR) format, i.e. a valid IP address (v4 or v6) followed by a forward slash (/) and a prefix length (0-32 or 0-128, depending on address family). |"
     },
     {
-      "name": "AI Runtime Control / AI Runtime Control Gateway",
+      "name": "AI Runtime Control / Gateway",
       "description": "The AI Runtime Control gateway forwards your requests to AI model providers. You authenticate to the gateway with a virtual key, and the gateway uses the credentials configured on that key to reach the provider for you. Most gateway endpoints accept the same requests and return the same responses as the provider APIs OpenAI Chat Completions, OpenAI Responses APIs, Anthropic Messages API, and Amazon Bedrock Runtime InvokeModel and InvokeModelWithResponseStream APIs. This means you can keep using your existing provider client and change only its base URL and credentials. Specify models by name, for example gpt-4 or claude-sonnet-4-20250514. Bedrock endpoints work differently. They put the Bedrock model ID or ARN in the request path instead of a model field, and authenticate with a Bearer token instead of signing requests with AWS Signature Version 4 (SigV4). Each endpoint follows its provider's request and response format, so see that provider's documentation for the full list of supported fields.\n> **Authorization**: .\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| messages | array | The conversation so far. |\n| model | string | The model to use, addressed by its bare model name. The provider is determined by the virtual key's configured provider. Failover targets are only tried if that primary request fails. |\n| stream | boolean | Whether to stream the response as server-sent events. |\n| input_tokens | integer | The number of input tokens the request would consume. |\n| max_tokens | integer | The maximum number of tokens to generate. |\n| input | string | The text to synthesize into speech. |\n| speed | number | The speech speed multiplier. |\n| voice | string | The voice to use. |\n| file | string | The audio file to transcribe (up to 25 MB). |\n| language | string | The language of the audio, as an ISO 639-1 code. |\n| text | string | The transcribed text. |"
     },
     {
-      "name": "AI Runtime Control / AI Runtime Control Provider Connections",
+      "name": "AI Runtime Control / Provider Connections",
       "description": "These endpoints allow you to create and manage provider connections, which supply the credentials AI Runtime Control uses to reach an AI provider on your behalf. A provider connection is authenticated either with a provider API key or, for Amazon Bedrock, an AWS Identity and Access Management (IAM) role. Each customer account is limited to 25 provider connections.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| auth_type | string | The authentication type for this connection. |\n| base_url | string | The base URL of the provider's API. Present only for api-key connections. |\n| created_at | string | The date and time the connection was created, in RFC 3339 format. |\n| id | string | The unique identifier of the provider connection. |\n| models | array | The AI model identifiers this connection is allowed to use. |\n| name | string | The display name of the provider connection. |\n| region | string | The AWS region for Bedrock API requests. Present only for aws-iam connections. |\n| secret_id | string | An opaque identifier for the secret material backing this connection. Not the secret itself. |\n| updated_at | string | The date and time the connection was last updated, in RFC 3339 format. |\n| virtual_key_ids | array | The IDs of the active virtual keys whose failover policy references this connection. Empty if no virtual key references it. |\n| api_key | string | The provider's secret API key. |\n| customer_role_arn | string | The ARN of the IAM role in your AWS account that AI Runtime Control assumes to access Bedrock. See get Bedrock setup information for the role ARN and external ID your trust policy must reference. |\n| deleted_at | string | The date and time the connection was deleted, in RFC 3339 format. Present only for deleted connections, which are returned only when include_deleted is true. |\n| sort | string | The sort value used when making the request. |\n| total | integer | The count of results matching the request. |\n| meta | object | Metadata about the request. |"
     },
     {
-      "name": "AI Runtime Control / AI Runtime Control Providers",
+      "name": "AI Runtime Control / Providers",
       "description": "These endpoints return reference data about the AI providers and models AI Runtime Control supports, and setup information for connecting to Amazon Bedrock.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| arc_role_arn | string | The ARN of the AI Runtime Control IAM role your AWS account's trust policy must trust. |\n| external_id | string | The external ID to require in your trust policy. This is your Fastly customer ID. |\n| display_name | string | The human-readable name of the model. |\n| id | string | The model identifier. |\n| provider_id | string | The ID of the provider this model belongs to. |\n| total | integer | The count of models returned. |\n| default_base_url | string | The default API base URL for the provider. |\n| models | array | The models available from this provider. |"
     },
     {
-      "name": "AI Runtime Control / AI Runtime Control Sessions",
+      "name": "AI Runtime Control / Sessions",
       "description": "This endpoint returns session logs for requests made through AI Runtime Control, including request and response data and metadata, for debugging and audit purposes.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| created_at | string | The date and time the session was created, in RFC 3339 format. |\n| firewall_enabled | boolean | Whether AI Firewall was enabled for this session's virtual key. |\n| firewall_incomplete_reason | string | Why AI Firewall inspection was incomplete, if applicable. Present only when AI Firewall ran and inspection didn't complete. |\n| firewall_outcome | string | The outcome AI Firewall reached for this session. Present only when AI Firewall ran. |\n| firewall_policy | string | The AI Firewall policy that was applied. Present only when AI Firewall ran. |\n| firewall_stage | string | The AI Firewall stage that produced the outcome (for example, the request or response stage). Present only when AI Firewall ran. |\n| id | string | The unique identifier of the session. |\n| input_tokens | integer | The total input tokens consumed in this session. |\n| logs | array | The request and response pairs recorded for this session. |\n| model | string | The AI model identifier used. |\n| output_tokens | integer | The total output tokens generated in this session. |\n| primary_provider | string | The ID of the provider connection originally requested, before any failover occurred. |\n| provider | string | The name of the provider connection that ultimately served the session. |\n| provider_connection_id | string | The ID of the provider connection that ultimately served the session. |\n| requests | integer | The number of requests made in this session. |\n| updated_at | string | The date and time the session was last updated, in RFC 3339 format. |\n| violations | integer | The number of AI Firewall violations detected in this session. |\n| virtual_key_id | string | The ID of the virtual key used for this session. |\n| virtual_key_name | string | The display name of the virtual key used for this session. |\n| attrs | object | Additional attributes recorded for this request/response pair. |\n| request | string | The raw request data. |\n| response | string | The raw response data. |\n| limit | integer | The limit value used when making the request. |\n| next_cursor | string | The cursor to use to request the next page of results. null when there are no more results. |\n| prev_cursor | string | The cursor to use to request the previous page of results. null when there is no previous page. |\n| sort | string | The sort value used when making the request. |\n| total | integer | The count of results matching the request. |\n| meta | object | Metadata about the request. |"
     },
     {
-      "name": "AI Runtime Control / AI Runtime Control Usage Metrics",
+      "name": "AI Runtime Control / Usage Metrics",
       "description": "These endpoints return usage metrics for requests made through AI Runtime Control, including request counts, session counts, and token consumption. Metrics can be filtered by virtual key, provider, and model.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| date | string | The date (or hour) the usage was measured. Formatted as YYYY-MM-DD when\ngranularity is daily, or YYYY-MM-DD HH:00:00 when granularity is hourly. |\n| model | string | The AI model identifier used. |\n| primary_provider | string | The ID of the provider connection originally requested, before any failover occurred. |\n| provider | string | The name of the provider connection that ultimately served the request. |\n| provider_connection_id | string | The ID of the provider connection that ultimately served the request. |\n| quantity | integer | The quantity of the usage type for this date. |\n| usage_type | string | The type of usage being measured. |\n| virtual_key_id | string | The ID of the virtual key this usage is attributed to. |\n| virtual_key_name | string | The display name of the virtual key this usage is attributed to. |\n| sort | string | The sort value used when making the request. |\n| total | integer | The count of results matching the request. |\n| meta | object | Metadata about the request. |"
     },
     {
-      "name": "AI Runtime Control / AI Runtime Control Virtual Keys",
+      "name": "AI Runtime Control / Virtual Keys",
       "description": "These endpoints allow you to create and manage virtual keys, which are used to authenticate requests made through the AI Runtime Control gateway. Each virtual key can be configured with request-per-minute and token-per-minute rate limits, a spend-limit flag, and a failover policy.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| access_token | string | The access token for this virtual key. This is only returned when the key is created or rotated, and cannot be retrieved again afterward. |\n| created_at | string | The date and time the key was created, in RFC 3339 format. |\n| customer_id | string | The ID of the customer account that owns the key. |\n| expires_at | string | The date and time the key expires, in RFC 3339 format. null if the key doesn't expire. |\n| id | string | The unique identifier of the virtual key. |\n| name | string | The display name of the virtual key. |\n| rpm_limit | integer | The requests-per-minute limit for this key. null if there is no limit. |\n| tpm_limit | integer | The tokens-per-minute limit for this key. null if there is no limit. |\n| updated_at | string | The date and time the key was last updated, in RFC 3339 format. |\n| user_id | string | The ID of the user who created the key. |\n| provider_connection_id | string | The ID of the provider connection to retry against. |\n| security_action | string | The action AI Firewall takes when it detects a violation on a request made with this key. |\n| security_enabled | boolean | Whether AI Firewall security is enabled for requests made with this key. |\n| spend_limit_enabled | boolean | Whether a spend limit is enabled for this key. This field cannot be set when the key is created; it can only be changed with this endpoint. |\n| spend_limit_enabled_on | string | The date and time spend_limit_enabled was last set to true, in RFC 3339 format.\nnull if the spend limit has never been enabled. This timestamp is not cleared when\nspend_limit_enabled is later set back to false, so it can be non-null even when\nthe spend limit is currently disabled. |\n| rate_limit_429_enabled | boolean | Whether a 429 Too Many Requests response from the provider triggers failover. |\n| server_error_5xx_enabled | boolean | Whether a 5xx server error response from the provider triggers failover. |\n| targets | array | The provider connections to retry against, in order. |\n| timeout_enabled | boolean | Whether a request timeout triggers failover. |\n| deleted_at | string | The date and time the key was deleted, in RFC 3339 format. null unless the key was deleted and include_deleted was used to retrieve it. |\n| last_used_at | string | The date and time the key was last used to make a request, in RFC 3339 format. null if the key has never been used. |\n| type | string | The type of the resource. |\n| user_name | string | The display name of the user who created the key. |\n| created_by | string | The display name of the user who created the key. |\n| limit | integer | The limit value used when making the request. |\n| next_cursor | string | The cursor to use to request the next page of results. null when there are no more results. |\n| prev_cursor | string | The cursor to use to request the previous page of results. null when there is no previous page. |\n| sort | string | The sort value used when making the request. |\n| total | integer | The count of results matching the request. |\n| meta | object | Metadata about the request. |"
     },
     {
