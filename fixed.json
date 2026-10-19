@@ -66785,7 +66785,7 @@
           {
             "name": "metric",
             "in": "query",
-            "description": "The metric(s) to retrieve. Multiple values should be comma-separated.",
+            "description": "One or more metrics to retrieve. Multiple values should be comma-separated.",
             "schema": {
               "type": "string"
             },
@@ -66932,7 +66932,7 @@
                   },
                   {
                     "key": "metric",
-                    "description": "The metric(s) to retrieve. Multiple values should be comma-separated."
+                    "description": "One or more metrics to retrieve. Multiple values should be comma-separated."
                   },
                   {
                     "key": "region",
@@ -66982,13 +66982,13 @@
                   "description": "Return historical time series metrics for bot requests broken down by bot-type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "GET",
                   "url": {
-                    "raw": "https://api.fastly.com/metrics/bots/entities/SU1Z0isxPaozGVKXdv0eY/minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=bot_id&metric_set=content_guard&metric=ttfb_edge_p95_us%2Cttfb_edge_p99_us&region=usa&to=2025-08-02T00%3A00%3A00.000Z",
+                    "raw": "https://api.fastly.com/metrics/bots/entities/SU1Z0isxPaozGVKXdv0eY/minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=bot_id&metric_set=content_guard&metric=status_4xx%2Cstatus_5xx%2Cipv6%2Chttp3&region=usa&to=2025-08-02T00%3A00%3A00.000Z",
                     "path": [
                       "metrics",
                       "bots",
                       "entities",
                       "SU1Z0isxPaozGVKXdv0eY",
-                      "minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=bot_id&metric_set=content_guard&metric=ttfb_edge_p95_us%2Cttfb_edge_p99_us&region=usa&to=2025-08-02T00%3A00%3A00.000Z"
+                      "minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=bot_id&metric_set=content_guard&metric=status_4xx%2Cstatus_5xx%2Cipv6%2Chttp3&region=usa&to=2025-08-02T00%3A00%3A00.000Z"
                     ],
                     "host": [
                       "https://api.fastly.com"
@@ -67024,7 +67024,7 @@
                       },
                       {
                         "key": "metric",
-                        "description": "The metric(s) to retrieve. Multiple values should be comma-separated."
+                        "description": "One or more metrics to retrieve. Multiple values should be comma-separated."
                       },
                       {
                         "key": "region",
@@ -72022,6 +72022,881 @@
             "folders": [
               "Domain metrics",
               "Domain Inspector Real-time API"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/metrics/v2/platform/entities/{entityId}/{granularity}": {
+      "get": {
+        "tags": [
+          "Metrics v2 / Platform Metrics"
+        ],
+        "summary": "Get historical time series metrics for a single entity",
+        "description": "Fetches historical metrics for a single entity for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetHistoricalTimeSeriesMetricsForASingleEntity",
+        "parameters": [
+          {
+            "name": "entityId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the entity.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "granularity",
+            "in": "path",
+            "description": "Duration of sample windows.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "datacenter",
+            "in": "query",
+            "description": "Limit query to one or more specific POPs. Values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "group_by",
+            "in": "query",
+            "description": "Field to group_by in the query.\nFor example, group_by=region will return entries for grouped by timestamp and region.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page. The maximum is 10000.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "metric_set",
+            "in": "query",
+            "description": "One or more metric sets to retrieve. Multiple values should be comma-separated. A metric set expands to a list of metrics; see the Metric Sets section above for the metrics in each set. A metric that appears in more than one requested set is returned once.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "metric",
+            "in": "query",
+            "description": "One or more metrics to retrieve. Multiple values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "description": "Limit query to one or more specific geographic regions. Values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetHistoricalTimeSeriesMetricsForASingleEntity200Response"
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "data": [
+                        {
+                          "timestamp": "2025-10-30T21:07:00Z",
+                          "bandwidth": 418540000,
+                          "bereq_body_bytes": 48000,
+                          "bereq_header_bytes": 9600,
+                          "edge_requests": 12480,
+                          "edge_resp_body_bytes": 412300000,
+                          "edge_resp_header_bytes": 6240000,
+                          "requests": 12480,
+                          "resp_body_bytes": 412300000,
+                          "resp_header_bytes": 6240000,
+                          "shield": 640,
+                          "status_200": 9650,
+                          "status_204": 120,
+                          "status_206": 310,
+                          "status_2xx": 10080,
+                          "status_301": 410,
+                          "status_302": 520,
+                          "status_304": 890,
+                          "status_3xx": 1820,
+                          "status_4xx": 540,
+                          "status_5xx": 40,
+                          "tls_v10": 3,
+                          "tls_v11": 5,
+                          "tls_v12": 4200,
+                          "tls_v13": 7100,
+                          "upgrade": 15,
+                          "ipv6": 3120,
+                          "http3": 2210
+                        },
+                        {
+                          "timestamp": "2025-10-30T21:08:00Z",
+                          "bandwidth": 401770000,
+                          "bereq_body_bytes": 44500,
+                          "bereq_header_bytes": 8900,
+                          "edge_requests": 11935,
+                          "edge_resp_body_bytes": 395800000,
+                          "edge_resp_header_bytes": 5970000,
+                          "requests": 11935,
+                          "resp_body_bytes": 395800000,
+                          "resp_header_bytes": 5970000,
+                          "shield": 598,
+                          "status_200": 9210,
+                          "status_204": 105,
+                          "status_206": 295,
+                          "status_2xx": 9610,
+                          "status_301": 385,
+                          "status_302": 498,
+                          "status_304": 862,
+                          "status_3xx": 1745,
+                          "status_4xx": 520,
+                          "status_5xx": 60,
+                          "tls_v10": 2,
+                          "tls_v11": 4,
+                          "tls_v12": 4010,
+                          "tls_v13": 6820,
+                          "upgrade": 12,
+                          "ipv6": 2980,
+                          "http3": 2105
+                        }
+                      ],
+                      "meta": {
+                        "next_cursor": "",
+                        "limit": 1000,
+                        "group": "timestamp",
+                        "from": "2025-10-30T20:57:00Z",
+                        "to": "2025-10-30T21:28:00Z"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get historical time series metrics for a single entity",
+            "id": null,
+            "request": {
+              "name": "Get historical time series metrics for a single entity",
+              "description": "Fetches historical metrics for a single entity for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/metrics/v2/platform/entities/{{entity_id}}/{{granularity}}",
+                "path": [
+                  "metrics",
+                  "v2",
+                  "platform",
+                  "entities",
+                  "{{entity_id}}",
+                  "{{granularity}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                  },
+                  {
+                    "key": "datacenter",
+                    "description": "Limit query to one or more specific POPs. Values should be comma-separated."
+                  },
+                  {
+                    "key": "from",
+                    "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value."
+                  },
+                  {
+                    "key": "group_by",
+                    "description": "Field to group_by in the query.\nFor example, group_by=region will return entries for grouped by timestamp and region."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Number of results per page. The maximum is 10000."
+                  },
+                  {
+                    "key": "metric_set",
+                    "description": "One or more metric sets to retrieve. Multiple values should be comma-separated. A metric set expands to a list of metrics; see the Metric Sets section above for the metrics in each set. A metric that appears in more than one requested set is returned once."
+                  },
+                  {
+                    "key": "metric",
+                    "description": "One or more metrics to retrieve. Multiple values should be comma-separated."
+                  },
+                  {
+                    "key": "region",
+                    "description": "Limit query to one or more specific geographic regions. Values should be comma-separated."
+                  },
+                  {
+                    "key": "to",
+                    "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"data\":[{\"timestamp\":\"2025-10-30T21:07:00Z\",\"bandwidth\":418540000,\"bereq_body_bytes\":48000,\"bereq_header_bytes\":9600,\"edge_requests\":12480,\"edge_resp_body_bytes\":412300000,\"edge_resp_header_bytes\":6240000,\"requests\":12480,\"resp_body_bytes\":412300000,\"resp_header_bytes\":6240000,\"shield\":640,\"status_200\":9650,\"status_204\":120,\"status_206\":310,\"status_2xx\":10080,\"status_301\":410,\"status_302\":520,\"status_304\":890,\"status_3xx\":1820,\"status_4xx\":540,\"status_5xx\":40,\"tls_v10\":3,\"tls_v11\":5,\"tls_v12\":4200,\"tls_v13\":7100,\"upgrade\":15,\"ipv6\":3120,\"http3\":2210},{\"timestamp\":\"2025-10-30T21:08:00Z\",\"bandwidth\":401770000,\"bereq_body_bytes\":44500,\"bereq_header_bytes\":8900,\"edge_requests\":11935,\"edge_resp_body_bytes\":395800000,\"edge_resp_header_bytes\":5970000,\"requests\":11935,\"resp_body_bytes\":395800000,\"resp_header_bytes\":5970000,\"shield\":598,\"status_200\":9210,\"status_204\":105,\"status_206\":295,\"status_2xx\":9610,\"status_301\":385,\"status_302\":498,\"status_304\":862,\"status_3xx\":1745,\"status_4xx\":520,\"status_5xx\":60,\"tls_v10\":2,\"tls_v11\":4,\"tls_v12\":4010,\"tls_v13\":6820,\"upgrade\":12,\"ipv6\":2980,\"http3\":2105}],\"meta\":{\"next_cursor\":\"\",\"limit\":1000,\"group\":\"timestamp\",\"from\":\"2025-10-30T20:57:00Z\",\"to\":\"2025-10-30T21:28:00Z\"}}",
+                "originalRequest": {
+                  "name": "Get historical time series metrics for a single entity",
+                  "description": "Fetches historical metrics for a single entity for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/metrics/v2/platform/entities/l4c2G719JnG5z0qbt512fG/minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=region&metric_set=delivery_traffic_flow&metric=status_4xx%2Cstatus_5xx%2Cipv6%2Chttp3&region=usa&to=2025-08-02T00%3A00%3A00.000Z",
+                    "path": [
+                      "metrics",
+                      "v2",
+                      "platform",
+                      "entities",
+                      "l4c2G719JnG5z0qbt512fG",
+                      "minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=region&metric_set=delivery_traffic_flow&metric=status_4xx%2Cstatus_5xx%2Cipv6%2Chttp3&region=usa&to=2025-08-02T00%3A00%3A00.000Z"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                      },
+                      {
+                        "key": "datacenter",
+                        "description": "Limit query to one or more specific POPs. Values should be comma-separated."
+                      },
+                      {
+                        "key": "from",
+                        "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value."
+                      },
+                      {
+                        "key": "group_by",
+                        "description": "Field to group_by in the query.\nFor example, group_by=region will return entries for grouped by timestamp and region."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Number of results per page. The maximum is 10000."
+                      },
+                      {
+                        "key": "metric_set",
+                        "description": "One or more metric sets to retrieve. Multiple values should be comma-separated. A metric set expands to a list of metrics; see the Metric Sets section above for the metrics in each set. A metric that appears in more than one requested set is returned once."
+                      },
+                      {
+                        "key": "metric",
+                        "description": "One or more metrics to retrieve. Multiple values should be comma-separated."
+                      },
+                      {
+                        "key": "region",
+                        "description": "Limit query to one or more specific geographic regions. Values should be comma-separated."
+                      },
+                      {
+                        "key": "to",
+                        "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Metrics v2",
+              "Platform Metrics"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/metrics/v2/platform/aggregate/{granularity}": {
+      "get": {
+        "tags": [
+          "Metrics v2 / Platform Metrics"
+        ],
+        "summary": "Get aggregated historical time series metrics for all entities",
+        "description": "Fetches historical metrics for all entities for a customer for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetAggregatedHistoricalTimeSeriesMetricsForAllEntities",
+        "parameters": [
+          {
+            "name": "granularity",
+            "in": "path",
+            "description": "Duration of sample windows.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "datacenter",
+            "in": "query",
+            "description": "Limit query to one or more specific POPs. Values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "group_by",
+            "in": "query",
+            "description": "Field to group_by in the query.\nFor example, group_by=region will return entries for grouped by timestamp and region.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page. The maximum is 10000.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "metric_set",
+            "in": "query",
+            "description": "One or more metric sets to retrieve. Multiple values should be comma-separated. A metric set expands to a list of metrics; see the Metric Sets section above for the metrics in each set. A metric that appears in more than one requested set is returned once.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "metric",
+            "in": "query",
+            "description": "One or more metrics to retrieve. Multiple values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "region",
+            "in": "query",
+            "description": "Limit query to one or more specific geographic regions. Values should be comma-separated.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200Response"
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "data": [
+                        {
+                          "timestamp": "2025-10-30T21:07:00Z",
+                          "bandwidth": 418540000,
+                          "bereq_body_bytes": 48000,
+                          "bereq_header_bytes": 9600,
+                          "edge_requests": 12480,
+                          "edge_resp_body_bytes": 412300000,
+                          "edge_resp_header_bytes": 6240000,
+                          "requests": 12480,
+                          "resp_body_bytes": 412300000,
+                          "resp_header_bytes": 6240000,
+                          "shield": 640,
+                          "status_200": 9650,
+                          "status_204": 120,
+                          "status_206": 310,
+                          "status_2xx": 10080,
+                          "status_301": 410,
+                          "status_302": 520,
+                          "status_304": 890,
+                          "status_3xx": 1820,
+                          "status_4xx": 540,
+                          "status_5xx": 40,
+                          "tls_v10": 3,
+                          "tls_v11": 5,
+                          "tls_v12": 4200,
+                          "tls_v13": 7100,
+                          "upgrade": 15,
+                          "ipv6": 3120,
+                          "http3": 2210
+                        },
+                        {
+                          "timestamp": "2025-10-30T21:08:00Z",
+                          "bandwidth": 401770000,
+                          "bereq_body_bytes": 44500,
+                          "bereq_header_bytes": 8900,
+                          "edge_requests": 11935,
+                          "edge_resp_body_bytes": 395800000,
+                          "edge_resp_header_bytes": 5970000,
+                          "requests": 11935,
+                          "resp_body_bytes": 395800000,
+                          "resp_header_bytes": 5970000,
+                          "shield": 598,
+                          "status_200": 9210,
+                          "status_204": 105,
+                          "status_206": 295,
+                          "status_2xx": 9610,
+                          "status_301": 385,
+                          "status_302": 498,
+                          "status_304": 862,
+                          "status_3xx": 1745,
+                          "status_4xx": 520,
+                          "status_5xx": 60,
+                          "tls_v10": 2,
+                          "tls_v11": 4,
+                          "tls_v12": 4010,
+                          "tls_v13": 6820,
+                          "upgrade": 12,
+                          "ipv6": 2980,
+                          "http3": 2105
+                        }
+                      ],
+                      "meta": {
+                        "next_cursor": "",
+                        "limit": 1000,
+                        "group": "timestamp",
+                        "from": "2025-10-30T20:57:00Z",
+                        "to": "2025-10-30T21:28:00Z"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get aggregated historical time series metrics for all entities",
+            "id": null,
+            "request": {
+              "name": "Get aggregated historical time series metrics for all entities",
+              "description": "Fetches historical metrics for all entities for a customer for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/metrics/v2/platform/aggregate/{{granularity}}",
+                "path": [
+                  "metrics",
+                  "v2",
+                  "platform",
+                  "aggregate",
+                  "{{granularity}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                  },
+                  {
+                    "key": "datacenter",
+                    "description": "Limit query to one or more specific POPs. Values should be comma-separated."
+                  },
+                  {
+                    "key": "from",
+                    "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value."
+                  },
+                  {
+                    "key": "group_by",
+                    "description": "Field to group_by in the query.\nFor example, group_by=region will return entries for grouped by timestamp and region."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Number of results per page. The maximum is 10000."
+                  },
+                  {
+                    "key": "metric_set",
+                    "description": "One or more metric sets to retrieve. Multiple values should be comma-separated. A metric set expands to a list of metrics; see the Metric Sets section above for the metrics in each set. A metric that appears in more than one requested set is returned once."
+                  },
+                  {
+                    "key": "metric",
+                    "description": "One or more metrics to retrieve. Multiple values should be comma-separated."
+                  },
+                  {
+                    "key": "region",
+                    "description": "Limit query to one or more specific geographic regions. Values should be comma-separated."
+                  },
+                  {
+                    "key": "to",
+                    "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"data\":[{\"timestamp\":\"2025-10-30T21:07:00Z\",\"bandwidth\":418540000,\"bereq_body_bytes\":48000,\"bereq_header_bytes\":9600,\"edge_requests\":12480,\"edge_resp_body_bytes\":412300000,\"edge_resp_header_bytes\":6240000,\"requests\":12480,\"resp_body_bytes\":412300000,\"resp_header_bytes\":6240000,\"shield\":640,\"status_200\":9650,\"status_204\":120,\"status_206\":310,\"status_2xx\":10080,\"status_301\":410,\"status_302\":520,\"status_304\":890,\"status_3xx\":1820,\"status_4xx\":540,\"status_5xx\":40,\"tls_v10\":3,\"tls_v11\":5,\"tls_v12\":4200,\"tls_v13\":7100,\"upgrade\":15,\"ipv6\":3120,\"http3\":2210},{\"timestamp\":\"2025-10-30T21:08:00Z\",\"bandwidth\":401770000,\"bereq_body_bytes\":44500,\"bereq_header_bytes\":8900,\"edge_requests\":11935,\"edge_resp_body_bytes\":395800000,\"edge_resp_header_bytes\":5970000,\"requests\":11935,\"resp_body_bytes\":395800000,\"resp_header_bytes\":5970000,\"shield\":598,\"status_200\":9210,\"status_204\":105,\"status_206\":295,\"status_2xx\":9610,\"status_301\":385,\"status_302\":498,\"status_304\":862,\"status_3xx\":1745,\"status_4xx\":520,\"status_5xx\":60,\"tls_v10\":2,\"tls_v11\":4,\"tls_v12\":4010,\"tls_v13\":6820,\"upgrade\":12,\"ipv6\":2980,\"http3\":2105}],\"meta\":{\"next_cursor\":\"\",\"limit\":1000,\"group\":\"timestamp\",\"from\":\"2025-10-30T20:57:00Z\",\"to\":\"2025-10-30T21:28:00Z\"}}",
+                "originalRequest": {
+                  "name": "Get aggregated historical time series metrics for all entities",
+                  "description": "Fetches historical metrics for all entities for a customer for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/metrics/v2/platform/aggregate/minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=region&metric_set=delivery_traffic_flow&metric=status_4xx%2Cstatus_5xx%2Cipv6%2Chttp3&region=usa&to=2025-08-02T00%3A00%3A00.000Z",
+                    "path": [
+                      "metrics",
+                      "v2",
+                      "platform",
+                      "aggregate",
+                      "minutely?datacenter=SJC%2CSTP&from=2025-06-08T00%3A00%3A00.000Z&group_by=region&metric_set=delivery_traffic_flow&metric=status_4xx%2Cstatus_5xx%2Cipv6%2Chttp3&region=usa&to=2025-08-02T00%3A00%3A00.000Z"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                      },
+                      {
+                        "key": "datacenter",
+                        "description": "Limit query to one or more specific POPs. Values should be comma-separated."
+                      },
+                      {
+                        "key": "from",
+                        "description": "A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided granularity value."
+                      },
+                      {
+                        "key": "group_by",
+                        "description": "Field to group_by in the query.\nFor example, group_by=region will return entries for grouped by timestamp and region."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Number of results per page. The maximum is 10000."
+                      },
+                      {
+                        "key": "metric_set",
+                        "description": "One or more metric sets to retrieve. Multiple values should be comma-separated. A metric set expands to a list of metrics; see the Metric Sets section above for the metrics in each set. A metric that appears in more than one requested set is returned once."
+                      },
+                      {
+                        "key": "metric",
+                        "description": "One or more metrics to retrieve. Multiple values should be comma-separated."
+                      },
+                      {
+                        "key": "region",
+                        "description": "Limit query to one or more specific geographic regions. Values should be comma-separated."
+                      },
+                      {
+                        "key": "to",
+                        "description": "A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided granularity value."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Metrics v2",
+              "Platform Metrics"
             ],
             "effectiveAuth": {
               "type": "apikey",
@@ -177577,6 +178452,34 @@
           }
         }
       },
+      "GetHistoricalTimeSeriesMetricsForASingleEntity200Response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetHistoricalTimeSeriesMetricsForASingleEntity200ResponseDataItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetHistoricalTimeSeriesMetricsForASingleEntity200ResponseMeta"
+          }
+        }
+      },
+      "GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200Response": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200ResponseDataItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200ResponseMeta"
+          }
+        }
+      },
       "GetHistoricalOriginDataForAService200Response": {
         "type": "object",
         "properties": {
@@ -193444,6 +194347,280 @@
           "recorded": {
             "type": "integer",
             "format": "int64"
+          }
+        }
+      },
+      "GetHistoricalTimeSeriesMetricsForASingleEntity200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string"
+          },
+          "bandwidth": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "bereq_body_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "bereq_header_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "edge_requests": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "edge_resp_body_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "edge_resp_header_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "requests": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "resp_body_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "resp_header_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "shield": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_200": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_204": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_206": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_2xx": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_301": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_302": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_304": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_3xx": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_4xx": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_5xx": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tls_v10": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tls_v11": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tls_v12": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tls_v13": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "upgrade": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ipv6": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "http3": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "GetHistoricalTimeSeriesMetricsForASingleEntity200ResponseMeta": {
+        "type": "object",
+        "properties": {
+          "next_cursor": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "group": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          }
+        }
+      },
+      "GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string"
+          },
+          "bandwidth": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "bereq_body_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "bereq_header_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "edge_requests": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "edge_resp_body_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "edge_resp_header_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "requests": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "resp_body_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "resp_header_bytes": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "shield": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_200": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_204": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_206": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_2xx": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_301": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_302": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_304": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_3xx": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_4xx": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status_5xx": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tls_v10": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tls_v11": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tls_v12": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tls_v13": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "upgrade": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ipv6": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "http3": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200ResponseMeta": {
+        "type": "object",
+        "properties": {
+          "next_cursor": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "group": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
           }
         }
       },
@@ -211849,6 +213026,10 @@
       "description": "The real-time domain metrics API allows you to programmatically retrieve per-domain delivery metrics derived from your Fastly services in one-second periods up to the last complete second.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| AggregateDelay | integer | Offset of entry timestamps from the current time due to processing time. |\n| Data | array | A list of report entries, each representing one second of time. |\n| Timestamp | integer | Value to use for subsequent requests. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| bandwidth | integer | Total bytes delivered (resp_header_bytes + resp_body_bytes + bereq_header_bytes + bereq_body_bytes). |\n| bereq_body_bytes | integer | Total body bytes sent to origin. |\n| bereq_header_bytes | integer | Total header bytes sent to origin. |\n| compute_bereq_body_bytes | integer | Total body bytes sent to backends (origins) by the Compute platform. |\n| compute_bereq_errors | integer | Number of backend request errors, including timeouts, by the Compute platform. |\n| compute_bereq_header_bytes | integer | Total header bytes sent to backends (origins) by the Compute platform. |\n| compute_bereqs | integer | Number of backend requests started by the Compute platform. |\n| compute_beresp_body_bytes | integer | Total body bytes received from backends (origins) by the Compute platform. |\n| compute_beresp_header_bytes | integer | Total header bytes received from backends (origins) by the Compute platform. |\n| compute_execution_time_ms | integer | The amount of active CPU time used to process your requests (in milliseconds). |\n| compute_origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin by the Compute platform. |\n| compute_origin_status_200 | integer | Number of responses received from origin with status code 200 (Success) by the Compute platform. |\n| compute_origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content) by the Compute platform. |\n| compute_origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content) by the Compute platform. |\n| compute_origin_status_2xx | integer | Number of \"Success\" status codes received from origin by the Compute platform. |\n| compute_origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_origin_status_302 | integer | Number of responses received from origin with status code 302 (Found) by the Compute platform. |\n| compute_origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified) by the Compute platform. |\n| compute_origin_status_3xx | integer | Number of \"Redirection\" codes received from origin by the Compute platform. |\n| compute_origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request) by the Compute platform. |\n| compute_origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized) by the Compute platform. |\n| compute_origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden) by the Compute platform. |\n| compute_origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found) by the Compute platform. |\n| compute_origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_origin_status_4xx | integer | Number of \"Client Error\" codes received from origin by the Compute platform. |\n| compute_origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented) by the Compute platform. |\n| compute_origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_origin_status_530 | integer | Number of responses received from origin with status code 530 by the Compute platform. |\n| compute_origin_status_5xx | integer | Number of \"Server Error\" codes received from origin by the Compute platform. |\n| compute_req_body_bytes | integer | Total body bytes received by the Compute platform. |\n| compute_req_header_bytes | integer | Total header bytes received by the Compute platform. |\n| compute_request | integer | The total number of requests that were received by the Compute platform. |\n| compute_request_time_billed_ms | integer | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. |\n| compute_request_time_ms | integer | The total amount of time used to process your requests, including active CPU time (in milliseconds). |\n| compute_resp_body_bytes | integer | Total body bytes sent from Compute to the end user. |\n| compute_resp_header_bytes | integer | Total header bytes sent from Compute to the end user. |\n| compute_resp_status_103 | integer | Number of responses delivered with status code 103 (Early Hints) by the Compute platform. |\n| compute_resp_status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered by the Compute platform. |\n| compute_resp_status_200 | integer | Number of responses delivered with status code 200 (Success) by the Compute platform. |\n| compute_resp_status_204 | integer | Number of responses delivered with status code 204 (No Content) by the Compute platform. |\n| compute_resp_status_206 | integer | Number of responses delivered with status code 206 (Partial Content) by the Compute platform. |\n| compute_resp_status_2xx | integer | Number of 2xx \"Success\" status codes delivered by the Compute platform. |\n| compute_resp_status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_resp_status_302 | integer | Number of responses delivered with status code 302 (Found) by the Compute platform. |\n| compute_resp_status_304 | integer | Number of responses delivered with status code 304 (Not Modified) by the Compute platform. |\n| compute_resp_status_3xx | integer | Number of 3xx \"Redirection\" codes delivered by the Compute platform. |\n| compute_resp_status_400 | integer | Number of responses delivered with status code 400 (Bad Request) by the Compute platform. |\n| compute_resp_status_401 | integer | Number of responses delivered with status code 401 (Unauthorized) by the Compute platform. |\n| compute_resp_status_403 | integer | Number of responses delivered with status code 403 (Forbidden) by the Compute platform. |\n| compute_resp_status_404 | integer | Number of responses delivered with status code 404 (Not Found) by the Compute platform. |\n| compute_resp_status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_resp_status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_resp_status_4xx | integer | Number of 4xx \"Client Error\" codes delivered by the Compute platform. |\n| compute_resp_status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_resp_status_501 | integer | Number of responses delivered with status code 501 (Not Implemented) by the Compute platform. |\n| compute_resp_status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_resp_status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_resp_status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_resp_status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_resp_status_530 | integer | Number of responses delivered with status code 530 by the Compute platform. |\n| compute_resp_status_5xx | integer | Number of \"Server Error\" category status codes delivered by the Compute platform. |\n| edge_hit_ratio | number | Ratio of cache hits to cache misses at the edge, between 0 and 1 (edge_hit_requests / (edge_hit_requests + edge_miss_requests)). |\n| edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge. |\n| edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge. |\n| edge_requests | integer | Number of requests sent by end users to Fastly. |\n| edge_resp_body_bytes | integer | Total body bytes delivered from Fastly to the end user. |\n| edge_resp_header_bytes | integer | Total header bytes delivered from Fastly to the end user. |\n| http2 | integer | Number of requests received over HTTP/2. |\n| http3 | integer | Number of requests received over HTTP/3. |\n| origin_fetch_resp_body_bytes | integer | Total body bytes received from origin. |\n| origin_fetch_resp_header_bytes | integer | Total header bytes received from origin. |\n| origin_fetches | integer | Number of requests sent to origin. |\n| origin_offload | number | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((edge_resp_body_bytes + edge_resp_header_bytes) - (origin_fetch_resp_body_bytes + origin_fetch_resp_header_bytes)) / (edge_resp_body_bytes + edge_resp_header_bytes). Previously, Origin Offload used a different formula. Learn more. |\n| origin_status_1xx | integer | Number of \"Informational\" category status codes received from origin. |\n| origin_status_200 | integer | Number of responses received from origin with status code 200 (Success). |\n| origin_status_204 | integer | Number of responses received from origin with status code 204 (No Content). |\n| origin_status_206 | integer | Number of responses received from origin with status code 206 (Partial Content). |\n| origin_status_2xx | integer | Number of \"Success\" status codes received from origin. |\n| origin_status_301 | integer | Number of responses received from origin with status code 301 (Moved Permanently). |\n| origin_status_302 | integer | Number of responses received from origin with status code 302 (Found). |\n| origin_status_304 | integer | Number of responses received from origin with status code 304 (Not Modified). |\n| origin_status_3xx | integer | Number of \"Redirection\" codes received from origin. |\n| origin_status_400 | integer | Number of responses received from origin with status code 400 (Bad Request). |\n| origin_status_401 | integer | Number of responses received from origin with status code 401 (Unauthorized). |\n| origin_status_403 | integer | Number of responses received from origin with status code 403 (Forbidden). |\n| origin_status_404 | integer | Number of responses received from origin with status code 404 (Not Found). |\n| origin_status_416 | integer | Number of responses received from origin with status code 416 (Range Not Satisfiable). |\n| origin_status_429 | integer | Number of responses received from origin with status code 429 (Too Many Requests). |\n| origin_status_4xx | integer | Number of \"Client Error\" codes received from origin. |\n| origin_status_500 | integer | Number of responses received from origin with status code 500 (Internal Server Error). |\n| origin_status_501 | integer | Number of responses received from origin with status code 501 (Not Implemented). |\n| origin_status_502 | integer | Number of responses received from origin with status code 502 (Bad Gateway). |\n| origin_status_503 | integer | Number of responses received from origin with status code 503 (Service Unavailable). |\n| origin_status_504 | integer | Number of responses received from origin with status code 504 (Gateway Timeout). |\n| origin_status_505 | integer | Number of responses received from origin with status code 505 (HTTP Version Not Supported). |\n| origin_status_530 | integer | Number of responses received from origin with status code 530. |\n| origin_status_5xx | integer | Number of \"Server Error\" codes received from origin. |\n| requests | integer | Number of requests processed. |\n| resp_body_bytes | integer | Total body bytes delivered. |\n| resp_header_bytes | integer | Total header bytes delivered. |\n| status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered. |\n| status_200 | integer | Number of responses delivered with status code 200 (Success). |\n| status_204 | integer | Number of responses delivered with status code 204 (No Content). |\n| status_206 | integer | Number of responses delivered with status code 206 (Partial Content). |\n| status_2xx | integer | Number of 2xx \"Success\" status codes delivered. |\n| status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently). |\n| status_302 | integer | Number of responses delivered with status code 302 (Found). |\n| status_304 | integer | Number of responses delivered with status code 304 (Not Modified). |\n| status_3xx | integer | Number of 3xx \"Redirection\" codes delivered. |\n| status_400 | integer | Number of responses delivered with status code 400 (Bad Request). |\n| status_401 | integer | Number of responses delivered with status code 401 (Unauthorized). |\n| status_403 | integer | Number of responses delivered with status code 403 (Forbidden). |\n| status_404 | integer | Number of responses delivered with status code 404 (Not Found). |\n| status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable). |\n| status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests). |\n| status_499 | integer | Number of responses sent with status code 499 (Client Disconnected). |\n| status_4xx | integer | Number of 4xx \"Client Error\" codes delivered. |\n| status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error). |\n| status_501 | integer | Number of responses delivered with status code 501 (Not Implemented). |\n| status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway). |\n| status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable). |\n| status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout). |\n| status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported). |\n| status_530 | integer | Number of responses delivered with status code 530. |\n| status_5xx | integer | Number of 5xx \"Server Error\" codes delivered. |\n| tls_v10 | integer | Number of requests received over TLS 1.0. |\n| tls_v11 | integer | Number of requests received over TLS 1.1. |\n| tls_v12 | integer | Number of requests received over TLS 1.2. |\n| tls_v13 | integer | Number of requests received over TLS 1.3. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| aggregated | object | Groups measurements by backend name and then by IP address. |\n| datacenter | object | Groups measurements by POP, then backend name, and then IP address. See the POPs API for details about POP identifiers. |\n| recorded | integer | The Unix timestamp at which this record's data was generated. |"
     },
     {
+      "name": "Metrics v2 / Platform Metrics",
+      "description": "The Historical Stats Platform Metrics API returns time series data for supported metrics and metric sets listed below.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| aia_estimated_time_saved_ms | integer | The estimated amount of time saved by responses served from the AI Accelerator semantic cache. |\n| aia_origin_usage_tokens | integer | The number of usage tokens reported by the request to the origin from AI Accelerator. |\n| aia_requests | integer | Number of requests received by AI Accelerator. |\n| aia_response_usage_tokens | integer | The usage tokens associated with the response returned from the AI Accelerator cache. |\n| aia_status_1xx | integer | Number of \"Informational\" category status codes received from AI provider. |\n| aia_status_2xx | integer | Number of \"Success\" status codes received from AI provider. |\n| aia_status_3xx | integer | Number of \"Redirection\" received from AI provider. |\n| aia_status_4xx | integer | Number of \"Client Error\" received from AI provider. |\n| aia_status_5xx | integer | Number of \"Server Error\" received from AI provider. |\n| all_edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service. |\n| all_edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service. |\n| all_error_requests | integer | Number of cache errors for a VCL service. |\n| all_hit_requests | integer | Number of cache hits for a VCL service. |\n| all_miss_requests | integer | Number of cache misses for a VCL service. |\n| all_pass_requests | integer | Number of requests that passed through the CDN without being cached for a VCL service. |\n| all_status_1xx | integer | Number of \"Informational\" category status codes delivered for all sources. |\n| all_status_2xx | integer | Number of \"Success\" status codes delivered for all sources. |\n| all_status_3xx | integer | Number of \"Redirection\" codes delivered for all sources. |\n| all_status_4xx | integer | Number of \"Client Error\" codes delivered for all sources. |\n| all_status_5xx | integer | Number of \"Server Error\" codes delivered for all sources. |\n| all_synth_requests | integer | Number of requests that returned a synthetic response (i.e., response objects created with the synthetic VCL statement) for a VCL service. |\n| api_discovery_requests_count | integer | Number of requests processed by the API Discovery engine. |\n| arc_requests | integer | Number of requests received by AI Runtime Control. |\n| attack_blocked_req_body_bytes | integer | Total body bytes received from requests that triggered a WAF rule that was blocked. |\n| attack_blocked_req_header_bytes | integer | Total header bytes received from requests that triggered a WAF rule that was blocked. |\n| attack_logged_req_body_bytes | integer | Total body bytes received from requests that triggered a WAF rule that was logged. |\n| attack_logged_req_header_bytes | integer | Total header bytes received from requests that triggered a WAF rule that was logged. |\n| attack_passed_req_body_bytes | integer | Total body bytes received from requests that triggered a WAF rule that was passed. |\n| attack_passed_req_header_bytes | integer | Total header bytes received from requests that triggered a WAF rule that was passed. |\n| attack_req_body_bytes | integer | Total body bytes received from requests that triggered a WAF rule. |\n| attack_req_header_bytes | integer | Total header bytes received from requests that triggered a WAF rule. |\n| attack_resp_synth_bytes | integer | Total bytes delivered for requests that triggered a WAF rule and returned a synthetic response. |\n| bandwidth | integer | Total bytes delivered (resp_header_bytes + resp_body_bytes + bereq_header_bytes + bereq_body_bytes + compute_resp_header_bytes + compute_resp_body_bytes + compute_bereq_header_bytes + compute_bereq_body_bytes + websocket_resp_header_bytes + websocket_resp_body_bytes + websocket_bereq_header_bytes + websocket_bereq_body_bytes + fanout_resp_header_bytes + fanout_resp_body_bytes + fanout_bereq_header_bytes + fanout_bereq_body_bytes). |\n| bereq_body_bytes | integer | Total body bytes sent to origin. |\n| bereq_header_bytes | integer | Total header bytes sent to origin. |\n| bot_challenge_complete_tokens_checked | integer | The number of challenge-complete tokens checked. |\n| bot_challenge_complete_tokens_disabled | integer | The number of challenge-complete tokens not checked because the feature was disabled. |\n| bot_challenge_complete_tokens_failed | integer | The number of challenge-complete tokens that failed validation. |\n| bot_challenge_complete_tokens_issued | integer | The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. |\n| bot_challenge_complete_tokens_passed | integer | The number of challenge-complete tokens that passed validation. |\n| bot_challenge_starts | integer | The number of challenge-start tokens created. |\n| bot_challenges_failed | integer | The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution. |\n| bot_challenges_issued | integer | The number of challenges issued. For example, the issuance of a CAPTCHA challenge. |\n| bot_challenges_pats_issued | integer | Number of Private Access Token challenges issued. |\n| bot_challenges_pats_succeeded | integer | Number of successful Private Access Token challenge solutions processed. |\n| bot_challenges_succeeded | integer | The number of successful challenge solutions processed. For example, a correct CAPTCHA solution. |\n| bot_edge_requests_accessibility_count | integer | Count of edge requests where an accessibility bot was detected. |\n| bot_edge_requests_ai_crawler_count | integer | Count of edge requests where an AI crawler was detected. |\n| bot_edge_requests_ai_fetcher_count | integer | Count of edge requests where an AI fetcher was detected. |\n| bot_edge_requests_analyzed_count | integer | Count of edge requests where bot detection analysis was performed. |\n| bot_edge_requests_content_fetcher_count | integer | Count of edge requests where a content fetcher was detected. |\n| bot_edge_requests_detected_count | integer | Count of edge requests where a bot was detected. |\n| bot_edge_requests_headless_count | integer | Number of edge requests where a headless bot was detected. |\n| bot_edge_requests_monitoring_count | integer | Count of edge requests where a monitoring and site tool was detected. |\n| bot_edge_requests_online_marketing_count | integer | Count of edge requests where an online marketing bot was detected. |\n| bot_edge_requests_page_preview_count | integer | Count of edge requests where a page preview bot was detected. |\n| bot_edge_requests_platform_integrations_count | integer | Count of edge requests where a platform integration was detected. |\n| bot_edge_requests_research_count | integer | Count of edge requests where a research bot was detected. |\n| bot_edge_requests_search_engine_crawler_count | integer | Count of edge requests where a search engine crawler was detected. |\n| bot_edge_requests_search_engine_optimization_count | integer | Count of edge requests where a search engine optimization bot was detected. |\n| bot_edge_requests_security_tools_count | integer | Count of edge requests where a security tool was detected. |\n| bot_edge_requests_verified_count | integer | Count of edge requests where a verified bot was detected. |\n| bot_requests_total_count | integer | Total number of Bot Management requests across all deployments. |\n| compute_bereq_body_bytes | integer | Total body bytes sent to backends (origins) by the Compute platform. |\n| compute_bereq_header_bytes | integer | Total header bytes sent to backends (origins) by the Compute platform. |\n| compute_bereqs | integer | Number of backend requests started. |\n| compute_beresp_body_bytes | integer | Total body bytes received from backends (origins) by the Compute platform. |\n| compute_beresp_header_bytes | integer | Total header bytes received from backends (origins) by the Compute platform. |\n| compute_cache_operations_count | integer | Number of cache operations executed by the Compute platform. |\n| compute_execution_time_ms | number | The amount of active CPU time used to process your requests (in milliseconds). |\n| compute_handoff | integer | The number of times Compute has handed off a request to the Fanout proxy or WebSocket proxy. |\n| compute_platform_internal_error | integer | Fatal errors caused by internal errors in Fastly’s Compute platform. |\n| compute_platform_invalid_request_error | integer | Fatal errors caused by unprocessable requests to the service, such as requests with malformed CDN-Loop headers or invalid purge credentials. |\n| compute_ram_used | integer | The amount of RAM used for your service by Fastly (in bytes). |\n| compute_req_body_bytes | integer | Total body bytes received by the Compute platform. |\n| compute_req_header_bytes | integer | Total header bytes received by the Compute platform. |\n| compute_request_time_billed_ms | number | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. |\n| compute_request_time_ms | number | The total, actual amount of time used to process your requests, including active CPU time (in milliseconds). |\n| compute_requests | integer | The total number of requests that were received for your service by Fastly. |\n| compute_resp_body_bytes | integer | Total body bytes sent from Compute to end user. |\n| compute_resp_header_bytes | integer | Total header bytes sent from Compute to end user. |\n| compute_resp_status_103 | integer | Number of responses delivered with status code 103 (Early Hints) by the Compute platform. |\n| compute_resp_status_1xx | integer | Number of \"Informational\" category status codes delivered by the Compute platform. |\n| compute_resp_status_200 | integer | Number of responses delivered with status code 200 (Success) by the Compute platform. |\n| compute_resp_status_204 | integer | Number of responses delivered with status code 204 (No Content) by the Compute platform. |\n| compute_resp_status_206 | integer | Number of responses delivered with status code 206 (Partial Content) by the Compute platform. |\n| compute_resp_status_2xx | integer | Number of \"Success\" category status codes delivered by the Compute platform. |\n| compute_resp_status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_resp_status_302 | integer | Number of responses delivered with status code 302 (Found) by the Compute platform. |\n| compute_resp_status_304 | integer | Number of responses delivered with status code 304 (Not Modified) by the Compute platform. |\n| compute_resp_status_3xx | integer | Number of \"Redirection\" category status codes delivered by the Compute platform. |\n| compute_resp_status_400 | integer | Number of responses delivered with status code 400 (Bad Request) by the Compute platform. |\n| compute_resp_status_401 | integer | Number of responses delivered with status code 401 (Unauthorized) by the Compute platform. |\n| compute_resp_status_403 | integer | Number of responses delivered with status code 403 (Forbidden) by the Compute platform. |\n| compute_resp_status_404 | integer | Number of responses delivered with status code 404 (Not Found) by the Compute platform. |\n| compute_resp_status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_resp_status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_resp_status_4xx | integer | Number of \"Client Error\" category status codes delivered by the Compute platform. |\n| compute_resp_status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_resp_status_501 | integer | Number of responses delivered with status code 501 (Not Implemented) by the Compute platform. |\n| compute_resp_status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_resp_status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_resp_status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_resp_status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_resp_status_530 | integer | Number of responses delivered with status code 530 by the Compute platform. |\n| compute_resp_status_5xx | integer | Number of \"Server Error\" category status codes delivered by the Compute platform. |\n| compute_sandboxes | integer | Number of WebAssembly (Wasm) sandboxes created. |\n| compute_service_bereq_5xx_error | integer | Number of backend requests from a Compute service where the origin returned a 5xx status code. |\n| compute_service_bereq_conn_error | integer | Number of backend requests from a Compute service that failed at the TCP connection level. Sum of compute_service_bereq_conn_timeout_error, compute_service_bereq_conn_refused_error, and compute_service_bereq_conn_other_error. |\n| compute_service_bereq_conn_other_error | integer | Number of backend requests from a Compute service that failed due to a connection error not classified as a timeout or refusal. |\n| compute_service_bereq_conn_refused_error | integer | Number of backend requests from a Compute service where the origin actively refused the connection. |\n| compute_service_bereq_conn_timeout_error | integer | Number of backend requests from a Compute service where the connection to the origin timed out before being established. |\n| compute_service_bereq_dns_error | integer | Number of backend requests from a Compute service that failed during DNS resolution. |\n| compute_service_bereq_error | integer | Number of backend request errors, including timeouts. |\n| compute_service_bereq_http_error | integer | Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of compute_service_bereq_http_proto_v1_error, compute_service_bereq_http_proto_v2_error, compute_service_bereq_http_incomplete_error, compute_service_bereq_http_timeout_error, and compute_service_bereq_http_other_error. |\n| compute_service_bereq_http_incomplete_error | integer | Number of backend requests from a Compute service where the origin sent an incomplete HTTP response. |\n| compute_service_bereq_http_other_error | integer | Number of backend requests from a Compute service that failed due to an HTTP-level error not classified in any category. |\n| compute_service_bereq_http_proto_v1_error | integer | Number of backend requests from a Compute service that failed due to an HTTP/1.x protocol violation after the request was transmitted. |\n| compute_service_bereq_http_proto_v2_error | integer | Number of backend requests from a Compute service that failed due to an HTTP/2 protocol error, typically a RST_STREAM or GO_AWAY from the origin. |\n| compute_service_bereq_http_timeout_error | integer | Number of backend requests from a Compute service where the origin did not respond within the configured timeout period. |\n| compute_service_bereq_other_error | integer | Number of backend requests from a Compute service that failed due to an error not classified into the DNS, connection, TLS, or HTTP categories. |\n| compute_service_bereq_tls_error | integer | Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of compute_service_bereq_tls_server_cert_error and compute_service_bereq_tls_other_error. |\n| compute_service_bereq_tls_other_error | integer | Number of backend requests from a Compute service that failed due to a TLS error not classified as a certificate error. |\n| compute_service_bereq_tls_server_cert_error | integer | Number of backend requests from a Compute service that failed due to a TLS certificate validation error (e.g., expired, untrusted CA, hostname mismatch). |\n| compute_service_chain_error | integer | Fatal errors caused by the service path exceeding hop or service limits, or where a forwarding loop is detected via CDN-Loop headers. |\n| compute_service_limits_error | integer | Non-fatal errors caused by attempts to exceed defined operational limits, such as simultaneous backend requests or cache transactions. |\n| compute_service_memory_exceeded_error | integer | Number of times a guest exceeded its heap limit. |\n| compute_service_resource_limits_error | integer | Aggregate of fatal errors caused by exceeding allocated resource limits, specifically runtime duration, vCPU usage, and heap memory limits. |\n| compute_service_runtime_error | integer | Fatal errors caused by service logic faults, including stack overflows, unreachable code traps, illegal memory access, or attempts to send multiple responses. |\n| compute_service_timeout_error | integer | Fatal errors caused by exceeding the per-request runtime limit. |\n| compute_service_vcpu_exceeded_error | integer | Fatal errors caused by exceeding the per-request vCPU time limit. |\n| csp_pages_gauge | integer | Gauge. The number of pages monitored by Content Security Policy. |\n| datacenter | string | Datacenter for this data point. Only present if the request was made with group_by=datacenter. |\n| ddos_action_blackhole | integer | The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped). |\n| ddos_action_close | integer | The number of times the close action was taken. The close action aborts the connection as soon as possible. The close action takes effect either right after accept, right after the client hello, or right after the response was sent. |\n| ddos_action_downgrade | integer | The number of times the downgrade action was taken. The downgrade action restricts the client to http1. |\n| ddos_action_downgraded_connections | integer | The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1. |\n| ddos_action_limit_streams_connections | integer | For HTTP/2, the number of connections the limit-streams action was applied to. The limit-streams action caps the allowed number of concurrent streams in a connection. |\n| ddos_action_limit_streams_requests | integer | For HTTP/2, the number of requests made on a connection for which the limit-streams action was taken. The limit-streams action caps the allowed number of concurrent streams in a connection. |\n| ddos_action_tarpit | integer | The number of times the tarpit action was taken. The tarpit action delays writing the response to the client. |\n| ddos_action_tarpit_accept | integer | The number of times the tarpit-accept action was taken. The tarpit-accept action adds a delay when accepting future connections. |\n| ddos_challenge_complete_tokens_checked | integer | The number of challenge-complete tokens checked while enforcing DDoS protection rules. |\n| ddos_challenge_complete_tokens_failed | integer | The number of challenge-complete tokens that failed validation while enforcing DDoS protection rules. |\n| ddos_challenge_complete_tokens_issued | integer | Number of challenge-complete tokens issued as a result of a DDoS action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. |\n| ddos_challenge_complete_tokens_passed | integer | The number of challenge-complete tokens that passed validation while enforcing DDoS protection rules. |\n| ddos_challenge_starts | integer | The number of challenge-start tokens created while enforcing DDoS protection rules. |\n| ddos_challenges_failed | integer | Number of failed challenge solutions processed as a result of a DDoS action. For example, an incorrect CAPTCHA solution. |\n| ddos_challenges_issued | integer | Number of challenges issued from a DDoS action. |\n| ddos_challenges_pats_issued | integer | Number of Private Access Token challenges issued as a result of a DDoS action. |\n| ddos_challenges_pats_succeeded | integer | Number of successful Private Access Token challenge solutions processed as a result of a DDoS action. |\n| ddos_challenges_succeeded | integer | Number of successful challenge solutions processed as a result of a DDoS action. For example, a correct CAPTCHA solution. |\n| ddos_protection_requests_allow_count | integer | Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected. |\n| ddos_protection_requests_detect_count | integer | Number of requests classified as a DDoS attack against a customer origin or service. |\n| ddos_protection_requests_mitigate_count | integer | Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform. |\n| deliver_sub_count | integer | Number of executions of the vcl_deliver Varnish subroutine. |\n| deliver_sub_time | number | Time spent inside the vcl_deliver Varnish subroutine (in seconds). |\n| dns_billable_responses_count | integer | Number of billable DNS responses (e.g., A, CNAME). |\n| dns_nonbillable_responses_count | integer | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). |\n| edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge. |\n| edge_hit_resp_body_bytes | integer | Body bytes delivered for edge hits. |\n| edge_hit_resp_header_bytes | integer | Header bytes delivered for edge hits. |\n| edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge. |\n| edge_miss_resp_body_bytes | integer | Body bytes delivered for edge misses. |\n| edge_miss_resp_header_bytes | integer | Header bytes delivered for edge misses. |\n| edge_requests | integer | Number of requests sent by end users to Fastly. |\n| edge_resp_body_bytes | integer | Total body bytes delivered from Fastly to the end user. |\n| edge_resp_header_bytes | integer | Total header bytes delivered from Fastly to the end user. |\n| error_sub_count | integer | Number of executions of the vcl_error Varnish subroutine. |\n| error_sub_time | number | Time spent inside the vcl_error Varnish subroutine (in seconds). |\n| errors | integer | Number of cache errors. |\n| fanout_bereq_body_bytes | integer | Total body or message content bytes sent to backends over Fanout connections. |\n| fanout_bereq_header_bytes | integer | Total header bytes sent to backends over Fanout connections. |\n| fanout_beresp_body_bytes | integer | Total body or message content bytes received from backends over Fanout connections. |\n| fanout_beresp_header_bytes | integer | Total header bytes received from backends over Fanout connections. |\n| fanout_conn_time_ms | integer | Total duration of Fanout connections with end users. |\n| fanout_recv_publishes | integer | Total published messages received from the publish API endpoint. |\n| fanout_req_body_bytes | integer | Total body or message content bytes received from end users over Fanout connections. |\n| fanout_req_header_bytes | integer | Total header bytes received from end users over Fanout connections. |\n| fanout_resp_body_bytes | integer | Total body or message content bytes sent to end users over Fanout connections, excluding published message content. |\n| fanout_resp_header_bytes | integer | Total header bytes sent to end users over Fanout connections. |\n| fanout_send_publishes | integer | Total published messages sent to end users. |\n| fetch_sub_count | integer | Number of executions of the vcl_fetch Varnish subroutine. |\n| fetch_sub_time | number | Time spent inside the vcl_fetch Varnish subroutine (in seconds). |\n| hash_sub_count | integer | Number of executions of the vcl_hash Varnish subroutine. |\n| hash_sub_time | number | Time spent inside the vcl_hash Varnish subroutine (in seconds). |\n| hit_ratio | number | Ratio of cache hits to cache misses (between 0 and 1). |\n| hit_resp_body_bytes | integer | Total body bytes delivered for cache hits. |\n| hit_sub_count | integer | Number of executions of the vcl_hit Varnish subroutine. |\n| hit_sub_time | number | Time spent inside the vcl_hit Varnish subroutine (in seconds). |\n| hits | integer | Number of cache hits. |\n| hits_time | number | Total amount of time spent processing cache hits (in seconds). |\n| http2 | integer | Number of requests received over HTTP/2. |\n| http3 | integer | Number of requests received over HTTP/3. |\n| imgopto | integer | Number of responses that came from the Fastly Image Optimizer service. If the service receives 10 requests for an image, this stat will be 10 regardless of how many times the image was transformed. |\n| imgopto_avif_count | integer | Count of AVIF images delivered to end user by Image Optimizer. |\n| imgopto_compute_requests | integer | The number of Image Optimizer requests made from Compute services. |\n| imgopto_gif_count | integer | Count of GIF images delivered to end user by Image Optimizer. |\n| imgopto_input_image_bytes | integer | The total image bytes that would have been delivered if the images had not been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer). |\n| imgopto_jpeg_count | integer | Count of JPEG images delivered to end user by Image Optimizer. |\n| imgopto_jpegxl_count | integer | Count of JPEGXL images delivered to end user by Image Optimizer. |\n| imgopto_mp4_count | integer | Count of MP4s delivered to end user by Image Optimizer. |\n| imgopto_output_image_bytes | integer | The total image bytes delivered that have been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer). |\n| imgopto_png_count | integer | Count of PNG images delivered to end user by Image Optimizer. |\n| imgopto_resp_body_bytes | integer | Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic. |\n| imgopto_resp_header_bytes | integer | Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic. |\n| imgopto_shield | integer | Number of responses that came from the Fastly Image Optimizer service via a shield. |\n| imgopto_shield_resp_body_bytes | integer | Total body bytes delivered via a shield from the Fastly Image Optimizer service. |\n| imgopto_shield_resp_header_bytes | integer | Total header bytes delivered via a shield from the Fastly Image Optimizer service. |\n| imgopto_svg_count | integer | Count of SVG images delivered to end user by Image Optimizer. |\n| imgopto_transforms | integer | Number of transforms performed by the Fastly Image Optimizer service. |\n| imgopto_webp_count | integer | Count of WebP images delivered to end user by Image Optimizer. |\n| imgvideo | integer | Number of video responses that came from the Fastly Image Optimizer service. |\n| imgvideo_frames | integer | Number of video frames that came from the Fastly Image Optimizer service. A video frame is an individual image within a sequence of video. |\n| imgvideo_resp_body_bytes | integer | Total body bytes of video delivered from the Fastly Image Optimizer service. |\n| imgvideo_resp_header_bytes | integer | Total header bytes of video delivered from the Fastly Image Optimizer service. |\n| imgvideo_shield | integer | Number of video responses delivered via a shield that came from the Fastly Image Optimizer service. |\n| imgvideo_shield_frames | integer | Number of video frames delivered via a shield that came from the Fastly Image Optimizer service. A video frame is an individual image within a sequence of video. |\n| imgvideo_shield_resp_body_bytes | integer | Total body bytes of video delivered via a shield from the Fastly Image Optimizer service. |\n| imgvideo_shield_resp_header_bytes | integer | Total header bytes of video delivered via a shield from the Fastly Image Optimizer service. |\n| ipv6 | integer | Number of requests that were received over IPv6. |\n| kv_store_class_a_operations | integer | The total number of class a operations for the KV store. |\n| kv_store_class_b_operations | integer | The total number of class b operations for the KV store. |\n| log | integer | Number of log lines sent. |\n| log_bytes | integer | Total log bytes sent. |\n| meta | object | Meta information about the scope of the query in a human readable format. |\n| miss | integer | Number of cache misses. |\n| miss_resp_body_bytes | integer | Total body bytes delivered for cache misses. |\n| miss_sub_count | integer | Number of executions of the vcl_miss Varnish subroutine. |\n| miss_sub_time | number | Time spent inside the vcl_miss Varnish subroutine (in seconds). |\n| miss_time | number | Total amount of time spent processing cache misses (in seconds). |\n| ngwaf_account_rules_gauge | integer | Gauge. The number of Next-Gen WAF rules defined at the account level. |\n| ngwaf_account_workspaces | integer | Gauge. The number of Next-Gen WAF workspaces in the account. |\n| ngwaf_bot_analysis_request_count | integer | Count of Next-Gen WAF Bot Management requests. |\n| ngwaf_requests_allowed_count | integer | Count of Next-Gen WAF (Edge WAF & Core WAF) requests allowed. |\n| ngwaf_requests_blocked_count | integer | Count of Next-Gen WAF (Edge WAF & Core WAF) requests blocked. |\n| ngwaf_requests_challenged_count | integer | Count of Edge WAF requests challenged. |\n| ngwaf_requests_logged_count | integer | Count of Edge WAF requests logged. |\n| ngwaf_requests_timeout_count | integer | Count of Edge WAF requests timed outcome. |\n| ngwaf_requests_total_count | integer | Total number of Next-Gen WAF (Edge WAF & Core WAF) requests. |\n| ngwaf_requests_unknown_count | integer | Count of Edge WAF requests with an unknown outcome. |\n| ngwaf_workspace_rules_gauge | integer | Gauge. The number of Next-Gen WAF rules defined in a workspace. |\n| ngwaf_workspace_thresholds_gauge | integer | Gauge. The number of Next-Gen WAF thresholds defined in a workspace. |\n| object_size_100k | integer | Number of objects served that were between 10KB and 100KB in size. |\n| object_size_100m | integer | Number of objects served that were between 10MB and 100MB in size. |\n| object_size_10k | integer | Number of objects served that were between 1KB and 10KB in size. |\n| object_size_10m | integer | Number of objects served that were between 1MB and 10MB in size. |\n| object_size_1g | integer | Number of objects served that were between 100MB and 1GB in size. |\n| object_size_1k | integer | Number of objects served that were under 1KB in size. |\n| object_size_1m | integer | Number of objects served that were between 100KB and 1MB in size. |\n| object_storage_buckets_count | integer | Gauge. The number of Object Storage buckets. |\n| object_storage_bytes_count | integer | Gauge. The number of bytes stored in Object Storage. |\n| object_storage_class_a_operations_count | integer | A count of the number of Class A Object Storage operations. |\n| object_storage_class_b_operations_count | integer | A count of the number of Class B Object Storage operations. |\n| origin_cache_fetch_resp_body_bytes | integer | Body bytes received from origin for cacheable content. |\n| origin_cache_fetch_resp_header_bytes | integer | Header bytes received from an origin for cacheable content. |\n| origin_cache_fetches | integer | The total number of completed requests made to backends (origins) that returned cacheable content. |\n| origin_fetch_body_bytes | integer | Total request body bytes sent to origin. |\n| origin_fetch_header_bytes | integer | Total request header bytes sent to origin. |\n| origin_fetch_resp_body_bytes | integer | Total body bytes received from origin. |\n| origin_fetch_resp_header_bytes | integer | Total header bytes received from origin. |\n| origin_fetches | integer | Number of requests sent to origin. |\n| origin_offload | number | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((edge_resp_body_bytes + edge_resp_header_bytes) - (origin_fetch_resp_body_bytes + origin_fetch_resp_header_bytes)) / (edge_resp_body_bytes + edge_resp_header_bytes). |\n| origin_revalidations | integer | Number of responses received from origin with a 304 status code in response to an If-Modified-Since or If-None-Match request. Under regular scenarios, a revalidation will imply a cache hit. However, if using Fastly Image Optimizer or segmented caching this may result in a cache miss. |\n| otfp | integer | Number of responses that came from the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_deliver_time | number | Total amount of time spent delivering a response from the Fastly On-the-Fly Packaging service for video-on-demand (in seconds). |\n| otfp_manifests | integer | Number of responses that were manifest files from the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_resp_body_bytes | integer | Total body bytes delivered from the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_resp_header_bytes | integer | Total header bytes delivered from the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_shield_resp_body_bytes | integer | Total body bytes delivered via a shield for the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_shield_resp_header_bytes | integer | Total header bytes delivered via a shield for the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_shield_time | number | Total amount of time spent delivering a response via a shield from the Fastly On-the-Fly Packaging service for video-on-demand (in seconds). |\n| pass | integer | Number of requests that passed through the CDN without being cached. |\n| pass_resp_body_bytes | integer | Total body bytes delivered for cache passes. |\n| pass_sub_count | integer | Number of executions of the vcl_pass Varnish subroutine. |\n| pass_sub_time | number | Time spent inside the vcl_pass Varnish subroutine (in seconds). |\n| pass_time | number | Total amount of time spent processing cache passes (in seconds). |\n| pci | integer | Number of responses with the PCI flag turned on. |\n| pipe | integer | Optional. Pipe operations performed (legacy feature). |\n| pipe_sub_count | integer | Number of executions of the vcl_pipe Varnish subroutine. |\n| pipe_sub_time | number | Time spent inside the vcl_pipe Varnish subroutine (in seconds). |\n| predeliver_sub_count | integer | Number of executions of the vcl_predeliver Varnish subroutine. |\n| predeliver_sub_time | number | Time spent inside the vcl_predeliver Varnish subroutine (in seconds). |\n| prehash_sub_count | integer | Number of executions of the vcl_prehash Varnish subroutine. |\n| prehash_sub_time | number | Time spent inside the vcl_prehash Varnish subroutine (in seconds). |\n| recv_sub_count | integer | Number of executions of the vcl_recv Varnish subroutine. |\n| recv_sub_time | number | Time spent inside the vcl_recv Varnish subroutine (in seconds). |\n| region | string | Region for this data point. Only present if the request was made with group_by=region. |\n| req_body_bytes | integer | Total body bytes received. |\n| req_header_bytes | integer | Total header bytes received. |\n| request_collapse_unusable_count | integer | Number of requests that were collapsed and unable to be satisfied by the resulting cache object. |\n| request_collapse_usable_count | integer | Number of requests that were collapsed and satisfied by a usable cache object. |\n| request_denied_get_head_body | integer | Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body. |\n| requests | integer | Number of requests processed. |\n| resp_body_bytes | integer | Total body bytes delivered (edge_resp_body_bytes + shield_resp_body_bytes). |\n| resp_header_bytes | integer | Total header bytes delivered (edge_resp_header_bytes + shield_resp_header_bytes). |\n| restarts | integer | Number of restarts performed. |\n| segblock_origin_fetches | integer | Number of Range requests to origin for segments of resources when using segmented caching. |\n| segblock_shield_fetches | integer | Number of Range requests to a shield for segments of resources when using segmented caching. |\n| shield | integer | Number of requests from edge to the shield POP. |\n| shield_cache_fetches | integer | The total number of completed requests made to shields that returned cacheable content. |\n| shield_fetch_body_bytes | integer | Total request body bytes sent to a shield. |\n| shield_fetch_header_bytes | integer | Total request header bytes sent to a shield. |\n| shield_fetch_resp_body_bytes | integer | Total response body bytes sent from a shield to the edge. |\n| shield_fetch_resp_header_bytes | integer | Total response header bytes sent from a shield to the edge. |\n| shield_fetches | integer | Number of requests made from one Fastly POP to another, as part of shielding. |\n| shield_hit_requests | integer | Number of requests that resulted in a hit at a shield. |\n| shield_hit_resp_body_bytes | integer | Body bytes delivered for shield hits. |\n| shield_hit_resp_header_bytes | integer | Header bytes delivered for shield hits. |\n| shield_miss_requests | integer | Number of requests that resulted in a miss at a shield. |\n| shield_miss_resp_body_bytes | integer | Body bytes delivered for shield misses. |\n| shield_miss_resp_header_bytes | integer | Header bytes delivered for shield misses. |\n| shield_resp_body_bytes | integer | Total body bytes delivered via a shield. |\n| shield_resp_header_bytes | integer | Total header bytes delivered via a shield. |\n| shield_revalidations | integer | Number of responses received from origin with a 304 status code, in response to an If-Modified-Since or If-None-Match request to a shield. Under regular scenarios, a revalidation will imply a cache hit. However, if using segmented caching this may result in a cache miss. |\n| status_1xx | integer | Number of \"Informational\" category status codes delivered. |\n| status_200 | integer | Number of responses sent with status code 200 (Success). |\n| status_204 | integer | Number of responses sent with status code 204 (No Content). |\n| status_206 | integer | Number of responses sent with status code 206 (Partial Content). |\n| status_2xx | integer | Number of \"Success\" status codes delivered. |\n| status_301 | integer | Number of responses sent with status code 301 (Moved Permanently). |\n| status_302 | integer | Number of responses sent with status code 302 (Found). |\n| status_304 | integer | Number of responses sent with status code 304 (Not Modified). |\n| status_3xx | integer | Number of \"Redirection\" codes delivered. |\n| status_400 | integer | Number of responses sent with status code 400 (Bad Request). |\n| status_401 | integer | Number of responses sent with status code 401 (Unauthorized). |\n| status_403 | integer | Number of responses sent with status code 403 (Forbidden). |\n| status_404 | integer | Number of responses sent with status code 404 (Not Found). |\n| status_406 | integer | Number of responses sent with status code 406 (Not Acceptable). |\n| status_416 | integer | Number of responses sent with status code 416 (Range Not Satisfiable). |\n| status_429 | integer | Number of responses sent with status code 429 (Too Many Requests). |\n| status_499 | integer | Number of responses sent with status code 499 (Client Disconnected). |\n| status_4xx | integer | Number of \"Client Error\" codes delivered. |\n| status_500 | integer | Number of responses sent with status code 500 (Internal Server Error). |\n| status_501 | integer | Number of responses sent with status code 501 (Not Implemented). |\n| status_502 | integer | Number of responses sent with status code 502 (Bad Gateway). |\n| status_503 | integer | Number of responses sent with status code 503 (Service Unavailable). |\n| status_504 | integer | Number of responses sent with status code 504 (Gateway Timeout). |\n| status_505 | integer | Number of responses sent with status code 505 (HTTP Version Not Supported). |\n| status_530 | integer | Number of responses sent with status code 530. |\n| status_5xx | integer | Number of \"Server Error\" codes delivered. |\n| synth | integer | Number of requests that returned a synthetic response (i.e., response objects created with the synthetic VCL statement). |\n| timestamp | string | Timestamp for the start of the time period being reported. |\n| tls | integer | Number of requests that were received over TLS. |\n| tls_handshake_sent_bytes | integer | Number of bytes transferred during TLS handshake. |\n| tls_v10 | integer | Number of requests received over TLS 1.0. |\n| tls_v11 | integer | Number of requests received over TLS 1.1. |\n| tls_v12 | integer | Number of requests received over TLS 1.2. |\n| tls_v13 | integer | Number of requests received over TLS 1.3. |\n| uncacheable | integer | Number of requests that were designated uncachable. |\n| upgrade | integer | Number of requests that resulted in a WebSocket upgrade. |\n| video | integer | Number of responses with the video segment or video manifest MIME type (i.e., application/x-mpegurl, application/vnd.apple.mpegurl, application/f4m, application/dash+xml, application/vnd.ms-sstr+xml, ideo/mp2t, audio/aac, video/f4f, video/x-flv, video/mp4, audio/mp4). |\n| websocket_bereq_body_bytes | integer | Total message content bytes sent to backends over passthrough WebSocket connections. |\n| websocket_bereq_header_bytes | integer | Total header bytes sent to backends over passthrough WebSocket connections. |\n| websocket_beresp_body_bytes | integer | Total message content bytes received from backends over passthrough WebSocket connections. |\n| websocket_beresp_header_bytes | integer | Total header bytes received from backends over passthrough WebSocket connections. |\n| websocket_conn_time_ms | integer | Total duration of passthrough WebSocket connections with end users. |\n| websocket_req_body_bytes | integer | Total message content bytes received from end users over passthrough WebSocket connections. |\n| websocket_req_header_bytes | integer | Total header bytes received from end users over passthrough WebSocket connections. |\n| websocket_resp_body_bytes | integer | Total message content bytes sent to end users over passthrough WebSocket connections. |\n| websocket_resp_header_bytes | integer | Total header bytes sent to end users over passthrough WebSocket connections. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| from | string | An RFC-8339-formatted date and time indicating the inclusive start of the query time range. |\n| group_by | string | A comma-separated list of fields used to group and order the results. |\n| limit | integer | The maximum number of results to return. |\n| next_cursor | string | A string that can be used to request the next page of results, if any. |\n| to | string | An RFC-8339-formatted date and time indicating the exclusive end of the query time range. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| aia_estimated_time_saved_ms | integer | The estimated amount of time saved by responses served from the AI Accelerator semantic cache. |\n| aia_origin_usage_tokens | integer | The number of usage tokens reported by the request to the origin from AI Accelerator. |\n| aia_requests | integer | Number of requests received by AI Accelerator. |\n| aia_response_usage_tokens | integer | The usage tokens associated with the response returned from the AI Accelerator cache. |\n| aia_status_1xx | integer | Number of \"Informational\" category status codes received from AI provider. |\n| aia_status_2xx | integer | Number of \"Success\" status codes received from AI provider. |\n| aia_status_3xx | integer | Number of \"Redirection\" received from AI provider. |\n| aia_status_4xx | integer | Number of \"Client Error\" received from AI provider. |\n| aia_status_5xx | integer | Number of \"Server Error\" received from AI provider. |\n| all_edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service. |\n| all_edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service. |\n| all_error_requests | integer | Number of cache errors for a VCL service. |\n| all_hit_requests | integer | Number of cache hits for a VCL service. |\n| all_miss_requests | integer | Number of cache misses for a VCL service. |\n| all_pass_requests | integer | Number of requests that passed through the CDN without being cached for a VCL service. |\n| all_status_1xx | integer | Number of \"Informational\" category status codes delivered for all sources. |\n| all_status_2xx | integer | Number of \"Success\" status codes delivered for all sources. |\n| all_status_3xx | integer | Number of \"Redirection\" codes delivered for all sources. |\n| all_status_4xx | integer | Number of \"Client Error\" codes delivered for all sources. |\n| all_status_5xx | integer | Number of \"Server Error\" codes delivered for all sources. |\n| all_synth_requests | integer | Number of requests that returned a synthetic response (i.e., response objects created with the synthetic VCL statement) for a VCL service. |\n| api_discovery_requests_count | integer | Number of requests processed by the API Discovery engine. |\n| arc_requests | integer | Number of requests received by AI Runtime Control. |\n| attack_blocked_req_body_bytes | integer | Total body bytes received from requests that triggered a WAF rule that was blocked. |\n| attack_blocked_req_header_bytes | integer | Total header bytes received from requests that triggered a WAF rule that was blocked. |\n| attack_logged_req_body_bytes | integer | Total body bytes received from requests that triggered a WAF rule that was logged. |\n| attack_logged_req_header_bytes | integer | Total header bytes received from requests that triggered a WAF rule that was logged. |\n| attack_passed_req_body_bytes | integer | Total body bytes received from requests that triggered a WAF rule that was passed. |\n| attack_passed_req_header_bytes | integer | Total header bytes received from requests that triggered a WAF rule that was passed. |\n| attack_req_body_bytes | integer | Total body bytes received from requests that triggered a WAF rule. |\n| attack_req_header_bytes | integer | Total header bytes received from requests that triggered a WAF rule. |\n| attack_resp_synth_bytes | integer | Total bytes delivered for requests that triggered a WAF rule and returned a synthetic response. |\n| bandwidth | integer | Total bytes delivered (resp_header_bytes + resp_body_bytes + bereq_header_bytes + bereq_body_bytes + compute_resp_header_bytes + compute_resp_body_bytes + compute_bereq_header_bytes + compute_bereq_body_bytes + websocket_resp_header_bytes + websocket_resp_body_bytes + websocket_bereq_header_bytes + websocket_bereq_body_bytes + fanout_resp_header_bytes + fanout_resp_body_bytes + fanout_bereq_header_bytes + fanout_bereq_body_bytes). |\n| bereq_body_bytes | integer | Total body bytes sent to origin. |\n| bereq_header_bytes | integer | Total header bytes sent to origin. |\n| bot_challenge_complete_tokens_checked | integer | The number of challenge-complete tokens checked. |\n| bot_challenge_complete_tokens_disabled | integer | The number of challenge-complete tokens not checked because the feature was disabled. |\n| bot_challenge_complete_tokens_failed | integer | The number of challenge-complete tokens that failed validation. |\n| bot_challenge_complete_tokens_issued | integer | The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. |\n| bot_challenge_complete_tokens_passed | integer | The number of challenge-complete tokens that passed validation. |\n| bot_challenge_starts | integer | The number of challenge-start tokens created. |\n| bot_challenges_failed | integer | The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution. |\n| bot_challenges_issued | integer | The number of challenges issued. For example, the issuance of a CAPTCHA challenge. |\n| bot_challenges_pats_issued | integer | Number of Private Access Token challenges issued. |\n| bot_challenges_pats_succeeded | integer | Number of successful Private Access Token challenge solutions processed. |\n| bot_challenges_succeeded | integer | The number of successful challenge solutions processed. For example, a correct CAPTCHA solution. |\n| bot_edge_requests_accessibility_count | integer | Count of edge requests where an accessibility bot was detected. |\n| bot_edge_requests_ai_crawler_count | integer | Count of edge requests where an AI crawler was detected. |\n| bot_edge_requests_ai_fetcher_count | integer | Count of edge requests where an AI fetcher was detected. |\n| bot_edge_requests_analyzed_count | integer | Count of edge requests where bot detection analysis was performed. |\n| bot_edge_requests_content_fetcher_count | integer | Count of edge requests where a content fetcher was detected. |\n| bot_edge_requests_detected_count | integer | Count of edge requests where a bot was detected. |\n| bot_edge_requests_headless_count | integer | Number of edge requests where a headless bot was detected. |\n| bot_edge_requests_monitoring_count | integer | Count of edge requests where a monitoring and site tool was detected. |\n| bot_edge_requests_online_marketing_count | integer | Count of edge requests where an online marketing bot was detected. |\n| bot_edge_requests_page_preview_count | integer | Count of edge requests where a page preview bot was detected. |\n| bot_edge_requests_platform_integrations_count | integer | Count of edge requests where a platform integration was detected. |\n| bot_edge_requests_research_count | integer | Count of edge requests where a research bot was detected. |\n| bot_edge_requests_search_engine_crawler_count | integer | Count of edge requests where a search engine crawler was detected. |\n| bot_edge_requests_search_engine_optimization_count | integer | Count of edge requests where a search engine optimization bot was detected. |\n| bot_edge_requests_security_tools_count | integer | Count of edge requests where a security tool was detected. |\n| bot_edge_requests_verified_count | integer | Count of edge requests where a verified bot was detected. |\n| bot_requests_total_count | integer | Total number of Bot Management requests across all deployments. |\n| compute_bereq_body_bytes | integer | Total body bytes sent to backends (origins) by the Compute platform. |\n| compute_bereq_header_bytes | integer | Total header bytes sent to backends (origins) by the Compute platform. |\n| compute_bereqs | integer | Number of backend requests started. |\n| compute_beresp_body_bytes | integer | Total body bytes received from backends (origins) by the Compute platform. |\n| compute_beresp_header_bytes | integer | Total header bytes received from backends (origins) by the Compute platform. |\n| compute_cache_operations_count | integer | Number of cache operations executed by the Compute platform. |\n| compute_execution_time_ms | number | The amount of active CPU time used to process your requests (in milliseconds). |\n| compute_handoff | integer | The number of times Compute has handed off a request to the Fanout proxy or WebSocket proxy. |\n| compute_platform_internal_error | integer | Fatal errors caused by internal errors in Fastly’s Compute platform. |\n| compute_platform_invalid_request_error | integer | Fatal errors caused by unprocessable requests to the service, such as requests with malformed CDN-Loop headers or invalid purge credentials. |\n| compute_ram_used | integer | The amount of RAM used for your service by Fastly (in bytes). |\n| compute_req_body_bytes | integer | Total body bytes received by the Compute platform. |\n| compute_req_header_bytes | integer | Total header bytes received by the Compute platform. |\n| compute_request_time_billed_ms | number | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. |\n| compute_request_time_ms | number | The total, actual amount of time used to process your requests, including active CPU time (in milliseconds). |\n| compute_requests | integer | The total number of requests that were received for your service by Fastly. |\n| compute_resp_body_bytes | integer | Total body bytes sent from Compute to end user. |\n| compute_resp_header_bytes | integer | Total header bytes sent from Compute to end user. |\n| compute_resp_status_103 | integer | Number of responses delivered with status code 103 (Early Hints) by the Compute platform. |\n| compute_resp_status_1xx | integer | Number of \"Informational\" category status codes delivered by the Compute platform. |\n| compute_resp_status_200 | integer | Number of responses delivered with status code 200 (Success) by the Compute platform. |\n| compute_resp_status_204 | integer | Number of responses delivered with status code 204 (No Content) by the Compute platform. |\n| compute_resp_status_206 | integer | Number of responses delivered with status code 206 (Partial Content) by the Compute platform. |\n| compute_resp_status_2xx | integer | Number of \"Success\" category status codes delivered by the Compute platform. |\n| compute_resp_status_301 | integer | Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform. |\n| compute_resp_status_302 | integer | Number of responses delivered with status code 302 (Found) by the Compute platform. |\n| compute_resp_status_304 | integer | Number of responses delivered with status code 304 (Not Modified) by the Compute platform. |\n| compute_resp_status_3xx | integer | Number of \"Redirection\" category status codes delivered by the Compute platform. |\n| compute_resp_status_400 | integer | Number of responses delivered with status code 400 (Bad Request) by the Compute platform. |\n| compute_resp_status_401 | integer | Number of responses delivered with status code 401 (Unauthorized) by the Compute platform. |\n| compute_resp_status_403 | integer | Number of responses delivered with status code 403 (Forbidden) by the Compute platform. |\n| compute_resp_status_404 | integer | Number of responses delivered with status code 404 (Not Found) by the Compute platform. |\n| compute_resp_status_416 | integer | Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform. |\n| compute_resp_status_429 | integer | Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform. |\n| compute_resp_status_4xx | integer | Number of \"Client Error\" category status codes delivered by the Compute platform. |\n| compute_resp_status_500 | integer | Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform. |\n| compute_resp_status_501 | integer | Number of responses delivered with status code 501 (Not Implemented) by the Compute platform. |\n| compute_resp_status_502 | integer | Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform. |\n| compute_resp_status_503 | integer | Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform. |\n| compute_resp_status_504 | integer | Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform. |\n| compute_resp_status_505 | integer | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. |\n| compute_resp_status_530 | integer | Number of responses delivered with status code 530 by the Compute platform. |\n| compute_resp_status_5xx | integer | Number of \"Server Error\" category status codes delivered by the Compute platform. |\n| compute_sandboxes | integer | Number of WebAssembly (Wasm) sandboxes created. |\n| compute_service_bereq_5xx_error | integer | Number of backend requests from a Compute service where the origin returned a 5xx status code. |\n| compute_service_bereq_conn_error | integer | Number of backend requests from a Compute service that failed at the TCP connection level. Sum of compute_service_bereq_conn_timeout_error, compute_service_bereq_conn_refused_error, and compute_service_bereq_conn_other_error. |\n| compute_service_bereq_conn_other_error | integer | Number of backend requests from a Compute service that failed due to a connection error not classified as a timeout or refusal. |\n| compute_service_bereq_conn_refused_error | integer | Number of backend requests from a Compute service where the origin actively refused the connection. |\n| compute_service_bereq_conn_timeout_error | integer | Number of backend requests from a Compute service where the connection to the origin timed out before being established. |\n| compute_service_bereq_dns_error | integer | Number of backend requests from a Compute service that failed during DNS resolution. |\n| compute_service_bereq_error | integer | Number of backend request errors, including timeouts. |\n| compute_service_bereq_http_error | integer | Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of compute_service_bereq_http_proto_v1_error, compute_service_bereq_http_proto_v2_error, compute_service_bereq_http_incomplete_error, compute_service_bereq_http_timeout_error, and compute_service_bereq_http_other_error. |\n| compute_service_bereq_http_incomplete_error | integer | Number of backend requests from a Compute service where the origin sent an incomplete HTTP response. |\n| compute_service_bereq_http_other_error | integer | Number of backend requests from a Compute service that failed due to an HTTP-level error not classified in any category. |\n| compute_service_bereq_http_proto_v1_error | integer | Number of backend requests from a Compute service that failed due to an HTTP/1.x protocol violation after the request was transmitted. |\n| compute_service_bereq_http_proto_v2_error | integer | Number of backend requests from a Compute service that failed due to an HTTP/2 protocol error, typically a RST_STREAM or GO_AWAY from the origin. |\n| compute_service_bereq_http_timeout_error | integer | Number of backend requests from a Compute service where the origin did not respond within the configured timeout period. |\n| compute_service_bereq_other_error | integer | Number of backend requests from a Compute service that failed due to an error not classified into the DNS, connection, TLS, or HTTP categories. |\n| compute_service_bereq_tls_error | integer | Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of compute_service_bereq_tls_server_cert_error and compute_service_bereq_tls_other_error. |\n| compute_service_bereq_tls_other_error | integer | Number of backend requests from a Compute service that failed due to a TLS error not classified as a certificate error. |\n| compute_service_bereq_tls_server_cert_error | integer | Number of backend requests from a Compute service that failed due to a TLS certificate validation error (e.g., expired, untrusted CA, hostname mismatch). |\n| compute_service_chain_error | integer | Fatal errors caused by the service path exceeding hop or service limits, or where a forwarding loop is detected via CDN-Loop headers. |\n| compute_service_limits_error | integer | Non-fatal errors caused by attempts to exceed defined operational limits, such as simultaneous backend requests or cache transactions. |\n| compute_service_memory_exceeded_error | integer | Number of times a guest exceeded its heap limit. |\n| compute_service_resource_limits_error | integer | Aggregate of fatal errors caused by exceeding allocated resource limits, specifically runtime duration, vCPU usage, and heap memory limits. |\n| compute_service_runtime_error | integer | Fatal errors caused by service logic faults, including stack overflows, unreachable code traps, illegal memory access, or attempts to send multiple responses. |\n| compute_service_timeout_error | integer | Fatal errors caused by exceeding the per-request runtime limit. |\n| compute_service_vcpu_exceeded_error | integer | Fatal errors caused by exceeding the per-request vCPU time limit. |\n| csp_pages_gauge | integer | Gauge. The number of pages monitored by Content Security Policy. |\n| datacenter | string | Datacenter for this data point. Only present if the request was made with group_by=datacenter. |\n| ddos_action_blackhole | integer | The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped). |\n| ddos_action_close | integer | The number of times the close action was taken. The close action aborts the connection as soon as possible. The close action takes effect either right after accept, right after the client hello, or right after the response was sent. |\n| ddos_action_downgrade | integer | The number of times the downgrade action was taken. The downgrade action restricts the client to http1. |\n| ddos_action_downgraded_connections | integer | The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1. |\n| ddos_action_limit_streams_connections | integer | For HTTP/2, the number of connections the limit-streams action was applied to. The limit-streams action caps the allowed number of concurrent streams in a connection. |\n| ddos_action_limit_streams_requests | integer | For HTTP/2, the number of requests made on a connection for which the limit-streams action was taken. The limit-streams action caps the allowed number of concurrent streams in a connection. |\n| ddos_action_tarpit | integer | The number of times the tarpit action was taken. The tarpit action delays writing the response to the client. |\n| ddos_action_tarpit_accept | integer | The number of times the tarpit-accept action was taken. The tarpit-accept action adds a delay when accepting future connections. |\n| ddos_challenge_complete_tokens_checked | integer | The number of challenge-complete tokens checked while enforcing DDoS protection rules. |\n| ddos_challenge_complete_tokens_failed | integer | The number of challenge-complete tokens that failed validation while enforcing DDoS protection rules. |\n| ddos_challenge_complete_tokens_issued | integer | Number of challenge-complete tokens issued as a result of a DDoS action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. |\n| ddos_challenge_complete_tokens_passed | integer | The number of challenge-complete tokens that passed validation while enforcing DDoS protection rules. |\n| ddos_challenge_starts | integer | The number of challenge-start tokens created while enforcing DDoS protection rules. |\n| ddos_challenges_failed | integer | Number of failed challenge solutions processed as a result of a DDoS action. For example, an incorrect CAPTCHA solution. |\n| ddos_challenges_issued | integer | Number of challenges issued from a DDoS action. |\n| ddos_challenges_pats_issued | integer | Number of Private Access Token challenges issued as a result of a DDoS action. |\n| ddos_challenges_pats_succeeded | integer | Number of successful Private Access Token challenge solutions processed as a result of a DDoS action. |\n| ddos_challenges_succeeded | integer | Number of successful challenge solutions processed as a result of a DDoS action. For example, a correct CAPTCHA solution. |\n| ddos_protection_requests_allow_count | integer | Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected. |\n| ddos_protection_requests_detect_count | integer | Number of requests classified as a DDoS attack against a customer origin or service. |\n| ddos_protection_requests_mitigate_count | integer | Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform. |\n| deliver_sub_count | integer | Number of executions of the vcl_deliver Varnish subroutine. |\n| deliver_sub_time | number | Time spent inside the vcl_deliver Varnish subroutine (in seconds). |\n| dns_billable_responses_count | integer | Number of billable DNS responses (e.g., A, CNAME). |\n| dns_nonbillable_responses_count | integer | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). |\n| edge_hit_requests | integer | Number of requests sent by end users to Fastly that resulted in a hit at the edge. |\n| edge_hit_resp_body_bytes | integer | Body bytes delivered for edge hits. |\n| edge_hit_resp_header_bytes | integer | Header bytes delivered for edge hits. |\n| edge_miss_requests | integer | Number of requests sent by end users to Fastly that resulted in a miss at the edge. |\n| edge_miss_resp_body_bytes | integer | Body bytes delivered for edge misses. |\n| edge_miss_resp_header_bytes | integer | Header bytes delivered for edge misses. |\n| edge_requests | integer | Number of requests sent by end users to Fastly. |\n| edge_resp_body_bytes | integer | Total body bytes delivered from Fastly to the end user. |\n| edge_resp_header_bytes | integer | Total header bytes delivered from Fastly to the end user. |\n| error_sub_count | integer | Number of executions of the vcl_error Varnish subroutine. |\n| error_sub_time | number | Time spent inside the vcl_error Varnish subroutine (in seconds). |\n| errors | integer | Number of cache errors. |\n| fanout_bereq_body_bytes | integer | Total body or message content bytes sent to backends over Fanout connections. |\n| fanout_bereq_header_bytes | integer | Total header bytes sent to backends over Fanout connections. |\n| fanout_beresp_body_bytes | integer | Total body or message content bytes received from backends over Fanout connections. |\n| fanout_beresp_header_bytes | integer | Total header bytes received from backends over Fanout connections. |\n| fanout_conn_time_ms | integer | Total duration of Fanout connections with end users. |\n| fanout_recv_publishes | integer | Total published messages received from the publish API endpoint. |\n| fanout_req_body_bytes | integer | Total body or message content bytes received from end users over Fanout connections. |\n| fanout_req_header_bytes | integer | Total header bytes received from end users over Fanout connections. |\n| fanout_resp_body_bytes | integer | Total body or message content bytes sent to end users over Fanout connections, excluding published message content. |\n| fanout_resp_header_bytes | integer | Total header bytes sent to end users over Fanout connections. |\n| fanout_send_publishes | integer | Total published messages sent to end users. |\n| fetch_sub_count | integer | Number of executions of the vcl_fetch Varnish subroutine. |\n| fetch_sub_time | number | Time spent inside the vcl_fetch Varnish subroutine (in seconds). |\n| hash_sub_count | integer | Number of executions of the vcl_hash Varnish subroutine. |\n| hash_sub_time | number | Time spent inside the vcl_hash Varnish subroutine (in seconds). |\n| hit_ratio | number | Ratio of cache hits to cache misses (between 0 and 1). |\n| hit_resp_body_bytes | integer | Total body bytes delivered for cache hits. |\n| hit_sub_count | integer | Number of executions of the vcl_hit Varnish subroutine. |\n| hit_sub_time | number | Time spent inside the vcl_hit Varnish subroutine (in seconds). |\n| hits | integer | Number of cache hits. |\n| hits_time | number | Total amount of time spent processing cache hits (in seconds). |\n| http2 | integer | Number of requests received over HTTP/2. |\n| http3 | integer | Number of requests received over HTTP/3. |\n| imgopto | integer | Number of responses that came from the Fastly Image Optimizer service. If the service receives 10 requests for an image, this stat will be 10 regardless of how many times the image was transformed. |\n| imgopto_avif_count | integer | Count of AVIF images delivered to end user by Image Optimizer. |\n| imgopto_compute_requests | integer | The number of Image Optimizer requests made from Compute services. |\n| imgopto_gif_count | integer | Count of GIF images delivered to end user by Image Optimizer. |\n| imgopto_input_image_bytes | integer | The total image bytes that would have been delivered if the images had not been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer). |\n| imgopto_jpeg_count | integer | Count of JPEG images delivered to end user by Image Optimizer. |\n| imgopto_jpegxl_count | integer | Count of JPEGXL images delivered to end user by Image Optimizer. |\n| imgopto_mp4_count | integer | Count of MP4s delivered to end user by Image Optimizer. |\n| imgopto_output_image_bytes | integer | The total image bytes delivered that have been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer). |\n| imgopto_png_count | integer | Count of PNG images delivered to end user by Image Optimizer. |\n| imgopto_resp_body_bytes | integer | Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic. |\n| imgopto_resp_header_bytes | integer | Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic. |\n| imgopto_shield | integer | Number of responses that came from the Fastly Image Optimizer service via a shield. |\n| imgopto_shield_resp_body_bytes | integer | Total body bytes delivered via a shield from the Fastly Image Optimizer service. |\n| imgopto_shield_resp_header_bytes | integer | Total header bytes delivered via a shield from the Fastly Image Optimizer service. |\n| imgopto_svg_count | integer | Count of SVG images delivered to end user by Image Optimizer. |\n| imgopto_transforms | integer | Number of transforms performed by the Fastly Image Optimizer service. |\n| imgopto_webp_count | integer | Count of WebP images delivered to end user by Image Optimizer. |\n| imgvideo | integer | Number of video responses that came from the Fastly Image Optimizer service. |\n| imgvideo_frames | integer | Number of video frames that came from the Fastly Image Optimizer service. A video frame is an individual image within a sequence of video. |\n| imgvideo_resp_body_bytes | integer | Total body bytes of video delivered from the Fastly Image Optimizer service. |\n| imgvideo_resp_header_bytes | integer | Total header bytes of video delivered from the Fastly Image Optimizer service. |\n| imgvideo_shield | integer | Number of video responses delivered via a shield that came from the Fastly Image Optimizer service. |\n| imgvideo_shield_frames | integer | Number of video frames delivered via a shield that came from the Fastly Image Optimizer service. A video frame is an individual image within a sequence of video. |\n| imgvideo_shield_resp_body_bytes | integer | Total body bytes of video delivered via a shield from the Fastly Image Optimizer service. |\n| imgvideo_shield_resp_header_bytes | integer | Total header bytes of video delivered via a shield from the Fastly Image Optimizer service. |\n| ipv6 | integer | Number of requests that were received over IPv6. |\n| kv_store_class_a_operations | integer | The total number of class a operations for the KV store. |\n| kv_store_class_b_operations | integer | The total number of class b operations for the KV store. |\n| log | integer | Number of log lines sent. |\n| log_bytes | integer | Total log bytes sent. |\n| miss | integer | Number of cache misses. |\n| miss_resp_body_bytes | integer | Total body bytes delivered for cache misses. |\n| miss_sub_count | integer | Number of executions of the vcl_miss Varnish subroutine. |\n| miss_sub_time | number | Time spent inside the vcl_miss Varnish subroutine (in seconds). |\n| miss_time | number | Total amount of time spent processing cache misses (in seconds). |\n| ngwaf_account_rules_gauge | integer | Gauge. The number of Next-Gen WAF rules defined at the account level. |\n| ngwaf_account_workspaces | integer | Gauge. The number of Next-Gen WAF workspaces in the account. |\n| ngwaf_bot_analysis_request_count | integer | Count of Next-Gen WAF Bot Management requests. |\n| ngwaf_requests_allowed_count | integer | Count of Next-Gen WAF (Edge WAF & Core WAF) requests allowed. |\n| ngwaf_requests_blocked_count | integer | Count of Next-Gen WAF (Edge WAF & Core WAF) requests blocked. |\n| ngwaf_requests_challenged_count | integer | Count of Edge WAF requests challenged. |\n| ngwaf_requests_logged_count | integer | Count of Edge WAF requests logged. |\n| ngwaf_requests_timeout_count | integer | Count of Edge WAF requests timed outcome. |\n| ngwaf_requests_total_count | integer | Total number of Next-Gen WAF (Edge WAF & Core WAF) requests. |\n| ngwaf_requests_unknown_count | integer | Count of Edge WAF requests with an unknown outcome. |\n| ngwaf_workspace_rules_gauge | integer | Gauge. The number of Next-Gen WAF rules defined in a workspace. |\n| ngwaf_workspace_thresholds_gauge | integer | Gauge. The number of Next-Gen WAF thresholds defined in a workspace. |\n| object_size_100k | integer | Number of objects served that were between 10KB and 100KB in size. |\n| object_size_100m | integer | Number of objects served that were between 10MB and 100MB in size. |\n| object_size_10k | integer | Number of objects served that were between 1KB and 10KB in size. |\n| object_size_10m | integer | Number of objects served that were between 1MB and 10MB in size. |\n| object_size_1g | integer | Number of objects served that were between 100MB and 1GB in size. |\n| object_size_1k | integer | Number of objects served that were under 1KB in size. |\n| object_size_1m | integer | Number of objects served that were between 100KB and 1MB in size. |\n| object_storage_buckets_count | integer | Gauge. The number of Object Storage buckets. |\n| object_storage_bytes_count | integer | Gauge. The number of bytes stored in Object Storage. |\n| object_storage_class_a_operations_count | integer | A count of the number of Class A Object Storage operations. |\n| object_storage_class_b_operations_count | integer | A count of the number of Class B Object Storage operations. |\n| origin_cache_fetch_resp_body_bytes | integer | Body bytes received from origin for cacheable content. |\n| origin_cache_fetch_resp_header_bytes | integer | Header bytes received from an origin for cacheable content. |\n| origin_cache_fetches | integer | The total number of completed requests made to backends (origins) that returned cacheable content. |\n| origin_fetch_body_bytes | integer | Total request body bytes sent to origin. |\n| origin_fetch_header_bytes | integer | Total request header bytes sent to origin. |\n| origin_fetch_resp_body_bytes | integer | Total body bytes received from origin. |\n| origin_fetch_resp_header_bytes | integer | Total header bytes received from origin. |\n| origin_fetches | integer | Number of requests sent to origin. |\n| origin_offload | number | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((edge_resp_body_bytes + edge_resp_header_bytes) - (origin_fetch_resp_body_bytes + origin_fetch_resp_header_bytes)) / (edge_resp_body_bytes + edge_resp_header_bytes). |\n| origin_revalidations | integer | Number of responses received from origin with a 304 status code in response to an If-Modified-Since or If-None-Match request. Under regular scenarios, a revalidation will imply a cache hit. However, if using Fastly Image Optimizer or segmented caching this may result in a cache miss. |\n| otfp | integer | Number of responses that came from the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_deliver_time | number | Total amount of time spent delivering a response from the Fastly On-the-Fly Packaging service for video-on-demand (in seconds). |\n| otfp_manifests | integer | Number of responses that were manifest files from the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_resp_body_bytes | integer | Total body bytes delivered from the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_resp_header_bytes | integer | Total header bytes delivered from the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_shield_resp_body_bytes | integer | Total body bytes delivered via a shield for the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_shield_resp_header_bytes | integer | Total header bytes delivered via a shield for the Fastly On-the-Fly Packaging service for video-on-demand. |\n| otfp_shield_time | number | Total amount of time spent delivering a response via a shield from the Fastly On-the-Fly Packaging service for video-on-demand (in seconds). |\n| pass | integer | Number of requests that passed through the CDN without being cached. |\n| pass_resp_body_bytes | integer | Total body bytes delivered for cache passes. |\n| pass_sub_count | integer | Number of executions of the vcl_pass Varnish subroutine. |\n| pass_sub_time | number | Time spent inside the vcl_pass Varnish subroutine (in seconds). |\n| pass_time | number | Total amount of time spent processing cache passes (in seconds). |\n| pci | integer | Number of responses with the PCI flag turned on. |\n| pipe | integer | Optional. Pipe operations performed (legacy feature). |\n| pipe_sub_count | integer | Number of executions of the vcl_pipe Varnish subroutine. |\n| pipe_sub_time | number | Time spent inside the vcl_pipe Varnish subroutine (in seconds). |\n| predeliver_sub_count | integer | Number of executions of the vcl_predeliver Varnish subroutine. |\n| predeliver_sub_time | number | Time spent inside the vcl_predeliver Varnish subroutine (in seconds). |\n| prehash_sub_count | integer | Number of executions of the vcl_prehash Varnish subroutine. |\n| prehash_sub_time | number | Time spent inside the vcl_prehash Varnish subroutine (in seconds). |\n| recv_sub_count | integer | Number of executions of the vcl_recv Varnish subroutine. |\n| recv_sub_time | number | Time spent inside the vcl_recv Varnish subroutine (in seconds). |\n| region | string | Region for this data point. Only present if the request was made with group_by=region. |\n| req_body_bytes | integer | Total body bytes received. |\n| req_header_bytes | integer | Total header bytes received. |\n| request_collapse_unusable_count | integer | Number of requests that were collapsed and unable to be satisfied by the resulting cache object. |\n| request_collapse_usable_count | integer | Number of requests that were collapsed and satisfied by a usable cache object. |\n| request_denied_get_head_body | integer | Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body. |\n| requests | integer | Number of requests processed. |\n| resp_body_bytes | integer | Total body bytes delivered (edge_resp_body_bytes + shield_resp_body_bytes). |\n| resp_header_bytes | integer | Total header bytes delivered (edge_resp_header_bytes + shield_resp_header_bytes). |\n| restarts | integer | Number of restarts performed. |\n| segblock_origin_fetches | integer | Number of Range requests to origin for segments of resources when using segmented caching. |\n| segblock_shield_fetches | integer | Number of Range requests to a shield for segments of resources when using segmented caching. |\n| shield | integer | Number of requests from edge to the shield POP. |\n| shield_cache_fetches | integer | The total number of completed requests made to shields that returned cacheable content. |\n| shield_fetch_body_bytes | integer | Total request body bytes sent to a shield. |\n| shield_fetch_header_bytes | integer | Total request header bytes sent to a shield. |\n| shield_fetch_resp_body_bytes | integer | Total response body bytes sent from a shield to the edge. |\n| shield_fetch_resp_header_bytes | integer | Total response header bytes sent from a shield to the edge. |\n| shield_fetches | integer | Number of requests made from one Fastly POP to another, as part of shielding. |\n| shield_hit_requests | integer | Number of requests that resulted in a hit at a shield. |\n| shield_hit_resp_body_bytes | integer | Body bytes delivered for shield hits. |\n| shield_hit_resp_header_bytes | integer | Header bytes delivered for shield hits. |\n| shield_miss_requests | integer | Number of requests that resulted in a miss at a shield. |\n| shield_miss_resp_body_bytes | integer | Body bytes delivered for shield misses. |\n| shield_miss_resp_header_bytes | integer | Header bytes delivered for shield misses. |\n| shield_resp_body_bytes | integer | Total body bytes delivered via a shield. |\n| shield_resp_header_bytes | integer | Total header bytes delivered via a shield. |\n| shield_revalidations | integer | Number of responses received from origin with a 304 status code, in response to an If-Modified-Since or If-None-Match request to a shield. Under regular scenarios, a revalidation will imply a cache hit. However, if using segmented caching this may result in a cache miss. |\n| status_1xx | integer | Number of \"Informational\" category status codes delivered. |\n| status_200 | integer | Number of responses sent with status code 200 (Success). |\n| status_204 | integer | Number of responses sent with status code 204 (No Content). |\n| status_206 | integer | Number of responses sent with status code 206 (Partial Content). |\n| status_2xx | integer | Number of \"Success\" status codes delivered. |\n| status_301 | integer | Number of responses sent with status code 301 (Moved Permanently). |\n| status_302 | integer | Number of responses sent with status code 302 (Found). |\n| status_304 | integer | Number of responses sent with status code 304 (Not Modified). |\n| status_3xx | integer | Number of \"Redirection\" codes delivered. |\n| status_400 | integer | Number of responses sent with status code 400 (Bad Request). |\n| status_401 | integer | Number of responses sent with status code 401 (Unauthorized). |\n| status_403 | integer | Number of responses sent with status code 403 (Forbidden). |\n| status_404 | integer | Number of responses sent with status code 404 (Not Found). |\n| status_406 | integer | Number of responses sent with status code 406 (Not Acceptable). |\n| status_416 | integer | Number of responses sent with status code 416 (Range Not Satisfiable). |\n| status_429 | integer | Number of responses sent with status code 429 (Too Many Requests). |\n| status_499 | integer | Number of responses sent with status code 499 (Client Disconnected). |\n| status_4xx | integer | Number of \"Client Error\" codes delivered. |\n| status_500 | integer | Number of responses sent with status code 500 (Internal Server Error). |\n| status_501 | integer | Number of responses sent with status code 501 (Not Implemented). |\n| status_502 | integer | Number of responses sent with status code 502 (Bad Gateway). |\n| status_503 | integer | Number of responses sent with status code 503 (Service Unavailable). |\n| status_504 | integer | Number of responses sent with status code 504 (Gateway Timeout). |\n| status_505 | integer | Number of responses sent with status code 505 (HTTP Version Not Supported). |\n| status_530 | integer | Number of responses sent with status code 530. |\n| status_5xx | integer | Number of \"Server Error\" codes delivered. |\n| synth | integer | Number of requests that returned a synthetic response (i.e., response objects created with the synthetic VCL statement). |\n| timestamp | string | Timestamp for the start of the time period being reported. |\n| tls | integer | Number of requests that were received over TLS. |\n| tls_handshake_sent_bytes | integer | Number of bytes transferred during TLS handshake. |\n| tls_v10 | integer | Number of requests received over TLS 1.0. |\n| tls_v11 | integer | Number of requests received over TLS 1.1. |\n| tls_v12 | integer | Number of requests received over TLS 1.2. |\n| tls_v13 | integer | Number of requests received over TLS 1.3. |\n| uncacheable | integer | Number of requests that were designated uncachable. |\n| upgrade | integer | Number of requests that resulted in a WebSocket upgrade. |\n| video | integer | Number of responses with the video segment or video manifest MIME type (i.e., application/x-mpegurl, application/vnd.apple.mpegurl, application/f4m, application/dash+xml, application/vnd.ms-sstr+xml, ideo/mp2t, audio/aac, video/f4f, video/x-flv, video/mp4, audio/mp4). |\n| websocket_bereq_body_bytes | integer | Total message content bytes sent to backends over passthrough WebSocket connections. |\n| websocket_bereq_header_bytes | integer | Total header bytes sent to backends over passthrough WebSocket connections. |\n| websocket_beresp_body_bytes | integer | Total message content bytes received from backends over passthrough WebSocket connections. |\n| websocket_beresp_header_bytes | integer | Total header bytes received from backends over passthrough WebSocket connections. |\n| websocket_conn_time_ms | integer | Total duration of passthrough WebSocket connections with end users. |\n| websocket_req_body_bytes | integer | Total message content bytes received from end users over passthrough WebSocket connections. |\n| websocket_req_header_bytes | integer | Total header bytes received from end users over passthrough WebSocket connections. |\n| websocket_resp_body_bytes | integer | Total message content bytes sent to end users over passthrough WebSocket connections. |\n| websocket_resp_header_bytes | integer | Total header bytes sent to end users over passthrough WebSocket connections. |"
+    },
+    {
       "name": "Origin metrics / Origin Inspector Historical API",
       "description": "Origin Inspector provides a JSON-formatted historical API for visibility into responses delivered from your origin servers to Fastly. The API offers a standardized set of data to report in minutely, hourly or daily granularity on every origin response, byte, and status code received by a specified service.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| dimensions | object | The unique combination of dimensions associated with this timeseries. |\n| meta | object | Meta information about the scope of the query in a human readable format. |\n| msg | string | If the query was not successful, this will provide a string that explains why. |\n| status | string | Whether or not we were able to successfully execute the query. |\n| values | array | An array of values representing the metric values at each point in time.\nNote that this dataset is sparse: only the keys with non-zero values will be included in the record. |\n| datacenter | string | The POP from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across POPs. |\n| host | string | The origin host from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across origin hosts. |\n| region | string | The geographic region from which the edge responses in this data entry were delivered. If unspecified, results are aggregated across regions. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| dimensions | object | The unique combination of dimensions associated with this timeseries. |\n| values | array | An array of values representing the metric values at each point in time.\nNote that this dataset is sparse: only the keys with non-zero values will be included in the record. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| all_latency_0_to_1ms | integer | Number of responses with latency between 0 and 1 millisecond received for origin requests made by all sources. |\n| all_latency_10000_to_60000ms | integer | Number of responses with latency between 10,000 and 60,000 milliseconds received for origin requests made by all sources. |\n| all_latency_1000_to_5000ms | integer | Number of responses with latency between 1,000 and 5,000 milliseconds received for origin requests made by all sources. |\n| all_latency_100_to_250ms | integer | Number of responses with latency between 100 and 250 milliseconds received for origin requests made by all sources. |\n| all_latency_10_to_50ms | integer | Number of responses with latency between 10 and 50 milliseconds received for origin requests made by all sources. |\n| all_latency_1_to_5ms | integer | Number of responses with latency between 1 and 5 milliseconds received for origin requests made by all sources. |\n| all_latency_250_to_500ms | integer | Number of responses with latency between 250 and 500 milliseconds received for origin requests made by all sources. |\n| all_latency_5000_to_10000ms | integer | Number of responses with latency between 5,000 and 10,000 milliseconds received for origin requests made by all sources. |\n| all_latency_500_to_1000ms | integer | Number of responses with latency between 500 and 1,000 milliseconds received for origin requests made by all sources. |\n| all_latency_50_to_100ms | integer | Number of responses with latency between 50 and 100 milliseconds received for origin requests made by all sources. |\n| all_latency_5_to_10ms | integer | Number of responses with latency between 5 and 10 milliseconds received for origin requests made by all sources. |\n| all_latency_60000ms | integer | Number of responses with latency of 60,000 milliseconds and above received for origin requests made by all sources. |\n| all_resp_body_bytes | integer | Number of body bytes received for origin requests made by all sources. |\n| all_resp_header_bytes | integer | Number of header bytes received for origin requests made by all sources. |\n| all_responses | integer | Number of responses received for origin requests made by all sources. |\n| all_status_1xx | integer | Number of 1xx \"Informational\" category status codes delivered received for origin requests made by all sources. |\n| all_status_200 | integer | Number of responses received with status code 200 (Success) received for origin requests made by all sources. |\n| all_status_204 | integer | Number of responses received with status code 204 (No Content) received for origin requests made by all sources. |\n| all_status_206 | integer | Number of responses received with status code 206 (Partial Content) received for origin requests made by all sources. |\n| all_status_2xx | integer | Number of 2xx \"Success\" status codes received for origin requests made by all sources. |\n| all_status_301 | integer | Number of responses received with status code 301 (Moved Permanently) received for origin requests made by all sources. |\n| all_status_302 | integer | Number of responses received with status code 302 (Found) received for origin requests made by all sources. |\n| all_status_304 | integer | Number of responses received with status code 304 (Not Modified) received for origin requests made by all sources. |\n| all_status_3xx | integer | Number of 3xx \"Redirection\" codes received for origin requests made by all sources. |\n| all_status_400 | integer | Number of responses received with status code 400 (Bad Request) received for origin requests made by all sources. |\n| all_status_401 | integer | Number of responses received with status code 401 (Unauthorized) received for origin requests made by all sources. |\n| all_status_403 | integer | Number of responses received with status code 403 (Forbidden) received for origin requests made by all sources. |\n| all_status_404 | integer | Number of responses received with status code 404 (Not Found) received for origin requests made by all sources. |\n| all_status_416 | integer | Number of responses received with status code 416 (Range Not Satisfiable) received for origin requests made by all sources. |\n| all_status_429 | integer | Number of responses received with status code 429 (Too Many Requests) received for origin requests made by all sources. |\n| all_status_4xx | integer | Number of 4xx \"Client Error\" codes received for origin requests made by all sources. |\n| all_status_500 | integer | Number of responses received with status code 500 (Internal Server Error) received for origin requests made by all sources. |\n| all_status_501 | integer | Number of responses received with status code 501 (Not Implemented) received for origin requests made by all sources. |\n| all_status_502 | integer | Number of responses received with status code 502 (Bad Gateway) received for origin requests made by all sources. |\n| all_status_503 | integer | Number of responses received with status code 503 (Service Unavailable) received for origin requests made by all sources. |\n| all_status_504 | integer | Number of responses received with status code 504 (Gateway Timeout) received for origin requests made by all sources. |\n| all_status_505 | integer | Number of responses received with status code 505 (HTTP Version Not Supported) received for origin requests made by all sources. |\n| all_status_530 | integer | Number of responses received with status code 530 received for origin requests made by all sources. |\n| all_status_5xx | integer | Number of 5xx \"Server Error\" codes received for origin requests made by all sources. |\n| compute_latency_0_to_1ms | integer | Number of responses with latency between 0 and 1 millisecond for origin received by the Compute platform. |\n| compute_latency_10000_to_60000ms | integer | Number of responses with latency between 10,000 and 60,000 milliseconds for origin received by the Compute platform. |\n| compute_latency_1000_to_5000ms | integer | Number of responses with latency between 1,000 and 5,000 milliseconds for origin received by the Compute platform. |\n| compute_latency_100_to_250ms | integer | Number of responses with latency between 100 and 250 milliseconds for origin received by the Compute platform. |\n| compute_latency_10_to_50ms | integer | Number of responses with latency between 10 and 50 milliseconds for origin received by the Compute platform. |\n| compute_latency_1_to_5ms | integer | Number of responses with latency between 1 and 5 milliseconds for origin received by the Compute platform. |\n| compute_latency_250_to_500ms | integer | Number of responses with latency between 250 and 500 milliseconds for origin received by the Compute platform. |\n| compute_latency_5000_to_10000ms | integer | Number of responses with latency between 5,000 and 10,000 milliseconds for origin received by the Compute platform. |\n| compute_latency_500_to_1000ms | integer | Number of responses with latency between 500 and 1,000 milliseconds for origin received by the Compute platform. |\n| compute_latency_50_to_100ms | integer | Number of responses with latency between 50 and 100 milliseconds for origin received by the Compute platform. |\n| compute_latency_5_to_10ms | integer | Number of responses with latency between 5 and 10 milliseconds for origin received by the Compute platform. |\n| compute_latency_60000ms | integer | Number of responses with latency of 60,000 milliseconds and above for origin received by the Compute platform. |\n| compute_resp_body_bytes | integer | Number of body bytes for origin received by the Compute platform. |\n| compute_resp_header_bytes | integer | Number of header bytes for origin received by the Compute platform. |\n| compute_responses | integer | Number of responses for origin received by the Compute platform. |\n| compute_status_1xx | integer | Number of 1xx \"Informational\" status codes for origin received by the Compute platform. |\n| compute_status_200 | integer | Number of responses received with status code 200 (Success) for origin received by the Compute platform. |\n| compute_status_204 | integer | Number of responses received with status code 204 (No Content) for origin received by the Compute platform. |\n| compute_status_206 | integer | Number of responses received with status code 206 (Partial Content) for origin received by the Compute platform. |\n| compute_status_2xx | integer | Number of 2xx \"Success\" status codes for origin received by the Compute platform. |\n| compute_status_301 | integer | Number of responses received with status code 301 (Moved Permanently) for origin received by the Compute platform. |\n| compute_status_302 | integer | Number of responses received with status code 302 (Found) for origin received by the Compute platform. |\n| compute_status_304 | integer | Number of responses received with status code 304 (Not Modified) for origin received by the Compute platform. |\n| compute_status_3xx | integer | Number of 3xx \"Redirection\" codes for origin received by the Compute platform. |\n| compute_status_400 | integer | Number of responses received with status code 400 (Bad Request) for origin received by the Compute platform. |\n| compute_status_401 | integer | Number of responses received with status code 401 (Unauthorized) for origin received by the Compute platform. |\n| compute_status_403 | integer | Number of responses received with status code 403 (Forbidden) for origin received by the Compute platform. |\n| compute_status_404 | integer | Number of responses received with status code 404 (Not Found) for origin received by the Compute platform. |\n| compute_status_416 | integer | Number of responses received with status code 416 (Range Not Satisfiable) for origin received by the Compute platform. |\n| compute_status_429 | integer | Number of responses received with status code 429 (Too Many Requests) for origin received by the Compute platform. |\n| compute_status_4xx | integer | Number of 4xx \"Client Error\" codes for origin received by the Compute platform. |\n| compute_status_500 | integer | Number of responses received with status code 500 (Internal Server Error) for origin received by the Compute platform. |\n| compute_status_501 | integer | Number of responses received with status code 501 (Not Implemented) for origin received by the Compute platform. |\n| compute_status_502 | integer | Number of responses received with status code 502 (Bad Gateway) for origin received by the Compute platform. |\n| compute_status_503 | integer | Number of responses received with status code 503 (Service Unavailable) for origin received by the Compute platform. |\n| compute_status_504 | integer | Number of responses received with status code 504 (Gateway Timeout) for origin received by the Compute platform. |\n| compute_status_505 | integer | Number of responses received with status code 505 (HTTP Version Not Supported) for origin received by the Compute platform. |\n| compute_status_530 | integer | Number of responses received with status code 530 for origin received by the Compute platform. |\n| compute_status_5xx | integer | Number of 5xx \"Server Error\" codes for origin received by the Compute platform. |\n| latency_0_to_1ms | integer | Number of responses from origin with latency between 0 and 1 millisecond. |\n| latency_10000_to_60000ms | integer | Number of responses from origin with latency between 10,000 and 60,000 milliseconds. |\n| latency_1000_to_5000ms | integer | Number of responses from origin with latency between 1,000 and 5,000 milliseconds. |\n| latency_100_to_250ms | integer | Number of responses from origin with latency between 100 and 250 milliseconds. |\n| latency_10_to_50ms | integer | Number of responses from origin with latency between 10 and 50 milliseconds. |\n| latency_1_to_5ms | integer | Number of responses from origin with latency between 1 and 5 milliseconds. |\n| latency_250_to_500ms | integer | Number of responses from origin with latency between 250 and 500 milliseconds. |\n| latency_5000_to_10000ms | integer | Number of responses from origin with latency between 5,000 and 10,000 milliseconds. |\n| latency_500_to_1000ms | integer | Number of responses from origin with latency between 500 and 1,000 milliseconds. |\n| latency_50_to_100ms | integer | Number of responses from origin with latency between 50 and 100 milliseconds. |\n| latency_5_to_10ms | integer | Number of responses from origin with latency between 5 and 10 milliseconds. |\n| latency_60000ms | integer | Number of responses from origin with latency of 60,000 milliseconds and above. |\n| resp_body_bytes | integer | Number of body bytes from origin. |\n| resp_header_bytes | integer | Number of header bytes from origin. |\n| responses | integer | Number of responses from origin. |\n| status_1xx | integer | Number of 1xx \"Informational\" status codes delivered from origin. |\n| status_200 | integer | Number of responses received with status code 200 (Success) from origin. |\n| status_204 | integer | Number of responses received with status code 204 (No Content) from origin. |\n| status_206 | integer | Number of responses received with status code 206 (Partial Content) from origin. |\n| status_2xx | integer | Number of 2xx \"Success\" status codes delivered from origin. |\n| status_301 | integer | Number of responses received with status code 301 (Moved Permanently) from origin. |\n| status_302 | integer | Number of responses received with status code 302 (Found) from origin. |\n| status_304 | integer | Number of responses received with status code 304 (Not Modified) from origin. |\n| status_3xx | integer | Number of 3xx \"Redirection\" codes delivered from origin. |\n| status_400 | integer | Number of responses received with status code 400 (Bad Request) from origin. |\n| status_401 | integer | Number of responses received with status code 401 (Unauthorized) from origin. |\n| status_403 | integer | Number of responses received with status code 403 (Forbidden) from origin. |\n| status_404 | integer | Number of responses received with status code 404 (Not Found) from origin. |\n| status_416 | integer | Number of responses received with status code 416 (Range Not Satisfiable) from origin. |\n| status_429 | integer | Number of responses received with status code 429 (Too Many Requests) from origin. |\n| status_4xx | integer | Number of 4xx \"Client Error\" codes delivered from origin. |\n| status_500 | integer | Number of responses received with status code 500 (Internal Server Error) from origin. |\n| status_501 | integer | Number of responses received with status code 501 (Not Implemented) from origin. |\n| status_502 | integer | Number of responses received with status code 502 (Bad Gateway) from origin. |\n| status_503 | integer | Number of responses received with status code 503 (Service Unavailable) from origin. |\n| status_504 | integer | Number of responses received with status code 504 (Gateway Timeout) from origin. |\n| status_505 | integer | Number of responses received with status code 505 (HTTP Version Not Supported) from origin. |\n| status_530 | integer | Number of responses received from origin with status code 530. |\n| status_5xx | integer | Number of 5xx \"Server Error\" codes delivered from origin. |\n| waf_latency_0_to_1ms | integer | Number of responses with latency between 0 and 1 millisecond received for origin requests made by the Fastly WAF. |\n| waf_latency_10000_to_60000ms | integer | Number of responses with latency between 10,000 and 60,000 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_1000_to_5000ms | integer | Number of responses with latency between 1,000 and 5,000 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_100_to_250ms | integer | Number of responses with latency between 100 and 250 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_10_to_50ms | integer | Number of responses with latency between 10 and 50 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_1_to_5ms | integer | Number of responses with latency between 1 and 5 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_250_to_500ms | integer | Number of responses with latency between 250 and 500 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_5000_to_10000ms | integer | Number of responses with latency between 5,000 and 10,000 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_500_to_1000ms | integer | Number of responses with latency between 500 and 1,000 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_50_to_100ms | integer | Number of responses with latency between 50 and 100 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_5_to_10ms | integer | Number of responses with latency between 5 and 10 milliseconds received for origin requests made by the Fastly WAF. |\n| waf_latency_60000ms | integer | Number of responses with latency of 60,000 milliseconds and above received for origin requests made by the Fastly WAF. |\n| waf_resp_body_bytes | integer | Number of body bytes received for origin requests made by the Fastly WAF. |\n| waf_resp_header_bytes | integer | Number of header bytes received for origin requests made by the Fastly WAF. |\n| waf_responses | integer | Number of responses received for origin requests made by the Fastly WAF. |\n| waf_status_1xx | integer | Number of 1xx \"Informational\" status codes received for origin requests made by the Fastly WAF. |\n| waf_status_200 | integer | Number of responses received with status code 200 (Success) received for origin requests made by the Fastly WAF. |\n| waf_status_204 | integer | Number of responses received with status code 204 (No Content) received for origin requests made by the Fastly WAF. |\n| waf_status_206 | integer | Number of responses received with status code 206 (Partial Content) received for origin requests made by the Fastly WAF. |\n| waf_status_2xx | integer | Number of 2xx \"Success\" status codes received for origin requests made by the Fastly WAF. |\n| waf_status_301 | integer | Number of responses received with status code 301 (Moved Permanently) received for origin requests made by the Fastly WAF. |\n| waf_status_302 | integer | Number of responses received with status code 302 (Found) received for origin requests made by the Fastly WAF. |\n| waf_status_304 | integer | Number of responses received with status code 304 (Not Modified) received for origin requests made by the Fastly WAF. |\n| waf_status_3xx | integer | Number of 3xx \"Redirection\" codes received for origin requests made by the Fastly WAF. |\n| waf_status_400 | integer | Number of responses received with status code 400 (Bad Request) received for origin requests made by the Fastly WAF. |\n| waf_status_401 | integer | Number of responses received with status code 401 (Unauthorized) received for origin requests made by the Fastly WAF. |\n| waf_status_403 | integer | Number of responses received with status code 403 (Forbidden) received for origin requests made by the Fastly WAF. |\n| waf_status_404 | integer | Number of responses received with status code 404 (Not Found) received for origin requests made by the Fastly WAF. |\n| waf_status_416 | integer | Number of responses received with status code 416 (Range Not Satisfiable) received for origin requests made by the Fastly WAF. |\n| waf_status_429 | integer | Number of responses received with status code 429 (Too Many Requests) received for origin requests made by the Fastly WAF. |\n| waf_status_4xx | integer | Number of 4xx \"Client Error\" codes received for origin requests made by the Fastly WAF. |\n| waf_status_500 | integer | Number of responses received with status code 500 (Internal Server Error) received for origin requests made by the Fastly WAF. |\n| waf_status_501 | integer | Number of responses received with status code 501 (Not Implemented) received for origin requests made by the Fastly WAF. |\n| waf_status_502 | integer | Number of responses received with status code 502 (Bad Gateway) received for origin requests made by the Fastly WAF. |\n| waf_status_503 | integer | Number of responses received with status code 503 (Service Unavailable) received for origin requests made by the Fastly WAF. |\n| waf_status_504 | integer | Number of responses received with status code 504 (Gateway Timeout) received for origin requests made by the Fastly WAF. |\n| waf_status_505 | integer | Number of responses received with status code 505 (HTTP Version Not Supported) received for origin requests made by the Fastly WAF. |\n| waf_status_530 | integer | Number of responses received with status code 530 received for origin requests made by the Fastly WAF. |\n| waf_status_5xx | integer | Number of 5xx \"Server Error\" codes received for origin requests made by the Fastly WAF. |"
     },
@@ -212552,6 +213733,10 @@
     {
       "key": "field",
       "description": "Name of the stats field."
+    },
+    {
+      "key": "entity_id",
+      "description": "Alphanumeric string identifying the entity."
     },
     {
       "key": "timestamp_in_seconds",

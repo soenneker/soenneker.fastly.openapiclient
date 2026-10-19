@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.Metrics.Bots;
 using Soenneker.Fastly.OpenApiClient.Metrics.Domains;
 using Soenneker.Fastly.OpenApiClient.Metrics.Origins;
+using Soenneker.Fastly.OpenApiClient.Metrics.V2;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -31,6 +32,11 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics
         public global::Soenneker.Fastly.OpenApiClient.Metrics.Origins.OriginsRequestBuilder Origins
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Metrics.Origins.OriginsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The v2 property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Metrics.V2.V2RequestBuilder V2
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Metrics.V2.V2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Metrics.MetricsRequestBuilder"/> and sets the default values.

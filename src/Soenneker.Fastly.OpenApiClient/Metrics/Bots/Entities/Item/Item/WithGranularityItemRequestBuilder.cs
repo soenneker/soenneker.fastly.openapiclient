@@ -145,7 +145,7 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Bots.Entities.Item.Item
             [QueryParameter("limit")]
             public string Limit { get; set; }
 #endif
-            /// <summary>The metric(s) to retrieve. Multiple values should be comma-separated.</summary>
+            /// <summary>One or more metrics to retrieve. Multiple values should be comma-separated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("metric")]
