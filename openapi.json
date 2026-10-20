@@ -113733,7 +113733,7 @@
           "Next-Gen WAF / Workspaces"
         ],
         "summary": "List workspaces",
-        "description": "List all workspaces.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+        "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/ngwaf/workspaces/#ngwafListWorkspaces)**\n\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
         "operationId": "ListWorkspaces",
         "parameters": [
           {
@@ -113791,7 +113791,7 @@
         ],
         "responses": {
           "200": {
-            "description": "200 List of workspaces.",
+            "description": "200 Filtered list of workspaces.",
             "content": {
               "application/json": {
                 "schema": {
@@ -113878,8 +113878,8 @@
                   }
                 },
                 "examples": {
-                  "200_List_of_workspaces.": {
-                    "summary": "200 List of workspaces.",
+                  "200_Filtered_list_of_workspaces.": {
+                    "summary": "200 Filtered list of workspaces.",
                     "value": {
                       "meta": {
                         "limit": 1,
@@ -113931,7 +113931,7 @@
             "id": null,
             "request": {
               "name": "List workspaces",
-              "description": "List all workspaces.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+              "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/ngwaf/workspaces/#ngwafListWorkspaces)**\n\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
               "method": "GET",
               "url": {
                 "raw": "{{fastly_url}}/ngwaf/v1/workspaces",
@@ -113990,14 +113990,14 @@
             },
             "response": [
               {
-                "status": "200 List of workspaces.",
-                "name": "200 List of workspaces.",
+                "status": "200 Filtered list of workspaces.",
+                "name": "200 Filtered list of workspaces.",
                 "code": 200,
                 "header": [ ],
                 "body": "{\"meta\":{\"limit\":1,\"total\":100},\"data\":[{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Test workspace display name\",\"description\":\"Test workspaces's description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwared-For\"],\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}]}",
                 "originalRequest": {
                   "name": "List workspaces",
-                  "description": "List all workspaces.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+                  "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/ngwaf/workspaces/#ngwafListWorkspaces)**\n\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
                   "method": "GET",
                   "url": {
                     "raw": "https://api.fastly.com/ngwaf/v1/workspaces?limit=100&page=1&workspace_id=SU1Z0isxPaozGVKXdv0eY",
