@@ -54,6 +54,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string Object { get; set; }
 #endif
+        /// <summary>The service_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceId { get; set; }
+#nullable restore
+#else
+        public string ServiceId { get; set; }
+#endif
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,10 +104,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "definition", n => { Definition = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListHistory200ResponseDataItemDefinition>(global::Soenneker.Fastly.OpenApiClient.Models.ListHistory200ResponseDataItemDefinition.CreateFromDiscriminatorValue); } },
-                { "definition_id\"", n => { DefinitionId = n.GetStringValue(); } },
+                { "definition_id", n => { DefinitionId = n.GetStringValue(); } },
                 { "end", n => { End = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetStringValue(); } },
+                { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -112,10 +121,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListHistory200ResponseDataItemDefinition>("definition", Definition);
-            writer.WriteStringValue("definition_id\"", DefinitionId);
+            writer.WriteStringValue("definition_id", DefinitionId);
             writer.WriteStringValue("end", End);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("object", Object);
+            writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("start", Start);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

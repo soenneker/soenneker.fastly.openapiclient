@@ -30,6 +30,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public List<string> Origins { get; set; }
 #endif
+        /// <summary>The services property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Services { get; set; }
+#nullable restore
+#else
+        public List<string> Services { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListDefinitions200ResponseDataItemDimensions"/> and sets the default values.
         /// </summary>
@@ -57,6 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             {
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "origins", n => { Origins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "services", n => { Services = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
             writer.WriteCollectionOfPrimitiveValues<string>("origins", Origins);
+            writer.WriteCollectionOfPrimitiveValues<string>("services", Services);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
