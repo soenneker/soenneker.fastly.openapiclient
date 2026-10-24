@@ -8674,7 +8674,7 @@
         ]
       }
     },
-    "/user/{userLogin}/password/request_reset": {
+    "/user/{userId}/password/request_reset": {
       "post": {
         "tags": [
           "Account / User"
@@ -8684,7 +8684,7 @@
         "operationId": "RequestAPasswordReset",
         "parameters": [
           {
-            "name": "userLogin",
+            "name": "userId",
             "in": "path",
             "description": "The login associated with the user (typically, an email address).",
             "required": true,
@@ -24402,7 +24402,7 @@
         ]
       }
     },
-    "/service/{serviceId}/dictionary/{dictionaryId}/item_by_id/{dictionaryItemKey}": {
+    "/service/{serviceId}/dictionary/{dictionaryId}/item/{dictionaryItemKey}": {
       "get": {
         "tags": [
           "Dictionaries / Dictionary item"
@@ -25236,7 +25236,7 @@
         ]
       }
     },
-    "/service/{serviceId}/dictionary/{dictionaryId}/item_static": {
+    "/service/{serviceId}/dictionary/{dictionaryId}/item": {
       "post": {
         "tags": [
           "Dictionaries / Dictionary item"
@@ -25852,7 +25852,7 @@
         ]
       }
     },
-    "/service/{serviceId}/version/{versionId}/dictionary/{dictionaryName}": {
+    "/service/{serviceId}/version/{versionId}/dictionary/{dictionaryId}": {
       "get": {
         "tags": [
           "Dictionaries / Dictionary"
@@ -25880,7 +25880,7 @@
             }
           },
           {
-            "name": "dictionaryName",
+            "name": "dictionaryId",
             "in": "path",
             "description": "Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).",
             "required": true,
@@ -26078,7 +26078,7 @@
             }
           },
           {
-            "name": "dictionaryName",
+            "name": "dictionaryId",
             "in": "path",
             "description": "Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).",
             "required": true,
@@ -26301,7 +26301,7 @@
             }
           },
           {
-            "name": "dictionaryName",
+            "name": "dictionaryId",
             "in": "path",
             "description": "Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).",
             "required": true,
@@ -122245,7 +122245,7 @@
         ]
       }
     },
-    "/resources/stores/config/{configStoreId}/item_static": {
+    "/resources/stores/config/{configStoreId}/item": {
       "post": {
         "tags": [
           "Edge data storage / Config store item"
@@ -122448,7 +122448,7 @@
         ]
       }
     },
-    "/resources/stores/config/{configStoreId}/item_by_id/{configStoreItemKey}": {
+    "/resources/stores/config/{configStoreId}/item/{configStoreItemKey}": {
       "get": {
         "tags": [
           "Edge data storage / Config store item"
@@ -169401,50 +169401,6 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "ValidateDnsConfigurationForAllDomainsOnAService200ApplicationJsonItemItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "ValidateDnsConfigurationForAllDomainsOnAService200ApplicationJsonItemItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
       "GetABillingAddress200Response": {
         "type": "object",
         "properties": {
@@ -183380,15 +183336,7 @@
         }
       },
       "UploadAComputePackageFormDataRequest": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
+        "type": "string"
       },
       "UploadAComputePackage200Response": {
         "type": "object",
@@ -184441,15 +184389,7 @@
         }
       },
       "InsertOrUpdateMultipleItemsXNdjsonRequest": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
+        "type": "string"
       },
       "InsertOrUpdateMultipleItems200Response": {
         "type": "object",
@@ -189155,36 +189095,12 @@
             "$ref": "#/components/schemas/ValidateDnsConfigurationForAllDomainsOnAService200ResponseItemItemAnyOf1"
           },
           {
-            "$ref": "#/components/schemas/ValidateDnsConfigurationForAllDomainsOnAService200ApplicationJsonItemItemBranch2"
+            "type": "string"
           },
           {
-            "$ref": "#/components/schemas/ValidateDnsConfigurationForAllDomainsOnAService200ApplicationJsonItemItemBranch3"
+            "type": "boolean"
           }
-        ],
-        "properties": {
-          "comment": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "service_id": {
-            "type": "string"
-          },
-          "version": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          },
-          "deleted_at": {
-            "x-postman-observed-null": true
-          }
-        }
+        ]
       },
       "ValidateDnsConfigurationForASingleDomainOnAService200ResponseItem": {
         "anyOf": [
@@ -189192,36 +189108,12 @@
             "$ref": "#/components/schemas/ValidateDnsConfigurationForASingleDomainOnAService200ResponseItemAnyOf1"
           },
           {
-            "$ref": "#/components/schemas/ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch2"
+            "type": "string"
           },
           {
-            "$ref": "#/components/schemas/ValidateDnsConfigurationForASingleDomainOnAService200ApplicationJsonItemBranch3"
+            "type": "boolean"
           }
-        ],
-        "properties": {
-          "comment": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "service_id": {
-            "type": "string"
-          },
-          "version": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "created_at": {
-            "type": "string"
-          },
-          "updated_at": {
-            "type": "string"
-          },
-          "deleted_at": {
-            "x-postman-observed-null": true
-          }
-        }
+        ]
       },
       "ValidateDnsConfigurationForAllDomainsOnAService200ResponseItemItemAnyOf1": {
         "type": "object",

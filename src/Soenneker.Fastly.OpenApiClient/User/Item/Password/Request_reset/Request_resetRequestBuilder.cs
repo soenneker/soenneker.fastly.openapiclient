@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.User.Item.Password.Request_reset
 {
     /// <summary>
-    /// Builds and executes requests for operations under \user\{user-id}\password\request_reset
+    /// Builds and executes requests for operations under \user\{userId}\password\request_reset
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Request_resetRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item.Password.Request_reset
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Request_resetRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/{user%2Did}/password/request_reset", pathParameters)
+        public Request_resetRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/{userId}/password/request_reset", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fastly.OpenApiClient.User.Item.Password.Request_reset
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Request_resetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/{user%2Did}/password/request_reset", rawUrl)
+        public Request_resetRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/{userId}/password/request_reset", rawUrl)
         {
         }
         /// <summary>

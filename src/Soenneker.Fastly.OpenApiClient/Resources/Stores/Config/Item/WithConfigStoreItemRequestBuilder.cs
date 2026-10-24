@@ -5,8 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.Models;
 using Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Info;
-using Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id;
-using Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static;
+using Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped;
 using Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Items;
 using Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Services;
 using System.Collections.Generic;
@@ -27,15 +26,10 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Info.InfoRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The item_by_id property</summary>
-        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item_by_idRequestBuilder Item_by_id
+        /// <summary>The item property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item_EscapedRequestBuilder Item
         {
-            get => new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_by_id.Item_by_idRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The item_static property</summary>
-        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static.Item_staticRequestBuilder Item_static
-        {
-            get => new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static.Item_staticRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item_EscapedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The items property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Items.ItemsRequestBuilder Items
@@ -176,7 +170,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/x-www-form-urlencoded", body);
+            global::Soenneker.OpenApi.Generated.OpenApiFormSerializer.SetContent(requestInfo, body, "{}");
             return requestInfo;
         }
         /// <summary>

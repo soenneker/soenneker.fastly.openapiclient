@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.Info
 {
     /// <summary>
-    /// Builds and executes requests for operations under \service\{serviceId}\version\{versionId}\dictionary\{dictionary-id}\info
+    /// Builds and executes requests for operations under \service\{serviceId}\version\{versionId}\dictionary\{dictionaryId}\info
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InfoRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dict
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/dictionary/{dictionary%2Did}/info", pathParameters)
+        public InfoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/dictionary/{dictionaryId}/info", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dict
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/dictionary/{dictionary%2Did}/info", rawUrl)
+        public InfoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/dictionary/{dictionaryId}/info", rawUrl)
         {
         }
         /// <summary>

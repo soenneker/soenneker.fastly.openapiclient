@@ -20,14 +20,14 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dict
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.service.item.version.item.dictionary.item collection</summary>
         /// <param name="position">Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.DictionaryItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.DictionaryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.WithDictionaryItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.WithDictionaryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dictionary%2Did", position);
-                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.DictionaryItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("dictionaryId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.WithDictionaryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dict
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/x-www-form-urlencoded", body);
+            global::Soenneker.OpenApi.Generated.OpenApiFormSerializer.SetContent(requestInfo, body, "{}");
             return requestInfo;
         }
         /// <summary>

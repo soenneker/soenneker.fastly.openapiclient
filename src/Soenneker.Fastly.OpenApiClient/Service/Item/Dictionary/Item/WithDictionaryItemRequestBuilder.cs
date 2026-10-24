@@ -2,8 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id;
-using Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_static;
+using Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_Escaped;
 using Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items;
 using System.Collections.Generic;
 using System.IO;
@@ -17,15 +16,10 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithDictionaryItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The item_by_id property</summary>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id.Item_by_idRequestBuilder Item_by_id
+        /// <summary>The item property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_Escaped.Item_EscapedRequestBuilder Item
         {
-            get => new global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_by_id.Item_by_idRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The item_static property</summary>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_static.Item_staticRequestBuilder Item_static
-        {
-            get => new global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_static.Item_staticRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Item_Escaped.Item_EscapedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The items property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items.ItemsRequestBuilder Items

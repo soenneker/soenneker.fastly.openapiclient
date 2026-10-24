@@ -20,14 +20,14 @@ namespace Soenneker.Fastly.OpenApiClient.User
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.user.item collection</summary>
         /// <param name="position">Alphanumeric string identifying the user.</param>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.User.Item.UserItemRequestBuilder"/></returns>
-        public global::Soenneker.Fastly.OpenApiClient.User.Item.UserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.User.Item.WithUserItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.User.Item.WithUserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("user%2Did", position);
-                return new global::Soenneker.Fastly.OpenApiClient.User.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("userId", position);
+                return new global::Soenneker.Fastly.OpenApiClient.User.Item.WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.User
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/x-www-form-urlencoded", body);
+            global::Soenneker.OpenApi.Generated.OpenApiFormSerializer.SetContent(requestInfo, body, "{}");
             return requestInfo;
         }
         /// <summary>

@@ -13,10 +13,10 @@ using System;
 namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \service\{serviceId}\version\{versionId}\dictionary\{dictionary-id}
+    /// Builds and executes requests for operations under \service\{serviceId}\version\{versionId}\dictionary\{dictionaryId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DictionaryItemRequestBuilder : BaseRequestBuilder
+    public partial class WithDictionaryItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The info property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.Info.InfoRequestBuilder Info
@@ -24,19 +24,19 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dict
             get => new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.Info.InfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.DictionaryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.WithDictionaryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DictionaryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/dictionary/{dictionary%2Did}", pathParameters)
+        public WithDictionaryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/dictionary/{dictionaryId}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.DictionaryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.WithDictionaryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DictionaryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/dictionary/{dictionary%2Did}", rawUrl)
+        public WithDictionaryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/service/{serviceId}/version/{versionId}/dictionary/{dictionaryId}", rawUrl)
         {
         }
         /// <summary>
@@ -152,17 +152,17 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dict
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/x-www-form-urlencoded", body);
+            global::Soenneker.OpenApi.Generated.OpenApiFormSerializer.SetContent(requestInfo, body, "{}");
             return requestInfo;
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.DictionaryItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.WithDictionaryItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.DictionaryItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.WithDictionaryItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.DictionaryItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Dictionary.Item.WithDictionaryItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

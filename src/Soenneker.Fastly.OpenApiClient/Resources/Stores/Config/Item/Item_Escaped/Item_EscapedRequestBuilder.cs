@@ -4,33 +4,46 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Fastly.OpenApiClient.Models;
+using Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static
+namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped
 {
     /// <summary>
-    /// Builds and executes requests for operations under \resources\stores\config\{configStoreId}\item_static
+    /// Builds and executes requests for operations under \resources\stores\config\{configStoreId}\item
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Item_staticRequestBuilder : BaseRequestBuilder
+    public partial class Item_EscapedRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.resources.stores.config.item.Item_Escaped.item collection</summary>
+        /// <param name="position">Item key, maximum 256 characters.</param>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item.WithConfigStoreItemKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item.WithConfigStoreItemKeyItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("configStoreItemKey", position);
+                return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item.WithConfigStoreItemKeyItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static.Item_staticRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item_EscapedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Item_staticRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/config/{configStoreId}/item_static", pathParameters)
+        public Item_EscapedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/config/{configStoreId}/item", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static.Item_staticRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item_EscapedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Item_staticRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/config/{configStoreId}/item_static", rawUrl)
+        public Item_EscapedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/resources/stores/config/{configStoreId}/item", rawUrl)
         {
         }
         /// <summary>
@@ -72,17 +85,17 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_stati
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/x-www-form-urlencoded", body);
+            global::Soenneker.OpenApi.Generated.OpenApiFormSerializer.SetContent(requestInfo, body, "{}");
             return requestInfo;
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static.Item_staticRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item_EscapedRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static.Item_staticRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item_EscapedRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_static.Item_staticRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Config.Item.Item_Escaped.Item_EscapedRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }
