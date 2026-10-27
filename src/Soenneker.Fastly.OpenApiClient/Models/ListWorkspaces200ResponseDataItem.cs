@@ -22,6 +22,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public global::Soenneker.Fastly.OpenApiClient.Models.ListWorkspaces200ResponseDataItemAttackSignalThresholds AttackSignalThresholds { get; set; }
 #endif
+        /// <summary>The auto_enable_new_virtual_patches property</summary>
+        public bool? AutoEnableNewVirtualPatches { get; set; }
         /// <summary>The client_ip_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +132,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attack_signal_thresholds", n => { AttackSignalThresholds = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListWorkspaces200ResponseDataItemAttackSignalThresholds>(global::Soenneker.Fastly.OpenApiClient.Models.ListWorkspaces200ResponseDataItemAttackSignalThresholds.CreateFromDiscriminatorValue); } },
+                { "auto_enable_new_virtual_patches", n => { AutoEnableNewVirtualPatches = n.GetBoolValue(); } },
                 { "client_ip_headers", n => { ClientIpHeaders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "default_blocking_response_code", n => { DefaultBlockingResponseCode = n.GetLongValue(); } },
@@ -151,6 +154,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListWorkspaces200ResponseDataItemAttackSignalThresholds>("attack_signal_thresholds", AttackSignalThresholds);
+            writer.WriteBoolValue("auto_enable_new_virtual_patches", AutoEnableNewVirtualPatches);
             writer.WriteCollectionOfPrimitiveValues<string>("client_ip_headers", ClientIpHeaders);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteLongValue("default_blocking_response_code", DefaultBlockingResponseCode);

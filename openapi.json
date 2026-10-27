@@ -113866,6 +113866,9 @@
                               "type": "string"
                             }
                           },
+                          "auto_enable_new_virtual_patches": {
+                            "type": "boolean"
+                          },
                           "created_at": {
                             "type": "string"
                           },
@@ -113904,6 +113907,7 @@
                           "client_ip_headers": [
                             "X-Forwared-For"
                           ],
+                          "auto_enable_new_virtual_patches": true,
                           "created_at": "2025-05-12T20:55:07Z",
                           "updated_at": "2025-05-12T20:55:07Z"
                         }
@@ -113994,7 +113998,7 @@
                 "name": "200 Filtered list of workspaces.",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"meta\":{\"limit\":1,\"total\":100},\"data\":[{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Test workspace display name\",\"description\":\"Test workspaces's description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwared-For\"],\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}]}",
+                "body": "{\"meta\":{\"limit\":1,\"total\":100},\"data\":[{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Test workspace display name\",\"description\":\"Test workspaces's description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwared-For\"],\"auto_enable_new_virtual_patches\":true,\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}]}",
                 "originalRequest": {
                   "name": "List workspaces",
                   "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/ngwaf/workspaces/#ngwafListWorkspaces)**\n\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -114135,6 +114139,9 @@
                     "items": {
                       "type": "string"
                     }
+                  },
+                  "auto_enable_new_virtual_patches": {
+                    "type": "boolean"
                   }
                 }
               },
@@ -114155,7 +114162,8 @@
                     "default_redirect_url": "https://example.com/redirect",
                     "client_ip_headers": [
                       "X-Forwarded-For"
-                    ]
+                    ],
+                    "auto_enable_new_virtual_patches": true
                   }
                 }
               }
@@ -114221,6 +114229,9 @@
                         "type": "string"
                       }
                     },
+                    "auto_enable_new_virtual_patches": {
+                      "type": "boolean"
+                    },
                     "created_at": {
                       "type": "string"
                     },
@@ -114250,6 +114261,7 @@
                       "client_ip_headers": [
                         "X-Forwarded-For"
                       ],
+                      "auto_enable_new_virtual_patches": true,
                       "created_at": "2025-05-12T20:55:07Z",
                       "updated_at": "2025-05-12T20:55:07Z"
                     }
@@ -114320,7 +114332,7 @@
               },
               "body": {
                 "mode": "raw",
-                "raw": "{\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"]}"
+                "raw": "{\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"],\"auto_enable_new_virtual_patches\":true}"
               }
             },
             "response": [
@@ -114329,7 +114341,7 @@
                 "name": "201 Successful workspace creation.",
                 "code": 201,
                 "header": [ ],
-                "body": "{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"],\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}",
+                "body": "{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"],\"auto_enable_new_virtual_patches\":true,\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}",
                 "originalRequest": {
                   "name": "Create a workspace",
                   "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/ngwaf/workspaces/#ngwafCreateWorkspace)**\n\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -114377,7 +114389,7 @@
                   },
                   "body": {
                     "mode": "raw",
-                    "raw": "{\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"]}"
+                    "raw": "{\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"],\"auto_enable_new_virtual_patches\":true}"
                   }
                 }
               }
@@ -114483,6 +114495,9 @@
                         "type": "string"
                       }
                     },
+                    "auto_enable_new_virtual_patches": {
+                      "type": "boolean"
+                    },
                     "created_at": {
                       "type": "string"
                     },
@@ -114512,6 +114527,7 @@
                       "client_ip_headers": [
                         "X-Forwared-For"
                       ],
+                      "auto_enable_new_virtual_patches": true,
                       "created_at": "2025-05-12T20:55:07Z",
                       "updated_at": "2025-05-12T20:55:07Z"
                     }
@@ -114584,7 +114600,7 @@
                 "name": "200 Requested workspace.",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Test workspace display name\",\"description\":\"Test workspaces's description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwared-For\"],\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}",
+                "body": "{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Test workspace display name\",\"description\":\"Test workspaces's description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwared-For\"],\"auto_enable_new_virtual_patches\":true,\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}",
                 "originalRequest": {
                   "name": "Get a workspace",
                   "description": "Retrieve a workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -114865,6 +114881,9 @@
                     "items": {
                       "type": "string"
                     }
+                  },
+                  "auto_enable_new_virtual_patches": {
+                    "type": "boolean"
                   }
                 }
               },
@@ -114885,7 +114904,8 @@
                     "default_redirect_url": "https://example.com/redirect",
                     "client_ip_headers": [
                       "X-Forwarded-For"
-                    ]
+                    ],
+                    "auto_enable_new_virtual_patches": true
                   }
                 }
               }
@@ -114951,6 +114971,9 @@
                         "type": "string"
                       }
                     },
+                    "auto_enable_new_virtual_patches": {
+                      "type": "boolean"
+                    },
                     "created_at": {
                       "type": "string"
                     },
@@ -114980,6 +115003,7 @@
                       "client_ip_headers": [
                         "X-Forwarded-For"
                       ],
+                      "auto_enable_new_virtual_patches": true,
                       "created_at": "2025-05-12T20:55:07Z",
                       "updated_at": "2025-05-12T20:55:07Z"
                     }
@@ -115051,7 +115075,7 @@
               },
               "body": {
                 "mode": "raw",
-                "raw": "{\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"]}"
+                "raw": "{\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"],\"auto_enable_new_virtual_patches\":true}"
               }
             },
             "response": [
@@ -115060,7 +115084,7 @@
                 "name": "200 Edit was successful.",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"],\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}",
+                "body": "{\"id\":\"SU1Z0isxPaozGVKXdv0eY\",\"workspace_uid\":\"SU1Z0isxPaozGVKXdv0eY\",\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"],\"auto_enable_new_virtual_patches\":true,\"created_at\":\"2025-05-12T20:55:07Z\",\"updated_at\":\"2025-05-12T20:55:07Z\"}",
                 "originalRequest": {
                   "name": "Edit a workspace",
                   "description": "Make changes to a workspace.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -115109,7 +115133,7 @@
                   },
                   "body": {
                     "mode": "raw",
-                    "raw": "{\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"]}"
+                    "raw": "{\"name\":\"Workspace test name\",\"description\":\"Workspace test description\",\"mode\":\"off\",\"ip_anonymization\":\"hashed\",\"attack_signal_thresholds\":{\"one_minute\":1,\"ten_minutes\":1,\"one_hour\":1,\"immediate\":true},\"default_blocking_response_code\":301,\"default_redirect_url\":\"https://example.com/redirect\",\"client_ip_headers\":[\"X-Forwarded-For\"],\"auto_enable_new_virtual_patches\":true}"
                   }
                 }
               }
@@ -206230,7 +206254,7 @@
     },
     {
       "name": "Next-Gen WAF / Workspaces",
-      "description": "Workspaces allows you to add, edit, and delete workspaces in your account.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| attack_signal_thresholds | object | Attack threshold parameters for system site alerts. Each threshold value is the number of attack signals per IP address that must be detected during the interval before the related IP address is flagged. |\n| client_ip_headers | array | Specifies the request headers containing the client IP address. |\n| default_blocking_response_code | integer | The status code returned when a request is blocked. This configuration is applied at the workspace but can be overwritten in rules. Accepted values are [301, 302, 400..599]. |\n| default_redirect_url | string | The redirect URL used if default_blocking_response_code is 301 or 302. |\n| description | string | User-submitted description of a workspace. |\n| id | string | A base62-encoded representation of a UUID used to uniquely identify a workspace. |\n| ip_anonymization | string | Agents will anonymize IP addresses according to the option selected. |\n| mode | string | User-configured mode of a workspace. |\n| name | string | User-submitted display name of a workspace. |\n| workspace_uid | string | A unique identifier for the workspace to which this resource belongs. |"
+      "description": "Workspaces allows you to add, edit, and delete workspaces in your account.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| attack_signal_thresholds | object | Attack threshold parameters for system site alerts. Each threshold value is the number of attack signals per IP address that must be detected during the interval before the related IP address is flagged. |\n| auto_enable_new_virtual_patches | boolean | When true, virtual patches released after this setting is enabled are automatically enabled for the workspace in block mode. Virtual patches released before it was enabled are not changed. |\n| client_ip_headers | array | Specifies the request headers containing the client IP address. |\n| default_blocking_response_code | integer | The status code returned when a request is blocked. This configuration is applied at the workspace but can be overwritten in rules. Accepted values are [301, 302, 400..599]. |\n| default_redirect_url | string | The redirect URL used if default_blocking_response_code is 301 or 302. |\n| description | string | User-submitted description of a workspace. |\n| id | string | A base62-encoded representation of a UUID used to uniquely identify a workspace. |\n| ip_anonymization | string | Agents will anonymize IP addresses according to the option selected. |\n| mode | string | User-configured mode of a workspace. |\n| name | string | User-submitted display name of a workspace. |\n| workspace_uid | string | A unique identifier for the workspace to which this resource belongs. |"
     },
     {
       "name": "Alerts / Definitions",
