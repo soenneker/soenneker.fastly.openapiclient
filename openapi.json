@@ -178690,6 +178690,9 @@
                     "source_ip_prefix": {
                       "type": "string"
                     },
+                    "path": {
+                      "type": "string"
+                    },
                     "additional_attributes": {
                       "type": "array",
                       "items": {
@@ -178718,6 +178721,7 @@
                       "host": "example.com",
                       "asn": "34154",
                       "source_ip_prefix": "127.0.0.1/32",
+                      "path": "/login",
                       "additional_attributes": [
                         "tls"
                       ],
@@ -178793,7 +178797,7 @@
                 "name": "200 OK",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"id\":\"74de69dcba53b02fbf000909\",\"name\":\"my rule 001\",\"action\":\"default\",\"service_id\":\"SU1Z0isxPaozGVKXdv0eY\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"source_ip\":null,\"country_code\":null,\"host\":\"example.com\",\"asn\":\"34154\",\"source_ip_prefix\":\"127.0.0.1/32\",\"additional_attributes\":[\"tls\"],\"created_at\":\"2025-01-22T00:00:00Z\",\"updated_at\":\"2025-01-22T00:00:00Z\"}",
+                "body": "{\"id\":\"74de69dcba53b02fbf000909\",\"name\":\"my rule 001\",\"action\":\"default\",\"service_id\":\"SU1Z0isxPaozGVKXdv0eY\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"source_ip\":null,\"country_code\":null,\"host\":\"example.com\",\"asn\":\"34154\",\"source_ip_prefix\":\"127.0.0.1/32\",\"path\":\"/login\",\"additional_attributes\":[\"tls\"],\"created_at\":\"2025-01-22T00:00:00Z\",\"updated_at\":\"2025-01-22T00:00:00Z\"}",
                 "originalRequest": {
                   "name": "Get a rule by ID",
                   "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-rule-get)**\n\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
@@ -178917,6 +178921,9 @@
                     "source_ip_prefix": {
                       "type": "string"
                     },
+                    "path": {
+                      "type": "string"
+                    },
                     "additional_attributes": {
                       "type": "array",
                       "items": {
@@ -178945,6 +178952,7 @@
                       "host": "example.com",
                       "asn": "34154",
                       "source_ip_prefix": "127.0.0.1/32",
+                      "path": "/login",
                       "additional_attributes": [
                         "tls"
                       ],
@@ -179020,7 +179028,7 @@
                 "name": "200 OK",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"id\":\"74de69dcba53b02fbf000909\",\"name\":\"my rule 001\",\"action\":\"default\",\"service_id\":\"SU1Z0isxPaozGVKXdv0eY\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"source_ip\":null,\"country_code\":null,\"host\":\"example.com\",\"asn\":\"34154\",\"source_ip_prefix\":\"127.0.0.1/32\",\"additional_attributes\":[\"tls\"],\"created_at\":\"2025-01-22T00:00:00Z\",\"updated_at\":\"2025-01-22T00:00:00Z\"}",
+                "body": "{\"id\":\"74de69dcba53b02fbf000909\",\"name\":\"my rule 001\",\"action\":\"default\",\"service_id\":\"SU1Z0isxPaozGVKXdv0eY\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"source_ip\":null,\"country_code\":null,\"host\":\"example.com\",\"asn\":\"34154\",\"source_ip_prefix\":\"127.0.0.1/32\",\"path\":\"/login\",\"additional_attributes\":[\"tls\"],\"created_at\":\"2025-01-22T00:00:00Z\",\"updated_at\":\"2025-01-22T00:00:00Z\"}",
                 "originalRequest": {
                   "name": "Update rule",
                   "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-rule-patch)**\n\n> **Authorization**: Requires [API token](/reference/api/auth-tokens), [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -179784,6 +179792,9 @@
                           "source_ip_prefix": {
                             "type": "string"
                           },
+                          "path": {
+                            "x-postman-observed-null": true
+                          },
                           "additional_attributes": {
                             "type": "array",
                             "items": {
@@ -179875,6 +179886,7 @@
                           "host": "example.com",
                           "asn": null,
                           "source_ip_prefix": "127.0.0.1/32",
+                          "path": null,
                           "additional_attributes": [
                             "protocol",
                             "tls"
@@ -180006,7 +180018,7 @@
                 "name": "200 OK",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"data\":[{\"id\":\"ash8nwdcba53b02fbf000018\",\"name\":\"rule name 001\",\"action\":\"default\",\"service_id\":\"SU1Z0isxPaozGVKXdv0eY\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"source_ip\":\"127.0.0.1\",\"country_code\":\"(unknown)\",\"host\":\"example.com\",\"asn\":null,\"source_ip_prefix\":\"127.0.0.1/32\",\"additional_attributes\":[\"protocol\",\"tls\"],\"created_at\":\"2025-01-22T00:00:00Z\",\"updated_at\":\"2025-01-22T00:00:00Z\",\"traffic_stats\":{\"service_id\":\"SU1Z0isxPaozGVKXdv0eY\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"created_at\":\"2025-01-22T00:00:00Z\",\"updated_at\":\"2025-01-22T00:00:00Z\",\"traffic_percentage\":20.5,\"attributes\":[{\"name\":\"method_path\",\"values\":[{\"value\":\"POST /hello.Hello/Ping\",\"percentage\":21},{\"value\":\"GET /api/v1/status\",\"percentage\":14}]},{\"name\":\"source_ip\",\"values\":[{\"value\":\"2001:db8:85a3::8a2e:370:7334\",\"percentage\":17},{\"value\":\"192.168.1.105\",\"percentage\":8}]}]}}],\"meta\":{\"next_cursor\":\"dXNlcjpVMEc5V0ZYTlo=\",\"limit\":1}}",
+                "body": "{\"data\":[{\"id\":\"ash8nwdcba53b02fbf000018\",\"name\":\"rule name 001\",\"action\":\"default\",\"service_id\":\"SU1Z0isxPaozGVKXdv0eY\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"source_ip\":\"127.0.0.1\",\"country_code\":\"(unknown)\",\"host\":\"example.com\",\"asn\":null,\"source_ip_prefix\":\"127.0.0.1/32\",\"path\":null,\"additional_attributes\":[\"protocol\",\"tls\"],\"created_at\":\"2025-01-22T00:00:00Z\",\"updated_at\":\"2025-01-22T00:00:00Z\",\"traffic_stats\":{\"service_id\":\"SU1Z0isxPaozGVKXdv0eY\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"created_at\":\"2025-01-22T00:00:00Z\",\"updated_at\":\"2025-01-22T00:00:00Z\",\"traffic_percentage\":20.5,\"attributes\":[{\"name\":\"method_path\",\"values\":[{\"value\":\"POST /hello.Hello/Ping\",\"percentage\":21},{\"value\":\"GET /api/v1/status\",\"percentage\":14}]},{\"name\":\"source_ip\",\"values\":[{\"value\":\"2001:db8:85a3::8a2e:370:7334\",\"percentage\":17},{\"value\":\"192.168.1.105\",\"percentage\":8}]}]}}],\"meta\":{\"next_cursor\":\"dXNlcjpVMEc5V0ZYTlo=\",\"limit\":1}}",
                 "originalRequest": {
                   "name": "Get all rules for an event",
                   "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-event-rule-list)**\n\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
@@ -206498,7 +206510,7 @@
     },
     {
       "name": "Fastly DDoS Protection Events / Fastly DDoS Protection Events",
-      "description": "The Fastly DDoS Protection Events API allows you to configure Fastly DDoS Protection and view attack insights including events, rules, and traffic statistics.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| name | string | Name of an attribute type used in traffic stats. Currently, supported values are source_ip, country_code, host, asn, source_ip_prefix, user_agent, method_path. |\n| values | array | Values for traffic attribute. |\n| percentage | integer | Percentage of traffic containing a value. |\n| created_at | string | Date and time in ISO 8601 format. |\n| customer_id | string | Alphanumeric string identifying the customer. |\n| ended_at | string | Date and time in ISO 8601 format. |\n| id | string | Unique ID of the event. |\n| requests_allowed | integer | Number of requests classified as non-attack traffic for an event. |\n| requests_detected | integer | Number of requests classified as DDoS attack traffic for an event. |\n| service_id | string | Alphanumeric string identifying the service. |\n| started_at | string | Date and time in ISO 8601 format. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| action | string | Action types for a rule. Supported action values are default, block, log, off, client_challenge. The default action value follows the current protection mode of the associated service. |\n| additional_attributes | array | Attribute category for additional, unlisted attributes used in a rule. |\n| asn | string | ASN attribute. |\n| country_code | string | Country code attribute. |\n| host | string | Host attribute. |\n| source_ip | string | Source IP address attribute. |\n| source_ip_prefix | string | Source IP prefix attribute. |\n| traffic_percentage | number | Rule traffic percentage for the event. |"
+      "description": "The Fastly DDoS Protection Events API allows you to configure Fastly DDoS Protection and view attack insights including events, rules, and traffic statistics.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| name | string | Name of an attribute type used in traffic stats. Currently, supported values are source_ip, country_code, host, asn, source_ip_prefix, user_agent, method_path. |\n| values | array | Values for traffic attribute. |\n| percentage | integer | Percentage of traffic containing a value. |\n| created_at | string | Date and time in ISO 8601 format. |\n| customer_id | string | Alphanumeric string identifying the customer. |\n| ended_at | string | Date and time in ISO 8601 format. |\n| id | string | Unique ID of the event. |\n| requests_allowed | integer | Number of requests classified as non-attack traffic for an event. |\n| requests_detected | integer | Number of requests classified as DDoS attack traffic for an event. |\n| service_id | string | Alphanumeric string identifying the service. |\n| started_at | string | Date and time in ISO 8601 format. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| action | string | Action types for a rule. Supported action values are default, block, log, off, client_challenge. The default action value follows the current protection mode of the associated service. |\n| additional_attributes | array | Attribute category for additional, unlisted attributes used in a rule. |\n| asn | string | ASN attribute. |\n| country_code | string | Country code attribute. |\n| host | string | Host attribute. |\n| path | string | URL path attribute. |\n| source_ip | string | Source IP address attribute. |\n| source_ip_prefix | string | Source IP prefix attribute. |\n| traffic_percentage | number | Rule traffic percentage for the event. |"
     },
     {
       "name": "Network Protect / Network Protect",

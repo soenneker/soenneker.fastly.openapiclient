@@ -86,6 +86,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The path property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Path { get; set; }
+#nullable restore
+#else
+        public string Path { get; set; }
+#endif
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,6 +160,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "source_ip", n => { SourceIp = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "source_ip_prefix", n => { SourceIpPrefix = n.GetStringValue(); } },
@@ -174,6 +183,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("host", Host);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("path", Path);
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteObjectValue<UntypedNode>("source_ip", SourceIp);
             writer.WriteStringValue("source_ip_prefix", SourceIpPrefix);
