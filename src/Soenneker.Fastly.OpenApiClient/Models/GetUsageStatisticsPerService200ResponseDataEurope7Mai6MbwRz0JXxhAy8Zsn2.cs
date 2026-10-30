@@ -17,21 +17,24 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bandwidth") is { } nullNodeBandwidth && nullNodeBandwidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bandwidth = null;
-            if (parseNode.GetChildNode("compute_requests") is { } nullNodeComputeRequests && nullNodeComputeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputeRequests = null;
-            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("bandwidth") is null) { _explicitNullValueBandwidth = default!; _explicitNullProperties?.Remove("bandwidth"); }
+            else if (parseNode.GetChildNode("bandwidth") is { } nullNodeBandwidth && nullNodeBandwidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bandwidth = null;
+            if (parseNode.GetChildNode("compute_requests") is null) { _explicitNullValueComputeRequests = default!; _explicitNullProperties?.Remove("compute_requests"); }
+            else if (parseNode.GetChildNode("compute_requests") is { } nullNodeComputeRequests && nullNodeComputeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputeRequests = null;
+            if (parseNode.GetChildNode("requests") is null) { _explicitNullValueRequests = default!; _explicitNullProperties?.Remove("requests"); }
+            else if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bandwidth property</summary>
-        public long? Bandwidth { get => _explicitNullValueBandwidth; set { _explicitNullValueBandwidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidth"); else _explicitNullProperties?.Remove("bandwidth"); } }
+        public long? Bandwidth { get => _explicitNullValueBandwidth; set { _explicitNullValueBandwidth = value; AdditionalData?.Remove("bandwidth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bandwidth"); else _explicitNullProperties?.Remove("bandwidth"); } }
         private long? _explicitNullValueBandwidth = default!;
         /// <summary>The compute_requests property</summary>
-        public long? ComputeRequests { get => _explicitNullValueComputeRequests; set { _explicitNullValueComputeRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_requests"); else _explicitNullProperties?.Remove("compute_requests"); } }
+        public long? ComputeRequests { get => _explicitNullValueComputeRequests; set { _explicitNullValueComputeRequests = value; AdditionalData?.Remove("compute_requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_requests"); else _explicitNullProperties?.Remove("compute_requests"); } }
         private long? _explicitNullValueComputeRequests = default!;
         /// <summary>The requests property</summary>
-        public long? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        public long? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
         private long? _explicitNullValueRequests = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataEurope7Mai6MbwRz0JXxhAy8Zsn2"/> and sets the default values.

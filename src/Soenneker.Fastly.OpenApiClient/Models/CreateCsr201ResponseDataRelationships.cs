@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tls_private_key") is { } nullNodeTlsPrivateKey && nullNodeTlsPrivateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsPrivateKey = null;
+            if (parseNode.GetChildNode("tls_private_key") is null) { _explicitNullValueTlsPrivateKey = default!; _explicitNullProperties?.Remove("tls_private_key"); }
+            else if (parseNode.GetChildNode("tls_private_key") is { } nullNodeTlsPrivateKey && nullNodeTlsPrivateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsPrivateKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The tls_private_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCsr201ResponseDataRelationshipsTlsPrivateKey? TlsPrivateKey { get => _explicitNullValueTlsPrivateKey; set { _explicitNullValueTlsPrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_private_key"); else _explicitNullProperties?.Remove("tls_private_key"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCsr201ResponseDataRelationshipsTlsPrivateKey? TlsPrivateKey { get => _explicitNullValueTlsPrivateKey; set { _explicitNullValueTlsPrivateKey = value; AdditionalData?.Remove("tls_private_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_private_key"); else _explicitNullProperties?.Remove("tls_private_key"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateCsr201ResponseDataRelationshipsTlsPrivateKey? _explicitNullValueTlsPrivateKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCsr201ResponseDataRelationshipsTlsPrivateKey TlsPrivateKey { get => _explicitNullValueTlsPrivateKey; set { _explicitNullValueTlsPrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_private_key"); else _explicitNullProperties?.Remove("tls_private_key"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCsr201ResponseDataRelationshipsTlsPrivateKey TlsPrivateKey { get => _explicitNullValueTlsPrivateKey; set { _explicitNullValueTlsPrivateKey = value; AdditionalData?.Remove("tls_private_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_private_key"); else _explicitNullProperties?.Remove("tls_private_key"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateCsr201ResponseDataRelationshipsTlsPrivateKey _explicitNullValueTlsPrivateKey = default!;
 #endif
         /// <summary>

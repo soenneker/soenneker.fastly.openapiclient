@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.AiRuntimeControl.V1.UsageMetrics.Export
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.AiRuntimeControl.V1.UsageMetrics.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/ai-runtime-control/v1/usage-metrics/export", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

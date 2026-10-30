@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("before") is { } nullNodeBefore && nullNodeBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Before = null;
+            if (parseNode.GetChildNode("before") is null) { _explicitNullValueBefore = default!; _explicitNullProperties?.Remove("before"); }
+            else if (parseNode.GetChildNode("before") is { } nullNodeBefore && nullNodeBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Before = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The before property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Before { get => _explicitNullValueBefore; set { _explicitNullValueBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before"); else _explicitNullProperties?.Remove("before"); } }
+        public string? Before { get => _explicitNullValueBefore; set { _explicitNullValueBefore = value; AdditionalData?.Remove("before"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before"); else _explicitNullProperties?.Remove("before"); } }
         private string? _explicitNullValueBefore = default!;
 #nullable restore
 #else
-        public string Before { get => _explicitNullValueBefore; set { _explicitNullValueBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before"); else _explicitNullProperties?.Remove("before"); } }
+        public string Before { get => _explicitNullValueBefore; set { _explicitNullValueBefore = value; AdditionalData?.Remove("before"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before"); else _explicitNullProperties?.Remove("before"); } }
         private string _explicitNullValueBefore = default!;
 #endif
         /// <summary>

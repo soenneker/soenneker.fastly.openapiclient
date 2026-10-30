@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
-            if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
+            if (parseNode.GetChildNode("rules") is null) { _explicitNullValueRules = default!; _explicitNullProperties?.Remove("rules"); }
+            else if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("self") is null) { _explicitNullValueSelf = default!; _explicitNullProperties?.Remove("self"); }
+            else if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public string? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private string? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public string Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public string Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private string _explicitNullValueRules = default!;
 #endif
         /// <summary>The self property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        public string? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; AdditionalData?.Remove("self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
         private string? _explicitNullValueSelf = default!;
 #nullable restore
 #else
-        public string Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        public string Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; AdditionalData?.Remove("self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
         private string _explicitNullValueSelf = default!;
 #endif
         /// <summary>

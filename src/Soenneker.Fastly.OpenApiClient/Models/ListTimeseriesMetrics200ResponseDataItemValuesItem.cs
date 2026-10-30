@@ -17,17 +17,19 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("HTTP404") is { } nullNodeHTTP404 && nullNodeHTTP404.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP404 = null;
-            if (parseNode.GetChildNode("requests_total") is { } nullNodeRequestsTotal && nullNodeRequestsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsTotal = null;
+            if (parseNode.GetChildNode("HTTP404") is null) { _explicitNullValueHTTP404 = default!; _explicitNullProperties?.Remove("HTTP404"); }
+            else if (parseNode.GetChildNode("HTTP404") is { } nullNodeHTTP404 && nullNodeHTTP404.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP404 = null;
+            if (parseNode.GetChildNode("requests_total") is null) { _explicitNullValueRequestsTotal = default!; _explicitNullProperties?.Remove("requests_total"); }
+            else if (parseNode.GetChildNode("requests_total") is { } nullNodeRequestsTotal && nullNodeRequestsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsTotal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The HTTP404 property</summary>
-        public long? HTTP404 { get => _explicitNullValueHTTP404; set { _explicitNullValueHTTP404 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP404"); else _explicitNullProperties?.Remove("HTTP404"); } }
+        public long? HTTP404 { get => _explicitNullValueHTTP404; set { _explicitNullValueHTTP404 = value; AdditionalData?.Remove("HTTP404"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP404"); else _explicitNullProperties?.Remove("HTTP404"); } }
         private long? _explicitNullValueHTTP404 = default!;
         /// <summary>The requests_total property</summary>
-        public long? RequestsTotal { get => _explicitNullValueRequestsTotal; set { _explicitNullValueRequestsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_total"); else _explicitNullProperties?.Remove("requests_total"); } }
+        public long? RequestsTotal { get => _explicitNullValueRequestsTotal; set { _explicitNullValueRequestsTotal = value; AdditionalData?.Remove("requests_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_total"); else _explicitNullProperties?.Remove("requests_total"); } }
         private long? _explicitNullValueRequestsTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTimeseriesMetrics200ResponseDataItemValuesItem"/> and sets the default values.

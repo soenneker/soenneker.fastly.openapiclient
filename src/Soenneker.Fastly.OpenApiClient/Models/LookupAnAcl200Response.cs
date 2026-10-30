@@ -17,18 +17,20 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("prefix") is null) { _explicitNullValuePrefix = default!; _explicitNullProperties?.Remove("prefix"); }
+            else if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
         }
 
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public string? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private string? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public string Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public string Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private string _explicitNullValueAction = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,11 +38,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
         private string? _explicitNullValuePrefix = default!;
 #nullable restore
 #else
-        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; AdditionalData?.Remove("prefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
         private string _explicitNullValuePrefix = default!;
 #endif
         /// <summary>

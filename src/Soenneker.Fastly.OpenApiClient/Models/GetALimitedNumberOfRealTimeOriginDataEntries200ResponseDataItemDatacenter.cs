@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("STP") is { } nullNodeSTP && nullNodeSTP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) STP = null;
+            if (parseNode.GetChildNode("STP") is null) { _explicitNullValueSTP = default!; _explicitNullProperties?.Remove("STP"); }
+            else if (parseNode.GetChildNode("STP") is { } nullNodeSTP && nullNodeSTP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) STP = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The STP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200ResponseDataItemDatacenterStp? STP { get => _explicitNullValueSTP; set { _explicitNullValueSTP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STP"); else _explicitNullProperties?.Remove("STP"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200ResponseDataItemDatacenterStp? STP { get => _explicitNullValueSTP; set { _explicitNullValueSTP = value; AdditionalData?.Remove("STP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STP"); else _explicitNullProperties?.Remove("STP"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200ResponseDataItemDatacenterStp? _explicitNullValueSTP = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200ResponseDataItemDatacenterStp STP { get => _explicitNullValueSTP; set { _explicitNullValueSTP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STP"); else _explicitNullProperties?.Remove("STP"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200ResponseDataItemDatacenterStp STP { get => _explicitNullValueSTP; set { _explicitNullValueSTP = value; AdditionalData?.Remove("STP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STP"); else _explicitNullProperties?.Remove("STP"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeOriginDataEntries200ResponseDataItemDatacenterStp _explicitNullValueSTP = default!;
 #endif
         /// <summary>

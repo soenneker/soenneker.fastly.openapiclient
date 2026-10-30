@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tls_activations") is { } nullNodeTlsActivations && nullNodeTlsActivations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsActivations = null;
+            if (parseNode.GetChildNode("tls_activations") is null) { _explicitNullValueTlsActivations = default!; _explicitNullProperties?.Remove("tls_activations"); }
+            else if (parseNode.GetChildNode("tls_activations") is { } nullNodeTlsActivations && nullNodeTlsActivations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsActivations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The tls_activations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAMutualAuthentication200ResponseDataRelationshipsTlsActivations? TlsActivations { get => _explicitNullValueTlsActivations; set { _explicitNullValueTlsActivations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_activations"); else _explicitNullProperties?.Remove("tls_activations"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAMutualAuthentication200ResponseDataRelationshipsTlsActivations? TlsActivations { get => _explicitNullValueTlsActivations; set { _explicitNullValueTlsActivations = value; AdditionalData?.Remove("tls_activations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_activations"); else _explicitNullProperties?.Remove("tls_activations"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAMutualAuthentication200ResponseDataRelationshipsTlsActivations? _explicitNullValueTlsActivations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAMutualAuthentication200ResponseDataRelationshipsTlsActivations TlsActivations { get => _explicitNullValueTlsActivations; set { _explicitNullValueTlsActivations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_activations"); else _explicitNullProperties?.Remove("tls_activations"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAMutualAuthentication200ResponseDataRelationshipsTlsActivations TlsActivations { get => _explicitNullValueTlsActivations; set { _explicitNullValueTlsActivations = value; AdditionalData?.Remove("tls_activations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_activations"); else _explicitNullProperties?.Remove("tls_activations"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAMutualAuthentication200ResponseDataRelationshipsTlsActivations _explicitNullValueTlsActivations = default!;
 #endif
         /// <summary>

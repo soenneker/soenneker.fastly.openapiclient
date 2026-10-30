@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expiry_time") is { } nullNodeExpiryTime && nullNodeExpiryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryTime = null;
+            if (parseNode.GetChildNode("expiry_time") is null) { _explicitNullValueExpiryTime = default!; _explicitNullProperties?.Remove("expiry_time"); }
+            else if (parseNode.GetChildNode("expiry_time") is { } nullNodeExpiryTime && nullNodeExpiryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The expiry_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiryTime { get => _explicitNullValueExpiryTime; set { _explicitNullValueExpiryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_time"); else _explicitNullProperties?.Remove("expiry_time"); } }
+        public string? ExpiryTime { get => _explicitNullValueExpiryTime; set { _explicitNullValueExpiryTime = value; AdditionalData?.Remove("expiry_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_time"); else _explicitNullProperties?.Remove("expiry_time"); } }
         private string? _explicitNullValueExpiryTime = default!;
 #nullable restore
 #else
-        public string ExpiryTime { get => _explicitNullValueExpiryTime; set { _explicitNullValueExpiryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_time"); else _explicitNullProperties?.Remove("expiry_time"); } }
+        public string ExpiryTime { get => _explicitNullValueExpiryTime; set { _explicitNullValueExpiryTime = value; AdditionalData?.Remove("expiry_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_time"); else _explicitNullProperties?.Remove("expiry_time"); } }
         private string _explicitNullValueExpiryTime = default!;
 #endif
         /// <summary>

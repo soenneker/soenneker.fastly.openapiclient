@@ -17,11 +17,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("http_protocols") is { } nullNodeHttpProtocols && nullNodeHttpProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpProtocols = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("tls_1_2_cipher_suite_profile") is { } nullNodeTls12CipherSuiteProfile && nullNodeTls12CipherSuiteProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tls12CipherSuiteProfile = null;
-            if (parseNode.GetChildNode("tls_protocols") is { } nullNodeTlsProtocols && nullNodeTlsProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsProtocols = null;
-            if (parseNode.GetChildNode("vipspace") is { } nullNodeVipspace && nullNodeVipspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vipspace = null;
+            if (parseNode.GetChildNode("http_protocols") is null) { _explicitNullValueHttpProtocols = default!; _explicitNullProperties?.Remove("http_protocols"); }
+            else if (parseNode.GetChildNode("http_protocols") is { } nullNodeHttpProtocols && nullNodeHttpProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpProtocols = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("tls_1_2_cipher_suite_profile") is null) { _explicitNullValueTls12CipherSuiteProfile = default!; _explicitNullProperties?.Remove("tls_1_2_cipher_suite_profile"); }
+            else if (parseNode.GetChildNode("tls_1_2_cipher_suite_profile") is { } nullNodeTls12CipherSuiteProfile && nullNodeTls12CipherSuiteProfile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tls12CipherSuiteProfile = null;
+            if (parseNode.GetChildNode("tls_protocols") is null) { _explicitNullValueTlsProtocols = default!; _explicitNullProperties?.Remove("tls_protocols"); }
+            else if (parseNode.GetChildNode("tls_protocols") is { } nullNodeTlsProtocols && nullNodeTlsProtocols.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsProtocols = null;
+            if (parseNode.GetChildNode("vipspace") is null) { _explicitNullValueVipspace = default!; _explicitNullProperties?.Remove("vipspace"); }
+            else if (parseNode.GetChildNode("vipspace") is { } nullNodeVipspace && nullNodeVipspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vipspace = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The http_protocols property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HttpProtocols { get => _explicitNullValueHttpProtocols; set { _explicitNullValueHttpProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_protocols"); else _explicitNullProperties?.Remove("http_protocols"); } }
+        public List<string>? HttpProtocols { get => _explicitNullValueHttpProtocols; set { _explicitNullValueHttpProtocols = value; AdditionalData?.Remove("http_protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_protocols"); else _explicitNullProperties?.Remove("http_protocols"); } }
         private List<string>? _explicitNullValueHttpProtocols = default!;
 #nullable restore
 #else
-        public List<string> HttpProtocols { get => _explicitNullValueHttpProtocols; set { _explicitNullValueHttpProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_protocols"); else _explicitNullProperties?.Remove("http_protocols"); } }
+        public List<string> HttpProtocols { get => _explicitNullValueHttpProtocols; set { _explicitNullValueHttpProtocols = value; AdditionalData?.Remove("http_protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_protocols"); else _explicitNullProperties?.Remove("http_protocols"); } }
         private List<string> _explicitNullValueHttpProtocols = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The tls_1_2_cipher_suite_profile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tls12CipherSuiteProfile { get => _explicitNullValueTls12CipherSuiteProfile; set { _explicitNullValueTls12CipherSuiteProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_1_2_cipher_suite_profile"); else _explicitNullProperties?.Remove("tls_1_2_cipher_suite_profile"); } }
+        public List<string>? Tls12CipherSuiteProfile { get => _explicitNullValueTls12CipherSuiteProfile; set { _explicitNullValueTls12CipherSuiteProfile = value; AdditionalData?.Remove("tls_1_2_cipher_suite_profile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_1_2_cipher_suite_profile"); else _explicitNullProperties?.Remove("tls_1_2_cipher_suite_profile"); } }
         private List<string>? _explicitNullValueTls12CipherSuiteProfile = default!;
 #nullable restore
 #else
-        public List<string> Tls12CipherSuiteProfile { get => _explicitNullValueTls12CipherSuiteProfile; set { _explicitNullValueTls12CipherSuiteProfile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_1_2_cipher_suite_profile"); else _explicitNullProperties?.Remove("tls_1_2_cipher_suite_profile"); } }
+        public List<string> Tls12CipherSuiteProfile { get => _explicitNullValueTls12CipherSuiteProfile; set { _explicitNullValueTls12CipherSuiteProfile = value; AdditionalData?.Remove("tls_1_2_cipher_suite_profile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_1_2_cipher_suite_profile"); else _explicitNullProperties?.Remove("tls_1_2_cipher_suite_profile"); } }
         private List<string> _explicitNullValueTls12CipherSuiteProfile = default!;
 #endif
         /// <summary>The tls_protocols property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TlsProtocols { get => _explicitNullValueTlsProtocols; set { _explicitNullValueTlsProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_protocols"); else _explicitNullProperties?.Remove("tls_protocols"); } }
+        public List<string>? TlsProtocols { get => _explicitNullValueTlsProtocols; set { _explicitNullValueTlsProtocols = value; AdditionalData?.Remove("tls_protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_protocols"); else _explicitNullProperties?.Remove("tls_protocols"); } }
         private List<string>? _explicitNullValueTlsProtocols = default!;
 #nullable restore
 #else
-        public List<string> TlsProtocols { get => _explicitNullValueTlsProtocols; set { _explicitNullValueTlsProtocols = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_protocols"); else _explicitNullProperties?.Remove("tls_protocols"); } }
+        public List<string> TlsProtocols { get => _explicitNullValueTlsProtocols; set { _explicitNullValueTlsProtocols = value; AdditionalData?.Remove("tls_protocols"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_protocols"); else _explicitNullProperties?.Remove("tls_protocols"); } }
         private List<string> _explicitNullValueTlsProtocols = default!;
 #endif
         /// <summary>The vipspace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Vipspace { get => _explicitNullValueVipspace; set { _explicitNullValueVipspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vipspace"); else _explicitNullProperties?.Remove("vipspace"); } }
+        public string? Vipspace { get => _explicitNullValueVipspace; set { _explicitNullValueVipspace = value; AdditionalData?.Remove("vipspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vipspace"); else _explicitNullProperties?.Remove("vipspace"); } }
         private string? _explicitNullValueVipspace = default!;
 #nullable restore
 #else
-        public string Vipspace { get => _explicitNullValueVipspace; set { _explicitNullValueVipspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vipspace"); else _explicitNullProperties?.Remove("vipspace"); } }
+        public string Vipspace { get => _explicitNullValueVipspace; set { _explicitNullValueVipspace = value; AdditionalData?.Remove("vipspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vipspace"); else _explicitNullProperties?.Remove("vipspace"); } }
         private string _explicitNullValueVipspace = default!;
 #endif
         /// <summary>

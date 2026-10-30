@@ -17,20 +17,24 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
-            if (parseNode.GetChildNode("section") is { } nullNodeSection && nullNodeSection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Section = null;
+            if (parseNode.GetChildNode("actions") is null) { _explicitNullValueActions = default!; _explicitNullProperties?.Remove("actions"); }
+            else if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("fields") is null) { _explicitNullValueFields = default!; _explicitNullProperties?.Remove("fields"); }
+            else if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("section") is null) { _explicitNullValueSection = default!; _explicitNullProperties?.Remove("section"); }
+            else if (parseNode.GetChildNode("section") is { } nullNodeSection && nullNodeSection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Section = null;
         }
 
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem> _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,31 +42,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public List<string>? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private List<string>? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public List<string> Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public List<string> Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private List<string> _explicitNullValueDescription = default!;
 #endif
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public List<string>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private List<string>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<string> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public List<string> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private List<string> _explicitNullValueFields = default!;
 #endif
         /// <summary>The section property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Section { get => _explicitNullValueSection; set { _explicitNullValueSection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section"); else _explicitNullProperties?.Remove("section"); } }
+        public string? Section { get => _explicitNullValueSection; set { _explicitNullValueSection = value; AdditionalData?.Remove("section"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section"); else _explicitNullProperties?.Remove("section"); } }
         private string? _explicitNullValueSection = default!;
 #nullable restore
 #else
-        public string Section { get => _explicitNullValueSection; set { _explicitNullValueSection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section"); else _explicitNullProperties?.Remove("section"); } }
+        public string Section { get => _explicitNullValueSection; set { _explicitNullValueSection = value; AdditionalData?.Remove("section"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section"); else _explicitNullProperties?.Remove("section"); } }
         private string _explicitNullValueSection = default!;
 #endif
         /// <summary>

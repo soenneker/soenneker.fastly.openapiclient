@@ -17,25 +17,29 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("current_page") is { } nullNodeCurrentPage && nullNodeCurrentPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentPage = null;
-            if (parseNode.GetChildNode("per_page") is { } nullNodePerPage && nullNodePerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerPage = null;
-            if (parseNode.GetChildNode("record_count") is { } nullNodeRecordCount && nullNodeRecordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordCount = null;
-            if (parseNode.GetChildNode("total_pages") is { } nullNodeTotalPages && nullNodeTotalPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPages = null;
+            if (parseNode.GetChildNode("current_page") is null) { _explicitNullValueCurrentPage = default!; _explicitNullProperties?.Remove("current_page"); }
+            else if (parseNode.GetChildNode("current_page") is { } nullNodeCurrentPage && nullNodeCurrentPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentPage = null;
+            if (parseNode.GetChildNode("per_page") is null) { _explicitNullValuePerPage = default!; _explicitNullProperties?.Remove("per_page"); }
+            else if (parseNode.GetChildNode("per_page") is { } nullNodePerPage && nullNodePerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerPage = null;
+            if (parseNode.GetChildNode("record_count") is null) { _explicitNullValueRecordCount = default!; _explicitNullProperties?.Remove("record_count"); }
+            else if (parseNode.GetChildNode("record_count") is { } nullNodeRecordCount && nullNodeRecordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordCount = null;
+            if (parseNode.GetChildNode("total_pages") is null) { _explicitNullValueTotalPages = default!; _explicitNullProperties?.Remove("total_pages"); }
+            else if (parseNode.GetChildNode("total_pages") is { } nullNodeTotalPages && nullNodeTotalPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalPages = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The current_page property</summary>
-        public long? CurrentPage { get => _explicitNullValueCurrentPage; set { _explicitNullValueCurrentPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_page"); else _explicitNullProperties?.Remove("current_page"); } }
+        public long? CurrentPage { get => _explicitNullValueCurrentPage; set { _explicitNullValueCurrentPage = value; AdditionalData?.Remove("current_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_page"); else _explicitNullProperties?.Remove("current_page"); } }
         private long? _explicitNullValueCurrentPage = default!;
         /// <summary>The per_page property</summary>
-        public long? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
+        public long? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; AdditionalData?.Remove("per_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
         private long? _explicitNullValuePerPage = default!;
         /// <summary>The record_count property</summary>
-        public long? RecordCount { get => _explicitNullValueRecordCount; set { _explicitNullValueRecordCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_count"); else _explicitNullProperties?.Remove("record_count"); } }
+        public long? RecordCount { get => _explicitNullValueRecordCount; set { _explicitNullValueRecordCount = value; AdditionalData?.Remove("record_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_count"); else _explicitNullProperties?.Remove("record_count"); } }
         private long? _explicitNullValueRecordCount = default!;
         /// <summary>The total_pages property</summary>
-        public long? TotalPages { get => _explicitNullValueTotalPages; set { _explicitNullValueTotalPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_pages"); else _explicitNullProperties?.Remove("total_pages"); } }
+        public long? TotalPages { get => _explicitNullValueTotalPages; set { _explicitNullValueTotalPages = value; AdditionalData?.Remove("total_pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_pages"); else _explicitNullProperties?.Remove("total_pages"); } }
         private long? _explicitNullValueTotalPages = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTlsDomains200ResponseMeta"/> and sets the default values.

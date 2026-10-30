@@ -17,34 +17,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("advertise") is { } nullNodeAdvertise && nullNodeAdvertise.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advertise = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("endpoint_policies") is { } nullNodeEndpointPolicies && nullNodeEndpointPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointPolicies = null;
+            if (parseNode.GetChildNode("advertise") is null) { _explicitNullValueAdvertise = default!; _explicitNullProperties?.Remove("advertise"); }
+            else if (parseNode.GetChildNode("advertise") is { } nullNodeAdvertise && nullNodeAdvertise.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Advertise = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("endpoint_policies") is null) { _explicitNullValueEndpointPolicies = default!; _explicitNullProperties?.Remove("endpoint_policies"); }
+            else if (parseNode.GetChildNode("endpoint_policies") is { } nullNodeEndpointPolicies && nullNodeEndpointPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointPolicies = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The advertise property</summary>
-        public bool? Advertise { get => _explicitNullValueAdvertise; set { _explicitNullValueAdvertise = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertise"); else _explicitNullProperties?.Remove("advertise"); } }
+        public bool? Advertise { get => _explicitNullValueAdvertise; set { _explicitNullValueAdvertise = value; AdditionalData?.Remove("advertise"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advertise"); else _explicitNullProperties?.Remove("advertise"); } }
         private bool? _explicitNullValueAdvertise = default!;
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The endpoint_policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetworkRequestEndpointPoliciesItem>? EndpointPolicies { get => _explicitNullValueEndpointPolicies; set { _explicitNullValueEndpointPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_policies"); else _explicitNullProperties?.Remove("endpoint_policies"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetworkRequestEndpointPoliciesItem>? EndpointPolicies { get => _explicitNullValueEndpointPolicies; set { _explicitNullValueEndpointPolicies = value; AdditionalData?.Remove("endpoint_policies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_policies"); else _explicitNullProperties?.Remove("endpoint_policies"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetworkRequestEndpointPoliciesItem>? _explicitNullValueEndpointPolicies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetworkRequestEndpointPoliciesItem> EndpointPolicies { get => _explicitNullValueEndpointPolicies; set { _explicitNullValueEndpointPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_policies"); else _explicitNullProperties?.Remove("endpoint_policies"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetworkRequestEndpointPoliciesItem> EndpointPolicies { get => _explicitNullValueEndpointPolicies; set { _explicitNullValueEndpointPolicies = value; AdditionalData?.Remove("endpoint_policies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_policies"); else _explicitNullProperties?.Remove("endpoint_policies"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetworkRequestEndpointPoliciesItem> _explicitNullValueEndpointPolicies = default!;
 #endif
         /// <summary>

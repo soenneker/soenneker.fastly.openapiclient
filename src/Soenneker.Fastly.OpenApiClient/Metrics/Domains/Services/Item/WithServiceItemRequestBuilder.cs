@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item.WithServiceItemRequestBuilder.WithServiceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/metrics/domains/services/{serviceId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

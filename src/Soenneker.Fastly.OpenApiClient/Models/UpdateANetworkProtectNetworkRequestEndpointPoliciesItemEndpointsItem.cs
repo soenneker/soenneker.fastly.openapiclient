@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("endpoint_id") is { } nullNodeEndpointId && nullNodeEndpointId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointId = null;
-            if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
+            if (parseNode.GetChildNode("endpoint_id") is null) { _explicitNullValueEndpointId = default!; _explicitNullProperties?.Remove("endpoint_id"); }
+            else if (parseNode.GetChildNode("endpoint_id") is { } nullNodeEndpointId && nullNodeEndpointId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointId = null;
+            if (parseNode.GetChildNode("preference") is null) { _explicitNullValuePreference = default!; _explicitNullProperties?.Remove("preference"); }
+            else if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The endpoint_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndpointId { get => _explicitNullValueEndpointId; set { _explicitNullValueEndpointId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_id"); else _explicitNullProperties?.Remove("endpoint_id"); } }
+        public string? EndpointId { get => _explicitNullValueEndpointId; set { _explicitNullValueEndpointId = value; AdditionalData?.Remove("endpoint_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_id"); else _explicitNullProperties?.Remove("endpoint_id"); } }
         private string? _explicitNullValueEndpointId = default!;
 #nullable restore
 #else
-        public string EndpointId { get => _explicitNullValueEndpointId; set { _explicitNullValueEndpointId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_id"); else _explicitNullProperties?.Remove("endpoint_id"); } }
+        public string EndpointId { get => _explicitNullValueEndpointId; set { _explicitNullValueEndpointId = value; AdditionalData?.Remove("endpoint_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_id"); else _explicitNullProperties?.Remove("endpoint_id"); } }
         private string _explicitNullValueEndpointId = default!;
 #endif
         /// <summary>The preference property</summary>
-        public long? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        public long? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; AdditionalData?.Remove("preference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
         private long? _explicitNullValuePreference = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetworkRequestEndpointPoliciesItemEndpointsItem"/> and sets the default values.

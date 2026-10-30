@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cert_blob") is { } nullNodeCertBlob && nullNodeCertBlob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertBlob = null;
+            if (parseNode.GetChildNode("cert_blob") is null) { _explicitNullValueCertBlob = default!; _explicitNullProperties?.Remove("cert_blob"); }
+            else if (parseNode.GetChildNode("cert_blob") is { } nullNodeCertBlob && nullNodeCertBlob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertBlob = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The cert_blob property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertBlob { get => _explicitNullValueCertBlob; set { _explicitNullValueCertBlob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_blob"); else _explicitNullProperties?.Remove("cert_blob"); } }
+        public string? CertBlob { get => _explicitNullValueCertBlob; set { _explicitNullValueCertBlob = value; AdditionalData?.Remove("cert_blob"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_blob"); else _explicitNullProperties?.Remove("cert_blob"); } }
         private string? _explicitNullValueCertBlob = default!;
 #nullable restore
 #else
-        public string CertBlob { get => _explicitNullValueCertBlob; set { _explicitNullValueCertBlob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_blob"); else _explicitNullProperties?.Remove("cert_blob"); } }
+        public string CertBlob { get => _explicitNullValueCertBlob; set { _explicitNullValueCertBlob = value; AdditionalData?.Remove("cert_blob"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_blob"); else _explicitNullProperties?.Remove("cert_blob"); } }
         private string _explicitNullValueCertBlob = default!;
 #endif
         /// <summary>

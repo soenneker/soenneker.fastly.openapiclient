@@ -17,20 +17,24 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("bot_id") is { } nullNodeBotId && nullNodeBotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotId = null;
-            if (parseNode.GetChildNode("category_id") is { } nullNodeCategoryId && nullNodeCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryId = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("bot_id") is null) { _explicitNullValueBotId = default!; _explicitNullProperties?.Remove("bot_id"); }
+            else if (parseNode.GetChildNode("bot_id") is { } nullNodeBotId && nullNodeBotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotId = null;
+            if (parseNode.GetChildNode("category_id") is null) { _explicitNullValueCategoryId = default!; _explicitNullProperties?.Remove("category_id"); }
+            else if (parseNode.GetChildNode("category_id") is { } nullNodeCategoryId && nullNodeCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryId = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200ResponseDataItemAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200ResponseDataItemAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200ResponseDataItemAction? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200ResponseDataItemAction Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200ResponseDataItemAction Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.ListAllBotsInAWorkspace200ResponseDataItemAction _explicitNullValueAction = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,31 +42,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The bot_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BotId { get => _explicitNullValueBotId; set { _explicitNullValueBotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_id"); else _explicitNullProperties?.Remove("bot_id"); } }
+        public string? BotId { get => _explicitNullValueBotId; set { _explicitNullValueBotId = value; AdditionalData?.Remove("bot_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_id"); else _explicitNullProperties?.Remove("bot_id"); } }
         private string? _explicitNullValueBotId = default!;
 #nullable restore
 #else
-        public string BotId { get => _explicitNullValueBotId; set { _explicitNullValueBotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_id"); else _explicitNullProperties?.Remove("bot_id"); } }
+        public string BotId { get => _explicitNullValueBotId; set { _explicitNullValueBotId = value; AdditionalData?.Remove("bot_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_id"); else _explicitNullProperties?.Remove("bot_id"); } }
         private string _explicitNullValueBotId = default!;
 #endif
         /// <summary>The category_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
+        public string? CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; AdditionalData?.Remove("category_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
         private string? _explicitNullValueCategoryId = default!;
 #nullable restore
 #else
-        public string CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
+        public string CategoryId { get => _explicitNullValueCategoryId; set { _explicitNullValueCategoryId = value; AdditionalData?.Remove("category_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_id"); else _explicitNullProperties?.Remove("category_id"); } }
         private string _explicitNullValueCategoryId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dashboard_id") is { } nullNodeDashboardId && nullNodeDashboardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DashboardId = null;
-            if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
+            if (parseNode.GetChildNode("dashboard_id") is null) { _explicitNullValueDashboardId = default!; _explicitNullProperties?.Remove("dashboard_id"); }
+            else if (parseNode.GetChildNode("dashboard_id") is { } nullNodeDashboardId && nullNodeDashboardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DashboardId = null;
+            if (parseNode.GetChildNode("workspace_id") is null) { _explicitNullValueWorkspaceId = default!; _explicitNullProperties?.Remove("workspace_id"); }
+            else if (parseNode.GetChildNode("workspace_id") is { } nullNodeWorkspaceId && nullNodeWorkspaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The dashboard_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DashboardId { get => _explicitNullValueDashboardId; set { _explicitNullValueDashboardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_id"); else _explicitNullProperties?.Remove("dashboard_id"); } }
+        public string? DashboardId { get => _explicitNullValueDashboardId; set { _explicitNullValueDashboardId = value; AdditionalData?.Remove("dashboard_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_id"); else _explicitNullProperties?.Remove("dashboard_id"); } }
         private string? _explicitNullValueDashboardId = default!;
 #nullable restore
 #else
-        public string DashboardId { get => _explicitNullValueDashboardId; set { _explicitNullValueDashboardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_id"); else _explicitNullProperties?.Remove("dashboard_id"); } }
+        public string DashboardId { get => _explicitNullValueDashboardId; set { _explicitNullValueDashboardId = value; AdditionalData?.Remove("dashboard_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_id"); else _explicitNullProperties?.Remove("dashboard_id"); } }
         private string _explicitNullValueDashboardId = default!;
 #endif
         /// <summary>The workspace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        public string? WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; AdditionalData?.Remove("workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
         private string? _explicitNullValueWorkspaceId = default!;
 #nullable restore
 #else
-        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
+        public string WorkspaceId { get => _explicitNullValueWorkspaceId; set { _explicitNullValueWorkspaceId = value; AdditionalData?.Remove("workspace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_id"); else _explicitNullProperties?.Remove("workspace_id"); } }
         private string _explicitNullValueWorkspaceId = default!;
 #endif
         /// <summary>

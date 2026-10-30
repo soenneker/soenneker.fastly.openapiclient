@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inbound_tsig_key_id") is { } nullNodeInboundTsigKeyId && nullNodeInboundTsigKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InboundTsigKeyId = null;
-            if (parseNode.GetChildNode("primaries") is { } nullNodePrimaries && nullNodePrimaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primaries = null;
+            if (parseNode.GetChildNode("inbound_tsig_key_id") is null) { _explicitNullValueInboundTsigKeyId = default!; _explicitNullProperties?.Remove("inbound_tsig_key_id"); }
+            else if (parseNode.GetChildNode("inbound_tsig_key_id") is { } nullNodeInboundTsigKeyId && nullNodeInboundTsigKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InboundTsigKeyId = null;
+            if (parseNode.GetChildNode("primaries") is null) { _explicitNullValuePrimaries = default!; _explicitNullProperties?.Remove("primaries"); }
+            else if (parseNode.GetChildNode("primaries") is { } nullNodePrimaries && nullNodePrimaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primaries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The inbound_tsig_key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
+        public string? InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; AdditionalData?.Remove("inbound_tsig_key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
         private string? _explicitNullValueInboundTsigKeyId = default!;
 #nullable restore
 #else
-        public string InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
+        public string InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; AdditionalData?.Remove("inbound_tsig_key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
         private string _explicitNullValueInboundTsigKeyId = default!;
 #endif
         /// <summary>The primaries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZoneRequestXfrConfigInboundPrimariesItem>? Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZoneRequestXfrConfigInboundPrimariesItem>? Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; AdditionalData?.Remove("primaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZoneRequestXfrConfigInboundPrimariesItem>? _explicitNullValuePrimaries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZoneRequestXfrConfigInboundPrimariesItem> Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZoneRequestXfrConfigInboundPrimariesItem> Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; AdditionalData?.Remove("primaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZoneRequestXfrConfigInboundPrimariesItem> _explicitNullValuePrimaries = default!;
 #endif
         /// <summary>

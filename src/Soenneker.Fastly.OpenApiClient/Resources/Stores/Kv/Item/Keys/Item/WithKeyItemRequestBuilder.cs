@@ -99,7 +99,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/resources/stores/kv/{storeId}/keys/{key}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -117,7 +117,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/resources/stores/kv/{storeId}/keys/{key}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -135,7 +135,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Resources.Stores.Kv.Item.Keys.Item.WithKeyItemRequestBuilder.WithKeyItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/resources/stores/kv/{storeId}/keys/{key}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

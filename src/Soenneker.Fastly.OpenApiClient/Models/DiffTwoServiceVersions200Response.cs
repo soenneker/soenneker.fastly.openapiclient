@@ -17,10 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("diff") is { } nullNodeDiff && nullNodeDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Diff = null;
-            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
-            if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
-            if (parseNode.GetChildNode("to") is { } nullNodeTo && nullNodeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) To = null;
+            if (parseNode.GetChildNode("diff") is null) { _explicitNullValueDiff = default!; _explicitNullProperties?.Remove("diff"); }
+            else if (parseNode.GetChildNode("diff") is { } nullNodeDiff && nullNodeDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Diff = null;
+            if (parseNode.GetChildNode("format") is null) { _explicitNullValueFormat = default!; _explicitNullProperties?.Remove("format"); }
+            else if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("from") is null) { _explicitNullValueFrom = default!; _explicitNullProperties?.Remove("from"); }
+            else if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
+            if (parseNode.GetChildNode("to") is null) { _explicitNullValueTo = default!; _explicitNullProperties?.Remove("to"); }
+            else if (parseNode.GetChildNode("to") is { } nullNodeTo && nullNodeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) To = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The diff property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
+        public string? Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; AdditionalData?.Remove("diff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
         private string? _explicitNullValueDiff = default!;
 #nullable restore
 #else
-        public string Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
+        public string Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; AdditionalData?.Remove("diff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
         private string _explicitNullValueDiff = default!;
 #endif
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public string? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private string? _explicitNullValueFormat = default!;
 #nullable restore
 #else
-        public string Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public string Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private string _explicitNullValueFormat = default!;
 #endif
         /// <summary>The from property</summary>
-        public long? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        public long? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; AdditionalData?.Remove("from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
         private long? _explicitNullValueFrom = default!;
         /// <summary>The to property</summary>
-        public long? To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        public long? To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; AdditionalData?.Remove("to"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
         private long? _explicitNullValueTo = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DiffTwoServiceVersions200Response"/> and sets the default values.

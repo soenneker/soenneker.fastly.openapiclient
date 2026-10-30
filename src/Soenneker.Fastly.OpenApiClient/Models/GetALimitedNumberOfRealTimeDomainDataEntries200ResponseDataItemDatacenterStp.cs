@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("www.example.com") is { } nullNodeWwwExampleCom && nullNodeWwwExampleCom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WwwExampleCom = null;
+            if (parseNode.GetChildNode("www.example.com") is null) { _explicitNullValueWwwExampleCom = default!; _explicitNullProperties?.Remove("www.example.com"); }
+            else if (parseNode.GetChildNode("www.example.com") is { } nullNodeWwwExampleCom && nullNodeWwwExampleCom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WwwExampleCom = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The wwwExampleCom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom? WwwExampleCom { get => _explicitNullValueWwwExampleCom; set { _explicitNullValueWwwExampleCom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("www.example.com"); else _explicitNullProperties?.Remove("www.example.com"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom? WwwExampleCom { get => _explicitNullValueWwwExampleCom; set { _explicitNullValueWwwExampleCom = value; AdditionalData?.Remove("www.example.com"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("www.example.com"); else _explicitNullProperties?.Remove("www.example.com"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom? _explicitNullValueWwwExampleCom = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom WwwExampleCom { get => _explicitNullValueWwwExampleCom; set { _explicitNullValueWwwExampleCom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("www.example.com"); else _explicitNullProperties?.Remove("www.example.com"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom WwwExampleCom { get => _explicitNullValueWwwExampleCom; set { _explicitNullValueWwwExampleCom = value; AdditionalData?.Remove("www.example.com"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("www.example.com"); else _explicitNullProperties?.Remove("www.example.com"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom _explicitNullValueWwwExampleCom = default!;
 #endif
         /// <summary>

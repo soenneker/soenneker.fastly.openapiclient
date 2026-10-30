@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("skip_verification") is { } nullNodeSkipVerification && nullNodeSkipVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipVerification = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("skip_verification") is null) { _explicitNullValueSkipVerification = default!; _explicitNullProperties?.Remove("skip_verification"); }
+            else if (parseNode.GetChildNode("skip_verification") is { } nullNodeSkipVerification && nullNodeSkipVerification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipVerification = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddressApiJsonRequestData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddressApiJsonRequestData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddressApiJsonRequestData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddressApiJsonRequestData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddressApiJsonRequestData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddressApiJsonRequestData _explicitNullValueData = default!;
 #endif
         /// <summary>The skip_verification property</summary>
-        public bool? SkipVerification { get => _explicitNullValueSkipVerification; set { _explicitNullValueSkipVerification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_verification"); else _explicitNullProperties?.Remove("skip_verification"); } }
+        public bool? SkipVerification { get => _explicitNullValueSkipVerification; set { _explicitNullValueSkipVerification = value; AdditionalData?.Remove("skip_verification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_verification"); else _explicitNullProperties?.Remove("skip_verification"); } }
         private bool? _explicitNullValueSkipVerification = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddressApiJsonRequest"/> and sets the default values.

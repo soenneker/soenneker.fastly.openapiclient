@@ -17,32 +17,36 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("HTTP404") is { } nullNodeHTTP404 && nullNodeHTTP404.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP404 = null;
-            if (parseNode.GetChildNode("SQLI") is { } nullNodeSQLI && nullNodeSQLI.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SQLI = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
-            if (parseNode.GetChildNode("XSS") is { } nullNodeXSS && nullNodeXSS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XSS = null;
+            if (parseNode.GetChildNode("HTTP404") is null) { _explicitNullValueHTTP404 = default!; _explicitNullProperties?.Remove("HTTP404"); }
+            else if (parseNode.GetChildNode("HTTP404") is { } nullNodeHTTP404 && nullNodeHTTP404.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP404 = null;
+            if (parseNode.GetChildNode("SQLI") is null) { _explicitNullValueSQLI = default!; _explicitNullProperties?.Remove("SQLI"); }
+            else if (parseNode.GetChildNode("SQLI") is { } nullNodeSQLI && nullNodeSQLI.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SQLI = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("XSS") is null) { _explicitNullValueXSS = default!; _explicitNullProperties?.Remove("XSS"); }
+            else if (parseNode.GetChildNode("XSS") is { } nullNodeXSS && nullNodeXSS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XSS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The HTTP404 property</summary>
-        public long? HTTP404 { get => _explicitNullValueHTTP404; set { _explicitNullValueHTTP404 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP404"); else _explicitNullProperties?.Remove("HTTP404"); } }
+        public long? HTTP404 { get => _explicitNullValueHTTP404; set { _explicitNullValueHTTP404 = value; AdditionalData?.Remove("HTTP404"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP404"); else _explicitNullProperties?.Remove("HTTP404"); } }
         private long? _explicitNullValueHTTP404 = default!;
         /// <summary>The SQLI property</summary>
-        public long? SQLI { get => _explicitNullValueSQLI; set { _explicitNullValueSQLI = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SQLI"); else _explicitNullProperties?.Remove("SQLI"); } }
+        public long? SQLI { get => _explicitNullValueSQLI; set { _explicitNullValueSQLI = value; AdditionalData?.Remove("SQLI"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SQLI"); else _explicitNullProperties?.Remove("SQLI"); } }
         private long? _explicitNullValueSQLI = default!;
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>The XSS property</summary>
-        public long? XSS { get => _explicitNullValueXSS; set { _explicitNullValueXSS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("XSS"); else _explicitNullProperties?.Remove("XSS"); } }
+        public long? XSS { get => _explicitNullValueXSS; set { _explicitNullValueXSS = value; AdditionalData?.Remove("XSS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("XSS"); else _explicitNullProperties?.Remove("XSS"); } }
         private long? _explicitNullValueXSS = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveTimeseriesMetrics200ResponseDataItem"/> and sets the default values.

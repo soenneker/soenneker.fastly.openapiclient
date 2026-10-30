@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
-            if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("scope_types") is { } nullNodeScopeTypes && nullNodeScopeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeTypes = null;
+            if (parseNode.GetChildNode("display_name") is null) { _explicitNullValueDisplayName = default!; _explicitNullProperties?.Remove("display_name"); }
+            else if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
+            else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("scope_types") is null) { _explicitNullValueScopeTypes = default!; _explicitNullProperties?.Remove("scope_types"); }
+            else if (parseNode.GetChildNode("scope_types") is { } nullNodeScopeTypes && nullNodeScopeTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeTypes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The display_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
         private string? _explicitNullValueDisplayName = default!;
 #nullable restore
 #else
-        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
         private string _explicitNullValueDisplayName = default!;
 #endif
         /// <summary>The event_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        public string? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
         private string? _explicitNullValueEventType = default!;
 #nullable restore
 #else
-        public string EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        public string EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
         private string _explicitNullValueEventType = default!;
 #endif
         /// <summary>The scope_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScopeTypes { get => _explicitNullValueScopeTypes; set { _explicitNullValueScopeTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_types"); else _explicitNullProperties?.Remove("scope_types"); } }
+        public List<string>? ScopeTypes { get => _explicitNullValueScopeTypes; set { _explicitNullValueScopeTypes = value; AdditionalData?.Remove("scope_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_types"); else _explicitNullProperties?.Remove("scope_types"); } }
         private List<string>? _explicitNullValueScopeTypes = default!;
 #nullable restore
 #else
-        public List<string> ScopeTypes { get => _explicitNullValueScopeTypes; set { _explicitNullValueScopeTypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_types"); else _explicitNullProperties?.Remove("scope_types"); } }
+        public List<string> ScopeTypes { get => _explicitNullValueScopeTypes; set { _explicitNullValueScopeTypes = value; AdditionalData?.Remove("scope_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_types"); else _explicitNullProperties?.Remove("scope_types"); } }
         private List<string> _explicitNullValueScopeTypes = default!;
 #endif
         /// <summary>

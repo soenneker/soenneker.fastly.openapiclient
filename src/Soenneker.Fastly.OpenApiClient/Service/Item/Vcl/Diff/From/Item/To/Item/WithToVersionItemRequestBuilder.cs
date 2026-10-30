@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Vcl.Diff.From.Item.To.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Service.Item.Vcl.Diff.From.Item.To.Item.WithToVersionItemRequestBuilder.WithToVersionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/service/{serviceId}/vcl/diff/from/{fromVersionId}/to/{toVersionId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

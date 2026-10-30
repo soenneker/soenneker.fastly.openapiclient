@@ -82,7 +82,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Subscriptions.Item.Authorizations.I
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/tls/subscriptions/{tlsSubscriptionId}/authorizations/{tlsAuthorizationId}/globalsign_email_challenges", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/vnd.api+json", body);

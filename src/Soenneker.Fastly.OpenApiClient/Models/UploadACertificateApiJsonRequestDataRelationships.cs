@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tls_configurations") is { } nullNodeTlsConfigurations && nullNodeTlsConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsConfigurations = null;
+            if (parseNode.GetChildNode("tls_configurations") is null) { _explicitNullValueTlsConfigurations = default!; _explicitNullProperties?.Remove("tls_configurations"); }
+            else if (parseNode.GetChildNode("tls_configurations") is { } nullNodeTlsConfigurations && nullNodeTlsConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsConfigurations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The tls_configurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations? TlsConfigurations { get => _explicitNullValueTlsConfigurations; set { _explicitNullValueTlsConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_configurations"); else _explicitNullProperties?.Remove("tls_configurations"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations? TlsConfigurations { get => _explicitNullValueTlsConfigurations; set { _explicitNullValueTlsConfigurations = value; AdditionalData?.Remove("tls_configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_configurations"); else _explicitNullProperties?.Remove("tls_configurations"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations? _explicitNullValueTlsConfigurations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations TlsConfigurations { get => _explicitNullValueTlsConfigurations; set { _explicitNullValueTlsConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_configurations"); else _explicitNullProperties?.Remove("tls_configurations"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations TlsConfigurations { get => _explicitNullValueTlsConfigurations; set { _explicitNullValueTlsConfigurations = value; AdditionalData?.Remove("tls_configurations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_configurations"); else _explicitNullProperties?.Remove("tls_configurations"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations _explicitNullValueTlsConfigurations = default!;
 #endif
         /// <summary>

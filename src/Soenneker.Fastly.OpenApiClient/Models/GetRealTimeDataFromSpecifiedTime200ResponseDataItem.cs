@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aggregated") is { } nullNodeAggregated && nullNodeAggregated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregated = null;
-            if (parseNode.GetChildNode("datacenter") is { } nullNodeDatacenter && nullNodeDatacenter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datacenter = null;
-            if (parseNode.GetChildNode("recorded") is { } nullNodeRecorded && nullNodeRecorded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recorded = null;
+            if (parseNode.GetChildNode("aggregated") is null) { _explicitNullValueAggregated = default!; _explicitNullProperties?.Remove("aggregated"); }
+            else if (parseNode.GetChildNode("aggregated") is { } nullNodeAggregated && nullNodeAggregated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregated = null;
+            if (parseNode.GetChildNode("datacenter") is null) { _explicitNullValueDatacenter = default!; _explicitNullProperties?.Remove("datacenter"); }
+            else if (parseNode.GetChildNode("datacenter") is { } nullNodeDatacenter && nullNodeDatacenter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datacenter = null;
+            if (parseNode.GetChildNode("recorded") is null) { _explicitNullValueRecorded = default!; _explicitNullProperties?.Remove("recorded"); }
+            else if (parseNode.GetChildNode("recorded") is { } nullNodeRecorded && nullNodeRecorded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recorded = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The aggregated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregated? Aggregated { get => _explicitNullValueAggregated; set { _explicitNullValueAggregated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregated"); else _explicitNullProperties?.Remove("aggregated"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregated? Aggregated { get => _explicitNullValueAggregated; set { _explicitNullValueAggregated = value; AdditionalData?.Remove("aggregated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregated"); else _explicitNullProperties?.Remove("aggregated"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregated? _explicitNullValueAggregated = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregated Aggregated { get => _explicitNullValueAggregated; set { _explicitNullValueAggregated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregated"); else _explicitNullProperties?.Remove("aggregated"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregated Aggregated { get => _explicitNullValueAggregated; set { _explicitNullValueAggregated = value; AdditionalData?.Remove("aggregated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregated"); else _explicitNullProperties?.Remove("aggregated"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemAggregated _explicitNullValueAggregated = default!;
 #endif
         /// <summary>The datacenter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemDatacenter? Datacenter { get => _explicitNullValueDatacenter; set { _explicitNullValueDatacenter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datacenter"); else _explicitNullProperties?.Remove("datacenter"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemDatacenter? Datacenter { get => _explicitNullValueDatacenter; set { _explicitNullValueDatacenter = value; AdditionalData?.Remove("datacenter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datacenter"); else _explicitNullProperties?.Remove("datacenter"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemDatacenter? _explicitNullValueDatacenter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemDatacenter Datacenter { get => _explicitNullValueDatacenter; set { _explicitNullValueDatacenter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datacenter"); else _explicitNullProperties?.Remove("datacenter"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemDatacenter Datacenter { get => _explicitNullValueDatacenter; set { _explicitNullValueDatacenter = value; AdditionalData?.Remove("datacenter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datacenter"); else _explicitNullProperties?.Remove("datacenter"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItemDatacenter _explicitNullValueDatacenter = default!;
 #endif
         /// <summary>The recorded property</summary>
-        public long? Recorded { get => _explicitNullValueRecorded; set { _explicitNullValueRecorded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recorded"); else _explicitNullProperties?.Remove("recorded"); } }
+        public long? Recorded { get => _explicitNullValueRecorded; set { _explicitNullValueRecorded = value; AdditionalData?.Remove("recorded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recorded"); else _explicitNullProperties?.Remove("recorded"); } }
         private long? _explicitNullValueRecorded = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200ResponseDataItem"/> and sets the default values.

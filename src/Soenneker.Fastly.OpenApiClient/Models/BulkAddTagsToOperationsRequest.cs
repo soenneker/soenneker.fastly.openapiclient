@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("operation_ids") is { } nullNodeOperationIds && nullNodeOperationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationIds = null;
-            if (parseNode.GetChildNode("tag_ids") is { } nullNodeTagIds && nullNodeTagIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagIds = null;
+            if (parseNode.GetChildNode("operation_ids") is null) { _explicitNullValueOperationIds = default!; _explicitNullProperties?.Remove("operation_ids"); }
+            else if (parseNode.GetChildNode("operation_ids") is { } nullNodeOperationIds && nullNodeOperationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationIds = null;
+            if (parseNode.GetChildNode("tag_ids") is null) { _explicitNullValueTagIds = default!; _explicitNullProperties?.Remove("tag_ids"); }
+            else if (parseNode.GetChildNode("tag_ids") is { } nullNodeTagIds && nullNodeTagIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The operation_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OperationIds { get => _explicitNullValueOperationIds; set { _explicitNullValueOperationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_ids"); else _explicitNullProperties?.Remove("operation_ids"); } }
+        public List<string>? OperationIds { get => _explicitNullValueOperationIds; set { _explicitNullValueOperationIds = value; AdditionalData?.Remove("operation_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_ids"); else _explicitNullProperties?.Remove("operation_ids"); } }
         private List<string>? _explicitNullValueOperationIds = default!;
 #nullable restore
 #else
-        public List<string> OperationIds { get => _explicitNullValueOperationIds; set { _explicitNullValueOperationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_ids"); else _explicitNullProperties?.Remove("operation_ids"); } }
+        public List<string> OperationIds { get => _explicitNullValueOperationIds; set { _explicitNullValueOperationIds = value; AdditionalData?.Remove("operation_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_ids"); else _explicitNullProperties?.Remove("operation_ids"); } }
         private List<string> _explicitNullValueOperationIds = default!;
 #endif
         /// <summary>The tag_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TagIds { get => _explicitNullValueTagIds; set { _explicitNullValueTagIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_ids"); else _explicitNullProperties?.Remove("tag_ids"); } }
+        public List<string>? TagIds { get => _explicitNullValueTagIds; set { _explicitNullValueTagIds = value; AdditionalData?.Remove("tag_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_ids"); else _explicitNullProperties?.Remove("tag_ids"); } }
         private List<string>? _explicitNullValueTagIds = default!;
 #nullable restore
 #else
-        public List<string> TagIds { get => _explicitNullValueTagIds; set { _explicitNullValueTagIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_ids"); else _explicitNullProperties?.Remove("tag_ids"); } }
+        public List<string> TagIds { get => _explicitNullValueTagIds; set { _explicitNullValueTagIds = value; AdditionalData?.Remove("tag_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_ids"); else _explicitNullProperties?.Remove("tag_ids"); } }
         private List<string> _explicitNullValueTagIds = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_certificate") is { } nullNodeDefaultCertificate && nullNodeDefaultCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultCertificate = null;
-            if (parseNode.GetChildNode("default_ecdsa_certificate") is { } nullNodeDefaultEcdsaCertificate && nullNodeDefaultEcdsaCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultEcdsaCertificate = null;
-            if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
+            if (parseNode.GetChildNode("default_certificate") is null) { _explicitNullValueDefaultCertificate = default!; _explicitNullProperties?.Remove("default_certificate"); }
+            else if (parseNode.GetChildNode("default_certificate") is { } nullNodeDefaultCertificate && nullNodeDefaultCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultCertificate = null;
+            if (parseNode.GetChildNode("default_ecdsa_certificate") is null) { _explicitNullValueDefaultEcdsaCertificate = default!; _explicitNullProperties?.Remove("default_ecdsa_certificate"); }
+            else if (parseNode.GetChildNode("default_ecdsa_certificate") is { } nullNodeDefaultEcdsaCertificate && nullNodeDefaultEcdsaCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultEcdsaCertificate = null;
+            if (parseNode.GetChildNode("service") is null) { _explicitNullValueService = default!; _explicitNullProperties?.Remove("service"); }
+            else if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The default_certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultCertificate? DefaultCertificate { get => _explicitNullValueDefaultCertificate; set { _explicitNullValueDefaultCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_certificate"); else _explicitNullProperties?.Remove("default_certificate"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultCertificate? DefaultCertificate { get => _explicitNullValueDefaultCertificate; set { _explicitNullValueDefaultCertificate = value; AdditionalData?.Remove("default_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_certificate"); else _explicitNullProperties?.Remove("default_certificate"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultCertificate? _explicitNullValueDefaultCertificate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultCertificate DefaultCertificate { get => _explicitNullValueDefaultCertificate; set { _explicitNullValueDefaultCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_certificate"); else _explicitNullProperties?.Remove("default_certificate"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultCertificate DefaultCertificate { get => _explicitNullValueDefaultCertificate; set { _explicitNullValueDefaultCertificate = value; AdditionalData?.Remove("default_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_certificate"); else _explicitNullProperties?.Remove("default_certificate"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultCertificate _explicitNullValueDefaultCertificate = default!;
 #endif
         /// <summary>The default_ecdsa_certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultEcdsaCertificate? DefaultEcdsaCertificate { get => _explicitNullValueDefaultEcdsaCertificate; set { _explicitNullValueDefaultEcdsaCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_ecdsa_certificate"); else _explicitNullProperties?.Remove("default_ecdsa_certificate"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultEcdsaCertificate? DefaultEcdsaCertificate { get => _explicitNullValueDefaultEcdsaCertificate; set { _explicitNullValueDefaultEcdsaCertificate = value; AdditionalData?.Remove("default_ecdsa_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_ecdsa_certificate"); else _explicitNullProperties?.Remove("default_ecdsa_certificate"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultEcdsaCertificate? _explicitNullValueDefaultEcdsaCertificate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultEcdsaCertificate DefaultEcdsaCertificate { get => _explicitNullValueDefaultEcdsaCertificate; set { _explicitNullValueDefaultEcdsaCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_ecdsa_certificate"); else _explicitNullProperties?.Remove("default_ecdsa_certificate"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultEcdsaCertificate DefaultEcdsaCertificate { get => _explicitNullValueDefaultEcdsaCertificate; set { _explicitNullValueDefaultEcdsaCertificate = value; AdditionalData?.Remove("default_ecdsa_certificate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_ecdsa_certificate"); else _explicitNullProperties?.Remove("default_ecdsa_certificate"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsDefaultEcdsaCertificate _explicitNullValueDefaultEcdsaCertificate = default!;
 #endif
         /// <summary>The service property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsService? _explicitNullValueService = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsService Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsService Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsConfiguration200ResponseDataRelationshipsService _explicitNullValueService = default!;
 #endif
         /// <summary>

@@ -17,25 +17,29 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("immediate") is { } nullNodeImmediate && nullNodeImmediate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Immediate = null;
-            if (parseNode.GetChildNode("one_hour") is { } nullNodeOneHour && nullNodeOneHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneHour = null;
-            if (parseNode.GetChildNode("one_minute") is { } nullNodeOneMinute && nullNodeOneMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneMinute = null;
-            if (parseNode.GetChildNode("ten_minutes") is { } nullNodeTenMinutes && nullNodeTenMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenMinutes = null;
+            if (parseNode.GetChildNode("immediate") is null) { _explicitNullValueImmediate = default!; _explicitNullProperties?.Remove("immediate"); }
+            else if (parseNode.GetChildNode("immediate") is { } nullNodeImmediate && nullNodeImmediate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Immediate = null;
+            if (parseNode.GetChildNode("one_hour") is null) { _explicitNullValueOneHour = default!; _explicitNullProperties?.Remove("one_hour"); }
+            else if (parseNode.GetChildNode("one_hour") is { } nullNodeOneHour && nullNodeOneHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneHour = null;
+            if (parseNode.GetChildNode("one_minute") is null) { _explicitNullValueOneMinute = default!; _explicitNullProperties?.Remove("one_minute"); }
+            else if (parseNode.GetChildNode("one_minute") is { } nullNodeOneMinute && nullNodeOneMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneMinute = null;
+            if (parseNode.GetChildNode("ten_minutes") is null) { _explicitNullValueTenMinutes = default!; _explicitNullProperties?.Remove("ten_minutes"); }
+            else if (parseNode.GetChildNode("ten_minutes") is { } nullNodeTenMinutes && nullNodeTenMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenMinutes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The immediate property</summary>
-        public bool? Immediate { get => _explicitNullValueImmediate; set { _explicitNullValueImmediate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("immediate"); else _explicitNullProperties?.Remove("immediate"); } }
+        public bool? Immediate { get => _explicitNullValueImmediate; set { _explicitNullValueImmediate = value; AdditionalData?.Remove("immediate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("immediate"); else _explicitNullProperties?.Remove("immediate"); } }
         private bool? _explicitNullValueImmediate = default!;
         /// <summary>The one_hour property</summary>
-        public long? OneHour { get => _explicitNullValueOneHour; set { _explicitNullValueOneHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("one_hour"); else _explicitNullProperties?.Remove("one_hour"); } }
+        public long? OneHour { get => _explicitNullValueOneHour; set { _explicitNullValueOneHour = value; AdditionalData?.Remove("one_hour"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("one_hour"); else _explicitNullProperties?.Remove("one_hour"); } }
         private long? _explicitNullValueOneHour = default!;
         /// <summary>The one_minute property</summary>
-        public long? OneMinute { get => _explicitNullValueOneMinute; set { _explicitNullValueOneMinute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("one_minute"); else _explicitNullProperties?.Remove("one_minute"); } }
+        public long? OneMinute { get => _explicitNullValueOneMinute; set { _explicitNullValueOneMinute = value; AdditionalData?.Remove("one_minute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("one_minute"); else _explicitNullProperties?.Remove("one_minute"); } }
         private long? _explicitNullValueOneMinute = default!;
         /// <summary>The ten_minutes property</summary>
-        public long? TenMinutes { get => _explicitNullValueTenMinutes; set { _explicitNullValueTenMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ten_minutes"); else _explicitNullProperties?.Remove("ten_minutes"); } }
+        public long? TenMinutes { get => _explicitNullValueTenMinutes; set { _explicitNullValueTenMinutes = value; AdditionalData?.Remove("ten_minutes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ten_minutes"); else _explicitNullProperties?.Remove("ten_minutes"); } }
         private long? _explicitNullValueTenMinutes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAWorkspace200ResponseAttackSignalThresholds"/> and sets the default values.

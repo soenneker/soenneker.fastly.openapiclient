@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("last") is { } nullNodeLast && nullNodeLast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last = null;
+            if (parseNode.GetChildNode("last") is null) { _explicitNullValueLast = default!; _explicitNullProperties?.Remove("last"); }
+            else if (parseNode.GetChildNode("last") is { } nullNodeLast && nullNodeLast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The last property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
+        public string? Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; AdditionalData?.Remove("last"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
         private string? _explicitNullValueLast = default!;
 #nullable restore
 #else
-        public string Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
+        public string Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; AdditionalData?.Remove("last"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
         private string _explicitNullValueLast = default!;
 #endif
         /// <summary>

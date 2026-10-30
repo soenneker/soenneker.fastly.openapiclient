@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
-            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+            if (parseNode.GetChildNode("dimensions") is null) { _explicitNullValueDimensions = default!; _explicitNullProperties?.Remove("dimensions"); }
+            else if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("values") is null) { _explicitNullValueValues = default!; _explicitNullProperties?.Remove("values"); }
+            else if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The dimensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemDimensions? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemDimensions? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemDimensions? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemDimensions Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemDimensions Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemDimensions _explicitNullValueDimensions = default!;
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemValuesItem>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemValuesItem>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemValuesItem>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemValuesItem> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemValuesItem> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200ResponseDataItemValuesItem> _explicitNullValueValues = default!;
 #endif
         /// <summary>

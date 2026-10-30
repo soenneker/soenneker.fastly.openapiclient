@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Domains
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Tls.Domains.DomainsRequestBuilder.DomainsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/tls/domains", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

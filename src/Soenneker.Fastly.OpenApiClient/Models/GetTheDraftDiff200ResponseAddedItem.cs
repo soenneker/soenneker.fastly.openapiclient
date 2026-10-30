@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
-            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("path") is null) { _explicitNullValuePath = default!; _explicitNullProperties?.Remove("path"); }
+            else if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("rules") is null) { _explicitNullValueRules = default!; _explicitNullProperties?.Remove("rules"); }
+            else if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemPath? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemPath? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemPath? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemPath Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemPath Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemPath _explicitNullValuePath = default!;
 #endif
         /// <summary>The rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItem>? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItemRulesItem> _explicitNullValueRules = default!;
 #endif
         /// <summary>

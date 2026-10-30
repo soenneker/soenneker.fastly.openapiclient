@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attrs") is { } nullNodeAttrs && nullNodeAttrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attrs = null;
-            if (parseNode.GetChildNode("request") is { } nullNodeRequest && nullNodeRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Request = null;
-            if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("attrs") is null) { _explicitNullValueAttrs = default!; _explicitNullProperties?.Remove("attrs"); }
+            else if (parseNode.GetChildNode("attrs") is { } nullNodeAttrs && nullNodeAttrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attrs = null;
+            if (parseNode.GetChildNode("request") is null) { _explicitNullValueRequest = default!; _explicitNullProperties?.Remove("request"); }
+            else if (parseNode.GetChildNode("request") is { } nullNodeRequest && nullNodeRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Request = null;
+            if (parseNode.GetChildNode("response") is null) { _explicitNullValueResponse = default!; _explicitNullProperties?.Remove("response"); }
+            else if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The attrs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs? Attrs { get => _explicitNullValueAttrs; set { _explicitNullValueAttrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attrs"); else _explicitNullProperties?.Remove("attrs"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs? Attrs { get => _explicitNullValueAttrs; set { _explicitNullValueAttrs = value; AdditionalData?.Remove("attrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attrs"); else _explicitNullProperties?.Remove("attrs"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs? _explicitNullValueAttrs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs Attrs { get => _explicitNullValueAttrs; set { _explicitNullValueAttrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attrs"); else _explicitNullProperties?.Remove("attrs"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs Attrs { get => _explicitNullValueAttrs; set { _explicitNullValueAttrs = value; AdditionalData?.Remove("attrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attrs"); else _explicitNullProperties?.Remove("attrs"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs _explicitNullValueAttrs = default!;
 #endif
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        public string? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
         private string? _explicitNullValueRequest = default!;
 #nullable restore
 #else
-        public string Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        public string Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
         private string _explicitNullValueRequest = default!;
 #endif
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        public string? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
         private string? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public string Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        public string Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
         private string _explicitNullValueResponse = default!;
 #endif
         /// <summary>

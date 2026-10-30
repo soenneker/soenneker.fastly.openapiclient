@@ -17,17 +17,19 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("avg[response_time]") is { } nullNodeAvgResponseTime && nullNodeAvgResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgResponseTime = null;
-            if (parseNode.GetChildNode("p99[response_time]") is { } nullNodeP99ResponseTime && nullNodeP99ResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P99ResponseTime = null;
+            if (parseNode.GetChildNode("avg[response_time]") is null) { _explicitNullValueAvgResponseTime = default!; _explicitNullProperties?.Remove("avg[response_time]"); }
+            else if (parseNode.GetChildNode("avg[response_time]") is { } nullNodeAvgResponseTime && nullNodeAvgResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgResponseTime = null;
+            if (parseNode.GetChildNode("p99[response_time]") is null) { _explicitNullValueP99ResponseTime = default!; _explicitNullProperties?.Remove("p99[response_time]"); }
+            else if (parseNode.GetChildNode("p99[response_time]") is { } nullNodeP99ResponseTime && nullNodeP99ResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P99ResponseTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The avgResponse_time property</summary>
-        public double? AvgResponseTime { get => _explicitNullValueAvgResponseTime; set { _explicitNullValueAvgResponseTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg[response_time]"); else _explicitNullProperties?.Remove("avg[response_time]"); } }
+        public double? AvgResponseTime { get => _explicitNullValueAvgResponseTime; set { _explicitNullValueAvgResponseTime = value; AdditionalData?.Remove("avg[response_time]"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg[response_time]"); else _explicitNullProperties?.Remove("avg[response_time]"); } }
         private double? _explicitNullValueAvgResponseTime = default!;
         /// <summary>The p99Response_time property</summary>
-        public double? P99ResponseTime { get => _explicitNullValueP99ResponseTime; set { _explicitNullValueP99ResponseTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p99[response_time]"); else _explicitNullProperties?.Remove("p99[response_time]"); } }
+        public double? P99ResponseTime { get => _explicitNullValueP99ResponseTime; set { _explicitNullValueP99ResponseTime = value; AdditionalData?.Remove("p99[response_time]"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p99[response_time]"); else _explicitNullProperties?.Remove("p99[response_time]"); } }
         private double? _explicitNullValueP99ResponseTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemValues"/> and sets the default values.

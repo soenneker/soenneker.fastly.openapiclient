@@ -17,13 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("request_percentage") is { } nullNodeRequestPercentage && nullNodeRequestPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestPercentage = null;
+            if (parseNode.GetChildNode("request_percentage") is null) { _explicitNullValueRequestPercentage = default!; _explicitNullProperties?.Remove("request_percentage"); }
+            else if (parseNode.GetChildNode("request_percentage") is { } nullNodeRequestPercentage && nullNodeRequestPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestPercentage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The request_percentage property</summary>
-        public double? RequestPercentage { get => _explicitNullValueRequestPercentage; set { _explicitNullValueRequestPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_percentage"); else _explicitNullProperties?.Remove("request_percentage"); } }
+        public double? RequestPercentage { get => _explicitNullValueRequestPercentage; set { _explicitNullValueRequestPercentage = value; AdditionalData?.Remove("request_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_percentage"); else _explicitNullProperties?.Remove("request_percentage"); } }
         private double? _explicitNullValueRequestPercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveLogInsights200ResponseDataItemValuesItem"/> and sets the default values.

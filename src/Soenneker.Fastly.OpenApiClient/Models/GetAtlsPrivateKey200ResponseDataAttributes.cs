@@ -17,12 +17,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("key_length") is { } nullNodeKeyLength && nullNodeKeyLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyLength = null;
-            if (parseNode.GetChildNode("key_type") is { } nullNodeKeyType && nullNodeKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyType = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("public_key_sha1") is { } nullNodePublicKeySha1 && nullNodePublicKeySha1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeySha1 = null;
-            if (parseNode.GetChildNode("replace") is { } nullNodeReplace && nullNodeReplace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replace = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("key_length") is null) { _explicitNullValueKeyLength = default!; _explicitNullProperties?.Remove("key_length"); }
+            else if (parseNode.GetChildNode("key_length") is { } nullNodeKeyLength && nullNodeKeyLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyLength = null;
+            if (parseNode.GetChildNode("key_type") is null) { _explicitNullValueKeyType = default!; _explicitNullProperties?.Remove("key_type"); }
+            else if (parseNode.GetChildNode("key_type") is { } nullNodeKeyType && nullNodeKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyType = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("public_key_sha1") is null) { _explicitNullValuePublicKeySha1 = default!; _explicitNullProperties?.Remove("public_key_sha1"); }
+            else if (parseNode.GetChildNode("public_key_sha1") is { } nullNodePublicKeySha1 && nullNodePublicKeySha1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeySha1 = null;
+            if (parseNode.GetChildNode("replace") is null) { _explicitNullValueReplace = default!; _explicitNullProperties?.Remove("replace"); }
+            else if (parseNode.GetChildNode("replace") is { } nullNodeReplace && nullNodeReplace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replace = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,48 +36,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The key_length property</summary>
-        public long? KeyLength { get => _explicitNullValueKeyLength; set { _explicitNullValueKeyLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_length"); else _explicitNullProperties?.Remove("key_length"); } }
+        public long? KeyLength { get => _explicitNullValueKeyLength; set { _explicitNullValueKeyLength = value; AdditionalData?.Remove("key_length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_length"); else _explicitNullProperties?.Remove("key_length"); } }
         private long? _explicitNullValueKeyLength = default!;
         /// <summary>The key_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
+        public string? KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; AdditionalData?.Remove("key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
         private string? _explicitNullValueKeyType = default!;
 #nullable restore
 #else
-        public string KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
+        public string KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; AdditionalData?.Remove("key_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
         private string _explicitNullValueKeyType = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The public_key_sha1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeySha1 { get => _explicitNullValuePublicKeySha1; set { _explicitNullValuePublicKeySha1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_sha1"); else _explicitNullProperties?.Remove("public_key_sha1"); } }
+        public string? PublicKeySha1 { get => _explicitNullValuePublicKeySha1; set { _explicitNullValuePublicKeySha1 = value; AdditionalData?.Remove("public_key_sha1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_sha1"); else _explicitNullProperties?.Remove("public_key_sha1"); } }
         private string? _explicitNullValuePublicKeySha1 = default!;
 #nullable restore
 #else
-        public string PublicKeySha1 { get => _explicitNullValuePublicKeySha1; set { _explicitNullValuePublicKeySha1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_sha1"); else _explicitNullProperties?.Remove("public_key_sha1"); } }
+        public string PublicKeySha1 { get => _explicitNullValuePublicKeySha1; set { _explicitNullValuePublicKeySha1 = value; AdditionalData?.Remove("public_key_sha1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_sha1"); else _explicitNullProperties?.Remove("public_key_sha1"); } }
         private string _explicitNullValuePublicKeySha1 = default!;
 #endif
         /// <summary>The replace property</summary>
-        public bool? Replace { get => _explicitNullValueReplace; set { _explicitNullValueReplace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace"); else _explicitNullProperties?.Remove("replace"); } }
+        public bool? Replace { get => _explicitNullValueReplace; set { _explicitNullValueReplace = value; AdditionalData?.Remove("replace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace"); else _explicitNullProperties?.Remove("replace"); } }
         private bool? _explicitNullValueReplace = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsPrivateKey200ResponseDataAttributes"/> and sets the default values.

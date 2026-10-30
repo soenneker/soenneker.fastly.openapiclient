@@ -17,17 +17,19 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_video") is { } nullNodeAllowVideo && nullNodeAllowVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowVideo = null;
-            if (parseNode.GetChildNode("jpeg_quality") is { } nullNodeJpegQuality && nullNodeJpegQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegQuality = null;
+            if (parseNode.GetChildNode("allow_video") is null) { _explicitNullValueAllowVideo = default!; _explicitNullProperties?.Remove("allow_video"); }
+            else if (parseNode.GetChildNode("allow_video") is { } nullNodeAllowVideo && nullNodeAllowVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowVideo = null;
+            if (parseNode.GetChildNode("jpeg_quality") is null) { _explicitNullValueJpegQuality = default!; _explicitNullProperties?.Remove("jpeg_quality"); }
+            else if (parseNode.GetChildNode("jpeg_quality") is { } nullNodeJpegQuality && nullNodeJpegQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegQuality = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow_video property</summary>
-        public bool? AllowVideo { get => _explicitNullValueAllowVideo; set { _explicitNullValueAllowVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_video"); else _explicitNullProperties?.Remove("allow_video"); } }
+        public bool? AllowVideo { get => _explicitNullValueAllowVideo; set { _explicitNullValueAllowVideo = value; AdditionalData?.Remove("allow_video"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_video"); else _explicitNullProperties?.Remove("allow_video"); } }
         private bool? _explicitNullValueAllowVideo = default!;
         /// <summary>The jpeg_quality property</summary>
-        public long? JpegQuality { get => _explicitNullValueJpegQuality; set { _explicitNullValueJpegQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_quality"); else _explicitNullProperties?.Remove("jpeg_quality"); } }
+        public long? JpegQuality { get => _explicitNullValueJpegQuality; set { _explicitNullValueJpegQuality = value; AdditionalData?.Remove("jpeg_quality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_quality"); else _explicitNullProperties?.Remove("jpeg_quality"); } }
         private long? _explicitNullValueJpegQuality = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettingsRequest"/> and sets the default values.

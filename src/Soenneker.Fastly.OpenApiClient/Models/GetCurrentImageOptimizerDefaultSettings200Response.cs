@@ -17,51 +17,58 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_video") is { } nullNodeAllowVideo && nullNodeAllowVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowVideo = null;
-            if (parseNode.GetChildNode("jpeg_quality") is { } nullNodeJpegQuality && nullNodeJpegQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegQuality = null;
-            if (parseNode.GetChildNode("jpeg_type") is { } nullNodeJpegType && nullNodeJpegType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegType = null;
-            if (parseNode.GetChildNode("resize_filter") is { } nullNodeResizeFilter && nullNodeResizeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResizeFilter = null;
-            if (parseNode.GetChildNode("upscale") is { } nullNodeUpscale && nullNodeUpscale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upscale = null;
-            if (parseNode.GetChildNode("webp") is { } nullNodeWebp && nullNodeWebp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webp = null;
-            if (parseNode.GetChildNode("webp_quality") is { } nullNodeWebpQuality && nullNodeWebpQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebpQuality = null;
+            if (parseNode.GetChildNode("allow_video") is null) { _explicitNullValueAllowVideo = default!; _explicitNullProperties?.Remove("allow_video"); }
+            else if (parseNode.GetChildNode("allow_video") is { } nullNodeAllowVideo && nullNodeAllowVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowVideo = null;
+            if (parseNode.GetChildNode("jpeg_quality") is null) { _explicitNullValueJpegQuality = default!; _explicitNullProperties?.Remove("jpeg_quality"); }
+            else if (parseNode.GetChildNode("jpeg_quality") is { } nullNodeJpegQuality && nullNodeJpegQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegQuality = null;
+            if (parseNode.GetChildNode("jpeg_type") is null) { _explicitNullValueJpegType = default!; _explicitNullProperties?.Remove("jpeg_type"); }
+            else if (parseNode.GetChildNode("jpeg_type") is { } nullNodeJpegType && nullNodeJpegType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegType = null;
+            if (parseNode.GetChildNode("resize_filter") is null) { _explicitNullValueResizeFilter = default!; _explicitNullProperties?.Remove("resize_filter"); }
+            else if (parseNode.GetChildNode("resize_filter") is { } nullNodeResizeFilter && nullNodeResizeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResizeFilter = null;
+            if (parseNode.GetChildNode("upscale") is null) { _explicitNullValueUpscale = default!; _explicitNullProperties?.Remove("upscale"); }
+            else if (parseNode.GetChildNode("upscale") is { } nullNodeUpscale && nullNodeUpscale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upscale = null;
+            if (parseNode.GetChildNode("webp") is null) { _explicitNullValueWebp = default!; _explicitNullProperties?.Remove("webp"); }
+            else if (parseNode.GetChildNode("webp") is { } nullNodeWebp && nullNodeWebp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webp = null;
+            if (parseNode.GetChildNode("webp_quality") is null) { _explicitNullValueWebpQuality = default!; _explicitNullProperties?.Remove("webp_quality"); }
+            else if (parseNode.GetChildNode("webp_quality") is { } nullNodeWebpQuality && nullNodeWebpQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebpQuality = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow_video property</summary>
-        public bool? AllowVideo { get => _explicitNullValueAllowVideo; set { _explicitNullValueAllowVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_video"); else _explicitNullProperties?.Remove("allow_video"); } }
+        public bool? AllowVideo { get => _explicitNullValueAllowVideo; set { _explicitNullValueAllowVideo = value; AdditionalData?.Remove("allow_video"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_video"); else _explicitNullProperties?.Remove("allow_video"); } }
         private bool? _explicitNullValueAllowVideo = default!;
         /// <summary>The jpeg_quality property</summary>
-        public long? JpegQuality { get => _explicitNullValueJpegQuality; set { _explicitNullValueJpegQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_quality"); else _explicitNullProperties?.Remove("jpeg_quality"); } }
+        public long? JpegQuality { get => _explicitNullValueJpegQuality; set { _explicitNullValueJpegQuality = value; AdditionalData?.Remove("jpeg_quality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_quality"); else _explicitNullProperties?.Remove("jpeg_quality"); } }
         private long? _explicitNullValueJpegQuality = default!;
         /// <summary>The jpeg_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JpegType { get => _explicitNullValueJpegType; set { _explicitNullValueJpegType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_type"); else _explicitNullProperties?.Remove("jpeg_type"); } }
+        public string? JpegType { get => _explicitNullValueJpegType; set { _explicitNullValueJpegType = value; AdditionalData?.Remove("jpeg_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_type"); else _explicitNullProperties?.Remove("jpeg_type"); } }
         private string? _explicitNullValueJpegType = default!;
 #nullable restore
 #else
-        public string JpegType { get => _explicitNullValueJpegType; set { _explicitNullValueJpegType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_type"); else _explicitNullProperties?.Remove("jpeg_type"); } }
+        public string JpegType { get => _explicitNullValueJpegType; set { _explicitNullValueJpegType = value; AdditionalData?.Remove("jpeg_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_type"); else _explicitNullProperties?.Remove("jpeg_type"); } }
         private string _explicitNullValueJpegType = default!;
 #endif
         /// <summary>The resize_filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResizeFilter { get => _explicitNullValueResizeFilter; set { _explicitNullValueResizeFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resize_filter"); else _explicitNullProperties?.Remove("resize_filter"); } }
+        public string? ResizeFilter { get => _explicitNullValueResizeFilter; set { _explicitNullValueResizeFilter = value; AdditionalData?.Remove("resize_filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resize_filter"); else _explicitNullProperties?.Remove("resize_filter"); } }
         private string? _explicitNullValueResizeFilter = default!;
 #nullable restore
 #else
-        public string ResizeFilter { get => _explicitNullValueResizeFilter; set { _explicitNullValueResizeFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resize_filter"); else _explicitNullProperties?.Remove("resize_filter"); } }
+        public string ResizeFilter { get => _explicitNullValueResizeFilter; set { _explicitNullValueResizeFilter = value; AdditionalData?.Remove("resize_filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resize_filter"); else _explicitNullProperties?.Remove("resize_filter"); } }
         private string _explicitNullValueResizeFilter = default!;
 #endif
         /// <summary>The upscale property</summary>
-        public bool? Upscale { get => _explicitNullValueUpscale; set { _explicitNullValueUpscale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upscale"); else _explicitNullProperties?.Remove("upscale"); } }
+        public bool? Upscale { get => _explicitNullValueUpscale; set { _explicitNullValueUpscale = value; AdditionalData?.Remove("upscale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upscale"); else _explicitNullProperties?.Remove("upscale"); } }
         private bool? _explicitNullValueUpscale = default!;
         /// <summary>The webp property</summary>
-        public bool? Webp { get => _explicitNullValueWebp; set { _explicitNullValueWebp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp"); else _explicitNullProperties?.Remove("webp"); } }
+        public bool? Webp { get => _explicitNullValueWebp; set { _explicitNullValueWebp = value; AdditionalData?.Remove("webp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp"); else _explicitNullProperties?.Remove("webp"); } }
         private bool? _explicitNullValueWebp = default!;
         /// <summary>The webp_quality property</summary>
-        public long? WebpQuality { get => _explicitNullValueWebpQuality; set { _explicitNullValueWebpQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp_quality"); else _explicitNullProperties?.Remove("webp_quality"); } }
+        public long? WebpQuality { get => _explicitNullValueWebpQuality; set { _explicitNullValueWebpQuality = value; AdditionalData?.Remove("webp_quality"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp_quality"); else _explicitNullProperties?.Remove("webp_quality"); } }
         private long? _explicitNullValueWebpQuality = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetCurrentImageOptimizerDefaultSettings200Response"/> and sets the default values.

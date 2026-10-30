@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("datacenter") is { } nullNodeDatacenter && nullNodeDatacenter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datacenter = null;
-            if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("datacenter") is null) { _explicitNullValueDatacenter = default!; _explicitNullProperties?.Remove("datacenter"); }
+            else if (parseNode.GetChildNode("datacenter") is { } nullNodeDatacenter && nullNodeDatacenter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datacenter = null;
+            if (parseNode.GetChildNode("host") is null) { _explicitNullValueHost = default!; _explicitNullProperties?.Remove("host"); }
+            else if (parseNode.GetChildNode("host") is { } nullNodeHost && nullNodeHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Host = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The datacenter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Datacenter { get => _explicitNullValueDatacenter; set { _explicitNullValueDatacenter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datacenter"); else _explicitNullProperties?.Remove("datacenter"); } }
+        public string? Datacenter { get => _explicitNullValueDatacenter; set { _explicitNullValueDatacenter = value; AdditionalData?.Remove("datacenter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datacenter"); else _explicitNullProperties?.Remove("datacenter"); } }
         private string? _explicitNullValueDatacenter = default!;
 #nullable restore
 #else
-        public string Datacenter { get => _explicitNullValueDatacenter; set { _explicitNullValueDatacenter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datacenter"); else _explicitNullProperties?.Remove("datacenter"); } }
+        public string Datacenter { get => _explicitNullValueDatacenter; set { _explicitNullValueDatacenter = value; AdditionalData?.Remove("datacenter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datacenter"); else _explicitNullProperties?.Remove("datacenter"); } }
         private string _explicitNullValueDatacenter = default!;
 #endif
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string? Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string? _explicitNullValueHost = default!;
 #nullable restore
 #else
-        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
+        public string Host { get => _explicitNullValueHost; set { _explicitNullValueHost = value; AdditionalData?.Remove("host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host"); else _explicitNullProperties?.Remove("host"); } }
         private string _explicitNullValueHost = default!;
 #endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>

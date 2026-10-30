@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("calculation_method") is { } nullNodeCalculationMethod && nullNodeCalculationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalculationMethod = null;
-            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
-            if (parseNode.GetChildNode("plot_type") is { } nullNodePlotType && nullNodePlotType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlotType = null;
+            if (parseNode.GetChildNode("calculation_method") is null) { _explicitNullValueCalculationMethod = default!; _explicitNullProperties?.Remove("calculation_method"); }
+            else if (parseNode.GetChildNode("calculation_method") is { } nullNodeCalculationMethod && nullNodeCalculationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalculationMethod = null;
+            if (parseNode.GetChildNode("format") is null) { _explicitNullValueFormat = default!; _explicitNullProperties?.Remove("format"); }
+            else if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("plot_type") is null) { _explicitNullValuePlotType = default!; _explicitNullProperties?.Remove("plot_type"); }
+            else if (parseNode.GetChildNode("plot_type") is { } nullNodePlotType && nullNodePlotType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlotType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The calculation_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CalculationMethod { get => _explicitNullValueCalculationMethod; set { _explicitNullValueCalculationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculation_method"); else _explicitNullProperties?.Remove("calculation_method"); } }
+        public string? CalculationMethod { get => _explicitNullValueCalculationMethod; set { _explicitNullValueCalculationMethod = value; AdditionalData?.Remove("calculation_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculation_method"); else _explicitNullProperties?.Remove("calculation_method"); } }
         private string? _explicitNullValueCalculationMethod = default!;
 #nullable restore
 #else
-        public string CalculationMethod { get => _explicitNullValueCalculationMethod; set { _explicitNullValueCalculationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculation_method"); else _explicitNullProperties?.Remove("calculation_method"); } }
+        public string CalculationMethod { get => _explicitNullValueCalculationMethod; set { _explicitNullValueCalculationMethod = value; AdditionalData?.Remove("calculation_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculation_method"); else _explicitNullProperties?.Remove("calculation_method"); } }
         private string _explicitNullValueCalculationMethod = default!;
 #endif
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public string? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private string? _explicitNullValueFormat = default!;
 #nullable restore
 #else
-        public string Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public string Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private string _explicitNullValueFormat = default!;
 #endif
         /// <summary>The plot_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlotType { get => _explicitNullValuePlotType; set { _explicitNullValuePlotType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plot_type"); else _explicitNullProperties?.Remove("plot_type"); } }
+        public string? PlotType { get => _explicitNullValuePlotType; set { _explicitNullValuePlotType = value; AdditionalData?.Remove("plot_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plot_type"); else _explicitNullProperties?.Remove("plot_type"); } }
         private string? _explicitNullValuePlotType = default!;
 #nullable restore
 #else
-        public string PlotType { get => _explicitNullValuePlotType; set { _explicitNullValuePlotType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plot_type"); else _explicitNullProperties?.Remove("plot_type"); } }
+        public string PlotType { get => _explicitNullValuePlotType; set { _explicitNullValuePlotType = value; AdditionalData?.Remove("plot_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plot_type"); else _explicitNullProperties?.Remove("plot_type"); } }
         private string _explicitNullValuePlotType = default!;
 #endif
         /// <summary>

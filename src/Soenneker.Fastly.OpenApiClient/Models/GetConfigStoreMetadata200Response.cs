@@ -17,13 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("item_count") is { } nullNodeItemCount && nullNodeItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemCount = null;
+            if (parseNode.GetChildNode("item_count") is null) { _explicitNullValueItemCount = default!; _explicitNullProperties?.Remove("item_count"); }
+            else if (parseNode.GetChildNode("item_count") is { } nullNodeItemCount && nullNodeItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The item_count property</summary>
-        public long? ItemCount { get => _explicitNullValueItemCount; set { _explicitNullValueItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_count"); else _explicitNullProperties?.Remove("item_count"); } }
+        public long? ItemCount { get => _explicitNullValueItemCount; set { _explicitNullValueItemCount = value; AdditionalData?.Remove("item_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_count"); else _explicitNullProperties?.Remove("item_count"); } }
         private long? _explicitNullValueItemCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetConfigStoreMetadata200Response"/> and sets the default values.

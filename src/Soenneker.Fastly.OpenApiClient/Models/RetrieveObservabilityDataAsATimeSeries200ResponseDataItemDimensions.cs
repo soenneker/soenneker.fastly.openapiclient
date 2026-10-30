@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
-            if (parseNode.GetChildNode("time") is { } nullNodeTime && nullNodeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Time = null;
+            if (parseNode.GetChildNode("product") is null) { _explicitNullValueProduct = default!; _explicitNullProperties?.Remove("product"); }
+            else if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
+            if (parseNode.GetChildNode("time") is null) { _explicitNullValueTime = default!; _explicitNullProperties?.Remove("time"); }
+            else if (parseNode.GetChildNode("time") is { } nullNodeTime && nullNodeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Time = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The product property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        public string? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; AdditionalData?.Remove("product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
         private string? _explicitNullValueProduct = default!;
 #nullable restore
 #else
-        public string Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        public string Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; AdditionalData?.Remove("product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
         private string _explicitNullValueProduct = default!;
 #endif
         /// <summary>The time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        public string? Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; AdditionalData?.Remove("time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
         private string? _explicitNullValueTime = default!;
 #nullable restore
 #else
-        public string Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        public string Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; AdditionalData?.Remove("time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
         private string _explicitNullValueTime = default!;
 #endif
         /// <summary>

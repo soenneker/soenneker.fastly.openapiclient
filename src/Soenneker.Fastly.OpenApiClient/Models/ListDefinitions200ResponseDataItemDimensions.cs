@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
-            if (parseNode.GetChildNode("origins") is { } nullNodeOrigins && nullNodeOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origins = null;
-            if (parseNode.GetChildNode("services") is { } nullNodeServices && nullNodeServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Services = null;
+            if (parseNode.GetChildNode("domains") is null) { _explicitNullValueDomains = default!; _explicitNullProperties?.Remove("domains"); }
+            else if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("origins") is null) { _explicitNullValueOrigins = default!; _explicitNullProperties?.Remove("origins"); }
+            else if (parseNode.GetChildNode("origins") is { } nullNodeOrigins && nullNodeOrigins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origins = null;
+            if (parseNode.GetChildNode("services") is null) { _explicitNullValueServices = default!; _explicitNullProperties?.Remove("services"); }
+            else if (parseNode.GetChildNode("services") is { } nullNodeServices && nullNodeServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Services = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<string>? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<string>? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public List<string> Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private List<string> _explicitNullValueDomains = default!;
 #endif
         /// <summary>The origins property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Origins { get => _explicitNullValueOrigins; set { _explicitNullValueOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origins"); else _explicitNullProperties?.Remove("origins"); } }
+        public List<string>? Origins { get => _explicitNullValueOrigins; set { _explicitNullValueOrigins = value; AdditionalData?.Remove("origins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origins"); else _explicitNullProperties?.Remove("origins"); } }
         private List<string>? _explicitNullValueOrigins = default!;
 #nullable restore
 #else
-        public List<string> Origins { get => _explicitNullValueOrigins; set { _explicitNullValueOrigins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origins"); else _explicitNullProperties?.Remove("origins"); } }
+        public List<string> Origins { get => _explicitNullValueOrigins; set { _explicitNullValueOrigins = value; AdditionalData?.Remove("origins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origins"); else _explicitNullProperties?.Remove("origins"); } }
         private List<string> _explicitNullValueOrigins = default!;
 #endif
         /// <summary>The services property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
+        public List<string>? Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; AdditionalData?.Remove("services"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
         private List<string>? _explicitNullValueServices = default!;
 #nullable restore
 #else
-        public List<string> Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
+        public List<string> Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; AdditionalData?.Remove("services"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
         private List<string> _explicitNullValueServices = default!;
 #endif
         /// <summary>

@@ -17,13 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("is_expired") is { } nullNodeIsExpired && nullNodeIsExpired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsExpired = null;
+            if (parseNode.GetChildNode("is_expired") is null) { _explicitNullValueIsExpired = default!; _explicitNullProperties?.Remove("is_expired"); }
+            else if (parseNode.GetChildNode("is_expired") is { } nullNodeIsExpired && nullNodeIsExpired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsExpired = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The is_expired property</summary>
-        public bool? IsExpired { get => _explicitNullValueIsExpired; set { _explicitNullValueIsExpired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_expired"); else _explicitNullProperties?.Remove("is_expired"); } }
+        public bool? IsExpired { get => _explicitNullValueIsExpired; set { _explicitNullValueIsExpired = value; AdditionalData?.Remove("is_expired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_expired"); else _explicitNullProperties?.Remove("is_expired"); } }
         private bool? _explicitNullValueIsExpired = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ExpireEventRequest"/> and sets the default values.

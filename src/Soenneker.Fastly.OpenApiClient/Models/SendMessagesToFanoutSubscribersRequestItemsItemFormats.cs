@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ws-message") is { } nullNodeWsMessage && nullNodeWsMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WsMessage = null;
+            if (parseNode.GetChildNode("ws-message") is null) { _explicitNullValueWsMessage = default!; _explicitNullProperties?.Remove("ws-message"); }
+            else if (parseNode.GetChildNode("ws-message") is { } nullNodeWsMessage && nullNodeWsMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WsMessage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The wsMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.SendMessagesToFanoutSubscribersRequestItemsItemFormatsWsMessage? WsMessage { get => _explicitNullValueWsMessage; set { _explicitNullValueWsMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ws-message"); else _explicitNullProperties?.Remove("ws-message"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.SendMessagesToFanoutSubscribersRequestItemsItemFormatsWsMessage? WsMessage { get => _explicitNullValueWsMessage; set { _explicitNullValueWsMessage = value; AdditionalData?.Remove("ws-message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ws-message"); else _explicitNullProperties?.Remove("ws-message"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.SendMessagesToFanoutSubscribersRequestItemsItemFormatsWsMessage? _explicitNullValueWsMessage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.SendMessagesToFanoutSubscribersRequestItemsItemFormatsWsMessage WsMessage { get => _explicitNullValueWsMessage; set { _explicitNullValueWsMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ws-message"); else _explicitNullProperties?.Remove("ws-message"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.SendMessagesToFanoutSubscribersRequestItemsItemFormatsWsMessage WsMessage { get => _explicitNullValueWsMessage; set { _explicitNullValueWsMessage = value; AdditionalData?.Remove("ws-message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ws-message"); else _explicitNullProperties?.Remove("ws-message"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.SendMessagesToFanoutSubscribersRequestItemsItemFormatsWsMessage _explicitNullValueWsMessage = default!;
 #endif
         /// <summary>

@@ -17,28 +17,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("AggregateDelay") is { } nullNodeAggregateDelay && nullNodeAggregateDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregateDelay = null;
-            if (parseNode.GetChildNode("Data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("Timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("AggregateDelay") is null) { _explicitNullValueAggregateDelay = default!; _explicitNullProperties?.Remove("AggregateDelay"); }
+            else if (parseNode.GetChildNode("AggregateDelay") is { } nullNodeAggregateDelay && nullNodeAggregateDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregateDelay = null;
+            if (parseNode.GetChildNode("Data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("Data"); }
+            else if (parseNode.GetChildNode("Data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("Timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("Timestamp"); }
+            else if (parseNode.GetChildNode("Timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The AggregateDelay property</summary>
-        public long? AggregateDelay { get => _explicitNullValueAggregateDelay; set { _explicitNullValueAggregateDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AggregateDelay"); else _explicitNullProperties?.Remove("AggregateDelay"); } }
+        public long? AggregateDelay { get => _explicitNullValueAggregateDelay; set { _explicitNullValueAggregateDelay = value; AdditionalData?.Remove("AggregateDelay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("AggregateDelay"); else _explicitNullProperties?.Remove("AggregateDelay"); } }
         private long? _explicitNullValueAggregateDelay = default!;
         /// <summary>The Data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Data"); else _explicitNullProperties?.Remove("Data"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("Data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Data"); else _explicitNullProperties?.Remove("Data"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Data"); else _explicitNullProperties?.Remove("Data"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("Data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Data"); else _explicitNullProperties?.Remove("Data"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>The Timestamp property</summary>
-        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Timestamp"); else _explicitNullProperties?.Remove("Timestamp"); } }
+        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("Timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Timestamp"); else _explicitNullProperties?.Remove("Timestamp"); } }
         private long? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200Response"/> and sets the default values.

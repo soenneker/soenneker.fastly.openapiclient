@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("oneOf") is { } nullNodeOneOf && nullNodeOneOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneOf = null;
+            if (parseNode.GetChildNode("oneOf") is null) { _explicitNullValueOneOf = default!; _explicitNullProperties?.Remove("oneOf"); }
+            else if (parseNode.GetChildNode("oneOf") is { } nullNodeOneOf && nullNodeOneOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneOf = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The oneOf property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItem>? OneOf { get => _explicitNullValueOneOf; set { _explicitNullValueOneOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneOf"); else _explicitNullProperties?.Remove("oneOf"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItem>? OneOf { get => _explicitNullValueOneOf; set { _explicitNullValueOneOf = value; AdditionalData?.Remove("oneOf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneOf"); else _explicitNullProperties?.Remove("oneOf"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItem>? _explicitNullValueOneOf = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItem> OneOf { get => _explicitNullValueOneOf; set { _explicitNullValueOneOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneOf"); else _explicitNullProperties?.Remove("oneOf"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItem> OneOf { get => _explicitNullValueOneOf; set { _explicitNullValueOneOf = value; AdditionalData?.Remove("oneOf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oneOf"); else _explicitNullProperties?.Remove("oneOf"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItem> _explicitNullValueOneOf = default!;
 #endif
         /// <summary>

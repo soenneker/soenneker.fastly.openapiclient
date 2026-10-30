@@ -17,19 +17,22 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("added") is { } nullNodeAdded && nullNodeAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Added = null;
-            if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
-            if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
+            if (parseNode.GetChildNode("added") is null) { _explicitNullValueAdded = default!; _explicitNullProperties?.Remove("added"); }
+            else if (parseNode.GetChildNode("added") is { } nullNodeAdded && nullNodeAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Added = null;
+            if (parseNode.GetChildNode("deleted") is null) { _explicitNullValueDeleted = default!; _explicitNullProperties?.Remove("deleted"); }
+            else if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
+            if (parseNode.GetChildNode("modified") is null) { _explicitNullValueModified = default!; _explicitNullProperties?.Remove("modified"); }
+            else if (parseNode.GetChildNode("modified") is { } nullNodeModified && nullNodeModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Modified = null;
         }
 
         /// <summary>The added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem>? Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem>? Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; AdditionalData?.Remove("added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem>? _explicitNullValueAdded = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem> Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem> Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; AdditionalData?.Remove("added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseAddedItem> _explicitNullValueAdded = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,21 +40,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The deleted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        public UntypedNode? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; AdditionalData?.Remove("deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
         private UntypedNode? _explicitNullValueDeleted = default!;
 #nullable restore
 #else
-        public UntypedNode Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        public UntypedNode Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; AdditionalData?.Remove("deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
         private UntypedNode _explicitNullValueDeleted = default!;
 #endif
         /// <summary>The modified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem>? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem>? Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem>? _explicitNullValueModified = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem> Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem> Modified { get => _explicitNullValueModified; set { _explicitNullValueModified = value; AdditionalData?.Remove("modified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified"); else _explicitNullProperties?.Remove("modified"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItem> _explicitNullValueModified = default!;
 #endif
         /// <summary>

@@ -17,34 +17,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_untrusted_root") is { } nullNodeAllowUntrustedRoot && nullNodeAllowUntrustedRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowUntrustedRoot = null;
-            if (parseNode.GetChildNode("cert_blob") is { } nullNodeCertBlob && nullNodeCertBlob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertBlob = null;
-            if (parseNode.GetChildNode("intermediates_blob") is { } nullNodeIntermediatesBlob && nullNodeIntermediatesBlob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntermediatesBlob = null;
+            if (parseNode.GetChildNode("allow_untrusted_root") is null) { _explicitNullValueAllowUntrustedRoot = default!; _explicitNullProperties?.Remove("allow_untrusted_root"); }
+            else if (parseNode.GetChildNode("allow_untrusted_root") is { } nullNodeAllowUntrustedRoot && nullNodeAllowUntrustedRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowUntrustedRoot = null;
+            if (parseNode.GetChildNode("cert_blob") is null) { _explicitNullValueCertBlob = default!; _explicitNullProperties?.Remove("cert_blob"); }
+            else if (parseNode.GetChildNode("cert_blob") is { } nullNodeCertBlob && nullNodeCertBlob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertBlob = null;
+            if (parseNode.GetChildNode("intermediates_blob") is null) { _explicitNullValueIntermediatesBlob = default!; _explicitNullProperties?.Remove("intermediates_blob"); }
+            else if (parseNode.GetChildNode("intermediates_blob") is { } nullNodeIntermediatesBlob && nullNodeIntermediatesBlob.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntermediatesBlob = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow_untrusted_root property</summary>
-        public bool? AllowUntrustedRoot { get => _explicitNullValueAllowUntrustedRoot; set { _explicitNullValueAllowUntrustedRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_untrusted_root"); else _explicitNullProperties?.Remove("allow_untrusted_root"); } }
+        public bool? AllowUntrustedRoot { get => _explicitNullValueAllowUntrustedRoot; set { _explicitNullValueAllowUntrustedRoot = value; AdditionalData?.Remove("allow_untrusted_root"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_untrusted_root"); else _explicitNullProperties?.Remove("allow_untrusted_root"); } }
         private bool? _explicitNullValueAllowUntrustedRoot = default!;
         /// <summary>The cert_blob property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertBlob { get => _explicitNullValueCertBlob; set { _explicitNullValueCertBlob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_blob"); else _explicitNullProperties?.Remove("cert_blob"); } }
+        public string? CertBlob { get => _explicitNullValueCertBlob; set { _explicitNullValueCertBlob = value; AdditionalData?.Remove("cert_blob"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_blob"); else _explicitNullProperties?.Remove("cert_blob"); } }
         private string? _explicitNullValueCertBlob = default!;
 #nullable restore
 #else
-        public string CertBlob { get => _explicitNullValueCertBlob; set { _explicitNullValueCertBlob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_blob"); else _explicitNullProperties?.Remove("cert_blob"); } }
+        public string CertBlob { get => _explicitNullValueCertBlob; set { _explicitNullValueCertBlob = value; AdditionalData?.Remove("cert_blob"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cert_blob"); else _explicitNullProperties?.Remove("cert_blob"); } }
         private string _explicitNullValueCertBlob = default!;
 #endif
         /// <summary>The intermediates_blob property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntermediatesBlob { get => _explicitNullValueIntermediatesBlob; set { _explicitNullValueIntermediatesBlob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intermediates_blob"); else _explicitNullProperties?.Remove("intermediates_blob"); } }
+        public string? IntermediatesBlob { get => _explicitNullValueIntermediatesBlob; set { _explicitNullValueIntermediatesBlob = value; AdditionalData?.Remove("intermediates_blob"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intermediates_blob"); else _explicitNullProperties?.Remove("intermediates_blob"); } }
         private string? _explicitNullValueIntermediatesBlob = default!;
 #nullable restore
 #else
-        public string IntermediatesBlob { get => _explicitNullValueIntermediatesBlob; set { _explicitNullValueIntermediatesBlob = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intermediates_blob"); else _explicitNullProperties?.Remove("intermediates_blob"); } }
+        public string IntermediatesBlob { get => _explicitNullValueIntermediatesBlob; set { _explicitNullValueIntermediatesBlob = value; AdditionalData?.Remove("intermediates_blob"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intermediates_blob"); else _explicitNullProperties?.Remove("intermediates_blob"); } }
         private string _explicitNullValueIntermediatesBlob = default!;
 #endif
         /// <summary>

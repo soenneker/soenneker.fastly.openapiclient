@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("inbound_tsig_key_id") is { } nullNodeInboundTsigKeyId && nullNodeInboundTsigKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InboundTsigKeyId = null;
-            if (parseNode.GetChildNode("notify_ip_addresses") is { } nullNodeNotifyIpAddresses && nullNodeNotifyIpAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyIpAddresses = null;
-            if (parseNode.GetChildNode("primaries") is { } nullNodePrimaries && nullNodePrimaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primaries = null;
+            if (parseNode.GetChildNode("inbound_tsig_key_id") is null) { _explicitNullValueInboundTsigKeyId = default!; _explicitNullProperties?.Remove("inbound_tsig_key_id"); }
+            else if (parseNode.GetChildNode("inbound_tsig_key_id") is { } nullNodeInboundTsigKeyId && nullNodeInboundTsigKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InboundTsigKeyId = null;
+            if (parseNode.GetChildNode("notify_ip_addresses") is null) { _explicitNullValueNotifyIpAddresses = default!; _explicitNullProperties?.Remove("notify_ip_addresses"); }
+            else if (parseNode.GetChildNode("notify_ip_addresses") is { } nullNodeNotifyIpAddresses && nullNodeNotifyIpAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyIpAddresses = null;
+            if (parseNode.GetChildNode("primaries") is null) { _explicitNullValuePrimaries = default!; _explicitNullProperties?.Remove("primaries"); }
+            else if (parseNode.GetChildNode("primaries") is { } nullNodePrimaries && nullNodePrimaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primaries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The inbound_tsig_key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
+        public string? InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; AdditionalData?.Remove("inbound_tsig_key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
         private string? _explicitNullValueInboundTsigKeyId = default!;
 #nullable restore
 #else
-        public string InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
+        public string InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; AdditionalData?.Remove("inbound_tsig_key_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
         private string _explicitNullValueInboundTsigKeyId = default!;
 #endif
         /// <summary>The notify_ip_addresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses? NotifyIpAddresses { get => _explicitNullValueNotifyIpAddresses; set { _explicitNullValueNotifyIpAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_ip_addresses"); else _explicitNullProperties?.Remove("notify_ip_addresses"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses? NotifyIpAddresses { get => _explicitNullValueNotifyIpAddresses; set { _explicitNullValueNotifyIpAddresses = value; AdditionalData?.Remove("notify_ip_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_ip_addresses"); else _explicitNullProperties?.Remove("notify_ip_addresses"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses? _explicitNullValueNotifyIpAddresses = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses NotifyIpAddresses { get => _explicitNullValueNotifyIpAddresses; set { _explicitNullValueNotifyIpAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_ip_addresses"); else _explicitNullProperties?.Remove("notify_ip_addresses"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses NotifyIpAddresses { get => _explicitNullValueNotifyIpAddresses; set { _explicitNullValueNotifyIpAddresses = value; AdditionalData?.Remove("notify_ip_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notify_ip_addresses"); else _explicitNullProperties?.Remove("notify_ip_addresses"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundNotifyIpAddresses _explicitNullValueNotifyIpAddresses = default!;
 #endif
         /// <summary>The primaries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundPrimariesItem>? Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundPrimariesItem>? Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; AdditionalData?.Remove("primaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundPrimariesItem>? _explicitNullValuePrimaries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundPrimariesItem> Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundPrimariesItem> Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; AdditionalData?.Remove("primaries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateZone200ResponseDataXfrConfigInboundPrimariesItem> _explicitNullValuePrimaries = default!;
 #endif
         /// <summary>

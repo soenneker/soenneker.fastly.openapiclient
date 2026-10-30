@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fastly_pop") is { } nullNodeFastlyPop && nullNodeFastlyPop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FastlyPop = null;
+            if (parseNode.GetChildNode("fastly_pop") is null) { _explicitNullValueFastlyPop = default!; _explicitNullProperties?.Remove("fastly_pop"); }
+            else if (parseNode.GetChildNode("fastly_pop") is { } nullNodeFastlyPop && nullNodeFastlyPop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FastlyPop = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The fastly_pop property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FastlyPop { get => _explicitNullValueFastlyPop; set { _explicitNullValueFastlyPop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fastly_pop"); else _explicitNullProperties?.Remove("fastly_pop"); } }
+        public string? FastlyPop { get => _explicitNullValueFastlyPop; set { _explicitNullValueFastlyPop = value; AdditionalData?.Remove("fastly_pop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fastly_pop"); else _explicitNullProperties?.Remove("fastly_pop"); } }
         private string? _explicitNullValueFastlyPop = default!;
 #nullable restore
 #else
-        public string FastlyPop { get => _explicitNullValueFastlyPop; set { _explicitNullValueFastlyPop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fastly_pop"); else _explicitNullProperties?.Remove("fastly_pop"); } }
+        public string FastlyPop { get => _explicitNullValueFastlyPop; set { _explicitNullValueFastlyPop = value; AdditionalData?.Remove("fastly_pop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fastly_pop"); else _explicitNullProperties?.Remove("fastly_pop"); } }
         private string _explicitNullValueFastlyPop = default!;
 #endif
         /// <summary>

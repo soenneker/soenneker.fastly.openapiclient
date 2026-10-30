@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("preferred_email") is { } nullNodePreferredEmail && nullNodePreferredEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredEmail = null;
+            if (parseNode.GetChildNode("preferred_email") is null) { _explicitNullValuePreferredEmail = default!; _explicitNullProperties?.Remove("preferred_email"); }
+            else if (parseNode.GetChildNode("preferred_email") is { } nullNodePreferredEmail && nullNodePreferredEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredEmail = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The preferred_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredEmail { get => _explicitNullValuePreferredEmail; set { _explicitNullValuePreferredEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_email"); else _explicitNullProperties?.Remove("preferred_email"); } }
+        public string? PreferredEmail { get => _explicitNullValuePreferredEmail; set { _explicitNullValuePreferredEmail = value; AdditionalData?.Remove("preferred_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_email"); else _explicitNullProperties?.Remove("preferred_email"); } }
         private string? _explicitNullValuePreferredEmail = default!;
 #nullable restore
 #else
-        public string PreferredEmail { get => _explicitNullValuePreferredEmail; set { _explicitNullValuePreferredEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_email"); else _explicitNullProperties?.Remove("preferred_email"); } }
+        public string PreferredEmail { get => _explicitNullValuePreferredEmail; set { _explicitNullValuePreferredEmail = value; AdditionalData?.Remove("preferred_email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_email"); else _explicitNullProperties?.Remove("preferred_email"); } }
         private string _explicitNullValuePreferredEmail = default!;
 #endif
         /// <summary>

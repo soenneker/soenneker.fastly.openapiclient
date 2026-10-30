@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customer") is { } nullNodeCustomer && nullNodeCustomer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Customer = null;
-            if (parseNode.GetChildNode("service_invitations") is { } nullNodeServiceInvitations && nullNodeServiceInvitations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceInvitations = null;
+            if (parseNode.GetChildNode("customer") is null) { _explicitNullValueCustomer = default!; _explicitNullProperties?.Remove("customer"); }
+            else if (parseNode.GetChildNode("customer") is { } nullNodeCustomer && nullNodeCustomer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Customer = null;
+            if (parseNode.GetChildNode("service_invitations") is null) { _explicitNullValueServiceInvitations = default!; _explicitNullProperties?.Remove("service_invitations"); }
+            else if (parseNode.GetChildNode("service_invitations") is { } nullNodeServiceInvitations && nullNodeServiceInvitations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceInvitations = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The customer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsCustomer? Customer { get => _explicitNullValueCustomer; set { _explicitNullValueCustomer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer"); else _explicitNullProperties?.Remove("customer"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsCustomer? Customer { get => _explicitNullValueCustomer; set { _explicitNullValueCustomer = value; AdditionalData?.Remove("customer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer"); else _explicitNullProperties?.Remove("customer"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsCustomer? _explicitNullValueCustomer = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsCustomer Customer { get => _explicitNullValueCustomer; set { _explicitNullValueCustomer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer"); else _explicitNullProperties?.Remove("customer"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsCustomer Customer { get => _explicitNullValueCustomer; set { _explicitNullValueCustomer = value; AdditionalData?.Remove("customer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer"); else _explicitNullProperties?.Remove("customer"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsCustomer _explicitNullValueCustomer = default!;
 #endif
         /// <summary>The service_invitations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsServiceInvitations? ServiceInvitations { get => _explicitNullValueServiceInvitations; set { _explicitNullValueServiceInvitations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_invitations"); else _explicitNullProperties?.Remove("service_invitations"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsServiceInvitations? ServiceInvitations { get => _explicitNullValueServiceInvitations; set { _explicitNullValueServiceInvitations = value; AdditionalData?.Remove("service_invitations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_invitations"); else _explicitNullProperties?.Remove("service_invitations"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsServiceInvitations? _explicitNullValueServiceInvitations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsServiceInvitations ServiceInvitations { get => _explicitNullValueServiceInvitations; set { _explicitNullValueServiceInvitations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_invitations"); else _explicitNullProperties?.Remove("service_invitations"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsServiceInvitations ServiceInvitations { get => _explicitNullValueServiceInvitations; set { _explicitNullValueServiceInvitations = value; AdditionalData?.Remove("service_invitations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_invitations"); else _explicitNullProperties?.Remove("service_invitations"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateAnInvitation200ResponseDataRelationshipsServiceInvitations _explicitNullValueServiceInvitations = default!;
 #endif
         /// <summary>

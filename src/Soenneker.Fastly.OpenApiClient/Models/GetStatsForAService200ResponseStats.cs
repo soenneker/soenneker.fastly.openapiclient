@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("LHR") is { } nullNodeLHR && nullNodeLHR.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LHR = null;
+            if (parseNode.GetChildNode("LHR") is null) { _explicitNullValueLHR = default!; _explicitNullProperties?.Remove("LHR"); }
+            else if (parseNode.GetChildNode("LHR") is { } nullNodeLHR && nullNodeLHR.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LHR = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The LHR property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetStatsForAService200ResponseStatsLhr? LHR { get => _explicitNullValueLHR; set { _explicitNullValueLHR = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LHR"); else _explicitNullProperties?.Remove("LHR"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetStatsForAService200ResponseStatsLhr? LHR { get => _explicitNullValueLHR; set { _explicitNullValueLHR = value; AdditionalData?.Remove("LHR"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LHR"); else _explicitNullProperties?.Remove("LHR"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetStatsForAService200ResponseStatsLhr? _explicitNullValueLHR = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetStatsForAService200ResponseStatsLhr LHR { get => _explicitNullValueLHR; set { _explicitNullValueLHR = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LHR"); else _explicitNullProperties?.Remove("LHR"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetStatsForAService200ResponseStatsLhr LHR { get => _explicitNullValueLHR; set { _explicitNullValueLHR = value; AdditionalData?.Remove("LHR"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LHR"); else _explicitNullProperties?.Remove("LHR"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetStatsForAService200ResponseStatsLhr _explicitNullValueLHR = default!;
 #endif
         /// <summary>

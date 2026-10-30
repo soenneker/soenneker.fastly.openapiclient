@@ -17,34 +17,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_tokens") is { } nullNodeMaxTokens && nullNodeMaxTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTokens = null;
-            if (parseNode.GetChildNode("messages") is { } nullNodeMessages && nullNodeMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messages = null;
-            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("max_tokens") is null) { _explicitNullValueMaxTokens = default!; _explicitNullProperties?.Remove("max_tokens"); }
+            else if (parseNode.GetChildNode("max_tokens") is { } nullNodeMaxTokens && nullNodeMaxTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTokens = null;
+            if (parseNode.GetChildNode("messages") is null) { _explicitNullValueMessages = default!; _explicitNullProperties?.Remove("messages"); }
+            else if (parseNode.GetChildNode("messages") is { } nullNodeMessages && nullNodeMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messages = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The max_tokens property</summary>
-        public long? MaxTokens { get => _explicitNullValueMaxTokens; set { _explicitNullValueMaxTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens"); else _explicitNullProperties?.Remove("max_tokens"); } }
+        public long? MaxTokens { get => _explicitNullValueMaxTokens; set { _explicitNullValueMaxTokens = value; AdditionalData?.Remove("max_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens"); else _explicitNullProperties?.Remove("max_tokens"); } }
         private long? _explicitNullValueMaxTokens = default!;
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateMessageAnthropicFormatRequestMessagesItem>? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateMessageAnthropicFormatRequestMessagesItem>? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; AdditionalData?.Remove("messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateMessageAnthropicFormatRequestMessagesItem>? _explicitNullValueMessages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateMessageAnthropicFormatRequestMessagesItem> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateMessageAnthropicFormatRequestMessagesItem> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; AdditionalData?.Remove("messages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateMessageAnthropicFormatRequestMessagesItem> _explicitNullValueMessages = default!;
 #endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
         private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
         private string _explicitNullValueModel = default!;
 #endif
         /// <summary>

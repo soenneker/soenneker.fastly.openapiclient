@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("certificate_authority") is { } nullNodeCertificateAuthority && nullNodeCertificateAuthority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthority = null;
+            if (parseNode.GetChildNode("certificate_authority") is null) { _explicitNullValueCertificateAuthority = default!; _explicitNullProperties?.Remove("certificate_authority"); }
+            else if (parseNode.GetChildNode("certificate_authority") is { } nullNodeCertificateAuthority && nullNodeCertificateAuthority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CertificateAuthority = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The certificate_authority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority"); else _explicitNullProperties?.Remove("certificate_authority"); } }
+        public string? CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; AdditionalData?.Remove("certificate_authority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority"); else _explicitNullProperties?.Remove("certificate_authority"); } }
         private string? _explicitNullValueCertificateAuthority = default!;
 #nullable restore
 #else
-        public string CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority"); else _explicitNullProperties?.Remove("certificate_authority"); } }
+        public string CertificateAuthority { get => _explicitNullValueCertificateAuthority; set { _explicitNullValueCertificateAuthority = value; AdditionalData?.Remove("certificate_authority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("certificate_authority"); else _explicitNullProperties?.Remove("certificate_authority"); } }
         private string _explicitNullValueCertificateAuthority = default!;
 #endif
         /// <summary>

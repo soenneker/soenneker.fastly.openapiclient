@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
-            if (parseNode.GetChildNode("subnet") is { } nullNodeSubnet && nullNodeSubnet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subnet = null;
+            if (parseNode.GetChildNode("ip") is null) { _explicitNullValueIp = default!; _explicitNullProperties?.Remove("ip"); }
+            else if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("subnet") is null) { _explicitNullValueSubnet = default!; _explicitNullProperties?.Remove("subnet"); }
+            else if (parseNode.GetChildNode("subnet") is { } nullNodeSubnet && nullNodeSubnet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subnet = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; AdditionalData?.Remove("ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
         private string _explicitNullValueIp = default!;
 #endif
         /// <summary>The subnet property</summary>
-        public long? Subnet { get => _explicitNullValueSubnet; set { _explicitNullValueSubnet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnet"); else _explicitNullProperties?.Remove("subnet"); } }
+        public long? Subnet { get => _explicitNullValueSubnet; set { _explicitNullValueSubnet = value; AdditionalData?.Remove("subnet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subnet"); else _explicitNullProperties?.Remove("subnet"); } }
         private long? _explicitNullValueSubnet = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAclEntryRequest"/> and sets the default values.

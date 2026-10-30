@@ -17,12 +17,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
-            if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
-            if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
-            if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
-            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
-            if (parseNode.GetChildNode("usage_type") is { } nullNodeUsageType && nullNodeUsageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageType = null;
+            if (parseNode.GetChildNode("customer_id") is null) { _explicitNullValueCustomerId = default!; _explicitNullProperties?.Remove("customer_id"); }
+            else if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("details") is null) { _explicitNullValueDetails = default!; _explicitNullProperties?.Remove("details"); }
+            else if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
+            if (parseNode.GetChildNode("end_time") is null) { _explicitNullValueEndTime = default!; _explicitNullProperties?.Remove("end_time"); }
+            else if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("start_time") is null) { _explicitNullValueStartTime = default!; _explicitNullProperties?.Remove("start_time"); }
+            else if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+            if (parseNode.GetChildNode("usage_type") is null) { _explicitNullValueUsageType = default!; _explicitNullProperties?.Remove("usage_type"); }
+            else if (parseNode.GetChildNode("usage_type") is { } nullNodeUsageType && nullNodeUsageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The customer_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200ResponseDataDetailsItem>? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200ResponseDataDetailsItem>? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200ResponseDataDetailsItem>? _explicitNullValueDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200ResponseDataDetailsItem> Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200ResponseDataDetailsItem> Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveServiceLevelUsageMetricsForServicesWithNonZeroUsageUnits200ResponseDataDetailsItem> _explicitNullValueDetails = default!;
 #endif
         /// <summary>The end_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        public string? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
         private string? _explicitNullValueEndTime = default!;
 #nullable restore
 #else
-        public string EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        public string EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
         private string _explicitNullValueEndTime = default!;
 #endif
         /// <summary>The start_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        public string? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
         private string? _explicitNullValueStartTime = default!;
 #nullable restore
 #else
-        public string StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        public string StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
         private string _explicitNullValueStartTime = default!;
 #endif
         /// <summary>The unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private string? _explicitNullValueUnit = default!;
 #nullable restore
 #else
-        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private string _explicitNullValueUnit = default!;
 #endif
         /// <summary>The usage_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UsageType { get => _explicitNullValueUsageType; set { _explicitNullValueUsageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_type"); else _explicitNullProperties?.Remove("usage_type"); } }
+        public string? UsageType { get => _explicitNullValueUsageType; set { _explicitNullValueUsageType = value; AdditionalData?.Remove("usage_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_type"); else _explicitNullProperties?.Remove("usage_type"); } }
         private string? _explicitNullValueUsageType = default!;
 #nullable restore
 #else
-        public string UsageType { get => _explicitNullValueUsageType; set { _explicitNullValueUsageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_type"); else _explicitNullProperties?.Remove("usage_type"); } }
+        public string UsageType { get => _explicitNullValueUsageType; set { _explicitNullValueUsageType = value; AdditionalData?.Remove("usage_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_type"); else _explicitNullProperties?.Remove("usage_type"); } }
         private string _explicitNullValueUsageType = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("protection_mode") is { } nullNodeProtectionMode && nullNodeProtectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectionMode = null;
+            if (parseNode.GetChildNode("protection_mode") is null) { _explicitNullValueProtectionMode = default!; _explicitNullProperties?.Remove("protection_mode"); }
+            else if (parseNode.GetChildNode("protection_mode") is { } nullNodeProtectionMode && nullNodeProtectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProtectionMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The protection_mode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProtectionMode { get => _explicitNullValueProtectionMode; set { _explicitNullValueProtectionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protection_mode"); else _explicitNullProperties?.Remove("protection_mode"); } }
+        public string? ProtectionMode { get => _explicitNullValueProtectionMode; set { _explicitNullValueProtectionMode = value; AdditionalData?.Remove("protection_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protection_mode"); else _explicitNullProperties?.Remove("protection_mode"); } }
         private string? _explicitNullValueProtectionMode = default!;
 #nullable restore
 #else
-        public string ProtectionMode { get => _explicitNullValueProtectionMode; set { _explicitNullValueProtectionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protection_mode"); else _explicitNullProperties?.Remove("protection_mode"); } }
+        public string ProtectionMode { get => _explicitNullValueProtectionMode; set { _explicitNullValueProtectionMode = value; AdditionalData?.Remove("protection_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protection_mode"); else _explicitNullProperties?.Remove("protection_mode"); } }
         private string _explicitNullValueProtectionMode = default!;
 #endif
         /// <summary>

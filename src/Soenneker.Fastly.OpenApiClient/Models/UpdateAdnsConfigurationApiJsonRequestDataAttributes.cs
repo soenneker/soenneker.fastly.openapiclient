@@ -17,13 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dualstack") is { } nullNodeDualstack && nullNodeDualstack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dualstack = null;
+            if (parseNode.GetChildNode("dualstack") is null) { _explicitNullValueDualstack = default!; _explicitNullProperties?.Remove("dualstack"); }
+            else if (parseNode.GetChildNode("dualstack") is { } nullNodeDualstack && nullNodeDualstack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dualstack = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dualstack property</summary>
-        public bool? Dualstack { get => _explicitNullValueDualstack; set { _explicitNullValueDualstack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dualstack"); else _explicitNullProperties?.Remove("dualstack"); } }
+        public bool? Dualstack { get => _explicitNullValueDualstack; set { _explicitNullValueDualstack = value; AdditionalData?.Remove("dualstack"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dualstack"); else _explicitNullProperties?.Remove("dualstack"); } }
         private bool? _explicitNullValueDualstack = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAdnsConfigurationApiJsonRequestDataAttributes"/> and sets the default values.

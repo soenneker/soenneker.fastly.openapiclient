@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_action") is { } nullNodeDefaultAction && nullNodeDefaultAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAction = null;
-            if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
+            if (parseNode.GetChildNode("default_action") is null) { _explicitNullValueDefaultAction = default!; _explicitNullProperties?.Remove("default_action"); }
+            else if (parseNode.GetChildNode("default_action") is { } nullNodeDefaultAction && nullNodeDefaultAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultAction = null;
+            if (parseNode.GetChildNode("rules") is null) { _explicitNullValueRules = default!; _explicitNullProperties?.Remove("rules"); }
+            else if (parseNode.GetChildNode("rules") is { } nullNodeRules && nullNodeRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rules = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The default_action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultAction { get => _explicitNullValueDefaultAction; set { _explicitNullValueDefaultAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_action"); else _explicitNullProperties?.Remove("default_action"); } }
+        public string? DefaultAction { get => _explicitNullValueDefaultAction; set { _explicitNullValueDefaultAction = value; AdditionalData?.Remove("default_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_action"); else _explicitNullProperties?.Remove("default_action"); } }
         private string? _explicitNullValueDefaultAction = default!;
 #nullable restore
 #else
-        public string DefaultAction { get => _explicitNullValueDefaultAction; set { _explicitNullValueDefaultAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_action"); else _explicitNullProperties?.Remove("default_action"); } }
+        public string DefaultAction { get => _explicitNullValueDefaultAction; set { _explicitNullValueDefaultAction = value; AdditionalData?.Remove("default_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_action"); else _explicitNullProperties?.Remove("default_action"); } }
         private string _explicitNullValueDefaultAction = default!;
 #endif
         /// <summary>The rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectRuleSetRequestRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectRuleSetRequestRulesItem>? Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectRuleSetRequestRulesItem>? _explicitNullValueRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectRuleSetRequestRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectRuleSetRequestRulesItem> Rules { get => _explicitNullValueRules; set { _explicitNullValueRules = value; AdditionalData?.Remove("rules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules"); else _explicitNullProperties?.Remove("rules"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectRuleSetRequestRulesItem> _explicitNullValueRules = default!;
 #endif
         /// <summary>

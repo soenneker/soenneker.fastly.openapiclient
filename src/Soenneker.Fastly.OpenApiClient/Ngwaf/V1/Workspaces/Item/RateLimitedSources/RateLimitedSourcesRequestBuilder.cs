@@ -95,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesRequestBuilder.RateLimitedSourcesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/ngwaf/v1/workspaces/{workspaceId}/rate-limited-sources", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -113,7 +113,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSou
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.RateLimitedSources.RateLimitedSourcesRequestBuilder.RateLimitedSourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.fastly.com", "/ngwaf/v1/workspaces/{workspaceId}/rate-limited-sources", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

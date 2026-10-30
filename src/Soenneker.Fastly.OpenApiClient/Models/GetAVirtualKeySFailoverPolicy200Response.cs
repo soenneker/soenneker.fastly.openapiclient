@@ -17,32 +17,36 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rate_limit_429_enabled") is { } nullNodeRateLimit429Enabled && nullNodeRateLimit429Enabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit429Enabled = null;
-            if (parseNode.GetChildNode("server_error_5xx_enabled") is { } nullNodeServerError5xxEnabled && nullNodeServerError5xxEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerError5xxEnabled = null;
-            if (parseNode.GetChildNode("targets") is { } nullNodeTargets && nullNodeTargets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Targets = null;
-            if (parseNode.GetChildNode("timeout_enabled") is { } nullNodeTimeoutEnabled && nullNodeTimeoutEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoutEnabled = null;
+            if (parseNode.GetChildNode("rate_limit_429_enabled") is null) { _explicitNullValueRateLimit429Enabled = default!; _explicitNullProperties?.Remove("rate_limit_429_enabled"); }
+            else if (parseNode.GetChildNode("rate_limit_429_enabled") is { } nullNodeRateLimit429Enabled && nullNodeRateLimit429Enabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit429Enabled = null;
+            if (parseNode.GetChildNode("server_error_5xx_enabled") is null) { _explicitNullValueServerError5xxEnabled = default!; _explicitNullProperties?.Remove("server_error_5xx_enabled"); }
+            else if (parseNode.GetChildNode("server_error_5xx_enabled") is { } nullNodeServerError5xxEnabled && nullNodeServerError5xxEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerError5xxEnabled = null;
+            if (parseNode.GetChildNode("targets") is null) { _explicitNullValueTargets = default!; _explicitNullProperties?.Remove("targets"); }
+            else if (parseNode.GetChildNode("targets") is { } nullNodeTargets && nullNodeTargets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Targets = null;
+            if (parseNode.GetChildNode("timeout_enabled") is null) { _explicitNullValueTimeoutEnabled = default!; _explicitNullProperties?.Remove("timeout_enabled"); }
+            else if (parseNode.GetChildNode("timeout_enabled") is { } nullNodeTimeoutEnabled && nullNodeTimeoutEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoutEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The rate_limit_429_enabled property</summary>
-        public bool? RateLimit429Enabled { get => _explicitNullValueRateLimit429Enabled; set { _explicitNullValueRateLimit429Enabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limit_429_enabled"); else _explicitNullProperties?.Remove("rate_limit_429_enabled"); } }
+        public bool? RateLimit429Enabled { get => _explicitNullValueRateLimit429Enabled; set { _explicitNullValueRateLimit429Enabled = value; AdditionalData?.Remove("rate_limit_429_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate_limit_429_enabled"); else _explicitNullProperties?.Remove("rate_limit_429_enabled"); } }
         private bool? _explicitNullValueRateLimit429Enabled = default!;
         /// <summary>The server_error_5xx_enabled property</summary>
-        public bool? ServerError5xxEnabled { get => _explicitNullValueServerError5xxEnabled; set { _explicitNullValueServerError5xxEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_error_5xx_enabled"); else _explicitNullProperties?.Remove("server_error_5xx_enabled"); } }
+        public bool? ServerError5xxEnabled { get => _explicitNullValueServerError5xxEnabled; set { _explicitNullValueServerError5xxEnabled = value; AdditionalData?.Remove("server_error_5xx_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_error_5xx_enabled"); else _explicitNullProperties?.Remove("server_error_5xx_enabled"); } }
         private bool? _explicitNullValueServerError5xxEnabled = default!;
         /// <summary>The targets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAVirtualKeySFailoverPolicy200ResponseTargetsItem>? Targets { get => _explicitNullValueTargets; set { _explicitNullValueTargets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targets"); else _explicitNullProperties?.Remove("targets"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAVirtualKeySFailoverPolicy200ResponseTargetsItem>? Targets { get => _explicitNullValueTargets; set { _explicitNullValueTargets = value; AdditionalData?.Remove("targets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targets"); else _explicitNullProperties?.Remove("targets"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetAVirtualKeySFailoverPolicy200ResponseTargetsItem>? _explicitNullValueTargets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAVirtualKeySFailoverPolicy200ResponseTargetsItem> Targets { get => _explicitNullValueTargets; set { _explicitNullValueTargets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targets"); else _explicitNullProperties?.Remove("targets"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAVirtualKeySFailoverPolicy200ResponseTargetsItem> Targets { get => _explicitNullValueTargets; set { _explicitNullValueTargets = value; AdditionalData?.Remove("targets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targets"); else _explicitNullProperties?.Remove("targets"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetAVirtualKeySFailoverPolicy200ResponseTargetsItem> _explicitNullValueTargets = default!;
 #endif
         /// <summary>The timeout_enabled property</summary>
-        public bool? TimeoutEnabled { get => _explicitNullValueTimeoutEnabled; set { _explicitNullValueTimeoutEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout_enabled"); else _explicitNullProperties?.Remove("timeout_enabled"); } }
+        public bool? TimeoutEnabled { get => _explicitNullValueTimeoutEnabled; set { _explicitNullValueTimeoutEnabled = value; AdditionalData?.Remove("timeout_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout_enabled"); else _explicitNullProperties?.Remove("timeout_enabled"); } }
         private bool? _explicitNullValueTimeoutEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAVirtualKeySFailoverPolicy200Response"/> and sets the default values.

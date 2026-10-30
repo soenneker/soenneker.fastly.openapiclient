@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("models") is { } nullNodeModels && nullNodeModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Models = null;
+            if (parseNode.GetChildNode("models") is null) { _explicitNullValueModels = default!; _explicitNullProperties?.Remove("models"); }
+            else if (parseNode.GetChildNode("models") is { } nullNodeModels && nullNodeModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Models = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The models property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
+        public List<string>? Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; AdditionalData?.Remove("models"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
         private List<string>? _explicitNullValueModels = default!;
 #nullable restore
 #else
-        public List<string> Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
+        public List<string> Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; AdditionalData?.Remove("models"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
         private List<string> _explicitNullValueModels = default!;
 #endif
         /// <summary>

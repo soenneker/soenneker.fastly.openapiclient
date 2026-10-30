@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("addresses") is { } nullNodeAddresses && nullNodeAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Addresses = null;
-            if (parseNode.GetChildNode("ipv6_addresses") is { } nullNodeIpv6Addresses && nullNodeIpv6Addresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv6Addresses = null;
+            if (parseNode.GetChildNode("addresses") is null) { _explicitNullValueAddresses = default!; _explicitNullProperties?.Remove("addresses"); }
+            else if (parseNode.GetChildNode("addresses") is { } nullNodeAddresses && nullNodeAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Addresses = null;
+            if (parseNode.GetChildNode("ipv6_addresses") is null) { _explicitNullValueIpv6Addresses = default!; _explicitNullProperties?.Remove("ipv6_addresses"); }
+            else if (parseNode.GetChildNode("ipv6_addresses") is { } nullNodeIpv6Addresses && nullNodeIpv6Addresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv6Addresses = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The addresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
+        public List<string>? Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; AdditionalData?.Remove("addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
         private List<string>? _explicitNullValueAddresses = default!;
 #nullable restore
 #else
-        public List<string> Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
+        public List<string> Addresses { get => _explicitNullValueAddresses; set { _explicitNullValueAddresses = value; AdditionalData?.Remove("addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addresses"); else _explicitNullProperties?.Remove("addresses"); } }
         private List<string> _explicitNullValueAddresses = default!;
 #endif
         /// <summary>The ipv6_addresses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ipv6Addresses { get => _explicitNullValueIpv6Addresses; set { _explicitNullValueIpv6Addresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6_addresses"); else _explicitNullProperties?.Remove("ipv6_addresses"); } }
+        public List<string>? Ipv6Addresses { get => _explicitNullValueIpv6Addresses; set { _explicitNullValueIpv6Addresses = value; AdditionalData?.Remove("ipv6_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6_addresses"); else _explicitNullProperties?.Remove("ipv6_addresses"); } }
         private List<string>? _explicitNullValueIpv6Addresses = default!;
 #nullable restore
 #else
-        public List<string> Ipv6Addresses { get => _explicitNullValueIpv6Addresses; set { _explicitNullValueIpv6Addresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6_addresses"); else _explicitNullProperties?.Remove("ipv6_addresses"); } }
+        public List<string> Ipv6Addresses { get => _explicitNullValueIpv6Addresses; set { _explicitNullValueIpv6Addresses = value; AdditionalData?.Remove("ipv6_addresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv6_addresses"); else _explicitNullProperties?.Remove("ipv6_addresses"); } }
         private List<string> _explicitNullValueIpv6Addresses = default!;
 #endif
         /// <summary>

@@ -17,12 +17,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("blocked_uri") is { } nullNodeBlockedUri && nullNodeBlockedUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedUri = null;
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("document_uri") is { } nullNodeDocumentUri && nullNodeDocumentUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentUri = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("policy_id") is { } nullNodePolicyId && nullNodePolicyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyId = null;
-            if (parseNode.GetChildNode("violated_directive") is { } nullNodeViolatedDirective && nullNodeViolatedDirective.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViolatedDirective = null;
+            if (parseNode.GetChildNode("blocked_uri") is null) { _explicitNullValueBlockedUri = default!; _explicitNullProperties?.Remove("blocked_uri"); }
+            else if (parseNode.GetChildNode("blocked_uri") is { } nullNodeBlockedUri && nullNodeBlockedUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedUri = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("document_uri") is null) { _explicitNullValueDocumentUri = default!; _explicitNullProperties?.Remove("document_uri"); }
+            else if (parseNode.GetChildNode("document_uri") is { } nullNodeDocumentUri && nullNodeDocumentUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentUri = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("policy_id") is null) { _explicitNullValuePolicyId = default!; _explicitNullProperties?.Remove("policy_id"); }
+            else if (parseNode.GetChildNode("policy_id") is { } nullNodePolicyId && nullNodePolicyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PolicyId = null;
+            if (parseNode.GetChildNode("violated_directive") is null) { _explicitNullValueViolatedDirective = default!; _explicitNullProperties?.Remove("violated_directive"); }
+            else if (parseNode.GetChildNode("violated_directive") is { } nullNodeViolatedDirective && nullNodeViolatedDirective.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViolatedDirective = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The blocked_uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockedUri { get => _explicitNullValueBlockedUri; set { _explicitNullValueBlockedUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocked_uri"); else _explicitNullProperties?.Remove("blocked_uri"); } }
+        public string? BlockedUri { get => _explicitNullValueBlockedUri; set { _explicitNullValueBlockedUri = value; AdditionalData?.Remove("blocked_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocked_uri"); else _explicitNullProperties?.Remove("blocked_uri"); } }
         private string? _explicitNullValueBlockedUri = default!;
 #nullable restore
 #else
-        public string BlockedUri { get => _explicitNullValueBlockedUri; set { _explicitNullValueBlockedUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocked_uri"); else _explicitNullProperties?.Remove("blocked_uri"); } }
+        public string BlockedUri { get => _explicitNullValueBlockedUri; set { _explicitNullValueBlockedUri = value; AdditionalData?.Remove("blocked_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocked_uri"); else _explicitNullProperties?.Remove("blocked_uri"); } }
         private string _explicitNullValueBlockedUri = default!;
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The document_uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentUri { get => _explicitNullValueDocumentUri; set { _explicitNullValueDocumentUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_uri"); else _explicitNullProperties?.Remove("document_uri"); } }
+        public string? DocumentUri { get => _explicitNullValueDocumentUri; set { _explicitNullValueDocumentUri = value; AdditionalData?.Remove("document_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_uri"); else _explicitNullProperties?.Remove("document_uri"); } }
         private string? _explicitNullValueDocumentUri = default!;
 #nullable restore
 #else
-        public string DocumentUri { get => _explicitNullValueDocumentUri; set { _explicitNullValueDocumentUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_uri"); else _explicitNullProperties?.Remove("document_uri"); } }
+        public string DocumentUri { get => _explicitNullValueDocumentUri; set { _explicitNullValueDocumentUri = value; AdditionalData?.Remove("document_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_uri"); else _explicitNullProperties?.Remove("document_uri"); } }
         private string _explicitNullValueDocumentUri = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The policy_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyId { get => _explicitNullValuePolicyId; set { _explicitNullValuePolicyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_id"); else _explicitNullProperties?.Remove("policy_id"); } }
+        public string? PolicyId { get => _explicitNullValuePolicyId; set { _explicitNullValuePolicyId = value; AdditionalData?.Remove("policy_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_id"); else _explicitNullProperties?.Remove("policy_id"); } }
         private string? _explicitNullValuePolicyId = default!;
 #nullable restore
 #else
-        public string PolicyId { get => _explicitNullValuePolicyId; set { _explicitNullValuePolicyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_id"); else _explicitNullProperties?.Remove("policy_id"); } }
+        public string PolicyId { get => _explicitNullValuePolicyId; set { _explicitNullValuePolicyId = value; AdditionalData?.Remove("policy_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy_id"); else _explicitNullProperties?.Remove("policy_id"); } }
         private string _explicitNullValuePolicyId = default!;
 #endif
         /// <summary>The violated_directive property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ViolatedDirective { get => _explicitNullValueViolatedDirective; set { _explicitNullValueViolatedDirective = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violated_directive"); else _explicitNullProperties?.Remove("violated_directive"); } }
+        public string? ViolatedDirective { get => _explicitNullValueViolatedDirective; set { _explicitNullValueViolatedDirective = value; AdditionalData?.Remove("violated_directive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violated_directive"); else _explicitNullProperties?.Remove("violated_directive"); } }
         private string? _explicitNullValueViolatedDirective = default!;
 #nullable restore
 #else
-        public string ViolatedDirective { get => _explicitNullValueViolatedDirective; set { _explicitNullValueViolatedDirective = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violated_directive"); else _explicitNullProperties?.Remove("violated_directive"); } }
+        public string ViolatedDirective { get => _explicitNullValueViolatedDirective; set { _explicitNullValueViolatedDirective = value; AdditionalData?.Remove("violated_directive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violated_directive"); else _explicitNullProperties?.Remove("violated_directive"); } }
         private string _explicitNullValueViolatedDirective = default!;
 #endif
         /// <summary>

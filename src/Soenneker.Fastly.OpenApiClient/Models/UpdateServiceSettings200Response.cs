@@ -17,12 +17,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("general.default_host") is { } nullNodeGeneralDefaultHost && nullNodeGeneralDefaultHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralDefaultHost = null;
-            if (parseNode.GetChildNode("general.default_ttl") is { } nullNodeGeneralDefaultTtl && nullNodeGeneralDefaultTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralDefaultTtl = null;
-            if (parseNode.GetChildNode("general.stale_if_error") is { } nullNodeGeneralStaleIfError && nullNodeGeneralStaleIfError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralStaleIfError = null;
-            if (parseNode.GetChildNode("general.stale_if_error_ttl") is { } nullNodeGeneralStaleIfErrorTtl && nullNodeGeneralStaleIfErrorTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralStaleIfErrorTtl = null;
-            if (parseNode.GetChildNode("service_id") is { } nullNodeServiceId && nullNodeServiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceId = null;
-            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("general.default_host") is null) { _explicitNullValueGeneralDefaultHost = default!; _explicitNullProperties?.Remove("general.default_host"); }
+            else if (parseNode.GetChildNode("general.default_host") is { } nullNodeGeneralDefaultHost && nullNodeGeneralDefaultHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralDefaultHost = null;
+            if (parseNode.GetChildNode("general.default_ttl") is null) { _explicitNullValueGeneralDefaultTtl = default!; _explicitNullProperties?.Remove("general.default_ttl"); }
+            else if (parseNode.GetChildNode("general.default_ttl") is { } nullNodeGeneralDefaultTtl && nullNodeGeneralDefaultTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralDefaultTtl = null;
+            if (parseNode.GetChildNode("general.stale_if_error") is null) { _explicitNullValueGeneralStaleIfError = default!; _explicitNullProperties?.Remove("general.stale_if_error"); }
+            else if (parseNode.GetChildNode("general.stale_if_error") is { } nullNodeGeneralStaleIfError && nullNodeGeneralStaleIfError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralStaleIfError = null;
+            if (parseNode.GetChildNode("general.stale_if_error_ttl") is null) { _explicitNullValueGeneralStaleIfErrorTtl = default!; _explicitNullProperties?.Remove("general.stale_if_error_ttl"); }
+            else if (parseNode.GetChildNode("general.stale_if_error_ttl") is { } nullNodeGeneralStaleIfErrorTtl && nullNodeGeneralStaleIfErrorTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralStaleIfErrorTtl = null;
+            if (parseNode.GetChildNode("service_id") is null) { _explicitNullValueServiceId = default!; _explicitNullProperties?.Remove("service_id"); }
+            else if (parseNode.GetChildNode("service_id") is { } nullNodeServiceId && nullNodeServiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceId = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,34 +36,34 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The generalDefault_host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GeneralDefaultHost { get => _explicitNullValueGeneralDefaultHost; set { _explicitNullValueGeneralDefaultHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_host"); else _explicitNullProperties?.Remove("general.default_host"); } }
+        public string? GeneralDefaultHost { get => _explicitNullValueGeneralDefaultHost; set { _explicitNullValueGeneralDefaultHost = value; AdditionalData?.Remove("general.default_host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_host"); else _explicitNullProperties?.Remove("general.default_host"); } }
         private string? _explicitNullValueGeneralDefaultHost = default!;
 #nullable restore
 #else
-        public string GeneralDefaultHost { get => _explicitNullValueGeneralDefaultHost; set { _explicitNullValueGeneralDefaultHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_host"); else _explicitNullProperties?.Remove("general.default_host"); } }
+        public string GeneralDefaultHost { get => _explicitNullValueGeneralDefaultHost; set { _explicitNullValueGeneralDefaultHost = value; AdditionalData?.Remove("general.default_host"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_host"); else _explicitNullProperties?.Remove("general.default_host"); } }
         private string _explicitNullValueGeneralDefaultHost = default!;
 #endif
         /// <summary>The generalDefault_ttl property</summary>
-        public long? GeneralDefaultTtl { get => _explicitNullValueGeneralDefaultTtl; set { _explicitNullValueGeneralDefaultTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_ttl"); else _explicitNullProperties?.Remove("general.default_ttl"); } }
+        public long? GeneralDefaultTtl { get => _explicitNullValueGeneralDefaultTtl; set { _explicitNullValueGeneralDefaultTtl = value; AdditionalData?.Remove("general.default_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_ttl"); else _explicitNullProperties?.Remove("general.default_ttl"); } }
         private long? _explicitNullValueGeneralDefaultTtl = default!;
         /// <summary>The generalStale_if_error property</summary>
-        public bool? GeneralStaleIfError { get => _explicitNullValueGeneralStaleIfError; set { _explicitNullValueGeneralStaleIfError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.stale_if_error"); else _explicitNullProperties?.Remove("general.stale_if_error"); } }
+        public bool? GeneralStaleIfError { get => _explicitNullValueGeneralStaleIfError; set { _explicitNullValueGeneralStaleIfError = value; AdditionalData?.Remove("general.stale_if_error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.stale_if_error"); else _explicitNullProperties?.Remove("general.stale_if_error"); } }
         private bool? _explicitNullValueGeneralStaleIfError = default!;
         /// <summary>The generalStale_if_error_ttl property</summary>
-        public long? GeneralStaleIfErrorTtl { get => _explicitNullValueGeneralStaleIfErrorTtl; set { _explicitNullValueGeneralStaleIfErrorTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.stale_if_error_ttl"); else _explicitNullProperties?.Remove("general.stale_if_error_ttl"); } }
+        public long? GeneralStaleIfErrorTtl { get => _explicitNullValueGeneralStaleIfErrorTtl; set { _explicitNullValueGeneralStaleIfErrorTtl = value; AdditionalData?.Remove("general.stale_if_error_ttl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.stale_if_error_ttl"); else _explicitNullProperties?.Remove("general.stale_if_error_ttl"); } }
         private long? _explicitNullValueGeneralStaleIfErrorTtl = default!;
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceId { get => _explicitNullValueServiceId; set { _explicitNullValueServiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_id"); else _explicitNullProperties?.Remove("service_id"); } }
+        public string? ServiceId { get => _explicitNullValueServiceId; set { _explicitNullValueServiceId = value; AdditionalData?.Remove("service_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_id"); else _explicitNullProperties?.Remove("service_id"); } }
         private string? _explicitNullValueServiceId = default!;
 #nullable restore
 #else
-        public string ServiceId { get => _explicitNullValueServiceId; set { _explicitNullValueServiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_id"); else _explicitNullProperties?.Remove("service_id"); } }
+        public string ServiceId { get => _explicitNullValueServiceId; set { _explicitNullValueServiceId = value; AdditionalData?.Remove("service_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_id"); else _explicitNullProperties?.Remove("service_id"); } }
         private string _explicitNullValueServiceId = default!;
 #endif
         /// <summary>The version property</summary>
-        public long? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public long? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private long? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceSettings200Response"/> and sets the default values.

@@ -17,13 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("version_number") is { } nullNodeVersionNumber && nullNodeVersionNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionNumber = null;
+            if (parseNode.GetChildNode("version_number") is null) { _explicitNullValueVersionNumber = default!; _explicitNullProperties?.Remove("version_number"); }
+            else if (parseNode.GetChildNode("version_number") is { } nullNodeVersionNumber && nullNodeVersionNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VersionNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The version_number property</summary>
-        public long? VersionNumber { get => _explicitNullValueVersionNumber; set { _explicitNullValueVersionNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_number"); else _explicitNullProperties?.Remove("version_number"); } }
+        public long? VersionNumber { get => _explicitNullValueVersionNumber; set { _explicitNullValueVersionNumber = value; AdditionalData?.Remove("version_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version_number"); else _explicitNullProperties?.Remove("version_number"); } }
         private long? _explicitNullValueVersionNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAnEvent200ResponseDataAttributesMetadata"/> and sets the default values.

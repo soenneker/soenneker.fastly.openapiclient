@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data_source") is { } nullNodeDataSource && nullNodeDataSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSource = null;
+            if (parseNode.GetChildNode("data_source") is null) { _explicitNullValueDataSource = default!; _explicitNullProperties?.Remove("data_source"); }
+            else if (parseNode.GetChildNode("data_source") is { } nullNodeDataSource && nullNodeDataSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSource = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The data_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateCustomDashboardRequestItemsItemDataSource? DataSource { get => _explicitNullValueDataSource; set { _explicitNullValueDataSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source"); else _explicitNullProperties?.Remove("data_source"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateCustomDashboardRequestItemsItemDataSource? DataSource { get => _explicitNullValueDataSource; set { _explicitNullValueDataSource = value; AdditionalData?.Remove("data_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source"); else _explicitNullProperties?.Remove("data_source"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateCustomDashboardRequestItemsItemDataSource? _explicitNullValueDataSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateCustomDashboardRequestItemsItemDataSource DataSource { get => _explicitNullValueDataSource; set { _explicitNullValueDataSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source"); else _explicitNullProperties?.Remove("data_source"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateCustomDashboardRequestItemsItemDataSource DataSource { get => _explicitNullValueDataSource; set { _explicitNullValueDataSource = value; AdditionalData?.Remove("data_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source"); else _explicitNullProperties?.Remove("data_source"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.UpdateCustomDashboardRequestItemsItemDataSource _explicitNullValueDataSource = default!;
 #endif
         /// <summary>

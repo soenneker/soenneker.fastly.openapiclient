@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("surrogate_keys") is { } nullNodeSurrogateKeys && nullNodeSurrogateKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SurrogateKeys = null;
+            if (parseNode.GetChildNode("surrogate_keys") is null) { _explicitNullValueSurrogateKeys = default!; _explicitNullProperties?.Remove("surrogate_keys"); }
+            else if (parseNode.GetChildNode("surrogate_keys") is { } nullNodeSurrogateKeys && nullNodeSurrogateKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SurrogateKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The surrogate_keys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SurrogateKeys { get => _explicitNullValueSurrogateKeys; set { _explicitNullValueSurrogateKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surrogate_keys"); else _explicitNullProperties?.Remove("surrogate_keys"); } }
+        public List<string>? SurrogateKeys { get => _explicitNullValueSurrogateKeys; set { _explicitNullValueSurrogateKeys = value; AdditionalData?.Remove("surrogate_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surrogate_keys"); else _explicitNullProperties?.Remove("surrogate_keys"); } }
         private List<string>? _explicitNullValueSurrogateKeys = default!;
 #nullable restore
 #else
-        public List<string> SurrogateKeys { get => _explicitNullValueSurrogateKeys; set { _explicitNullValueSurrogateKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surrogate_keys"); else _explicitNullProperties?.Remove("surrogate_keys"); } }
+        public List<string> SurrogateKeys { get => _explicitNullValueSurrogateKeys; set { _explicitNullValueSurrogateKeys = value; AdditionalData?.Remove("surrogate_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surrogate_keys"); else _explicitNullProperties?.Remove("surrogate_keys"); } }
         private List<string> _explicitNullValueSurrogateKeys = default!;
 #endif
         /// <summary>

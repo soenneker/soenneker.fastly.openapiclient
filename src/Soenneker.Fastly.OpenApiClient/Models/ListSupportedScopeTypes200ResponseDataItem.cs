@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scope_type") is { } nullNodeScopeType && nullNodeScopeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeType = null;
+            if (parseNode.GetChildNode("scope_type") is null) { _explicitNullValueScopeType = default!; _explicitNullProperties?.Remove("scope_type"); }
+            else if (parseNode.GetChildNode("scope_type") is { } nullNodeScopeType && nullNodeScopeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The scope_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeType { get => _explicitNullValueScopeType; set { _explicitNullValueScopeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_type"); else _explicitNullProperties?.Remove("scope_type"); } }
+        public string? ScopeType { get => _explicitNullValueScopeType; set { _explicitNullValueScopeType = value; AdditionalData?.Remove("scope_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_type"); else _explicitNullProperties?.Remove("scope_type"); } }
         private string? _explicitNullValueScopeType = default!;
 #nullable restore
 #else
-        public string ScopeType { get => _explicitNullValueScopeType; set { _explicitNullValueScopeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_type"); else _explicitNullProperties?.Remove("scope_type"); } }
+        public string ScopeType { get => _explicitNullValueScopeType; set { _explicitNullValueScopeType = value; AdditionalData?.Remove("scope_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_type"); else _explicitNullProperties?.Remove("scope_type"); } }
         private string _explicitNullValueScopeType = default!;
 #endif
         /// <summary>

@@ -17,11 +17,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api_key") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
-            if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
-            if (parseNode.GetChildNode("base_url") is { } nullNodeBaseUrl && nullNodeBaseUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseUrl = null;
-            if (parseNode.GetChildNode("models") is { } nullNodeModels && nullNodeModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Models = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("api_key") is null) { _explicitNullValueApiKey = default!; _explicitNullProperties?.Remove("api_key"); }
+            else if (parseNode.GetChildNode("api_key") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("auth_type") is null) { _explicitNullValueAuthType = default!; _explicitNullProperties?.Remove("auth_type"); }
+            else if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("base_url") is null) { _explicitNullValueBaseUrl = default!; _explicitNullProperties?.Remove("base_url"); }
+            else if (parseNode.GetChildNode("base_url") is { } nullNodeBaseUrl && nullNodeBaseUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseUrl = null;
+            if (parseNode.GetChildNode("models") is null) { _explicitNullValueModels = default!; _explicitNullProperties?.Remove("models"); }
+            else if (parseNode.GetChildNode("models") is { } nullNodeModels && nullNodeModels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Models = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The api_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
+        public string? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("api_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
         private string? _explicitNullValueApiKey = default!;
 #nullable restore
 #else
-        public string ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
+        public string ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("api_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key"); else _explicitNullProperties?.Remove("api_key"); } }
         private string _explicitNullValueApiKey = default!;
 #endif
         /// <summary>The auth_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        public string? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; AdditionalData?.Remove("auth_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
         private string? _explicitNullValueAuthType = default!;
 #nullable restore
 #else
-        public string AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        public string AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; AdditionalData?.Remove("auth_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
         private string _explicitNullValueAuthType = default!;
 #endif
         /// <summary>The base_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseUrl { get => _explicitNullValueBaseUrl; set { _explicitNullValueBaseUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_url"); else _explicitNullProperties?.Remove("base_url"); } }
+        public string? BaseUrl { get => _explicitNullValueBaseUrl; set { _explicitNullValueBaseUrl = value; AdditionalData?.Remove("base_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_url"); else _explicitNullProperties?.Remove("base_url"); } }
         private string? _explicitNullValueBaseUrl = default!;
 #nullable restore
 #else
-        public string BaseUrl { get => _explicitNullValueBaseUrl; set { _explicitNullValueBaseUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_url"); else _explicitNullProperties?.Remove("base_url"); } }
+        public string BaseUrl { get => _explicitNullValueBaseUrl; set { _explicitNullValueBaseUrl = value; AdditionalData?.Remove("base_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_url"); else _explicitNullProperties?.Remove("base_url"); } }
         private string _explicitNullValueBaseUrl = default!;
 #endif
         /// <summary>The models property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
+        public List<string>? Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; AdditionalData?.Remove("models"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
         private List<string>? _explicitNullValueModels = default!;
 #nullable restore
 #else
-        public List<string> Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
+        public List<string> Models { get => _explicitNullValueModels; set { _explicitNullValueModels = value; AdditionalData?.Remove("models"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("models"); else _explicitNullProperties?.Remove("models"); } }
         private List<string> _explicitNullValueModels = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>

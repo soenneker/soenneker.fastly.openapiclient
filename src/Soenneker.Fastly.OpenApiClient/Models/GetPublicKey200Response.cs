@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("signing_key") is { } nullNodeSigningKey && nullNodeSigningKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningKey = null;
+            if (parseNode.GetChildNode("signing_key") is null) { _explicitNullValueSigningKey = default!; _explicitNullProperties?.Remove("signing_key"); }
+            else if (parseNode.GetChildNode("signing_key") is { } nullNodeSigningKey && nullNodeSigningKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The signing_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SigningKey { get => _explicitNullValueSigningKey; set { _explicitNullValueSigningKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_key"); else _explicitNullProperties?.Remove("signing_key"); } }
+        public string? SigningKey { get => _explicitNullValueSigningKey; set { _explicitNullValueSigningKey = value; AdditionalData?.Remove("signing_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_key"); else _explicitNullProperties?.Remove("signing_key"); } }
         private string? _explicitNullValueSigningKey = default!;
 #nullable restore
 #else
-        public string SigningKey { get => _explicitNullValueSigningKey; set { _explicitNullValueSigningKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_key"); else _explicitNullProperties?.Remove("signing_key"); } }
+        public string SigningKey { get => _explicitNullValueSigningKey; set { _explicitNullValueSigningKey = value; AdditionalData?.Remove("signing_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_key"); else _explicitNullProperties?.Remove("signing_key"); } }
         private string _explicitNullValueSigningKey = default!;
 #endif
         /// <summary>

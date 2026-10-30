@@ -17,31 +17,35 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("host_agent_cpu") is { } nullNodeHostAgentCpu && nullNodeHostAgentCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostAgentCpu = null;
-            if (parseNode.GetChildNode("host_cpu") is { } nullNodeHostCpu && nullNodeHostCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostCpu = null;
-            if (parseNode.GetChildNode("requests_total") is { } nullNodeRequestsTotal && nullNodeRequestsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsTotal = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("host_agent_cpu") is null) { _explicitNullValueHostAgentCpu = default!; _explicitNullProperties?.Remove("host_agent_cpu"); }
+            else if (parseNode.GetChildNode("host_agent_cpu") is { } nullNodeHostAgentCpu && nullNodeHostAgentCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostAgentCpu = null;
+            if (parseNode.GetChildNode("host_cpu") is null) { _explicitNullValueHostCpu = default!; _explicitNullProperties?.Remove("host_cpu"); }
+            else if (parseNode.GetChildNode("host_cpu") is { } nullNodeHostCpu && nullNodeHostCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostCpu = null;
+            if (parseNode.GetChildNode("requests_total") is null) { _explicitNullValueRequestsTotal = default!; _explicitNullProperties?.Remove("requests_total"); }
+            else if (parseNode.GetChildNode("requests_total") is { } nullNodeRequestsTotal && nullNodeRequestsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsTotal = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The host_agent_cpu property</summary>
-        public double? HostAgentCpu { get => _explicitNullValueHostAgentCpu; set { _explicitNullValueHostAgentCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_agent_cpu"); else _explicitNullProperties?.Remove("host_agent_cpu"); } }
+        public double? HostAgentCpu { get => _explicitNullValueHostAgentCpu; set { _explicitNullValueHostAgentCpu = value; AdditionalData?.Remove("host_agent_cpu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_agent_cpu"); else _explicitNullProperties?.Remove("host_agent_cpu"); } }
         private double? _explicitNullValueHostAgentCpu = default!;
         /// <summary>The host_cpu property</summary>
-        public double? HostCpu { get => _explicitNullValueHostCpu; set { _explicitNullValueHostCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_cpu"); else _explicitNullProperties?.Remove("host_cpu"); } }
+        public double? HostCpu { get => _explicitNullValueHostCpu; set { _explicitNullValueHostCpu = value; AdditionalData?.Remove("host_cpu"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_cpu"); else _explicitNullProperties?.Remove("host_cpu"); } }
         private double? _explicitNullValueHostCpu = default!;
         /// <summary>The requests_total property</summary>
-        public long? RequestsTotal { get => _explicitNullValueRequestsTotal; set { _explicitNullValueRequestsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_total"); else _explicitNullProperties?.Remove("requests_total"); } }
+        public long? RequestsTotal { get => _explicitNullValueRequestsTotal; set { _explicitNullValueRequestsTotal = value; AdditionalData?.Remove("requests_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_total"); else _explicitNullProperties?.Remove("requests_total"); } }
         private long? _explicitNullValueRequestsTotal = default!;
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>

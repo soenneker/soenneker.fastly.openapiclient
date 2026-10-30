@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("LCY") is { } nullNodeLCY && nullNodeLCY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LCY = null;
-            if (parseNode.GetChildNode("STP") is { } nullNodeSTP && nullNodeSTP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) STP = null;
+            if (parseNode.GetChildNode("LCY") is null) { _explicitNullValueLCY = default!; _explicitNullProperties?.Remove("LCY"); }
+            else if (parseNode.GetChildNode("LCY") is { } nullNodeLCY && nullNodeLCY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LCY = null;
+            if (parseNode.GetChildNode("STP") is null) { _explicitNullValueSTP = default!; _explicitNullProperties?.Remove("STP"); }
+            else if (parseNode.GetChildNode("STP") is { } nullNodeSTP && nullNodeSTP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) STP = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The LCY property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterLcy? LCY { get => _explicitNullValueLCY; set { _explicitNullValueLCY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LCY"); else _explicitNullProperties?.Remove("LCY"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterLcy? LCY { get => _explicitNullValueLCY; set { _explicitNullValueLCY = value; AdditionalData?.Remove("LCY"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LCY"); else _explicitNullProperties?.Remove("LCY"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterLcy? _explicitNullValueLCY = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterLcy LCY { get => _explicitNullValueLCY; set { _explicitNullValueLCY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LCY"); else _explicitNullProperties?.Remove("LCY"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterLcy LCY { get => _explicitNullValueLCY; set { _explicitNullValueLCY = value; AdditionalData?.Remove("LCY"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("LCY"); else _explicitNullProperties?.Remove("LCY"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterLcy _explicitNullValueLCY = default!;
 #endif
         /// <summary>The STP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterStp? STP { get => _explicitNullValueSTP; set { _explicitNullValueSTP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STP"); else _explicitNullProperties?.Remove("STP"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterStp? STP { get => _explicitNullValueSTP; set { _explicitNullValueSTP = value; AdditionalData?.Remove("STP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STP"); else _explicitNullProperties?.Remove("STP"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterStp? _explicitNullValueSTP = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterStp STP { get => _explicitNullValueSTP; set { _explicitNullValueSTP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STP"); else _explicitNullProperties?.Remove("STP"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterStp STP { get => _explicitNullValueSTP; set { _explicitNullValueSTP = value; AdditionalData?.Remove("STP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("STP"); else _explicitNullProperties?.Remove("STP"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemDatacenterStp _explicitNullValueSTP = default!;
 #endif
         /// <summary>

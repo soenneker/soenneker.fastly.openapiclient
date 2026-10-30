@@ -17,10 +17,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("header_context") is { } nullNodeHeaderContext && nullNodeHeaderContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderContext = null;
-            if (parseNode.GetChildNode("header_name") is { } nullNodeHeaderName && nullNodeHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderName = null;
-            if (parseNode.GetChildNode("link_label") is { } nullNodeLinkLabel && nullNodeLinkLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkLabel = null;
-            if (parseNode.GetChildNode("link_url_template") is { } nullNodeLinkUrlTemplate && nullNodeLinkUrlTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkUrlTemplate = null;
+            if (parseNode.GetChildNode("header_context") is null) { _explicitNullValueHeaderContext = default!; _explicitNullProperties?.Remove("header_context"); }
+            else if (parseNode.GetChildNode("header_context") is { } nullNodeHeaderContext && nullNodeHeaderContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderContext = null;
+            if (parseNode.GetChildNode("header_name") is null) { _explicitNullValueHeaderName = default!; _explicitNullProperties?.Remove("header_name"); }
+            else if (parseNode.GetChildNode("header_name") is { } nullNodeHeaderName && nullNodeHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderName = null;
+            if (parseNode.GetChildNode("link_label") is null) { _explicitNullValueLinkLabel = default!; _explicitNullProperties?.Remove("link_label"); }
+            else if (parseNode.GetChildNode("link_label") is { } nullNodeLinkLabel && nullNodeLinkLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkLabel = null;
+            if (parseNode.GetChildNode("link_url_template") is null) { _explicitNullValueLinkUrlTemplate = default!; _explicitNullProperties?.Remove("link_url_template"); }
+            else if (parseNode.GetChildNode("link_url_template") is { } nullNodeLinkUrlTemplate && nullNodeLinkUrlTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkUrlTemplate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The header_context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderContext { get => _explicitNullValueHeaderContext; set { _explicitNullValueHeaderContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_context"); else _explicitNullProperties?.Remove("header_context"); } }
+        public string? HeaderContext { get => _explicitNullValueHeaderContext; set { _explicitNullValueHeaderContext = value; AdditionalData?.Remove("header_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_context"); else _explicitNullProperties?.Remove("header_context"); } }
         private string? _explicitNullValueHeaderContext = default!;
 #nullable restore
 #else
-        public string HeaderContext { get => _explicitNullValueHeaderContext; set { _explicitNullValueHeaderContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_context"); else _explicitNullProperties?.Remove("header_context"); } }
+        public string HeaderContext { get => _explicitNullValueHeaderContext; set { _explicitNullValueHeaderContext = value; AdditionalData?.Remove("header_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_context"); else _explicitNullProperties?.Remove("header_context"); } }
         private string _explicitNullValueHeaderContext = default!;
 #endif
         /// <summary>The header_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
+        public string? HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; AdditionalData?.Remove("header_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
         private string? _explicitNullValueHeaderName = default!;
 #nullable restore
 #else
-        public string HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
+        public string HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; AdditionalData?.Remove("header_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
         private string _explicitNullValueHeaderName = default!;
 #endif
         /// <summary>The link_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkLabel { get => _explicitNullValueLinkLabel; set { _explicitNullValueLinkLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_label"); else _explicitNullProperties?.Remove("link_label"); } }
+        public string? LinkLabel { get => _explicitNullValueLinkLabel; set { _explicitNullValueLinkLabel = value; AdditionalData?.Remove("link_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_label"); else _explicitNullProperties?.Remove("link_label"); } }
         private string? _explicitNullValueLinkLabel = default!;
 #nullable restore
 #else
-        public string LinkLabel { get => _explicitNullValueLinkLabel; set { _explicitNullValueLinkLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_label"); else _explicitNullProperties?.Remove("link_label"); } }
+        public string LinkLabel { get => _explicitNullValueLinkLabel; set { _explicitNullValueLinkLabel = value; AdditionalData?.Remove("link_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_label"); else _explicitNullProperties?.Remove("link_label"); } }
         private string _explicitNullValueLinkLabel = default!;
 #endif
         /// <summary>The link_url_template property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkUrlTemplate { get => _explicitNullValueLinkUrlTemplate; set { _explicitNullValueLinkUrlTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_url_template"); else _explicitNullProperties?.Remove("link_url_template"); } }
+        public string? LinkUrlTemplate { get => _explicitNullValueLinkUrlTemplate; set { _explicitNullValueLinkUrlTemplate = value; AdditionalData?.Remove("link_url_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_url_template"); else _explicitNullProperties?.Remove("link_url_template"); } }
         private string? _explicitNullValueLinkUrlTemplate = default!;
 #nullable restore
 #else
-        public string LinkUrlTemplate { get => _explicitNullValueLinkUrlTemplate; set { _explicitNullValueLinkUrlTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_url_template"); else _explicitNullProperties?.Remove("link_url_template"); } }
+        public string LinkUrlTemplate { get => _explicitNullValueLinkUrlTemplate; set { _explicitNullValueLinkUrlTemplate = value; AdditionalData?.Remove("link_url_template"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_url_template"); else _explicitNullProperties?.Remove("link_url_template"); } }
         private string _explicitNullValueLinkUrlTemplate = default!;
 #endif
         /// <summary>

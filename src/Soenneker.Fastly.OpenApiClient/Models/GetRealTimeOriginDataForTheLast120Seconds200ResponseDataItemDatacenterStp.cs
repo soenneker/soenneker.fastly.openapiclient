@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("origin_1") is { } nullNodeOrigin1 && nullNodeOrigin1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin1 = null;
+            if (parseNode.GetChildNode("origin_1") is null) { _explicitNullValueOrigin1 = default!; _explicitNullProperties?.Remove("origin_1"); }
+            else if (parseNode.GetChildNode("origin_1") is { } nullNodeOrigin1 && nullNodeOrigin1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin1 = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The origin_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200ResponseDataItemDatacenterStpOrigin1? Origin1 { get => _explicitNullValueOrigin1; set { _explicitNullValueOrigin1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_1"); else _explicitNullProperties?.Remove("origin_1"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200ResponseDataItemDatacenterStpOrigin1? Origin1 { get => _explicitNullValueOrigin1; set { _explicitNullValueOrigin1 = value; AdditionalData?.Remove("origin_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_1"); else _explicitNullProperties?.Remove("origin_1"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200ResponseDataItemDatacenterStpOrigin1? _explicitNullValueOrigin1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200ResponseDataItemDatacenterStpOrigin1 Origin1 { get => _explicitNullValueOrigin1; set { _explicitNullValueOrigin1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_1"); else _explicitNullProperties?.Remove("origin_1"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200ResponseDataItemDatacenterStpOrigin1 Origin1 { get => _explicitNullValueOrigin1; set { _explicitNullValueOrigin1 = value; AdditionalData?.Remove("origin_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin_1"); else _explicitNullProperties?.Remove("origin_1"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeOriginDataForTheLast120Seconds200ResponseDataItemDatacenterStpOrigin1 _explicitNullValueOrigin1 = default!;
 #endif
         /// <summary>

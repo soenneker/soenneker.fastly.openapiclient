@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("included") is { } nullNodeIncluded && nullNodeIncluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Included = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("included") is null) { _explicitNullValueIncluded = default!; _explicitNullProperties?.Remove("included"); }
+            else if (parseNode.GetChildNode("included") is { } nullNodeIncluded && nullNodeIncluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Included = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseData _explicitNullValueData = default!;
 #endif
         /// <summary>The included property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseIncludedItem>? Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseIncludedItem>? Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; AdditionalData?.Remove("included"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseIncludedItem>? _explicitNullValueIncluded = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseIncludedItem> Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseIncludedItem> Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; AdditionalData?.Remove("included"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseIncludedItem> _explicitNullValueIncluded = default!;
 #endif
         /// <summary>

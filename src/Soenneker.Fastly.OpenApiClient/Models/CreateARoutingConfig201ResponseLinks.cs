@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("paths") is { } nullNodePaths && nullNodePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paths = null;
-            if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
-            if (parseNode.GetChildNode("versions") is { } nullNodeVersions && nullNodeVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versions = null;
+            if (parseNode.GetChildNode("paths") is null) { _explicitNullValuePaths = default!; _explicitNullProperties?.Remove("paths"); }
+            else if (parseNode.GetChildNode("paths") is { } nullNodePaths && nullNodePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paths = null;
+            if (parseNode.GetChildNode("self") is null) { _explicitNullValueSelf = default!; _explicitNullProperties?.Remove("self"); }
+            else if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
+            if (parseNode.GetChildNode("versions") is null) { _explicitNullValueVersions = default!; _explicitNullProperties?.Remove("versions"); }
+            else if (parseNode.GetChildNode("versions") is { } nullNodeVersions && nullNodeVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The paths property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
+        public string? Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; AdditionalData?.Remove("paths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
         private string? _explicitNullValuePaths = default!;
 #nullable restore
 #else
-        public string Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
+        public string Paths { get => _explicitNullValuePaths; set { _explicitNullValuePaths = value; AdditionalData?.Remove("paths"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paths"); else _explicitNullProperties?.Remove("paths"); } }
         private string _explicitNullValuePaths = default!;
 #endif
         /// <summary>The self property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        public string? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; AdditionalData?.Remove("self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
         private string? _explicitNullValueSelf = default!;
 #nullable restore
 #else
-        public string Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        public string Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; AdditionalData?.Remove("self"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
         private string _explicitNullValueSelf = default!;
 #endif
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        public string? Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; AdditionalData?.Remove("versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
         private string? _explicitNullValueVersions = default!;
 #nullable restore
 #else
-        public string Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        public string Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; AdditionalData?.Remove("versions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
         private string _explicitNullValueVersions = default!;
 #endif
         /// <summary>

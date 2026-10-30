@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
-            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+            if (parseNode.GetChildNode("service") is null) { _explicitNullValueService = default!; _explicitNullProperties?.Remove("service"); }
+            else if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
+            if (parseNode.GetChildNode("user") is null) { _explicitNullValueUser = default!; _explicitNullProperties?.Remove("user"); }
+            else if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The service property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsService? _explicitNullValueService = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsService Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsService Service { get => _explicitNullValueService; set { _explicitNullValueService = value; AdditionalData?.Remove("service"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsService _explicitNullValueService = default!;
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsUser? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CreateServiceAuthorizationApiJsonRequestDataRelationshipsUser _explicitNullValueUser = default!;
 #endif
         /// <summary>

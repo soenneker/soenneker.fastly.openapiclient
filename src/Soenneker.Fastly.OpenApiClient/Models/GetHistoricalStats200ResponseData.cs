@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("5oYej0l0heMydtjaVPOq4z") is { } nullNodeFiveoYej0l0heMydtjaVPOq4z && nullNodeFiveoYej0l0heMydtjaVPOq4z.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiveoYej0l0heMydtjaVPOq4z = null;
-            if (parseNode.GetChildNode("6ElZZvtumbwtLBDJvFwepx") is { } nullNodeSixElZZvtumbwtLBDJvFwepx && nullNodeSixElZZvtumbwtLBDJvFwepx.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SixElZZvtumbwtLBDJvFwepx = null;
+            if (parseNode.GetChildNode("5oYej0l0heMydtjaVPOq4z") is null) { _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = default!; _explicitNullProperties?.Remove("5oYej0l0heMydtjaVPOq4z"); }
+            else if (parseNode.GetChildNode("5oYej0l0heMydtjaVPOq4z") is { } nullNodeFiveoYej0l0heMydtjaVPOq4z && nullNodeFiveoYej0l0heMydtjaVPOq4z.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiveoYej0l0heMydtjaVPOq4z = null;
+            if (parseNode.GetChildNode("6ElZZvtumbwtLBDJvFwepx") is null) { _explicitNullValueSixElZZvtumbwtLBDJvFwepx = default!; _explicitNullProperties?.Remove("6ElZZvtumbwtLBDJvFwepx"); }
+            else if (parseNode.GetChildNode("6ElZZvtumbwtLBDJvFwepx") is { } nullNodeSixElZZvtumbwtLBDJvFwepx && nullNodeSixElZZvtumbwtLBDJvFwepx.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SixElZZvtumbwtLBDJvFwepx = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The FiveoYej0l0heMydtjaVPOq4z property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData5OYej0L0HeMydtjaVpOq4ZItem>? FiveoYej0l0heMydtjaVPOq4z { get => _explicitNullValueFiveoYej0l0heMydtjaVPOq4z; set { _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("5oYej0l0heMydtjaVPOq4z"); else _explicitNullProperties?.Remove("5oYej0l0heMydtjaVPOq4z"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData5OYej0L0HeMydtjaVpOq4ZItem>? FiveoYej0l0heMydtjaVPOq4z { get => _explicitNullValueFiveoYej0l0heMydtjaVPOq4z; set { _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = value; AdditionalData?.Remove("5oYej0l0heMydtjaVPOq4z"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("5oYej0l0heMydtjaVPOq4z"); else _explicitNullProperties?.Remove("5oYej0l0heMydtjaVPOq4z"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData5OYej0L0HeMydtjaVpOq4ZItem>? _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData5OYej0L0HeMydtjaVpOq4ZItem> FiveoYej0l0heMydtjaVPOq4z { get => _explicitNullValueFiveoYej0l0heMydtjaVPOq4z; set { _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("5oYej0l0heMydtjaVPOq4z"); else _explicitNullProperties?.Remove("5oYej0l0heMydtjaVPOq4z"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData5OYej0L0HeMydtjaVpOq4ZItem> FiveoYej0l0heMydtjaVPOq4z { get => _explicitNullValueFiveoYej0l0heMydtjaVPOq4z; set { _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = value; AdditionalData?.Remove("5oYej0l0heMydtjaVPOq4z"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("5oYej0l0heMydtjaVPOq4z"); else _explicitNullProperties?.Remove("5oYej0l0heMydtjaVPOq4z"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData5OYej0L0HeMydtjaVpOq4ZItem> _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = default!;
 #endif
         /// <summary>The SixElZZvtumbwtLBDJvFwepx property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData6ElZZvtumbwtLbdJvFwepxItem>? SixElZZvtumbwtLBDJvFwepx { get => _explicitNullValueSixElZZvtumbwtLBDJvFwepx; set { _explicitNullValueSixElZZvtumbwtLBDJvFwepx = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6ElZZvtumbwtLBDJvFwepx"); else _explicitNullProperties?.Remove("6ElZZvtumbwtLBDJvFwepx"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData6ElZZvtumbwtLbdJvFwepxItem>? SixElZZvtumbwtLBDJvFwepx { get => _explicitNullValueSixElZZvtumbwtLBDJvFwepx; set { _explicitNullValueSixElZZvtumbwtLBDJvFwepx = value; AdditionalData?.Remove("6ElZZvtumbwtLBDJvFwepx"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6ElZZvtumbwtLBDJvFwepx"); else _explicitNullProperties?.Remove("6ElZZvtumbwtLBDJvFwepx"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData6ElZZvtumbwtLbdJvFwepxItem>? _explicitNullValueSixElZZvtumbwtLBDJvFwepx = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData6ElZZvtumbwtLbdJvFwepxItem> SixElZZvtumbwtLBDJvFwepx { get => _explicitNullValueSixElZZvtumbwtLBDJvFwepx; set { _explicitNullValueSixElZZvtumbwtLBDJvFwepx = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6ElZZvtumbwtLBDJvFwepx"); else _explicitNullProperties?.Remove("6ElZZvtumbwtLBDJvFwepx"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData6ElZZvtumbwtLbdJvFwepxItem> SixElZZvtumbwtLBDJvFwepx { get => _explicitNullValueSixElZZvtumbwtLBDJvFwepx; set { _explicitNullValueSixElZZvtumbwtLBDJvFwepx = value; AdditionalData?.Remove("6ElZZvtumbwtLBDJvFwepx"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6ElZZvtumbwtLBDJvFwepx"); else _explicitNullProperties?.Remove("6ElZZvtumbwtLBDJvFwepx"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200ResponseData6ElZZvtumbwtLbdJvFwepxItem> _explicitNullValueSixElZZvtumbwtLBDJvFwepx = default!;
 #endif
         /// <summary>

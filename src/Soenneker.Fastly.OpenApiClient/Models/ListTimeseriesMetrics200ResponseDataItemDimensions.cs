@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("time") is { } nullNodeTime && nullNodeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Time = null;
-            if (parseNode.GetChildNode("workspace") is { } nullNodeWorkspace && nullNodeWorkspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workspace = null;
+            if (parseNode.GetChildNode("time") is null) { _explicitNullValueTime = default!; _explicitNullProperties?.Remove("time"); }
+            else if (parseNode.GetChildNode("time") is { } nullNodeTime && nullNodeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Time = null;
+            if (parseNode.GetChildNode("workspace") is null) { _explicitNullValueWorkspace = default!; _explicitNullProperties?.Remove("workspace"); }
+            else if (parseNode.GetChildNode("workspace") is { } nullNodeWorkspace && nullNodeWorkspace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Workspace = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        public string? Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; AdditionalData?.Remove("time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
         private string? _explicitNullValueTime = default!;
 #nullable restore
 #else
-        public string Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
+        public string Time { get => _explicitNullValueTime; set { _explicitNullValueTime = value; AdditionalData?.Remove("time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time"); else _explicitNullProperties?.Remove("time"); } }
         private string _explicitNullValueTime = default!;
 #endif
         /// <summary>The workspace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
+        public string? Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; AdditionalData?.Remove("workspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
         private string? _explicitNullValueWorkspace = default!;
 #nullable restore
 #else
-        public string Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
+        public string Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; AdditionalData?.Remove("workspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
         private string _explicitNullValueWorkspace = default!;
 #endif
         /// <summary>

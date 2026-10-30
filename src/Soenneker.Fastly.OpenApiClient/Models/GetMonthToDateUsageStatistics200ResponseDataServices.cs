@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("SU1Z0isxPaozGVKXdv0eY") is { } nullNodeSU1Z0isxPaozGVKXdv0eY && nullNodeSU1Z0isxPaozGVKXdv0eY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SU1Z0isxPaozGVKXdv0eY = null;
+            if (parseNode.GetChildNode("SU1Z0isxPaozGVKXdv0eY") is null) { _explicitNullValueSU1Z0isxPaozGVKXdv0eY = default!; _explicitNullProperties?.Remove("SU1Z0isxPaozGVKXdv0eY"); }
+            else if (parseNode.GetChildNode("SU1Z0isxPaozGVKXdv0eY") is { } nullNodeSU1Z0isxPaozGVKXdv0eY && nullNodeSU1Z0isxPaozGVKXdv0eY.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SU1Z0isxPaozGVKXdv0eY = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The SU1Z0isxPaozGVKXdv0eY property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0Ey? SU1Z0isxPaozGVKXdv0eY { get => _explicitNullValueSU1Z0isxPaozGVKXdv0eY; set { _explicitNullValueSU1Z0isxPaozGVKXdv0eY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SU1Z0isxPaozGVKXdv0eY"); else _explicitNullProperties?.Remove("SU1Z0isxPaozGVKXdv0eY"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0Ey? SU1Z0isxPaozGVKXdv0eY { get => _explicitNullValueSU1Z0isxPaozGVKXdv0eY; set { _explicitNullValueSU1Z0isxPaozGVKXdv0eY = value; AdditionalData?.Remove("SU1Z0isxPaozGVKXdv0eY"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SU1Z0isxPaozGVKXdv0eY"); else _explicitNullProperties?.Remove("SU1Z0isxPaozGVKXdv0eY"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0Ey? _explicitNullValueSU1Z0isxPaozGVKXdv0eY = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0Ey SU1Z0isxPaozGVKXdv0eY { get => _explicitNullValueSU1Z0isxPaozGVKXdv0eY; set { _explicitNullValueSU1Z0isxPaozGVKXdv0eY = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SU1Z0isxPaozGVKXdv0eY"); else _explicitNullProperties?.Remove("SU1Z0isxPaozGVKXdv0eY"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0Ey SU1Z0isxPaozGVKXdv0eY { get => _explicitNullValueSU1Z0isxPaozGVKXdv0eY; set { _explicitNullValueSU1Z0isxPaozGVKXdv0eY = value; AdditionalData?.Remove("SU1Z0isxPaozGVKXdv0eY"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("SU1Z0isxPaozGVKXdv0eY"); else _explicitNullProperties?.Remove("SU1Z0isxPaozGVKXdv0eY"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0Ey _explicitNullValueSU1Z0isxPaozGVKXdv0eY = default!;
 #endif
         /// <summary>

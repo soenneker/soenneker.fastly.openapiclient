@@ -17,12 +17,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hash") is { } nullNodeHash && nullNodeHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hash = null;
-            if (parseNode.GetChildNode("pop") is { } nullNodePop && nullNodePop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pop = null;
-            if (parseNode.GetChildNode("request") is { } nullNodeRequest && nullNodeRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Request = null;
-            if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
-            if (parseNode.GetChildNode("response_time") is { } nullNodeResponseTime && nullNodeResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTime = null;
-            if (parseNode.GetChildNode("server") is { } nullNodeServer && nullNodeServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Server = null;
+            if (parseNode.GetChildNode("hash") is null) { _explicitNullValueHash = default!; _explicitNullProperties?.Remove("hash"); }
+            else if (parseNode.GetChildNode("hash") is { } nullNodeHash && nullNodeHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hash = null;
+            if (parseNode.GetChildNode("pop") is null) { _explicitNullValuePop = default!; _explicitNullProperties?.Remove("pop"); }
+            else if (parseNode.GetChildNode("pop") is { } nullNodePop && nullNodePop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pop = null;
+            if (parseNode.GetChildNode("request") is null) { _explicitNullValueRequest = default!; _explicitNullProperties?.Remove("request"); }
+            else if (parseNode.GetChildNode("request") is { } nullNodeRequest && nullNodeRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Request = null;
+            if (parseNode.GetChildNode("response") is null) { _explicitNullValueResponse = default!; _explicitNullProperties?.Remove("response"); }
+            else if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("response_time") is null) { _explicitNullValueResponseTime = default!; _explicitNullProperties?.Remove("response_time"); }
+            else if (parseNode.GetChildNode("response_time") is { } nullNodeResponseTime && nullNodeResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTime = null;
+            if (parseNode.GetChildNode("server") is null) { _explicitNullValueServer = default!; _explicitNullProperties?.Remove("server"); }
+            else if (parseNode.GetChildNode("server") is { } nullNodeServer && nullNodeServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Server = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,54 +36,54 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The hash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
+        public string? Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; AdditionalData?.Remove("hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
         private string? _explicitNullValueHash = default!;
 #nullable restore
 #else
-        public string Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
+        public string Hash { get => _explicitNullValueHash; set { _explicitNullValueHash = value; AdditionalData?.Remove("hash"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hash"); else _explicitNullProperties?.Remove("hash"); } }
         private string _explicitNullValueHash = default!;
 #endif
         /// <summary>The pop property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pop { get => _explicitNullValuePop; set { _explicitNullValuePop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pop"); else _explicitNullProperties?.Remove("pop"); } }
+        public string? Pop { get => _explicitNullValuePop; set { _explicitNullValuePop = value; AdditionalData?.Remove("pop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pop"); else _explicitNullProperties?.Remove("pop"); } }
         private string? _explicitNullValuePop = default!;
 #nullable restore
 #else
-        public string Pop { get => _explicitNullValuePop; set { _explicitNullValuePop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pop"); else _explicitNullProperties?.Remove("pop"); } }
+        public string Pop { get => _explicitNullValuePop; set { _explicitNullValuePop = value; AdditionalData?.Remove("pop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pop"); else _explicitNullProperties?.Remove("pop"); } }
         private string _explicitNullValuePop = default!;
 #endif
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest? _explicitNullValueRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest _explicitNullValueRequest = default!;
 #endif
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponse? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponse? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponse? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponse Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponse Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponse _explicitNullValueResponse = default!;
 #endif
         /// <summary>The response_time property</summary>
-        public double? ResponseTime { get => _explicitNullValueResponseTime; set { _explicitNullValueResponseTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_time"); else _explicitNullProperties?.Remove("response_time"); } }
+        public double? ResponseTime { get => _explicitNullValueResponseTime; set { _explicitNullValueResponseTime = value; AdditionalData?.Remove("response_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_time"); else _explicitNullProperties?.Remove("response_time"); } }
         private double? _explicitNullValueResponseTime = default!;
         /// <summary>The server property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
+        public string? Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; AdditionalData?.Remove("server"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
         private string? _explicitNullValueServer = default!;
 #nullable restore
 #else
-        public string Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
+        public string Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; AdditionalData?.Remove("server"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
         private string _explicitNullValueServer = default!;
 #endif
         /// <summary>

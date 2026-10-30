@@ -17,9 +17,12 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("limit_workspaces") is { } nullNodeLimitWorkspaces && nullNodeLimitWorkspaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitWorkspaces = null;
-            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("limit_workspaces") is null) { _explicitNullValueLimitWorkspaces = default!; _explicitNullProperties?.Remove("limit_workspaces"); }
+            else if (parseNode.GetChildNode("limit_workspaces") is { } nullNodeLimitWorkspaces && nullNodeLimitWorkspaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LimitWorkspaces = null;
+            if (parseNode.GetChildNode("meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("meta"); }
+            else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>The limit_workspaces property</summary>
-        public bool? LimitWorkspaces { get => _explicitNullValueLimitWorkspaces; set { _explicitNullValueLimitWorkspaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit_workspaces"); else _explicitNullProperties?.Remove("limit_workspaces"); } }
+        public bool? LimitWorkspaces { get => _explicitNullValueLimitWorkspaces; set { _explicitNullValueLimitWorkspaces = value; AdditionalData?.Remove("limit_workspaces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit_workspaces"); else _explicitNullProperties?.Remove("limit_workspaces"); } }
         private bool? _explicitNullValueLimitWorkspaces = default!;
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200ResponseMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>

@@ -17,39 +17,43 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
-            if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
-            if (parseNode.GetChildNode("sort") is { } nullNodeSort && nullNodeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sort = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("limit") is null) { _explicitNullValueLimit = default!; _explicitNullProperties?.Remove("limit"); }
+            else if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("next_cursor") is null) { _explicitNullValueNextCursor = default!; _explicitNullProperties?.Remove("next_cursor"); }
+            else if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+            if (parseNode.GetChildNode("sort") is null) { _explicitNullValueSort = default!; _explicitNullProperties?.Remove("sort"); }
+            else if (parseNode.GetChildNode("sort") is { } nullNodeSort && nullNodeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sort = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The limit property</summary>
-        public long? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        public long? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private long? _explicitNullValueLimit = default!;
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; AdditionalData?.Remove("next_cursor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
         private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        public string? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
         private string? _explicitNullValueSort = default!;
 #nullable restore
 #else
-        public string Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        public string Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
         private string _explicitNullValueSort = default!;
 #endif
         /// <summary>The total property</summary>
-        public long? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public long? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private long? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetTsigKeys200ResponseMeta"/> and sets the default values.

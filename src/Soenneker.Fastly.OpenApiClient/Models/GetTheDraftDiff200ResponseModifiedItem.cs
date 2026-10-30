@@ -17,12 +17,18 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("old_path") is { } nullNodeOldPath && nullNodeOldPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldPath = null;
-            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
-            if (parseNode.GetChildNode("path_id") is { } nullNodePathId && nullNodePathId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathId = null;
-            if (parseNode.GetChildNode("rules_added") is { } nullNodeRulesAdded && nullNodeRulesAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesAdded = null;
-            if (parseNode.GetChildNode("rules_changed") is { } nullNodeRulesChanged && nullNodeRulesChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesChanged = null;
-            if (parseNode.GetChildNode("rules_deleted") is { } nullNodeRulesDeleted && nullNodeRulesDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesDeleted = null;
+            if (parseNode.GetChildNode("old_path") is null) { _explicitNullValueOldPath = default!; _explicitNullProperties?.Remove("old_path"); }
+            else if (parseNode.GetChildNode("old_path") is { } nullNodeOldPath && nullNodeOldPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldPath = null;
+            if (parseNode.GetChildNode("path") is null) { _explicitNullValuePath = default!; _explicitNullProperties?.Remove("path"); }
+            else if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("path_id") is null) { _explicitNullValuePathId = default!; _explicitNullProperties?.Remove("path_id"); }
+            else if (parseNode.GetChildNode("path_id") is { } nullNodePathId && nullNodePathId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathId = null;
+            if (parseNode.GetChildNode("rules_added") is null) { _explicitNullValueRulesAdded = default!; _explicitNullProperties?.Remove("rules_added"); }
+            else if (parseNode.GetChildNode("rules_added") is { } nullNodeRulesAdded && nullNodeRulesAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesAdded = null;
+            if (parseNode.GetChildNode("rules_changed") is null) { _explicitNullValueRulesChanged = default!; _explicitNullProperties?.Remove("rules_changed"); }
+            else if (parseNode.GetChildNode("rules_changed") is { } nullNodeRulesChanged && nullNodeRulesChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesChanged = null;
+            if (parseNode.GetChildNode("rules_deleted") is null) { _explicitNullValueRulesDeleted = default!; _explicitNullProperties?.Remove("rules_deleted"); }
+            else if (parseNode.GetChildNode("rules_deleted") is { } nullNodeRulesDeleted && nullNodeRulesDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RulesDeleted = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The old_path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldPath { get => _explicitNullValueOldPath; set { _explicitNullValueOldPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_path"); else _explicitNullProperties?.Remove("old_path"); } }
+        public string? OldPath { get => _explicitNullValueOldPath; set { _explicitNullValueOldPath = value; AdditionalData?.Remove("old_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_path"); else _explicitNullProperties?.Remove("old_path"); } }
         private string? _explicitNullValueOldPath = default!;
 #nullable restore
 #else
-        public string OldPath { get => _explicitNullValueOldPath; set { _explicitNullValueOldPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_path"); else _explicitNullProperties?.Remove("old_path"); } }
+        public string OldPath { get => _explicitNullValueOldPath; set { _explicitNullValueOldPath = value; AdditionalData?.Remove("old_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_path"); else _explicitNullProperties?.Remove("old_path"); } }
         private string _explicitNullValueOldPath = default!;
 #endif
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private string _explicitNullValuePath = default!;
 #endif
         /// <summary>The path_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PathId { get => _explicitNullValuePathId; set { _explicitNullValuePathId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_id"); else _explicitNullProperties?.Remove("path_id"); } }
+        public string? PathId { get => _explicitNullValuePathId; set { _explicitNullValuePathId = value; AdditionalData?.Remove("path_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_id"); else _explicitNullProperties?.Remove("path_id"); } }
         private string? _explicitNullValuePathId = default!;
 #nullable restore
 #else
-        public string PathId { get => _explicitNullValuePathId; set { _explicitNullValuePathId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_id"); else _explicitNullProperties?.Remove("path_id"); } }
+        public string PathId { get => _explicitNullValuePathId; set { _explicitNullValuePathId = value; AdditionalData?.Remove("path_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_id"); else _explicitNullProperties?.Remove("path_id"); } }
         private string _explicitNullValuePathId = default!;
 #endif
         /// <summary>The rules_added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RulesAdded { get => _explicitNullValueRulesAdded; set { _explicitNullValueRulesAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_added"); else _explicitNullProperties?.Remove("rules_added"); } }
+        public UntypedNode? RulesAdded { get => _explicitNullValueRulesAdded; set { _explicitNullValueRulesAdded = value; AdditionalData?.Remove("rules_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_added"); else _explicitNullProperties?.Remove("rules_added"); } }
         private UntypedNode? _explicitNullValueRulesAdded = default!;
 #nullable restore
 #else
-        public UntypedNode RulesAdded { get => _explicitNullValueRulesAdded; set { _explicitNullValueRulesAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_added"); else _explicitNullProperties?.Remove("rules_added"); } }
+        public UntypedNode RulesAdded { get => _explicitNullValueRulesAdded; set { _explicitNullValueRulesAdded = value; AdditionalData?.Remove("rules_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_added"); else _explicitNullProperties?.Remove("rules_added"); } }
         private UntypedNode _explicitNullValueRulesAdded = default!;
 #endif
         /// <summary>The rules_changed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem>? RulesChanged { get => _explicitNullValueRulesChanged; set { _explicitNullValueRulesChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_changed"); else _explicitNullProperties?.Remove("rules_changed"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem>? RulesChanged { get => _explicitNullValueRulesChanged; set { _explicitNullValueRulesChanged = value; AdditionalData?.Remove("rules_changed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_changed"); else _explicitNullProperties?.Remove("rules_changed"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem>? _explicitNullValueRulesChanged = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem> RulesChanged { get => _explicitNullValueRulesChanged; set { _explicitNullValueRulesChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_changed"); else _explicitNullProperties?.Remove("rules_changed"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem> RulesChanged { get => _explicitNullValueRulesChanged; set { _explicitNullValueRulesChanged = value; AdditionalData?.Remove("rules_changed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_changed"); else _explicitNullProperties?.Remove("rules_changed"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem> _explicitNullValueRulesChanged = default!;
 #endif
         /// <summary>The rules_deleted property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RulesDeleted { get => _explicitNullValueRulesDeleted; set { _explicitNullValueRulesDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_deleted"); else _explicitNullProperties?.Remove("rules_deleted"); } }
+        public UntypedNode? RulesDeleted { get => _explicitNullValueRulesDeleted; set { _explicitNullValueRulesDeleted = value; AdditionalData?.Remove("rules_deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_deleted"); else _explicitNullProperties?.Remove("rules_deleted"); } }
         private UntypedNode? _explicitNullValueRulesDeleted = default!;
 #nullable restore
 #else
-        public UntypedNode RulesDeleted { get => _explicitNullValueRulesDeleted; set { _explicitNullValueRulesDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_deleted"); else _explicitNullProperties?.Remove("rules_deleted"); } }
+        public UntypedNode RulesDeleted { get => _explicitNullValueRulesDeleted; set { _explicitNullValueRulesDeleted = value; AdditionalData?.Remove("rules_deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rules_deleted"); else _explicitNullProperties?.Remove("rules_deleted"); } }
         private UntypedNode _explicitNullValueRulesDeleted = default!;
 #endif
         /// <summary>

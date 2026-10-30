@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authorization_status") is { } nullNodeAuthorizationStatus && nullNodeAuthorizationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationStatus = null;
-            if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
+            if (parseNode.GetChildNode("authorization_status") is null) { _explicitNullValueAuthorizationStatus = default!; _explicitNullProperties?.Remove("authorization_status"); }
+            else if (parseNode.GetChildNode("authorization_status") is { } nullNodeAuthorizationStatus && nullNodeAuthorizationStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationStatus = null;
+            if (parseNode.GetChildNode("justification") is null) { _explicitNullValueJustification = default!; _explicitNullProperties?.Remove("justification"); }
+            else if (parseNode.GetChildNode("justification") is { } nullNodeJustification && nullNodeJustification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Justification = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The authorization_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorizationStatus { get => _explicitNullValueAuthorizationStatus; set { _explicitNullValueAuthorizationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_status"); else _explicitNullProperties?.Remove("authorization_status"); } }
+        public string? AuthorizationStatus { get => _explicitNullValueAuthorizationStatus; set { _explicitNullValueAuthorizationStatus = value; AdditionalData?.Remove("authorization_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_status"); else _explicitNullProperties?.Remove("authorization_status"); } }
         private string? _explicitNullValueAuthorizationStatus = default!;
 #nullable restore
 #else
-        public string AuthorizationStatus { get => _explicitNullValueAuthorizationStatus; set { _explicitNullValueAuthorizationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_status"); else _explicitNullProperties?.Remove("authorization_status"); } }
+        public string AuthorizationStatus { get => _explicitNullValueAuthorizationStatus; set { _explicitNullValueAuthorizationStatus = value; AdditionalData?.Remove("authorization_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_status"); else _explicitNullProperties?.Remove("authorization_status"); } }
         private string _explicitNullValueAuthorizationStatus = default!;
 #endif
         /// <summary>The justification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        public string? Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; AdditionalData?.Remove("justification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
         private string? _explicitNullValueJustification = default!;
 #nullable restore
 #else
-        public string Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
+        public string Justification { get => _explicitNullValueJustification; set { _explicitNullValueJustification = value; AdditionalData?.Remove("justification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("justification"); else _explicitNullProperties?.Remove("justification"); } }
         private string _explicitNullValueJustification = default!;
 #endif
         /// <summary>

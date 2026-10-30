@@ -17,8 +17,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("signals") is { } nullNodeSignals && nullNodeSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signals = null;
-            if (parseNode.GetChildNode("waf_response") is { } nullNodeWafResponse && nullNodeWafResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WafResponse = null;
+            if (parseNode.GetChildNode("signals") is null) { _explicitNullValueSignals = default!; _explicitNullProperties?.Remove("signals"); }
+            else if (parseNode.GetChildNode("signals") is { } nullNodeSignals && nullNodeSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signals = null;
+            if (parseNode.GetChildNode("waf_response") is null) { _explicitNullValueWafResponse = default!; _explicitNullProperties?.Remove("waf_response"); }
+            else if (parseNode.GetChildNode("waf_response") is { } nullNodeWafResponse && nullNodeWafResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WafResponse = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The signals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem>? Signals { get => _explicitNullValueSignals; set { _explicitNullValueSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signals"); else _explicitNullProperties?.Remove("signals"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem>? Signals { get => _explicitNullValueSignals; set { _explicitNullValueSignals = value; AdditionalData?.Remove("signals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signals"); else _explicitNullProperties?.Remove("signals"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem>? _explicitNullValueSignals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem> Signals { get => _explicitNullValueSignals; set { _explicitNullValueSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signals"); else _explicitNullProperties?.Remove("signals"); } }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem> Signals { get => _explicitNullValueSignals; set { _explicitNullValueSignals = value; AdditionalData?.Remove("signals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signals"); else _explicitNullProperties?.Remove("signals"); } }
         private List<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200ResponseSignalsItem> _explicitNullValueSignals = default!;
 #endif
         /// <summary>The waf_response property</summary>
-        public long? WafResponse { get => _explicitNullValueWafResponse; set { _explicitNullValueWafResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waf_response"); else _explicitNullProperties?.Remove("waf_response"); } }
+        public long? WafResponse { get => _explicitNullValueWafResponse; set { _explicitNullValueWafResponse = value; AdditionalData?.Remove("waf_response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waf_response"); else _explicitNullProperties?.Remove("waf_response"); } }
         private long? _explicitNullValueWafResponse = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response"/> and sets the default values.

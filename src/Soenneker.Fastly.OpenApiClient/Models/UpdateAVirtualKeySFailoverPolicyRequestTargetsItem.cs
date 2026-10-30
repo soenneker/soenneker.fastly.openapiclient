@@ -17,7 +17,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("provider_connection_id") is { } nullNodeProviderConnectionId && nullNodeProviderConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderConnectionId = null;
+            if (parseNode.GetChildNode("provider_connection_id") is null) { _explicitNullValueProviderConnectionId = default!; _explicitNullProperties?.Remove("provider_connection_id"); }
+            else if (parseNode.GetChildNode("provider_connection_id") is { } nullNodeProviderConnectionId && nullNodeProviderConnectionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProviderConnectionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <summary>The provider_connection_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderConnectionId { get => _explicitNullValueProviderConnectionId; set { _explicitNullValueProviderConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_connection_id"); else _explicitNullProperties?.Remove("provider_connection_id"); } }
+        public string? ProviderConnectionId { get => _explicitNullValueProviderConnectionId; set { _explicitNullValueProviderConnectionId = value; AdditionalData?.Remove("provider_connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_connection_id"); else _explicitNullProperties?.Remove("provider_connection_id"); } }
         private string? _explicitNullValueProviderConnectionId = default!;
 #nullable restore
 #else
-        public string ProviderConnectionId { get => _explicitNullValueProviderConnectionId; set { _explicitNullValueProviderConnectionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_connection_id"); else _explicitNullProperties?.Remove("provider_connection_id"); } }
+        public string ProviderConnectionId { get => _explicitNullValueProviderConnectionId; set { _explicitNullValueProviderConnectionId = value; AdditionalData?.Remove("provider_connection_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider_connection_id"); else _explicitNullProperties?.Remove("provider_connection_id"); } }
         private string _explicitNullValueProviderConnectionId = default!;
 #endif
         /// <summary>
