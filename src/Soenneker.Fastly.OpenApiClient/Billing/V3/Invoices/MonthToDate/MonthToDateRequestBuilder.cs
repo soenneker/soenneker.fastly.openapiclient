@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Billing.V3.Invoices.MonthToDate
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateInvoice200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns month-to-date invoice for the current month.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Billing](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

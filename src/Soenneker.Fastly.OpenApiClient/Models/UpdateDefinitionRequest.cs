@@ -11,64 +11,92 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateDefinitionRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("evaluation_strategy") is { } nullNodeEvaluationStrategy && nullNodeEvaluationStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationStrategy = null;
+            if (parseNode.GetChildNode("integration_ids") is { } nullNodeIntegrationIds && nullNodeIntegrationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationIds = null;
+            if (parseNode.GetChildNode("metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The dimensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestDimensions? Dimensions { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestDimensions? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestDimensions? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestDimensions Dimensions { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestDimensions Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestDimensions _explicitNullValueDimensions = default!;
 #endif
         /// <summary>The evaluation_strategy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestEvaluationStrategy? EvaluationStrategy { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestEvaluationStrategy? EvaluationStrategy { get => _explicitNullValueEvaluationStrategy; set { _explicitNullValueEvaluationStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_strategy"); else _explicitNullProperties?.Remove("evaluation_strategy"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestEvaluationStrategy? _explicitNullValueEvaluationStrategy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestEvaluationStrategy EvaluationStrategy { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestEvaluationStrategy EvaluationStrategy { get => _explicitNullValueEvaluationStrategy; set { _explicitNullValueEvaluationStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_strategy"); else _explicitNullProperties?.Remove("evaluation_strategy"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequestEvaluationStrategy _explicitNullValueEvaluationStrategy = default!;
 #endif
         /// <summary>The integration_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IntegrationIds { get; set; }
+        public List<string>? IntegrationIds { get => _explicitNullValueIntegrationIds; set { _explicitNullValueIntegrationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_ids"); else _explicitNullProperties?.Remove("integration_ids"); } }
+        private List<string>? _explicitNullValueIntegrationIds = default!;
 #nullable restore
 #else
-        public List<string> IntegrationIds { get; set; }
+        public List<string> IntegrationIds { get => _explicitNullValueIntegrationIds; set { _explicitNullValueIntegrationIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_ids"); else _explicitNullProperties?.Remove("integration_ids"); } }
+        private List<string> _explicitNullValueIntegrationIds = default!;
 #endif
         /// <summary>The metric property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metric { get; set; }
+        public string? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private string? _explicitNullValueMetric = default!;
 #nullable restore
 #else
-        public string Metric { get; set; }
+        public string Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private string _explicitNullValueMetric = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get; set; }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequest"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.UpdateDefinitionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("metric", Metric);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

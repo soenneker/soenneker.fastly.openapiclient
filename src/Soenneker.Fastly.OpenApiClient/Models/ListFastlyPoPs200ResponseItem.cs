@@ -11,72 +11,103 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListFastlyPoPs200ResponseItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billing_region") is { } nullNodeBillingRegion && nullNodeBillingRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingRegion = null;
+            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("coordinates") is { } nullNodeCoordinates && nullNodeCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coordinates = null;
+            if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("shield") is { } nullNodeShield && nullNodeShield.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shield = null;
+            if (parseNode.GetChildNode("stats_region") is { } nullNodeStatsRegion && nullNodeStatsRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatsRegion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The billing_region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingRegion { get; set; }
+        public string? BillingRegion { get => _explicitNullValueBillingRegion; set { _explicitNullValueBillingRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_region"); else _explicitNullProperties?.Remove("billing_region"); } }
+        private string? _explicitNullValueBillingRegion = default!;
 #nullable restore
 #else
-        public string BillingRegion { get; set; }
+        public string BillingRegion { get => _explicitNullValueBillingRegion; set { _explicitNullValueBillingRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_region"); else _explicitNullProperties?.Remove("billing_region"); } }
+        private string _explicitNullValueBillingRegion = default!;
 #endif
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get; set; }
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private string? _explicitNullValueCode = default!;
 #nullable restore
 #else
-        public string Code { get; set; }
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        private string _explicitNullValueCode = default!;
 #endif
         /// <summary>The coordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates? Coordinates { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates? Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates? _explicitNullValueCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates Coordinates { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates _explicitNullValueCoordinates = default!;
 #endif
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Group { get; set; }
+        public string? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private string? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public string Group { get; set; }
+        public string Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private string _explicitNullValueGroup = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>The shield property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Shield { get; set; }
+        public string? Shield { get => _explicitNullValueShield; set { _explicitNullValueShield = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shield"); else _explicitNullProperties?.Remove("shield"); } }
+        private string? _explicitNullValueShield = default!;
 #nullable restore
 #else
-        public string Shield { get; set; }
+        public string Shield { get => _explicitNullValueShield; set { _explicitNullValueShield = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shield"); else _explicitNullProperties?.Remove("shield"); } }
+        private string _explicitNullValueShield = default!;
 #endif
         /// <summary>The stats_region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatsRegion { get; set; }
+        public string? StatsRegion { get => _explicitNullValueStatsRegion; set { _explicitNullValueStatsRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats_region"); else _explicitNullProperties?.Remove("stats_region"); } }
+        private string? _explicitNullValueStatsRegion = default!;
 #nullable restore
 #else
-        public string StatsRegion { get; set; }
+        public string StatsRegion { get => _explicitNullValueStatsRegion; set { _explicitNullValueStatsRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats_region"); else _explicitNullProperties?.Remove("stats_region"); } }
+        private string _explicitNullValueStatsRegion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItem"/> and sets the default values.
@@ -93,7 +124,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,6 +159,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("shield", Shield);
             writer.WriteStringValue("stats_region", StatsRegion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,37 +11,57 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListVirtualKeys200ResponseMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+            if (parseNode.GetChildNode("prev_cursor") is { } nullNodePrevCursor && nullNodePrevCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrevCursor = null;
+            if (parseNode.GetChildNode("sort") is { } nullNodeSort && nullNodeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sort = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The limit property</summary>
-        public long? Limit { get; set; }
+        public long? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private long? _explicitNullValueLimit = default!;
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? NextCursor { get; set; }
+        public UntypedNode? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private UntypedNode? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public UntypedNode NextCursor { get; set; }
+        public UntypedNode NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private UntypedNode _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>The prev_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? PrevCursor { get; set; }
+        public UntypedNode? PrevCursor { get => _explicitNullValuePrevCursor; set { _explicitNullValuePrevCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev_cursor"); else _explicitNullProperties?.Remove("prev_cursor"); } }
+        private UntypedNode? _explicitNullValuePrevCursor = default!;
 #nullable restore
 #else
-        public UntypedNode PrevCursor { get; set; }
+        public UntypedNode PrevCursor { get => _explicitNullValuePrevCursor; set { _explicitNullValuePrevCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev_cursor"); else _explicitNullProperties?.Remove("prev_cursor"); } }
+        private UntypedNode _explicitNullValuePrevCursor = default!;
 #endif
         /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sort { get; set; }
+        public string? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private string? _explicitNullValueSort = default!;
 #nullable restore
 #else
-        public string Sort { get; set; }
+        public string Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private string _explicitNullValueSort = default!;
 #endif
         /// <summary>The total property</summary>
-        public long? Total { get; set; }
+        public long? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private long? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListVirtualKeys200ResponseMeta"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ListVirtualKeys200ResponseMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ListVirtualKeys200ResponseMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.ListVirtualKeys200ResponseMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("prev_cursor", PrevCursor);
             writer.WriteStringValue("sort", Sort);
             writer.WriteLongValue("total", Total);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

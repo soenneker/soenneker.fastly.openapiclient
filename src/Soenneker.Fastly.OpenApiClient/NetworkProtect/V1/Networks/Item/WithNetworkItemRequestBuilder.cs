@@ -48,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.NetworkProtect.V1.Networks.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a single network by its identifier.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.NetworkProtect.V1.Networks.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetANetworkProtectNetwork200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetANetworkProtectNetwork200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetANetworkProtectNetwork200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetANetworkProtectNetwork200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a network. Omitted fields remain unchanged. The prefix cannot be changed. Sending endpoint_policies replaces the complete policy list; an empty array removes every policy.Advertisement is desired state. Enabling it requires an approved LOA, a valid ROA, and a ready default-region delivery policy. A readiness failure returns a 409 Conflict error.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -86,7 +86,7 @@ namespace Soenneker.Fastly.OpenApiClient.NetworkProtect.V1.Networks.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetwork200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetwork200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetwork200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateANetworkProtectNetwork200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a network and stops its advertisement and filtering. Endpoints and rule sets used by the network are not deleted.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

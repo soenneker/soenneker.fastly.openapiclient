@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Current_customer
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetTheLoggedInCustomer200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetTheLoggedInCustomer200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetTheLoggedInCustomer200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetTheLoggedInCustomer200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/customer/#get-logged-in-customer)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

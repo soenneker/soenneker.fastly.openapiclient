@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Http
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DisableSupportForHttp3200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DisableSupportForHttp3200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DisableSupportForHttp3200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DisableSupportForHttp3200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the status of HTTP/3 (QUIC) support for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -67,7 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Http
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHttp3Status200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHttp3Status200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHttp3Status200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHttp3Status200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enable HTTP/3 (QUIC) support for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Http
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableSupportForHttp3200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableSupportForHttp3200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableSupportForHttp3200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableSupportForHttp3200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disable HTTP/3 (QUIC) support for a particular service and version.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

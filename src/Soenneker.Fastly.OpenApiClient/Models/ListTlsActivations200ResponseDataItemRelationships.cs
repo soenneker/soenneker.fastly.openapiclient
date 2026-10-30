@@ -11,40 +11,59 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListTlsActivations200ResponseDataItemRelationships : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("mutual_authentication") is { } nullNodeMutualAuthentication && nullNodeMutualAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MutualAuthentication = null;
+            if (parseNode.GetChildNode("tls_certificate") is { } nullNodeTlsCertificate && nullNodeTlsCertificate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsCertificate = null;
+            if (parseNode.GetChildNode("tls_configuration") is { } nullNodeTlsConfiguration && nullNodeTlsConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsConfiguration = null;
+            if (parseNode.GetChildNode("tls_domain") is { } nullNodeTlsDomain && nullNodeTlsDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsDomain = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The mutual_authentication property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsMutualAuthentication? MutualAuthentication { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsMutualAuthentication? MutualAuthentication { get => _explicitNullValueMutualAuthentication; set { _explicitNullValueMutualAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutual_authentication"); else _explicitNullProperties?.Remove("mutual_authentication"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsMutualAuthentication? _explicitNullValueMutualAuthentication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsMutualAuthentication MutualAuthentication { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsMutualAuthentication MutualAuthentication { get => _explicitNullValueMutualAuthentication; set { _explicitNullValueMutualAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutual_authentication"); else _explicitNullProperties?.Remove("mutual_authentication"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsMutualAuthentication _explicitNullValueMutualAuthentication = default!;
 #endif
         /// <summary>The tls_certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsCertificate? TlsCertificate { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsCertificate? TlsCertificate { get => _explicitNullValueTlsCertificate; set { _explicitNullValueTlsCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_certificate"); else _explicitNullProperties?.Remove("tls_certificate"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsCertificate? _explicitNullValueTlsCertificate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsCertificate TlsCertificate { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsCertificate TlsCertificate { get => _explicitNullValueTlsCertificate; set { _explicitNullValueTlsCertificate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_certificate"); else _explicitNullProperties?.Remove("tls_certificate"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsCertificate _explicitNullValueTlsCertificate = default!;
 #endif
         /// <summary>The tls_configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsConfiguration? TlsConfiguration { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsConfiguration? TlsConfiguration { get => _explicitNullValueTlsConfiguration; set { _explicitNullValueTlsConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_configuration"); else _explicitNullProperties?.Remove("tls_configuration"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsConfiguration? _explicitNullValueTlsConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsConfiguration TlsConfiguration { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsConfiguration TlsConfiguration { get => _explicitNullValueTlsConfiguration; set { _explicitNullValueTlsConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_configuration"); else _explicitNullProperties?.Remove("tls_configuration"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsConfiguration _explicitNullValueTlsConfiguration = default!;
 #endif
         /// <summary>The tls_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsDomain? TlsDomain { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsDomain? TlsDomain { get => _explicitNullValueTlsDomain; set { _explicitNullValueTlsDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_domain"); else _explicitNullProperties?.Remove("tls_domain"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsDomain? _explicitNullValueTlsDomain = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsDomain TlsDomain { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsDomain TlsDomain { get => _explicitNullValueTlsDomain; set { _explicitNullValueTlsDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_domain"); else _explicitNullProperties?.Remove("tls_domain"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsDomain _explicitNullValueTlsDomain = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationships"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationships CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationships();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationships(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsCertificate>("tls_certificate", TlsCertificate);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsConfiguration>("tls_configuration", TlsConfiguration);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200ResponseDataItemRelationshipsTlsDomain>("tls_domain", TlsDomain);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

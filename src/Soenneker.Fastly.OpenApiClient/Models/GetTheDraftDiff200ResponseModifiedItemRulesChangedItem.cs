@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetTheDraftDiff200ResponseModifiedItemRulesChangedItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("new_action") is { } nullNodeNewAction && nullNodeNewAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewAction = null;
+            if (parseNode.GetChildNode("old_action") is { } nullNodeOldAction && nullNodeOldAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldAction = null;
+            if (parseNode.GetChildNode("rule_id") is { } nullNodeRuleId && nullNodeRuleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The new_action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction? NewAction { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction? NewAction { get => _explicitNullValueNewAction; set { _explicitNullValueNewAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_action"); else _explicitNullProperties?.Remove("new_action"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction? _explicitNullValueNewAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction NewAction { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction NewAction { get => _explicitNullValueNewAction; set { _explicitNullValueNewAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_action"); else _explicitNullProperties?.Remove("new_action"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction _explicitNullValueNewAction = default!;
 #endif
         /// <summary>The old_action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction? OldAction { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction? OldAction { get => _explicitNullValueOldAction; set { _explicitNullValueOldAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_action"); else _explicitNullProperties?.Remove("old_action"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction? _explicitNullValueOldAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction OldAction { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction OldAction { get => _explicitNullValueOldAction; set { _explicitNullValueOldAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_action"); else _explicitNullProperties?.Remove("old_action"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction _explicitNullValueOldAction = default!;
 #endif
         /// <summary>The rule_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleId { get; set; }
+        public string? RuleId { get => _explicitNullValueRuleId; set { _explicitNullValueRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_id"); else _explicitNullProperties?.Remove("rule_id"); } }
+        private string? _explicitNullValueRuleId = default!;
 #nullable restore
 #else
-        public string RuleId { get; set; }
+        public string RuleId { get => _explicitNullValueRuleId; set { _explicitNullValueRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_id"); else _explicitNullProperties?.Remove("rule_id"); } }
+        private string _explicitNullValueRuleId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemNewAction>("new_action", NewAction);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetTheDraftDiff200ResponseModifiedItemRulesChangedItemOldAction>("old_action", OldAction);
             writer.WriteStringValue("rule_id", RuleId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

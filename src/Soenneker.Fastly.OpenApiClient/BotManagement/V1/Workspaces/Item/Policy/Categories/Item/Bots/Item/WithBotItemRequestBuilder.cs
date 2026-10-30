@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetABot200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetABot200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetABot200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetABot200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set the action for a bot. Set the action to &apos;inherit&apos; to apply the category&apos;s action or to a specific value to override the category&apos;s action.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SetABotAction200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SetABotAction200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SetABotAction200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SetABotAction200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the attributes of a bot in a category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

@@ -11,17 +11,32 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RetrieveObservabilityDataAsATimeSeries200ResponseDataItemValues : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("avg[response_time]") is { } nullNodeAvgResponseTime && nullNodeAvgResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgResponseTime = null;
+            if (parseNode.GetChildNode("p99[response_time]") is { } nullNodeP99ResponseTime && nullNodeP99ResponseTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) P99ResponseTime = null;
+            if (parseNode.GetChildNode("sum[scope2_market_mtco2e]") is { } nullNodeSumScope2MarketMtco2e && nullNodeSumScope2MarketMtco2e.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumScope2MarketMtco2e = null;
+            if (parseNode.GetChildNode("sum[scope3_market_mtco2e]") is { } nullNodeSumScope3MarketMtco2e && nullNodeSumScope3MarketMtco2e.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SumScope3MarketMtco2e = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The avgResponse_time property</summary>
-        public double? AvgResponseTime { get; set; }
+        public double? AvgResponseTime { get => _explicitNullValueAvgResponseTime; set { _explicitNullValueAvgResponseTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg[response_time]"); else _explicitNullProperties?.Remove("avg[response_time]"); } }
+        private double? _explicitNullValueAvgResponseTime = default!;
         /// <summary>The p99Response_time property</summary>
-        public double? P99ResponseTime { get; set; }
+        public double? P99ResponseTime { get => _explicitNullValueP99ResponseTime; set { _explicitNullValueP99ResponseTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("p99[response_time]"); else _explicitNullProperties?.Remove("p99[response_time]"); } }
+        private double? _explicitNullValueP99ResponseTime = default!;
         /// <summary>The sumScope2_market_mtco2e property</summary>
-        public double? SumScope2MarketMtco2e { get; set; }
+        public double? SumScope2MarketMtco2e { get => _explicitNullValueSumScope2MarketMtco2e; set { _explicitNullValueSumScope2MarketMtco2e = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum[scope2_market_mtco2e]"); else _explicitNullProperties?.Remove("sum[scope2_market_mtco2e]"); } }
+        private double? _explicitNullValueSumScope2MarketMtco2e = default!;
         /// <summary>The sumScope3_market_mtco2e property</summary>
-        public double? SumScope3MarketMtco2e { get; set; }
+        public double? SumScope3MarketMtco2e { get => _explicitNullValueSumScope3MarketMtco2e; set { _explicitNullValueSumScope3MarketMtco2e = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sum[scope3_market_mtco2e]"); else _explicitNullProperties?.Remove("sum[scope3_market_mtco2e]"); } }
+        private double? _explicitNullValueSumScope3MarketMtco2e = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200ResponseDataItemValues"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200ResponseDataItemValues CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200ResponseDataItemValues();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.RetrieveObservabilityDataAsATimeSeries200ResponseDataItemValues(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteDoubleValue("p99[response_time]", P99ResponseTime);
             writer.WriteDoubleValue("sum[scope2_market_mtco2e]", SumScope2MarketMtco2e);
             writer.WriteDoubleValue("sum[scope3_market_mtco2e]", SumScope3MarketMtco2e);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

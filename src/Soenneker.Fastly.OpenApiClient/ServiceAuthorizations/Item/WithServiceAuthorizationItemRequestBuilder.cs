@@ -48,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#show-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ShowServiceAuthorization200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ShowServiceAuthorization200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ShowServiceAuthorization200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ShowServiceAuthorization200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#update-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -86,7 +86,7 @@ namespace Soenneker.Fastly.OpenApiClient.ServiceAuthorizations.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorization200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorization200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorization200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateServiceAuthorization200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/service-authorization/#delete-service-authorization)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

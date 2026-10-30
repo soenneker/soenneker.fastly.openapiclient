@@ -48,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a specific operation tag by its unique identifier.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveOperationTag200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveOperationTag200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveOperationTag200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveOperationTag200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Partially update an existing operation tag.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -86,7 +86,7 @@ namespace Soenneker.Fastly.OpenApiClient.ApiSecurity.V1.Services.Item.Tags.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateOperationTag200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateOperationTag200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateOperationTag200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateOperationTag200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an existing operation tag.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

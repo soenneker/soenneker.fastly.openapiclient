@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Messages.Count_tokens
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CountTokens200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CountTokens200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CountTokens200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CountTokens200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Counts the input tokens a Messages API request would consume, without sending therequest to the provider.&gt; **Authorization**: .

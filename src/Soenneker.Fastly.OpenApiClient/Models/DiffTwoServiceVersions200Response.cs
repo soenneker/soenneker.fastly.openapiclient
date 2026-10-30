@@ -11,29 +11,46 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DiffTwoServiceVersions200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("diff") is { } nullNodeDiff && nullNodeDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Diff = null;
+            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
+            if (parseNode.GetChildNode("to") is { } nullNodeTo && nullNodeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) To = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The diff property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Diff { get; set; }
+        public string? Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
+        private string? _explicitNullValueDiff = default!;
 #nullable restore
 #else
-        public string Diff { get; set; }
+        public string Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
+        private string _explicitNullValueDiff = default!;
 #endif
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format { get; set; }
+        public string? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private string? _explicitNullValueFormat = default!;
 #nullable restore
 #else
-        public string Format { get; set; }
+        public string Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private string _explicitNullValueFormat = default!;
 #endif
         /// <summary>The from property</summary>
-        public long? From { get; set; }
+        public long? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        private long? _explicitNullValueFrom = default!;
         /// <summary>The to property</summary>
-        public long? To { get; set; }
+        public long? To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        private long? _explicitNullValueTo = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.DiffTwoServiceVersions200Response"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.DiffTwoServiceVersions200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.DiffTwoServiceVersions200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.DiffTwoServiceVersions200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("format", Format);
             writer.WriteLongValue("from", From);
             writer.WriteLongValue("to", To);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

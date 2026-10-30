@@ -11,56 +11,81 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatesAGlobalSignEmailChallenge201ResponseDataAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("emails") is { } nullNodeEmails && nullNodeEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Emails = null;
+            if (parseNode.GetChildNode("preferred_email") is { } nullNodePreferredEmail && nullNodePreferredEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredEmail = null;
+            if (parseNode.GetChildNode("sent_at") is { } nullNodeSentAt && nullNodeSentAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentAt = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("verified_at") is { } nullNodeVerifiedAt && nullNodeVerifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Emails { get; set; }
+        public List<string>? Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        private List<string>? _explicitNullValueEmails = default!;
 #nullable restore
 #else
-        public List<string> Emails { get; set; }
+        public List<string> Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
+        private List<string> _explicitNullValueEmails = default!;
 #endif
         /// <summary>The preferred_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredEmail { get; set; }
+        public string? PreferredEmail { get => _explicitNullValuePreferredEmail; set { _explicitNullValuePreferredEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_email"); else _explicitNullProperties?.Remove("preferred_email"); } }
+        private string? _explicitNullValuePreferredEmail = default!;
 #nullable restore
 #else
-        public string PreferredEmail { get; set; }
+        public string PreferredEmail { get => _explicitNullValuePreferredEmail; set { _explicitNullValuePreferredEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_email"); else _explicitNullProperties?.Remove("preferred_email"); } }
+        private string _explicitNullValuePreferredEmail = default!;
 #endif
         /// <summary>The sent_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? SentAt { get; set; }
+        public UntypedNode? SentAt { get => _explicitNullValueSentAt; set { _explicitNullValueSentAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at"); else _explicitNullProperties?.Remove("sent_at"); } }
+        private UntypedNode? _explicitNullValueSentAt = default!;
 #nullable restore
 #else
-        public UntypedNode SentAt { get; set; }
+        public UntypedNode SentAt { get => _explicitNullValueSentAt; set { _explicitNullValueSentAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sent_at"); else _explicitNullProperties?.Remove("sent_at"); } }
+        private UntypedNode _explicitNullValueSentAt = default!;
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>The verified_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? VerifiedAt { get; set; }
+        public UntypedNode? VerifiedAt { get => _explicitNullValueVerifiedAt; set { _explicitNullValueVerifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_at"); else _explicitNullProperties?.Remove("verified_at"); } }
+        private UntypedNode? _explicitNullValueVerifiedAt = default!;
 #nullable restore
 #else
-        public UntypedNode VerifiedAt { get; set; }
+        public UntypedNode VerifiedAt { get => _explicitNullValueVerifiedAt; set { _explicitNullValueVerifiedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_at"); else _explicitNullProperties?.Remove("verified_at"); } }
+        private UntypedNode _explicitNullValueVerifiedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201ResponseDataAttributes"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201ResponseDataAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201ResponseDataAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallenge201ResponseDataAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("sent_at", SentAt);
             writer.WriteStringValue("state", State);
             writer.WriteObjectValue<UntypedNode>("verified_at", VerifiedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

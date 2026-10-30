@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.DomainManagement.V1.Tools.Suggest
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SuggestDomains200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Suggest method performs a real-time query of the search term(s) against the known zone database,making recommendations, stemming, and applying Unicode folding, IDN normalization, registrar supported-zonerestrictions, and other refinements. Note: Suggest method responses do not include domain availability status.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

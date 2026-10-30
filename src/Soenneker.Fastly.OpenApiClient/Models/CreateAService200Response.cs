@@ -11,98 +11,140 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateAService200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("deleted_at") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
+            if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("paused") is { } nullNodePaused && nullNodePaused.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paused = null;
+            if (parseNode.GetChildNode("publish_key") is { } nullNodePublishKey && nullNodePublishKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublishKey = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("versions") is { } nullNodeVersions && nullNodeVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Versions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string _explicitNullValueComment = default!;
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The customer_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; set; }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get; set; }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private UntypedNode? _explicitNullValueDeletedAt = default!;
 #nullable restore
 #else
-        public UntypedNode DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private UntypedNode _explicitNullValueDeletedAt = default!;
 #endif
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseEnvironmentsItem>? Environments { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseEnvironmentsItem>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseEnvironmentsItem>? _explicitNullValueEnvironments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseEnvironmentsItem> Environments { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseEnvironmentsItem> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseEnvironmentsItem> _explicitNullValueEnvironments = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The paused property</summary>
-        public bool? Paused { get; set; }
+        public bool? Paused { get => _explicitNullValuePaused; set { _explicitNullValuePaused = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paused"); else _explicitNullProperties?.Remove("paused"); } }
+        private bool? _explicitNullValuePaused = default!;
         /// <summary>The publish_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublishKey { get; set; }
+        public string? PublishKey { get => _explicitNullValuePublishKey; set { _explicitNullValuePublishKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_key"); else _explicitNullProperties?.Remove("publish_key"); } }
+        private string? _explicitNullValuePublishKey = default!;
 #nullable restore
 #else
-        public string PublishKey { get; set; }
+        public string PublishKey { get => _explicitNullValuePublishKey; set { _explicitNullValuePublishKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publish_key"); else _explicitNullProperties?.Remove("publish_key"); } }
+        private string _explicitNullValuePublishKey = default!;
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseVersionsItem>? Versions { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseVersionsItem>? Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseVersionsItem>? _explicitNullValueVersions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseVersionsItem> Versions { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseVersionsItem> Versions { get => _explicitNullValueVersions; set { _explicitNullValueVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versions"); else _explicitNullProperties?.Remove("versions"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseVersionsItem> _explicitNullValueVersions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response"/> and sets the default values.
@@ -119,7 +161,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,6 +204,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateAService200ResponseVersionsItem>("versions", Versions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

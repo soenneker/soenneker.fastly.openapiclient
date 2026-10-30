@@ -11,22 +11,38 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RetrieveAgentTimeseriesMetrics200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("host_agent_cpu") is { } nullNodeHostAgentCpu && nullNodeHostAgentCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostAgentCpu = null;
+            if (parseNode.GetChildNode("host_cpu") is { } nullNodeHostCpu && nullNodeHostCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostCpu = null;
+            if (parseNode.GetChildNode("requests_total") is { } nullNodeRequestsTotal && nullNodeRequestsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsTotal = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The host_agent_cpu property</summary>
-        public double? HostAgentCpu { get; set; }
+        public double? HostAgentCpu { get => _explicitNullValueHostAgentCpu; set { _explicitNullValueHostAgentCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_agent_cpu"); else _explicitNullProperties?.Remove("host_agent_cpu"); } }
+        private double? _explicitNullValueHostAgentCpu = default!;
         /// <summary>The host_cpu property</summary>
-        public double? HostCpu { get; set; }
+        public double? HostCpu { get => _explicitNullValueHostCpu; set { _explicitNullValueHostCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_cpu"); else _explicitNullProperties?.Remove("host_cpu"); } }
+        private double? _explicitNullValueHostCpu = default!;
         /// <summary>The requests_total property</summary>
-        public long? RequestsTotal { get; set; }
+        public long? RequestsTotal { get => _explicitNullValueRequestsTotal; set { _explicitNullValueRequestsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_total"); else _explicitNullProperties?.Remove("requests_total"); } }
+        private long? _explicitNullValueRequestsTotal = default!;
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200ResponseDataItem"/> and sets the default values.
@@ -43,7 +59,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteDoubleValue("host_cpu", HostCpu);
             writer.WriteLongValue("requests_total", RequestsTotal);
             writer.WriteStringValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -48,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a customer&apos;s billing address.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetABillingAddress200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetABillingAddress200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetABillingAddress200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetABillingAddress200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a customer&apos;s billing address. You may update only part of the customer&apos;s billing address.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -86,7 +86,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddress200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddress200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddress200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateABillingAddress200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/billing-address/#add-billing-addr)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -106,7 +106,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Billing_address
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.AddABillingAddressToACustomer201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.AddABillingAddressToACustomer201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.AddABillingAddressToACustomer201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.AddABillingAddressToACustomer201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a customer&apos;s billing address.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

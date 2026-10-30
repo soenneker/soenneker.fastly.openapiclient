@@ -11,80 +11,114 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateAResponseObject200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cache_condition") is { } nullNodeCacheCondition && nullNodeCacheCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheCondition = null;
+            if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
+            if (parseNode.GetChildNode("content_type") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("request_condition") is { } nullNodeRequestCondition && nullNodeRequestCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestCondition = null;
+            if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("service_id") is { } nullNodeServiceId && nullNodeServiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceId = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cache_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CacheCondition { get; set; }
+        public string? CacheCondition { get => _explicitNullValueCacheCondition; set { _explicitNullValueCacheCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_condition"); else _explicitNullProperties?.Remove("cache_condition"); } }
+        private string? _explicitNullValueCacheCondition = default!;
 #nullable restore
 #else
-        public string CacheCondition { get; set; }
+        public string CacheCondition { get => _explicitNullValueCacheCondition; set { _explicitNullValueCacheCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache_condition"); else _explicitNullProperties?.Remove("cache_condition"); } }
+        private string _explicitNullValueCacheCondition = default!;
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string? _explicitNullValueContent = default!;
 #nullable restore
 #else
-        public string Content { get; set; }
+        public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private string _explicitNullValueContent = default!;
 #endif
         /// <summary>The content_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get; set; }
+        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private string? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public string ContentType { get; set; }
+        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private string _explicitNullValueContentType = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The request_condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestCondition { get; set; }
+        public string? RequestCondition { get => _explicitNullValueRequestCondition; set { _explicitNullValueRequestCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_condition"); else _explicitNullProperties?.Remove("request_condition"); } }
+        private string? _explicitNullValueRequestCondition = default!;
 #nullable restore
 #else
-        public string RequestCondition { get; set; }
+        public string RequestCondition { get => _explicitNullValueRequestCondition; set { _explicitNullValueRequestCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_condition"); else _explicitNullProperties?.Remove("request_condition"); } }
+        private string _explicitNullValueRequestCondition = default!;
 #endif
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Response { get; set; }
+        public string? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private string? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public string Response { get; set; }
+        public string Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private string _explicitNullValueResponse = default!;
 #endif
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceId { get; set; }
+        public string? ServiceId { get => _explicitNullValueServiceId; set { _explicitNullValueServiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_id"); else _explicitNullProperties?.Remove("service_id"); } }
+        private string? _explicitNullValueServiceId = default!;
 #nullable restore
 #else
-        public string ServiceId { get; set; }
+        public string ServiceId { get => _explicitNullValueServiceId; set { _explicitNullValueServiceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_id"); else _explicitNullProperties?.Remove("service_id"); } }
+        private string _explicitNullValueServiceId = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get; set; }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get; set; }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAResponseObject200Response"/> and sets the default values.
@@ -101,7 +135,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.UpdateAResponseObject200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.UpdateAResponseObject200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.UpdateAResponseObject200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -138,6 +172,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("service_id", ServiceId);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

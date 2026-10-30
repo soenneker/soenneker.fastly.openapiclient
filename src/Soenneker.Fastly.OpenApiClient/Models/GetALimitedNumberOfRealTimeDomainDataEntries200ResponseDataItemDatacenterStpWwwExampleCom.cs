@@ -11,19 +11,36 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("edge") is { } nullNodeEdge && nullNodeEdge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Edge = null;
+            if (parseNode.GetChildNode("resp_body_bytes") is { } nullNodeRespBodyBytes && nullNodeRespBodyBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespBodyBytes = null;
+            if (parseNode.GetChildNode("resp_header_bytes") is { } nullNodeRespHeaderBytes && nullNodeRespHeaderBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespHeaderBytes = null;
+            if (parseNode.GetChildNode("status_403") is { } nullNodeStatus403 && nullNodeStatus403.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status403 = null;
+            if (parseNode.GetChildNode("status_4xx") is { } nullNodeStatus4xx && nullNodeStatus4xx.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status4xx = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The edge property</summary>
-        public long? Edge { get; set; }
+        public long? Edge { get => _explicitNullValueEdge; set { _explicitNullValueEdge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edge"); else _explicitNullProperties?.Remove("edge"); } }
+        private long? _explicitNullValueEdge = default!;
         /// <summary>The resp_body_bytes property</summary>
-        public long? RespBodyBytes { get; set; }
+        public long? RespBodyBytes { get => _explicitNullValueRespBodyBytes; set { _explicitNullValueRespBodyBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resp_body_bytes"); else _explicitNullProperties?.Remove("resp_body_bytes"); } }
+        private long? _explicitNullValueRespBodyBytes = default!;
         /// <summary>The resp_header_bytes property</summary>
-        public long? RespHeaderBytes { get; set; }
+        public long? RespHeaderBytes { get => _explicitNullValueRespHeaderBytes; set { _explicitNullValueRespHeaderBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resp_header_bytes"); else _explicitNullProperties?.Remove("resp_header_bytes"); } }
+        private long? _explicitNullValueRespHeaderBytes = default!;
         /// <summary>The status_403 property</summary>
-        public long? Status403 { get; set; }
+        public long? Status403 { get => _explicitNullValueStatus403; set { _explicitNullValueStatus403 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_403"); else _explicitNullProperties?.Remove("status_403"); } }
+        private long? _explicitNullValueStatus403 = default!;
         /// <summary>The status_4xx property</summary>
-        public long? Status4xx { get; set; }
+        public long? Status4xx { get => _explicitNullValueStatus4xx; set { _explicitNullValueStatus4xx = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_4xx"); else _explicitNullProperties?.Remove("status_4xx"); } }
+        private long? _explicitNullValueStatus4xx = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200ResponseDataItemDatacenterStpWwwExampleCom(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteLongValue("resp_header_bytes", RespHeaderBytes);
             writer.WriteLongValue("status_403", Status403);
             writer.WriteLongValue("status_4xx", Status4xx);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

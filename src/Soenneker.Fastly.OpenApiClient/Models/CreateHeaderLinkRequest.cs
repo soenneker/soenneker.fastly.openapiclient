@@ -11,40 +11,59 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateHeaderLinkRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("header_context") is { } nullNodeHeaderContext && nullNodeHeaderContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderContext = null;
+            if (parseNode.GetChildNode("header_name") is { } nullNodeHeaderName && nullNodeHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderName = null;
+            if (parseNode.GetChildNode("link_label") is { } nullNodeLinkLabel && nullNodeLinkLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkLabel = null;
+            if (parseNode.GetChildNode("link_url_template") is { } nullNodeLinkUrlTemplate && nullNodeLinkUrlTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkUrlTemplate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The header_context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderContext { get; set; }
+        public string? HeaderContext { get => _explicitNullValueHeaderContext; set { _explicitNullValueHeaderContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_context"); else _explicitNullProperties?.Remove("header_context"); } }
+        private string? _explicitNullValueHeaderContext = default!;
 #nullable restore
 #else
-        public string HeaderContext { get; set; }
+        public string HeaderContext { get => _explicitNullValueHeaderContext; set { _explicitNullValueHeaderContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_context"); else _explicitNullProperties?.Remove("header_context"); } }
+        private string _explicitNullValueHeaderContext = default!;
 #endif
         /// <summary>The header_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderName { get; set; }
+        public string? HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
+        private string? _explicitNullValueHeaderName = default!;
 #nullable restore
 #else
-        public string HeaderName { get; set; }
+        public string HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_name"); else _explicitNullProperties?.Remove("header_name"); } }
+        private string _explicitNullValueHeaderName = default!;
 #endif
         /// <summary>The link_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkLabel { get; set; }
+        public string? LinkLabel { get => _explicitNullValueLinkLabel; set { _explicitNullValueLinkLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_label"); else _explicitNullProperties?.Remove("link_label"); } }
+        private string? _explicitNullValueLinkLabel = default!;
 #nullable restore
 #else
-        public string LinkLabel { get; set; }
+        public string LinkLabel { get => _explicitNullValueLinkLabel; set { _explicitNullValueLinkLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_label"); else _explicitNullProperties?.Remove("link_label"); } }
+        private string _explicitNullValueLinkLabel = default!;
 #endif
         /// <summary>The link_url_template property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkUrlTemplate { get; set; }
+        public string? LinkUrlTemplate { get => _explicitNullValueLinkUrlTemplate; set { _explicitNullValueLinkUrlTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_url_template"); else _explicitNullProperties?.Remove("link_url_template"); } }
+        private string? _explicitNullValueLinkUrlTemplate = default!;
 #nullable restore
 #else
-        public string LinkUrlTemplate { get; set; }
+        public string LinkUrlTemplate { get => _explicitNullValueLinkUrlTemplate; set { _explicitNullValueLinkUrlTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link_url_template"); else _explicitNullProperties?.Remove("link_url_template"); } }
+        private string _explicitNullValueLinkUrlTemplate = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateHeaderLinkRequest"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateHeaderLinkRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateHeaderLinkRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateHeaderLinkRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("header_name", HeaderName);
             writer.WriteStringValue("link_label", LinkLabel);
             writer.WriteStringValue("link_url_template", LinkUrlTemplate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

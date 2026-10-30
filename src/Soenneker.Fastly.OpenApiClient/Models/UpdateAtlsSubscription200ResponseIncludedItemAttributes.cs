@@ -11,48 +11,70 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateAtlsSubscription200ResponseIncludedItemAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("challenges") is { } nullNodeChallenges && nullNodeChallenges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Challenges = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("warnings") is { } nullNodeWarnings && nullNodeWarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Warnings = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The challenges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributesChallengesItem>? Challenges { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributesChallengesItem>? Challenges { get => _explicitNullValueChallenges; set { _explicitNullValueChallenges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challenges"); else _explicitNullProperties?.Remove("challenges"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributesChallengesItem>? _explicitNullValueChallenges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributesChallengesItem> Challenges { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributesChallengesItem> Challenges { get => _explicitNullValueChallenges; set { _explicitNullValueChallenges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("challenges"); else _explicitNullProperties?.Remove("challenges"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributesChallengesItem> _explicitNullValueChallenges = default!;
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>The warnings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Warnings { get; set; }
+        public UntypedNode? Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private UntypedNode? _explicitNullValueWarnings = default!;
 #nullable restore
 #else
-        public UntypedNode Warnings { get; set; }
+        public UntypedNode Warnings { get => _explicitNullValueWarnings; set { _explicitNullValueWarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("warnings"); else _explicitNullProperties?.Remove("warnings"); } }
+        private UntypedNode _explicitNullValueWarnings = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributes"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsSubscription200ResponseIncludedItemAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteObjectValue<UntypedNode>("warnings", Warnings);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -48,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.Model.Item.InvokeWithResponseStream
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A streaming, Amazon Bedrock Runtime InvokeModelWithResponseStream-compatible endpoint.The request body uses the Anthropic Messages API format. The response is an AWSEventStream binary stream carrying base64-wrapped Anthropic streaming events. See theBedrock Runtime InvokeModelWithResponseStream referencefor the streaming envelope.&gt; **Authorization**: .

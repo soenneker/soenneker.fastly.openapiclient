@@ -11,48 +11,70 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListMutualAuthentications200ResponseLinks : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("first") is { } nullNodeFirst && nullNodeFirst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) First = null;
+            if (parseNode.GetChildNode("last") is { } nullNodeLast && nullNodeLast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last = null;
+            if (parseNode.GetChildNode("next") is { } nullNodeNext && nullNodeNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Next = null;
+            if (parseNode.GetChildNode("prev") is { } nullNodePrev && nullNodePrev.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prev = null;
+            if (parseNode.GetChildNode("self") is { } nullNodeSelf && nullNodeSelf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Self = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The first property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? First { get; set; }
+        public string? First { get => _explicitNullValueFirst; set { _explicitNullValueFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first"); else _explicitNullProperties?.Remove("first"); } }
+        private string? _explicitNullValueFirst = default!;
 #nullable restore
 #else
-        public string First { get; set; }
+        public string First { get => _explicitNullValueFirst; set { _explicitNullValueFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first"); else _explicitNullProperties?.Remove("first"); } }
+        private string _explicitNullValueFirst = default!;
 #endif
         /// <summary>The last property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Last { get; set; }
+        public string? Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
+        private string? _explicitNullValueLast = default!;
 #nullable restore
 #else
-        public string Last { get; set; }
+        public string Last { get => _explicitNullValueLast; set { _explicitNullValueLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last"); else _explicitNullProperties?.Remove("last"); } }
+        private string _explicitNullValueLast = default!;
 #endif
         /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Next { get; set; }
+        public UntypedNode? Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private UntypedNode? _explicitNullValueNext = default!;
 #nullable restore
 #else
-        public UntypedNode Next { get; set; }
+        public UntypedNode Next { get => _explicitNullValueNext; set { _explicitNullValueNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next"); else _explicitNullProperties?.Remove("next"); } }
+        private UntypedNode _explicitNullValueNext = default!;
 #endif
         /// <summary>The prev property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Prev { get; set; }
+        public UntypedNode? Prev { get => _explicitNullValuePrev; set { _explicitNullValuePrev = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev"); else _explicitNullProperties?.Remove("prev"); } }
+        private UntypedNode? _explicitNullValuePrev = default!;
 #nullable restore
 #else
-        public UntypedNode Prev { get; set; }
+        public UntypedNode Prev { get => _explicitNullValuePrev; set { _explicitNullValuePrev = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prev"); else _explicitNullProperties?.Remove("prev"); } }
+        private UntypedNode _explicitNullValuePrev = default!;
 #endif
         /// <summary>The self property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Self { get; set; }
+        public string? Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        private string? _explicitNullValueSelf = default!;
 #nullable restore
 #else
-        public string Self { get; set; }
+        public string Self { get => _explicitNullValueSelf; set { _explicitNullValueSelf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("self"); else _explicitNullProperties?.Remove("self"); } }
+        private string _explicitNullValueSelf = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListMutualAuthentications200ResponseLinks"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ListMutualAuthentications200ResponseLinks CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ListMutualAuthentications200ResponseLinks();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.ListMutualAuthentications200ResponseLinks(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("next", Next);
             writer.WriteObjectValue<UntypedNode>("prev", Prev);
             writer.WriteStringValue("self", Self);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

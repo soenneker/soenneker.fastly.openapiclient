@@ -11,26 +11,41 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateChatCompletion200ResponseChoicesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("finish_reason") is { } nullNodeFinishReason && nullNodeFinishReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishReason = null;
+            if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The finish_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FinishReason { get; set; }
+        public string? FinishReason { get => _explicitNullValueFinishReason; set { _explicitNullValueFinishReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finish_reason"); else _explicitNullProperties?.Remove("finish_reason"); } }
+        private string? _explicitNullValueFinishReason = default!;
 #nullable restore
 #else
-        public string FinishReason { get; set; }
+        public string FinishReason { get => _explicitNullValueFinishReason; set { _explicitNullValueFinishReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finish_reason"); else _explicitNullProperties?.Remove("finish_reason"); } }
+        private string _explicitNullValueFinishReason = default!;
 #endif
         /// <summary>The index property</summary>
-        public long? Index { get; set; }
+        public long? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        private long? _explicitNullValueIndex = default!;
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItemMessage? Message { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItemMessage? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItemMessage? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItemMessage Message { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItemMessage Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItemMessage _explicitNullValueMessage = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItem"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("finish_reason", FinishReason);
             writer.WriteLongValue("index", Index);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateChatCompletion200ResponseChoicesItemMessage>("message", Message);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

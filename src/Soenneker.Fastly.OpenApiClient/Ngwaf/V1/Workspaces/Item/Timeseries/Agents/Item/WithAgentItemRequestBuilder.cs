@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Timeseries.Age
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAgentTimeseriesMetrics200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get timeseries metrics for an agent in a workspace. Agent metrics include request counts, decision latency percentiles, and host resource usage.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

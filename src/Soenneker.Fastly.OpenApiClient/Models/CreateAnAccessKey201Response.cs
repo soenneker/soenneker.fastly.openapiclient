@@ -11,56 +11,81 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateAnAccessKey201Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("access_key") is { } nullNodeAccessKey && nullNodeAccessKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessKey = null;
+            if (parseNode.GetChildNode("buckets") is { } nullNodeBuckets && nullNodeBuckets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Buckets = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("permission") is { } nullNodePermission && nullNodePermission.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permission = null;
+            if (parseNode.GetChildNode("secret_key") is { } nullNodeSecretKey && nullNodeSecretKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecretKey = null;
+        }
+
         /// <summary>The access_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessKey { get; set; }
+        public string? AccessKey { get => _explicitNullValueAccessKey; set { _explicitNullValueAccessKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_key"); else _explicitNullProperties?.Remove("access_key"); } }
+        private string? _explicitNullValueAccessKey = default!;
 #nullable restore
 #else
-        public string AccessKey { get; set; }
+        public string AccessKey { get => _explicitNullValueAccessKey; set { _explicitNullValueAccessKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access_key"); else _explicitNullProperties?.Remove("access_key"); } }
+        private string _explicitNullValueAccessKey = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The buckets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Buckets { get; set; }
+        public List<string>? Buckets { get => _explicitNullValueBuckets; set { _explicitNullValueBuckets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buckets"); else _explicitNullProperties?.Remove("buckets"); } }
+        private List<string>? _explicitNullValueBuckets = default!;
 #nullable restore
 #else
-        public List<string> Buckets { get; set; }
+        public List<string> Buckets { get => _explicitNullValueBuckets; set { _explicitNullValueBuckets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buckets"); else _explicitNullProperties?.Remove("buckets"); } }
+        private List<string> _explicitNullValueBuckets = default!;
 #endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The permission property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Permission { get; set; }
+        public string? Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
+        private string? _explicitNullValuePermission = default!;
 #nullable restore
 #else
-        public string Permission { get; set; }
+        public string Permission { get => _explicitNullValuePermission; set { _explicitNullValuePermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permission"); else _explicitNullProperties?.Remove("permission"); } }
+        private string _explicitNullValuePermission = default!;
 #endif
         /// <summary>The secret_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretKey { get; set; }
+        public string? SecretKey { get => _explicitNullValueSecretKey; set { _explicitNullValueSecretKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_key"); else _explicitNullProperties?.Remove("secret_key"); } }
+        private string? _explicitNullValueSecretKey = default!;
 #nullable restore
 #else
-        public string SecretKey { get; set; }
+        public string SecretKey { get => _explicitNullValueSecretKey; set { _explicitNullValueSecretKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret_key"); else _explicitNullProperties?.Remove("secret_key"); } }
+        private string _explicitNullValueSecretKey = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAccessKey201Response"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAccessKey201Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAccessKey201Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateAnAccessKey201Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("permission", Permission);
             writer.WriteStringValue("secret_key", SecretKey);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

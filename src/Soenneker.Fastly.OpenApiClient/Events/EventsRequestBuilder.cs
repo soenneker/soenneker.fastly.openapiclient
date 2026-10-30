@@ -62,7 +62,7 @@ namespace Soenneker.Fastly.OpenApiClient.Events
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEvents200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

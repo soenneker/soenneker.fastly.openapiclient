@@ -11,40 +11,59 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetConfiguration3200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
+            if (parseNode.GetChildNode("service") is { } nullNodeService && nullNodeService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Service = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseConfiguration? Configuration { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseConfiguration? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseConfiguration? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseConfiguration Configuration { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseConfiguration Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseConfiguration _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseLinks? Links { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseLinks? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseLinks Links { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseLinks _explicitNullValueLinks = default!;
 #endif
         /// <summary>The product property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseProduct? Product { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseProduct? _explicitNullValueProduct = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseProduct Product { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseProduct Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseProduct _explicitNullValueProduct = default!;
 #endif
         /// <summary>The service property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseService? Service { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseService? Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseService? _explicitNullValueService = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseService Service { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseService Service { get => _explicitNullValueService; set { _explicitNullValueService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service"); else _explicitNullProperties?.Remove("service"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseService _explicitNullValueService = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200Response"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseLinks>("_links", Links);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseProduct>("product", Product);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetConfiguration3200ResponseService>("service", Service);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

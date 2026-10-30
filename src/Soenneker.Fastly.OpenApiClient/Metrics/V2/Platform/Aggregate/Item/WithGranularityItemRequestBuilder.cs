@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.V2.Platform.Aggregate.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAggregatedHistoricalTimeSeriesMetricsForAllEntities200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches historical metrics for all entities for a customer for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

@@ -11,192 +11,268 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeaders : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Accept-Ranges") is { } nullNodeAcceptRanges && nullNodeAcceptRanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptRanges = null;
+            if (parseNode.GetChildNode("Age") is { } nullNodeAge && nullNodeAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Age = null;
+            if (parseNode.GetChildNode("X-ServedBy") is { } nullNodeCheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy && nullNodeCheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy = null;
+            if (parseNode.GetChildNode("Connection") is { } nullNodeConnection && nullNodeConnection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connection = null;
+            if (parseNode.GetChildNode("Content-Length") is { } nullNodeContentLength && nullNodeContentLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentLength = null;
+            if (parseNode.GetChildNode("Content-Type") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("Date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("ETag") is { } nullNodeETag && nullNodeETag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ETag = null;
+            if (parseNode.GetChildNode("Expires") is { } nullNodeExpires && nullNodeExpires.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expires = null;
+            if (parseNode.GetChildNode("Set-Cookie") is { } nullNodeSetCookie && nullNodeSetCookie.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SetCookie = null;
+            if (parseNode.GetChildNode("Vary") is { } nullNodeVary && nullNodeVary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vary = null;
+            if (parseNode.GetChildNode("Via") is { } nullNodeVia && nullNodeVia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Via = null;
+            if (parseNode.GetChildNode("X-Cache") is { } nullNodeXCache && nullNodeXCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XCache = null;
+            if (parseNode.GetChildNode("X-Cache-Hits") is { } nullNodeXCacheHits && nullNodeXCacheHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XCacheHits = null;
+            if (parseNode.GetChildNode("X-ContextId") is { } nullNodeXContextId && nullNodeXContextId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XContextId = null;
+            if (parseNode.GetChildNode("X-PC-AppVer") is { } nullNodeXPCAppVer && nullNodeXPCAppVer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XPCAppVer = null;
+            if (parseNode.GetChildNode("X-PC-Date") is { } nullNodeXPCDate && nullNodeXPCDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XPCDate = null;
+            if (parseNode.GetChildNode("X-PC-Hit") is { } nullNodeXPCHit && nullNodeXPCHit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XPCHit = null;
+            if (parseNode.GetChildNode("X-PC-Host") is { } nullNodeXPCHost && nullNodeXPCHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XPCHost = null;
+            if (parseNode.GetChildNode("X-PC-Key") is { } nullNodeXPCKey && nullNodeXPCKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XPCKey = null;
+            if (parseNode.GetChildNode("X-Served-By") is { } nullNodeXServedBy && nullNodeXServedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XServedBy = null;
+            if (parseNode.GetChildNode("X-Timer") is { } nullNodeXTimer && nullNodeXTimer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XTimer = null;
+            if (parseNode.GetChildNode("X-Via") is { } nullNodeXVia && nullNodeXVia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XVia = null;
+        }
+
         /// <summary>The AcceptRanges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcceptRanges { get; set; }
+        public string? AcceptRanges { get => _explicitNullValueAcceptRanges; set { _explicitNullValueAcceptRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accept-Ranges"); else _explicitNullProperties?.Remove("Accept-Ranges"); } }
+        private string? _explicitNullValueAcceptRanges = default!;
 #nullable restore
 #else
-        public string AcceptRanges { get; set; }
+        public string AcceptRanges { get => _explicitNullValueAcceptRanges; set { _explicitNullValueAcceptRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accept-Ranges"); else _explicitNullProperties?.Remove("Accept-Ranges"); } }
+        private string _explicitNullValueAcceptRanges = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Age property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Age { get; set; }
+        public string? Age { get => _explicitNullValueAge; set { _explicitNullValueAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Age"); else _explicitNullProperties?.Remove("Age"); } }
+        private string? _explicitNullValueAge = default!;
 #nullable restore
 #else
-        public string Age { get; set; }
+        public string Age { get => _explicitNullValueAge; set { _explicitNullValueAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Age"); else _explicitNullProperties?.Remove("Age"); } }
+        private string _explicitNullValueAge = default!;
 #endif
         /// <summary>The XServedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy { get; set; }
+        public string? CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy { get => _explicitNullValueCheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy; set { _explicitNullValueCheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-ServedBy"); else _explicitNullProperties?.Remove("X-ServedBy"); } }
+        private string? _explicitNullValueCheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy = default!;
 #nullable restore
 #else
-        public string CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy { get; set; }
+        public string CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy { get => _explicitNullValueCheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy; set { _explicitNullValueCheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-ServedBy"); else _explicitNullProperties?.Remove("X-ServedBy"); } }
+        private string _explicitNullValueCheckStatusOfContentInEachPopsCache200ResponseItemResponseHeadersXServedBy = default!;
 #endif
         /// <summary>The Connection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Connection { get; set; }
+        public string? Connection { get => _explicitNullValueConnection; set { _explicitNullValueConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Connection"); else _explicitNullProperties?.Remove("Connection"); } }
+        private string? _explicitNullValueConnection = default!;
 #nullable restore
 #else
-        public string Connection { get; set; }
+        public string Connection { get => _explicitNullValueConnection; set { _explicitNullValueConnection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Connection"); else _explicitNullProperties?.Remove("Connection"); } }
+        private string _explicitNullValueConnection = default!;
 #endif
         /// <summary>The ContentLength property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentLength { get; set; }
+        public string? ContentLength { get => _explicitNullValueContentLength; set { _explicitNullValueContentLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Content-Length"); else _explicitNullProperties?.Remove("Content-Length"); } }
+        private string? _explicitNullValueContentLength = default!;
 #nullable restore
 #else
-        public string ContentLength { get; set; }
+        public string ContentLength { get => _explicitNullValueContentLength; set { _explicitNullValueContentLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Content-Length"); else _explicitNullProperties?.Remove("Content-Length"); } }
+        private string _explicitNullValueContentLength = default!;
 #endif
         /// <summary>The ContentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get; set; }
+        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Content-Type"); else _explicitNullProperties?.Remove("Content-Type"); } }
+        private string? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public string ContentType { get; set; }
+        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Content-Type"); else _explicitNullProperties?.Remove("Content-Type"); } }
+        private string _explicitNullValueContentType = default!;
 #endif
         /// <summary>The Date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Date { get; set; }
+        public string? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Date"); else _explicitNullProperties?.Remove("Date"); } }
+        private string? _explicitNullValueDate = default!;
 #nullable restore
 #else
-        public string Date { get; set; }
+        public string Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Date"); else _explicitNullProperties?.Remove("Date"); } }
+        private string _explicitNullValueDate = default!;
 #endif
         /// <summary>The ETag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ETag { get; set; }
+        public string? ETag { get => _explicitNullValueETag; set { _explicitNullValueETag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ETag"); else _explicitNullProperties?.Remove("ETag"); } }
+        private string? _explicitNullValueETag = default!;
 #nullable restore
 #else
-        public string ETag { get; set; }
+        public string ETag { get => _explicitNullValueETag; set { _explicitNullValueETag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ETag"); else _explicitNullProperties?.Remove("ETag"); } }
+        private string _explicitNullValueETag = default!;
 #endif
         /// <summary>The Expires property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expires { get; set; }
+        public string? Expires { get => _explicitNullValueExpires; set { _explicitNullValueExpires = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Expires"); else _explicitNullProperties?.Remove("Expires"); } }
+        private string? _explicitNullValueExpires = default!;
 #nullable restore
 #else
-        public string Expires { get; set; }
+        public string Expires { get => _explicitNullValueExpires; set { _explicitNullValueExpires = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Expires"); else _explicitNullProperties?.Remove("Expires"); } }
+        private string _explicitNullValueExpires = default!;
 #endif
         /// <summary>The SetCookie property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SetCookie { get; set; }
+        public List<string>? SetCookie { get => _explicitNullValueSetCookie; set { _explicitNullValueSetCookie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Set-Cookie"); else _explicitNullProperties?.Remove("Set-Cookie"); } }
+        private List<string>? _explicitNullValueSetCookie = default!;
 #nullable restore
 #else
-        public List<string> SetCookie { get; set; }
+        public List<string> SetCookie { get => _explicitNullValueSetCookie; set { _explicitNullValueSetCookie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Set-Cookie"); else _explicitNullProperties?.Remove("Set-Cookie"); } }
+        private List<string> _explicitNullValueSetCookie = default!;
 #endif
         /// <summary>The Vary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Vary { get; set; }
+        public string? Vary { get => _explicitNullValueVary; set { _explicitNullValueVary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Vary"); else _explicitNullProperties?.Remove("Vary"); } }
+        private string? _explicitNullValueVary = default!;
 #nullable restore
 #else
-        public string Vary { get; set; }
+        public string Vary { get => _explicitNullValueVary; set { _explicitNullValueVary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Vary"); else _explicitNullProperties?.Remove("Vary"); } }
+        private string _explicitNullValueVary = default!;
 #endif
         /// <summary>The Via property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Via { get; set; }
+        public string? Via { get => _explicitNullValueVia; set { _explicitNullValueVia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Via"); else _explicitNullProperties?.Remove("Via"); } }
+        private string? _explicitNullValueVia = default!;
 #nullable restore
 #else
-        public string Via { get; set; }
+        public string Via { get => _explicitNullValueVia; set { _explicitNullValueVia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Via"); else _explicitNullProperties?.Remove("Via"); } }
+        private string _explicitNullValueVia = default!;
 #endif
         /// <summary>The XCache property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XCache { get; set; }
+        public string? XCache { get => _explicitNullValueXCache; set { _explicitNullValueXCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Cache"); else _explicitNullProperties?.Remove("X-Cache"); } }
+        private string? _explicitNullValueXCache = default!;
 #nullable restore
 #else
-        public string XCache { get; set; }
+        public string XCache { get => _explicitNullValueXCache; set { _explicitNullValueXCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Cache"); else _explicitNullProperties?.Remove("X-Cache"); } }
+        private string _explicitNullValueXCache = default!;
 #endif
         /// <summary>The XCacheHits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XCacheHits { get; set; }
+        public string? XCacheHits { get => _explicitNullValueXCacheHits; set { _explicitNullValueXCacheHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Cache-Hits"); else _explicitNullProperties?.Remove("X-Cache-Hits"); } }
+        private string? _explicitNullValueXCacheHits = default!;
 #nullable restore
 #else
-        public string XCacheHits { get; set; }
+        public string XCacheHits { get => _explicitNullValueXCacheHits; set { _explicitNullValueXCacheHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Cache-Hits"); else _explicitNullProperties?.Remove("X-Cache-Hits"); } }
+        private string _explicitNullValueXCacheHits = default!;
 #endif
         /// <summary>The XContextId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XContextId { get; set; }
+        public string? XContextId { get => _explicitNullValueXContextId; set { _explicitNullValueXContextId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-ContextId"); else _explicitNullProperties?.Remove("X-ContextId"); } }
+        private string? _explicitNullValueXContextId = default!;
 #nullable restore
 #else
-        public string XContextId { get; set; }
+        public string XContextId { get => _explicitNullValueXContextId; set { _explicitNullValueXContextId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-ContextId"); else _explicitNullProperties?.Remove("X-ContextId"); } }
+        private string _explicitNullValueXContextId = default!;
 #endif
         /// <summary>The XPCAppVer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XPCAppVer { get; set; }
+        public string? XPCAppVer { get => _explicitNullValueXPCAppVer; set { _explicitNullValueXPCAppVer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-AppVer"); else _explicitNullProperties?.Remove("X-PC-AppVer"); } }
+        private string? _explicitNullValueXPCAppVer = default!;
 #nullable restore
 #else
-        public string XPCAppVer { get; set; }
+        public string XPCAppVer { get => _explicitNullValueXPCAppVer; set { _explicitNullValueXPCAppVer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-AppVer"); else _explicitNullProperties?.Remove("X-PC-AppVer"); } }
+        private string _explicitNullValueXPCAppVer = default!;
 #endif
         /// <summary>The XPCDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XPCDate { get; set; }
+        public string? XPCDate { get => _explicitNullValueXPCDate; set { _explicitNullValueXPCDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-Date"); else _explicitNullProperties?.Remove("X-PC-Date"); } }
+        private string? _explicitNullValueXPCDate = default!;
 #nullable restore
 #else
-        public string XPCDate { get; set; }
+        public string XPCDate { get => _explicitNullValueXPCDate; set { _explicitNullValueXPCDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-Date"); else _explicitNullProperties?.Remove("X-PC-Date"); } }
+        private string _explicitNullValueXPCDate = default!;
 #endif
         /// <summary>The XPCHit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XPCHit { get; set; }
+        public string? XPCHit { get => _explicitNullValueXPCHit; set { _explicitNullValueXPCHit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-Hit"); else _explicitNullProperties?.Remove("X-PC-Hit"); } }
+        private string? _explicitNullValueXPCHit = default!;
 #nullable restore
 #else
-        public string XPCHit { get; set; }
+        public string XPCHit { get => _explicitNullValueXPCHit; set { _explicitNullValueXPCHit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-Hit"); else _explicitNullProperties?.Remove("X-PC-Hit"); } }
+        private string _explicitNullValueXPCHit = default!;
 #endif
         /// <summary>The XPCHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XPCHost { get; set; }
+        public string? XPCHost { get => _explicitNullValueXPCHost; set { _explicitNullValueXPCHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-Host"); else _explicitNullProperties?.Remove("X-PC-Host"); } }
+        private string? _explicitNullValueXPCHost = default!;
 #nullable restore
 #else
-        public string XPCHost { get; set; }
+        public string XPCHost { get => _explicitNullValueXPCHost; set { _explicitNullValueXPCHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-Host"); else _explicitNullProperties?.Remove("X-PC-Host"); } }
+        private string _explicitNullValueXPCHost = default!;
 #endif
         /// <summary>The XPCKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XPCKey { get; set; }
+        public string? XPCKey { get => _explicitNullValueXPCKey; set { _explicitNullValueXPCKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-Key"); else _explicitNullProperties?.Remove("X-PC-Key"); } }
+        private string? _explicitNullValueXPCKey = default!;
 #nullable restore
 #else
-        public string XPCKey { get; set; }
+        public string XPCKey { get => _explicitNullValueXPCKey; set { _explicitNullValueXPCKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-PC-Key"); else _explicitNullProperties?.Remove("X-PC-Key"); } }
+        private string _explicitNullValueXPCKey = default!;
 #endif
         /// <summary>The XServedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XServedBy { get; set; }
+        public string? XServedBy { get => _explicitNullValueXServedBy; set { _explicitNullValueXServedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Served-By"); else _explicitNullProperties?.Remove("X-Served-By"); } }
+        private string? _explicitNullValueXServedBy = default!;
 #nullable restore
 #else
-        public string XServedBy { get; set; }
+        public string XServedBy { get => _explicitNullValueXServedBy; set { _explicitNullValueXServedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Served-By"); else _explicitNullProperties?.Remove("X-Served-By"); } }
+        private string _explicitNullValueXServedBy = default!;
 #endif
         /// <summary>The XTimer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XTimer { get; set; }
+        public string? XTimer { get => _explicitNullValueXTimer; set { _explicitNullValueXTimer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Timer"); else _explicitNullProperties?.Remove("X-Timer"); } }
+        private string? _explicitNullValueXTimer = default!;
 #nullable restore
 #else
-        public string XTimer { get; set; }
+        public string XTimer { get => _explicitNullValueXTimer; set { _explicitNullValueXTimer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Timer"); else _explicitNullProperties?.Remove("X-Timer"); } }
+        private string _explicitNullValueXTimer = default!;
 #endif
         /// <summary>The XVia property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XVia { get; set; }
+        public string? XVia { get => _explicitNullValueXVia; set { _explicitNullValueXVia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Via"); else _explicitNullProperties?.Remove("X-Via"); } }
+        private string? _explicitNullValueXVia = default!;
 #nullable restore
 #else
-        public string XVia { get; set; }
+        public string XVia { get => _explicitNullValueXVia; set { _explicitNullValueXVia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("X-Via"); else _explicitNullProperties?.Remove("X-Via"); } }
+        private string _explicitNullValueXVia = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeaders"/> and sets the default values.
@@ -213,7 +289,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeaders CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeaders();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemResponseHeaders(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -278,6 +354,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("X-Served-By", XServedBy);
             writer.WriteStringValue("X-Timer", XTimer);
             writer.WriteStringValue("X-Via", XVia);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

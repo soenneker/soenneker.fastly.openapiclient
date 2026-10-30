@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListItemsInADictionary200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListItemsInADictionary200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListItemsInADictionary200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListItemsInADictionary200ResponseItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Dictionary.Item.Items
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInADictionary200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInADictionary200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInADictionary200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInADictionary200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of DictionaryItems given service and dictionary ID.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

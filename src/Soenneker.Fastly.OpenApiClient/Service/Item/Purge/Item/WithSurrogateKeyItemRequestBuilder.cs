@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Purge.Item
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.PurgeBySurrogateKeyTag200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.PurgeBySurrogateKeyTag200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.PurgeBySurrogateKeyTag200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.PurgeBySurrogateKeyTag200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Instant Purge a particular service of items tagged with a Surrogate Key. Only one surrogate key can be purged at a time. Multiple keys can be purged using a batch surrogate key purge request.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

@@ -62,7 +62,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListSecretsWithinAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListSecretsWithinAStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListSecretsWithinAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListSecretsWithinAStore200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Recreate a secret based on the secret&apos;s name.Returns an error if there is no existing secret with the same name.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -82,7 +82,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RecreateASecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RecreateASecretInAStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RecreateASecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RecreateASecretInAStore200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new secret in a store.Returns an error if a secret already exists with the same name.See PUT and PATCH methods for ways to recreate an existing secret.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -102,7 +102,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateANewSecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateANewSecretInAStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateANewSecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateANewSecretInAStore200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create or recreate a secret based on the secret&apos;s name.The response object&apos;s recreated field will be true if the secret was recreated.The secret field must be Base64-encoded because a secret can contain binary data.In the example below, the unencoded secret is &quot;Hello, world!&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -122,7 +122,7 @@ namespace Soenneker.Fastly.OpenApiClient.Resources.Stores.Secret.Item.Secrets
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateOrRecreateASecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateOrRecreateASecretInAStore200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateOrRecreateASecretInAStore200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateOrRecreateASecretInAStore200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all secrets within a store.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

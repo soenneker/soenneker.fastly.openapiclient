@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Channel.Item.Ts.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataFromSpecifiedTime200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get real-time data for the specified reporting period. Specify 0 to get a single entry for the last complete second. The Timestamp field included in the response provides the time index of the latest entry in the dataset and can be provided as the start_timestamp of the next request for a seamless continuation of the dataset from one request to the next.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

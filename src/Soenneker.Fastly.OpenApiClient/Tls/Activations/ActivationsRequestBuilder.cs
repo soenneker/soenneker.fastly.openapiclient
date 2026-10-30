@@ -62,7 +62,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTlsActivations200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -82,7 +82,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableTlsForADomainUsingACustomCertificate201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableTlsForADomainUsingACustomCertificate201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.EnableTlsForADomainUsingACustomCertificate201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.EnableTlsForADomainUsingACustomCertificate201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all TLS activations.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

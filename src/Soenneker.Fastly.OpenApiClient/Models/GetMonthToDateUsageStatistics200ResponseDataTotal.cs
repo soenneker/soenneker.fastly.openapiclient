@@ -11,56 +11,81 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetMonthToDateUsageStatistics200ResponseDataTotal : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("anzac") is { } nullNodeAnzac && nullNodeAnzac.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Anzac = null;
+            if (parseNode.GetChildNode("asia") is { } nullNodeAsia && nullNodeAsia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Asia = null;
+            if (parseNode.GetChildNode("europe") is { } nullNodeEurope && nullNodeEurope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Europe = null;
+            if (parseNode.GetChildNode("latam") is { } nullNodeLatam && nullNodeLatam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Latam = null;
+            if (parseNode.GetChildNode("south_africa") is { } nullNodeSouthAfrica && nullNodeSouthAfrica.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SouthAfrica = null;
+            if (parseNode.GetChildNode("usa") is { } nullNodeUsa && nullNodeUsa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usa = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The anzac property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAnzac? Anzac { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAnzac? Anzac { get => _explicitNullValueAnzac; set { _explicitNullValueAnzac = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anzac"); else _explicitNullProperties?.Remove("anzac"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAnzac? _explicitNullValueAnzac = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAnzac Anzac { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAnzac Anzac { get => _explicitNullValueAnzac; set { _explicitNullValueAnzac = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anzac"); else _explicitNullProperties?.Remove("anzac"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAnzac _explicitNullValueAnzac = default!;
 #endif
         /// <summary>The asia property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAsia? Asia { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAsia? Asia { get => _explicitNullValueAsia; set { _explicitNullValueAsia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asia"); else _explicitNullProperties?.Remove("asia"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAsia? _explicitNullValueAsia = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAsia Asia { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAsia Asia { get => _explicitNullValueAsia; set { _explicitNullValueAsia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("asia"); else _explicitNullProperties?.Remove("asia"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalAsia _explicitNullValueAsia = default!;
 #endif
         /// <summary>The europe property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalEurope? Europe { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalEurope? Europe { get => _explicitNullValueEurope; set { _explicitNullValueEurope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("europe"); else _explicitNullProperties?.Remove("europe"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalEurope? _explicitNullValueEurope = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalEurope Europe { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalEurope Europe { get => _explicitNullValueEurope; set { _explicitNullValueEurope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("europe"); else _explicitNullProperties?.Remove("europe"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalEurope _explicitNullValueEurope = default!;
 #endif
         /// <summary>The latam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalLatam? Latam { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalLatam? Latam { get => _explicitNullValueLatam; set { _explicitNullValueLatam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latam"); else _explicitNullProperties?.Remove("latam"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalLatam? _explicitNullValueLatam = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalLatam Latam { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalLatam Latam { get => _explicitNullValueLatam; set { _explicitNullValueLatam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latam"); else _explicitNullProperties?.Remove("latam"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalLatam _explicitNullValueLatam = default!;
 #endif
         /// <summary>The south_africa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalSouthAfrica? SouthAfrica { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalSouthAfrica? SouthAfrica { get => _explicitNullValueSouthAfrica; set { _explicitNullValueSouthAfrica = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("south_africa"); else _explicitNullProperties?.Remove("south_africa"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalSouthAfrica? _explicitNullValueSouthAfrica = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalSouthAfrica SouthAfrica { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalSouthAfrica SouthAfrica { get => _explicitNullValueSouthAfrica; set { _explicitNullValueSouthAfrica = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("south_africa"); else _explicitNullProperties?.Remove("south_africa"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalSouthAfrica _explicitNullValueSouthAfrica = default!;
 #endif
         /// <summary>The usa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalUsa? Usa { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalUsa? Usa { get => _explicitNullValueUsa; set { _explicitNullValueUsa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usa"); else _explicitNullProperties?.Remove("usa"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalUsa? _explicitNullValueUsa = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalUsa Usa { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalUsa Usa { get => _explicitNullValueUsa; set { _explicitNullValueUsa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usa"); else _explicitNullProperties?.Remove("usa"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalUsa _explicitNullValueUsa = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalLatam>("latam", Latam);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalSouthAfrica>("south_africa", SouthAfrica);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotalUsa>("usa", Usa);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

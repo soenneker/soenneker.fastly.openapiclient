@@ -48,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Show a TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsActivation200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsActivation200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsActivation200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsActivation200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.Update the mutual authentication for the domain associated with this TLS activation. You may either 1) pass a valid mutual authentication ID to activate Mutual TLS, or 2) pass null as the ID to deactivate from Mutual TLS.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -86,7 +86,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Activations.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateACertificate2200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateACertificate2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateACertificate2200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateACertificate2200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disable TLS on the domain associated with this TLS activation.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

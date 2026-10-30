@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens.Item.Workspaces
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListAutomationTokenWorkspaces200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

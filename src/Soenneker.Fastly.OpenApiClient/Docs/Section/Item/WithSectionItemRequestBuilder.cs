@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Docs.Section.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsMatchingASectionFilter200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsMatchingASectionFilter200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsMatchingASectionFilter200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsMatchingASectionFilter200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets all documentation associated with a given Categorical Section where section is a regular_expression. Passing invert=true will force a return of everything that does not match the given regular expression.

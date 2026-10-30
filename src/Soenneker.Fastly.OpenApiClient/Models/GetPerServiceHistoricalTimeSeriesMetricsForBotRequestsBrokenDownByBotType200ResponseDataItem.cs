@@ -11,24 +11,42 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetPerServiceHistoricalTimeSeriesMetricsForBotRequestsBrokenDownByBotType200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bot_edge_requests_allowed_count") is { } nullNodeBotEdgeRequestsAllowedCount && nullNodeBotEdgeRequestsAllowedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotEdgeRequestsAllowedCount = null;
+            if (parseNode.GetChildNode("bot_edge_requests_blocked_count") is { } nullNodeBotEdgeRequestsBlockedCount && nullNodeBotEdgeRequestsBlockedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotEdgeRequestsBlockedCount = null;
+            if (parseNode.GetChildNode("bot_edge_requests_challenged_count") is { } nullNodeBotEdgeRequestsChallengedCount && nullNodeBotEdgeRequestsChallengedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotEdgeRequestsChallengedCount = null;
+            if (parseNode.GetChildNode("bot_edge_requests_challenge_token_valid_count") is { } nullNodeBotEdgeRequestsChallengeTokenValidCount && nullNodeBotEdgeRequestsChallengeTokenValidCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BotEdgeRequestsChallengeTokenValidCount = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bot_edge_requests_allowed_count property</summary>
-        public long? BotEdgeRequestsAllowedCount { get; set; }
+        public long? BotEdgeRequestsAllowedCount { get => _explicitNullValueBotEdgeRequestsAllowedCount; set { _explicitNullValueBotEdgeRequestsAllowedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_edge_requests_allowed_count"); else _explicitNullProperties?.Remove("bot_edge_requests_allowed_count"); } }
+        private long? _explicitNullValueBotEdgeRequestsAllowedCount = default!;
         /// <summary>The bot_edge_requests_blocked_count property</summary>
-        public long? BotEdgeRequestsBlockedCount { get; set; }
+        public long? BotEdgeRequestsBlockedCount { get => _explicitNullValueBotEdgeRequestsBlockedCount; set { _explicitNullValueBotEdgeRequestsBlockedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_edge_requests_blocked_count"); else _explicitNullProperties?.Remove("bot_edge_requests_blocked_count"); } }
+        private long? _explicitNullValueBotEdgeRequestsBlockedCount = default!;
         /// <summary>The bot_edge_requests_challenged_count property</summary>
-        public long? BotEdgeRequestsChallengedCount { get; set; }
+        public long? BotEdgeRequestsChallengedCount { get => _explicitNullValueBotEdgeRequestsChallengedCount; set { _explicitNullValueBotEdgeRequestsChallengedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_edge_requests_challenged_count"); else _explicitNullProperties?.Remove("bot_edge_requests_challenged_count"); } }
+        private long? _explicitNullValueBotEdgeRequestsChallengedCount = default!;
         /// <summary>The bot_edge_requests_challenge_token_valid_count property</summary>
-        public long? BotEdgeRequestsChallengeTokenValidCount { get; set; }
+        public long? BotEdgeRequestsChallengeTokenValidCount { get => _explicitNullValueBotEdgeRequestsChallengeTokenValidCount; set { _explicitNullValueBotEdgeRequestsChallengeTokenValidCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot_edge_requests_challenge_token_valid_count"); else _explicitNullProperties?.Remove("bot_edge_requests_challenge_token_valid_count"); } }
+        private long? _explicitNullValueBotEdgeRequestsChallengeTokenValidCount = default!;
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetPerServiceHistoricalTimeSeriesMetricsForBotRequestsBrokenDownByBotType200ResponseDataItem"/> and sets the default values.
@@ -45,7 +63,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetPerServiceHistoricalTimeSeriesMetricsForBotRequestsBrokenDownByBotType200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetPerServiceHistoricalTimeSeriesMetricsForBotRequestsBrokenDownByBotType200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetPerServiceHistoricalTimeSeriesMetricsForBotRequestsBrokenDownByBotType200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +92,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteLongValue("bot_edge_requests_challenged_count", BotEdgeRequestsChallengedCount);
             writer.WriteLongValue("bot_edge_requests_challenge_token_valid_count", BotEdgeRequestsChallengeTokenValidCount);
             writer.WriteStringValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

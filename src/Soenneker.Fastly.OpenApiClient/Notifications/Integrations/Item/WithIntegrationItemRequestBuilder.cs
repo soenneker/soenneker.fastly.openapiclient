@@ -60,7 +60,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve an existing integration by using its id, if it exists.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -78,7 +78,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -97,7 +97,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

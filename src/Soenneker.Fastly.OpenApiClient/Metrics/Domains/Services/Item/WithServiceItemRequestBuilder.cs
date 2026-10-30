@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.Domains.Services.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalDomainDataForAService200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

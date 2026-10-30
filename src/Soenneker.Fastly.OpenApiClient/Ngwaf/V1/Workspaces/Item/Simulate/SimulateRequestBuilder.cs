@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Ngwaf.V1.Workspaces.Item.Simulate
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SimulateAwafRequest200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Simulates a request through the workspace&apos;s WAF configuration and returnsthe WAF response code and any signals that would be detected. The operationis stateless — no simulation data is persisted.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

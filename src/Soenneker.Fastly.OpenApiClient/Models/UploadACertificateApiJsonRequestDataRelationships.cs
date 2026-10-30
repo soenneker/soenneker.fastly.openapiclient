@@ -11,16 +11,26 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UploadACertificateApiJsonRequestDataRelationships : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("tls_configurations") is { } nullNodeTlsConfigurations && nullNodeTlsConfigurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsConfigurations = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tls_configurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations? TlsConfigurations { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations? TlsConfigurations { get => _explicitNullValueTlsConfigurations; set { _explicitNullValueTlsConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_configurations"); else _explicitNullProperties?.Remove("tls_configurations"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations? _explicitNullValueTlsConfigurations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations TlsConfigurations { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations TlsConfigurations { get => _explicitNullValueTlsConfigurations; set { _explicitNullValueTlsConfigurations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_configurations"); else _explicitNullProperties?.Remove("tls_configurations"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations _explicitNullValueTlsConfigurations = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationships"/> and sets the default values.
@@ -37,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationships CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationships();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationships(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +68,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.UploadACertificateApiJsonRequestDataRelationshipsTlsConfigurations>("tls_configurations", TlsConfigurations);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -64,7 +64,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.Purge
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a Surrogate-Key request header, e.g. Surrogate-Key: key_1 key_2 key_3.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

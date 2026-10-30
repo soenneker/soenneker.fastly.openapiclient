@@ -11,24 +11,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItemValuesItem>? Values { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItemValuesItem>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItemValuesItem>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItemValuesItem> Values { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItemValuesItem> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItemValuesItem> _explicitNullValueValues = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItem"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetAllRulesForAnEvent200ResponseDataItemTrafficStatsAttributesItemValuesItem>("values", Values);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,13 +11,24 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListFastlyPoPs200ResponseItemCoordinates : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("latitude") is { } nullNodeLatitude && nullNodeLatitude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Latitude = null;
+            if (parseNode.GetChildNode("longitude") is { } nullNodeLongitude && nullNodeLongitude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Longitude = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The latitude property</summary>
-        public double? Latitude { get; set; }
+        public double? Latitude { get => _explicitNullValueLatitude; set { _explicitNullValueLatitude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latitude"); else _explicitNullProperties?.Remove("latitude"); } }
+        private double? _explicitNullValueLatitude = default!;
         /// <summary>The longitude property</summary>
-        public double? Longitude { get; set; }
+        public double? Longitude { get => _explicitNullValueLongitude; set { _explicitNullValueLongitude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("longitude"); else _explicitNullProperties?.Remove("longitude"); } }
+        private double? _explicitNullValueLongitude = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.ListFastlyPoPs200ResponseItemCoordinates(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteDoubleValue("longitude", Longitude);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,13 +11,24 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListTimeseriesMetrics200ResponseDataItemValuesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("HTTP404") is { } nullNodeHTTP404 && nullNodeHTTP404.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HTTP404 = null;
+            if (parseNode.GetChildNode("requests_total") is { } nullNodeRequestsTotal && nullNodeRequestsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsTotal = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The HTTP404 property</summary>
-        public long? HTTP404 { get; set; }
+        public long? HTTP404 { get => _explicitNullValueHTTP404; set { _explicitNullValueHTTP404 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("HTTP404"); else _explicitNullProperties?.Remove("HTTP404"); } }
+        private long? _explicitNullValueHTTP404 = default!;
         /// <summary>The requests_total property</summary>
-        public long? RequestsTotal { get; set; }
+        public long? RequestsTotal { get => _explicitNullValueRequestsTotal; set { _explicitNullValueRequestsTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_total"); else _explicitNullProperties?.Remove("requests_total"); } }
+        private long? _explicitNullValueRequestsTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListTimeseriesMetrics200ResponseDataItemValuesItem"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ListTimeseriesMetrics200ResponseDataItemValuesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ListTimeseriesMetrics200ResponseDataItemValuesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.ListTimeseriesMetrics200ResponseDataItemValuesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("HTTP404", HTTP404);
             writer.WriteLongValue("requests_total", RequestsTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

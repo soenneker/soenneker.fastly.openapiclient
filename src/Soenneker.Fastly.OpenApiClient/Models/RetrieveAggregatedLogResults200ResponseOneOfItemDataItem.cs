@@ -11,24 +11,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RetrieveAggregatedLogResults200ResponseOneOfItemDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dimensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemDimensions? Dimensions { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemDimensions? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemDimensions? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemDimensions Dimensions { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemDimensions Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemDimensions _explicitNullValueDimensions = default!;
 #endif
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemValues? Values { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemValues? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemValues? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemValues Values { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemValues Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemValues _explicitNullValueValues = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItem"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemDimensions>("dimensions", Dimensions);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.RetrieveAggregatedLogResults200ResponseOneOfItemDataItemValues>("values", Values);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

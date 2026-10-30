@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Customer.Item.Contacts.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeleteAContact200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeleteAContact200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.DeleteAContact200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.DeleteAContact200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/account/contact/#delete-contact)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

@@ -11,96 +11,141 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetTheCurrentUser200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("deleted_at") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
+            if (parseNode.GetChildNode("email_hash") is { } nullNodeEmailHash && nullNodeEmailHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailHash = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("locked") is { } nullNodeLocked && nullNodeLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locked = null;
+            if (parseNode.GetChildNode("login") is { } nullNodeLogin && nullNodeLogin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Login = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("require_new_password") is { } nullNodeRequireNewPassword && nullNodeRequireNewPassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequireNewPassword = null;
+            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("roles") is { } nullNodeRoles && nullNodeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roles = null;
+            if (parseNode.GetChildNode("two_factor_auth_enabled") is { } nullNodeTwoFactorAuthEnabled && nullNodeTwoFactorAuthEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoFactorAuthEnabled = null;
+            if (parseNode.GetChildNode("two_factor_setup_required") is { } nullNodeTwoFactorSetupRequired && nullNodeTwoFactorSetupRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoFactorSetupRequired = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get; set; }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get; set; }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>The customer_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; set; }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get; set; }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DeletedAt { get; set; }
+        public UntypedNode? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private UntypedNode? _explicitNullValueDeletedAt = default!;
 #nullable restore
 #else
-        public UntypedNode DeletedAt { get; set; }
+        public UntypedNode DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
+        private UntypedNode _explicitNullValueDeletedAt = default!;
 #endif
         /// <summary>The email_hash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailHash { get; set; }
+        public string? EmailHash { get => _explicitNullValueEmailHash; set { _explicitNullValueEmailHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_hash"); else _explicitNullProperties?.Remove("email_hash"); } }
+        private string? _explicitNullValueEmailHash = default!;
 #nullable restore
 #else
-        public string EmailHash { get; set; }
+        public string EmailHash { get => _explicitNullValueEmailHash; set { _explicitNullValueEmailHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_hash"); else _explicitNullProperties?.Remove("email_hash"); } }
+        private string _explicitNullValueEmailHash = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The locked property</summary>
-        public bool? Locked { get; set; }
+        public bool? Locked { get => _explicitNullValueLocked; set { _explicitNullValueLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locked"); else _explicitNullProperties?.Remove("locked"); } }
+        private bool? _explicitNullValueLocked = default!;
         /// <summary>The login property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Login { get; set; }
+        public string? Login { get => _explicitNullValueLogin; set { _explicitNullValueLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login"); else _explicitNullProperties?.Remove("login"); } }
+        private string? _explicitNullValueLogin = default!;
 #nullable restore
 #else
-        public string Login { get; set; }
+        public string Login { get => _explicitNullValueLogin; set { _explicitNullValueLogin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("login"); else _explicitNullProperties?.Remove("login"); } }
+        private string _explicitNullValueLogin = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The require_new_password property</summary>
-        public bool? RequireNewPassword { get; set; }
+        public bool? RequireNewPassword { get => _explicitNullValueRequireNewPassword; set { _explicitNullValueRequireNewPassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require_new_password"); else _explicitNullProperties?.Remove("require_new_password"); } }
+        private bool? _explicitNullValueRequireNewPassword = default!;
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Role { get; set; }
+        public string? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private string? _explicitNullValueRole = default!;
 #nullable restore
 #else
-        public string Role { get; set; }
+        public string Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private string _explicitNullValueRole = default!;
 #endif
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Roles { get; set; }
+        public List<string>? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private List<string>? _explicitNullValueRoles = default!;
 #nullable restore
 #else
-        public List<string> Roles { get; set; }
+        public List<string> Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private List<string> _explicitNullValueRoles = default!;
 #endif
         /// <summary>The two_factor_auth_enabled property</summary>
-        public bool? TwoFactorAuthEnabled { get; set; }
+        public bool? TwoFactorAuthEnabled { get => _explicitNullValueTwoFactorAuthEnabled; set { _explicitNullValueTwoFactorAuthEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("two_factor_auth_enabled"); else _explicitNullProperties?.Remove("two_factor_auth_enabled"); } }
+        private bool? _explicitNullValueTwoFactorAuthEnabled = default!;
         /// <summary>The two_factor_setup_required property</summary>
-        public bool? TwoFactorSetupRequired { get; set; }
+        public bool? TwoFactorSetupRequired { get => _explicitNullValueTwoFactorSetupRequired; set { _explicitNullValueTwoFactorSetupRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("two_factor_setup_required"); else _explicitNullProperties?.Remove("two_factor_setup_required"); } }
+        private bool? _explicitNullValueTwoFactorSetupRequired = default!;
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get; set; }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get; set; }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetTheCurrentUser200Response"/> and sets the default values.
@@ -117,7 +162,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetTheCurrentUser200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetTheCurrentUser200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetTheCurrentUser200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,6 +209,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteBoolValue("two_factor_auth_enabled", TwoFactorAuthEnabled);
             writer.WriteBoolValue("two_factor_setup_required", TwoFactorSetupRequired);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -51,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Sudo
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RequestSudoAccess200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RequestSudoAccess200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RequestSudoAccess200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RequestSudoAccess200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Re-authenticate to allow the provided user to obtain sudo access.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

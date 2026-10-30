@@ -11,16 +11,26 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateAtlsCertificate200ResponseDataRelationships : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("tls_domains") is { } nullNodeTlsDomains && nullNodeTlsDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsDomains = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tls_domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationshipsTlsDomains? TlsDomains { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationshipsTlsDomains? TlsDomains { get => _explicitNullValueTlsDomains; set { _explicitNullValueTlsDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_domains"); else _explicitNullProperties?.Remove("tls_domains"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationshipsTlsDomains? _explicitNullValueTlsDomains = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationshipsTlsDomains TlsDomains { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationshipsTlsDomains TlsDomains { get => _explicitNullValueTlsDomains; set { _explicitNullValueTlsDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_domains"); else _explicitNullProperties?.Remove("tls_domains"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationshipsTlsDomains _explicitNullValueTlsDomains = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationships"/> and sets the default values.
@@ -37,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationships CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationships();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationships(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +68,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAtlsCertificate200ResponseDataRelationshipsTlsDomains>("tls_domains", TlsDomains);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,217 +11,337 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListAgents200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_active") is { } nullNodeAgentActive && nullNodeAgentActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentActive = null;
+            if (parseNode.GetChildNode("agent_args") is { } nullNodeAgentArgs && nullNodeAgentArgs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentArgs = null;
+            if (parseNode.GetChildNode("agent_build_id") is { } nullNodeAgentBuildId && nullNodeAgentBuildId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentBuildId = null;
+            if (parseNode.GetChildNode("agent_cgroup") is { } nullNodeAgentCgroup && nullNodeAgentCgroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentCgroup = null;
+            if (parseNode.GetChildNode("agent_connections_dropped_count") is { } nullNodeAgentConnectionsDroppedCount && nullNodeAgentConnectionsDroppedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentConnectionsDroppedCount = null;
+            if (parseNode.GetChildNode("agent_connections_open_count") is { } nullNodeAgentConnectionsOpenCount && nullNodeAgentConnectionsOpenCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentConnectionsOpenCount = null;
+            if (parseNode.GetChildNode("agent_connections_total_count") is { } nullNodeAgentConnectionsTotalCount && nullNodeAgentConnectionsTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentConnectionsTotalCount = null;
+            if (parseNode.GetChildNode("agent_current_requests") is { } nullNodeAgentCurrentRequests && nullNodeAgentCurrentRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentCurrentRequests = null;
+            if (parseNode.GetChildNode("agent_decision_time_50th") is { } nullNodeAgentDecisionTime50th && nullNodeAgentDecisionTime50th.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentDecisionTime50th = null;
+            if (parseNode.GetChildNode("agent_decision_time_95th") is { } nullNodeAgentDecisionTime95th && nullNodeAgentDecisionTime95th.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentDecisionTime95th = null;
+            if (parseNode.GetChildNode("agent_decision_time_99th") is { } nullNodeAgentDecisionTime99th && nullNodeAgentDecisionTime99th.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentDecisionTime99th = null;
+            if (parseNode.GetChildNode("agent_enabled") is { } nullNodeAgentEnabled && nullNodeAgentEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentEnabled = null;
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("agent_last_rule_updated_at") is { } nullNodeAgentLastRuleUpdatedAt && nullNodeAgentLastRuleUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentLastRuleUpdatedAt = null;
+            if (parseNode.GetChildNode("agent_last_seen_at") is { } nullNodeAgentLastSeenAt && nullNodeAgentLastSeenAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentLastSeenAt = null;
+            if (parseNode.GetChildNode("agent_latency_time_50th") is { } nullNodeAgentLatencyTime50th && nullNodeAgentLatencyTime50th.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentLatencyTime50th = null;
+            if (parseNode.GetChildNode("agent_latency_time_95th") is { } nullNodeAgentLatencyTime95th && nullNodeAgentLatencyTime95th.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentLatencyTime95th = null;
+            if (parseNode.GetChildNode("agent_latency_time_99th") is { } nullNodeAgentLatencyTime99th && nullNodeAgentLatencyTime99th.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentLatencyTime99th = null;
+            if (parseNode.GetChildNode("agent_max_procs") is { } nullNodeAgentMaxProcs && nullNodeAgentMaxProcs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentMaxProcs = null;
+            if (parseNode.GetChildNode("agent_name") is { } nullNodeAgentName && nullNodeAgentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentName = null;
+            if (parseNode.GetChildNode("agent_pid") is { } nullNodeAgentPid && nullNodeAgentPid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentPid = null;
+            if (parseNode.GetChildNode("agent_read_bytes") is { } nullNodeAgentReadBytes && nullNodeAgentReadBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentReadBytes = null;
+            if (parseNode.GetChildNode("agent_rule_update_count") is { } nullNodeAgentRuleUpdateCount && nullNodeAgentRuleUpdateCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentRuleUpdateCount = null;
+            if (parseNode.GetChildNode("agent_status") is { } nullNodeAgentStatus && nullNodeAgentStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentStatus = null;
+            if (parseNode.GetChildNode("agent_timestamp") is { } nullNodeAgentTimestamp && nullNodeAgentTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentTimestamp = null;
+            if (parseNode.GetChildNode("agent_timezone") is { } nullNodeAgentTimezone && nullNodeAgentTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentTimezone = null;
+            if (parseNode.GetChildNode("agent_timezone_offset") is { } nullNodeAgentTimezoneOffset && nullNodeAgentTimezoneOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentTimezoneOffset = null;
+            if (parseNode.GetChildNode("agent_upload_metadata_failure_count") is { } nullNodeAgentUploadMetadataFailureCount && nullNodeAgentUploadMetadataFailureCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentUploadMetadataFailureCount = null;
+            if (parseNode.GetChildNode("agent_upload_size") is { } nullNodeAgentUploadSize && nullNodeAgentUploadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentUploadSize = null;
+            if (parseNode.GetChildNode("agent_uptime") is { } nullNodeAgentUptime && nullNodeAgentUptime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentUptime = null;
+            if (parseNode.GetChildNode("agent_version") is { } nullNodeAgentVersion && nullNodeAgentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentVersion = null;
+            if (parseNode.GetChildNode("agent_versions_behind") is { } nullNodeAgentVersionsBehind && nullNodeAgentVersionsBehind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentVersionsBehind = null;
+            if (parseNode.GetChildNode("agent_write_bytes") is { } nullNodeAgentWriteBytes && nullNodeAgentWriteBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentWriteBytes = null;
+            if (parseNode.GetChildNode("host_agent_cpu") is { } nullNodeHostAgentCpu && nullNodeHostAgentCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostAgentCpu = null;
+            if (parseNode.GetChildNode("host_clock_skew") is { } nullNodeHostClockSkew && nullNodeHostClockSkew.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostClockSkew = null;
+            if (parseNode.GetChildNode("host_cpu") is { } nullNodeHostCpu && nullNodeHostCpu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostCpu = null;
+            if (parseNode.GetChildNode("host_os") is { } nullNodeHostOs && nullNodeHostOs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostOs = null;
+            if (parseNode.GetChildNode("host_remote_ip") is { } nullNodeHostRemoteIp && nullNodeHostRemoteIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostRemoteIp = null;
+            if (parseNode.GetChildNode("module_detected") is { } nullNodeModuleDetected && nullNodeModuleDetected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleDetected = null;
+            if (parseNode.GetChildNode("module_server") is { } nullNodeModuleServer && nullNodeModuleServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleServer = null;
+            if (parseNode.GetChildNode("module_type") is { } nullNodeModuleType && nullNodeModuleType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleType = null;
+            if (parseNode.GetChildNode("module_version") is { } nullNodeModuleVersion && nullNodeModuleVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleVersion = null;
+            if (parseNode.GetChildNode("module_versions_behind") is { } nullNodeModuleVersionsBehind && nullNodeModuleVersionsBehind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModuleVersionsBehind = null;
+            if (parseNode.GetChildNode("runtime_gc_pause_millis") is { } nullNodeRuntimeGcPauseMillis && nullNodeRuntimeGcPauseMillis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuntimeGcPauseMillis = null;
+            if (parseNode.GetChildNode("runtime_memory_bytes_used") is { } nullNodeRuntimeMemoryBytesUsed && nullNodeRuntimeMemoryBytesUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuntimeMemoryBytesUsed = null;
+            if (parseNode.GetChildNode("runtime_num_gc") is { } nullNodeRuntimeNumGc && nullNodeRuntimeNumGc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuntimeNumGc = null;
+            if (parseNode.GetChildNode("runtime_num_goroutines") is { } nullNodeRuntimeNumGoroutines && nullNodeRuntimeNumGoroutines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuntimeNumGoroutines = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent_active property</summary>
-        public bool? AgentActive { get; set; }
+        public bool? AgentActive { get => _explicitNullValueAgentActive; set { _explicitNullValueAgentActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_active"); else _explicitNullProperties?.Remove("agent_active"); } }
+        private bool? _explicitNullValueAgentActive = default!;
         /// <summary>The agent_args property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentArgs { get; set; }
+        public string? AgentArgs { get => _explicitNullValueAgentArgs; set { _explicitNullValueAgentArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_args"); else _explicitNullProperties?.Remove("agent_args"); } }
+        private string? _explicitNullValueAgentArgs = default!;
 #nullable restore
 #else
-        public string AgentArgs { get; set; }
+        public string AgentArgs { get => _explicitNullValueAgentArgs; set { _explicitNullValueAgentArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_args"); else _explicitNullProperties?.Remove("agent_args"); } }
+        private string _explicitNullValueAgentArgs = default!;
 #endif
         /// <summary>The agent_build_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentBuildId { get; set; }
+        public string? AgentBuildId { get => _explicitNullValueAgentBuildId; set { _explicitNullValueAgentBuildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_build_id"); else _explicitNullProperties?.Remove("agent_build_id"); } }
+        private string? _explicitNullValueAgentBuildId = default!;
 #nullable restore
 #else
-        public string AgentBuildId { get; set; }
+        public string AgentBuildId { get => _explicitNullValueAgentBuildId; set { _explicitNullValueAgentBuildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_build_id"); else _explicitNullProperties?.Remove("agent_build_id"); } }
+        private string _explicitNullValueAgentBuildId = default!;
 #endif
         /// <summary>The agent_cgroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentCgroup { get; set; }
+        public string? AgentCgroup { get => _explicitNullValueAgentCgroup; set { _explicitNullValueAgentCgroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_cgroup"); else _explicitNullProperties?.Remove("agent_cgroup"); } }
+        private string? _explicitNullValueAgentCgroup = default!;
 #nullable restore
 #else
-        public string AgentCgroup { get; set; }
+        public string AgentCgroup { get => _explicitNullValueAgentCgroup; set { _explicitNullValueAgentCgroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_cgroup"); else _explicitNullProperties?.Remove("agent_cgroup"); } }
+        private string _explicitNullValueAgentCgroup = default!;
 #endif
         /// <summary>The agent_connections_dropped_count property</summary>
-        public long? AgentConnectionsDroppedCount { get; set; }
+        public long? AgentConnectionsDroppedCount { get => _explicitNullValueAgentConnectionsDroppedCount; set { _explicitNullValueAgentConnectionsDroppedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_connections_dropped_count"); else _explicitNullProperties?.Remove("agent_connections_dropped_count"); } }
+        private long? _explicitNullValueAgentConnectionsDroppedCount = default!;
         /// <summary>The agent_connections_open_count property</summary>
-        public long? AgentConnectionsOpenCount { get; set; }
+        public long? AgentConnectionsOpenCount { get => _explicitNullValueAgentConnectionsOpenCount; set { _explicitNullValueAgentConnectionsOpenCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_connections_open_count"); else _explicitNullProperties?.Remove("agent_connections_open_count"); } }
+        private long? _explicitNullValueAgentConnectionsOpenCount = default!;
         /// <summary>The agent_connections_total_count property</summary>
-        public long? AgentConnectionsTotalCount { get; set; }
+        public long? AgentConnectionsTotalCount { get => _explicitNullValueAgentConnectionsTotalCount; set { _explicitNullValueAgentConnectionsTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_connections_total_count"); else _explicitNullProperties?.Remove("agent_connections_total_count"); } }
+        private long? _explicitNullValueAgentConnectionsTotalCount = default!;
         /// <summary>The agent_current_requests property</summary>
-        public long? AgentCurrentRequests { get; set; }
+        public long? AgentCurrentRequests { get => _explicitNullValueAgentCurrentRequests; set { _explicitNullValueAgentCurrentRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_current_requests"); else _explicitNullProperties?.Remove("agent_current_requests"); } }
+        private long? _explicitNullValueAgentCurrentRequests = default!;
         /// <summary>The agent_decision_time_50th property</summary>
-        public double? AgentDecisionTime50th { get; set; }
+        public double? AgentDecisionTime50th { get => _explicitNullValueAgentDecisionTime50th; set { _explicitNullValueAgentDecisionTime50th = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_decision_time_50th"); else _explicitNullProperties?.Remove("agent_decision_time_50th"); } }
+        private double? _explicitNullValueAgentDecisionTime50th = default!;
         /// <summary>The agent_decision_time_95th property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentDecisionTime95Th? AgentDecisionTime95th { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentDecisionTime95Th? AgentDecisionTime95th { get => _explicitNullValueAgentDecisionTime95th; set { _explicitNullValueAgentDecisionTime95th = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_decision_time_95th"); else _explicitNullProperties?.Remove("agent_decision_time_95th"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentDecisionTime95Th? _explicitNullValueAgentDecisionTime95th = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentDecisionTime95Th AgentDecisionTime95th { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentDecisionTime95Th AgentDecisionTime95th { get => _explicitNullValueAgentDecisionTime95th; set { _explicitNullValueAgentDecisionTime95th = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_decision_time_95th"); else _explicitNullProperties?.Remove("agent_decision_time_95th"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentDecisionTime95Th _explicitNullValueAgentDecisionTime95th = default!;
 #endif
         /// <summary>The agent_decision_time_99th property</summary>
-        public double? AgentDecisionTime99th { get; set; }
+        public double? AgentDecisionTime99th { get => _explicitNullValueAgentDecisionTime99th; set { _explicitNullValueAgentDecisionTime99th = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_decision_time_99th"); else _explicitNullProperties?.Remove("agent_decision_time_99th"); } }
+        private double? _explicitNullValueAgentDecisionTime99th = default!;
         /// <summary>The agent_enabled property</summary>
-        public bool? AgentEnabled { get; set; }
+        public bool? AgentEnabled { get => _explicitNullValueAgentEnabled; set { _explicitNullValueAgentEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_enabled"); else _explicitNullProperties?.Remove("agent_enabled"); } }
+        private bool? _explicitNullValueAgentEnabled = default!;
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentId { get; set; }
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public string AgentId { get; set; }
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The agent_last_rule_updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentLastRuleUpdatedAt { get; set; }
+        public string? AgentLastRuleUpdatedAt { get => _explicitNullValueAgentLastRuleUpdatedAt; set { _explicitNullValueAgentLastRuleUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_last_rule_updated_at"); else _explicitNullProperties?.Remove("agent_last_rule_updated_at"); } }
+        private string? _explicitNullValueAgentLastRuleUpdatedAt = default!;
 #nullable restore
 #else
-        public string AgentLastRuleUpdatedAt { get; set; }
+        public string AgentLastRuleUpdatedAt { get => _explicitNullValueAgentLastRuleUpdatedAt; set { _explicitNullValueAgentLastRuleUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_last_rule_updated_at"); else _explicitNullProperties?.Remove("agent_last_rule_updated_at"); } }
+        private string _explicitNullValueAgentLastRuleUpdatedAt = default!;
 #endif
         /// <summary>The agent_last_seen_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentLastSeenAt { get; set; }
+        public string? AgentLastSeenAt { get => _explicitNullValueAgentLastSeenAt; set { _explicitNullValueAgentLastSeenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_last_seen_at"); else _explicitNullProperties?.Remove("agent_last_seen_at"); } }
+        private string? _explicitNullValueAgentLastSeenAt = default!;
 #nullable restore
 #else
-        public string AgentLastSeenAt { get; set; }
+        public string AgentLastSeenAt { get => _explicitNullValueAgentLastSeenAt; set { _explicitNullValueAgentLastSeenAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_last_seen_at"); else _explicitNullProperties?.Remove("agent_last_seen_at"); } }
+        private string _explicitNullValueAgentLastSeenAt = default!;
 #endif
         /// <summary>The agent_latency_time_50th property</summary>
-        public double? AgentLatencyTime50th { get; set; }
+        public double? AgentLatencyTime50th { get => _explicitNullValueAgentLatencyTime50th; set { _explicitNullValueAgentLatencyTime50th = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_latency_time_50th"); else _explicitNullProperties?.Remove("agent_latency_time_50th"); } }
+        private double? _explicitNullValueAgentLatencyTime50th = default!;
         /// <summary>The agent_latency_time_95th property</summary>
-        public double? AgentLatencyTime95th { get; set; }
+        public double? AgentLatencyTime95th { get => _explicitNullValueAgentLatencyTime95th; set { _explicitNullValueAgentLatencyTime95th = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_latency_time_95th"); else _explicitNullProperties?.Remove("agent_latency_time_95th"); } }
+        private double? _explicitNullValueAgentLatencyTime95th = default!;
         /// <summary>The agent_latency_time_99th property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentLatencyTime99Th? AgentLatencyTime99th { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentLatencyTime99Th? AgentLatencyTime99th { get => _explicitNullValueAgentLatencyTime99th; set { _explicitNullValueAgentLatencyTime99th = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_latency_time_99th"); else _explicitNullProperties?.Remove("agent_latency_time_99th"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentLatencyTime99Th? _explicitNullValueAgentLatencyTime99th = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentLatencyTime99Th AgentLatencyTime99th { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentLatencyTime99Th AgentLatencyTime99th { get => _explicitNullValueAgentLatencyTime99th; set { _explicitNullValueAgentLatencyTime99th = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_latency_time_99th"); else _explicitNullProperties?.Remove("agent_latency_time_99th"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemAgentLatencyTime99Th _explicitNullValueAgentLatencyTime99th = default!;
 #endif
         /// <summary>The agent_max_procs property</summary>
-        public long? AgentMaxProcs { get; set; }
+        public long? AgentMaxProcs { get => _explicitNullValueAgentMaxProcs; set { _explicitNullValueAgentMaxProcs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_max_procs"); else _explicitNullProperties?.Remove("agent_max_procs"); } }
+        private long? _explicitNullValueAgentMaxProcs = default!;
         /// <summary>The agent_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentName { get; set; }
+        public string? AgentName { get => _explicitNullValueAgentName; set { _explicitNullValueAgentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_name"); else _explicitNullProperties?.Remove("agent_name"); } }
+        private string? _explicitNullValueAgentName = default!;
 #nullable restore
 #else
-        public string AgentName { get; set; }
+        public string AgentName { get => _explicitNullValueAgentName; set { _explicitNullValueAgentName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_name"); else _explicitNullProperties?.Remove("agent_name"); } }
+        private string _explicitNullValueAgentName = default!;
 #endif
         /// <summary>The agent_pid property</summary>
-        public long? AgentPid { get; set; }
+        public long? AgentPid { get => _explicitNullValueAgentPid; set { _explicitNullValueAgentPid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_pid"); else _explicitNullProperties?.Remove("agent_pid"); } }
+        private long? _explicitNullValueAgentPid = default!;
         /// <summary>The agent_read_bytes property</summary>
-        public long? AgentReadBytes { get; set; }
+        public long? AgentReadBytes { get => _explicitNullValueAgentReadBytes; set { _explicitNullValueAgentReadBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_read_bytes"); else _explicitNullProperties?.Remove("agent_read_bytes"); } }
+        private long? _explicitNullValueAgentReadBytes = default!;
         /// <summary>The agent_rule_update_count property</summary>
-        public long? AgentRuleUpdateCount { get; set; }
+        public long? AgentRuleUpdateCount { get => _explicitNullValueAgentRuleUpdateCount; set { _explicitNullValueAgentRuleUpdateCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_rule_update_count"); else _explicitNullProperties?.Remove("agent_rule_update_count"); } }
+        private long? _explicitNullValueAgentRuleUpdateCount = default!;
         /// <summary>The agent_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentStatus { get; set; }
+        public string? AgentStatus { get => _explicitNullValueAgentStatus; set { _explicitNullValueAgentStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_status"); else _explicitNullProperties?.Remove("agent_status"); } }
+        private string? _explicitNullValueAgentStatus = default!;
 #nullable restore
 #else
-        public string AgentStatus { get; set; }
+        public string AgentStatus { get => _explicitNullValueAgentStatus; set { _explicitNullValueAgentStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_status"); else _explicitNullProperties?.Remove("agent_status"); } }
+        private string _explicitNullValueAgentStatus = default!;
 #endif
         /// <summary>The agent_timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentTimestamp { get; set; }
+        public string? AgentTimestamp { get => _explicitNullValueAgentTimestamp; set { _explicitNullValueAgentTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_timestamp"); else _explicitNullProperties?.Remove("agent_timestamp"); } }
+        private string? _explicitNullValueAgentTimestamp = default!;
 #nullable restore
 #else
-        public string AgentTimestamp { get; set; }
+        public string AgentTimestamp { get => _explicitNullValueAgentTimestamp; set { _explicitNullValueAgentTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_timestamp"); else _explicitNullProperties?.Remove("agent_timestamp"); } }
+        private string _explicitNullValueAgentTimestamp = default!;
 #endif
         /// <summary>The agent_timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentTimezone { get; set; }
+        public string? AgentTimezone { get => _explicitNullValueAgentTimezone; set { _explicitNullValueAgentTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_timezone"); else _explicitNullProperties?.Remove("agent_timezone"); } }
+        private string? _explicitNullValueAgentTimezone = default!;
 #nullable restore
 #else
-        public string AgentTimezone { get; set; }
+        public string AgentTimezone { get => _explicitNullValueAgentTimezone; set { _explicitNullValueAgentTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_timezone"); else _explicitNullProperties?.Remove("agent_timezone"); } }
+        private string _explicitNullValueAgentTimezone = default!;
 #endif
         /// <summary>The agent_timezone_offset property</summary>
-        public long? AgentTimezoneOffset { get; set; }
+        public long? AgentTimezoneOffset { get => _explicitNullValueAgentTimezoneOffset; set { _explicitNullValueAgentTimezoneOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_timezone_offset"); else _explicitNullProperties?.Remove("agent_timezone_offset"); } }
+        private long? _explicitNullValueAgentTimezoneOffset = default!;
         /// <summary>The agent_upload_metadata_failure_count property</summary>
-        public long? AgentUploadMetadataFailureCount { get; set; }
+        public long? AgentUploadMetadataFailureCount { get => _explicitNullValueAgentUploadMetadataFailureCount; set { _explicitNullValueAgentUploadMetadataFailureCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_upload_metadata_failure_count"); else _explicitNullProperties?.Remove("agent_upload_metadata_failure_count"); } }
+        private long? _explicitNullValueAgentUploadMetadataFailureCount = default!;
         /// <summary>The agent_upload_size property</summary>
-        public long? AgentUploadSize { get; set; }
+        public long? AgentUploadSize { get => _explicitNullValueAgentUploadSize; set { _explicitNullValueAgentUploadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_upload_size"); else _explicitNullProperties?.Remove("agent_upload_size"); } }
+        private long? _explicitNullValueAgentUploadSize = default!;
         /// <summary>The agent_uptime property</summary>
-        public long? AgentUptime { get; set; }
+        public long? AgentUptime { get => _explicitNullValueAgentUptime; set { _explicitNullValueAgentUptime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_uptime"); else _explicitNullProperties?.Remove("agent_uptime"); } }
+        private long? _explicitNullValueAgentUptime = default!;
         /// <summary>The agent_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentVersion { get; set; }
+        public string? AgentVersion { get => _explicitNullValueAgentVersion; set { _explicitNullValueAgentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_version"); else _explicitNullProperties?.Remove("agent_version"); } }
+        private string? _explicitNullValueAgentVersion = default!;
 #nullable restore
 #else
-        public string AgentVersion { get; set; }
+        public string AgentVersion { get => _explicitNullValueAgentVersion; set { _explicitNullValueAgentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_version"); else _explicitNullProperties?.Remove("agent_version"); } }
+        private string _explicitNullValueAgentVersion = default!;
 #endif
         /// <summary>The agent_versions_behind property</summary>
-        public long? AgentVersionsBehind { get; set; }
+        public long? AgentVersionsBehind { get => _explicitNullValueAgentVersionsBehind; set { _explicitNullValueAgentVersionsBehind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_versions_behind"); else _explicitNullProperties?.Remove("agent_versions_behind"); } }
+        private long? _explicitNullValueAgentVersionsBehind = default!;
         /// <summary>The agent_write_bytes property</summary>
-        public long? AgentWriteBytes { get; set; }
+        public long? AgentWriteBytes { get => _explicitNullValueAgentWriteBytes; set { _explicitNullValueAgentWriteBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_write_bytes"); else _explicitNullProperties?.Remove("agent_write_bytes"); } }
+        private long? _explicitNullValueAgentWriteBytes = default!;
         /// <summary>The host_agent_cpu property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemHostAgentCpu? HostAgentCpu { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemHostAgentCpu? HostAgentCpu { get => _explicitNullValueHostAgentCpu; set { _explicitNullValueHostAgentCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_agent_cpu"); else _explicitNullProperties?.Remove("host_agent_cpu"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemHostAgentCpu? _explicitNullValueHostAgentCpu = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemHostAgentCpu HostAgentCpu { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemHostAgentCpu HostAgentCpu { get => _explicitNullValueHostAgentCpu; set { _explicitNullValueHostAgentCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_agent_cpu"); else _explicitNullProperties?.Remove("host_agent_cpu"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItemHostAgentCpu _explicitNullValueHostAgentCpu = default!;
 #endif
         /// <summary>The host_clock_skew property</summary>
-        public long? HostClockSkew { get; set; }
+        public long? HostClockSkew { get => _explicitNullValueHostClockSkew; set { _explicitNullValueHostClockSkew = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_clock_skew"); else _explicitNullProperties?.Remove("host_clock_skew"); } }
+        private long? _explicitNullValueHostClockSkew = default!;
         /// <summary>The host_cpu property</summary>
-        public double? HostCpu { get; set; }
+        public double? HostCpu { get => _explicitNullValueHostCpu; set { _explicitNullValueHostCpu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_cpu"); else _explicitNullProperties?.Remove("host_cpu"); } }
+        private double? _explicitNullValueHostCpu = default!;
         /// <summary>The host_os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostOs { get; set; }
+        public string? HostOs { get => _explicitNullValueHostOs; set { _explicitNullValueHostOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_os"); else _explicitNullProperties?.Remove("host_os"); } }
+        private string? _explicitNullValueHostOs = default!;
 #nullable restore
 #else
-        public string HostOs { get; set; }
+        public string HostOs { get => _explicitNullValueHostOs; set { _explicitNullValueHostOs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_os"); else _explicitNullProperties?.Remove("host_os"); } }
+        private string _explicitNullValueHostOs = default!;
 #endif
         /// <summary>The host_remote_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostRemoteIp { get; set; }
+        public string? HostRemoteIp { get => _explicitNullValueHostRemoteIp; set { _explicitNullValueHostRemoteIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_remote_ip"); else _explicitNullProperties?.Remove("host_remote_ip"); } }
+        private string? _explicitNullValueHostRemoteIp = default!;
 #nullable restore
 #else
-        public string HostRemoteIp { get; set; }
+        public string HostRemoteIp { get => _explicitNullValueHostRemoteIp; set { _explicitNullValueHostRemoteIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("host_remote_ip"); else _explicitNullProperties?.Remove("host_remote_ip"); } }
+        private string _explicitNullValueHostRemoteIp = default!;
 #endif
         /// <summary>The module_detected property</summary>
-        public bool? ModuleDetected { get; set; }
+        public bool? ModuleDetected { get => _explicitNullValueModuleDetected; set { _explicitNullValueModuleDetected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_detected"); else _explicitNullProperties?.Remove("module_detected"); } }
+        private bool? _explicitNullValueModuleDetected = default!;
         /// <summary>The module_server property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModuleServer { get; set; }
+        public string? ModuleServer { get => _explicitNullValueModuleServer; set { _explicitNullValueModuleServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_server"); else _explicitNullProperties?.Remove("module_server"); } }
+        private string? _explicitNullValueModuleServer = default!;
 #nullable restore
 #else
-        public string ModuleServer { get; set; }
+        public string ModuleServer { get => _explicitNullValueModuleServer; set { _explicitNullValueModuleServer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_server"); else _explicitNullProperties?.Remove("module_server"); } }
+        private string _explicitNullValueModuleServer = default!;
 #endif
         /// <summary>The module_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModuleType { get; set; }
+        public string? ModuleType { get => _explicitNullValueModuleType; set { _explicitNullValueModuleType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_type"); else _explicitNullProperties?.Remove("module_type"); } }
+        private string? _explicitNullValueModuleType = default!;
 #nullable restore
 #else
-        public string ModuleType { get; set; }
+        public string ModuleType { get => _explicitNullValueModuleType; set { _explicitNullValueModuleType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_type"); else _explicitNullProperties?.Remove("module_type"); } }
+        private string _explicitNullValueModuleType = default!;
 #endif
         /// <summary>The module_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModuleVersion { get; set; }
+        public string? ModuleVersion { get => _explicitNullValueModuleVersion; set { _explicitNullValueModuleVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_version"); else _explicitNullProperties?.Remove("module_version"); } }
+        private string? _explicitNullValueModuleVersion = default!;
 #nullable restore
 #else
-        public string ModuleVersion { get; set; }
+        public string ModuleVersion { get => _explicitNullValueModuleVersion; set { _explicitNullValueModuleVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_version"); else _explicitNullProperties?.Remove("module_version"); } }
+        private string _explicitNullValueModuleVersion = default!;
 #endif
         /// <summary>The module_versions_behind property</summary>
-        public long? ModuleVersionsBehind { get; set; }
+        public long? ModuleVersionsBehind { get => _explicitNullValueModuleVersionsBehind; set { _explicitNullValueModuleVersionsBehind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("module_versions_behind"); else _explicitNullProperties?.Remove("module_versions_behind"); } }
+        private long? _explicitNullValueModuleVersionsBehind = default!;
         /// <summary>The runtime_gc_pause_millis property</summary>
-        public double? RuntimeGcPauseMillis { get; set; }
+        public double? RuntimeGcPauseMillis { get => _explicitNullValueRuntimeGcPauseMillis; set { _explicitNullValueRuntimeGcPauseMillis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_gc_pause_millis"); else _explicitNullProperties?.Remove("runtime_gc_pause_millis"); } }
+        private double? _explicitNullValueRuntimeGcPauseMillis = default!;
         /// <summary>The runtime_memory_bytes_used property</summary>
-        public long? RuntimeMemoryBytesUsed { get; set; }
+        public long? RuntimeMemoryBytesUsed { get => _explicitNullValueRuntimeMemoryBytesUsed; set { _explicitNullValueRuntimeMemoryBytesUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_memory_bytes_used"); else _explicitNullProperties?.Remove("runtime_memory_bytes_used"); } }
+        private long? _explicitNullValueRuntimeMemoryBytesUsed = default!;
         /// <summary>The runtime_num_gc property</summary>
-        public long? RuntimeNumGc { get; set; }
+        public long? RuntimeNumGc { get => _explicitNullValueRuntimeNumGc; set { _explicitNullValueRuntimeNumGc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_num_gc"); else _explicitNullProperties?.Remove("runtime_num_gc"); } }
+        private long? _explicitNullValueRuntimeNumGc = default!;
         /// <summary>The runtime_num_goroutines property</summary>
-        public long? RuntimeNumGoroutines { get; set; }
+        public long? RuntimeNumGoroutines { get => _explicitNullValueRuntimeNumGoroutines; set { _explicitNullValueRuntimeNumGoroutines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_num_goroutines"); else _explicitNullProperties?.Remove("runtime_num_goroutines"); } }
+        private long? _explicitNullValueRuntimeNumGoroutines = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -237,7 +357,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.ListAgents200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -350,6 +470,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteLongValue("runtime_memory_bytes_used", RuntimeMemoryBytesUsed);
             writer.WriteLongValue("runtime_num_gc", RuntimeNumGc);
             writer.WriteLongValue("runtime_num_goroutines", RuntimeNumGoroutines);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

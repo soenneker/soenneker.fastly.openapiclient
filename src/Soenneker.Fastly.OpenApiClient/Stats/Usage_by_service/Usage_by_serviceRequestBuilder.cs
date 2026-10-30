@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Usage_by_service
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns usage information aggregated by service and grouped by service and region. For service stats by time period, see /stats and /stats/field/:field.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

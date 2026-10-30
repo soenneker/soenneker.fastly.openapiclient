@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CheckStatusOfContentInEachPopsCache200ResponseItemRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders? Headers { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders Headers { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Method { get; set; }
+        public UntypedNode? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private UntypedNode? _explicitNullValueMethod = default!;
 #nullable restore
 #else
-        public UntypedNode Method { get; set; }
+        public UntypedNode Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private UntypedNode _explicitNullValueMethod = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Url { get; set; }
+        public UntypedNode? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private UntypedNode? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public UntypedNode Url { get; set; }
+        public UntypedNode Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private UntypedNode _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CheckStatusOfContentInEachPopsCache200ResponseItemRequestHeaders>("headers", Headers);
             writer.WriteObjectValue<UntypedNode>("method", Method);
             writer.WriteObjectValue<UntypedNode>("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

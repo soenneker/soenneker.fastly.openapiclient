@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Vcl.
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SetACustomVclFileAsMain200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SetACustomVclFileAsMain200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SetACustomVclFileAsMain200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SetACustomVclFileAsMain200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set the specified VCL as the main.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

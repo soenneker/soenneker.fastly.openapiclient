@@ -11,40 +11,59 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateANetworkProtectNetworkRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("endpoint_policies") is { } nullNodeEndpointPolicies && nullNodeEndpointPolicies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointPolicies = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("prefix") is { } nullNodePrefix && nullNodePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefix = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The endpoint_policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItem>? EndpointPolicies { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItem>? EndpointPolicies { get => _explicitNullValueEndpointPolicies; set { _explicitNullValueEndpointPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_policies"); else _explicitNullProperties?.Remove("endpoint_policies"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItem>? _explicitNullValueEndpointPolicies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItem> EndpointPolicies { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItem> EndpointPolicies { get => _explicitNullValueEndpointPolicies; set { _explicitNullValueEndpointPolicies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_policies"); else _explicitNullProperties?.Remove("endpoint_policies"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItem> _explicitNullValueEndpointPolicies = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Prefix { get; set; }
+        public string? Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        private string? _explicitNullValuePrefix = default!;
 #nullable restore
 #else
-        public string Prefix { get; set; }
+        public string Prefix { get => _explicitNullValuePrefix; set { _explicitNullValuePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefix"); else _explicitNullProperties?.Remove("prefix"); } }
+        private string _explicitNullValuePrefix = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequest"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItem>("endpoint_policies", EndpointPolicies);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("prefix", Prefix);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

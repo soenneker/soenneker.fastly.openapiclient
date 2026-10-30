@@ -11,55 +11,103 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregated : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("body_size") is { } nullNodeBodySize && nullNodeBodySize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BodySize = null;
+            if (parseNode.GetChildNode("compute_execution_time_ms") is { } nullNodeComputeExecutionTimeMs && nullNodeComputeExecutionTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputeExecutionTimeMs = null;
+            if (parseNode.GetChildNode("compute_ram_used") is { } nullNodeComputeRamUsed && nullNodeComputeRamUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputeRamUsed = null;
+            if (parseNode.GetChildNode("compute_requests") is { } nullNodeComputeRequests && nullNodeComputeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputeRequests = null;
+            if (parseNode.GetChildNode("compute_request_time_billed_ms") is { } nullNodeComputeRequestTimeBilledMs && nullNodeComputeRequestTimeBilledMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputeRequestTimeBilledMs = null;
+            if (parseNode.GetChildNode("compute_request_time_ms") is { } nullNodeComputeRequestTimeMs && nullNodeComputeRequestTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComputeRequestTimeMs = null;
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("header_size") is { } nullNodeHeaderSize && nullNodeHeaderSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderSize = null;
+            if (parseNode.GetChildNode("hits") is { } nullNodeHits && nullNodeHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hits = null;
+            if (parseNode.GetChildNode("hits_time") is { } nullNodeHitsTime && nullNodeHitsTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HitsTime = null;
+            if (parseNode.GetChildNode("log") is { } nullNodeLog && nullNodeLog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Log = null;
+            if (parseNode.GetChildNode("logging") is { } nullNodeLogging && nullNodeLogging.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logging = null;
+            if (parseNode.GetChildNode("miss") is { } nullNodeMiss && nullNodeMiss.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Miss = null;
+            if (parseNode.GetChildNode("miss_histogram") is { } nullNodeMissHistogram && nullNodeMissHistogram.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissHistogram = null;
+            if (parseNode.GetChildNode("miss_time") is { } nullNodeMissTime && nullNodeMissTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissTime = null;
+            if (parseNode.GetChildNode("pass") is { } nullNodePass && nullNodePass.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pass = null;
+            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("resp_body_bytes") is { } nullNodeRespBodyBytes && nullNodeRespBodyBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespBodyBytes = null;
+            if (parseNode.GetChildNode("resp_header_bytes") is { } nullNodeRespHeaderBytes && nullNodeRespHeaderBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespHeaderBytes = null;
+            if (parseNode.GetChildNode("synth") is { } nullNodeSynth && nullNodeSynth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Synth = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The body_size property</summary>
-        public long? BodySize { get; set; }
+        public long? BodySize { get => _explicitNullValueBodySize; set { _explicitNullValueBodySize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body_size"); else _explicitNullProperties?.Remove("body_size"); } }
+        private long? _explicitNullValueBodySize = default!;
         /// <summary>The compute_execution_time_ms property</summary>
-        public long? ComputeExecutionTimeMs { get; set; }
+        public long? ComputeExecutionTimeMs { get => _explicitNullValueComputeExecutionTimeMs; set { _explicitNullValueComputeExecutionTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_execution_time_ms"); else _explicitNullProperties?.Remove("compute_execution_time_ms"); } }
+        private long? _explicitNullValueComputeExecutionTimeMs = default!;
         /// <summary>The compute_ram_used property</summary>
-        public long? ComputeRamUsed { get; set; }
+        public long? ComputeRamUsed { get => _explicitNullValueComputeRamUsed; set { _explicitNullValueComputeRamUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_ram_used"); else _explicitNullProperties?.Remove("compute_ram_used"); } }
+        private long? _explicitNullValueComputeRamUsed = default!;
         /// <summary>The compute_requests property</summary>
-        public long? ComputeRequests { get; set; }
+        public long? ComputeRequests { get => _explicitNullValueComputeRequests; set { _explicitNullValueComputeRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_requests"); else _explicitNullProperties?.Remove("compute_requests"); } }
+        private long? _explicitNullValueComputeRequests = default!;
         /// <summary>The compute_request_time_billed_ms property</summary>
-        public long? ComputeRequestTimeBilledMs { get; set; }
+        public long? ComputeRequestTimeBilledMs { get => _explicitNullValueComputeRequestTimeBilledMs; set { _explicitNullValueComputeRequestTimeBilledMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_request_time_billed_ms"); else _explicitNullProperties?.Remove("compute_request_time_billed_ms"); } }
+        private long? _explicitNullValueComputeRequestTimeBilledMs = default!;
         /// <summary>The compute_request_time_ms property</summary>
-        public long? ComputeRequestTimeMs { get; set; }
+        public long? ComputeRequestTimeMs { get => _explicitNullValueComputeRequestTimeMs; set { _explicitNullValueComputeRequestTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compute_request_time_ms"); else _explicitNullProperties?.Remove("compute_request_time_ms"); } }
+        private long? _explicitNullValueComputeRequestTimeMs = default!;
         /// <summary>The errors property</summary>
-        public long? Errors { get; set; }
+        public long? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private long? _explicitNullValueErrors = default!;
         /// <summary>The header_size property</summary>
-        public long? HeaderSize { get; set; }
+        public long? HeaderSize { get => _explicitNullValueHeaderSize; set { _explicitNullValueHeaderSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("header_size"); else _explicitNullProperties?.Remove("header_size"); } }
+        private long? _explicitNullValueHeaderSize = default!;
         /// <summary>The hits property</summary>
-        public long? Hits { get; set; }
+        public long? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        private long? _explicitNullValueHits = default!;
         /// <summary>The hits_time property</summary>
-        public long? HitsTime { get; set; }
+        public long? HitsTime { get => _explicitNullValueHitsTime; set { _explicitNullValueHitsTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits_time"); else _explicitNullProperties?.Remove("hits_time"); } }
+        private long? _explicitNullValueHitsTime = default!;
         /// <summary>The log property</summary>
-        public long? Log { get; set; }
+        public long? Log { get => _explicitNullValueLog; set { _explicitNullValueLog = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log"); else _explicitNullProperties?.Remove("log"); } }
+        private long? _explicitNullValueLog = default!;
         /// <summary>The logging property</summary>
-        public long? Logging { get; set; }
+        public long? Logging { get => _explicitNullValueLogging; set { _explicitNullValueLogging = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logging"); else _explicitNullProperties?.Remove("logging"); } }
+        private long? _explicitNullValueLogging = default!;
         /// <summary>The miss property</summary>
-        public long? Miss { get; set; }
+        public long? Miss { get => _explicitNullValueMiss; set { _explicitNullValueMiss = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("miss"); else _explicitNullProperties?.Remove("miss"); } }
+        private long? _explicitNullValueMiss = default!;
         /// <summary>The miss_histogram property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregatedMissHistogram? MissHistogram { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregatedMissHistogram? MissHistogram { get => _explicitNullValueMissHistogram; set { _explicitNullValueMissHistogram = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("miss_histogram"); else _explicitNullProperties?.Remove("miss_histogram"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregatedMissHistogram? _explicitNullValueMissHistogram = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregatedMissHistogram MissHistogram { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregatedMissHistogram MissHistogram { get => _explicitNullValueMissHistogram; set { _explicitNullValueMissHistogram = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("miss_histogram"); else _explicitNullProperties?.Remove("miss_histogram"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregatedMissHistogram _explicitNullValueMissHistogram = default!;
 #endif
         /// <summary>The miss_time property</summary>
-        public long? MissTime { get; set; }
+        public long? MissTime { get => _explicitNullValueMissTime; set { _explicitNullValueMissTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("miss_time"); else _explicitNullProperties?.Remove("miss_time"); } }
+        private long? _explicitNullValueMissTime = default!;
         /// <summary>The pass property</summary>
-        public long? Pass { get; set; }
+        public long? Pass { get => _explicitNullValuePass; set { _explicitNullValuePass = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pass"); else _explicitNullProperties?.Remove("pass"); } }
+        private long? _explicitNullValuePass = default!;
         /// <summary>The requests property</summary>
-        public long? Requests { get; set; }
+        public long? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private long? _explicitNullValueRequests = default!;
         /// <summary>The resp_body_bytes property</summary>
-        public long? RespBodyBytes { get; set; }
+        public long? RespBodyBytes { get => _explicitNullValueRespBodyBytes; set { _explicitNullValueRespBodyBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resp_body_bytes"); else _explicitNullProperties?.Remove("resp_body_bytes"); } }
+        private long? _explicitNullValueRespBodyBytes = default!;
         /// <summary>The resp_header_bytes property</summary>
-        public long? RespHeaderBytes { get; set; }
+        public long? RespHeaderBytes { get => _explicitNullValueRespHeaderBytes; set { _explicitNullValueRespHeaderBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resp_header_bytes"); else _explicitNullProperties?.Remove("resp_header_bytes"); } }
+        private long? _explicitNullValueRespHeaderBytes = default!;
         /// <summary>The synth property</summary>
-        public long? Synth { get; set; }
+        public long? Synth { get => _explicitNullValueSynth; set { _explicitNullValueSynth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synth"); else _explicitNullProperties?.Remove("synth"); } }
+        private long? _explicitNullValueSynth = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregated"/> and sets the default values.
         /// </summary>
@@ -75,7 +123,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregated CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregated();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDataForTheLast120Seconds200ResponseDataItemAggregated(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,6 +182,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteLongValue("resp_body_bytes", RespBodyBytes);
             writer.WriteLongValue("resp_header_bytes", RespHeaderBytes);
             writer.WriteLongValue("synth", Synth);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateCustomDashboardRequestItemsItemVisualizationConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("calculation_method") is { } nullNodeCalculationMethod && nullNodeCalculationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalculationMethod = null;
+            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("plot_type") is { } nullNodePlotType && nullNodePlotType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlotType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The calculation_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CalculationMethod { get; set; }
+        public string? CalculationMethod { get => _explicitNullValueCalculationMethod; set { _explicitNullValueCalculationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculation_method"); else _explicitNullProperties?.Remove("calculation_method"); } }
+        private string? _explicitNullValueCalculationMethod = default!;
 #nullable restore
 #else
-        public string CalculationMethod { get; set; }
+        public string CalculationMethod { get => _explicitNullValueCalculationMethod; set { _explicitNullValueCalculationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calculation_method"); else _explicitNullProperties?.Remove("calculation_method"); } }
+        private string _explicitNullValueCalculationMethod = default!;
 #endif
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format { get; set; }
+        public string? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private string? _explicitNullValueFormat = default!;
 #nullable restore
 #else
-        public string Format { get; set; }
+        public string Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        private string _explicitNullValueFormat = default!;
 #endif
         /// <summary>The plot_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlotType { get; set; }
+        public string? PlotType { get => _explicitNullValuePlotType; set { _explicitNullValuePlotType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plot_type"); else _explicitNullProperties?.Remove("plot_type"); } }
+        private string? _explicitNullValuePlotType = default!;
 #nullable restore
 #else
-        public string PlotType { get; set; }
+        public string PlotType { get => _explicitNullValuePlotType; set { _explicitNullValuePlotType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plot_type"); else _explicitNullProperties?.Remove("plot_type"); } }
+        private string _explicitNullValuePlotType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemVisualizationConfig"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemVisualizationConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemVisualizationConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboardRequestItemsItemVisualizationConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("calculation_method", CalculationMethod);
             writer.WriteStringValue("format", Format);
             writer.WriteStringValue("plot_type", PlotType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

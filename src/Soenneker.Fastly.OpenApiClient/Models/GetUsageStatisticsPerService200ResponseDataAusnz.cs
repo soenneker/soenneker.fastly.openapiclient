@@ -11,24 +11,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetUsageStatisticsPerService200ResponseDataAusnz : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("1iPMGAF44YgzB7sINv4KTF") is { } nullNodeOneiPMGAF44YgzB7sINv4KTF && nullNodeOneiPMGAF44YgzB7sINv4KTF.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneiPMGAF44YgzB7sINv4KTF = null;
+            if (parseNode.GetChildNode("7mai6mbwRz0JXxhAY8ZSN2") is { } nullNodeSevenmai6mbwRz0JXxhAY8ZSN2 && nullNodeSevenmai6mbwRz0JXxhAY8ZSN2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sevenmai6mbwRz0JXxhAY8ZSN2 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The OneiPMGAF44YgzB7sINv4KTF property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz1IPmgaf44YgzB7SiNv4Ktf? OneiPMGAF44YgzB7sINv4KTF { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz1IPmgaf44YgzB7SiNv4Ktf? OneiPMGAF44YgzB7sINv4KTF { get => _explicitNullValueOneiPMGAF44YgzB7sINv4KTF; set { _explicitNullValueOneiPMGAF44YgzB7sINv4KTF = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1iPMGAF44YgzB7sINv4KTF"); else _explicitNullProperties?.Remove("1iPMGAF44YgzB7sINv4KTF"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz1IPmgaf44YgzB7SiNv4Ktf? _explicitNullValueOneiPMGAF44YgzB7sINv4KTF = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz1IPmgaf44YgzB7SiNv4Ktf OneiPMGAF44YgzB7sINv4KTF { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz1IPmgaf44YgzB7SiNv4Ktf OneiPMGAF44YgzB7sINv4KTF { get => _explicitNullValueOneiPMGAF44YgzB7sINv4KTF; set { _explicitNullValueOneiPMGAF44YgzB7sINv4KTF = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("1iPMGAF44YgzB7sINv4KTF"); else _explicitNullProperties?.Remove("1iPMGAF44YgzB7sINv4KTF"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz1IPmgaf44YgzB7SiNv4Ktf _explicitNullValueOneiPMGAF44YgzB7sINv4KTF = default!;
 #endif
         /// <summary>The Sevenmai6mbwRz0JXxhAY8ZSN2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz7Mai6MbwRz0JXxhAy8Zsn2? Sevenmai6mbwRz0JXxhAY8ZSN2 { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz7Mai6MbwRz0JXxhAy8Zsn2? Sevenmai6mbwRz0JXxhAY8ZSN2 { get => _explicitNullValueSevenmai6mbwRz0JXxhAY8ZSN2; set { _explicitNullValueSevenmai6mbwRz0JXxhAY8ZSN2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("7mai6mbwRz0JXxhAY8ZSN2"); else _explicitNullProperties?.Remove("7mai6mbwRz0JXxhAY8ZSN2"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz7Mai6MbwRz0JXxhAy8Zsn2? _explicitNullValueSevenmai6mbwRz0JXxhAY8ZSN2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz7Mai6MbwRz0JXxhAy8Zsn2 Sevenmai6mbwRz0JXxhAY8ZSN2 { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz7Mai6MbwRz0JXxhAy8Zsn2 Sevenmai6mbwRz0JXxhAY8ZSN2 { get => _explicitNullValueSevenmai6mbwRz0JXxhAY8ZSN2; set { _explicitNullValueSevenmai6mbwRz0JXxhAY8ZSN2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("7mai6mbwRz0JXxhAY8ZSN2"); else _explicitNullProperties?.Remove("7mai6mbwRz0JXxhAY8ZSN2"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz7Mai6MbwRz0JXxhAy8Zsn2 _explicitNullValueSevenmai6mbwRz0JXxhAY8ZSN2 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz1IPmgaf44YgzB7SiNv4Ktf>("1iPMGAF44YgzB7sINv4KTF", OneiPMGAF44YgzB7sINv4KTF);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatisticsPerService200ResponseDataAusnz7Mai6MbwRz0JXxhAy8Zsn2>("7mai6mbwRz0JXxhAY8ZSN2", Sevenmai6mbwRz0JXxhAY8ZSN2);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

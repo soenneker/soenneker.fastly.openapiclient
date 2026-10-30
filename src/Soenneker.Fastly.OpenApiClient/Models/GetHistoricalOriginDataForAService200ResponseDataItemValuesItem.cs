@@ -11,15 +11,28 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetHistoricalOriginDataForAService200ResponseDataItemValuesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("resp_body_bytes") is { } nullNodeRespBodyBytes && nullNodeRespBodyBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RespBodyBytes = null;
+            if (parseNode.GetChildNode("status_2xx") is { } nullNodeStatus2xx && nullNodeStatus2xx.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status2xx = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The resp_body_bytes property</summary>
-        public long? RespBodyBytes { get; set; }
+        public long? RespBodyBytes { get => _explicitNullValueRespBodyBytes; set { _explicitNullValueRespBodyBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resp_body_bytes"); else _explicitNullProperties?.Remove("resp_body_bytes"); } }
+        private long? _explicitNullValueRespBodyBytes = default!;
         /// <summary>The status_2xx property</summary>
-        public long? Status2xx { get; set; }
+        public long? Status2xx { get => _explicitNullValueStatus2xx; set { _explicitNullValueStatus2xx = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_2xx"); else _explicitNullProperties?.Remove("status_2xx"); } }
+        private long? _explicitNullValueStatus2xx = default!;
         /// <summary>The timestamp property</summary>
-        public long? Timestamp { get; set; }
+        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private long? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseDataItemValuesItem"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseDataItemValuesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseDataItemValuesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseDataItemValuesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteLongValue("resp_body_bytes", RespBodyBytes);
             writer.WriteLongValue("status_2xx", Status2xx);
             writer.WriteLongValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,16 +11,26 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatesAGlobalSignEmailChallengeApiJsonRequestDataAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("preferred_email") is { } nullNodePreferredEmail && nullNodePreferredEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredEmail = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The preferred_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredEmail { get; set; }
+        public string? PreferredEmail { get => _explicitNullValuePreferredEmail; set { _explicitNullValuePreferredEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_email"); else _explicitNullProperties?.Remove("preferred_email"); } }
+        private string? _explicitNullValuePreferredEmail = default!;
 #nullable restore
 #else
-        public string PreferredEmail { get; set; }
+        public string PreferredEmail { get => _explicitNullValuePreferredEmail; set { _explicitNullValuePreferredEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred_email"); else _explicitNullProperties?.Remove("preferred_email"); } }
+        private string _explicitNullValuePreferredEmail = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallengeApiJsonRequestDataAttributes"/> and sets the default values.
@@ -37,7 +47,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallengeApiJsonRequestDataAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallengeApiJsonRequestDataAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreatesAGlobalSignEmailChallengeApiJsonRequestDataAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +68,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("preferred_email", PreferredEmail);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

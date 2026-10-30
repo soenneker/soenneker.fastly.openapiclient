@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateNewClientKey200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_key") is { } nullNodeClientKey && nullNodeClientKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientKey = null;
+            if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The client_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientKey { get; set; }
+        public string? ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_key"); else _explicitNullProperties?.Remove("client_key"); } }
+        private string? _explicitNullValueClientKey = default!;
 #nullable restore
 #else
-        public string ClientKey { get; set; }
+        public string ClientKey { get => _explicitNullValueClientKey; set { _explicitNullValueClientKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_key"); else _explicitNullProperties?.Remove("client_key"); } }
+        private string _explicitNullValueClientKey = default!;
 #endif
         /// <summary>The expires_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
+        private string _explicitNullValueExpiresAt = default!;
 #endif
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; set; }
+        public string? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private string? _explicitNullValueSignature = default!;
 #nullable restore
 #else
-        public string Signature { get; set; }
+        public string Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        private string _explicitNullValueSignature = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateNewClientKey200Response"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateNewClientKey200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateNewClientKey200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateNewClientKey200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("client_key", ClientKey);
             writer.WriteStringValue("expires_at", ExpiresAt);
             writer.WriteStringValue("signature", Signature);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -62,7 +62,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListCustomerAutomationTokens200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListCustomerAutomationTokens200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListCustomerAutomationTokens200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListCustomerAutomationTokens200ResponseItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Fastly.OpenApiClient.AutomationTokens
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAutomationToken201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all automation tokens for a customer.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

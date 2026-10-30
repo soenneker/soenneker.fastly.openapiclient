@@ -11,40 +11,59 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetHistoricalStatsForASingleServiceFieldCombination200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("msg") is { } nullNodeMsg && nullNodeMsg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Msg = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseDataItem>? Data { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseDataItem> Data { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseMeta? Meta { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseMeta Meta { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The msg property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Msg { get; set; }
+        public UntypedNode? Msg { get => _explicitNullValueMsg; set { _explicitNullValueMsg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("msg"); else _explicitNullProperties?.Remove("msg"); } }
+        private UntypedNode? _explicitNullValueMsg = default!;
 #nullable restore
 #else
-        public UntypedNode Msg { get; set; }
+        public UntypedNode Msg { get => _explicitNullValueMsg; set { _explicitNullValueMsg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("msg"); else _explicitNullProperties?.Remove("msg"); } }
+        private UntypedNode _explicitNullValueMsg = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleServiceFieldCombination200ResponseMeta>("meta", Meta);
             writer.WriteObjectValue<UntypedNode>("msg", Msg);
             writer.WriteStringValue("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

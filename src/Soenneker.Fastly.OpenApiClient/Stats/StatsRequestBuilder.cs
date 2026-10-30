@@ -91,7 +91,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStats200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches historical stats for each of your Fastly services and groups the results by service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

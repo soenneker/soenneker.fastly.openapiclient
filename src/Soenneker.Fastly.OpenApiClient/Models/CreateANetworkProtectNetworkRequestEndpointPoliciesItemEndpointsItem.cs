@@ -11,19 +11,31 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateANetworkProtectNetworkRequestEndpointPoliciesItemEndpointsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("endpoint_id") is { } nullNodeEndpointId && nullNodeEndpointId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointId = null;
+            if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The endpoint_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndpointId { get; set; }
+        public string? EndpointId { get => _explicitNullValueEndpointId; set { _explicitNullValueEndpointId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_id"); else _explicitNullProperties?.Remove("endpoint_id"); } }
+        private string? _explicitNullValueEndpointId = default!;
 #nullable restore
 #else
-        public string EndpointId { get; set; }
+        public string EndpointId { get => _explicitNullValueEndpointId; set { _explicitNullValueEndpointId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_id"); else _explicitNullProperties?.Remove("endpoint_id"); } }
+        private string _explicitNullValueEndpointId = default!;
 #endif
         /// <summary>The preference property</summary>
-        public long? Preference { get; set; }
+        public long? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        private long? _explicitNullValuePreference = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItemEndpointsItem"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItemEndpointsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItemEndpointsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateANetworkProtectNetworkRequestEndpointPoliciesItemEndpointsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endpoint_id", EndpointId);
             writer.WriteLongValue("preference", Preference);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

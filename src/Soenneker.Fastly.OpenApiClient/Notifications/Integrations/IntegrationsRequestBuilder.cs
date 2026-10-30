@@ -62,7 +62,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SearchForIntegrations200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SearchForIntegrations200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SearchForIntegrations200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SearchForIntegrations200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new integration of the given type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -82,7 +82,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnIntegration200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnIntegration200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnIntegration200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnIntegration200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists integrations matching the given query parameters.If no query parameter is given, the query returns the first 10 integrations sorted by name in ascending order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

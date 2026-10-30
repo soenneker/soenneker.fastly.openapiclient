@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.AiRuntimeControl.V1.UsageMetrics.Export
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ExportUsageMetrics200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ExportUsageMetrics200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ExportUsageMetrics200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ExportUsageMetrics200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns usage metrics for AI Runtime Control requests. Accepts the same filterparameters as get usage metrics, except sort andgranularity, which aren&apos;t supported here.Set the Accept header to text/csv to receive a CSV file download instead of aJSON response. In the CSV output, the column named time corresponds to the datefield in the JSON response.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateMultipleEntriesInAConfigStoreRequestItemsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("item_key") is { } nullNodeItemKey && nullNodeItemKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemKey = null;
+            if (parseNode.GetChildNode("item_value") is { } nullNodeItemValue && nullNodeItemValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemValue = null;
+            if (parseNode.GetChildNode("op") is { } nullNodeOp && nullNodeOp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Op = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The item_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemKey { get; set; }
+        public string? ItemKey { get => _explicitNullValueItemKey; set { _explicitNullValueItemKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_key"); else _explicitNullProperties?.Remove("item_key"); } }
+        private string? _explicitNullValueItemKey = default!;
 #nullable restore
 #else
-        public string ItemKey { get; set; }
+        public string ItemKey { get => _explicitNullValueItemKey; set { _explicitNullValueItemKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_key"); else _explicitNullProperties?.Remove("item_key"); } }
+        private string _explicitNullValueItemKey = default!;
 #endif
         /// <summary>The item_value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemValue { get; set; }
+        public string? ItemValue { get => _explicitNullValueItemValue; set { _explicitNullValueItemValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_value"); else _explicitNullProperties?.Remove("item_value"); } }
+        private string? _explicitNullValueItemValue = default!;
 #nullable restore
 #else
-        public string ItemValue { get; set; }
+        public string ItemValue { get => _explicitNullValueItemValue; set { _explicitNullValueItemValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_value"); else _explicitNullProperties?.Remove("item_value"); } }
+        private string _explicitNullValueItemValue = default!;
 #endif
         /// <summary>The op property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Op { get; set; }
+        public string? Op { get => _explicitNullValueOp; set { _explicitNullValueOp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("op"); else _explicitNullProperties?.Remove("op"); } }
+        private string? _explicitNullValueOp = default!;
 #nullable restore
 #else
-        public string Op { get; set; }
+        public string Op { get => _explicitNullValueOp; set { _explicitNullValueOp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("op"); else _explicitNullProperties?.Remove("op"); } }
+        private string _explicitNullValueOp = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInAConfigStoreRequestItemsItem"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInAConfigStoreRequestItemsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInAConfigStoreRequestItemsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.UpdateMultipleEntriesInAConfigStoreRequestItemsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("item_key", ItemKey);
             writer.WriteStringValue("item_value", ItemValue);
             writer.WriteStringValue("op", Op);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

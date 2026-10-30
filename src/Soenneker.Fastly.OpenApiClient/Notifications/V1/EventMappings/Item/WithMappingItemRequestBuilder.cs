@@ -48,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves an event mapping by ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -66,7 +66,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAnEventMapping200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAnEventMapping200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAnEventMapping200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAnEventMapping200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Replaces an event mapping. All fields must be provided. Omitted fields are not preserved from the previous version.integration_ids must be non-empty. A mapping is always set to active on update.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -84,7 +84,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.Item
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEventMapping200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEventMapping200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEventMapping200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateAnEventMapping200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an event mapping.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetARuleById200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetARuleById200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetARuleById200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetARuleById200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-rule-patch)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens), [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -67,7 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.DdosProtection.V1.Rules.Item
         {
 #endif
             var requestInfo = ToPatchRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateRule200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateRule200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.UpdateRule200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.UpdateRule200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **[🔗 latest documentation](https://developer.fastly.com/reference/api/ddos-protection/#ddos-protection-rule-get)**&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

@@ -11,64 +11,92 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetApiDocsMatchingASectionFilter200ResponseActionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authentication") is { } nullNodeAuthentication && nullNodeAuthentication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentication = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("http_method") is { } nullNodeHttpMethod && nullNodeHttpMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpMethod = null;
+            if (parseNode.GetChildNode("request") is { } nullNodeRequest && nullNodeRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Request = null;
+            if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+            if (parseNode.GetChildNode("response_body") is { } nullNodeResponseBody && nullNodeResponseBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseBody = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authentication property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Authentication { get; set; }
+        public string? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private string? _explicitNullValueAuthentication = default!;
 #nullable restore
 #else
-        public string Authentication { get; set; }
+        public string Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private string _explicitNullValueAuthentication = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Description { get; set; }
+        public List<string>? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private List<string>? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public List<string> Description { get; set; }
+        public List<string> Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private List<string> _explicitNullValueDescription = default!;
 #endif
         /// <summary>The http_method property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HttpMethod { get; set; }
+        public string? HttpMethod { get => _explicitNullValueHttpMethod; set { _explicitNullValueHttpMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_method"); else _explicitNullProperties?.Remove("http_method"); } }
+        private string? _explicitNullValueHttpMethod = default!;
 #nullable restore
 #else
-        public string HttpMethod { get; set; }
+        public string HttpMethod { get => _explicitNullValueHttpMethod; set { _explicitNullValueHttpMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_method"); else _explicitNullProperties?.Remove("http_method"); } }
+        private string _explicitNullValueHttpMethod = default!;
 #endif
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Request { get; set; }
+        public List<string>? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        private List<string>? _explicitNullValueRequest = default!;
 #nullable restore
 #else
-        public List<string> Request { get; set; }
+        public List<string> Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        private List<string> _explicitNullValueRequest = default!;
 #endif
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Response { get; set; }
+        public List<string>? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private List<string>? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public List<string> Response { get; set; }
+        public List<string> Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private List<string> _explicitNullValueResponse = default!;
 #endif
         /// <summary>The response_body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResponseBody { get; set; }
+        public List<string>? ResponseBody { get => _explicitNullValueResponseBody; set { _explicitNullValueResponseBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_body"); else _explicitNullProperties?.Remove("response_body"); } }
+        private List<string>? _explicitNullValueResponseBody = default!;
 #nullable restore
 #else
-        public List<string> ResponseBody { get; set; }
+        public List<string> ResponseBody { get => _explicitNullValueResponseBody; set { _explicitNullValueResponseBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_body"); else _explicitNullProperties?.Remove("response_body"); } }
+        private List<string> _explicitNullValueResponseBody = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsMatchingASectionFilter200ResponseActionsItem"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsMatchingASectionFilter200ResponseActionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsMatchingASectionFilter200ResponseActionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsMatchingASectionFilter200ResponseActionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("response", Response);
             writer.WriteCollectionOfPrimitiveValues<string>("response_body", ResponseBody);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

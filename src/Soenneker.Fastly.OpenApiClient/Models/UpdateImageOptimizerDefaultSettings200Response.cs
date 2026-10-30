@@ -11,35 +11,58 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateImageOptimizerDefaultSettings200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_video") is { } nullNodeAllowVideo && nullNodeAllowVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowVideo = null;
+            if (parseNode.GetChildNode("jpeg_quality") is { } nullNodeJpegQuality && nullNodeJpegQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegQuality = null;
+            if (parseNode.GetChildNode("jpeg_type") is { } nullNodeJpegType && nullNodeJpegType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegType = null;
+            if (parseNode.GetChildNode("resize_filter") is { } nullNodeResizeFilter && nullNodeResizeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResizeFilter = null;
+            if (parseNode.GetChildNode("upscale") is { } nullNodeUpscale && nullNodeUpscale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upscale = null;
+            if (parseNode.GetChildNode("webp") is { } nullNodeWebp && nullNodeWebp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webp = null;
+            if (parseNode.GetChildNode("webp_quality") is { } nullNodeWebpQuality && nullNodeWebpQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebpQuality = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow_video property</summary>
-        public bool? AllowVideo { get; set; }
+        public bool? AllowVideo { get => _explicitNullValueAllowVideo; set { _explicitNullValueAllowVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_video"); else _explicitNullProperties?.Remove("allow_video"); } }
+        private bool? _explicitNullValueAllowVideo = default!;
         /// <summary>The jpeg_quality property</summary>
-        public long? JpegQuality { get; set; }
+        public long? JpegQuality { get => _explicitNullValueJpegQuality; set { _explicitNullValueJpegQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_quality"); else _explicitNullProperties?.Remove("jpeg_quality"); } }
+        private long? _explicitNullValueJpegQuality = default!;
         /// <summary>The jpeg_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JpegType { get; set; }
+        public string? JpegType { get => _explicitNullValueJpegType; set { _explicitNullValueJpegType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_type"); else _explicitNullProperties?.Remove("jpeg_type"); } }
+        private string? _explicitNullValueJpegType = default!;
 #nullable restore
 #else
-        public string JpegType { get; set; }
+        public string JpegType { get => _explicitNullValueJpegType; set { _explicitNullValueJpegType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_type"); else _explicitNullProperties?.Remove("jpeg_type"); } }
+        private string _explicitNullValueJpegType = default!;
 #endif
         /// <summary>The resize_filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResizeFilter { get; set; }
+        public string? ResizeFilter { get => _explicitNullValueResizeFilter; set { _explicitNullValueResizeFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resize_filter"); else _explicitNullProperties?.Remove("resize_filter"); } }
+        private string? _explicitNullValueResizeFilter = default!;
 #nullable restore
 #else
-        public string ResizeFilter { get; set; }
+        public string ResizeFilter { get => _explicitNullValueResizeFilter; set { _explicitNullValueResizeFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resize_filter"); else _explicitNullProperties?.Remove("resize_filter"); } }
+        private string _explicitNullValueResizeFilter = default!;
 #endif
         /// <summary>The upscale property</summary>
-        public bool? Upscale { get; set; }
+        public bool? Upscale { get => _explicitNullValueUpscale; set { _explicitNullValueUpscale = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upscale"); else _explicitNullProperties?.Remove("upscale"); } }
+        private bool? _explicitNullValueUpscale = default!;
         /// <summary>The webp property</summary>
-        public bool? Webp { get; set; }
+        public bool? Webp { get => _explicitNullValueWebp; set { _explicitNullValueWebp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp"); else _explicitNullProperties?.Remove("webp"); } }
+        private bool? _explicitNullValueWebp = default!;
         /// <summary>The webp_quality property</summary>
-        public long? WebpQuality { get; set; }
+        public long? WebpQuality { get => _explicitNullValueWebpQuality; set { _explicitNullValueWebpQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webp_quality"); else _explicitNullProperties?.Remove("webp_quality"); } }
+        private long? _explicitNullValueWebpQuality = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettings200Response"/> and sets the default values.
         /// </summary>
@@ -55,7 +78,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettings200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettings200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettings200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteBoolValue("upscale", Upscale);
             writer.WriteBoolValue("webp", Webp);
             writer.WriteLongValue("webp_quality", WebpQuality);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

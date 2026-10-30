@@ -11,50 +11,74 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateCustomDashboard201ResponseItemsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data_source") is { } nullNodeDataSource && nullNodeDataSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSource = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("span") is { } nullNodeSpan && nullNodeSpan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Span = null;
+            if (parseNode.GetChildNode("subtitle") is { } nullNodeSubtitle && nullNodeSubtitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtitle = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("visualization") is { } nullNodeVisualization && nullNodeVisualization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visualization = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The data_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemDataSource? DataSource { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemDataSource? DataSource { get => _explicitNullValueDataSource; set { _explicitNullValueDataSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source"); else _explicitNullProperties?.Remove("data_source"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemDataSource? _explicitNullValueDataSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemDataSource DataSource { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemDataSource DataSource { get => _explicitNullValueDataSource; set { _explicitNullValueDataSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source"); else _explicitNullProperties?.Remove("data_source"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemDataSource _explicitNullValueDataSource = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The span property</summary>
-        public long? Span { get; set; }
+        public long? Span { get => _explicitNullValueSpan; set { _explicitNullValueSpan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span"); else _explicitNullProperties?.Remove("span"); } }
+        private long? _explicitNullValueSpan = default!;
         /// <summary>The subtitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subtitle { get; set; }
+        public string? Subtitle { get => _explicitNullValueSubtitle; set { _explicitNullValueSubtitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitle"); else _explicitNullProperties?.Remove("subtitle"); } }
+        private string? _explicitNullValueSubtitle = default!;
 #nullable restore
 #else
-        public string Subtitle { get; set; }
+        public string Subtitle { get => _explicitNullValueSubtitle; set { _explicitNullValueSubtitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitle"); else _explicitNullProperties?.Remove("subtitle"); } }
+        private string _explicitNullValueSubtitle = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The visualization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemVisualization? Visualization { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemVisualization? Visualization { get => _explicitNullValueVisualization; set { _explicitNullValueVisualization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visualization"); else _explicitNullProperties?.Remove("visualization"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemVisualization? _explicitNullValueVisualization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemVisualization Visualization { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemVisualization Visualization { get => _explicitNullValueVisualization; set { _explicitNullValueVisualization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visualization"); else _explicitNullProperties?.Remove("visualization"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemVisualization _explicitNullValueVisualization = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItem"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("subtitle", Subtitle);
             writer.WriteStringValue("title", Title);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateCustomDashboard201ResponseItemsItemVisualization>("visualization", Visualization);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

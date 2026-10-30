@@ -69,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all tokens belonging to the authenticated user.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -87,7 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTokensForTheAuthenticatedUser200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTokensForTheAuthenticatedUser200ResponseItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListTokensForTheAuthenticatedUser200ResponseItem>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListTokensForTheAuthenticatedUser200ResponseItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tokens
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAToken200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAToken200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAToken200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAToken200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

@@ -48,7 +48,7 @@ namespace Soenneker.Fastly.OpenApiClient.Observability.Service.Item.Logging.Erro
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides a near real-time stream of log errors through a hybrid short-polling model.A client should make an initial request using the from parameter to specify a start time.The to parameter should be used alongside the from parameter since the default bucket is 10 seconds.For pagination, use the URLs provided in the Link header of the response. These containupdated from timestamps for retrieving the next or previous page of logs.Defaults to application/x-ndjson format. Use Accept: application/json headerto request standard JSON array format instead.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

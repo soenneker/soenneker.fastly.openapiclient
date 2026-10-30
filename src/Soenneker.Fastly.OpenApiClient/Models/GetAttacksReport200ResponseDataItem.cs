@@ -11,53 +11,84 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAttacksReport200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("all_flagged_ip_count") is { } nullNodeAllFlaggedIpCount && nullNodeAllFlaggedIpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllFlaggedIpCount = null;
+            if (parseNode.GetChildNode("attack_count") is { } nullNodeAttackCount && nullNodeAttackCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttackCount = null;
+            if (parseNode.GetChildNode("blocked_count") is { } nullNodeBlockedCount && nullNodeBlockedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedCount = null;
+            if (parseNode.GetChildNode("flagged_count") is { } nullNodeFlaggedCount && nullNodeFlaggedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlaggedCount = null;
+            if (parseNode.GetChildNode("flagged_ip_count") is { } nullNodeFlaggedIpCount && nullNodeFlaggedIpCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlaggedIpCount = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("top_attack_signals") is { } nullNodeTopAttackSignals && nullNodeTopAttackSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopAttackSignals = null;
+            if (parseNode.GetChildNode("top_attack_sources") is { } nullNodeTopAttackSources && nullNodeTopAttackSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopAttackSources = null;
+            if (parseNode.GetChildNode("total_count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The all_flagged_ip_count property</summary>
-        public long? AllFlaggedIpCount { get; set; }
+        public long? AllFlaggedIpCount { get => _explicitNullValueAllFlaggedIpCount; set { _explicitNullValueAllFlaggedIpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_flagged_ip_count"); else _explicitNullProperties?.Remove("all_flagged_ip_count"); } }
+        private long? _explicitNullValueAllFlaggedIpCount = default!;
         /// <summary>The attack_count property</summary>
-        public long? AttackCount { get; set; }
+        public long? AttackCount { get => _explicitNullValueAttackCount; set { _explicitNullValueAttackCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attack_count"); else _explicitNullProperties?.Remove("attack_count"); } }
+        private long? _explicitNullValueAttackCount = default!;
         /// <summary>The blocked_count property</summary>
-        public long? BlockedCount { get; set; }
+        public long? BlockedCount { get => _explicitNullValueBlockedCount; set { _explicitNullValueBlockedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocked_count"); else _explicitNullProperties?.Remove("blocked_count"); } }
+        private long? _explicitNullValueBlockedCount = default!;
         /// <summary>The flagged_count property</summary>
-        public long? FlaggedCount { get; set; }
+        public long? FlaggedCount { get => _explicitNullValueFlaggedCount; set { _explicitNullValueFlaggedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagged_count"); else _explicitNullProperties?.Remove("flagged_count"); } }
+        private long? _explicitNullValueFlaggedCount = default!;
         /// <summary>The flagged_ip_count property</summary>
-        public long? FlaggedIpCount { get; set; }
+        public long? FlaggedIpCount { get => _explicitNullValueFlaggedIpCount; set { _explicitNullValueFlaggedIpCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagged_ip_count"); else _explicitNullProperties?.Remove("flagged_ip_count"); } }
+        private long? _explicitNullValueFlaggedIpCount = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The top_attack_signals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem>? TopAttackSignals { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem>? TopAttackSignals { get => _explicitNullValueTopAttackSignals; set { _explicitNullValueTopAttackSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_attack_signals"); else _explicitNullProperties?.Remove("top_attack_signals"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem>? _explicitNullValueTopAttackSignals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem> TopAttackSignals { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem> TopAttackSignals { get => _explicitNullValueTopAttackSignals; set { _explicitNullValueTopAttackSignals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_attack_signals"); else _explicitNullProperties?.Remove("top_attack_signals"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem> _explicitNullValueTopAttackSignals = default!;
 #endif
         /// <summary>The top_attack_sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem>? TopAttackSources { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem>? TopAttackSources { get => _explicitNullValueTopAttackSources; set { _explicitNullValueTopAttackSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_attack_sources"); else _explicitNullProperties?.Remove("top_attack_sources"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem>? _explicitNullValueTopAttackSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem> TopAttackSources { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem> TopAttackSources { get => _explicitNullValueTopAttackSources; set { _explicitNullValueTopAttackSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_attack_sources"); else _explicitNullProperties?.Remove("top_attack_sources"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem> _explicitNullValueTopAttackSources = default!;
 #endif
         /// <summary>The total_count property</summary>
-        public long? TotalCount { get; set; }
+        public long? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
+        private long? _explicitNullValueTotalCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -73,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +143,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSignalsItem>("top_attack_signals", TopAttackSignals);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetAttacksReport200ResponseDataItemTopAttackSourcesItem>("top_attack_sources", TopAttackSources);
             writer.WriteLongValue("total_count", TotalCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

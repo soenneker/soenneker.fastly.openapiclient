@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetMonthToDateUsageStatistics200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("services") is { } nullNodeServices && nullNodeServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Services = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customer_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; set; }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get; set; }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>The services property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServices? Services { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServices? Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServices? _explicitNullValueServices = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServices Services { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServices Services { get => _explicitNullValueServices; set { _explicitNullValueServices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("services"); else _explicitNullProperties?.Remove("services"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServices _explicitNullValueServices = default!;
 #endif
         /// <summary>The total property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal? Total { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal? _explicitNullValueTotal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal Total { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal _explicitNullValueTotal = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseData"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServices>("services", Services);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataTotal>("total", Total);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

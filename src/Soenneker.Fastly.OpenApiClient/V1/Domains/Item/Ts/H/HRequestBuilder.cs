@@ -55,7 +55,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Domains.Item.Ts.H
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDomainDataForTheLast120Seconds200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDomainDataForTheLast120Seconds200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDomainDataForTheLast120Seconds200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetRealTimeDomainDataForTheLast120Seconds200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get data for the 120 seconds preceding the latest timestamp available for a service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

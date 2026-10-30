@@ -11,74 +11,107 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetHistoricalOriginDataForAService200ResponseMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("downsample") is { } nullNodeDownsample && nullNodeDownsample.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Downsample = null;
+            if (parseNode.GetChildNode("end") is { } nullNodeEnd && nullNodeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) End = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
+            if (parseNode.GetChildNode("next_cursor") is { } nullNodeNextCursor && nullNodeNextCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCursor = null;
+            if (parseNode.GetChildNode("sort") is { } nullNodeSort && nullNodeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sort = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The downsample property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Downsample { get; set; }
+        public string? Downsample { get => _explicitNullValueDownsample; set { _explicitNullValueDownsample = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downsample"); else _explicitNullProperties?.Remove("downsample"); } }
+        private string? _explicitNullValueDownsample = default!;
 #nullable restore
 #else
-        public string Downsample { get; set; }
+        public string Downsample { get => _explicitNullValueDownsample; set { _explicitNullValueDownsample = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downsample"); else _explicitNullProperties?.Remove("downsample"); } }
+        private string _explicitNullValueDownsample = default!;
 #endif
         /// <summary>The end property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? End { get; set; }
+        public string? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private string? _explicitNullValueEnd = default!;
 #nullable restore
 #else
-        public string End { get; set; }
+        public string End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private string _explicitNullValueEnd = default!;
 #endif
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters? Filters { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters Filters { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMetaFilters _explicitNullValueFilters = default!;
 #endif
         /// <summary>The group_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupBy { get; set; }
+        public string? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private string? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public string GroupBy { get; set; }
+        public string GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private string _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>The limit property</summary>
-        public long? Limit { get; set; }
+        public long? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private long? _explicitNullValueLimit = default!;
         /// <summary>The metric property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metric { get; set; }
+        public string? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private string? _explicitNullValueMetric = default!;
 #nullable restore
 #else
-        public string Metric { get; set; }
+        public string Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private string _explicitNullValueMetric = default!;
 #endif
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get; set; }
+        public string? NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private string? _explicitNullValueNextCursor = default!;
 #nullable restore
 #else
-        public string NextCursor { get; set; }
+        public string NextCursor { get => _explicitNullValueNextCursor; set { _explicitNullValueNextCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_cursor"); else _explicitNullProperties?.Remove("next_cursor"); } }
+        private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sort { get; set; }
+        public string? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private string? _explicitNullValueSort = default!;
 #nullable restore
 #else
-        public string Sort { get; set; }
+        public string Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private string _explicitNullValueSort = default!;
 #endif
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Start { get; set; }
+        public string? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private string? _explicitNullValueStart = default!;
 #nullable restore
 #else
-        public string Start { get; set; }
+        public string Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private string _explicitNullValueStart = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMeta"/> and sets the default values.
@@ -95,7 +128,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalOriginDataForAService200ResponseMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +165,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteStringValue("sort", Sort);
             writer.WriteStringValue("start", Start);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

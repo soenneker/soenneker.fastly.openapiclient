@@ -11,72 +11,103 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateCsrApiJsonRequestDataAttributes : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("city") is { } nullNodeCity && nullNodeCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) City = null;
+            if (parseNode.GetChildNode("common_name") is { } nullNodeCommonName && nullNodeCommonName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommonName = null;
+            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("key_type") is { } nullNodeKeyType && nullNodeKeyType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyType = null;
+            if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("organizational_unit") is { } nullNodeOrganizationalUnit && nullNodeOrganizationalUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationalUnit = null;
+            if (parseNode.GetChildNode("sans") is { } nullNodeSans && nullNodeSans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sans = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The city property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public string? City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        private string? _explicitNullValueCity = default!;
 #nullable restore
 #else
-        public string City { get; set; }
+        public string City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        private string _explicitNullValueCity = default!;
 #endif
         /// <summary>The common_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommonName { get; set; }
+        public string? CommonName { get => _explicitNullValueCommonName; set { _explicitNullValueCommonName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("common_name"); else _explicitNullProperties?.Remove("common_name"); } }
+        private string? _explicitNullValueCommonName = default!;
 #nullable restore
 #else
-        public string CommonName { get; set; }
+        public string CommonName { get => _explicitNullValueCommonName; set { _explicitNullValueCommonName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("common_name"); else _explicitNullProperties?.Remove("common_name"); } }
+        private string _explicitNullValueCommonName = default!;
 #endif
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public string? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private string? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public string Country { get; set; }
+        public string Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private string _explicitNullValueCountry = default!;
 #endif
         /// <summary>The key_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyType { get; set; }
+        public string? KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
+        private string? _explicitNullValueKeyType = default!;
 #nullable restore
 #else
-        public string KeyType { get; set; }
+        public string KeyType { get => _explicitNullValueKeyType; set { _explicitNullValueKeyType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_type"); else _explicitNullProperties?.Remove("key_type"); } }
+        private string _explicitNullValueKeyType = default!;
 #endif
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Organization { get; set; }
+        public string? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private string? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public string Organization { get; set; }
+        public string Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private string _explicitNullValueOrganization = default!;
 #endif
         /// <summary>The organizational_unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationalUnit { get; set; }
+        public string? OrganizationalUnit { get => _explicitNullValueOrganizationalUnit; set { _explicitNullValueOrganizationalUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizational_unit"); else _explicitNullProperties?.Remove("organizational_unit"); } }
+        private string? _explicitNullValueOrganizationalUnit = default!;
 #nullable restore
 #else
-        public string OrganizationalUnit { get; set; }
+        public string OrganizationalUnit { get => _explicitNullValueOrganizationalUnit; set { _explicitNullValueOrganizationalUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizational_unit"); else _explicitNullProperties?.Remove("organizational_unit"); } }
+        private string _explicitNullValueOrganizationalUnit = default!;
 #endif
         /// <summary>The sans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Sans { get; set; }
+        public List<string>? Sans { get => _explicitNullValueSans; set { _explicitNullValueSans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sans"); else _explicitNullProperties?.Remove("sans"); } }
+        private List<string>? _explicitNullValueSans = default!;
 #nullable restore
 #else
-        public List<string> Sans { get; set; }
+        public List<string> Sans { get => _explicitNullValueSans; set { _explicitNullValueSans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sans"); else _explicitNullProperties?.Remove("sans"); } }
+        private List<string> _explicitNullValueSans = default!;
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateCsrApiJsonRequestDataAttributes"/> and sets the default values.
@@ -93,7 +124,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateCsrApiJsonRequestDataAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateCsrApiJsonRequestDataAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateCsrApiJsonRequestDataAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,6 +159,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("organizational_unit", OrganizationalUnit);
             writer.WriteCollectionOfPrimitiveValues<string>("sans", Sans);
             writer.WriteStringValue("state", State);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

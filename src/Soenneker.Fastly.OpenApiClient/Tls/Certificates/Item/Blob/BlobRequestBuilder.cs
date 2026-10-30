@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Tls.Certificates.Item.Blob
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificateBlobLimitedAvailability200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificateBlobLimitedAvailability200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificateBlobLimitedAvailability200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsCertificateBlobLimitedAvailability200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a TLS certificate blob. This feature is part of a limited availability release.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [TLS management](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.

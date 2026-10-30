@@ -11,21 +11,35 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetServiceDetails200ResponseVersionSettings : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("general.default_host") is { } nullNodeGeneralDefaultHost && nullNodeGeneralDefaultHost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralDefaultHost = null;
+            if (parseNode.GetChildNode("general.default_pci") is { } nullNodeGeneralDefaultPci && nullNodeGeneralDefaultPci.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralDefaultPci = null;
+            if (parseNode.GetChildNode("general.default_ttl") is { } nullNodeGeneralDefaultTtl && nullNodeGeneralDefaultTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeneralDefaultTtl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The generalDefault_host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GeneralDefaultHost { get; set; }
+        public string? GeneralDefaultHost { get => _explicitNullValueGeneralDefaultHost; set { _explicitNullValueGeneralDefaultHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_host"); else _explicitNullProperties?.Remove("general.default_host"); } }
+        private string? _explicitNullValueGeneralDefaultHost = default!;
 #nullable restore
 #else
-        public string GeneralDefaultHost { get; set; }
+        public string GeneralDefaultHost { get => _explicitNullValueGeneralDefaultHost; set { _explicitNullValueGeneralDefaultHost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_host"); else _explicitNullProperties?.Remove("general.default_host"); } }
+        private string _explicitNullValueGeneralDefaultHost = default!;
 #endif
         /// <summary>The generalDefault_pci property</summary>
-        public long? GeneralDefaultPci { get; set; }
+        public long? GeneralDefaultPci { get => _explicitNullValueGeneralDefaultPci; set { _explicitNullValueGeneralDefaultPci = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_pci"); else _explicitNullProperties?.Remove("general.default_pci"); } }
+        private long? _explicitNullValueGeneralDefaultPci = default!;
         /// <summary>The generalDefault_ttl property</summary>
-        public long? GeneralDefaultTtl { get; set; }
+        public long? GeneralDefaultTtl { get => _explicitNullValueGeneralDefaultTtl; set { _explicitNullValueGeneralDefaultTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general.default_ttl"); else _explicitNullProperties?.Remove("general.default_ttl"); } }
+        private long? _explicitNullValueGeneralDefaultTtl = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersionSettings"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersionSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersionSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetServiceDetails200ResponseVersionSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("general.default_host", GeneralDefaultHost);
             writer.WriteLongValue("general.default_pci", GeneralDefaultPci);
             writer.WriteLongValue("general.default_ttl", GeneralDefaultTtl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

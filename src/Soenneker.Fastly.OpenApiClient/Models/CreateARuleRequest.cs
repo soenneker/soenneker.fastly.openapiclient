@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateARuleRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
+            if (parseNode.GetChildNode("position") is { } nullNodePosition && nullNodePosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Position = null;
+        }
+
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestAction? Action { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestAction? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestAction Action { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestAction Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestAction _explicitNullValueAction = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestConditionsItem>? Conditions { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestConditionsItem>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestConditionsItem>? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestConditionsItem> Conditions { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestConditionsItem> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestConditionsItem> _explicitNullValueConditions = default!;
 #endif
         /// <summary>The position property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestPosition? Position { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestPosition? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestPosition? _explicitNullValuePosition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestPosition Position { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestPosition Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestPosition _explicitNullValuePosition = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestAction>("action", Action);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestConditionsItem>("conditions", Conditions);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateARuleRequestPosition>("position", Position);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,68 +11,100 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetMonthlyUsageMetrics200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("last_updated_at") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("month") is { } nullNodeMonth && nullNodeMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Month = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("product_id") is { } nullNodeProductId && nullNodeProductId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductId = null;
+            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("raw_quantity") is { } nullNodeRawQuantity && nullNodeRawQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawQuantity = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+            if (parseNode.GetChildNode("usage_type") is { } nullNodeUsageType && nullNodeUsageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last_updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdatedAt { get; set; }
+        public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private string? _explicitNullValueLastUpdatedAt = default!;
 #nullable restore
 #else
-        public string LastUpdatedAt { get; set; }
+        public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated_at"); else _explicitNullProperties?.Remove("last_updated_at"); } }
+        private string _explicitNullValueLastUpdatedAt = default!;
 #endif
         /// <summary>The month property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Month { get; set; }
+        public string? Month { get => _explicitNullValueMonth; set { _explicitNullValueMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("month"); else _explicitNullProperties?.Remove("month"); } }
+        private string? _explicitNullValueMonth = default!;
 #nullable restore
 #else
-        public string Month { get; set; }
+        public string Month { get => _explicitNullValueMonth; set { _explicitNullValueMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("month"); else _explicitNullProperties?.Remove("month"); } }
+        private string _explicitNullValueMonth = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The product_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductId { get; set; }
+        public string? ProductId { get => _explicitNullValueProductId; set { _explicitNullValueProductId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_id"); else _explicitNullProperties?.Remove("product_id"); } }
+        private string? _explicitNullValueProductId = default!;
 #nullable restore
 #else
-        public string ProductId { get; set; }
+        public string ProductId { get => _explicitNullValueProductId; set { _explicitNullValueProductId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_id"); else _explicitNullProperties?.Remove("product_id"); } }
+        private string _explicitNullValueProductId = default!;
 #endif
         /// <summary>The quantity property</summary>
-        public long? Quantity { get; set; }
+        public long? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private long? _explicitNullValueQuantity = default!;
         /// <summary>The raw_quantity property</summary>
-        public long? RawQuantity { get; set; }
+        public long? RawQuantity { get => _explicitNullValueRawQuantity; set { _explicitNullValueRawQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_quantity"); else _explicitNullProperties?.Remove("raw_quantity"); } }
+        private long? _explicitNullValueRawQuantity = default!;
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>The unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get; set; }
+        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private string? _explicitNullValueUnit = default!;
 #nullable restore
 #else
-        public string Unit { get; set; }
+        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private string _explicitNullValueUnit = default!;
 #endif
         /// <summary>The usage_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UsageType { get; set; }
+        public string? UsageType { get => _explicitNullValueUsageType; set { _explicitNullValueUsageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_type"); else _explicitNullProperties?.Remove("usage_type"); } }
+        private string? _explicitNullValueUsageType = default!;
 #nullable restore
 #else
-        public string UsageType { get; set; }
+        public string UsageType { get => _explicitNullValueUsageType; set { _explicitNullValueUsageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_type"); else _explicitNullProperties?.Remove("usage_type"); } }
+        private string _explicitNullValueUsageType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetMonthlyUsageMetrics200ResponseDataItem"/> and sets the default values.
@@ -89,7 +121,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetMonthlyUsageMetrics200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetMonthlyUsageMetrics200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetMonthlyUsageMetrics200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,6 +158,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("unit", Unit);
             writer.WriteStringValue("usage_type", UsageType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

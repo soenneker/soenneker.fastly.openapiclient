@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.V1.Domains.Item.Ts.H.Limit.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetALimitedNumberOfRealTimeDomainDataEntries200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get data for the max_entries seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

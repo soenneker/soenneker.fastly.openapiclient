@@ -74,7 +74,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEventMappings200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEventMappings200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListEventMappings200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListEventMappings200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates an event mapping. The mapping becomes active immediately.integration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.For scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
@@ -94,7 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEventMapping201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEventMapping201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEventMapping201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreateAnEventMapping201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns event mappings matching the given filters. If no filters are specified, returns all event mappings for the account linked to the supplied token, sorted by creation date ascending. Results are paginated using cursor-based pagination.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

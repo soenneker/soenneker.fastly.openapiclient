@@ -11,26 +11,41 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDictionaryMetadata200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("digest") is { } nullNodeDigest && nullNodeDigest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Digest = null;
+            if (parseNode.GetChildNode("item_count") is { } nullNodeItemCount && nullNodeItemCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemCount = null;
+            if (parseNode.GetChildNode("last_updated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The digest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Digest { get; set; }
+        public string? Digest { get => _explicitNullValueDigest; set { _explicitNullValueDigest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digest"); else _explicitNullProperties?.Remove("digest"); } }
+        private string? _explicitNullValueDigest = default!;
 #nullable restore
 #else
-        public string Digest { get; set; }
+        public string Digest { get => _explicitNullValueDigest; set { _explicitNullValueDigest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digest"); else _explicitNullProperties?.Remove("digest"); } }
+        private string _explicitNullValueDigest = default!;
 #endif
         /// <summary>The item_count property</summary>
-        public long? ItemCount { get; set; }
+        public long? ItemCount { get => _explicitNullValueItemCount; set { _explicitNullValueItemCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_count"); else _explicitNullProperties?.Remove("item_count"); } }
+        private long? _explicitNullValueItemCount = default!;
         /// <summary>The last_updated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdated { get; set; }
+        public string? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated"); else _explicitNullProperties?.Remove("last_updated"); } }
+        private string? _explicitNullValueLastUpdated = default!;
 #nullable restore
 #else
-        public string LastUpdated { get; set; }
+        public string LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_updated"); else _explicitNullProperties?.Remove("last_updated"); } }
+        private string _explicitNullValueLastUpdated = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetDictionaryMetadata200Response"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetDictionaryMetadata200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetDictionaryMetadata200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetDictionaryMetadata200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("digest", Digest);
             writer.WriteLongValue("item_count", ItemCount);
             writer.WriteStringValue("last_updated", LastUpdated);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

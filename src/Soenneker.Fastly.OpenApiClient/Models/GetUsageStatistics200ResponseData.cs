@@ -11,40 +11,59 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetUsageStatistics200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apac") is { } nullNodeApac && nullNodeApac.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Apac = null;
+            if (parseNode.GetChildNode("ausnz") is { } nullNodeAusnz && nullNodeAusnz.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ausnz = null;
+            if (parseNode.GetChildNode("europe") is { } nullNodeEurope && nullNodeEurope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Europe = null;
+            if (parseNode.GetChildNode("usa") is { } nullNodeUsa && nullNodeUsa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usa = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The apac property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataApac? Apac { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataApac? Apac { get => _explicitNullValueApac; set { _explicitNullValueApac = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apac"); else _explicitNullProperties?.Remove("apac"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataApac? _explicitNullValueApac = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataApac Apac { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataApac Apac { get => _explicitNullValueApac; set { _explicitNullValueApac = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apac"); else _explicitNullProperties?.Remove("apac"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataApac _explicitNullValueApac = default!;
 #endif
         /// <summary>The ausnz property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataAusnz? Ausnz { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataAusnz? Ausnz { get => _explicitNullValueAusnz; set { _explicitNullValueAusnz = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ausnz"); else _explicitNullProperties?.Remove("ausnz"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataAusnz? _explicitNullValueAusnz = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataAusnz Ausnz { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataAusnz Ausnz { get => _explicitNullValueAusnz; set { _explicitNullValueAusnz = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ausnz"); else _explicitNullProperties?.Remove("ausnz"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataAusnz _explicitNullValueAusnz = default!;
 #endif
         /// <summary>The europe property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataEurope? Europe { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataEurope? Europe { get => _explicitNullValueEurope; set { _explicitNullValueEurope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("europe"); else _explicitNullProperties?.Remove("europe"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataEurope? _explicitNullValueEurope = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataEurope Europe { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataEurope Europe { get => _explicitNullValueEurope; set { _explicitNullValueEurope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("europe"); else _explicitNullProperties?.Remove("europe"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataEurope _explicitNullValueEurope = default!;
 #endif
         /// <summary>The usa property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataUsa? Usa { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataUsa? Usa { get => _explicitNullValueUsa; set { _explicitNullValueUsa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usa"); else _explicitNullProperties?.Remove("usa"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataUsa? _explicitNullValueUsa = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataUsa Usa { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataUsa Usa { get => _explicitNullValueUsa; set { _explicitNullValueUsa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usa"); else _explicitNullProperties?.Remove("usa"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataUsa _explicitNullValueUsa = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseData"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataAusnz>("ausnz", Ausnz);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataEurope>("europe", Europe);
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetUsageStatistics200ResponseDataUsa>("usa", Usa);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

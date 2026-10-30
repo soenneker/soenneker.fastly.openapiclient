@@ -11,24 +11,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateZoneRequestXfrConfigInbound : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("inbound_tsig_key_id") is { } nullNodeInboundTsigKeyId && nullNodeInboundTsigKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InboundTsigKeyId = null;
+            if (parseNode.GetChildNode("primaries") is { } nullNodePrimaries && nullNodePrimaries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primaries = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The inbound_tsig_key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InboundTsigKeyId { get; set; }
+        public string? InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
+        private string? _explicitNullValueInboundTsigKeyId = default!;
 #nullable restore
 #else
-        public string InboundTsigKeyId { get; set; }
+        public string InboundTsigKeyId { get => _explicitNullValueInboundTsigKeyId; set { _explicitNullValueInboundTsigKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbound_tsig_key_id"); else _explicitNullProperties?.Remove("inbound_tsig_key_id"); } }
+        private string _explicitNullValueInboundTsigKeyId = default!;
 #endif
         /// <summary>The primaries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInboundPrimariesItem>? Primaries { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInboundPrimariesItem>? Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInboundPrimariesItem>? _explicitNullValuePrimaries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInboundPrimariesItem> Primaries { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInboundPrimariesItem> Primaries { get => _explicitNullValuePrimaries; set { _explicitNullValuePrimaries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaries"); else _explicitNullProperties?.Remove("primaries"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInboundPrimariesItem> _explicitNullValuePrimaries = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInbound"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInbound CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInbound();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInbound(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("inbound_tsig_key_id", InboundTsigKeyId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateZoneRequestXfrConfigInboundPrimariesItem>("primaries", Primaries);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

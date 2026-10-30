@@ -11,13 +11,24 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateImageOptimizerDefaultSettingsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_video") is { } nullNodeAllowVideo && nullNodeAllowVideo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowVideo = null;
+            if (parseNode.GetChildNode("jpeg_quality") is { } nullNodeJpegQuality && nullNodeJpegQuality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JpegQuality = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow_video property</summary>
-        public bool? AllowVideo { get; set; }
+        public bool? AllowVideo { get => _explicitNullValueAllowVideo; set { _explicitNullValueAllowVideo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_video"); else _explicitNullProperties?.Remove("allow_video"); } }
+        private bool? _explicitNullValueAllowVideo = default!;
         /// <summary>The jpeg_quality property</summary>
-        public long? JpegQuality { get; set; }
+        public long? JpegQuality { get => _explicitNullValueJpegQuality; set { _explicitNullValueJpegQuality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jpeg_quality"); else _explicitNullProperties?.Remove("jpeg_quality"); } }
+        private long? _explicitNullValueJpegQuality = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettingsRequest"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettingsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettingsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.UpdateImageOptimizerDefaultSettingsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_video", AllowVideo);
             writer.WriteLongValue("jpeg_quality", JpegQuality);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

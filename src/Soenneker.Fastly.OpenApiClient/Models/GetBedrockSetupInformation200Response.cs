@@ -11,24 +11,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetBedrockSetupInformation200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("arc_role_arn") is { } nullNodeArcRoleArn && nullNodeArcRoleArn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArcRoleArn = null;
+            if (parseNode.GetChildNode("external_id") is { } nullNodeExternalId && nullNodeExternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The arc_role_arn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ArcRoleArn { get; set; }
+        public string? ArcRoleArn { get => _explicitNullValueArcRoleArn; set { _explicitNullValueArcRoleArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arc_role_arn"); else _explicitNullProperties?.Remove("arc_role_arn"); } }
+        private string? _explicitNullValueArcRoleArn = default!;
 #nullable restore
 #else
-        public string ArcRoleArn { get; set; }
+        public string ArcRoleArn { get => _explicitNullValueArcRoleArn; set { _explicitNullValueArcRoleArn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arc_role_arn"); else _explicitNullProperties?.Remove("arc_role_arn"); } }
+        private string _explicitNullValueArcRoleArn = default!;
 #endif
         /// <summary>The external_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId { get; set; }
+        public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        private string? _explicitNullValueExternalId = default!;
 #nullable restore
 #else
-        public string ExternalId { get; set; }
+        public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        private string _explicitNullValueExternalId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetBedrockSetupInformation200Response"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetBedrockSetupInformation200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetBedrockSetupInformation200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetBedrockSetupInformation200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("arc_role_arn", ArcRoleArn);
             writer.WriteStringValue("external_id", ExternalId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

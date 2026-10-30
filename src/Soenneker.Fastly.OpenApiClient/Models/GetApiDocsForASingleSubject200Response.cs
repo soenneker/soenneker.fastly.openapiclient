@@ -11,40 +11,59 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetApiDocsForASingleSubject200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("section") is { } nullNodeSection && nullNodeSection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Section = null;
+        }
+
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem>? Actions { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem> Actions { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200ResponseActionsItem> _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Description { get; set; }
+        public List<string>? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private List<string>? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public List<string> Description { get; set; }
+        public List<string> Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private List<string> _explicitNullValueDescription = default!;
 #endif
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Fields { get; set; }
+        public List<string>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<string>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<string> Fields { get; set; }
+        public List<string> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<string> _explicitNullValueFields = default!;
 #endif
         /// <summary>The section property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Section { get; set; }
+        public string? Section { get => _explicitNullValueSection; set { _explicitNullValueSection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section"); else _explicitNullProperties?.Remove("section"); } }
+        private string? _explicitNullValueSection = default!;
 #nullable restore
 #else
-        public string Section { get; set; }
+        public string Section { get => _explicitNullValueSection; set { _explicitNullValueSection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("section"); else _explicitNullProperties?.Remove("section"); } }
+        private string _explicitNullValueSection = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200Response"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetApiDocsForASingleSubject200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteStringValue("section", Section);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

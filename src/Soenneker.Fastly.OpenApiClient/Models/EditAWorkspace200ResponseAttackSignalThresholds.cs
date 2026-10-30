@@ -11,17 +11,32 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EditAWorkspace200ResponseAttackSignalThresholds : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("immediate") is { } nullNodeImmediate && nullNodeImmediate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Immediate = null;
+            if (parseNode.GetChildNode("one_hour") is { } nullNodeOneHour && nullNodeOneHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneHour = null;
+            if (parseNode.GetChildNode("one_minute") is { } nullNodeOneMinute && nullNodeOneMinute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OneMinute = null;
+            if (parseNode.GetChildNode("ten_minutes") is { } nullNodeTenMinutes && nullNodeTenMinutes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TenMinutes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The immediate property</summary>
-        public bool? Immediate { get; set; }
+        public bool? Immediate { get => _explicitNullValueImmediate; set { _explicitNullValueImmediate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("immediate"); else _explicitNullProperties?.Remove("immediate"); } }
+        private bool? _explicitNullValueImmediate = default!;
         /// <summary>The one_hour property</summary>
-        public long? OneHour { get; set; }
+        public long? OneHour { get => _explicitNullValueOneHour; set { _explicitNullValueOneHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("one_hour"); else _explicitNullProperties?.Remove("one_hour"); } }
+        private long? _explicitNullValueOneHour = default!;
         /// <summary>The one_minute property</summary>
-        public long? OneMinute { get; set; }
+        public long? OneMinute { get => _explicitNullValueOneMinute; set { _explicitNullValueOneMinute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("one_minute"); else _explicitNullProperties?.Remove("one_minute"); } }
+        private long? _explicitNullValueOneMinute = default!;
         /// <summary>The ten_minutes property</summary>
-        public long? TenMinutes { get; set; }
+        public long? TenMinutes { get => _explicitNullValueTenMinutes; set { _explicitNullValueTenMinutes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ten_minutes"); else _explicitNullProperties?.Remove("ten_minutes"); } }
+        private long? _explicitNullValueTenMinutes = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.EditAWorkspace200ResponseAttackSignalThresholds"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.EditAWorkspace200ResponseAttackSignalThresholds CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.EditAWorkspace200ResponseAttackSignalThresholds();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.EditAWorkspace200ResponseAttackSignalThresholds(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteLongValue("one_hour", OneHour);
             writer.WriteLongValue("one_minute", OneMinute);
             writer.WriteLongValue("ten_minutes", TenMinutes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

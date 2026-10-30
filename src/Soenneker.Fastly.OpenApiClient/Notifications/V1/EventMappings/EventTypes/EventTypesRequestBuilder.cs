@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.V1.EventMappings.EventTyp
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedEventTypes200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedEventTypes200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedEventTypes200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListSupportedEventTypes200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all audit event types that can be used when creating an event mapping. Use the optional scope_type parameter to filter the list to event types that are compatible with a specific scope. Results are sorted alphabetically by event_type by default. Use sort=-event_type to reverse the order.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

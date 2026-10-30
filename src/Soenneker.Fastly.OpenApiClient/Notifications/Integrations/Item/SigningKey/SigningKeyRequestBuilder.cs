@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.Signing
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetWebhookPayloadSigningKey200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetWebhookPayloadSigningKey200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetWebhookPayloadSigningKey200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetWebhookPayloadSigningKey200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the signing key used to sign payloads for a webhook integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

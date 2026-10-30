@@ -11,24 +11,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("endpoints") is { } nullNodeEndpoints && nullNodeEndpoints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoints = null;
+            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The endpoints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItemEndpointsItem>? Endpoints { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItemEndpointsItem>? Endpoints { get => _explicitNullValueEndpoints; set { _explicitNullValueEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoints"); else _explicitNullProperties?.Remove("endpoints"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItemEndpointsItem>? _explicitNullValueEndpoints = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItemEndpointsItem> Endpoints { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItemEndpointsItem> Endpoints { get => _explicitNullValueEndpoints; set { _explicitNullValueEndpoints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoints"); else _explicitNullProperties?.Remove("endpoints"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItemEndpointsItem> _explicitNullValueEndpoints = default!;
 #endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public string Region { get; set; }
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItem"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListNetworkProtectNetworks200ResponseDataItemEndpointPoliciesItemEndpointsItem>("endpoints", Endpoints);
             writer.WriteStringValue("region", Region);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

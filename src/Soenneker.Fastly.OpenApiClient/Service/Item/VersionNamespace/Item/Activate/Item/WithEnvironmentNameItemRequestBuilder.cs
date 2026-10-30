@@ -49,7 +49,7 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Acti
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ActivateAServiceVersionOnTheSpecifiedEnvironment200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ActivateAServiceVersionOnTheSpecifiedEnvironment200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ActivateAServiceVersionOnTheSpecifiedEnvironment200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ActivateAServiceVersionOnTheSpecifiedEnvironment200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Activate a version on a given environment, i.e. &quot;staging&quot;.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).

@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PurgeMultipleSurrogateKeyTags200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("key_1") is { } nullNodeKey1 && nullNodeKey1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key1 = null;
+            if (parseNode.GetChildNode("key_2") is { } nullNodeKey2 && nullNodeKey2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key2 = null;
+            if (parseNode.GetChildNode("key_3") is { } nullNodeKey3 && nullNodeKey3.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key3 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The key_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key1 { get; set; }
+        public string? Key1 { get => _explicitNullValueKey1; set { _explicitNullValueKey1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_1"); else _explicitNullProperties?.Remove("key_1"); } }
+        private string? _explicitNullValueKey1 = default!;
 #nullable restore
 #else
-        public string Key1 { get; set; }
+        public string Key1 { get => _explicitNullValueKey1; set { _explicitNullValueKey1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_1"); else _explicitNullProperties?.Remove("key_1"); } }
+        private string _explicitNullValueKey1 = default!;
 #endif
         /// <summary>The key_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key2 { get; set; }
+        public string? Key2 { get => _explicitNullValueKey2; set { _explicitNullValueKey2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_2"); else _explicitNullProperties?.Remove("key_2"); } }
+        private string? _explicitNullValueKey2 = default!;
 #nullable restore
 #else
-        public string Key2 { get; set; }
+        public string Key2 { get => _explicitNullValueKey2; set { _explicitNullValueKey2 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_2"); else _explicitNullProperties?.Remove("key_2"); } }
+        private string _explicitNullValueKey2 = default!;
 #endif
         /// <summary>The key_3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key3 { get; set; }
+        public string? Key3 { get => _explicitNullValueKey3; set { _explicitNullValueKey3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_3"); else _explicitNullProperties?.Remove("key_3"); } }
+        private string? _explicitNullValueKey3 = default!;
 #nullable restore
 #else
-        public string Key3 { get; set; }
+        public string Key3 { get => _explicitNullValueKey3; set { _explicitNullValueKey3 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_3"); else _explicitNullProperties?.Remove("key_3"); } }
+        private string _explicitNullValueKey3 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.PurgeMultipleSurrogateKeyTags200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteStringValue("key_1", Key1);
             writer.WriteStringValue("key_2", Key2);
             writer.WriteStringValue("key_3", Key3);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

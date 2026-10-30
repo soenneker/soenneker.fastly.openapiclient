@@ -11,32 +11,48 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetSessionLogs200ResponseDataItemLogsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attrs") is { } nullNodeAttrs && nullNodeAttrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attrs = null;
+            if (parseNode.GetChildNode("request") is { } nullNodeRequest && nullNodeRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Request = null;
+            if (parseNode.GetChildNode("response") is { } nullNodeResponse && nullNodeResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Response = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attrs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs? Attrs { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs? Attrs { get => _explicitNullValueAttrs; set { _explicitNullValueAttrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attrs"); else _explicitNullProperties?.Remove("attrs"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs? _explicitNullValueAttrs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs Attrs { get; set; }
+        public global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs Attrs { get => _explicitNullValueAttrs; set { _explicitNullValueAttrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attrs"); else _explicitNullProperties?.Remove("attrs"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs _explicitNullValueAttrs = default!;
 #endif
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Request { get; set; }
+        public string? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        private string? _explicitNullValueRequest = default!;
 #nullable restore
 #else
-        public string Request { get; set; }
+        public string Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        private string _explicitNullValueRequest = default!;
 #endif
         /// <summary>The response property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Response { get; set; }
+        public string? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private string? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public string Response { get; set; }
+        public string Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private string _explicitNullValueResponse = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItem"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetSessionLogs200ResponseDataItemLogsItemAttrs>("attrs", Attrs);
             writer.WriteStringValue("request", Request);
             writer.WriteStringValue("response", Response);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.Fastly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetHistoricalStatsForASingleField200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("5oYej0l0heMydtjaVPOq4z") is { } nullNodeFiveoYej0l0heMydtjaVPOq4z && nullNodeFiveoYej0l0heMydtjaVPOq4z.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiveoYej0l0heMydtjaVPOq4z = null;
+            if (parseNode.GetChildNode("6ElZZvtumbwtLBDJvFwepx") is { } nullNodeSixElZZvtumbwtLBDJvFwepx && nullNodeSixElZZvtumbwtLBDJvFwepx.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SixElZZvtumbwtLBDJvFwepx = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The FiveoYej0l0heMydtjaVPOq4z property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItem>? FiveoYej0l0heMydtjaVPOq4z { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItem>? FiveoYej0l0heMydtjaVPOq4z { get => _explicitNullValueFiveoYej0l0heMydtjaVPOq4z; set { _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("5oYej0l0heMydtjaVPOq4z"); else _explicitNullProperties?.Remove("5oYej0l0heMydtjaVPOq4z"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItem>? _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItem> FiveoYej0l0heMydtjaVPOq4z { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItem> FiveoYej0l0heMydtjaVPOq4z { get => _explicitNullValueFiveoYej0l0heMydtjaVPOq4z; set { _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("5oYej0l0heMydtjaVPOq4z"); else _explicitNullProperties?.Remove("5oYej0l0heMydtjaVPOq4z"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItem> _explicitNullValueFiveoYej0l0heMydtjaVPOq4z = default!;
 #endif
         /// <summary>The SixElZZvtumbwtLBDJvFwepx property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData6ElZZvtumbwtLbdJvFwepxItem>? SixElZZvtumbwtLBDJvFwepx { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData6ElZZvtumbwtLbdJvFwepxItem>? SixElZZvtumbwtLBDJvFwepx { get => _explicitNullValueSixElZZvtumbwtLBDJvFwepx; set { _explicitNullValueSixElZZvtumbwtLBDJvFwepx = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6ElZZvtumbwtLBDJvFwepx"); else _explicitNullProperties?.Remove("6ElZZvtumbwtLBDJvFwepx"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData6ElZZvtumbwtLbdJvFwepxItem>? _explicitNullValueSixElZZvtumbwtLBDJvFwepx = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData6ElZZvtumbwtLbdJvFwepxItem> SixElZZvtumbwtLBDJvFwepx { get; set; }
+        public List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData6ElZZvtumbwtLbdJvFwepxItem> SixElZZvtumbwtLBDJvFwepx { get => _explicitNullValueSixElZZvtumbwtLBDJvFwepx; set { _explicitNullValueSixElZZvtumbwtLBDJvFwepx = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("6ElZZvtumbwtLBDJvFwepx"); else _explicitNullProperties?.Remove("6ElZZvtumbwtLBDJvFwepx"); } }
+        private List<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData6ElZZvtumbwtLbdJvFwepxItem> _explicitNullValueSixElZZvtumbwtLBDJvFwepx = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public static global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData5OYej0L0HeMydtjaVpOq4ZItem>("5oYej0l0heMydtjaVPOq4z", FiveoYej0l0heMydtjaVPOq4z);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleField200ResponseData6ElZZvtumbwtLbdJvFwepxItem>("6ElZZvtumbwtLBDJvFwepx", SixElZZvtumbwtLBDJvFwepx);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
