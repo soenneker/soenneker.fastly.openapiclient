@@ -171209,10 +171209,6 @@
   },
   "components": {
     "schemas": {
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
-      },
       "GetABillingAddress200Response": {
         "type": "object",
         "properties": {
@@ -215704,5 +215700,16 @@
       "key": "vcl_name",
       "description": "The name of this VCL."
     }
-  ]
+  ],
+  "servers": [
+    {
+      "url": "https://api.fastly.com"
+    }
+  ],
+  "x-client-unused-schemas": {
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }
