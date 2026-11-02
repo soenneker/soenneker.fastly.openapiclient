@@ -105,7 +105,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Aggregate
             [QueryParameter("from")]
             public string From { get; set; }
 #endif
-            /// <summary>Limit query to a specific geographic region. One of:usa - North America.europe - Europe.anzac - Australia and New Zealand.asia - Asia.asia_india - India.asia_southkorea - South Korea.africa_std - Africa.mexico - Mexico.southamerica_std - South America.</summary>
+            /// <summary>Limit query to a specific geographic region. One of:usa - North America.europe - Europe.anzac - Australia and New Zealand.asia - Asia.asia_india - India.asia_southkorea - South Korea.africa_std - Africa.mexico - Mexico.southamerica_std - South America.saudi_arabia - Saudi Arabia.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("region")]

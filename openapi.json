@@ -80430,7 +80430,7 @@
           {
             "name": "region",
             "in": "query",
-            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.",
+            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia.",
             "schema": {
               "type": "string"
             },
@@ -81023,7 +81023,7 @@
                   },
                   {
                     "key": "region",
-                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                   },
                   {
                     "key": "services",
@@ -81095,7 +81095,7 @@
                       },
                       {
                         "key": "region",
-                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                       },
                       {
                         "key": "services",
@@ -81218,7 +81218,7 @@
           {
             "name": "region",
             "in": "query",
-            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.",
+            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia.",
             "schema": {
               "type": "string"
             },
@@ -81412,7 +81412,7 @@
                   },
                   {
                     "key": "region",
-                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                   },
                   {
                     "key": "to",
@@ -81482,7 +81482,7 @@
                       },
                       {
                         "key": "region",
-                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                       },
                       {
                         "key": "to",
@@ -81579,7 +81579,7 @@
           {
             "name": "region",
             "in": "query",
-            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.",
+            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia.",
             "schema": {
               "type": "string"
             },
@@ -81962,7 +81962,7 @@
                   },
                   {
                     "key": "region",
-                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                   },
                   {
                     "key": "to",
@@ -82027,7 +82027,7 @@
                       },
                       {
                         "key": "region",
-                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                       },
                       {
                         "key": "to",
@@ -82146,7 +82146,7 @@
           {
             "name": "region",
             "in": "query",
-            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.",
+            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia.",
             "schema": {
               "type": "string"
             },
@@ -82541,7 +82541,7 @@
                   },
                   {
                     "key": "region",
-                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                   },
                   {
                     "key": "to",
@@ -82611,7 +82611,7 @@
                       },
                       {
                         "key": "region",
-                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                       },
                       {
                         "key": "to",
@@ -82739,7 +82739,7 @@
           {
             "name": "region",
             "in": "query",
-            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.",
+            "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia.",
             "schema": {
               "type": "string"
             },
@@ -82898,7 +82898,7 @@
                   },
                   {
                     "key": "region",
-                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                    "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                   },
                   {
                     "key": "to",
@@ -82970,7 +82970,7 @@
                       },
                       {
                         "key": "region",
-                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America."
+                        "description": "Limit query to a specific geographic region. One of:\n\nusa - North America.\neurope - Europe.\nanzac - Australia and New Zealand.\nasia - Asia.\nasia_india - India.\nasia_southkorea - South Korea.\nafrica_std - Africa.\nmexico - Mexico.\nsouthamerica_std - South America.\nsaudi_arabia - Saudi Arabia."
                       },
                       {
                         "key": "to",
