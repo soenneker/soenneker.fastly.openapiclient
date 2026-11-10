@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetACategory200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetACategory200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the action for a bot category. Every bot in the category configured with the &apos;inherit&apos; action uses the action set for the category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
+        /// Set the default action for a bot category. Bots set to inherit follow this action. Bots with their own action keep it. To remove every bot&apos;s own action in the category, use set the action for all bots in a category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.SetACategoryAction200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -97,7 +97,7 @@ namespace Soenneker.Fastly.OpenApiClient.BotManagement.V1.Workspaces.Item.Policy
             return requestInfo;
         }
         /// <summary>
-        /// Set the action for a bot category. Every bot in the category configured with the &apos;inherit&apos; action uses the action set for the category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
+        /// Set the default action for a bot category. Bots set to inherit follow this action. Bots with their own action keep it. To remove every bot&apos;s own action in the category, use set the action for all bots in a category.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

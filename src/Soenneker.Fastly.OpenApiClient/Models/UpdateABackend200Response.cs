@@ -37,6 +37,14 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             else if (parseNode.GetChildNode("healthcheck") is { } nullNodeHealthcheck && nullNodeHealthcheck.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Healthcheck = null;
             if (parseNode.GetChildNode("hostname") is null) { _explicitNullValueHostname = default!; _explicitNullProperties?.Remove("hostname"); }
             else if (parseNode.GetChildNode("hostname") is { } nullNodeHostname && nullNodeHostname.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hostname = null;
+            if (parseNode.GetChildNode("iam_product") is null) { _explicitNullValueIamProduct = default!; _explicitNullProperties?.Remove("iam_product"); }
+            else if (parseNode.GetChildNode("iam_product") is { } nullNodeIamProduct && nullNodeIamProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IamProduct = null;
+            if (parseNode.GetChildNode("iam_region") is null) { _explicitNullValueIamRegion = default!; _explicitNullProperties?.Remove("iam_region"); }
+            else if (parseNode.GetChildNode("iam_region") is { } nullNodeIamRegion && nullNodeIamRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IamRegion = null;
+            if (parseNode.GetChildNode("iam_role") is null) { _explicitNullValueIamRole = default!; _explicitNullProperties?.Remove("iam_role"); }
+            else if (parseNode.GetChildNode("iam_role") is { } nullNodeIamRole && nullNodeIamRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IamRole = null;
+            if (parseNode.GetChildNode("iam_vendor") is null) { _explicitNullValueIamVendor = default!; _explicitNullProperties?.Remove("iam_vendor"); }
+            else if (parseNode.GetChildNode("iam_vendor") is { } nullNodeIamVendor && nullNodeIamVendor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IamVendor = null;
             if (parseNode.GetChildNode("ipv4") is null) { _explicitNullValueIpv4 = default!; _explicitNullProperties?.Remove("ipv4"); }
             else if (parseNode.GetChildNode("ipv4") is { } nullNodeIpv4 && nullNodeIpv4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4 = null;
             if (parseNode.GetChildNode("ipv6") is null) { _explicitNullValueIpv6 = default!; _explicitNullProperties?.Remove("ipv6"); }
@@ -163,6 +171,46 @@ namespace Soenneker.Fastly.OpenApiClient.Models
 #else
         public UntypedNode Hostname { get => _explicitNullValueHostname; set { _explicitNullValueHostname = value; AdditionalData?.Remove("hostname"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostname"); else _explicitNullProperties?.Remove("hostname"); } }
         private UntypedNode _explicitNullValueHostname = default!;
+#endif
+        /// <summary>The iam_product property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IamProduct { get => _explicitNullValueIamProduct; set { _explicitNullValueIamProduct = value; AdditionalData?.Remove("iam_product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iam_product"); else _explicitNullProperties?.Remove("iam_product"); } }
+        private string? _explicitNullValueIamProduct = default!;
+#nullable restore
+#else
+        public string IamProduct { get => _explicitNullValueIamProduct; set { _explicitNullValueIamProduct = value; AdditionalData?.Remove("iam_product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iam_product"); else _explicitNullProperties?.Remove("iam_product"); } }
+        private string _explicitNullValueIamProduct = default!;
+#endif
+        /// <summary>The iam_region property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IamRegion { get => _explicitNullValueIamRegion; set { _explicitNullValueIamRegion = value; AdditionalData?.Remove("iam_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iam_region"); else _explicitNullProperties?.Remove("iam_region"); } }
+        private string? _explicitNullValueIamRegion = default!;
+#nullable restore
+#else
+        public string IamRegion { get => _explicitNullValueIamRegion; set { _explicitNullValueIamRegion = value; AdditionalData?.Remove("iam_region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iam_region"); else _explicitNullProperties?.Remove("iam_region"); } }
+        private string _explicitNullValueIamRegion = default!;
+#endif
+        /// <summary>The iam_role property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IamRole { get => _explicitNullValueIamRole; set { _explicitNullValueIamRole = value; AdditionalData?.Remove("iam_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iam_role"); else _explicitNullProperties?.Remove("iam_role"); } }
+        private string? _explicitNullValueIamRole = default!;
+#nullable restore
+#else
+        public string IamRole { get => _explicitNullValueIamRole; set { _explicitNullValueIamRole = value; AdditionalData?.Remove("iam_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iam_role"); else _explicitNullProperties?.Remove("iam_role"); } }
+        private string _explicitNullValueIamRole = default!;
+#endif
+        /// <summary>The iam_vendor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IamVendor { get => _explicitNullValueIamVendor; set { _explicitNullValueIamVendor = value; AdditionalData?.Remove("iam_vendor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iam_vendor"); else _explicitNullProperties?.Remove("iam_vendor"); } }
+        private string? _explicitNullValueIamVendor = default!;
+#nullable restore
+#else
+        public string IamVendor { get => _explicitNullValueIamVendor; set { _explicitNullValueIamVendor = value; AdditionalData?.Remove("iam_vendor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("iam_vendor"); else _explicitNullProperties?.Remove("iam_vendor"); } }
+        private string _explicitNullValueIamVendor = default!;
 #endif
         /// <summary>The ipv4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -433,6 +481,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "first_byte_timeout", n => { FirstByteTimeout = n.GetLongValue(); } },
                 { "healthcheck", n => { Healthcheck = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "hostname", n => { Hostname = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "iam_product", n => { IamProduct = n.GetStringValue(); } },
+                { "iam_region", n => { IamRegion = n.GetStringValue(); } },
+                { "iam_role", n => { IamRole = n.GetStringValue(); } },
+                { "iam_vendor", n => { IamVendor = n.GetStringValue(); } },
                 { "ipv4", n => { Ipv4 = n.GetStringValue(); } },
                 { "ipv6", n => { Ipv6 = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "keepalive_time", n => { KeepaliveTime = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -481,6 +533,10 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteLongValue("first_byte_timeout", FirstByteTimeout);
             writer.WriteObjectValue<UntypedNode>("healthcheck", Healthcheck);
             writer.WriteObjectValue<UntypedNode>("hostname", Hostname);
+            writer.WriteStringValue("iam_product", IamProduct);
+            writer.WriteStringValue("iam_region", IamRegion);
+            writer.WriteStringValue("iam_role", IamRole);
+            writer.WriteStringValue("iam_vendor", IamVendor);
             writer.WriteStringValue("ipv4", Ipv4);
             writer.WriteObjectValue<UntypedNode>("ipv6", Ipv6);
             writer.WriteObjectValue<UntypedNode>("keepalive_time", KeepaliveTime);
