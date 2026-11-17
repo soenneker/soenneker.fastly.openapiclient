@@ -8,6 +8,7 @@ using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Datadog;
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Digitalocean;
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Elasticsearch;
+using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Fos;
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Ftp;
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Gcs;
 using Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Grafanacloudlogs;
@@ -70,6 +71,11 @@ namespace Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logg
         public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Elasticsearch.ElasticsearchRequestBuilder Elasticsearch
         {
             get => new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Elasticsearch.ElasticsearchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The fos property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Fos.FosRequestBuilder Fos
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Fos.FosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ftp property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Service.Item.VersionNamespace.Item.Logging.Ftp.FtpRequestBuilder Ftp

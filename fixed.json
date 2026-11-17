@@ -44921,6 +44921,1085 @@
         ]
       }
     },
+    "/service/{serviceId}/version/{versionId}/logging/fos": {
+      "get": {
+        "tags": [
+          "Real-time logging / Fastly Object Storage"
+        ],
+        "summary": "List Fastly Object Storage log endpoints",
+        "description": "List all of the Fastly Object Storage log endpoints for the given service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+        "operationId": "ListFastlyObjectStorageLogEndpoints",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionId",
+            "in": "path",
+            "description": "Integer identifying a service version.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListFastlyObjectStorageLogEndpoints200Response"
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": [
+                      {
+                        "access_key": "AKIAIOSFODNN7EXAMPLE",
+                        "bucket_name": "test-bucket",
+                        "created_at": "2020-05-23T19:48:33.000Z",
+                        "deleted_at": null,
+                        "region": "us-east-1",
+                        "format": "%h %l %u %t \u0022%r\u0022 %\u003Es %b",
+                        "format_version": "2",
+                        "compression_codec": "zstd",
+                        "gzip_level": "0",
+                        "message_type": "classic",
+                        "name": "test-log-endpoint",
+                        "path": null,
+                        "period": "3600",
+                        "placement": null,
+                        "public_key": null,
+                        "response_condition": "",
+                        "service_id": "SU1Z0isxPaozGVKXdv0eY",
+                        "timestamp_format": "%Y-%m-%dT%H:%M:%S.000",
+                        "updated_at": "2020-05-23T19:48:33.000Z",
+                        "version": "1",
+                        "file_max_bytes": 100000000
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List Fastly Object Storage log endpoints",
+            "id": null,
+            "request": {
+              "name": "List Fastly Object Storage log endpoints",
+              "description": "List all of the Fastly Object Storage log endpoints for the given service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/service/{{service_id}}/version/{{version_id}}/logging/fos",
+                "path": [
+                  "service",
+                  "{{service_id}}",
+                  "version",
+                  "{{version_id}}",
+                  "logging",
+                  "fos"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": []
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [],
+                "body": "[{\u0022access_key\u0022:\u0022AKIAIOSFODNN7EXAMPLE\u0022,\u0022bucket_name\u0022:\u0022test-bucket\u0022,\u0022created_at\u0022:\u00222020-05-23T19:48:33.000Z\u0022,\u0022deleted_at\u0022:null,\u0022region\u0022:\u0022us-east-1\u0022,\u0022format\u0022:\u0022%h %l %u %t \\\u0022%r\\\u0022 %\u003Es %b\u0022,\u0022format_version\u0022:\u00222\u0022,\u0022compression_codec\u0022:\u0022zstd\u0022,\u0022gzip_level\u0022:\u00220\u0022,\u0022message_type\u0022:\u0022classic\u0022,\u0022name\u0022:\u0022test-log-endpoint\u0022,\u0022path\u0022:null,\u0022period\u0022:\u00223600\u0022,\u0022placement\u0022:null,\u0022public_key\u0022:null,\u0022response_condition\u0022:\u0022\u0022,\u0022service_id\u0022:\u0022SU1Z0isxPaozGVKXdv0eY\u0022,\u0022timestamp_format\u0022:\u0022%Y-%m-%dT%H:%M:%S.000\u0022,\u0022updated_at\u0022:\u00222020-05-23T19:48:33.000Z\u0022,\u0022version\u0022:\u00221\u0022,\u0022file_max_bytes\u0022:100000000}]",
+                "originalRequest": {
+                  "name": "List Fastly Object Storage log endpoints",
+                  "description": "List all of the Fastly Object Storage log endpoints for the given service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/service/SU1Z0isxPaozGVKXdv0eY/version/1/logging/fos",
+                    "path": [
+                      "service",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "version",
+                      "1",
+                      "logging",
+                      "fos"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": []
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Real-time logging",
+              "Fastly Object Storage"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Real-time logging / Fastly Object Storage"
+        ],
+        "summary": "Create a Fastly Object Storage log endpoint",
+        "description": "Create a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+        "operationId": "CreateAFastlyObjectStorageLogEndpoint",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionId",
+            "in": "path",
+            "description": "Integer identifying a service version.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAFastlyObjectStorageLogEndpointXWwwFormUrlencodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAFastlyObjectStorageLogEndpoint200Response"
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "access_key": "AKIAIOSFODNN7EXAMPLE",
+                      "bucket_name": "test-bucket",
+                      "created_at": "2020-05-23T19:48:33.000Z",
+                      "deleted_at": null,
+                      "region": "us-east-1",
+                      "format": "%h %l %u %t \u0022%r\u0022 %\u003Es %b",
+                      "format_version": "2",
+                      "compression_codec": "zstd",
+                      "gzip_level": "0",
+                      "message_type": "classic",
+                      "name": "test-log-endpoint",
+                      "path": null,
+                      "period": "3600",
+                      "placement": null,
+                      "public_key": null,
+                      "response_condition": "",
+                      "service_id": "SU1Z0isxPaozGVKXdv0eY",
+                      "timestamp_format": "%Y-%m-%dT%H:%M:%S.000",
+                      "updated_at": "2020-05-23T19:48:33.000Z",
+                      "version": "1",
+                      "file_max_bytes": 100000000
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Create a Fastly Object Storage log endpoint",
+            "id": null,
+            "request": {
+              "name": "Create a Fastly Object Storage log endpoint",
+              "description": "Create a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+              "method": "POST",
+              "url": {
+                "raw": "{{fastly_url}}/service/{{service_id}}/version/{{version_id}}/logging/fos",
+                "path": [
+                  "service",
+                  "{{service_id}}",
+                  "version",
+                  "{{version_id}}",
+                  "logging",
+                  "fos"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": []
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-www-form-urlencoded"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": []
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [],
+                "body": "{\u0022access_key\u0022:\u0022AKIAIOSFODNN7EXAMPLE\u0022,\u0022bucket_name\u0022:\u0022test-bucket\u0022,\u0022created_at\u0022:\u00222020-05-23T19:48:33.000Z\u0022,\u0022deleted_at\u0022:null,\u0022region\u0022:\u0022us-east-1\u0022,\u0022format\u0022:\u0022%h %l %u %t \\\u0022%r\\\u0022 %\u003Es %b\u0022,\u0022format_version\u0022:\u00222\u0022,\u0022compression_codec\u0022:\u0022zstd\u0022,\u0022gzip_level\u0022:\u00220\u0022,\u0022message_type\u0022:\u0022classic\u0022,\u0022name\u0022:\u0022test-log-endpoint\u0022,\u0022path\u0022:null,\u0022period\u0022:\u00223600\u0022,\u0022placement\u0022:null,\u0022public_key\u0022:null,\u0022response_condition\u0022:\u0022\u0022,\u0022service_id\u0022:\u0022SU1Z0isxPaozGVKXdv0eY\u0022,\u0022timestamp_format\u0022:\u0022%Y-%m-%dT%H:%M:%S.000\u0022,\u0022updated_at\u0022:\u00222020-05-23T19:48:33.000Z\u0022,\u0022version\u0022:\u00221\u0022,\u0022file_max_bytes\u0022:100000000}",
+                "originalRequest": {
+                  "name": "Create a Fastly Object Storage log endpoint",
+                  "description": "Create a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+                  "method": "POST",
+                  "url": {
+                    "raw": "https://api.fastly.com/service/SU1Z0isxPaozGVKXdv0eY/version/1/logging/fos",
+                    "path": [
+                      "service",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "version",
+                      "1",
+                      "logging",
+                      "fos"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": []
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": []
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Real-time logging",
+              "Fastly Object Storage"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/service/{serviceId}/version/{versionId}/logging/fos/{loggingFosName}": {
+      "get": {
+        "tags": [
+          "Real-time logging / Fastly Object Storage"
+        ],
+        "summary": "Get Fastly Object Storage log endpoint",
+        "description": "Get a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+        "operationId": "GetFastlyObjectStorageLogEndpoint",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionId",
+            "in": "path",
+            "description": "Integer identifying a service version.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "loggingFosName",
+            "in": "path",
+            "description": "The name for the real-time logging configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetFastlyObjectStorageLogEndpoint200Response"
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "access_key": "AKIAIOSFODNN7EXAMPLE",
+                      "bucket_name": "test-bucket",
+                      "created_at": "2020-05-23T19:48:33.000Z",
+                      "deleted_at": null,
+                      "region": "us-east-1",
+                      "format": "%h %l %u %t \u0022%r\u0022 %\u003Es %b",
+                      "format_version": "2",
+                      "compression_codec": "zstd",
+                      "gzip_level": "0",
+                      "message_type": "classic",
+                      "name": "test-log-endpoint",
+                      "path": null,
+                      "period": "3600",
+                      "placement": null,
+                      "public_key": null,
+                      "response_condition": "",
+                      "service_id": "SU1Z0isxPaozGVKXdv0eY",
+                      "timestamp_format": "%Y-%m-%dT%H:%M:%S.000",
+                      "updated_at": "2020-05-23T19:48:33.000Z",
+                      "version": "1",
+                      "file_max_bytes": 100000000
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get Fastly Object Storage log endpoint",
+            "id": null,
+            "request": {
+              "name": "Get Fastly Object Storage log endpoint",
+              "description": "Get a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/service/{{service_id}}/version/{{version_id}}/logging/fos/{{logging_fos_name}}",
+                "path": [
+                  "service",
+                  "{{service_id}}",
+                  "version",
+                  "{{version_id}}",
+                  "logging",
+                  "fos",
+                  "{{logging_fos_name}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": []
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [],
+                "body": "{\u0022access_key\u0022:\u0022AKIAIOSFODNN7EXAMPLE\u0022,\u0022bucket_name\u0022:\u0022test-bucket\u0022,\u0022created_at\u0022:\u00222020-05-23T19:48:33.000Z\u0022,\u0022deleted_at\u0022:null,\u0022region\u0022:\u0022us-east-1\u0022,\u0022format\u0022:\u0022%h %l %u %t \\\u0022%r\\\u0022 %\u003Es %b\u0022,\u0022format_version\u0022:\u00222\u0022,\u0022compression_codec\u0022:\u0022zstd\u0022,\u0022gzip_level\u0022:\u00220\u0022,\u0022message_type\u0022:\u0022classic\u0022,\u0022name\u0022:\u0022test-log-endpoint\u0022,\u0022path\u0022:null,\u0022period\u0022:\u00223600\u0022,\u0022placement\u0022:null,\u0022public_key\u0022:null,\u0022response_condition\u0022:\u0022\u0022,\u0022service_id\u0022:\u0022SU1Z0isxPaozGVKXdv0eY\u0022,\u0022timestamp_format\u0022:\u0022%Y-%m-%dT%H:%M:%S.000\u0022,\u0022updated_at\u0022:\u00222020-05-23T19:48:33.000Z\u0022,\u0022version\u0022:\u00221\u0022,\u0022file_max_bytes\u0022:100000000}",
+                "originalRequest": {
+                  "name": "Get Fastly Object Storage log endpoint",
+                  "description": "Get a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/service/SU1Z0isxPaozGVKXdv0eY/version/1/logging/fos/test-log-endpoint",
+                    "path": [
+                      "service",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "version",
+                      "1",
+                      "logging",
+                      "fos",
+                      "test-log-endpoint"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": []
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Real-time logging",
+              "Fastly Object Storage"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Real-time logging / Fastly Object Storage"
+        ],
+        "summary": "Update a Fastly Object Storage log endpoint",
+        "description": "Update a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+        "operationId": "UpdateAFastlyObjectStorageLogEndpoint",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionId",
+            "in": "path",
+            "description": "Integer identifying a service version.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "loggingFosName",
+            "in": "path",
+            "description": "The name for the real-time logging configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAFastlyObjectStorageLogEndpointXWwwFormUrlencodedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAFastlyObjectStorageLogEndpoint200Response"
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "access_key": "AKIAIOSFODNN7EXAMPLE",
+                      "bucket_name": "test-bucket",
+                      "created_at": "2020-05-23T19:48:33.000Z",
+                      "deleted_at": null,
+                      "region": "us-east-1",
+                      "format": "%h %l %u %t \u0022%r\u0022 %\u003Es %b",
+                      "format_version": "2",
+                      "compression_codec": "zstd",
+                      "gzip_level": "0",
+                      "message_type": "classic",
+                      "name": "updated-test-log-endpoint",
+                      "path": null,
+                      "period": "3600",
+                      "placement": null,
+                      "public_key": null,
+                      "response_condition": "",
+                      "service_id": "SU1Z0isxPaozGVKXdv0eY",
+                      "timestamp_format": "%Y-%m-%dT%H:%M:%S.000",
+                      "updated_at": "2020-05-23T19:48:33.000Z",
+                      "version": "1",
+                      "file_max_bytes": 100000000
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update a Fastly Object Storage log endpoint",
+            "id": null,
+            "request": {
+              "name": "Update a Fastly Object Storage log endpoint",
+              "description": "Update a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+              "method": "PUT",
+              "url": {
+                "raw": "{{fastly_url}}/service/{{service_id}}/version/{{version_id}}/logging/fos/{{logging_fos_name}}",
+                "path": [
+                  "service",
+                  "{{service_id}}",
+                  "version",
+                  "{{version_id}}",
+                  "logging",
+                  "fos",
+                  "{{logging_fos_name}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": []
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-www-form-urlencoded"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "urlencoded",
+                "urlencoded": []
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [],
+                "body": "{\u0022access_key\u0022:\u0022AKIAIOSFODNN7EXAMPLE\u0022,\u0022bucket_name\u0022:\u0022test-bucket\u0022,\u0022created_at\u0022:\u00222020-05-23T19:48:33.000Z\u0022,\u0022deleted_at\u0022:null,\u0022region\u0022:\u0022us-east-1\u0022,\u0022format\u0022:\u0022%h %l %u %t \\\u0022%r\\\u0022 %\u003Es %b\u0022,\u0022format_version\u0022:\u00222\u0022,\u0022compression_codec\u0022:\u0022zstd\u0022,\u0022gzip_level\u0022:\u00220\u0022,\u0022message_type\u0022:\u0022classic\u0022,\u0022name\u0022:\u0022updated-test-log-endpoint\u0022,\u0022path\u0022:null,\u0022period\u0022:\u00223600\u0022,\u0022placement\u0022:null,\u0022public_key\u0022:null,\u0022response_condition\u0022:\u0022\u0022,\u0022service_id\u0022:\u0022SU1Z0isxPaozGVKXdv0eY\u0022,\u0022timestamp_format\u0022:\u0022%Y-%m-%dT%H:%M:%S.000\u0022,\u0022updated_at\u0022:\u00222020-05-23T19:48:33.000Z\u0022,\u0022version\u0022:\u00221\u0022,\u0022file_max_bytes\u0022:100000000}",
+                "originalRequest": {
+                  "name": "Update a Fastly Object Storage log endpoint",
+                  "description": "Update a Fastly Object Storage logging endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+                  "method": "PUT",
+                  "url": {
+                    "raw": "https://api.fastly.com/service/SU1Z0isxPaozGVKXdv0eY/version/1/logging/fos/test-log-endpoint",
+                    "path": [
+                      "service",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "version",
+                      "1",
+                      "logging",
+                      "fos",
+                      "test-log-endpoint"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": []
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/x-www-form-urlencoded"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": []
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Real-time logging",
+              "Fastly Object Storage"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Real-time logging / Fastly Object Storage"
+        ],
+        "summary": "Delete a Fastly Object Storage log endpoint",
+        "description": "Delete a Fastly Object Storage log endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+        "operationId": "DeleteAFastlyObjectStorageLogEndpoint",
+        "parameters": [
+          {
+            "name": "serviceId",
+            "in": "path",
+            "description": "Alphanumeric string identifying the service.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "versionId",
+            "in": "path",
+            "description": "Integer identifying a service version.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "loggingFosName",
+            "in": "path",
+            "description": "The name for the real-time logging configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteAFastlyObjectStorageLogEndpoint200Response"
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "status": "ok"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": []
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Delete a Fastly Object Storage log endpoint",
+            "id": null,
+            "request": {
+              "name": "Delete a Fastly Object Storage log endpoint",
+              "description": "Delete a Fastly Object Storage log endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+              "method": "DELETE",
+              "url": {
+                "raw": "{{fastly_url}}/service/{{service_id}}/version/{{version_id}}/logging/fos/{{logging_fos_name}}",
+                "path": [
+                  "service",
+                  "{{service_id}}",
+                  "version",
+                  "{{version_id}}",
+                  "logging",
+                  "fos",
+                  "{{logging_fos_name}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": []
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [],
+                "body": "{\u0022status\u0022:\u0022ok\u0022}",
+                "originalRequest": {
+                  "name": "Delete a Fastly Object Storage log endpoint",
+                  "description": "Delete a Fastly Object Storage log endpoint for a particular service and version.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n",
+                  "method": "DELETE",
+                  "url": {
+                    "raw": "https://api.fastly.com/service/SU1Z0isxPaozGVKXdv0eY/version/1/logging/fos/test-log-endpoint",
+                    "path": [
+                      "service",
+                      "SU1Z0isxPaozGVKXdv0eY",
+                      "version",
+                      "1",
+                      "logging",
+                      "fos",
+                      "test-log-endpoint"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": []
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Real-time logging",
+              "Fastly Object Storage"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
     "/service/{serviceId}/version/{versionId}/logging/ftp": {
       "get": {
         "tags": [
@@ -179705,6 +180784,233 @@
       "StreamLogEndpointErrors200PlainResponse": {
         "type": "string"
       },
+      "ListFastlyObjectStorageLogEndpoints200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListFastlyObjectStorageLogEndpoints200ResponseItem"
+        }
+      },
+      "CreateAFastlyObjectStorageLogEndpointXWwwFormUrlencodedRequest": {
+        "type": "object"
+      },
+      "CreateAFastlyObjectStorageLogEndpoint200Response": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string"
+          },
+          "bucket_name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "deleted_at": {
+            "x-postman-observed-null": true
+          },
+          "region": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "format_version": {
+            "type": "string"
+          },
+          "compression_codec": {
+            "type": "string"
+          },
+          "gzip_level": {
+            "type": "string"
+          },
+          "message_type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "x-postman-observed-null": true
+          },
+          "period": {
+            "type": "string"
+          },
+          "placement": {
+            "x-postman-observed-null": true
+          },
+          "public_key": {
+            "x-postman-observed-null": true
+          },
+          "response_condition": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "timestamp_format": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "file_max_bytes": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "GetFastlyObjectStorageLogEndpoint200Response": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string"
+          },
+          "bucket_name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "deleted_at": {
+            "x-postman-observed-null": true
+          },
+          "region": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "format_version": {
+            "type": "string"
+          },
+          "compression_codec": {
+            "type": "string"
+          },
+          "gzip_level": {
+            "type": "string"
+          },
+          "message_type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "x-postman-observed-null": true
+          },
+          "period": {
+            "type": "string"
+          },
+          "placement": {
+            "x-postman-observed-null": true
+          },
+          "public_key": {
+            "x-postman-observed-null": true
+          },
+          "response_condition": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "timestamp_format": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "file_max_bytes": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "UpdateAFastlyObjectStorageLogEndpointXWwwFormUrlencodedRequest": {
+        "type": "object"
+      },
+      "UpdateAFastlyObjectStorageLogEndpoint200Response": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string"
+          },
+          "bucket_name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "deleted_at": {
+            "x-postman-observed-null": true
+          },
+          "region": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "format_version": {
+            "type": "string"
+          },
+          "compression_codec": {
+            "type": "string"
+          },
+          "gzip_level": {
+            "type": "string"
+          },
+          "message_type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "x-postman-observed-null": true
+          },
+          "period": {
+            "type": "string"
+          },
+          "placement": {
+            "x-postman-observed-null": true
+          },
+          "public_key": {
+            "x-postman-observed-null": true
+          },
+          "response_condition": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "timestamp_format": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "file_max_bytes": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "DeleteAFastlyObjectStorageLogEndpoint200Response": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        }
+      },
       "ListFtpLogEndpoints200Response": {
         "type": "array",
         "items": {
@@ -198116,6 +199422,75 @@
           },
           "placement": {
             "x-postman-observed-null": true
+          }
+        }
+      },
+      "ListFastlyObjectStorageLogEndpoints200ResponseItem": {
+        "type": "object",
+        "properties": {
+          "access_key": {
+            "type": "string"
+          },
+          "bucket_name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "deleted_at": {
+            "x-postman-observed-null": true
+          },
+          "region": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "format_version": {
+            "type": "string"
+          },
+          "compression_codec": {
+            "type": "string"
+          },
+          "gzip_level": {
+            "type": "string"
+          },
+          "message_type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "x-postman-observed-null": true
+          },
+          "period": {
+            "type": "string"
+          },
+          "placement": {
+            "x-postman-observed-null": true
+          },
+          "public_key": {
+            "x-postman-observed-null": true
+          },
+          "response_condition": {
+            "type": "string"
+          },
+          "service_id": {
+            "type": "string"
+          },
+          "timestamp_format": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "file_max_bytes": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },
@@ -218797,6 +220172,10 @@
       "description": "These endpoints stream recent errors for logging endpoints, providing visibility into logging pipeline issues for troubleshooting and resolution.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| detail | string | A human-readable explanation specific to this occurrence of the problem. |\n| title | string | A short, human-readable summary of the problem type. |\n| type | string | A URI reference that identifies the problem type. |\n| details | string | Additional error details as a JSON string. |\n| endpoint | string | Name of the logging endpoint that generated the error. |\n| error_time_us | integer | Timestamp of the error in microseconds. |\n| message | string | User-friendly error message. |\n| sequence_number | integer | Sequence number for ordering messages. |\n| stream | string | The stream type, always \u0027logging_error\u0027 for logging endpoint errors. |\n| batch_id | string | Unique identifier for this batch of logs. |"
     },
     {
+      "name": "Real-time logging / Fastly Object Storage",
+      "description": "Fastly will upload log messages to the bucket in the format specified in the Fastly Object Storage log endpoint object.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| bucket_name | string | The name of the Fastly Object Storage bucket. |\n| file_max_bytes | integer | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.). |\n| path | string | The path to upload logs to. |\n| public_key | string | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. |\n| region | string | The region of the Fastly Object Storage bucket. See Object Storage regions for valid values. |\n| compression_codec | string | The codec used for compressing your logs. Valid values are zstd, snappy, and gzip. Specifying both compression_codec and gzip_level in the same API request will result in an error. |\n| format | string | A Fastly log format string. |\n| format_version | integer | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in vcl_log if format_version is set to 2 and in vcl_deliver if format_version is set to 1. |\n|  | 1 | Version 1 log format. |\n|  | 2 | Version 2 log format. |\n| gzip_level | integer | The level of gzip encoding when sending logs (default 0, no compression). Specifying both compression_codec and gzip_level in the same API request will result in an error. |\n| log_processing_region | string | The geographic region where the logs will be processed before streaming. Valid values are us, eu, and none for global. |\n| message_type | string | How the message should be formatted. |\n|  | blank | No prefix. Useful for writing JSON and CSV. |\n|  | classic | RFC 3164 syslog prefix. |\n|  | loggly | RFC 5424 structured syslog. |\n|  | logplex | Heroku-style length prefixed syslog. |\n| name | string | The name for the real-time logging configuration. |\n| period | integer | How frequently log files are finalized so they can be available for reading (in seconds). |\n| placement | string | Where in the generated VCL the logging call should be placed. If not set, endpoints with format_version of 2 are placed in vcl_log and those with format_version of 1 are placed in vcl_deliver. |\n|  | none | Do not render a log statement into VCL. Use this option if you intend to write a log statement manually. |\n| response_condition | string | The name of an existing condition in the configured endpoint, or leave blank to always execute. |\n| timestamp_format | string | A timestamp format. |\n| access_key | string | The ID of the access key Fastly created for this endpoint. The key is limited to bucket_name, and its secret is never returned. Changing the bucket_name creates a new key. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| service_id | string | Alphanumeric string identifying the service. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| version | string | String identifying a service version. |"
+    },
+    {
       "name": "Real-time logging / FTP",
       "description": "Fastly will upload log messages periodically to the server in the format specified in the FTP object.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| address | string | An hostname or IPv4 address. |\n| hostname | string | Hostname used. |\n| ipv4 | string | IPv4 address of the host. |\n| password | string | The password for the server. For anonymous use an email address. |\n| path | string | The path to upload log files to. If the path ends in / then it is treated as a directory. |\n| public_key | string | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. |\n| user | string | The username for the server. Can be anonymous. |\n| compression_codec | string | The codec used for compressing your logs. Valid values are zstd, snappy, and gzip. Specifying both compression_codec and gzip_level in the same API request will result in an error. |\n| format | string | A Fastly log format string. |\n| format_version | integer | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in vcl_log if format_version is set to 2 and in vcl_deliver if format_version is set to 1. |\n|  | 1 | Version 1 log format. |\n|  | 2 | Version 2 log format. |\n| gzip_level | integer | The level of gzip encoding when sending logs (default 0, no compression). Specifying both compression_codec and gzip_level in the same API request will result in an error. |\n| log_processing_region | string | The geographic region where the logs will be processed before streaming. Valid values are us, eu, and none for global. |\n| message_type | string | How the message should be formatted. |\n|  | blank | No prefix. Useful for writing JSON and CSV. |\n|  | classic | RFC 3164 syslog prefix. |\n|  | loggly | RFC 5424 structured syslog. |\n|  | logplex | Heroku-style length prefixed syslog. |\n| name | string | The name for the real-time logging configuration. |\n| period | integer | How frequently log files are finalized so they can be available for reading (in seconds). |\n| placement | string | Where in the generated VCL the logging call should be placed. If not set, endpoints with format_version of 2 are placed in vcl_log and those with format_version of 1 are placed in vcl_deliver. |\n|  | none | Do not render a log statement into VCL. Use this option if you intend to write a log statement manually. |\n| port | integer | The port number. |\n| response_condition | string | The name of an existing condition in the configured endpoint, or leave blank to always execute. |\n| timestamp_format | string | A timestamp format. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| service_id | string | Alphanumeric string identifying the service. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| version | string | String identifying a service version. |"
     },
@@ -219110,7 +220489,7 @@
     },
     {
       "name": "Services / Backend",
-      "description": "A backend (also sometimes called an origin server) is a server identified by IP address or hostname, from which Fastly will fetch your content. There can be multiple backends attached to a service, but each backend is specific to one service. By default, if only one backend is defined in a service configuration, it will be used for all requests provided it meets the conditions attached to it, if any. If multiple backends are defined, the backend that is used for a request is the one with the highest-priority condition attached to it, out of all conditions that this request satisfies. If multiple conditions match the request with the same (highest) priority, one is chosen arbitrarily. If there are no backends with conditions that match the request, then the backend without any conditions is chosen. If there are multiple such backends, one is chosen arbitrarily. The behavior described above can be modified by using the auto_loadbalance field described below. These endpoints can be used with static backends only, not dynamic backends.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| address | string | A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend. |\n| auto_loadbalance | boolean | Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don\u0027t have a request_condition will be selected based on their weight. |\n| between_bytes_timeout | integer | Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using bereq.between_bytes_timeout. |\n| client_cert | string | Unused. |\n| comment | string | A freeform descriptive note. |\n| connect_timeout | integer | Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic 503 response will be presented instead. May be set at runtime using bereq.connect_timeout. |\n| fetch_timeout | integer | Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic 503 response will be presented instead. May be set at runtime using bereq.fetch_timeout. |\n| first_byte_timeout | integer | Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic 503 response will be presented instead. May be set at runtime using bereq.first_byte_timeout. |\n| healthcheck | string | The name of the healthcheck to use with this backend. |\n| hostname | string | The hostname of the backend. May be used as an alternative to address to set the backend location. |\n| iam_external_id | string | If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Your Fastly customer ID will be used if this attribute is not set. |\n| iam_product | string | If the backend is using IAM authentication, the IAM signature will use this as the product element. |\n| iam_region | string | If the backend is using IAM authentication, this region will be used for signing and access. |\n| iam_role | string | If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor. |\n| iam_vendor | string | A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value. |\n| ipv4 | string | IPv4 address of the backend. May be used as an alternative to address to set the backend location. |\n| ipv6 | string | IPv6 address of the backend. May be used as an alternative to address to set the backend location. |\n| keepalive_time | integer | How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can. |\n| max_conn | integer | Maximum number of concurrent connections this backend will accept. |\n| max_lifetime | integer | Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited. |\n| max_tls_version | string | Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic 503 error response will be generated. |\n| max_use | integer | Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited. |\n| min_tls_version | string | Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic 503 error response will be generated. |\n| name | string | The name of the backend. |\n| override_host | string | If set, will replace the client-supplied HTTP Host header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing bereq.http.Host in VCL. |\n| port | integer | Port on which the backend server is listening for connections from Fastly. Setting port to 80 or 443 will also set use_ssl automatically (to false and true respectively), unless explicitly overridden by setting use_ssl in the same request. |\n| prefer_ipv6 | boolean | Prefer IPv6 connections to origins for hostname backends. Default is \u0027false\u0027 for Delivery services and \u0027true\u0027 for Compute services. |\n| request_condition | string | Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any auto_loadbalance setting. By default, the first backend added to a service is selected for all requests. |\n| share_key | string | Value that when shared across backends will enable those backends to share the same health check. |\n| shield | string | Identifier of the POP to use as a shield. |\n| ssl_ca_cert | string | CA certificate attached to origin. |\n| ssl_cert_hostname | string | Overrides ssl_hostname, but only for cert verification. Does not affect SNI at all. |\n| ssl_check_cert | boolean | Be strict on checking SSL certs. |\n| ssl_ciphers | string | List of OpenSSL ciphers to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic 503 error response will be generated. |\n| ssl_client_cert | string | Client certificate attached to origin. |\n| ssl_client_key | string | Client key attached to origin. |\n| ssl_hostname | string | Use ssl_cert_hostname and ssl_sni_hostname to configure certificate validation. |\n| ssl_sni_hostname | string | Overrides ssl_hostname, but only for SNI in the handshake. Does not affect cert validation at all. |\n| tcp_keepalive_enable | boolean | Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified. |\n| tcp_keepalive_interval | integer | Interval in seconds between subsequent keepalive probes. |\n| tcp_keepalive_probes | integer | Number of unacknowledged probes to send before considering the connection dead. |\n| tcp_keepalive_time | integer | Interval in seconds between the last data packet sent and the first keepalive probe. |\n| use_ssl | boolean | Whether or not to require TLS for connections to this backend. |\n| weight | integer | Weight used to load balance this backend against others. May be any positive integer. If auto_loadbalance is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have auto_loadbalance set to true. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| locked | boolean | Indicates whether the version of the service this backend is attached to accepts edits. |\n| service_id | string | Alphanumeric string identifying the service. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| version | integer | Integer identifying a service version. |"
+      "description": "A backend (also sometimes called an origin server) is a server identified by IP address or hostname, from which Fastly will fetch your content. There can be multiple backends attached to a service, but each backend is specific to one service. By default, if only one backend is defined in a service configuration, it will be used for all requests provided it meets the conditions attached to it, if any. If multiple backends are defined, the backend that is used for a request is the one with the highest-priority condition attached to it, out of all conditions that this request satisfies. If multiple conditions match the request with the same (highest) priority, one is chosen arbitrarily. If there are no backends with conditions that match the request, then the backend without any conditions is chosen. If there are multiple such backends, one is chosen arbitrarily. The behavior described above can be modified by using the auto_loadbalance field described below. These endpoints can be used with static backends only, not dynamic backends.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| address | string | A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend. |\n| auto_loadbalance | boolean | Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don\u0027t have a request_condition will be selected based on their weight. |\n| between_bytes_timeout | integer | Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using bereq.between_bytes_timeout. |\n| client_cert | string | Unused. |\n| comment | string | A freeform descriptive note. |\n| connect_timeout | integer | Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic 503 response will be presented instead. May be set at runtime using bereq.connect_timeout. |\n| fetch_timeout | integer | Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic 503 response will be presented instead. May be set at runtime using bereq.fetch_timeout. |\n| first_byte_timeout | integer | Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic 503 response will be presented instead. May be set at runtime using bereq.first_byte_timeout. |\n| healthcheck | string | The name of the healthcheck to use with this backend. |\n| hostname | string | The hostname of the backend. May be used as an alternative to address to set the backend location. |\n| iam_external_id | string | If the backend is using IAM authentication and the IAM system policy requires a matching external identifier, it should match this value. Valid values are customer ID, service ID, and a concatenated string in the format -. Your Fastly customer ID will be used if this attribute is not set. |\n| iam_product | string | If the backend is using IAM authentication, the IAM signature will use this as the product element. |\n| iam_region | string | If the backend is using IAM authentication, this region will be used for signing and access. |\n| iam_role | string | If the backend is using IAM authentication, the fully qualified role string supplied by the storage vendor. |\n| iam_vendor | string | A label that identifies the storage vendor. Providing a value in this field enables IAM usage, and all other IAM fields depend on its value. |\n| ipv4 | string | IPv4 address of the backend. May be used as an alternative to address to set the backend location. |\n| ipv6 | string | IPv6 address of the backend. May be used as an alternative to address to set the backend location. |\n| keepalive_time | integer | How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can. |\n| max_conn | integer | Maximum number of concurrent connections this backend will accept. |\n| max_lifetime | integer | Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited. |\n| max_tls_version | string | Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic 503 error response will be generated. |\n| max_use | integer | Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited. |\n| min_tls_version | string | Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic 503 error response will be generated. |\n| name | string | The name of the backend. |\n| override_host | string | If set, will replace the client-supplied HTTP Host header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing bereq.http.Host in VCL. |\n| port | integer | Port on which the backend server is listening for connections from Fastly. Setting port to 80 or 443 will also set use_ssl automatically (to false and true respectively), unless explicitly overridden by setting use_ssl in the same request. |\n| prefer_ipv6 | boolean | Prefer IPv6 connections to origins for hostname backends. Default is \u0027false\u0027 for Delivery services and \u0027true\u0027 for Compute services. |\n| request_condition | string | Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any auto_loadbalance setting. By default, the first backend added to a service is selected for all requests. |\n| share_key | string | Value that when shared across backends will enable those backends to share the same health check. |\n| shield | string | Identifier of the POP to use as a shield. |\n| ssl_ca_cert | string | CA certificate attached to origin. |\n| ssl_cert_hostname | string | Overrides ssl_hostname, but only for cert verification. Does not affect SNI at all. |\n| ssl_check_cert | boolean | Be strict on checking SSL certs. |\n| ssl_ciphers | string | List of OpenSSL ciphers to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic 503 error response will be generated. |\n| ssl_client_cert | string | Client certificate attached to origin. |\n| ssl_client_key | string | Client key attached to origin. |\n| ssl_hostname | string | Use ssl_cert_hostname and ssl_sni_hostname to configure certificate validation. |\n| ssl_sni_hostname | string | Overrides ssl_hostname, but only for SNI in the handshake. Does not affect cert validation at all. |\n| tcp_keepalive_enable | boolean | Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified. |\n| tcp_keepalive_interval | integer | Interval in seconds between subsequent keepalive probes. |\n| tcp_keepalive_probes | integer | Number of unacknowledged probes to send before considering the connection dead. |\n| tcp_keepalive_time | integer | Interval in seconds between the last data packet sent and the first keepalive probe. |\n| use_ssl | boolean | Whether or not to require TLS for connections to this backend. |\n| weight | integer | Weight used to load balance this backend against others. May be any positive integer. If auto_loadbalance is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have auto_loadbalance set to true. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| locked | boolean | Indicates whether the version of the service this backend is attached to accepts edits. |\n| service_id | string | Alphanumeric string identifying the service. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| version | integer | Integer identifying a service version. |"
     },
     {
       "name": "Services / Domain",
@@ -219526,6 +220905,10 @@
     },
     {
       "key": "logging_elasticsearch_name",
+      "description": "The name for the real-time logging configuration."
+    },
+    {
+      "key": "logging_fos_name",
       "description": "The name for the real-time logging configuration."
     },
     {
