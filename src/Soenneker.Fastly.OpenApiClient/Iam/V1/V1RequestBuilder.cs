@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Fastly.OpenApiClient.Iam.V1.Organizations;
 using Soenneker.Fastly.OpenApiClient.Iam.V1.Roles;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Fastly.OpenApiClient.Iam.V1
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The organizations property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.Iam.V1.Organizations.OrganizationsRequestBuilder Organizations
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.Iam.V1.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The roles property</summary>
         public global::Soenneker.Fastly.OpenApiClient.Iam.V1.Roles.RolesRequestBuilder Roles
         {

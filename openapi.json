@@ -124587,6 +124587,3795 @@
         ]
       }
     },
+    "/iam/v1/organizations/{organization_id}/invitations": {
+      "get": {
+        "tags": [
+          "Organizations / Invitations"
+        ],
+        "summary": "List invitations",
+        "description": "Retrieve a paginated list of the invitations belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "ListInvitations2",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "Filter by full invitee email address. Matching is case-insensitive.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by invitation status.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "organization_id": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "role_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "total": {
+                          "type": "integer",
+                          "format": "int64"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "data": [
+                        {
+                          "id": "3krg2uUGZzb2W9Euo4moOY",
+                          "organization_id": "x9KzsrACXZv8tPwlEDsKb6",
+                          "email": "thelma@example.com",
+                          "status": "active",
+                          "role_ids": [
+                            "Q4rXe9vN1szK8a2fUjYtWp"
+                          ],
+                          "created_at": "2025-06-17T14:32:07Z",
+                          "updated_at": "2025-06-17T14:32:07Z"
+                        }
+                      ],
+                      "meta": {
+                        "limit": 20,
+                        "total": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List invitations",
+            "id": null,
+            "request": {
+              "name": "List invitations",
+              "description": "Retrieve a paginated list of the invitations belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/invitations",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "invitations"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                  },
+                  {
+                    "key": "email",
+                    "description": "Filter by full invitee email address. Matching is case-insensitive."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Limit how many results are returned."
+                  },
+                  {
+                    "key": "status",
+                    "description": "Filter by invitation status."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"data\":[{\"id\":\"3krg2uUGZzb2W9Euo4moOY\",\"organization_id\":\"x9KzsrACXZv8tPwlEDsKb6\",\"email\":\"thelma@example.com\",\"status\":\"active\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"],\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}],\"meta\":{\"limit\":20,\"total\":1}}",
+                "originalRequest": {
+                  "name": "List invitations",
+                  "description": "Retrieve a paginated list of the invitations belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/invitations?status=accepted",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "invitations?status=accepted"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                      },
+                      {
+                        "key": "email",
+                        "description": "Filter by full invitee email address. Matching is case-insensitive."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Limit how many results are returned."
+                      },
+                      {
+                        "key": "status",
+                        "description": "Filter by invitation status."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Invitations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Organizations / Invitations"
+        ],
+        "summary": "Create an invitation",
+        "description": "Invite a person to join an organization and email them an acceptance link.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "CreateAnInvitation2",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "role_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "email": "thelma@example.com",
+                    "role_ids": [
+                      "Q4rXe9vN1szK8a2fUjYtWp"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201 Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "organization_id": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "role_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "201_Created": {
+                    "summary": "201 Created",
+                    "value": {
+                      "id": "3krg2uUGZzb2W9Euo4moOY",
+                      "organization_id": "x9KzsrACXZv8tPwlEDsKb6",
+                      "email": "thelma@example.com",
+                      "status": "active",
+                      "role_ids": [
+                        "Q4rXe9vN1szK8a2fUjYtWp"
+                      ],
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Create an invitation",
+            "id": null,
+            "request": {
+              "name": "Create an invitation",
+              "description": "Invite a person to join an organization and email them an acceptance link.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "POST",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/invitations",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "invitations"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"email\":\"thelma@example.com\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"]}"
+              }
+            },
+            "response": [
+              {
+                "status": "201 Created",
+                "name": "201 Created",
+                "code": 201,
+                "header": [ ],
+                "body": "{\"id\":\"3krg2uUGZzb2W9Euo4moOY\",\"organization_id\":\"x9KzsrACXZv8tPwlEDsKb6\",\"email\":\"thelma@example.com\",\"status\":\"active\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"],\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Create an invitation",
+                  "description": "Invite a person to join an organization and email them an acceptance link.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "POST",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/invitations",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "invitations"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"email\":\"thelma@example.com\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"]}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Invitations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/iam/v1/organizations/{organization_id}/invitations/{organization_invitation_id}": {
+      "get": {
+        "tags": [
+          "Organizations / Invitations"
+        ],
+        "summary": "Get an invitation",
+        "description": "Retrieve a specific organization invitation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetAnInvitation",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization_invitation_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization invitation.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "organization_id": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "role_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "id": "3krg2uUGZzb2W9Euo4moOY",
+                      "organization_id": "x9KzsrACXZv8tPwlEDsKb6",
+                      "email": "thelma@example.com",
+                      "status": "active",
+                      "role_ids": [
+                        "Q4rXe9vN1szK8a2fUjYtWp"
+                      ],
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get an invitation",
+            "id": null,
+            "request": {
+              "name": "Get an invitation",
+              "description": "Retrieve a specific organization invitation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/invitations/{{organization_invitation_id}}",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "invitations",
+                  "{{organization_invitation_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"3krg2uUGZzb2W9Euo4moOY\",\"organization_id\":\"x9KzsrACXZv8tPwlEDsKb6\",\"email\":\"thelma@example.com\",\"status\":\"active\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"],\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Get an invitation",
+                  "description": "Retrieve a specific organization invitation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/invitations/3krg2uUGZzb2W9Euo4moOY",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "invitations",
+                      "3krg2uUGZzb2W9Euo4moOY"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Invitations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Organizations / Invitations"
+        ],
+        "summary": "Update an invitation",
+        "description": "Update an active organization invitation. Only the status field can be updated, and only to canceled.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "UpdateAnInvitation",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization_invitation_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization invitation.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "status": "canceled"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "organization_id": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "role_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "id": "3krg2uUGZzb2W9Euo4moOY",
+                      "organization_id": "x9KzsrACXZv8tPwlEDsKb6",
+                      "email": "thelma@example.com",
+                      "status": "canceled",
+                      "role_ids": [
+                        "Q4rXe9vN1szK8a2fUjYtWp"
+                      ],
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update an invitation",
+            "id": null,
+            "request": {
+              "name": "Update an invitation",
+              "description": "Update an active organization invitation. Only the status field can be updated, and only to canceled.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "PATCH",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/invitations/{{organization_invitation_id}}",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "invitations",
+                  "{{organization_invitation_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"status\":\"canceled\"}"
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"3krg2uUGZzb2W9Euo4moOY\",\"organization_id\":\"x9KzsrACXZv8tPwlEDsKb6\",\"email\":\"thelma@example.com\",\"status\":\"canceled\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"],\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Update an invitation",
+                  "description": "Update an active organization invitation. Only the status field can be updated, and only to canceled.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "PATCH",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/invitations/3krg2uUGZzb2W9Euo4moOY",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "invitations",
+                      "3krg2uUGZzb2W9Euo4moOY"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"status\":\"canceled\"}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Invitations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/iam/v1/organizations/{organization_id}/invitations/{organization_invitation_id}/notifications": {
+      "post": {
+        "tags": [
+          "Organizations / Invitations"
+        ],
+        "summary": "Resend an invitation",
+        "description": "Resend the acceptance email for an active organization invitation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "ResendAnInvitation",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization_invitation_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization invitation.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "organization_id": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "role_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "id": "3krg2uUGZzb2W9Euo4moOY",
+                      "organization_id": "x9KzsrACXZv8tPwlEDsKb6",
+                      "email": "thelma@example.com",
+                      "status": "active",
+                      "role_ids": [
+                        "Q4rXe9vN1szK8a2fUjYtWp"
+                      ],
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Resend an invitation",
+            "id": null,
+            "request": {
+              "name": "Resend an invitation",
+              "description": "Resend the acceptance email for an active organization invitation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "POST",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/invitations/{{organization_invitation_id}}/notifications",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "invitations",
+                  "{{organization_invitation_id}}",
+                  "notifications"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"3krg2uUGZzb2W9Euo4moOY\",\"organization_id\":\"x9KzsrACXZv8tPwlEDsKb6\",\"email\":\"thelma@example.com\",\"status\":\"active\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"],\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Resend an invitation",
+                  "description": "Resend the acceptance email for an active organization invitation.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "POST",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/invitations/3krg2uUGZzb2W9Euo4moOY/notifications",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "invitations",
+                      "3krg2uUGZzb2W9Euo4moOY",
+                      "notifications"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Invitations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/iam/v1/organizations/{organization_id}/memberships": {
+      "get": {
+        "tags": [
+          "Organizations / Memberships"
+        ],
+        "summary": "List memberships",
+        "description": "Retrieve a paginated list of the memberships belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "ListMemberships",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "email_includes",
+            "in": "query",
+            "description": "Filter by partial user email address.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "Filter by exact user email address.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "id_includes",
+            "in": "query",
+            "description": "Filter by partial membership ID.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Filter by exact membership ID.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Embed the related user object in each membership.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of results per page. The maximum is 1000.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "name_includes",
+            "in": "query",
+            "description": "Filter by partial user name.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter by exact user name.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "Filter by the name of one of the roles assigned to the membership.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "organization_id": {
+                            "type": "string"
+                          },
+                          "user_id": {
+                            "type": "string"
+                          },
+                          "role_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "last_viewed_at": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "total": {
+                          "type": "integer",
+                          "format": "int64"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "data": [
+                        {
+                          "id": "7bPq2xLm9sTcVd4RkNw1Ej",
+                          "organization_id": "x9KzsrACXZv8tPwlEDsKb6",
+                          "user_id": "5mHt8KcWq1zYb3JrXf6NpA",
+                          "role_ids": [
+                            "Q4rXe9vN1szK8a2fUjYtWp"
+                          ],
+                          "last_viewed_at": "2025-06-18T09:12:44Z",
+                          "created_at": "2025-06-17T14:32:07Z",
+                          "updated_at": "2025-06-17T14:32:07Z"
+                        }
+                      ],
+                      "meta": {
+                        "limit": 10,
+                        "total": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List memberships",
+            "id": null,
+            "request": {
+              "name": "List memberships",
+              "description": "Retrieve a paginated list of the memberships belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/memberships",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "memberships"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                  },
+                  {
+                    "key": "email_includes",
+                    "description": "Filter by partial user email address."
+                  },
+                  {
+                    "key": "email",
+                    "description": "Filter by exact user email address."
+                  },
+                  {
+                    "key": "id_includes",
+                    "description": "Filter by partial membership ID."
+                  },
+                  {
+                    "key": "id",
+                    "description": "Filter by exact membership ID."
+                  },
+                  {
+                    "key": "include",
+                    "description": "Embed the related user object in each membership."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Number of results per page. The maximum is 1000."
+                  },
+                  {
+                    "key": "name_includes",
+                    "description": "Filter by partial user name."
+                  },
+                  {
+                    "key": "name",
+                    "description": "Filter by exact user name."
+                  },
+                  {
+                    "key": "role",
+                    "description": "Filter by the name of one of the roles assigned to the membership."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"data\":[{\"id\":\"7bPq2xLm9sTcVd4RkNw1Ej\",\"organization_id\":\"x9KzsrACXZv8tPwlEDsKb6\",\"user_id\":\"5mHt8KcWq1zYb3JrXf6NpA\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"],\"last_viewed_at\":\"2025-06-18T09:12:44Z\",\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}],\"meta\":{\"limit\":10,\"total\":1}}",
+                "originalRequest": {
+                  "name": "List memberships",
+                  "description": "Retrieve a paginated list of the memberships belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/memberships?role=org_admin",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "memberships?role=org_admin"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                      },
+                      {
+                        "key": "email_includes",
+                        "description": "Filter by partial user email address."
+                      },
+                      {
+                        "key": "email",
+                        "description": "Filter by exact user email address."
+                      },
+                      {
+                        "key": "id_includes",
+                        "description": "Filter by partial membership ID."
+                      },
+                      {
+                        "key": "id",
+                        "description": "Filter by exact membership ID."
+                      },
+                      {
+                        "key": "include",
+                        "description": "Embed the related user object in each membership."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Number of results per page. The maximum is 1000."
+                      },
+                      {
+                        "key": "name_includes",
+                        "description": "Filter by partial user name."
+                      },
+                      {
+                        "key": "name",
+                        "description": "Filter by exact user name."
+                      },
+                      {
+                        "key": "role",
+                        "description": "Filter by the name of one of the roles assigned to the membership."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Memberships"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/iam/v1/organizations/{organization_id}/memberships/{organization_membership_id}": {
+      "get": {
+        "tags": [
+          "Organizations / Memberships"
+        ],
+        "summary": "Get a membership",
+        "description": "Retrieve a specific organization membership.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetAMembership",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization_membership_id",
+            "in": "path",
+            "description": "Alphanumeric unique identifier for the organization membership.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Embed the related user object in each membership.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "organization_id": {
+                      "type": "string"
+                    },
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "role_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "last_viewed_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "id": "7bPq2xLm9sTcVd4RkNw1Ej",
+                      "organization_id": "x9KzsrACXZv8tPwlEDsKb6",
+                      "user_id": "5mHt8KcWq1zYb3JrXf6NpA",
+                      "role_ids": [
+                        "Q4rXe9vN1szK8a2fUjYtWp"
+                      ],
+                      "last_viewed_at": "2025-06-18T09:12:44Z",
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get a membership",
+            "id": null,
+            "request": {
+              "name": "Get a membership",
+              "description": "Retrieve a specific organization membership.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/memberships/{{organization_membership_id}}",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "memberships",
+                  "{{organization_membership_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "include",
+                    "description": "Embed the related user object in each membership."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"7bPq2xLm9sTcVd4RkNw1Ej\",\"organization_id\":\"x9KzsrACXZv8tPwlEDsKb6\",\"user_id\":\"5mHt8KcWq1zYb3JrXf6NpA\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\"],\"last_viewed_at\":\"2025-06-18T09:12:44Z\",\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Get a membership",
+                  "description": "Retrieve a specific organization membership.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/memberships/7bPq2xLm9sTcVd4RkNw1Ej",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "memberships",
+                      "7bPq2xLm9sTcVd4RkNw1Ej"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "include",
+                        "description": "Embed the related user object in each membership."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Memberships"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Organizations / Memberships"
+        ],
+        "summary": "Delete a membership",
+        "description": "Remove a membership from an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "DeleteAMembership",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization_membership_id",
+            "in": "path",
+            "description": "Alphanumeric unique identifier for the organization membership.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 No Content"
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Delete a membership",
+            "id": null,
+            "request": {
+              "name": "Delete a membership",
+              "description": "Remove a membership from an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "DELETE",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/memberships/{{organization_membership_id}}",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "memberships",
+                  "{{organization_membership_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "204 No Content",
+                "name": "204 No Content",
+                "code": 204,
+                "header": [ ],
+                "originalRequest": {
+                  "name": "Delete a membership",
+                  "description": "Remove a membership from an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "DELETE",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/memberships/7bPq2xLm9sTcVd4RkNw1Ej",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "memberships",
+                      "7bPq2xLm9sTcVd4RkNw1Ej"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Memberships"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Organizations / Memberships"
+        ],
+        "summary": "Update a membership",
+        "description": "Update an organization membership.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "UpdateAMembership",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "organization_membership_id",
+            "in": "path",
+            "description": "Alphanumeric unique identifier for the organization membership.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "role_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "role_ids": [
+                      "Q4rXe9vN1szK8a2fUjYtWp",
+                      "H8wNc3Ta6yRe1oMbVk5sZd"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "organization_id": {
+                      "type": "string"
+                    },
+                    "user_id": {
+                      "type": "string"
+                    },
+                    "role_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "last_viewed_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "id": "7bPq2xLm9sTcVd4RkNw1Ej",
+                      "organization_id": "x9KzsrACXZv8tPwlEDsKb6",
+                      "user_id": "5mHt8KcWq1zYb3JrXf6NpA",
+                      "role_ids": [
+                        "Q4rXe9vN1szK8a2fUjYtWp",
+                        "H8wNc3Ta6yRe1oMbVk5sZd"
+                      ],
+                      "last_viewed_at": "2025-06-18T09:12:44Z",
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-19T11:05:23Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update a membership",
+            "id": null,
+            "request": {
+              "name": "Update a membership",
+              "description": "Update an organization membership.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "PATCH",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/memberships/{{organization_membership_id}}",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "memberships",
+                  "{{organization_membership_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\",\"H8wNc3Ta6yRe1oMbVk5sZd\"]}"
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"7bPq2xLm9sTcVd4RkNw1Ej\",\"organization_id\":\"x9KzsrACXZv8tPwlEDsKb6\",\"user_id\":\"5mHt8KcWq1zYb3JrXf6NpA\",\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\",\"H8wNc3Ta6yRe1oMbVk5sZd\"],\"last_viewed_at\":\"2025-06-18T09:12:44Z\",\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-19T11:05:23Z\"}",
+                "originalRequest": {
+                  "name": "Update a membership",
+                  "description": "Update an organization membership.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "PATCH",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/memberships/7bPq2xLm9sTcVd4RkNw1Ej",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "memberships",
+                      "7bPq2xLm9sTcVd4RkNw1Ej"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"role_ids\":[\"Q4rXe9vN1szK8a2fUjYtWp\",\"H8wNc3Ta6yRe1oMbVk5sZd\"]}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Memberships"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/iam/v1/organizations/{organization_id}": {
+      "get": {
+        "tags": [
+          "Organizations / Organizations"
+        ],
+        "summary": "Get an organization",
+        "description": "Retrieve a specific organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetAnOrganization",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "owner_id": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "id": "7QASFsHDHOEAZiObuLIdbk",
+                      "name": "Test Organization",
+                      "owner_id": "5xeilF3cPGx6cTw0j04CNa",
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get an organization",
+            "id": null,
+            "request": {
+              "name": "Get an organization",
+              "description": "Retrieve a specific organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"7QASFsHDHOEAZiObuLIdbk\",\"name\":\"Test Organization\",\"owner_id\":\"5xeilF3cPGx6cTw0j04CNa\",\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Get an organization",
+                  "description": "Retrieve a specific organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Organizations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Organizations / Organizations"
+        ],
+        "summary": "Update an organization",
+        "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/organizations/organizations/#update-organization)**\n\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "UpdateAnOrganization",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "owner_id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "name": "Test Organization",
+                    "owner_id": "5xeilF3cPGx6cTw0j04CNa"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "owner_id": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "id": "7QASFsHDHOEAZiObuLIdbk",
+                      "name": "Test Organization",
+                      "owner_id": "5xeilF3cPGx6cTw0j04CNa",
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update an organization",
+            "id": null,
+            "request": {
+              "name": "Update an organization",
+              "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/organizations/organizations/#update-organization)**\n\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "PATCH",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\":\"Test Organization\",\"owner_id\":\"5xeilF3cPGx6cTw0j04CNa\"}"
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"id\":\"7QASFsHDHOEAZiObuLIdbk\",\"name\":\"Test Organization\",\"owner_id\":\"5xeilF3cPGx6cTw0j04CNa\",\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Update an organization",
+                  "description": "**[🔗 latest documentation](https://developer.fastly.com/reference/api/organizations/organizations/#update-organization)**\n\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "PATCH",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"Test Organization\",\"owner_id\":\"5xeilF3cPGx6cTw0j04CNa\"}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Organizations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/iam/v1/organizations/{organization_id}/options": {
+      "get": {
+        "tags": [
+          "Organizations / Organizations"
+        ],
+        "summary": "Get organization options",
+        "description": "Get the options configured for an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "GetOrganizationOptions",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "organization_id": {
+                      "type": "string"
+                    },
+                    "force_sso": {
+                      "type": "boolean"
+                    },
+                    "force_2fa": {
+                      "type": "boolean"
+                    },
+                    "payer_account_id": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "organization_id": "4Olkdb4Gm7RiEzllyGxkrG",
+                      "force_sso": true,
+                      "force_2fa": false,
+                      "payer_account_id": "x9KzsrACXZv8tPh2N6Lq3f",
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get organization options",
+            "id": null,
+            "request": {
+              "name": "Get organization options",
+              "description": "Get the options configured for an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/options",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "options"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"organization_id\":\"4Olkdb4Gm7RiEzllyGxkrG\",\"force_sso\":true,\"force_2fa\":false,\"payer_account_id\":\"x9KzsrACXZv8tPh2N6Lq3f\",\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Get organization options",
+                  "description": "Get the options configured for an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/options",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "options"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Organizations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Organizations / Organizations"
+        ],
+        "summary": "Update organization options",
+        "description": "Update the options configured for an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "UpdateOrganizationOptions",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "force_sso": {
+                    "type": "boolean"
+                  },
+                  "force_2fa": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "force_sso": true,
+                    "force_2fa": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "organization_id": {
+                      "type": "string"
+                    },
+                    "force_sso": {
+                      "type": "boolean"
+                    },
+                    "force_2fa": {
+                      "type": "boolean"
+                    },
+                    "payer_account_id": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "organization_id": "4Olkdb4Gm7RiEzllyGxkrG",
+                      "force_sso": true,
+                      "force_2fa": false,
+                      "payer_account_id": "x9KzsrACXZv8tPh2N6Lq3f",
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Update organization options",
+            "id": null,
+            "request": {
+              "name": "Update organization options",
+              "description": "Update the options configured for an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "PATCH",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/options",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "options"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"force_sso\":true,\"force_2fa\":false}"
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"organization_id\":\"4Olkdb4Gm7RiEzllyGxkrG\",\"force_sso\":true,\"force_2fa\":false,\"payer_account_id\":\"x9KzsrACXZv8tPh2N6Lq3f\",\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Update organization options",
+                  "description": "Update the options configured for an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "PATCH",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/options",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "options"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"force_sso\":true,\"force_2fa\":false}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Organizations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/iam/v1/organizations/{organization_id}/accounts": {
+      "get": {
+        "tags": [
+          "Organizations / Organizations"
+        ],
+        "summary": "List accounts",
+        "description": "Retrieve a paginated list of the accounts belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "ListAccounts",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Limit how many results are returned.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "name_includes",
+            "in": "query",
+            "description": "Filter by partial account name.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter by exact account name.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "example1": {
+                "value": ""
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "account_link": {
+                            "type": "object",
+                            "properties": {
+                              "organization_id": {
+                                "type": "string"
+                              },
+                              "created_at": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "created_at": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "meta": {
+                      "type": "object",
+                      "properties": {
+                        "limit": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "total": {
+                          "type": "integer",
+                          "format": "int64"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "200_OK": {
+                    "summary": "200 OK",
+                    "value": {
+                      "data": [
+                        {
+                          "id": "7aW9QRvgCI1vLo6chXtJG4",
+                          "name": "Test Account",
+                          "account_link": {
+                            "organization_id": "4Olkdb4Gm7RiEzllyGxkrG",
+                            "created_at": "2025-06-17T14:32:07Z"
+                          },
+                          "created_at": "2025-06-17T14:32:07Z",
+                          "updated_at": "2025-06-17T14:32:07Z"
+                        }
+                      ],
+                      "meta": {
+                        "limit": 5,
+                        "total": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "List accounts",
+            "id": null,
+            "request": {
+              "name": "List accounts",
+              "description": "Retrieve a paginated list of the accounts belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/accounts",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "accounts"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [
+                  {
+                    "key": "cursor",
+                    "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                  },
+                  {
+                    "key": "limit",
+                    "description": "Limit how many results are returned."
+                  },
+                  {
+                    "key": "name_includes",
+                    "description": "Filter by partial account name."
+                  },
+                  {
+                    "key": "name",
+                    "description": "Filter by exact account name."
+                  }
+                ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "200 OK",
+                "name": "200 OK",
+                "code": 200,
+                "header": [ ],
+                "body": "{\"data\":[{\"id\":\"7aW9QRvgCI1vLo6chXtJG4\",\"name\":\"Test Account\",\"account_link\":{\"organization_id\":\"4Olkdb4Gm7RiEzllyGxkrG\",\"created_at\":\"2025-06-17T14:32:07Z\"},\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}],\"meta\":{\"limit\":5,\"total\":1}}",
+                "originalRequest": {
+                  "name": "List accounts",
+                  "description": "Retrieve a paginated list of the accounts belonging to an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "GET",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/accounts",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "accounts"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [
+                      {
+                        "key": "cursor",
+                        "description": "Cursor value from the next_cursor field of a previous response, used to retrieve the next page. To request the first page, this should be empty."
+                      },
+                      {
+                        "key": "limit",
+                        "description": "Limit how many results are returned."
+                      },
+                      {
+                        "key": "name_includes",
+                        "description": "Filter by partial account name."
+                      },
+                      {
+                        "key": "name",
+                        "description": "Filter by exact account name."
+                      }
+                    ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Organizations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Organizations / Organizations"
+        ],
+        "summary": "Create an account",
+        "description": "Create an account under an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "operationId": "CreateAnAccount",
+        "parameters": [
+          {
+            "name": "organization_id",
+            "in": "path",
+            "description": "Alphanumeric string identifying the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "example1": {
+                  "value": {
+                    "name": "Test Account"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201 Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "account_link": {
+                      "type": "object",
+                      "properties": {
+                        "organization_id": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "201_Created": {
+                    "summary": "201 Created",
+                    "value": {
+                      "id": "7aW9QRvgCI1vLo6chXtJG4",
+                      "name": "Test Account",
+                      "account_link": {
+                        "organization_id": "4Olkdb4Gm7RiEzllyGxkrG",
+                        "created_at": "2025-06-17T14:32:07Z"
+                      },
+                      "created_at": "2025-06-17T14:32:07Z",
+                      "updated_at": "2025-06-17T14:32:07Z"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Create an account",
+            "id": null,
+            "request": {
+              "name": "Create an account",
+              "description": "Create an account under an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "method": "POST",
+              "url": {
+                "raw": "{{fastly_url}}/iam/v1/organizations/{{organization_id}}/accounts",
+                "path": [
+                  "iam",
+                  "v1",
+                  "organizations",
+                  "{{organization_id}}",
+                  "accounts"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Accept",
+                  "value": "application/json"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              },
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\":\"Test Account\"}"
+              }
+            },
+            "response": [
+              {
+                "status": "201 Created",
+                "name": "201 Created",
+                "code": 201,
+                "header": [ ],
+                "body": "{\"id\":\"7aW9QRvgCI1vLo6chXtJG4\",\"name\":\"Test Account\",\"account_link\":{\"organization_id\":\"4Olkdb4Gm7RiEzllyGxkrG\",\"created_at\":\"2025-06-17T14:32:07Z\"},\"created_at\":\"2025-06-17T14:32:07Z\",\"updated_at\":\"2025-06-17T14:32:07Z\"}",
+                "originalRequest": {
+                  "name": "Create an account",
+                  "description": "Create an account under an organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "method": "POST",
+                  "url": {
+                    "raw": "https://api.fastly.com/iam/v1/organizations/x4xCwxxJxGCx123Rx5xTx/accounts",
+                    "path": [
+                      "iam",
+                      "v1",
+                      "organizations",
+                      "x4xCwxxJxGCx123Rx5xTx",
+                      "accounts"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Accept",
+                      "value": "application/json"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"Test Account\"}"
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Organizations",
+              "Organizations"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
     "/enabled-products/v1/ai_accelerator": {
       "get": {
         "tags": [
@@ -206526,6 +210315,18 @@
       "description": "The Observability Timeseries API for Sustainability allows users to query the platform usage, electricity consumption and greenhouse gas (GHG) emission metrics across the Fastly PoP network that are visualized in the Sustainability dashboard.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| bandwidth_gb | number | Total bandwidth consumed across all services in gigabytes (GB). |\n| cputime_sec | number | Total CPU use by compute services in seconds (CPU seconds). |\n| grid_it_mwh | number | Residual grid electricity consumption in megawatt-hours (MWh) by Fastly-operated IT equipment after deducting renewable energy consumption. Applied to residual emission factor per country for GHGP Scope 2 market-based emissions accounting. |\n| grid_non_it_mwh | number | Residual grid electricity consumption in MWh by facility-operated non-IT equipment after deducting renewable energy consumption. Applied to residual emission factor per country for GHGP Scope 3 Category 8 market-based emissions accounting. |\n| renewable_it_mwh | number | Electricity consumption in MWh by Fastly-operated IT equipment covered by renewable energy procurement or on-site generation. Calculated from per-facility data gathered by Fastly from facility operators and backed by documentary evidence or attestations. |\n| renewable_non_it_mwh | number | Electricity consumption in MWh by facility-operated non-IT equipment (e.g. to regulate data center temperature and humidity) covered by renewable energy procurement or on-site generation. Calculated from per-facility data gathered by Fastly from facility operators and backed by documentary evidence or attestations. |\n| scope2_location_mtco2e | number | GHG Scope 2 location-based carbon emissions in metric tons of carbon dioxide equivalent (MTCO2e). |\n| scope2_market_mtco2e | number | GHG Scope 2 market-based carbon emissions in MTCO2e. |\n| scope3_location_mtco2e | number | GHG Scope 3 location-based carbon emissions in MTCO2e. |\n| scope3_market_mtco2e | number | GHG Scope 3 market-based carbon emissions in MTCO2e. |\n| total_it_mwh | number | Total electricity consumption in MWh by Fastly-operated IT equipment based on power distribution unit (PDU) and server power metrics. Applied to electricity generation emission factors per country for Greenhouse Gas Protocol (GHGP) Scope 2 location-based emissions accounting. Also used to calculate GHGP Scope 3 Category 3 emissions of transmission and distribution (T&D) losses, well-to-tank (WTT) emissions, and WTT of T&D. |\n| total_non_it_mwh | number | Total electricity consumption in MWh by facility-operated non-IT equipment based on total_it_mwh and facility power usage effectiveness (PUE) factor. Applied to electricity generation emission factor per country for GHGP Scope 3 Category 8 location-based emissions accounting. |\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| from | string | Start time for the query as supplied in the request. |\n| granularity | string | The granularity of the time buckets in the response. |\n| limit | string | Maximum number of results returned in the request. |\n| next_cursor | string | The value to use as the cursor parameter of the next request to retrieve the following result page. To paginate, use the exact same query parameters with the cursor updated.\nIf this value is empty, you got the last page. |\n| to | string | End time for the query as supplied in the request. |"
     },
     {
+      "name": "Organizations / Invitations",
+      "description": "Organization invitations allow organization admins to invite users to join an organization as members and assign them a role.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| detail | string | A human-readable explanation of the error. |\n| status | integer | The HTTP status code. |\n| title | string | A short summary of the error. |\n| email | string | The email address of the invitee, formatted to be lowercased. |\n| role_ids | array | The organization roles to grant the invitee on acceptance. At least one is required. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| id | string | Alphanumeric string identifying the organization invitation. |\n| organization_id | string | Alphanumeric string identifying the organization. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| meta | object | Pagination metadata. |"
+    },
+    {
+      "name": "Organizations / Memberships",
+      "description": "Organization memberships link users to an organization. Their assigned roles determine what each member is allowed to do within the organization.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| role_ids | array | The IDs of the organization roles assigned to the member. At least one is required, and every role must be valid for the organization. |\n| created_at | string | Date and time in ISO 8601 format. |\n| deleted_at | string | Date and time in ISO 8601 format. |\n| id | string | Alphanumeric unique identifier for the organization membership. |\n| last_viewed_at | string | Date and time of the member's most recent login to the organization. |\n| organization_id | string | Alphanumeric string identifying the organization. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| user | object | The user that holds an organization membership. |\n| user_id | string | Alphanumeric string identifying the user. |\n| email | string | The email address of the user. |\n| multi_factor_auth_enabled | boolean | Indicates whether the user has two-factor authentication enabled. |\n| name | string | The real life name of the user. |\n| meta | object | Pagination metadata. |"
+    },
+    {
+      "name": "Organizations / Organizations",
+      "description": "An organization is the top-level container for a group of Fastly accounts. It owns the memberships and service accounts that authenticate against it, the SAML configurations that federate its logins, and the accounts that hold its services.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| name | string | The name of the account, generally the company name. |\n| created_at | string | Date and time in ISO 8601 format. |\n| organization_id | string | Alphanumeric string identifying the organization. |\n| account_link | object | The link between an account and the organization that owns it. |\n| id | string | Alphanumeric string identifying the account. |\n| updated_at | string | Date and time in ISO 8601 format. |\n| meta | object | Pagination metadata. |\n| limit | integer | Maximum number of results returned. |\n| next_cursor | string | Cursor for the next page. |\n| total | integer | Total number of results across all pages. |\n| owner_id | string | The alphanumeric string identifying the organization owner. |\n| force_2fa | boolean | Specifies whether 2FA is forced or not forced on the organization. Logs out non-2FA organization members once 2FA is force enabled. |\n| force_sso | boolean | Specifies whether SSO is forced or not forced on the organization. |\n| payer_account_id | string | Alphanumeric string identifying the account billed for the organization. |\n| deleted_at | string | Date and time in ISO 8601 format. |"
+    },
+    {
       "name": "Products / AI Accelerator",
       "description": "These endpoints allow you to enable, disable, and check the enablement status of the AI Accelerator product on your customer account.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n"
     },
@@ -207180,6 +210981,18 @@
     {
       "key": "mapping_id",
       "description": "The ID of the event mapping."
+    },
+    {
+      "key": "organization_id",
+      "description": "Alphanumeric string identifying the organization."
+    },
+    {
+      "key": "organization_invitation_id",
+      "description": "Alphanumeric string identifying the organization invitation."
+    },
+    {
+      "key": "organization_membership_id",
+      "description": "Alphanumeric unique identifier for the organization membership."
     },
     {
       "key": "domain_name",
