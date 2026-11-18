@@ -128,7 +128,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "anzac", n => { Anzac = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0EyAnzac>(global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0EyAnzac.CreateFromDiscriminatorValue); } },
                 { "asia", n => { Asia = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0EyAsia>(global::Soenneker.Fastly.OpenApiClient.Models.GetMonthToDateUsageStatistics200ResponseDataServicesSu1Z0IsxPaozGvkXdv0EyAsia.CreateFromDiscriminatorValue); } },

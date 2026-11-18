@@ -128,7 +128,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "client_identifiers", n => { ClientIdentifiers = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetRateLimitedSources200ResponseDataItemClientIdentifiersItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetRateLimitedSources200ResponseDataItemClientIdentifiersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },

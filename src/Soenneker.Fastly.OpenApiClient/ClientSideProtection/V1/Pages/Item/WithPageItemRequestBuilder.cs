@@ -7,6 +7,8 @@ using Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Events;
 using Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Headers;
 using Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Policies;
 using Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts;
+using Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.SigningKey;
+using Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Webhook;
 using Soenneker.Fastly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +42,16 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item
         public global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsRequestBuilder Scripts
         {
             get => new global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Scripts.ScriptsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The signingKey property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.SigningKey.SigningKeyRequestBuilder SigningKey
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.SigningKey.SigningKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The webhook property</summary>
+        public global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Webhook.WebhookRequestBuilder Webhook
+        {
+            get => new global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.Webhook.WebhookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item.WithPageItemRequestBuilder"/> and sets the default values.
@@ -93,7 +105,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetPage200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetPage200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a page&apos;s configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
+        /// Update a page&apos;s configuration. An omitted or null name or paths keeps the stored value; anempty name or an empty paths array is rejected. A request that supplies website_id, even as anempty string, updates the page&apos;s details as a whole, so omitting description clears it. A requestwithout website_id updates only the fields it contains: an omitted description is kept, and anempty string clears it. The website_id field never moves the page; the page stays on its originalwebsite, and path edits always use that website&apos;s domain, even when a different website_id issupplied.notifications and webhook change independently, and neither may be null: null for eitherreturns 400, so omit a field to keep it. notifications lists email destinations only: omit it tokeep them, send an array to replace them, or send an empty array to remove them; it never affectsthe webhook. For webhook, an omitted value, {}, or a body with only enabled keeps the webhook asit is; enabled is read-only and ignored. {&quot;url&quot;: &quot;https://...&quot;} adds a webhook or replaces itsURL while keeping its signing key. An update never removes a webhook; useDELETE /client-side-protection/v1/pages/{page_id}/webhook.Supplying webhook.url requires an API token with global scope, and a verified Customer Support Access grant when a Fastlyadministrator acts on another customer&apos;s behalf. First enabling a webhook returnswebhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store. Replacing itsURL or keeping it does not return or change the key. If the update fails, the page is left as itwas. If another request changes the page&apos;s webhook at the same time, the update returns 409 withthe detail &quot;The Page&apos;s notification destinations changed during this request. Reload the Page andtry again.&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.UpdatePage200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -148,7 +160,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a page&apos;s configuration.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
+        /// Update a page&apos;s configuration. An omitted or null name or paths keeps the stored value; anempty name or an empty paths array is rejected. A request that supplies website_id, even as anempty string, updates the page&apos;s details as a whole, so omitting description clears it. A requestwithout website_id updates only the fields it contains: an omitted description is kept, and anempty string clears it. The website_id field never moves the page; the page stays on its originalwebsite, and path edits always use that website&apos;s domain, even when a different website_id issupplied.notifications and webhook change independently, and neither may be null: null for eitherreturns 400, so omit a field to keep it. notifications lists email destinations only: omit it tokeep them, send an array to replace them, or send an empty array to remove them; it never affectsthe webhook. For webhook, an omitted value, {}, or a body with only enabled keeps the webhook asit is; enabled is read-only and ignored. {&quot;url&quot;: &quot;https://...&quot;} adds a webhook or replaces itsURL while keeping its signing key. An update never removes a webhook; useDELETE /client-side-protection/v1/pages/{page_id}/webhook.Supplying webhook.url requires an API token with global scope, and a verified Customer Support Access grant when a Fastlyadministrator acts on another customer&apos;s behalf. First enabling a webhook returnswebhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store. Replacing itsURL or keeping it does not return or change the key. If the update fails, the page is left as itwas. If another request changes the page&apos;s webhook at the same time, the update returns 409 withthe detail &quot;The Page&apos;s notification destinations changed during this request. Reload the Page andtry again.&quot;.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

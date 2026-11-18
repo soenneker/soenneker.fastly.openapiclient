@@ -109,7 +109,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.GetTrafficStatsForARule200ResponseAttributesItem>(global::Soenneker.Fastly.OpenApiClient.Models.GetTrafficStatsForARule200ResponseAttributesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },

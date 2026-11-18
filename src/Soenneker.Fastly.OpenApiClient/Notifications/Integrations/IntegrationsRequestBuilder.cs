@@ -65,7 +65,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.SearchForIntegrations200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.SearchForIntegrations200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new integration of the given type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Create a new integration of the given type.Names beginning with __cssp_internal_ are reserved for Client-Side Protection (CSP). Only internal Fastly callers may create these managed integrations. CSP-managed integrations receive only CSP alerts and cannot be used in event mappings; manage them through the Client-Side Protection Page endpoints. Event-mapping create and update requests that reference a CSP-managed integration are rejected with a field error. CSP-managed webhooks require an absolute HTTPS URL with a host, no user information or fragment, and a valid port if specified. Their signing key and key ID are returned once; store the key securely. Ordinary webhook creation continues to return only integration_id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreateAnIntegration200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new integration of the given type.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Create a new integration of the given type.Names beginning with __cssp_internal_ are reserved for Client-Side Protection (CSP). Only internal Fastly callers may create these managed integrations. CSP-managed integrations receive only CSP alerts and cannot be used in event mappings; manage them through the Client-Side Protection Page endpoints. Event-mapping create and update requests that reference a CSP-managed integration are rejected with a field error. CSP-managed webhooks require an absolute HTTPS URL with a host, no user information or fragment, and a valid port if specified. Their signing key and key ID are returned once; store the key securely. Ordinary webhook creation continues to return only integration_id.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

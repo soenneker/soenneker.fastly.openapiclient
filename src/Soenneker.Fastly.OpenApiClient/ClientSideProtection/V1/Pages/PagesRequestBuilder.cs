@@ -65,24 +65,24 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.ListPages200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.ListPages200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new page for monitoring.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
+        /// Create a new page for monitoring. notifications lists email destinations only and is optional.To add a webhook, send webhook with a url; omit webhook for a page without one. A page withneither sends no alerts. A webhook entry inside notifications is rejected; use the webhook field.notifications and webhook are optional but not nullable: null for either returns 400.Supplying webhook.url requires an API token with global scope, and a verified Customer SupportAccess grant when a Fastly administrator acts on another customer&apos;s behalf. When creating awebhook, the responsereturns webhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store.Store the key securely; subsequent reads do not return it. If creation fails, no page is createdand no signing key or confirmation email is issued.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.CreatePage201Response"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreatePage201Response?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreatePageRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreatePageRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Fastly.OpenApiClient.Models.CreatePage201Response> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreatePageRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.Fastly.OpenApiClient.Models.CreatePageRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.CreatePage201Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.CreatePage201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all pages. Optionally filter by website.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages
             return requestInfo;
         }
         /// <summary>
-        /// Create a new page for monitoring.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
+        /// Create a new page for monitoring. notifications lists email destinations only and is optional.To add a webhook, send webhook with a url; omit webhook for a page without one. A page withneither sends no alerts. A webhook entry inside notifications is rejected; use the webhook field.notifications and webhook are optional but not nullable: null for either returns 400.Supplying webhook.url requires an API token with global scope, and a verified Customer SupportAccess grant when a Fastly administrator acts on another customer&apos;s behalf. When creating awebhook, the responsereturns webhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store.Store the key securely; subsequent reads do not return it. If creation fails, no page is createdand no signing key or confirmation email is issued.&gt; **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions&quot;) permissions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +121,6 @@ namespace Soenneker.Fastly.OpenApiClient.ClientSideProtection.V1.Pages
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

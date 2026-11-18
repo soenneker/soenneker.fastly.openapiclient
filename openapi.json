@@ -121911,7 +121911,7 @@
           "Observability / Notification Service"
         ],
         "summary": "Create an integration",
-        "description": "Create a new integration of the given type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "description": "Create a new integration of the given type.\nNames beginning with __cssp_internal_ are reserved for Client-Side Protection (CSP). Only internal Fastly callers may create these managed integrations. CSP-managed integrations receive only CSP alerts and cannot be used in event mappings; manage them through the Client-Side Protection Page endpoints. Event-mapping create and update requests that reference a CSP-managed integration are rejected with a field error. CSP-managed webhooks require an absolute HTTPS URL with a host, no user information or fragment, and a valid port if specified. Their signing key and key ID are returned once; store the key securely. Ordinary webhook creation continues to return only integration_id.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "CreateAnIntegration",
         "requestBody": {
           "content": {
@@ -121955,7 +121955,7 @@
         },
         "responses": {
           "200": {
-            "description": "200 Creation was successful",
+            "description": "200 Creation was successful. CSP-managed webhooks also return their new signing key once.",
             "content": {
               "application/json": {
                 "schema": {
@@ -121967,8 +121967,8 @@
                   }
                 },
                 "examples": {
-                  "200_Creation_was_successful": {
-                    "summary": "200 Creation was successful",
+                  "200_Creation_was_successful._CSP-managed_webhooks_also_return_their_new_signing_key_once.": {
+                    "summary": "200 Creation was successful. CSP-managed webhooks also return their new signing key once.",
                     "value": {
                       "integration_id": "12pkXDutPjb9DI8JNYNm5q"
                     }
@@ -121994,7 +121994,7 @@
             "id": null,
             "request": {
               "name": "Create an integration",
-              "description": "Create a new integration of the given type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "description": "Create a new integration of the given type.\nNames beginning with __cssp_internal_ are reserved for Client-Side Protection (CSP). Only internal Fastly callers may create these managed integrations. CSP-managed integrations receive only CSP alerts and cannot be used in event mappings; manage them through the Client-Side Protection Page endpoints. Event-mapping create and update requests that reference a CSP-managed integration are rejected with a field error. CSP-managed webhooks require an absolute HTTPS URL with a host, no user information or fragment, and a valid port if specified. Their signing key and key ID are returned once; store the key securely. Ordinary webhook creation continues to return only integration_id.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "POST",
               "url": {
                 "raw": "{{fastly_url}}/notifications/integrations",
@@ -122043,14 +122043,14 @@
             },
             "response": [
               {
-                "status": "200 Creation was successful",
-                "name": "200 Creation was successful",
+                "status": "200 Creation was successful. CSP-managed webhooks also return their new signing key once.",
+                "name": "200 Creation was successful. CSP-managed webhooks also return their new signing key once.",
                 "code": 200,
                 "header": [ ],
                 "body": "{\"integration_id\":\"12pkXDutPjb9DI8JNYNm5q\"}",
                 "originalRequest": {
                   "name": "Create an integration",
-                  "description": "Create a new integration of the given type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "description": "Create a new integration of the given type.\nNames beginning with __cssp_internal_ are reserved for Client-Side Protection (CSP). Only internal Fastly callers may create these managed integrations. CSP-managed integrations receive only CSP alerts and cannot be used in event mappings; manage them through the Client-Side Protection Page endpoints. Event-mapping create and update requests that reference a CSP-managed integration are rejected with a field error. CSP-managed webhooks require an absolute HTTPS URL with a host, no user information or fragment, and a valid port if specified. Their signing key and key ID are returned once; store the key securely. Ordinary webhook creation continues to return only integration_id.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "POST",
                   "url": {
                     "raw": "https://api.fastly.com/notifications/integrations",
@@ -122335,7 +122335,7 @@
           "Observability / Notification Service"
         ],
         "summary": "Delete an integration",
-        "description": "Delete an integration. The effect is immediate and does not require confirmation.\nAs a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "description": "Delete an integration. The effect is immediate and does not require confirmation.\nAs a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.\nOnly internal Fastly callers may delete CSP-managed integrations (names beginning with __cssp_internal_).\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "DeleteAnIntegration",
         "parameters": [
           {
@@ -122369,7 +122369,7 @@
             "id": null,
             "request": {
               "name": "Delete an integration",
-              "description": "Delete an integration. The effect is immediate and does not require confirmation.\nAs a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "description": "Delete an integration. The effect is immediate and does not require confirmation.\nAs a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.\nOnly internal Fastly callers may delete CSP-managed integrations (names beginning with __cssp_internal_).\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "DELETE",
               "url": {
                 "raw": "{{fastly_url}}/notifications/integrations/{{integration_id}}",
@@ -122413,7 +122413,7 @@
                 "header": [ ],
                 "originalRequest": {
                   "name": "Delete an integration",
-                  "description": "Delete an integration. The effect is immediate and does not require confirmation.\nAs a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "description": "Delete an integration. The effect is immediate and does not require confirmation.\nAs a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.\nOnly internal Fastly callers may delete CSP-managed integrations (names beginning with __cssp_internal_).\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "DELETE",
                   "url": {
                     "raw": "https://api.fastly.com/notifications/integrations/5zWgM0qxIvGg3dspNSoCr",
@@ -122478,7 +122478,7 @@
           "Observability / Notification Service"
         ],
         "summary": "Update an integration",
-        "description": "Update an existing integration, only updating the fields that are given and leaving the others untouched.\nIf the type is changed, then you must also fill out the specific fields required by the integration.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "description": "Update an existing integration, only updating the fields that are given and leaving the others untouched.\nIf the type is changed, then you must also fill out the specific fields required by the integration.\nOnly internal Fastly callers may modify CSP-managed integrations (names beginning with __cssp_internal_). Integrations cannot be renamed into or out of this namespace, and a CSP-managed integration's type cannot change. CSP-managed webhook URLs use the same validation as creation. Updating a webhook URL preserves its signing key and does not return it.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "UpdateAnIntegration",
         "parameters": [
           {
@@ -122540,7 +122540,7 @@
             "id": null,
             "request": {
               "name": "Update an integration",
-              "description": "Update an existing integration, only updating the fields that are given and leaving the others untouched.\nIf the type is changed, then you must also fill out the specific fields required by the integration.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "description": "Update an existing integration, only updating the fields that are given and leaving the others untouched.\nIf the type is changed, then you must also fill out the specific fields required by the integration.\nOnly internal Fastly callers may modify CSP-managed integrations (names beginning with __cssp_internal_). Integrations cannot be renamed into or out of this namespace, and a CSP-managed integration's type cannot change. CSP-managed webhook URLs use the same validation as creation. Updating a webhook URL preserves its signing key and does not return it.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "PATCH",
               "url": {
                 "raw": "{{fastly_url}}/notifications/integrations/{{integration_id}}",
@@ -122592,7 +122592,7 @@
                 "header": [ ],
                 "originalRequest": {
                   "name": "Update an integration",
-                  "description": "Update an existing integration, only updating the fields that are given and leaving the others untouched.\nIf the type is changed, then you must also fill out the specific fields required by the integration.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "description": "Update an existing integration, only updating the fields that are given and leaving the others untouched.\nIf the type is changed, then you must also fill out the specific fields required by the integration.\nOnly internal Fastly callers may modify CSP-managed integrations (names beginning with __cssp_internal_). Integrations cannot be renamed into or out of this namespace, and a CSP-managed integration's type cannot change. CSP-managed webhook URLs use the same validation as creation. Updating a webhook URL preserves its signing key and does not return it.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "PATCH",
                   "url": {
                     "raw": "https://api.fastly.com/notifications/integrations/5zWgM0qxIvGg3dspNSoCr",
@@ -122667,7 +122667,7 @@
           "Observability / Notification Service"
         ],
         "summary": "Get webhook payload signing key",
-        "description": "Get the signing key used to sign payloads for a webhook integration.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "description": "Get the signing key used to sign payloads for an ordinary webhook integration. For CSP-managed integrations (names beginning with __cssp_internal_), return only key_id, never the signing key, including for internal callers. CSP keys are returned only when created or rotated.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "GetWebhookPayloadSigningKey",
         "parameters": [
           {
@@ -122682,7 +122682,7 @@
         ],
         "responses": {
           "200": {
-            "description": "200 Requested webhook signing key",
+            "description": "200 Requested ordinary webhook signing key or CSP key ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -122694,8 +122694,8 @@
                   }
                 },
                 "examples": {
-                  "200_Requested_webhook_signing_key": {
-                    "summary": "200 Requested webhook signing key",
+                  "200_Requested_ordinary_webhook_signing_key_or_CSP_key_ID.": {
+                    "summary": "200 Requested ordinary webhook signing key or CSP key ID.",
                     "value": {
                       "signingKey": "8a9f54e9-17a2-45df-9541-6828a13a3fdd"
                     }
@@ -122721,7 +122721,7 @@
             "id": null,
             "request": {
               "name": "Get webhook payload signing key",
-              "description": "Get the signing key used to sign payloads for a webhook integration.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "description": "Get the signing key used to sign payloads for an ordinary webhook integration. For CSP-managed integrations (names beginning with __cssp_internal_), return only key_id, never the signing key, including for internal callers. CSP keys are returned only when created or rotated.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "GET",
               "url": {
                 "raw": "{{fastly_url}}/notifications/integrations/{{integration_id}}/signingKey",
@@ -122764,14 +122764,14 @@
             },
             "response": [
               {
-                "status": "200 Requested webhook signing key",
-                "name": "200 Requested webhook signing key",
+                "status": "200 Requested ordinary webhook signing key or CSP key ID.",
+                "name": "200 Requested ordinary webhook signing key or CSP key ID.",
                 "code": 200,
                 "header": [ ],
                 "body": "{\"signingKey\":\"8a9f54e9-17a2-45df-9541-6828a13a3fdd\"}",
                 "originalRequest": {
                   "name": "Get webhook payload signing key",
-                  "description": "Get the signing key used to sign payloads for a webhook integration.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "description": "Get the signing key used to sign payloads for an ordinary webhook integration. For CSP-managed integrations (names beginning with __cssp_internal_), return only key_id, never the signing key, including for internal callers. CSP keys are returned only when created or rotated.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "GET",
                   "url": {
                     "raw": "https://api.fastly.com/notifications/integrations/5zWgM0qxIvGg3dspNSoCr/signingKey",
@@ -122843,7 +122843,7 @@
           "Observability / Notification Service"
         ],
         "summary": "Rotate webhook payload signing key",
-        "description": "Rotate the webhook signing key. This immediately updates the signing key for any new notification.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "description": "Rotate the webhook signing key. The replacement applies to newly fetched configurations. Only internal Fastly callers may rotate CSP-managed integrations (names beginning with __cssp_internal_). Their response contains signingKey and key_id; store the replacement securely because subsequent GET requests return only its ID. Ordinary webhook rotation keeps its existing signingKey response. Queued CSP deliveries retain their original key, so for 72 hours plus five minutes after a rotation receivers must accept a signature that matches either the current key or the previous key. If a rotation response is lost, the key may already have changed; explicitly rotate again to obtain a replacement instead of retrying automatically.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "RotateWebhookPayloadSigningKey",
         "parameters": [
           {
@@ -122858,7 +122858,7 @@
         ],
         "responses": {
           "200": {
-            "description": "200 Rotated webhook signing key",
+            "description": "200 Rotated webhook signing key. CSP-managed webhooks also return the new key ID.",
             "content": {
               "application/json": {
                 "schema": {
@@ -122870,8 +122870,8 @@
                   }
                 },
                 "examples": {
-                  "200_Rotated_webhook_signing_key": {
-                    "summary": "200 Rotated webhook signing key",
+                  "200_Rotated_webhook_signing_key._CSP-managed_webhooks_also_return_the_new_key_ID.": {
+                    "summary": "200 Rotated webhook signing key. CSP-managed webhooks also return the new key ID.",
                     "value": {
                       "signingKey": "8a9f54e9-17a2-45df-9541-6828a13a3fdd"
                     }
@@ -122897,7 +122897,7 @@
             "id": null,
             "request": {
               "name": "Rotate webhook payload signing key",
-              "description": "Rotate the webhook signing key. This immediately updates the signing key for any new notification.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "description": "Rotate the webhook signing key. The replacement applies to newly fetched configurations. Only internal Fastly callers may rotate CSP-managed integrations (names beginning with __cssp_internal_). Their response contains signingKey and key_id; store the replacement securely because subsequent GET requests return only its ID. Ordinary webhook rotation keeps its existing signingKey response. Queued CSP deliveries retain their original key, so for 72 hours plus five minutes after a rotation receivers must accept a signature that matches either the current key or the previous key. If a rotation response is lost, the key may already have changed; explicitly rotate again to obtain a replacement instead of retrying automatically.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "POST",
               "url": {
                 "raw": "{{fastly_url}}/notifications/integrations/{{integration_id}}/rotateSigningKey",
@@ -122940,14 +122940,14 @@
             },
             "response": [
               {
-                "status": "200 Rotated webhook signing key",
-                "name": "200 Rotated webhook signing key",
+                "status": "200 Rotated webhook signing key. CSP-managed webhooks also return the new key ID.",
+                "name": "200 Rotated webhook signing key. CSP-managed webhooks also return the new key ID.",
                 "code": 200,
                 "header": [ ],
                 "body": "{\"signingKey\":\"8a9f54e9-17a2-45df-9541-6828a13a3fdd\"}",
                 "originalRequest": {
                   "name": "Rotate webhook payload signing key",
-                  "description": "Rotate the webhook signing key. This immediately updates the signing key for any new notification.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "description": "Rotate the webhook signing key. The replacement applies to newly fetched configurations. Only internal Fastly callers may rotate CSP-managed integrations (names beginning with __cssp_internal_). Their response contains signingKey and key_id; store the replacement securely because subsequent GET requests return only its ID. Ordinary webhook rotation keeps its existing signingKey response. Queued CSP deliveries retain their original key, so for 72 hours plus five minutes after a rotation receivers must accept a signature that matches either the current key or the previous key. If a rotation response is lost, the key may already have changed; explicitly rotate again to obtain a replacement instead of retrying automatically.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "POST",
                   "url": {
                     "raw": "https://api.fastly.com/notifications/integrations/5zWgM0qxIvGg3dspNSoCr/rotateSigningKey",
@@ -125070,7 +125070,7 @@
           "Notification Service / Event Mappings"
         ],
         "summary": "Create an event mapping",
-        "description": "Creates an event mapping. The mapping becomes active immediately.\nintegration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.\nFor scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "description": "Creates an event mapping. The mapping becomes active immediately.\nintegration_ids must reference integrations for the account linked to the supplied token, and cannot include integrations that Client-Side Protection manages for its Pages. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.\nFor scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "CreateAnEventMapping",
         "requestBody": {
           "content": {
@@ -125211,7 +125211,7 @@
             "id": null,
             "request": {
               "name": "Create an event mapping",
-              "description": "Creates an event mapping. The mapping becomes active immediately.\nintegration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.\nFor scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "description": "Creates an event mapping. The mapping becomes active immediately.\nintegration_ids must reference integrations for the account linked to the supplied token, and cannot include integrations that Client-Side Protection manages for its Pages. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.\nFor scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "POST",
               "url": {
                 "raw": "{{fastly_url}}/notifications/v1/event-mappings",
@@ -125268,7 +125268,7 @@
                 "body": "{\"id\":\"6es1LOoxtL1yybTnlRpmC7\",\"customer_id\":\"x4xCwxxJxGCx123Rx5xTx\",\"name\":\"User login alerts\",\"description\":\"Sends a notification when any user logs in\",\"scope_type\":\"account\",\"scope_ids\":[],\"event_types\":[\"user.login\"],\"integration_ids\":[\"5zWgM0qxIvGg3dspNSoCr\"],\"mapping_status\":\"active\",\"created_at\":\"2024-01-15T10:30:00Z\",\"updated_at\":\"2024-01-15T10:30:00Z\"}",
                 "originalRequest": {
                   "name": "Create an event mapping",
-                  "description": "Creates an event mapping. The mapping becomes active immediately.\nintegration_ids must reference integrations for the account linked to the supplied token. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.\nFor scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "description": "Creates an event mapping. The mapping becomes active immediately.\nintegration_ids must reference integrations for the account linked to the supplied token, and cannot include integrations that Client-Side Protection manages for its Pages. event_types must be valid for the given scope_type. Use the event-types endpoint to confirm compatibility.\nFor scope_type values other than account, the scope_ids parameter can be provided to restrict the mapping to specific services or workspaces. An empty scope_ids array means the mapping applies to all resources of that scope type.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "POST",
                   "url": {
                     "raw": "https://api.fastly.com/notifications/v1/event-mappings",
@@ -180171,6 +180171,14 @@
                               }
                             }
                           },
+                          "webhook": {
+                            "type": "object",
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean"
+                              }
+                            }
+                          },
                           "paths": {
                             "type": "array",
                             "items": {
@@ -180223,6 +180231,9 @@
                               }
                             }
                           ],
+                          "webhook": {
+                            "enabled": false
+                          },
                           "paths": [
                             "/checkout",
                             "/cart"
@@ -180318,7 +180329,7 @@
                 "name": "200 List of pages",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"data\":[{\"id\":\"3Yl0KhQDlg2OaWtOnLsFDq\",\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"paths\":[\"/checkout\",\"/cart\"],\"created_at\":\"2026-01-15T10:35:00Z\",\"updated_at\":\"2026-01-15T10:35:00Z\"}],\"meta\":{\"limit\":20,\"total\":1,\"page\":1}}",
+                "body": "{\"data\":[{\"id\":\"3Yl0KhQDlg2OaWtOnLsFDq\",\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"webhook\":{\"enabled\":false},\"paths\":[\"/checkout\",\"/cart\"],\"created_at\":\"2026-01-15T10:35:00Z\",\"updated_at\":\"2026-01-15T10:35:00Z\"}],\"meta\":{\"limit\":20,\"total\":1,\"page\":1}}",
                 "originalRequest": {
                   "name": "List pages",
                   "description": "List all pages. Optionally filter by website.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -180403,7 +180414,7 @@
           "Client-Side Protection / Client-Side Protection"
         ],
         "summary": "Create page",
-        "description": "Create a new page for monitoring.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+        "description": "Create a new page for monitoring. notifications lists email destinations only and is optional.\nTo add a webhook, send webhook with a url; omit webhook for a page without one. A page with\nneither sends no alerts. A webhook entry inside notifications is rejected; use the webhook field.\nnotifications and webhook are optional but not nullable: null for either returns 400.\nSupplying webhook.url requires an API token with global scope, and a verified Customer Support\nAccess grant when a Fastly administrator acts on another customer's behalf. When creating a\nwebhook, the response\nreturns webhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store.\nStore the key securely; subsequent reads do not return it. If creation fails, no page is created\nand no signing key or confirmation email is issued.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
         "operationId": "CreatePage",
         "requestBody": {
           "content": {
@@ -180472,85 +180483,8 @@
           }
         },
         "responses": {
-          "201": {
-            "description": "201 Page created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "website_id": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "notifications": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "type": {
-                            "type": "string"
-                          },
-                          "config": {
-                            "type": "object",
-                            "properties": {
-                              "address": {
-                                "type": "string"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    },
-                    "paths": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "created_at": {
-                      "type": "string"
-                    },
-                    "updated_at": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "examples": {
-                  "201_Page_created": {
-                    "summary": "201 Page created",
-                    "value": {
-                      "id": "3Yl0KhQDlg2OaWtOnLsFDq",
-                      "website_id": "2Xk9JgPCkf1NzVsNmKrECp",
-                      "name": "Checkout Page",
-                      "description": "Payment checkout flow",
-                      "notifications": [
-                        {
-                          "type": "mailinglist",
-                          "config": {
-                            "address": "security@example.com"
-                          }
-                        }
-                      ],
-                      "paths": [
-                        "/checkout",
-                        "/cart"
-                      ],
-                      "created_at": "2026-01-15T10:35:00Z",
-                      "updated_at": "2026-01-15T10:35:00Z"
-                    }
-                  }
-                }
-              }
-            }
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
           }
         },
         "security": [
@@ -180563,13 +180497,16 @@
             "url": "https://api.fastly.com"
           }
         ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
         "x-postman-variants": [
           {
             "name": "Create page",
             "id": null,
             "request": {
               "name": "Create page",
-              "description": "Create a new page for monitoring.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+              "description": "Create a new page for monitoring. notifications lists email destinations only and is optional.\nTo add a webhook, send webhook with a url; omit webhook for a page without one. A page with\nneither sends no alerts. A webhook entry inside notifications is rejected; use the webhook field.\nnotifications and webhook are optional but not nullable: null for either returns 400.\nSupplying webhook.url requires an API token with global scope, and a verified Customer Support\nAccess grant when a Fastly administrator acts on another customer's behalf. When creating a\nwebhook, the response\nreturns webhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store.\nStore the key securely; subsequent reads do not return it. If creation fails, no page is created\nand no signing key or confirmation email is issued.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
               "method": "POST",
               "url": {
                 "raw": "{{fastly_url}}/client-side-protection/v1/pages",
@@ -180590,10 +180527,6 @@
                 },
                 {
                   "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Accept",
                   "value": "application/json"
                 }
               ],
@@ -180617,65 +180550,7 @@
                 "raw": "{\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"paths\":[\"/checkout\",\"/cart\"]}"
               }
             },
-            "response": [
-              {
-                "status": "201 Page created",
-                "name": "201 Page created",
-                "code": 201,
-                "header": [ ],
-                "body": "{\"id\":\"3Yl0KhQDlg2OaWtOnLsFDq\",\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"paths\":[\"/checkout\",\"/cart\"],\"created_at\":\"2026-01-15T10:35:00Z\",\"updated_at\":\"2026-01-15T10:35:00Z\"}",
-                "originalRequest": {
-                  "name": "Create page",
-                  "description": "Create a new page for monitoring.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
-                  "method": "POST",
-                  "url": {
-                    "raw": "https://api.fastly.com/client-side-protection/v1/pages",
-                    "path": [
-                      "client-side-protection",
-                      "v1",
-                      "pages"
-                    ],
-                    "host": [
-                      "https://api.fastly.com"
-                    ],
-                    "query": [ ]
-                  },
-                  "header": [
-                    {
-                      "key": "Host",
-                      "value": "api.fastly.com"
-                    },
-                    {
-                      "key": "Content-Type",
-                      "value": "application/json"
-                    },
-                    {
-                      "key": "Accept",
-                      "value": "application/json"
-                    }
-                  ],
-                  "auth": {
-                    "type": "apikey",
-                    "apikey": [
-                      {
-                        "key": "value",
-                        "value": "{{fastly_key}}",
-                        "type": "string"
-                      },
-                      {
-                        "key": "key",
-                        "value": "Fastly-Key",
-                        "type": "string"
-                      }
-                    ]
-                  },
-                  "body": {
-                    "mode": "raw",
-                    "raw": "{\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"paths\":[\"/checkout\",\"/cart\"]}"
-                  }
-                }
-              }
-            ],
+            "response": null,
             "folders": [
               "Client-Side Protection",
               "Client-Side Protection"
@@ -180757,6 +180632,14 @@
                         }
                       }
                     },
+                    "webhook": {
+                      "type": "object",
+                      "properties": {
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      }
+                    },
                     "paths": {
                       "type": "array",
                       "items": {
@@ -180787,6 +180670,9 @@
                           }
                         }
                       ],
+                      "webhook": {
+                        "enabled": false
+                      },
                       "paths": [
                         "/checkout",
                         "/cart"
@@ -180863,7 +180749,7 @@
                 "name": "200 Page details",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"id\":\"3Yl0KhQDlg2OaWtOnLsFDq\",\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"paths\":[\"/checkout\",\"/cart\"],\"created_at\":\"2026-01-15T10:35:00Z\",\"updated_at\":\"2026-01-15T10:35:00Z\"}",
+                "body": "{\"id\":\"3Yl0KhQDlg2OaWtOnLsFDq\",\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"webhook\":{\"enabled\":false},\"paths\":[\"/checkout\",\"/cart\"],\"created_at\":\"2026-01-15T10:35:00Z\",\"updated_at\":\"2026-01-15T10:35:00Z\"}",
                 "originalRequest": {
                   "name": "Get page",
                   "description": "Get details for a specific page.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
@@ -181081,7 +180967,7 @@
           "Client-Side Protection / Client-Side Protection"
         ],
         "summary": "Update page",
-        "description": "Update a page's configuration.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+        "description": "Update a page's configuration. An omitted or null name or paths keeps the stored value; an\nempty name or an empty paths array is rejected. A request that supplies website_id, even as an\nempty string, updates the page's details as a whole, so omitting description clears it. A request\nwithout website_id updates only the fields it contains: an omitted description is kept, and an\nempty string clears it. The website_id field never moves the page; the page stays on its original\nwebsite, and path edits always use that website's domain, even when a different website_id is\nsupplied.\nnotifications and webhook change independently, and neither may be null: null for either\nreturns 400, so omit a field to keep it. notifications lists email destinations only: omit it to\nkeep them, send an array to replace them, or send an empty array to remove them; it never affects\nthe webhook. For webhook, an omitted value, {}, or a body with only enabled keeps the webhook as\nit is; enabled is read-only and ignored. {\"url\": \"https://...\"} adds a webhook or replaces its\nURL while keeping its signing key. An update never removes a webhook; use\nDELETE /client-side-protection/v1/pages/{page_id}/webhook.\nSupplying webhook.url requires an API token with global scope, and a verified Customer Support Access grant when a Fastly\nadministrator acts on another customer's behalf. First enabling a webhook returns\nwebhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store. Replacing its\nURL or keeping it does not return or change the key. If the update fails, the page is left as it\nwas. If another request changes the page's webhook at the same time, the update returns 409 with\nthe detail \"The Page's notification destinations changed during this request. Reload the Page and\ntry again.\".\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
         "operationId": "UpdatePage",
         "parameters": [
           {
@@ -181096,7 +180982,7 @@
         ],
         "responses": {
           "200": {
-            "description": "200 Page details",
+            "description": "200 Page updated. First enabling a webhook returns its newly generated signing key once.",
             "content": {
               "application/json": {
                 "schema": {
@@ -181133,6 +181019,14 @@
                         }
                       }
                     },
+                    "webhook": {
+                      "type": "object",
+                      "properties": {
+                        "enabled": {
+                          "type": "boolean"
+                        }
+                      }
+                    },
                     "paths": {
                       "type": "array",
                       "items": {
@@ -181148,8 +181042,8 @@
                   }
                 },
                 "examples": {
-                  "200_Page_details": {
-                    "summary": "200 Page details",
+                  "200_Page_updated._First_enabling_a_webhook_returns_its_newly_generated_signing_key_once.": {
+                    "summary": "200 Page updated. First enabling a webhook returns its newly generated signing key once.",
                     "value": {
                       "id": "3Yl0KhQDlg2OaWtOnLsFDq",
                       "website_id": "2Xk9JgPCkf1NzVsNmKrECp",
@@ -181163,6 +181057,9 @@
                           }
                         }
                       ],
+                      "webhook": {
+                        "enabled": false
+                      },
                       "paths": [
                         "/checkout",
                         "/cart"
@@ -181192,7 +181089,7 @@
             "id": null,
             "request": {
               "name": "Update page",
-              "description": "Update a page's configuration.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+              "description": "Update a page's configuration. An omitted or null name or paths keeps the stored value; an\nempty name or an empty paths array is rejected. A request that supplies website_id, even as an\nempty string, updates the page's details as a whole, so omitting description clears it. A request\nwithout website_id updates only the fields it contains: an omitted description is kept, and an\nempty string clears it. The website_id field never moves the page; the page stays on its original\nwebsite, and path edits always use that website's domain, even when a different website_id is\nsupplied.\nnotifications and webhook change independently, and neither may be null: null for either\nreturns 400, so omit a field to keep it. notifications lists email destinations only: omit it to\nkeep them, send an array to replace them, or send an empty array to remove them; it never affects\nthe webhook. For webhook, an omitted value, {}, or a body with only enabled keeps the webhook as\nit is; enabled is read-only and ignored. {\"url\": \"https://...\"} adds a webhook or replaces its\nURL while keeping its signing key. An update never removes a webhook; use\nDELETE /client-side-protection/v1/pages/{page_id}/webhook.\nSupplying webhook.url requires an API token with global scope, and a verified Customer Support Access grant when a Fastly\nadministrator acts on another customer's behalf. First enabling a webhook returns\nwebhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store. Replacing its\nURL or keeping it does not return or change the key. If the update fails, the page is left as it\nwas. If another request changes the page's webhook at the same time, the update returns 409 with\nthe detail \"The Page's notification destinations changed during this request. Reload the Page and\ntry again.\".\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
               "method": "PATCH",
               "url": {
                 "raw": "{{fastly_url}}/client-side-protection/v1/pages/{{page_id}}",
@@ -181235,14 +181132,14 @@
             },
             "response": [
               {
-                "status": "200 Page details",
-                "name": "200 Page details",
+                "status": "200 Page updated. First enabling a webhook returns its newly generated signing key once.",
+                "name": "200 Page updated. First enabling a webhook returns its newly generated signing key once.",
                 "code": 200,
                 "header": [ ],
-                "body": "{\"id\":\"3Yl0KhQDlg2OaWtOnLsFDq\",\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"paths\":[\"/checkout\",\"/cart\"],\"created_at\":\"2026-01-15T10:35:00Z\",\"updated_at\":\"2026-01-15T10:35:00Z\"}",
+                "body": "{\"id\":\"3Yl0KhQDlg2OaWtOnLsFDq\",\"website_id\":\"2Xk9JgPCkf1NzVsNmKrECp\",\"name\":\"Checkout Page\",\"description\":\"Payment checkout flow\",\"notifications\":[{\"type\":\"mailinglist\",\"config\":{\"address\":\"security@example.com\"}}],\"webhook\":{\"enabled\":false},\"paths\":[\"/checkout\",\"/cart\"],\"created_at\":\"2026-01-15T10:35:00Z\",\"updated_at\":\"2026-01-15T10:35:00Z\"}",
                 "originalRequest": {
                   "name": "Update page",
-                  "description": "Update a page's configuration.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+                  "description": "Update a page's configuration. An omitted or null name or paths keeps the stored value; an\nempty name or an empty paths array is rejected. A request that supplies website_id, even as an\nempty string, updates the page's details as a whole, so omitting description clears it. A request\nwithout website_id updates only the fields it contains: an omitted description is kept, and an\nempty string clears it. The website_id field never moves the page; the page stays on its original\nwebsite, and path edits always use that website's domain, even when a different website_id is\nsupplied.\nnotifications and webhook change independently, and neither may be null: null for either\nreturns 400, so omit a field to keep it. notifications lists email destinations only: omit it to\nkeep them, send an array to replace them, or send an empty array to remove them; it never affects\nthe webhook. For webhook, an omitted value, {}, or a body with only enabled keeps the webhook as\nit is; enabled is read-only and ignored. {\"url\": \"https://...\"} adds a webhook or replaces its\nURL while keeping its signing key. An update never removes a webhook; use\nDELETE /client-side-protection/v1/pages/{page_id}/webhook.\nSupplying webhook.url requires an API token with global scope, and a verified Customer Support Access grant when a Fastly\nadministrator acts on another customer's behalf. First enabling a webhook returns\nwebhook_signing_key and webhook_signing_key_id once with Cache-Control: no-store. Replacing its\nURL or keeping it does not return or change the key. If the update fails, the page is left as it\nwas. If another request changes the page's webhook at the same time, the update returns 409 with\nthe detail \"The Page's notification destinations changed during this request. Reload the Page and\ntry again.\".\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
                   "method": "PATCH",
                   "url": {
                     "raw": "https://api.fastly.com/client-side-protection/v1/pages/3Yl0KhQDlg2OaWtOnLsFDq",
@@ -181285,6 +181182,353 @@
                 }
               }
             ],
+            "folders": [
+              "Client-Side Protection",
+              "Client-Side Protection"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/webhook": {
+      "delete": {
+        "tags": [
+          "Client-Side Protection / Client-Side Protection"
+        ],
+        "summary": "Remove Page webhook",
+        "description": "Remove the page's webhook destination and delete its URL and signing key. Email destinations are\nunchanged. Adding a webhook again later generates a new signing key. Requires Page management permissions\nand an API token with global scope, and a verified Customer Support Access grant when a Fastly\nadministrator acts on another customer's behalf. Returns 404 if the page does not exist or has\nno webhook.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+        "operationId": "RemovePageWebhook",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 Webhook removed"
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Remove Page webhook",
+            "id": null,
+            "request": {
+              "name": "Remove Page webhook",
+              "description": "Remove the page's webhook destination and delete its URL and signing key. Email destinations are\nunchanged. Adding a webhook again later generates a new signing key. Requires Page management permissions\nand an API token with global scope, and a verified Customer Support Access grant when a Fastly\nadministrator acts on another customer's behalf. Returns 404 if the page does not exist or has\nno webhook.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+              "method": "DELETE",
+              "url": {
+                "raw": "{{fastly_url}}/client-side-protection/v1/pages/{{page_id}}/webhook",
+                "path": [
+                  "client-side-protection",
+                  "v1",
+                  "pages",
+                  "{{page_id}}",
+                  "webhook"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "api.fastly.com"
+                }
+              ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": [
+              {
+                "status": "204 Webhook removed",
+                "name": "204 Webhook removed",
+                "code": 204,
+                "header": [ ],
+                "originalRequest": {
+                  "name": "Remove Page webhook",
+                  "description": "Remove the page's webhook destination and delete its URL and signing key. Email destinations are\nunchanged. Adding a webhook again later generates a new signing key. Requires Page management permissions\nand an API token with global scope, and a verified Customer Support Access grant when a Fastly\nadministrator acts on another customer's behalf. Returns 404 if the page does not exist or has\nno webhook.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+                  "method": "DELETE",
+                  "url": {
+                    "raw": "https://api.fastly.com/client-side-protection/v1/pages/3Yl0KhQDlg2OaWtOnLsFDq/webhook",
+                    "path": [
+                      "client-side-protection",
+                      "v1",
+                      "pages",
+                      "3Yl0KhQDlg2OaWtOnLsFDq",
+                      "webhook"
+                    ],
+                    "host": [
+                      "https://api.fastly.com"
+                    ],
+                    "query": [ ]
+                  },
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "api.fastly.com"
+                    }
+                  ],
+                  "auth": {
+                    "type": "apikey",
+                    "apikey": [
+                      {
+                        "key": "value",
+                        "value": "{{fastly_key}}",
+                        "type": "string"
+                      },
+                      {
+                        "key": "key",
+                        "value": "Fastly-Key",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "folders": [
+              "Client-Side Protection",
+              "Client-Side Protection"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/client-side-protection/v1/pages/{page_id}/signing-key": {
+      "get": {
+        "tags": [
+          "Client-Side Protection / Client-Side Protection"
+        ],
+        "summary": "Get Page webhook signing key metadata",
+        "description": "Return only the public key_id for a configured Page webhook. The signing key cannot be retrieved. Requires Page management permissions\nand global token scope. Returns 404 if the Page or webhook is not found.\nAdministrator impersonation requires a verified Customer Support Access grant; requests are\nrejected if the grant cannot be verified.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+        "operationId": "GetPageWebhookSigningKeyMetadata",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Get Page webhook signing key metadata",
+            "id": null,
+            "request": {
+              "name": "Get Page webhook signing key metadata",
+              "description": "Return only the public key_id for a configured Page webhook. The signing key cannot be retrieved. Requires Page management permissions\nand global token scope. Returns 404 if the Page or webhook is not found.\nAdministrator impersonation requires a verified Customer Support Access grant; requests are\nrejected if the grant cannot be verified.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+              "method": "GET",
+              "url": {
+                "raw": "{{fastly_url}}/client-side-protection/v1/pages/{{page_id}}/signing-key",
+                "path": [
+                  "client-side-protection",
+                  "v1",
+                  "pages",
+                  "{{page_id}}",
+                  "signing-key"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [ ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": null,
+            "folders": [
+              "Client-Side Protection",
+              "Client-Side Protection"
+            ],
+            "effectiveAuth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "{{fastly_key}}",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Fastly-Key",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Client-Side Protection / Client-Side Protection"
+        ],
+        "summary": "Rotate Page webhook signing key",
+        "description": "Replace the Page webhook signing key and return the new key once. Store it securely; subsequent\nreads do not return it. No request body is required. If the response is lost, explicitly rotate\nagain to obtain a replacement; do not automatically retry.\nRequires Page management permissions and global token scope. Rotation applies to newly fetched configurations; queued deliveries\nretain their original key. For 72 hours plus five minutes after a rotation, accept a signature that\nmatches either the current key or the previous key, and install the replacement promptly. Returns 404 if the Page or webhook is not found.\nAdministrator impersonation requires a verified Customer Support Access grant; requests are\nrejected if the grant cannot be verified.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+        "operationId": "RotatePageWebhookSigningKey",
+        "parameters": [
+          {
+            "name": "page_id",
+            "in": "path",
+            "description": "Page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "No response examples were saved in the Postman collection; status codes and response schemas are unknown."
+          }
+        },
+        "security": [
+          {
+            "apikeyAuth": [ ]
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://api.fastly.com"
+          }
+        ],
+        "x-postman-warnings": [
+          "No saved responses: status codes and response schemas cannot be inferred."
+        ],
+        "x-postman-variants": [
+          {
+            "name": "Rotate Page webhook signing key",
+            "id": null,
+            "request": {
+              "name": "Rotate Page webhook signing key",
+              "description": "Replace the Page webhook signing key and return the new key once. Store it securely; subsequent\nreads do not return it. No request body is required. If the response is lost, explicitly rotate\nagain to obtain a replacement; do not automatically retry.\nRequires Page management permissions and global token scope. Rotation applies to newly fetched configurations; queued deliveries\nretain their original key. For 72 hours plus five minutes after a rotation, accept a signature that\nmatches either the current key or the previous key, and install the replacement promptly. Returns 404 if the Page or webhook is not found.\nAdministrator impersonation requires a verified Customer Support Access grant; requests are\nrejected if the grant cannot be verified.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n",
+              "method": "POST",
+              "url": {
+                "raw": "{{fastly_url}}/client-side-protection/v1/pages/{{page_id}}/signing-key",
+                "path": [
+                  "client-side-protection",
+                  "v1",
+                  "pages",
+                  "{{page_id}}",
+                  "signing-key"
+                ],
+                "host": [
+                  "{{fastly_url}}"
+                ],
+                "query": [ ]
+              },
+              "header": [ ],
+              "auth": {
+                "type": "apikey",
+                "apikey": [
+                  {
+                    "key": "value",
+                    "value": "{{fastly_key}}",
+                    "type": "string"
+                  },
+                  {
+                    "key": "key",
+                    "value": "Fastly-Key",
+                    "type": "string"
+                  }
+                ]
+              }
+            },
+            "response": null,
             "folders": [
               "Client-Side Protection",
               "Client-Side Protection"
@@ -211659,7 +211903,7 @@
     },
     {
       "name": "Notification Service / Event Mappings",
-      "description": "The Audit Log Event Mappings API lets you configure which Fastly audit log events trigger notifications to your integrations. An event mapping links one or more event types to one or more notification integrations, scoped to your account, specific CDN services, Compute services, or Next-Gen WAF workspaces. Use the event-types and scope-types discovery endpoints to retrieve the full list of supported event and scope types before creating mappings.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| description | string | An optional description of the mapping. |\n| event_types | array | The audit event types that trigger a notification. Each event type must be valid for the given scope_type. Use the event-types endpoint to retrieve the supported values. |\n| integration_ids | array | The IDs of the integrations that should receive notifications. Must reference integrations for the account linked to the supplied token. |\n| name | string | A descriptive name for the mapping. |\n| scope_ids | array | The specific service or workspace IDs to scope this mapping to. Omit or provide an empty array to apply the mapping to all resources of the given scope type. Must be empty or omitted when scope_type is account. |\n| scope_type | string | The category of Fastly resource a mapping applies to.\n\naccount: applies account-wide, regardless of any specific service or workspace. - vcl: applies to specific CDN (VCL) services identified by service ID. - wasm: applies to specific Compute (Wasm) services identified by service ID. - ngwaf: applies to specific Next-Gen WAF workspaces identified by workspace ID.\nSome event types are compatible with more than one scope type. For example, ngwaf.list.create can be mapped at either account scope (fires for any matching event across the account) or ngwaf scope (fires only for specified workspaces). Use the event-types endpoint to see which scope types each event supports. |\n| limit | integer | The maximum number of results returned per page. |\n| next_cursor | string | Cursor value to retrieve the next page of results. Pass this as the cursor parameter in your next request using the same filter and sort values. Omitted when the results are the last page. |\n| previous_cursor | string | Cursor value to retrieve the previous page of results. Omitted when the results are the first page. |\n| sort | string | The sort order applied to the results. |\n| total | integer | Total number of event mappings matching the filters. |\n| created_at | string | Timestamp when the mapping was created. |\n| customer_id | string | The ID of the customer this mapping belongs to. |\n| id | string | Unique identifier for the mapping. |\n| mapping_status | string | Indicates whether the mapping is permitted to send notifications. This field is set server-side and cannot be set directly. A mapping is active when it has at least one integration ID. It becomes inactive automatically when all of its integration IDs are removed — for example, when an integration is deleted. An inactive mapping does not send notifications. |\n| updated_at | string | Timestamp when the mapping was last updated. |\n| meta | object | Metadata about the filter results. |\n| display_name | string | A human-readable name for the event type. |\n| event_type | string | The event type identifier. Use this value in the event_types field when creating a mapping. |\n| scope_types | array | The scope types this event type is compatible with. |"
+      "description": "The Audit Log Event Mappings API lets you configure which Fastly audit log events trigger notifications to your integrations. An event mapping links one or more event types to one or more notification integrations, scoped to your account, specific CDN services, Compute services, or Next-Gen WAF workspaces. Use the event-types and scope-types discovery endpoints to retrieve the full list of supported event and scope types before creating mappings.\n> **Authorization**: Requires [API token](/reference/api/auth-tokens).\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| description | string | An optional description of the mapping. |\n| event_types | array | The audit event types that trigger a notification. Each event type must be valid for the given scope_type. Use the event-types endpoint to retrieve the supported values. |\n| integration_ids | array | The IDs of the integrations that should receive notifications. Must reference integrations for the account linked to the supplied token. Integrations that Client-Side Protection manages for its Pages (names beginning with __cssp_internal_) cannot be used. |\n| name | string | A descriptive name for the mapping. |\n| scope_ids | array | The specific service or workspace IDs to scope this mapping to. Omit or provide an empty array to apply the mapping to all resources of the given scope type. Must be empty or omitted when scope_type is account. |\n| scope_type | string | The category of Fastly resource a mapping applies to.\n\naccount: applies account-wide, regardless of any specific service or workspace. - vcl: applies to specific CDN (VCL) services identified by service ID. - wasm: applies to specific Compute (Wasm) services identified by service ID. - ngwaf: applies to specific Next-Gen WAF workspaces identified by workspace ID.\nSome event types are compatible with more than one scope type. For example, ngwaf.list.create can be mapped at either account scope (fires for any matching event across the account) or ngwaf scope (fires only for specified workspaces). Use the event-types endpoint to see which scope types each event supports. |\n| limit | integer | The maximum number of results returned per page. |\n| next_cursor | string | Cursor value to retrieve the next page of results. Pass this as the cursor parameter in your next request using the same filter and sort values. Omitted when the results are the last page. |\n| previous_cursor | string | Cursor value to retrieve the previous page of results. Omitted when the results are the first page. |\n| sort | string | The sort order applied to the results. |\n| total | integer | Total number of event mappings matching the filters. |\n| created_at | string | Timestamp when the mapping was created. |\n| customer_id | string | The ID of the customer this mapping belongs to. |\n| id | string | Unique identifier for the mapping. |\n| mapping_status | string | Indicates whether the mapping is permitted to send notifications. This field is set server-side and cannot be set directly. A mapping is active when it has at least one integration ID. It becomes inactive automatically when all of its integration IDs are removed — for example, when an integration is deleted. An inactive mapping does not send notifications. |\n| updated_at | string | Timestamp when the mapping was last updated. |\n| meta | object | Metadata about the filter results. |\n| display_name | string | A human-readable name for the event type. |\n| event_type | string | The event type identifier. Use this value in the event_types field when creating a mapping. |\n| scope_types | array | The scope types this event type is compatible with. |"
     },
     {
       "name": "Timeseries / Log Timeseries",
@@ -211875,7 +212119,7 @@
     },
     {
       "name": "Client-Side Protection / Client-Side Protection",
-      "description": "Client-Side Protection (CSP) provides visibility and control over third-party scripts running on your web pages. Monitor script behavior, manage authorization status, and configure security policies to protect against client-side attacks like Magecart and formjacking.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| name | string | CSP directive name (e.g., script-src, style-src). |\n| values | array | Directive values. |\n| config | object | Type-specific configuration. |\n| type | string | Notification type. |\n| description | string | Page description. |\n| id | string | Unique page identifier. |\n| notifications | array | Notification configurations for this page. |\n| paths | array | URL paths to monitor. |\n| website_id | string | Parent website ID. |\n| authorization_status | string | Script authorization status. |\n| authorized_hash | string | Hash of authorized script content. |\n| current_hash | string | Current script content hash. |\n| justification | string | Reason for authorization decision. |\n| page_id | string | Parent page ID. |\n| source | string | Script source (inline or external URL). |\n| urls | array | URLs where this script was observed. |\n| domain | string | Website domain. |\n| page_ids | array | IDs of pages associated with this website. |"
+      "description": "Client-Side Protection (CSP) provides visibility and control over third-party scripts running on your web pages. Monitor script behavior, manage authorization status, and configure security policies to protect against client-side attacks like Magecart and formjacking.\n> **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\") permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| name | string | CSP directive name (e.g., script-src, style-src). |\n| values | array | Directive values. |\n| config | object | Type-specific configuration. |\n| type | string | Notification type. |\n| description | string | Page description. |\n| id | string | Unique page identifier. |\n| notifications | array | Notification configurations for this page. |\n| paths | array | URL paths to monitor. |\n| webhook | object | Whether the page has a webhook. The URL is write-only and never returned. |\n| webhook_signing_key | string | Generated HMAC-SHA256 key returned once, only when this create or update first enables a webhook. Omitted from Page reads, lists, and subsequent edits. Store securely; do not log or cache it. |\n| webhook_signing_key_id | string | Public identifier returned alongside a newly generated webhook_signing_key. Read current key metadata from the signing-key endpoint. |\n| website_id | string | Parent website ID. |\n| url | string | HTTPS receiver URL. Must have a host, with no user information or fragment. Localhost and\nliteral private, loopback, link-local, unspecified, and multicast IP addresses are rejected,\nas are ports outside 1–65535. At delivery, resolved IP addresses must also be public;\nredirects are not followed. Never returned in responses. |\n| enabled | boolean | true when the page has a webhook destination. Read-only; ignored in request bodies. |\n| key_id | string | Public identifier of the new signing key, used to tell keys apart. Lowercase hex encoding of the first 16 bytes of SHA-256 of the UTF-8 signing key. It does not appear on webhook deliveries. |\n| signing_key | string | Newly generated HMAC-SHA256 signing key, returned only in this rotation response. Store securely; do not log or cache it. |\n| authorization_status | string | Script authorization status. |\n| authorized_hash | string | Hash of authorized script content. |\n| current_hash | string | Current script content hash. |\n| justification | string | Reason for authorization decision. |\n| page_id | string | Parent page ID. |\n| source | string | Script source (inline or external URL). |\n| urls | array | URLs where this script was observed. |\n| domain | string | Website domain. |\n| page_ids | array | IDs of pages associated with this website. |"
     },
     {
       "name": "Fastly DDoS Protection Events / Fastly DDoS Protection Events",
@@ -211977,6 +212221,9 @@
     "List TLS activations: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
     "Get a TLS activation: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
     "Update a certificate: Multiple Postman requests share this method and path. Inputs and responses are combined; x-postman-variants retains each source request and its correlations.",
+    "Create page: No saved responses: status codes and response schemas cannot be inferred.",
+    "Get Page webhook signing key metadata: No saved responses: status codes and response schemas cannot be inferred.",
+    "Rotate Page webhook signing key: No saved responses: status codes and response schemas cannot be inferred.",
     "Lint (validate) VCL using flags set for the service: No saved responses: status codes and response schemas cannot be inferred.",
     "Lint (validate) VCL using a default set of flags: No saved responses: status codes and response schemas cannot be inferred."
   ],

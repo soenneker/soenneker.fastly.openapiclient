@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "challenges", n => { Challenges = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseIncludedItemAttributesChallengesItem>(global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsSubscription201ResponseIncludedItemAttributesChallengesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },

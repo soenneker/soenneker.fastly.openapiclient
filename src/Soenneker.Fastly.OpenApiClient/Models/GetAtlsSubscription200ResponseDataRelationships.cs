@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "common_name", n => { CommonName = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ResponseDataRelationshipsCommonName>(global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ResponseDataRelationshipsCommonName.CreateFromDiscriminatorValue); } },
                 { "tls_authorizations", n => { TlsAuthorizations = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ResponseDataRelationshipsTlsAuthorizations>(global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsSubscription200ResponseDataRelationshipsTlsAuthorizations.CreateFromDiscriminatorValue); } },

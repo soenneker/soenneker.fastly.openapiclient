@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.Signing
         {
         }
         /// <summary>
-        /// Get the signing key used to sign payloads for a webhook integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Get the signing key used to sign payloads for an ordinary webhook integration. For CSP-managed integrations (names beginning with __cssp_internal_), return only key_id, never the signing key, including for internal callers. CSP keys are returned only when created or rotated.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetWebhookPayloadSigningKey200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.Signing
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetWebhookPayloadSigningKey200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetWebhookPayloadSigningKey200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the signing key used to sign payloads for a webhook integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Get the signing key used to sign payloads for an ordinary webhook integration. For CSP-managed integrations (names beginning with __cssp_internal_), return only key_id, never the signing key, including for internal callers. CSP keys are returned only when created or rotated.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

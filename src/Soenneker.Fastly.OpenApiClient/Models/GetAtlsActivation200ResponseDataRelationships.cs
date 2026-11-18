@@ -92,7 +92,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "mutual_authentication", n => { MutualAuthentication = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsActivation200ResponseDataRelationshipsMutualAuthentication>(global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsActivation200ResponseDataRelationshipsMutualAuthentication.CreateFromDiscriminatorValue); } },
                 { "tls_certificate", n => { TlsCertificate = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsActivation200ResponseDataRelationshipsTlsCertificate>(global::Soenneker.Fastly.OpenApiClient.Models.GetAtlsActivation200ResponseDataRelationshipsTlsCertificate.CreateFromDiscriminatorValue); } },

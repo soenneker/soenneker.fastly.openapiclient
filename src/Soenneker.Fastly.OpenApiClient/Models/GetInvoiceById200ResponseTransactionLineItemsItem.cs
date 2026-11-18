@@ -143,7 +143,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "amount", n => { Amount = n.GetLongValue(); } },
                 { "credit_coupon_code", n => { CreditCouponCode = n.GetStringValue(); } },

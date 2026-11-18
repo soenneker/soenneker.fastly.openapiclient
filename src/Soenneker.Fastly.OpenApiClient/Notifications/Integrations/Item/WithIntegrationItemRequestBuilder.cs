@@ -46,7 +46,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
         {
         }
         /// <summary>
-        /// Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.Only internal Fastly callers may delete CSP-managed integrations (names beginning with __cssp_internal_).&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetIntegration200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.Only internal Fastly callers may modify CSP-managed integrations (names beginning with __cssp_internal_). Integrations cannot be renamed into or out of this namespace, and a CSP-managed integration&apos;s type cannot change. CSP-managed webhook URLs use the same validation as creation. Updating a webhook URL preserves its signing key and does not return it.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Delete an integration. The effect is immediate and does not require confirmation.As a side effect, the deleted integration ID is removed from all audit log event mappings belonging to the same customer. Any audit log event mapping whose integration_ids list becomes empty as a result is automatically set to mapping_status: inactive. An inactive audit log event mapping does not trigger notifications.Only internal Fastly callers may delete CSP-managed integrations (names beginning with __cssp_internal_).&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Update an existing integration, only updating the fields that are given and leaving the others untouched.If the type is changed, then you must also fill out the specific fields required by the integration.Only internal Fastly callers may modify CSP-managed integrations (names beginning with __cssp_internal_). Integrations cannot be renamed into or out of this namespace, and a CSP-managed integration&apos;s type cannot change. CSP-managed webhook URLs use the same validation as creation. Updating a webhook URL preserves its signing key and does not return it.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

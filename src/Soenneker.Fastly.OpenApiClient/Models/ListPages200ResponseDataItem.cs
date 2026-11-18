@@ -31,6 +31,8 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             else if (parseNode.GetChildNode("paths") is { } nullNodePaths && nullNodePaths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paths = null;
             if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
             else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("webhook") is null) { _explicitNullValueWebhook = default!; _explicitNullProperties?.Remove("webhook"); }
+            else if (parseNode.GetChildNode("webhook") is { } nullNodeWebhook && nullNodeWebhook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Webhook = null;
             if (parseNode.GetChildNode("website_id") is null) { _explicitNullValueWebsiteId = default!; _explicitNullProperties?.Remove("website_id"); }
             else if (parseNode.GetChildNode("website_id") is { } nullNodeWebsiteId && nullNodeWebsiteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebsiteId = null;
         }
@@ -107,6 +109,16 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private string _explicitNullValueUpdatedAt = default!;
 #endif
+        /// <summary>The webhook property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemWebhook? Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; AdditionalData?.Remove("webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemWebhook? _explicitNullValueWebhook = default!;
+#nullable restore
+#else
+        public global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemWebhook Webhook { get => _explicitNullValueWebhook; set { _explicitNullValueWebhook = value; AdditionalData?.Remove("webhook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook"); else _explicitNullProperties?.Remove("webhook"); } }
+        private global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemWebhook _explicitNullValueWebhook = default!;
+#endif
         /// <summary>The website_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,7 +152,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -149,6 +161,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
                 { "notifications", n => { Notifications = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemNotificationsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemNotificationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "paths", n => { Paths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "webhook", n => { Webhook = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemWebhook>(global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemWebhook.CreateFromDiscriminatorValue); } },
                 { "website_id", n => { WebsiteId = n.GetStringValue(); } },
             };
         }
@@ -166,6 +179,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemNotificationsItem>("notifications", Notifications);
             writer.WriteCollectionOfPrimitiveValues<string>("paths", Paths);
             writer.WriteStringValue("updated_at", UpdatedAt);
+            writer.WriteObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListPages200ResponseDataItemWebhook>("webhook", Webhook);
             writer.WriteStringValue("website_id", WebsiteId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

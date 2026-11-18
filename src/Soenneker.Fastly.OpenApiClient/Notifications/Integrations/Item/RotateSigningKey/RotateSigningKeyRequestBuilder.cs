@@ -34,7 +34,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateS
         {
         }
         /// <summary>
-        /// Rotate the webhook signing key. This immediately updates the signing key for any new notification.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Rotate the webhook signing key. The replacement applies to newly fetched configurations. Only internal Fastly callers may rotate CSP-managed integrations (names beginning with __cssp_internal_). Their response contains signingKey and key_id; store the replacement securely because subsequent GET requests return only its ID. Ordinary webhook rotation keeps its existing signingKey response. Queued CSP deliveries retain their original key, so for 72 hours plus five minutes after a rotation receivers must accept a signature that matches either the current key or the previous key. If a rotation response is lost, the key may already have changed; explicitly rotate again to obtain a replacement instead of retrying automatically.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Fastly.OpenApiClient.Notifications.Integrations.Item.RotateS
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.RotateWebhookPayloadSigningKey200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Rotate the webhook signing key. This immediately updates the signing key for any new notification.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Rotate the webhook signing key. The replacement applies to newly fetched configurations. Only internal Fastly callers may rotate CSP-managed integrations (names beginning with __cssp_internal_). Their response contains signingKey and key_id; store the replacement securely because subsequent GET requests return only its ID. Ordinary webhook rotation keeps its existing signingKey response. Queued CSP deliveries retain their original key, so for 72 hours plus five minutes after a rotation receivers must accept a signature that matches either the current key or the previous key. If a rotation response is lost, the key may already have changed; explicitly rotate again to obtain a replacement instead of retrying automatically.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

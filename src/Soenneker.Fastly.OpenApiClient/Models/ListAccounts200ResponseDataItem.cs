@@ -104,7 +104,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "account_link", n => { AccountLink = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.ListAccounts200ResponseDataItemAccountLink>(global::Soenneker.Fastly.OpenApiClient.Models.ListAccounts200ResponseDataItemAccountLink.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },

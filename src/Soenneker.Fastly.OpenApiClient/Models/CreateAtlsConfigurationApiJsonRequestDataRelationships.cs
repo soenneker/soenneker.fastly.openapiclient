@@ -92,7 +92,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "default_certificate", n => { DefaultCertificate = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsConfigurationApiJsonRequestDataRelationshipsDefaultCertificate>(global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsConfigurationApiJsonRequestDataRelationshipsDefaultCertificate.CreateFromDiscriminatorValue); } },
                 { "default_ecdsa_certificate", n => { DefaultEcdsaCertificate = n.GetObjectValue<global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsConfigurationApiJsonRequestDataRelationshipsDefaultEcdsaCertificate>(global::Soenneker.Fastly.OpenApiClient.Models.CreateAtlsConfigurationApiJsonRequestDataRelationshipsDefaultEcdsaCertificate.CreateFromDiscriminatorValue); } },

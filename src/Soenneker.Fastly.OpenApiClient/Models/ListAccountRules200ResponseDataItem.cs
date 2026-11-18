@@ -181,7 +181,7 @@ namespace Soenneker.Fastly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemActionsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemConditionsItem>(global::Soenneker.Fastly.OpenApiClient.Models.ListAccountRules200ResponseDataItemConditionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
