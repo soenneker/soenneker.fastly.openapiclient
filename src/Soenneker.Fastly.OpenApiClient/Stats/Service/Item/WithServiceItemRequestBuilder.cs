@@ -40,7 +40,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Service.Item
         {
         }
         /// <summary>
-        /// Fetches historical stats for a given service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Fetches historical stats for a given service. To get Next-Gen WAF metrics, use a workspace&apos;s workspace_uid in place of the service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleService200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Service.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleService200Response>(requestInfo, global::Soenneker.Fastly.OpenApiClient.Models.GetHistoricalStatsForASingleService200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches historical stats for a given service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Fetches historical stats for a given service. To get Next-Gen WAF metrics, use a workspace&apos;s workspace_uid in place of the service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Fastly.OpenApiClient.Stats.Service.Item
             return new global::Soenneker.Fastly.OpenApiClient.Stats.Service.Item.WithServiceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetches historical stats for a given service.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
+        /// Fetches historical stats for a given service. To get Next-Gen WAF metrics, use a workspace&apos;s workspace_uid in place of the service ID.&gt; **Authorization**: Requires [API token](/reference/api/auth-tokens).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithServiceItemRequestBuilderGetQueryParameters 

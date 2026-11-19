@@ -16,7 +16,7 @@ namespace Soenneker.Fastly.OpenApiClient.Metrics.V2.Platform.Entities
     public partial class EntitiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Fastly.OpenApiClient.metrics.v2.platform.entities.item collection</summary>
-        /// <param name="position">Alphanumeric string identifying the entity.</param>
+        /// <param name="position">Alphanumeric string identifying the entity. For a VCL or Compute service, use the service ID. For a Next-Gen WAF workspace, use the workspace&apos;s workspace_uid from the Next-Gen WAF Workspaces API.</param>
         /// <returns>A <see cref="global::Soenneker.Fastly.OpenApiClient.Metrics.V2.Platform.Entities.Item.WithEntityItemRequestBuilder"/></returns>
         public global::Soenneker.Fastly.OpenApiClient.Metrics.V2.Platform.Entities.Item.WithEntityItemRequestBuilder this[string position]
         {

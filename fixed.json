@@ -69685,7 +69685,7 @@
           "Metrics and stats / Historical Stats"
         ],
         "summary": "Get historical stats for a single service",
-        "description": "Fetches historical stats for a given service.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "description": "Fetches historical stats for a given service. To get Next-Gen WAF metrics, use a workspace\u0027s workspace_uid in place of the service ID.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "GetHistoricalStatsForASingleService",
         "parameters": [
           {
@@ -69900,7 +69900,7 @@
             "id": null,
             "request": {
               "name": "Get historical stats for a single service",
-              "description": "Fetches historical stats for a given service.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "description": "Fetches historical stats for a given service. To get Next-Gen WAF metrics, use a workspace\u0027s workspace_uid in place of the service ID.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "GET",
               "url": {
                 "raw": "{{fastly_url}}/stats/service/{{service_id}}",
@@ -69970,7 +69970,7 @@
                 "body": "{\u0022status\u0022:\u0022success\u0022,\u0022meta\u0022:{\u0022to\u0022:\u0022Thu May 16 20:39:09 UTC 2020\u0022,\u0022from\u0022:\u0022Tue May 14 20:39:09 UTC 2020\u0022,\u0022by\u0022:\u0022day\u0022,\u0022region\u0022:\u0022all\u0022},\u0022msg\u0022:null,\u0022data\u0022:[{\u0022requests\u0022:21,\u0022miss_time\u0022:0,\u0022start_time\u0022:1368734160,\u0022service_id\u0022:\u00221jlmtMz1ncwA0KC3TBGD0X\u0022,\u0022bandwidth\u0022:160238,\u0022hits\u0022:0,\u0022hits_time\u0022:0,\u0022miss\u0022:0,\u0022body_size\u0022:150948,\u0022pass\u0022:19,\u0022header_size\u0022:9290,\u0022req_header_bytes\u0022:2905859973,\u0022req_body_bytes\u0022:390017958,\u0022resp_header_bytes\u0022:9290,\u0022resp_body_bytes\u0022:150948,\u0022bereq_header_bytes\u0022:1870557109,\u0022bereq_body_bytes\u0022:389234083,\u0022status_200\u0022:14,\u0022status_204\u0022:0,\u0022status_301\u0022:2,\u0022status_302\u0022:0,\u0022status_304\u0022:0,\u0022errors\u0022:0,\u0022hit_ratio\u0022:null,\u0022status_1xx\u0022:0,\u0022status_2xx\u0022:14,\u0022status_3xx\u0022:2,\u0022status_4xx\u0022:5,\u0022status_503\u0022:0,\u0022pipe\u0022:0,\u0022status_5xx\u0022:0,\u0022uncacheable\u0022:0,\u0022tls\u0022:2804069,\u0022shield\u0022:208055,\u0022ipv6\u0022:14156,\u0022otfp\u0022:12006,\u0022video\u0022:306053,\u0022pci\u0022:3041,\u0022logging\u0022:2088120,\u0022http2\u0022:251589,\u0022attack_req_body_bytes\u0022:1274842,\u0022attack_req_header_bytes\u0022:892196,\u0022attack_resp_synth_bytes\u0022:0,\u0022imgopto\u0022:1404},{\u0022requests\u0022:20,\u0022miss_time\u0022:0,\u0022start_time\u0022:1368734220,\u0022service_id\u0022:\u00221jlmtMz1ncwA0KC3TBGD0X\u0022,\u0022bandwidth\u0022:156504,\u0022hits\u0022:0,\u0022hits_time\u0022:0,\u0022miss\u0022:0,\u0022body_size\u0022:147806,\u0022pass\u0022:17,\u0022header_size\u0022:8698,\u0022req_header_bytes\u0022:2905859973,\u0022req_body_bytes\u0022:390017958,\u0022resp_header_bytes\u0022:8698,\u0022resp_body_bytes\u0022:147806,\u0022bereq_header_bytes\u0022:1870557109,\u0022bereq_body_bytes\u0022:389234083,\u0022status_200\u0022:12,\u0022status_204\u0022:0,\u0022status_301\u0022:3,\u0022status_302\u0022:0,\u0022status_304\u0022:0,\u0022errors\u0022:0,\u0022hit_ratio\u0022:null,\u0022status_1xx\u0022:0,\u0022status_2xx\u0022:12,\u0022status_3xx\u0022:3,\u0022status_4xx\u0022:5,\u0022status_503\u0022:0,\u0022pipe\u0022:0,\u0022status_5xx\u0022:0,\u0022uncacheable\u0022:0,\u0022tls\u0022:2804069,\u0022shield\u0022:208055,\u0022ipv6\u0022:14156,\u0022otfp\u0022:12006,\u0022video\u0022:306053,\u0022pci\u0022:3041,\u0022logging\u0022:2088120,\u0022http2\u0022:251589,\u0022attack_req_body_bytes\u0022:1274842,\u0022attack_req_header_bytes\u0022:892196,\u0022attack_resp_synth_bytes\u0022:0,\u0022imgopto\u0022:1404}]}",
                 "originalRequest": {
                   "name": "Get historical stats for a single service",
-                  "description": "Fetches historical stats for a given service.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "description": "Fetches historical stats for a given service. To get Next-Gen WAF metrics, use a workspace\u0027s workspace_uid in place of the service ID.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "GET",
                   "url": {
                     "raw": "https://api.fastly.com/stats/service/SU1Z0isxPaozGVKXdv0eY?by=day\u0026datacenter=IAD%2CCHI\u0026from=2020-04-09T18%3A14%3A30Z\u0026region=usa\u0026to=2020-04-09T18%3A14%3A30Z",
@@ -70062,7 +70062,7 @@
           "Metrics and stats / Historical Stats"
         ],
         "summary": "Get historical stats for a single service/field combination",
-        "description": "Fetches the specified field from the historical stats for a given service.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+        "description": "Fetches the specified field from the historical stats for a given service. To get a Next-Gen WAF metric, use a workspace\u0027s workspace_uid in place of the service ID.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
         "operationId": "GetHistoricalStatsForASingleServiceFieldCombination",
         "parameters": [
           {
@@ -70204,7 +70204,7 @@
             "id": null,
             "request": {
               "name": "Get historical stats for a single service/field combination",
-              "description": "Fetches the specified field from the historical stats for a given service.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+              "description": "Fetches the specified field from the historical stats for a given service. To get a Next-Gen WAF metric, use a workspace\u0027s workspace_uid in place of the service ID.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
               "method": "GET",
               "url": {
                 "raw": "{{fastly_url}}/stats/service/{{service_id}}/field/{{field}}",
@@ -70276,7 +70276,7 @@
                 "body": "{\u0022status\u0022:\u0022success\u0022,\u0022meta\u0022:{\u0022to\u0022:\u0022Thu May 16 20:39:09 UTC 2020\u0022,\u0022from\u0022:\u0022Tue May 14 20:39:09 UTC 2020\u0022,\u0022by\u0022:\u0022day\u0022,\u0022region\u0022:\u0022all\u0022},\u0022msg\u0022:null,\u0022data\u0022:[{\u0022service_id\u0022:\u00221jlmtMz1ncwA0KC3TBGD0X\u0022,\u0022start_time\u0022:1368576000,\u0022hit_ratio\u0022:0.9944},{\u0022service_id\u0022:\u00221jlmtMz1ncwA0KC3TBGD0X\u0022,\u0022start_time\u0022:1368662400,\u0022hit_ratio\u0022:1}]}",
                 "originalRequest": {
                   "name": "Get historical stats for a single service/field combination",
-                  "description": "Fetches the specified field from the historical stats for a given service.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
+                  "description": "Fetches the specified field from the historical stats for a given service. To get a Next-Gen WAF metric, use a workspace\u0027s workspace_uid in place of the service ID.\n\u003E **Authorization**: Requires [API token](/reference/api/auth-tokens).\n",
                   "method": "GET",
                   "url": {
                     "raw": "https://api.fastly.com/stats/service/SU1Z0isxPaozGVKXdv0eY/field/hit_ratio?by=day\u0026datacenter=IAD%2CCHI\u0026from=2020-04-09T18%3A14%3A30Z\u0026region=usa\u0026to=2020-04-09T18%3A14%3A30Z",
@@ -73605,7 +73605,7 @@
           {
             "name": "entityId",
             "in": "path",
-            "description": "Alphanumeric string identifying the entity.",
+            "description": "Alphanumeric string identifying the entity. For a VCL or Compute service, use the service ID. For a Next-Gen WAF workspace, use the workspace\u0027s workspace_uid from the Next-Gen WAF Workspaces API.",
             "required": true,
             "schema": {
               "type": "string"
@@ -220573,7 +220573,7 @@
     },
     {
       "name": "Next-Gen WAF / Workspaces",
-      "description": "Workspaces allows you to add, edit, and delete workspaces in your account.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| attack_signal_thresholds | object | Attack threshold parameters for system site alerts. Each threshold value is the number of attack signals per IP address that must be detected during the interval before the related IP address is flagged. |\n| auto_enable_new_virtual_patches | boolean | When true, virtual patches released after this setting is enabled are automatically enabled for the workspace in block mode. Virtual patches released before it was enabled are not changed. |\n| client_ip_headers | array | Specifies the request headers containing the client IP address. |\n| default_blocking_response_code | integer | The status code returned when a request is blocked. This configuration is applied at the workspace but can be overwritten in rules. Accepted values are [301, 302, 400..599]. |\n| default_redirect_url | string | The redirect URL used if default_blocking_response_code is 301 or 302. |\n| description | string | User-submitted description of a workspace. |\n| id | string | A base62-encoded representation of a UUID used to uniquely identify a workspace. |\n| ip_anonymization | string | Agents will anonymize IP addresses according to the option selected. |\n| mode | string | User-configured mode of a workspace. |\n| name | string | User-submitted display name of a workspace. |\n| workspace_uid | string | A unique identifier for the workspace to which this resource belongs. |"
+      "description": "Workspaces allows you to add, edit, and delete workspaces in your account.\n\u003E **Authorization**: [API token](/reference/api/auth-tokens) with at least [Engineer](/guides/organizations-and-accounts/user-and-account-management/about-user-roles-and-permissions\u0022) permissions.\n\n## Data model\n| Name | Type | Description |\n| --- | --- | --- |\n| attack_signal_thresholds | object | Attack threshold parameters for system site alerts. Each threshold value is the number of attack signals per IP address that must be detected during the interval before the related IP address is flagged. |\n| auto_enable_new_virtual_patches | boolean | When true, virtual patches released after this setting is enabled are automatically enabled for the workspace in block mode. Virtual patches released before it was enabled are not changed. |\n| client_ip_headers | array | Specifies the request headers containing the client IP address. |\n| default_blocking_response_code | integer | The status code returned when a request is blocked. This configuration is applied at the workspace but can be overwritten in rules. Accepted values are [301, 302, 400..599]. |\n| default_redirect_url | string | The redirect URL used if default_blocking_response_code is 301 or 302. |\n| description | string | User-submitted description of a workspace. |\n| id | string | A base62-encoded representation of a UUID used to uniquely identify a workspace. |\n| ip_anonymization | string | Agents will anonymize IP addresses according to the option selected. |\n| mode | string | User-configured mode of a workspace. |\n| name | string | User-submitted display name of a workspace. |\n| workspace_uid | string | A unique identifier for the workspace to which this resource belongs. Use this value to request the workspace\u0027s metrics from the Historical Stats and Platform Metrics APIs. For workspaces created in the Next-Gen WAF control panel, id can differ from workspace_uid. |"
     },
     {
       "name": "Alerts / Definitions",
@@ -221224,7 +221224,7 @@
     },
     {
       "key": "entity_id",
-      "description": "Alphanumeric string identifying the entity."
+      "description": "Alphanumeric string identifying the entity. For a VCL or Compute service, use the service ID. For a Next-Gen WAF workspace, use the workspace\u0027s workspace_uid from the Next-Gen WAF Workspaces API."
     },
     {
       "key": "timestamp_in_seconds",
